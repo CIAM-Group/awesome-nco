@@ -1,0 +1,45 @@
+{
+  "name": "awesome-nco",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A structured research index for neural combinatorial optimization.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "content": "node scripts/build-content.mjs",
+    "indexes": "node scripts/generate-indexes.mjs",
+    "sync": "npm run content && npm run indexes",
+    "validate": "node scripts/validate-content.mjs",
+    "dev": "npm run content && vite",
+    "build": "npm run content && tsc --noEmit && vite build && node scripts/postbuild.mjs",
+    "preview": "vite preview",
+    "test": "npm run content && vitest run",
+    "visual": "node tests/visual-smoke.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/newsreader": "5.2.10",
+    "@fontsource/ibm-plex-sans": "5.2.8",
+    "gray-matter": "4.0.3",
+    "lucide-react": "0.468.0",
+    "marked": "9.1.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.4",
+    "sanitize-html": "2.13.0",
+    "yaml": "2.9.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.25",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/sanitize-html": "2.13.0",
+    "@vitejs/plugin-react": "6.0.3",
+    "playwright": "1.61.1",
+    "typescript": "5.9.3",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}

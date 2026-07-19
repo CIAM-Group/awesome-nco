@@ -1,0 +1,41 @@
+import { ArrowLeft, Code2, ExternalLink, FileText } from 'lucide-react'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { PageMeta } from '../components/PageMeta'
+import { formatPublicDate, getPaper, paradigmLabels, scopeLabels, scopeShortLabels } from '../lib/data'
+
+export function PaperDetailPage() {
+  const { id } = useParams()
+  const paper = id ? getPaper(id) : undefined
+  if (!paper) return <Navigate to="/" replace />
+
+  return (
+    <div className={`paper-detail paper-detail--${paper.scope} page-shell`}>
+      <PageMeta title={paper.short_title} description={paper.summary} />
+      <Link className="back-link" to={`/${paper.scope}`}><ArrowLeft size={15} aria-hidden="true" /> Back to {scopeShortLabels[paper.scope]} timeline</Link>
+      <header className="paper-detail__header">
+        <p className="eyebrow">{scopeLabels[paper.scope]} · First public {formatPublicDate(paper.date)}</p>
+        <h1>{paper.title}</h1>
+        <p>{paper.authors.join(' · ')}</p>
+      </header>
+
+      <div className="paper-detail__layout">
+        <aside className="paper-metadata" aria-label="Paper metadata">
+          <dl>
+            <div><dt>Venue</dt><dd>{paper.venue} {paper.year}</dd></div>
+            <div><dt>Scope</dt><dd>{scopeShortLabels[paper.scope]}</dd></div>
+            <div><dt>Paradigm</dt><dd>{paradigmLabels[paper.paradigm]}</dd></div>
+            <div><dt>Institutions</dt><dd>{paper.institutions.join(' · ')}</dd></div>
+            <div><dt>Problem families</dt><dd>{paper.problem_families.join(' · ')}</dd></div>
+            <div><dt>Problems</dt><dd>{paper.problems.join(' · ')}</dd></div>
+          </dl>
+          <nav className="paper-resources" aria-label="Paper resources">
+            <a href={paper.paper_url} target="_blank" rel="noreferrer"><FileText size={15} /> Paper <ExternalLink size={12} /></a>
+            {paper.arxiv_url && <a href={paper.arxiv_url} target="_blank" rel="noreferrer"><FileText size={15} /> arXiv <ExternalLink size={12} /></a>}
+            {paper.code_url && <a href={paper.code_url} target="_blank" rel="noreferrer"><Code2 size={15} /> Code <ExternalLink size={12} /></a>}
+          </nav>
+        </aside>
+        <article className="paper-note" dangerouslySetInnerHTML={{ __html: paper.body_html }} />
+      </div>
+    </div>
+  )
+}

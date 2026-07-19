@@ -1,0 +1,35 @@
+name: Sync generated paper indexes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'specialist/*.md'
+      - 'generalist/*.md'
+      - 'scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.0
+          cache: npm
+      - run: npm ci
+      - run: npm run indexes
+      - name: Commit generated indexes when needed
+        run: |
+          if git diff --quiet -- specialist/README.md generalist/README.md; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add specialist/README.md generalist/README.md
+          git commit -m "chore: sync paper indexes"
+          git push
