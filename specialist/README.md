@@ -45,6 +45,33 @@ Select a paper title to open its research note.
 - **Year:** 2019
 - **First public:** 2018-03-22
 - **Institutions:** University of Amsterdam; ORTEC; CIFAR
+
+### [Reinforcement Learning for Solving the Vehicle Routing Problem](rl-vrp.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Vehicle Routing Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2018
+- **First public:** 2018-02-12
+- **Institutions:** Lehigh University
+
+### [Learning Combinatorial Optimization Algorithms over Graphs](learning-co-over-graphs.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Minimum Vertex Cover; Maximum Cut; Traveling Salesman Problem
+- **Venue:** NIPS
+- **Year:** 2017
+- **First public:** 2017-04-05
+- **Institutions:** Georgia Institute of Technology; Ant Financial
+
+### [Neural Combinatorial Optimization with Reinforcement Learning](neural-combinatorial-optimization.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Knapsack Problem
+- **Venue:** ICLR
+- **Year:** 2017
+- **First public:** 2016-11-29
+- **Institutions:** Google Brain
 <!-- GENERATED_PAPER_INDEX_END -->
 
 ## Adding a Specialist Solver
