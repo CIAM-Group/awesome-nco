@@ -1,5 +1,5 @@
 ---
-id: dynamic-AM
+id: dynamic-am
 short_title: dynamic attention model
 title: "A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems"
 authors:
