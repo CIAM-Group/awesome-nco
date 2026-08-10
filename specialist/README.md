@@ -37,6 +37,51 @@ Select a paper title to open its research note.
 - **First public:** 2021-10-06
 - **Institutions:** National University of Singapore; A*STAR; Shandong University; University of Electronic Science and Technology of China; Hong Kong University of Science and Technology
 
+### [Efficiently Solving the Practical Vehicle Routing Problem: A Novel Joint Learning Approach](practical-vrp-joint-learning.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Vehicle Routing Problem; Capacitated Vehicle Routing Problem
+- **Venue:** KDD
+- **Year:** 2020
+- **First public:** 2020-08-23
+- **Institutions:** Zhejiang Cainiao Supply Chain Management Co. Ltd; Alibaba Group
+
+### [A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems](dynamic-am.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem
+- **Venue:** ISICA
+- **Year:** 2019
+- **First public:** 2019-11-16
+- **Institutions:** Sun Yat-sen University
+
+### [Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning](graph-pointer-network-hrl.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Traveling Salesman Problem with Time Windows
+- **Venue:** AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications
+- **Year:** 2020
+- **First public:** 2019-11-12
+- **Institutions:** Columbia University; Cornell University
+
+### [An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem](efficient-graph-convnet-tsp.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** arXiv
+- **Year:** 2019
+- **First public:** 2019-06-04
+- **Institutions:** Nanyang Technological University; Loyola Marymount University
+
+### [Learning Heuristics for the TSP by Policy Gradient](learning-heuristic.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** CPAIOR
+- **Year:** 2018
+- **First public:** 2018-06-26
+- **Institutions:** Polytechnique Montreal; Element AI; HEC Montreal; CIRRELT
+
 ### [Attention, Learn to Solve Routing Problems!](attention-model.md)
 
 - **Paradigm:** Constructive
