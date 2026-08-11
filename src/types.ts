@@ -1,5 +1,13 @@
 export type Scope = 'specialist' | 'generalist'
 export type Paradigm = 'constructive' | 'improvement' | 'constructive-improvement'
+export type RelationKind = 'architecture' | 'learning' | 'search' | 'scope'
+
+export interface PaperFigure {
+  path: string
+  alt: string
+  caption: string
+  source_url: string
+}
 
 export interface Paper {
   id: string
@@ -18,17 +26,34 @@ export interface Paper {
   problem_families: string[]
   problems: string[]
   summary: string
+  figure?: PaperFigure
   note_path: string
   body_html: string
+}
+
+export interface Relation {
+  papers: [string, string]
+  kind: RelationKind
+  description: string
+}
+
+export interface RelationKindStyle {
+  color: string
+  width: number
+  dash: number[]
+  curvature: number
+  marker: 'none' | 'opposed-triangles'
 }
 
 export interface CollectionData {
   version: number
   papers: Paper[]
+  relations: Relation[]
 }
 
 export interface PaperFilters {
   query: string
+  scope: string
   paradigm: string
   family: string
   year: string

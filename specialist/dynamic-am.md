@@ -1,6 +1,6 @@
 ---
 id: dynamic-am
-short_title: dynamic attention model
+short_title: AM-D
 title: "A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems"
 authors:
   - Bo Peng
@@ -21,6 +21,11 @@ problem_families:
 problems:
   - Capacitated Vehicle Routing Problem
 summary: AM-D recomputes node embeddings whenever the vehicle returns to the depot, using a dynamic encoder-decoder and REINFORCE to improve VRP construction over static attention models.
+figure:
+  path: paper-assets/dynamic-am/framework.png
+  alt: Static encoder-decoder computation compared with repeated dynamic encoding during decoding.
+  caption: 'Figure 6: Comparison between static and dynamic attention-model computation.'
+  source_url: https://arxiv.org/pdf/2002.03282
 ---
 
 # A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems

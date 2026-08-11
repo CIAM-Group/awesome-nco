@@ -1,6 +1,6 @@
 import { groupPapersByPublicYear } from '../lib/data'
 import type { Paper } from '../types'
-import { PaperCard } from './PaperCard'
+import { TimelinePaperCard } from './TimelinePaperCard'
 
 interface TimelineProps {
   papers: Paper[]
@@ -29,7 +29,7 @@ export function Timeline({ papers }: TimelineProps) {
                 paperIndex += 1
                 return (
                   <div className={`timeline-entry timeline-entry--${side}`} key={paper.id}>
-                    <PaperCard paper={paper} side={side} />
+                    <TimelinePaperCard paper={paper} />
                   </div>
                 )
               })}

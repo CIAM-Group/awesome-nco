@@ -30,6 +30,11 @@ problems:
   - Traveling Salesman Problem
   - Capacitated Vehicle Routing Problem
 summary: DACT improves an existing route by separately encoding node identity and cyclic position, then learning pairwise local moves with PPO.
+figure:
+  path: paper-assets/dact/framework.png
+  alt: Dual-aspect collaborative Transformer policy network with node and positional feature streams.
+  caption: 'Figure 3: Architecture of the dual-aspect collaborative Transformer policy network.'
+  source_url: https://arxiv.org/pdf/2110.02544
 ---
 
 # Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer

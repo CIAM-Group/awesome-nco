@@ -1,6 +1,6 @@
 ---
 id: neural-combinatorial-optimization
-short_title: NCO
+short_title: PN-AC
 title: 'Neural Combinatorial Optimization with Reinforcement Learning'
 authors:
   - Irwan Bello
@@ -24,6 +24,11 @@ problems:
   - Traveling Salesman Problem
   - Knapsack Problem
 summary: Neural Combinatorial Optimization trains a pointer-network policy with reinforcement learning to construct solutions for TSP and knapsack instances.
+figure:
+  path: paper-assets/neural-combinatorial-optimization/framework.png
+  alt: Pointer Network encoder-decoder architecture for selecting a permutation of input elements.
+  caption: 'Figure 1: Pointer Network policy architecture used for neural combinatorial optimization.'
+  source_url: https://arxiv.org/pdf/1611.09940
 ---
 
 # Neural Combinatorial Optimization with Reinforcement Learning

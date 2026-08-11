@@ -25,6 +25,11 @@ problems:
   - Traveling Salesman Problem
   - Traveling Salesman Problem with Time Windows
 summary: Graph Pointer Networks combine dynamic relative-coordinate embeddings with an autoregressive pointer decoder, while a hierarchical reinforcement learning extension separates constraint satisfaction from objective optimization.
+figure:
+  path: paper-assets/graph-pointer-network-hrl/framework.png
+  alt: Two-layer hierarchical Graph Pointer Network with graph context, LSTM encoders, and combined pointer vectors.
+  caption: 'Figure 3: Two-layer hierarchical architecture of the Graph Pointer Network.'
+  source_url: https://arxiv.org/pdf/1911.04936
 ---
 
 # Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning
