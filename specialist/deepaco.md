@@ -35,6 +35,11 @@ problems:
   - Resource-Constrained Project Scheduling Problem
   - Multiple Knapsack Problem
 summary: DeepACO learns instance-dependent heuristic measures for Ant Colony Optimization, using them both to construct solutions and to guide perturbations between local-search phases.
+figure:
+  path: paper-assets/deepaco/framework.png
+  alt: Side-by-side workflow diagrams for conventional ACO and DeepACO.
+  caption: 'Figure 1: Schematic comparison of ACO and DeepACO, including learned heuristic measures and optional local search.'
+  source_url: https://arxiv.org/pdf/2309.14032
 ---
 
 # DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization

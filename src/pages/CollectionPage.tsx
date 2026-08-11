@@ -30,11 +30,12 @@ export function CollectionPage({ scope }: CollectionPageProps) {
 
   const filtered = filterPapers(source, filters)
 
-  function updateFilter(key: keyof PaperFilters, value: string) {
-    const keyMap: Record<keyof PaperFilters, string> = { query: 'q', paradigm: 'paradigm', family: 'family', year: 'year' }
+  function updateFilter(key: string, value: string) {
+    const typedKey = key as keyof PaperFilters
+    const keyMap: Record<keyof PaperFilters, string> = { query: 'q', scope: 'scope', paradigm: 'paradigm', family: 'family', year: 'year' }
     const next = new URLSearchParams(searchParams)
-    if (value === '' || value === 'all') next.delete(keyMap[key])
-    else next.set(keyMap[key], value)
+    if (value === '' || value === 'all') next.delete(keyMap[typedKey])
+    else next.set(keyMap[typedKey], value)
     setSearchParams(next, { replace: true })
   }
 
@@ -53,13 +54,21 @@ export function CollectionPage({ scope }: CollectionPageProps) {
 
       <section className="collection-workbench page-shell" aria-label={`${scopeLabels[scope]} timeline`}>
         <FilterBar
-          filters={filters}
-          paradigmOptions={[
-            { value: 'all', label: 'All paradigms' },
-            ...Object.entries(paradigmLabels).map(([value, label]) => ({ value, label })),
+          query={filters.query}
+          selects={[
+            {
+              key: 'paradigm', label: 'Paradigm', value: filters.paradigm,
+              options: [{ value: 'all', label: 'All paradigms' }, ...Object.entries(paradigmLabels).map(([value, label]) => ({ value, label }))],
+            },
+            {
+              key: 'family', label: 'Problem family', value: filters.family,
+              options: [{ value: 'all', label: 'All problem families' }, ...families.map((value) => ({ value, label: value }))],
+            },
+            {
+              key: 'year', label: 'First public', value: filters.year,
+              options: [{ value: 'all', label: 'All public years' }, ...years.map((value) => ({ value, label: value }))],
+            },
           ]}
-          familyOptions={[{ value: 'all', label: 'All problem families' }, ...families.map((value) => ({ value, label: value }))]}
-          yearOptions={[{ value: 'all', label: 'All public years' }, ...years.map((value) => ({ value, label: value }))]}
           resultCount={filtered.length}
           onChange={updateFilter}
           onReset={() => setSearchParams({}, { replace: true })}

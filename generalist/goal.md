@@ -31,6 +31,11 @@ problems:
   - Knapsack Problem
   - Minimum Vertex Cover
 summary: GOAL shares one Transformer backbone across routing, scheduling, packing, and graph problems while using lightweight problem-specific input and output adapters.
+figure:
+  path: paper-assets/goal/framework.png
+  alt: GOAL architectures for single-type and multi-type combinatorial optimization problems.
+  caption: 'Figure 2: GOAL architectures for single-type and multi-type problems, showing the shared backbone and task-specific adapters.'
+  source_url: https://arxiv.org/pdf/2406.15079
 ---
 
 # GOAL: A Generalist Combinatorial Optimization Agent Learner

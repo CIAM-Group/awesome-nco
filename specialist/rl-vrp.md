@@ -1,6 +1,6 @@
 ---
 id: rl-vrp
-short_title: RL-VRP
+short_title: VRP-RL
 title: 'Reinforcement Learning for Solving the Vehicle Routing Problem'
 authors:
   - Mohammadreza Nazari
@@ -22,12 +22,17 @@ problem_families:
 problems:
   - Vehicle Routing Problem
   - Capacitated Vehicle Routing Problem
-summary: RL-VRP trains an attention-based reinforcement-learning policy to construct capacitated vehicle routes while updating dynamic demand and capacity states.
+summary: VRP-RL trains an attention-based reinforcement-learning policy to construct capacitated vehicle routes while updating dynamic demand and capacity states.
+figure:
+  path: paper-assets/rl-vrp/framework.png
+  alt: VRP-RL model with input embeddings, recurrent decoder state, and an attention layer over dynamic customer states.
+  caption: 'Figure 2: Dynamic vehicle-routing model with embeddings, recurrent decoder state, and attention.'
+  source_url: https://arxiv.org/pdf/1802.04240
 ---
 
 # Reinforcement Learning for Solving the Vehicle Routing Problem
 
-> **TL;DR:** RL-VRP learns a constructive policy that routes a capacitated vehicle by selecting the next customer from feasible actions at each decoding step.
+> **TL;DR:** VRP-RL learns a constructive policy that routes a capacitated vehicle by selecting the next customer from feasible actions at each decoding step.
 
 ## Motivation
 

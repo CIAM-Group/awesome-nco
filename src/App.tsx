@@ -5,6 +5,8 @@ import { SiteHeader } from './components/SiteHeader'
 import { CollectionPage } from './pages/CollectionPage'
 import { HomePage } from './pages/HomePage'
 import { PaperDetailPage } from './pages/PaperDetailPage'
+import { PapersPage } from './pages/PapersPage'
+import { RelationsPage } from './pages/RelationsPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -24,6 +26,8 @@ export function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/specialist" element={<CollectionPage scope="specialist" />} />
           <Route path="/generalist" element={<CollectionPage scope="generalist" />} />
+          <Route path="/papers" element={<PapersPage />} />
+          <Route path="/relations" element={<RelationsPage />} />
           <Route path="/papers/:id" element={<PaperDetailPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -16,6 +16,11 @@ venue: Conference or Journal
 paper_url: https://example.com/paper.pdf
 # arxiv_url: https://arxiv.org/abs/0000.00000
 # code_url: https://github.com/organization/repository
+# figure:
+#   path: paper-assets/paper-id/framework.png
+#   alt: Concise description of the framework diagram.
+#   caption: 'Figure 1: Neutral description matching the original paper.'
+#   source_url: https://example.com/paper.pdf
 institutions:
   - Example University
 scope: specialist
@@ -66,3 +71,5 @@ Explain the research problem, prior limitation, and why the proposed direction m
 - **Checkpoints:** Availability.
 - **Main paper references:** Relevant sections, tables, figures, or appendices.
 ```
+
+If a public original framework image is available, crop only the figure body into `public/paper-assets/paper-id/framework.png`; otherwise leave the entire `figure` block commented out. Add at least one undirected thematic connection for the new paper in `data/relations.yml`.

@@ -1,6 +1,6 @@
 ---
 id: efficient-graph-convnet-tsp
-short_title: Graph ConvNet
+short_title: GCN
 title: 'An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem'
 authors:
   - Chaitanya K. Joshi
@@ -22,6 +22,11 @@ problem_families:
 problems:
   - Traveling Salesman Problem
 summary: A supervised edge-aware graph convolutional network predicts a probabilistic TSP edge heatmap that is converted into a valid tour using beam search.
+figure:
+  path: paper-assets/efficient-graph-convnet-tsp/framework.png
+  alt: Graph ConvNet pipeline from an input graph through an edge heatmap and beam search to a TSP tour.
+  caption: 'Figure 1: Graph ConvNet edge-heatmap prediction and beam-search tour construction pipeline.'
+  source_url: https://arxiv.org/pdf/1906.01227
 ---
 
 # An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem

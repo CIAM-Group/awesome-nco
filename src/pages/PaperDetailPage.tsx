@@ -1,12 +1,13 @@
 import { ArrowLeft, Code2, ExternalLink, FileText } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
-import { formatPublicDate, getPaper, paradigmLabels, scopeLabels, scopeShortLabels } from '../lib/data'
+import { assetUrl, formatPublicDate, getPaper, paradigmLabels, relatedPaperId, relationKindLabels, relationsForPaper, scopeLabels, scopeShortLabels } from '../lib/data'
 
 export function PaperDetailPage() {
   const { id } = useParams()
   const paper = id ? getPaper(id) : undefined
   if (!paper) return <Navigate to="/" replace />
+  const related = relationsForPaper(paper.id)
 
   return (
     <div className={`paper-detail paper-detail--${paper.scope} page-shell`}>
@@ -34,8 +35,28 @@ export function PaperDetailPage() {
             {paper.code_url && <a href={paper.code_url} target="_blank" rel="noreferrer"><Code2 size={15} /> Code <ExternalLink size={12} /></a>}
           </nav>
         </aside>
-        <article className="paper-note" dangerouslySetInnerHTML={{ __html: paper.body_html }} />
+        <div className="paper-detail__content">
+          {paper.figure && (
+            <figure className="paper-figure">
+              <img src={assetUrl(paper.figure.path)} alt={paper.figure.alt} />
+              <figcaption>{paper.figure.caption} <a href={paper.figure.source_url} target="_blank" rel="noreferrer">View original paper</a></figcaption>
+            </figure>
+          )}
+          <article className="paper-note" dangerouslySetInnerHTML={{ __html: paper.body_html }} />
+        </div>
       </div>
+      {related.length > 0 && (
+        <section className="related-papers" aria-labelledby="related-papers-title">
+          <p className="eyebrow">Explore nearby work</p>
+          <h2 id="related-papers-title">Related papers</h2>
+          <div className="related-papers__grid">
+            {related.map((relation) => {
+              const relatedPaper = getPaper(relatedPaperId(relation, paper.id))!
+              return <Link className="related-paper-card" to={`/papers/${relatedPaper.id}`} key={relatedPaper.id}><span>{relationKindLabels[relation.kind]}</span><h3>{relatedPaper.short_title}</h3><p className="related-paper-card__title">{relatedPaper.title}</p><p>{relation.description}</p></Link>
+            })}
+          </div>
+        </section>
+      )}
     </div>
   )
 }

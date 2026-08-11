@@ -8,6 +8,7 @@ import { z } from 'zod'
 
 export const scopes = ['specialist', 'generalist']
 export const paradigms = ['constructive', 'improvement', 'constructive-improvement']
+export const relationKinds = ['architecture', 'learning', 'search', 'scope']
 export const requiredSections = [
   'Motivation',
   'Contributions',
@@ -45,6 +46,22 @@ export const paperSchema = z.object({
   problem_families: z.array(z.string().min(1)).min(1),
   problems: z.array(z.string().min(1)).min(1),
   summary: z.string().min(1),
+  figure: z.object({
+    path: z.string().min(1),
+    alt: z.string().min(1),
+    caption: z.string().min(1),
+    source_url: z.string().url(),
+  }).strict().optional(),
+}).strict()
+
+export const relationSchema = z.object({
+  papers: z.tuple([z.string().min(1), z.string().min(1)]),
+  kind: z.enum(relationKinds),
+  description: z.string().min(1),
+}).strict()
+
+const relationsFileSchema = z.object({
+  relations: z.array(relationSchema),
 }).strict()
 
 function sectionNames(markdown) {
@@ -57,12 +74,14 @@ function markdownForWebsite(markdown) {
 
 export function renderMarkdown(markdown) {
   const html = marked.parse(markdownForWebsite(markdown), { gfm: true })
-  return sanitizeHtml(html, {
+  const wrappedTables = html.replaceAll('<table>', '<div class="note-table-wrap"><table>').replaceAll('</table>', '</table></div>')
+  return sanitizeHtml(wrappedTables, {
     allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
       a: ['href', 'title', 'target', 'rel'],
       code: ['class'],
+      div: ['class'],
       img: ['src', 'alt', 'title', 'loading'],
     },
     allowedSchemes: ['http', 'https', 'mailto'],
@@ -126,5 +145,58 @@ export async function loadPapers(root = process.cwd()) {
   const duplicates = [...new Set(papers.map((paper) => paper.id).filter((id, index, ids) => ids.indexOf(id) !== index))]
   if (duplicates.length > 0) throw new Error(`duplicate paper ids: ${duplicates.join(', ')}`)
 
+  for (const paper of papers) {
+    if (!paper.figure) continue
+
+    const expectedPrefix = `paper-assets/${paper.id}/`
+    const normalizedPath = paper.figure.path.replaceAll('\\', '/')
+    if (normalizedPath !== paper.figure.path || !normalizedPath.startsWith(expectedPrefix) || normalizedPath.includes('../')) {
+      throw new Error(`${paper.note_path}: figure path must be inside public/${expectedPrefix}`)
+    }
+
+    const assetPath = path.join(root, 'public', ...normalizedPath.split('/'))
+    try {
+      const stat = await fs.stat(assetPath)
+      if (!stat.isFile()) throw new Error('not a file')
+    } catch {
+      throw new Error(`${paper.note_path}: figure file does not exist: public/${normalizedPath}`)
+    }
+  }
+
   return sortPapersNewestFirst(papers)
+}
+
+export async function loadRelations(root = process.cwd(), papers) {
+  const paperList = papers ?? await loadPapers(root)
+  const raw = await fs.readFile(path.join(root, 'data', 'relations.yml'), 'utf8')
+  const { relations } = relationsFileSchema.parse(YAML.parse(raw))
+  const paperIds = new Set(paperList.map((paper) => paper.id))
+  const pairs = new Set()
+  const connectedIds = new Set()
+
+  for (const relation of relations) {
+    const [first, second] = relation.papers
+    if (!paperIds.has(first) || !paperIds.has(second)) {
+      const unknown = relation.papers.filter((id) => !paperIds.has(id))
+      throw new Error(`relation has unknown paper endpoint(s): ${unknown.join(', ')}`)
+    }
+    if (first === second) throw new Error(`relation cannot connect a paper to itself: ${first}`)
+
+    const pairKey = [first, second].sort().join('::')
+    if (pairs.has(pairKey)) throw new Error(`duplicate undirected relation: ${pairKey}`)
+    pairs.add(pairKey)
+    connectedIds.add(first)
+    connectedIds.add(second)
+  }
+
+  const unconnected = paperList.map((paper) => paper.id).filter((id) => !connectedIds.has(id))
+  if (unconnected.length > 0) throw new Error(`papers without relations: ${unconnected.join(', ')}`)
+
+  return relations
+}
+
+export async function loadContent(root = process.cwd()) {
+  const papers = await loadPapers(root)
+  const relations = await loadRelations(root, papers)
+  return { version: 2, papers, relations }
 }

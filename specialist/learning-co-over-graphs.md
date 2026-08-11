@@ -27,6 +27,11 @@ problems:
   - Maximum Cut
   - Traveling Salesman Problem
 summary: S2V-DQN combines graph embeddings and fitted Q-learning to learn greedy construction heuristics for graph combinatorial optimization problems.
+figure:
+  path: paper-assets/learning-co-over-graphs/framework.png
+  alt: S2V-DQN graph embedding and greedy node-selection process for two construction steps.
+  caption: 'Figure 1: Graph embedding and greedy construction in the S2V-DQN framework.'
+  source_url: https://arxiv.org/pdf/1704.01665
 ---
 
 # Learning Combinatorial Optimization Algorithms over Graphs

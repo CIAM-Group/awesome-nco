@@ -1,6 +1,6 @@
 ---
 id: attention-model
-short_title: Attention Model
+short_title: AM
 title: 'Attention, Learn to Solve Routing Problems!'
 authors:
   - Wouter Kool
@@ -28,6 +28,11 @@ problems:
   - Prize Collecting Traveling Salesman Problem
   - Stochastic Prize Collecting Traveling Salesman Problem
 summary: An attention-based autoregressive policy constructs routing solutions node by node and is trained with REINFORCE using a rollout baseline.
+figure:
+  path: paper-assets/attention-model/framework.png
+  alt: Attention Model decoder selecting a node from the encoded routing graph.
+  caption: 'Figure 2: Attention-based decoder for the Traveling Salesman Problem.'
+  source_url: https://arxiv.org/pdf/1803.08475
 ---
 
 # Attention, Learn to Solve Routing Problems!

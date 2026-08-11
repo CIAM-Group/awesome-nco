@@ -1,0 +1,232 @@
+relations:
+  - papers: [neural-combinatorial-optimization, attention-model]
+    kind: architecture
+    description: Both are autoregressive neural construction policies; AM replaces the recurrent Pointer Network stack with multi-head attention.
+  - papers: [neural-combinatorial-optimization, rl-vrp]
+    kind: architecture
+    description: Both learn sequential construction policies, while VRP-RL extends the formulation with dynamic state for vehicle-routing decisions.
+  - papers: [neural-combinatorial-optimization, learning-heuristic]
+    kind: architecture
+    description: Both train constructive TSP policies with policy gradients; Learning Heuristic uses an attention-only design and can pair it with 2-opt.
+  - papers: [neural-combinatorial-optimization, learning-co-over-graphs]
+    kind: architecture
+    description: Both learn constructive heuristics with reinforcement learning, using a sequence Pointer Network and graph embeddings with Q-learning respectively.
+  - papers: [rl-vrp, attention-model]
+    kind: architecture
+    description: Both construct vehicle routes autoregressively, with different representations, decoder contexts, and reinforcement-learning baselines.
+  - papers: [attention-model, dynamic-am]
+    kind: architecture
+    description: AM-D revisits attention-based routing by recomputing representations as the vehicle-routing state changes instead of relying only on static encodings.
+  - papers: [attention-model, graph-pointer-network-hrl]
+    kind: architecture
+    description: Both use attention and pointer-style autoregressive routing; GPN/HGPN adds relative graph context and a hierarchical formulation.
+  - papers: [attention-model, practical-vrp-joint-learning]
+    kind: architecture
+    description: Both construct VRP solutions, while GCN-NPEC combines node-edge graph convolutions with an auxiliary edge-classification objective.
+  - papers: [attention-model, learning-heuristic]
+    kind: architecture
+    description: These contemporaneous attention-only TSP policies differ in decoder context, training baselines, and their use of optional local search.
+  - papers: [learning-co-over-graphs, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both encode graph structure for TSP, using Q-learning for greedy construction and supervised edge heatmaps for beam search respectively.
+  - papers: [efficient-graph-convnet-tsp, practical-vrp-joint-learning]
+    kind: architecture
+    description: Both use edge-aware graph convolutions and explicit edge predictions, for TSP heatmaps and joint VRP decoding respectively.
+  - papers: [graph-pointer-network-hrl, dynamic-am]
+    kind: architecture
+    description: Both update the representation used by an autoregressive policy as the partially constructed route and remaining choices evolve.
+  - papers: [graph-pointer-network-hrl, learning-co-over-graphs]
+    kind: architecture
+    description: Both study graph-based reinforcement-learning heuristics and generalization, with different policy and value formulations.
+  - papers: [attention-model, dact]
+    kind: search
+    description: Both use Transformer-style routing representations, but one constructs a route and the other learns iterative pairwise improvements.
+  - papers: [efficient-graph-convnet-tsp, deepaco]
+    kind: search
+    description: Both learn edge-level guidance that is consumed by a downstream combinatorial search procedure rather than returned as a final solution directly.
+  - papers: [dact, deepaco]
+    kind: search
+    description: Both place learned guidance inside an iterative search process, using learned pair moves and ant-colony search with local search respectively.
+  - papers: [rl-vrp, practical-vrp-joint-learning]
+    kind: learning
+    description: The methods connect policy-gradient VRP learning with a later joint reinforcement and supervised edge-classification training objective.
+  - papers: [attention-model, goal]
+    kind: scope
+    description: Both use attention-based construction, while GOAL shares a backbone across problem types through lightweight task-specific adapters.
+  - papers: [deepaco, goal]
+    kind: scope
+    description: Both cover multiple combinatorial problem families, contrasting per-problem learned ACO guidance with a shared multi-task backbone.
+  - papers: [pointer-networks, neural-combinatorial-optimization]
+    kind: architecture
+    description: PN-AC adopts the Pointer Network mechanism as an autoregressive policy and changes the learning signal from supervised targets to reinforcement learning.
+  - papers: [pointer-networks, attention-model]
+    kind: architecture
+    description: Both point to input nodes during construction; AM replaces recurrent encoding with a Transformer-style attention stack.
+  - papers: [neurewriter, dact]
+    kind: search
+    description: Both repeatedly rewrite an incumbent solution with learned local decisions, using different state encoders and neighborhood definitions.
+  - papers: [neurewriter, learning-improvement-heuristics]
+    kind: architecture
+    description: Both separate a feasible incumbent from a learned policy that chooses iterative local modifications.
+  - papers: [neurewriter, neural-3-opt]
+    kind: search
+    description: NeuRewriter provides a general local-rewrite abstraction, whereas Neural-3-OPT specializes the learned action to three-edge TSP reconnections.
+  - papers: [pomo, sym-nco]
+    kind: learning
+    description: Sym-NCO extends POMO-style training with explicit regularizers for problem and solution symmetries.
+  - papers: [pomo, pareto-set-learning]
+    kind: learning
+    description: P-MOCO conditions a POMO-style constructive policy on objective preferences so one model can sample an approximate Pareto set.
+  - papers: [pomo, simulation-guided-beam-search]
+    kind: search
+    description: SGBS uses pretrained POMO policies as search guidance and adds rollout-ranked beam expansion at inference time.
+  - papers: [pomo, routing-dro]
+    kind: learning
+    description: Both train constructive routing policies with policy gradients; DRO changes the training distribution through a robust minimax objective.
+  - papers: [gnn-mcts-tsp, learning-co-over-graphs]
+    kind: architecture
+    description: Both learn graph representations for sequential TSP decisions, pairing them with MCTS priors and Q-learning respectively.
+  - papers: [gnn-mcts-tsp, simulation-guided-beam-search]
+    kind: search
+    description: Both use complete rollouts to assess partial tours, with MCTS maintaining a search tree and SGBS retaining a fixed-width beam.
+  - papers: [gnn-mcts-tsp, att-gcn]
+    kind: search
+    description: Both combine learned edge guidance with an external search process to avoid returning a purely greedy neural tour.
+  - papers: [neural-large-neighborhood-search, egate]
+    kind: search
+    description: Both improve CVRP incumbents iteratively, contrasting learned large-neighborhood repair with edge-aware local move selection.
+  - papers: [neural-large-neighborhood-search, learning-to-improve]
+    kind: search
+    description: Both start from feasible vehicle routes and learn repeated improvement, using destroy-repair and a portfolio of local operators respectively.
+  - papers: [neural-large-neighborhood-search, learning-to-delegate]
+    kind: search
+    description: Both solve selected routing subproblems inside a larger loop; L2D learns which spatial subproblem to send to an interchangeable solver.
+  - papers: [egate, learning-to-improve]
+    kind: architecture
+    description: Both encode the incumbent CVRP solution and learn a policy over feasible local modifications.
+  - papers: [egate, rbg]
+    kind: scope
+    description: Both target vehicle-routing improvement, while RBG organizes decisions hierarchically for much larger logistics instances.
+  - papers: [learning-to-improve, dact]
+    kind: search
+    description: Both use reinforcement learning to sequence local routing moves and retain the best incumbent over an iteration budget.
+  - papers: [multi-decoder-attention-model, attention-model]
+    kind: architecture
+    description: MDAM shares an attention encoder across several diverse decoders rather than relying on AM's single decoding policy.
+  - papers: [multi-decoder-attention-model, learning-collaborative-policies]
+    kind: search
+    description: Both generate diverse candidate routes before selecting or revising the best, using decoder diversity and collaborative seeding respectively.
+  - papers: [multi-decoder-attention-model, matrix-encoding-networks]
+    kind: architecture
+    description: Both extend attention-based construction with specialized representation modules, for diverse routing modes and matrix-valued problem data.
+  - papers: [matrix-encoding-networks, attention-model]
+    kind: architecture
+    description: MatNet adapts attention encoding to rectangular relation matrices while retaining an autoregressive construction pipeline.
+  - papers: [matrix-encoding-networks, pareto-set-learning]
+    kind: architecture
+    description: Both build POMO-style end-to-end policies on specialized encoders, for matrix problems and preference-conditioned multi-objective routing.
+  - papers: [neural-3-opt, dact]
+    kind: search
+    description: Both learn iterative tour improvement; Neural-3-OPT selects three removed edges and a reconnection while DACT learns pairwise transformations.
+  - papers: [neural-3-opt, learning-improvement-heuristics]
+    kind: search
+    description: Both use learned attention to choose local tour edits, with different three-edge and pairwise neighborhoods.
+  - papers: [neurolkh, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both predict edge-level TSP guidance with graph networks, consumed by LKH candidate search and beam search respectively.
+  - papers: [neurolkh, att-gcn]
+    kind: search
+    description: Both reuse neural edge predictions inside a classical or structured search procedure to scale beyond direct decoding.
+  - papers: [neurolkh, graph-guided-local-search]
+    kind: search
+    description: Both guide established TSP improvement heuristics with learned edge signals, targeting LKH candidates and GLS penalties respectively.
+  - papers: [neurolkh, deep-policy-dynamic-programming]
+    kind: search
+    description: Both combine learned graph guidance with a non-neural combinatorial engine and expose explicit search budgets at inference.
+  - papers: [att-gcn, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both learn edge heatmaps with graph convolutions, differing in their decomposition and downstream tour-merging search.
+  - papers: [att-gcn, dimes]
+    kind: search
+    description: Both avoid a single autoregressive tour and use learned edge distributions to support scalable candidate search.
+  - papers: [learning-collaborative-policies, learning-to-delegate]
+    kind: search
+    description: Both improve large routing solutions through learned subproblem decisions, using neural sub-tour revision and black-box delegation.
+  - papers: [learning-collaborative-policies, rbg]
+    kind: search
+    description: Both use hierarchical policies to divide global exploration from lower-level route refinement.
+  - papers: [learning-to-delegate, rbg]
+    kind: scope
+    description: Both target large logistics routing through spatial decomposition, with learned delegation and hierarchical region construction.
+  - papers: [learning-to-delegate, graph-pointer-network-hrl]
+    kind: scope
+    description: Both decompose larger routing decisions hierarchically, but L2D delegates local subproblems to an external solver.
+  - papers: [latent-search-space-routing, deepaco]
+    kind: search
+    description: Both learn a distribution that is searched at inference time rather than treating a single network output as the final solution.
+  - papers: [latent-search-space-routing, diffusion-plug-and-play-priors]
+    kind: search
+    description: Both optimize a continuous generative representation before decoding or discretizing it into a routing solution.
+  - papers: [latent-search-space-routing, efficient-active-search]
+    kind: learning
+    description: Both adapt a compact set of variables for each target instance instead of retraining all policy parameters.
+  - papers: [step-wise-routing, attention-model]
+    kind: architecture
+    description: Both use attention-based autoregressive construction; Step-Wise recomputes embeddings after each routing decision.
+  - papers: [step-wise-routing, dynamic-am]
+    kind: architecture
+    description: Both make routing representations dynamic as the partial solution evolves, through full step-wise encoding and dynamic attention updates.
+  - papers: [step-wise-routing, mapdp]
+    kind: architecture
+    description: Both encode changing vehicle state during construction, for a single route context and cooperative multi-vehicle agents respectively.
+  - papers: [learning-improvement-heuristics, dact]
+    kind: architecture
+    description: Both use attention-based actors for repeated pairwise routing improvements and maintain search-history information.
+  - papers: [learning-improvement-heuristics, graph-guided-local-search]
+    kind: search
+    description: Both learn which parts of a current tour deserve modification, coupled with neural moves and Guided Local Search.
+  - papers: [dimes, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both learn edge-level solution distributions for TSP; DIMES makes the distribution a continuous target for parallel fine-tuning.
+  - papers: [dimes, diffusion-plug-and-play-priors]
+    kind: architecture
+    description: Both search continuous probabilistic representations before producing discrete tours, using meta-learned logits and diffusion priors.
+  - papers: [dimes, deep-policy-dynamic-programming]
+    kind: search
+    description: Both use learned edge guidance to explore many discrete candidates rather than greedily decoding one route.
+  - papers: [simulation-guided-beam-search, efficient-active-search]
+    kind: search
+    description: 'SGBS and EAS are explicitly combined: rollout-ranked beam search improves samples used for lightweight test-time adaptation.'
+  - papers: [deep-policy-dynamic-programming, efficient-graph-convnet-tsp]
+    kind: search
+    description: DPDP consumes learned edge heatmaps in a dominance-aware dynamic-programming beam rather than ordinary sequence beam search.
+  - papers: [deep-policy-dynamic-programming, practical-vrp-joint-learning]
+    kind: architecture
+    description: Both learn edge-aware VRP guidance, used for restricted dynamic programming and joint autoregressive construction respectively.
+  - papers: [sym-nco, attention-model]
+    kind: learning
+    description: Sym-NCO can regularize an AM backbone so equivalent transformed routing instances produce consistent representations and solutions.
+  - papers: [sym-nco, pareto-set-learning]
+    kind: learning
+    description: Both extend POMO-style policy optimization with additional structure, using symmetry consistency and objective preferences.
+  - papers: [sym-nco, routing-dro]
+    kind: learning
+    description: Both improve distribution generalization through training-time objectives, emphasizing geometric symmetry and worst-case data shifts.
+  - papers: [mapdp, rl-vrp]
+    kind: architecture
+    description: Both condition routing decisions on dynamic vehicle state; MAPDP distributes decisions across cooperating vehicle agents.
+  - papers: [mapdp, rbg]
+    kind: scope
+    description: Both address logistics routing with multiple decision makers or regions, at cooperative pickup-delivery and large-scale hierarchical levels.
+  - papers: [diffusion-plug-and-play-priors, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both represent TSP solutions through soft edge structures, followed by iterative guided denoising and beam/local search respectively.
+  - papers: [graph-guided-local-search, efficient-graph-convnet-tsp]
+    kind: search
+    description: Both predict edge signals with graph networks and hand them to downstream TSP search instead of decoding a final route directly.
+  - papers: [efficient-active-search, neural-combinatorial-optimization]
+    kind: learning
+    description: Both optimize routing policies from task rewards; EAS restricts gradient updates to lightweight parameters for one test instance.
+  - papers: [routing-dro, efficient-graph-convnet-tsp]
+    kind: learning
+    description: DRO uses graph-based routing components while changing training toward worst-case instance distributions rather than nominal sampling alone.

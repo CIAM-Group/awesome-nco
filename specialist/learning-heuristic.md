@@ -1,6 +1,6 @@
 ---
 id: learning-heuristic
-short_title: learning heuristic
+short_title: Learning Heuristic
 title: "Learning Heuristics for the TSP by Policy Gradient"
 authors:
   - Michel Deudon
@@ -25,6 +25,11 @@ problem_families:
 problems:
   - Traveling Salesman Problem
 summary: This paper learns a policy-gradient TSP heuristic with an attention-only encoder-decoder, an explicit critic baseline, and optional 2-opt post-processing.
+figure:
+  path: paper-assets/learning-heuristic/framework.png
+  alt: Attention-only neural encoder and pointer-style neural decoder used by the learned TSP heuristic.
+  caption: 'Appendix Figures 1–2: Neural encoder and neural decoder used by the learned heuristic.'
+  source_url: https://hanalog.polymtl.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf
 ---
 
 # Learning Heuristics for the TSP by Policy Gradient

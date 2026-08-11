@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
-import { loadPapers, parsePaper, renderMarkdown, sortPapersNewestFirst } from '../scripts/content-lib.mjs'
+import { loadContent, loadPapers, loadRelations, parsePaper, renderMarkdown, sortPapersNewestFirst } from '../scripts/content-lib.mjs'
 
 const temporaryDirectories = []
 const sections = `
@@ -54,6 +54,33 @@ function paperMarkdown(overrides = {}) {
   return `${lines.join('\n')}\n---\n\n# ${metadata.title}\n${sections}`
 }
 
+function withFigure(markdown, overrides = {}) {
+  const figure = {
+    path: 'paper-assets/sample-paper/framework.png',
+    alt: 'A framework diagram.',
+    caption: 'Figure 1: Framework overview.',
+    source_url: 'https://example.com/paper.pdf',
+    ...overrides,
+  }
+  const yaml = [
+    'figure:',
+    `  path: ${figure.path}`,
+    `  alt: ${figure.alt}`,
+    `  caption: '${figure.caption}'`,
+    `  source_url: ${figure.source_url}`,
+  ].join('\n')
+  return markdown.replace('\n---\n\n# ', `\n${yaml}\n---\n\n# `)
+}
+
+async function createPaperRoot(markdown) {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'awesome-nco-content-'))
+  temporaryDirectories.push(root)
+  await fs.mkdir(path.join(root, 'specialist'), { recursive: true })
+  await fs.mkdir(path.join(root, 'generalist'), { recursive: true })
+  await fs.writeFile(path.join(root, 'specialist', 'sample-paper.md'), markdown)
+  return root
+}
+
 afterEach(async () => {
   await Promise.all(temporaryDirectories.splice(0).map((directory) => fs.rm(directory, { recursive: true, force: true })))
 })
@@ -86,6 +113,24 @@ describe('paper content schema', () => {
     expect(() => parsePaper(markdown, { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow('missing sections: Limitations')
   })
 
+  it('parses complete optional figure metadata', () => {
+    const paper = parsePaper(withFigure(paperMarkdown()), { filePath: 'sample-paper.md', expectedScope: 'specialist' })
+    expect(paper.figure).toEqual({
+      path: 'paper-assets/sample-paper/framework.png',
+      alt: 'A framework diagram.',
+      caption: 'Figure 1: Framework overview.',
+      source_url: 'https://example.com/paper.pdf',
+    })
+  })
+
+  it('rejects missing and out-of-directory figure files', async () => {
+    const missingRoot = await createPaperRoot(withFigure(paperMarkdown()))
+    await expect(loadPapers(missingRoot)).rejects.toThrow('figure file does not exist')
+
+    const invalidRoot = await createPaperRoot(withFigure(paperMarkdown(), { path: 'paper-assets/another-paper/framework.png' }))
+    await expect(loadPapers(invalidRoot)).rejects.toThrow('figure path must be inside')
+  })
+
   it('rejects duplicate ids across scope directories', async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), 'awesome-nco-content-'))
     temporaryDirectories.push(root)
@@ -97,7 +142,42 @@ describe('paper content schema', () => {
   })
 })
 
+describe('relation content schema', () => {
+  async function relationRoot(yaml) {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'awesome-nco-relations-'))
+    temporaryDirectories.push(root)
+    await fs.mkdir(path.join(root, 'data'))
+    await fs.writeFile(path.join(root, 'data', 'relations.yml'), yaml)
+    return root
+  }
+
+  const samplePapers = [{ id: 'sample-paper' }, { id: 'other-paper' }]
+
+  it('rejects unknown endpoints and self-relations', async () => {
+    const unknown = await relationRoot('relations:\n  - papers: [sample-paper, missing-paper]\n    kind: architecture\n    description: Related architectures.\n')
+    await expect(loadRelations(unknown, samplePapers)).rejects.toThrow('unknown paper endpoint')
+
+    const self = await relationRoot('relations:\n  - papers: [sample-paper, sample-paper]\n    kind: learning\n    description: Related learning methods.\n')
+    await expect(loadRelations(self, samplePapers)).rejects.toThrow('cannot connect a paper to itself')
+  })
+
+  it('rejects duplicate unordered pairs', async () => {
+    const root = await relationRoot('relations:\n  - papers: [sample-paper, other-paper]\n    kind: architecture\n    description: Related architectures.\n  - papers: [other-paper, sample-paper]\n    kind: search\n    description: Related search procedures.\n')
+    await expect(loadRelations(root, samplePapers)).rejects.toThrow('duplicate undirected relation')
+  })
+
+  it('requires every paper to participate in a relation', async () => {
+    const root = await relationRoot('relations:\n  - papers: [sample-paper, other-paper]\n    kind: scope\n    description: Related problem scope.\n')
+    await expect(loadRelations(root, [...samplePapers, { id: 'unconnected-paper' }])).rejects.toThrow('papers without relations: unconnected-paper')
+  })
+})
+
 describe('content output', () => {
+  it('builds the repository collection as version 2', async () => {
+    const content = await loadContent(path.resolve('.'))
+    expect(content.version).toBe(2)
+    expect(content.relations.length).toBeGreaterThan(0)
+  })
   it('sorts papers by first-public date in descending order', () => {
     const sorted = sortPapersNewestFirst([
       { id: 'old', title: 'Old', date: '2020-01-01' },
@@ -116,5 +196,10 @@ describe('content output', () => {
     expect(html).toContain('<code>code</code>')
     expect(html).toContain('target="_blank"')
     expect(html).toContain('rel="noreferrer"')
+  })
+
+  it('wraps note tables in a local horizontal scroller', () => {
+    const html = renderMarkdown('| Method | Result |\n| --- | --- |\n| Sample | 1 |')
+    expect(html).toContain('<div class="note-table-wrap"><table>')
   })
 })

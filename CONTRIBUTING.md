@@ -10,7 +10,9 @@ No website code changes are required.
 2. Copy [docs/PAPER_TEMPLATE.md](docs/PAPER_TEMPLATE.md) into the corresponding directory and rename it to `<id>.md`.
 3. Set the Front Matter `id` to the same lowercase, hyphenated value as the filename.
 4. Complete every required research-note section.
-5. Open a pull request. Automated checks validate the paper and rebuild the website.
+5. Add at least one relevant connection in [`data/relations.yml`](data/relations.yml).
+6. Optionally add a framework image from the original paper under `public/paper-assets/<id>/framework.png` and complete the `figure` block.
+7. Open a pull request. Automated checks validate the paper and rebuild the website.
 
 The generated paper-index blocks in the category READMEs and `src/generated/` must not be edited manually.
 
@@ -37,6 +39,30 @@ Optional fields:
 
 - **`arxiv_url`:** arXiv abstract page when available.
 - **`code_url`:** Official implementation when available.
+- **`figure`:** Framework-image metadata. When present, all four nested fields are required:
+  - **`path`:** Repository path below `public/`, which must stay inside `paper-assets/<id>/`.
+  - **`alt`:** Concise description of the visual content for screen-reader users.
+  - **`caption`:** Original figure number and a neutral description.
+  - **`source_url`:** Public URL for the original paper or PDF containing the figure.
+
+Framework images must be cropped from a publicly available original paper, not generated or redrawn. Crop the figure body without the printed caption, keep labels legible, and use a PNG around 1600–2000 px wide. If no reliable original image is publicly available, omit `figure` entirely.
+
+## Paper Relations
+
+Relations are maintained once in [`data/relations.yml`](data/relations.yml) and are undirected. Each entry connects two paper IDs and uses one of four kinds:
+
+- **`architecture`:** Shared or contrasting model structures.
+- **`learning`:** Related training objectives or supervision signals.
+- **`search`:** Related construction, improvement, or search processes.
+- **`scope`:** Related task coverage or specialist/generalist positioning.
+
+Write a short, neutral description of the common ground or contrast. Relations express useful thematic proximity, not necessarily citation, causality, or direct inheritance. Every paper must participate in at least one relation, and a pair may appear only once regardless of endpoint order.
+
+```yaml
+- papers: [paper-id, related-paper-id]
+  kind: architecture
+  description: Both methods use graph representations but expose them to different decoding procedures.
+```
 
 ## Scope and Paradigm
 
