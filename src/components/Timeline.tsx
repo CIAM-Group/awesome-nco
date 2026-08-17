@@ -1,4 +1,4 @@
-import { groupPapersByPublicYear } from '../lib/data'
+import { groupPapersByTimelineYear } from '../lib/data'
 import type { Paper } from '../types'
 import { TimelinePaperCard } from './TimelinePaperCard'
 
@@ -7,12 +7,12 @@ interface TimelineProps {
 }
 
 export function Timeline({ papers }: TimelineProps) {
-  const groups = groupPapersByPublicYear(papers)
+  const groups = groupPapersByTimelineYear(papers)
   let paperIndex = 0
 
   return (
     <div className="timeline-layout">
-      <aside className="year-index" aria-label="Jump to public year">
+      <aside className="year-index" aria-label="Jump to timeline year">
         <span>Year</span>
         {groups.map((group) => <a href={`#year-${group.year}`} key={group.year}>{group.year}</a>)}
       </aside>

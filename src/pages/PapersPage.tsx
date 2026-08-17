@@ -4,14 +4,16 @@ import { FilterBar } from '../components/FilterBar'
 import { InstitutionMarks } from '../components/InstitutionMarks'
 import { PageMeta } from '../components/PageMeta'
 import {
+  compactProblemFamily,
   compactVenue,
   filterPapers,
   filtersFromSearchParams,
+  formatPartialDate,
   formatPublicDate,
   papers,
   paradigmLabels,
-  publicYear,
   scopeShortLabels,
+  timelineYear,
   uniqueValues,
 } from '../lib/data'
 import type { PaperFilters } from '../types'
@@ -19,7 +21,7 @@ import type { PaperFilters } from '../types'
 export function PapersPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const families = useMemo(() => uniqueValues(papers.flatMap((paper) => paper.problem_families)), [])
-  const years = useMemo(() => uniqueValues(papers.map((paper) => String(publicYear(paper)))).sort((a, b) => Number(b) - Number(a)), [])
+  const years = useMemo(() => uniqueValues(papers.map((paper) => String(timelineYear(paper)))).sort((a, b) => Number(b) - Number(a)), [])
   const filters = filtersFromSearchParams(searchParams, {
     scopes: ['specialist', 'generalist'],
     paradigms: Object.keys(paradigmLabels),
@@ -52,7 +54,7 @@ export function PapersPage() {
             { key: 'scope', label: 'Scope', value: filters.scope, options: [{ value: 'all', label: 'All scopes' }, { value: 'specialist', label: 'Specialist' }, { value: 'generalist', label: 'Generalist' }] },
             { key: 'paradigm', label: 'Paradigm', value: filters.paradigm, options: [{ value: 'all', label: 'All paradigms' }, ...Object.entries(paradigmLabels).map(([value, label]) => ({ value, label }))] },
             { key: 'family', label: 'Problem family', value: filters.family, options: [{ value: 'all', label: 'All problem families' }, ...families.map((value) => ({ value, label: value }))] },
-            { key: 'year', label: 'First public', value: filters.year, options: [{ value: 'all', label: 'All public years' }, ...years.map((value) => ({ value, label: value }))] },
+            { key: 'year', label: 'Timeline year', value: filters.year, options: [{ value: 'all', label: 'All timeline years' }, ...years.map((value) => ({ value, label: value }))] },
           ]}
           resultCount={filtered.length}
           onChange={updateFilter}
@@ -61,7 +63,7 @@ export function PapersPage() {
         {filtered.length > 0 ? (
           <div className="paper-table-wrap">
             <table className="paper-table">
-              <thead><tr><th>Paper</th><th>Institution</th><th>Scope</th><th>Paradigm</th><th>Problem family</th><th>Public</th><th>Venue</th><th>Resources</th></tr></thead>
+              <thead><tr><th>Paper</th><th>Institution</th><th>Scope</th><th>Paradigm</th><th>Problem family</th><th>Accepted</th><th>Preprint</th><th>Venue</th><th>Resources</th></tr></thead>
               <tbody>
                 {filtered.map((paper) => (
                   <tr key={paper.id}>
@@ -69,8 +71,9 @@ export function PapersPage() {
                     <td className="paper-table__institution"><InstitutionMarks institutions={paper.institutions} /></td>
                     <td><span className={`scope-chip scope-chip--${paper.scope}`}>{scopeShortLabels[paper.scope]}</span></td>
                     <td>{paradigmLabels[paper.paradigm]}</td>
-                    <td>{paper.problem_families.join(', ')}</td>
-                    <td><time dateTime={paper.date}>{formatPublicDate(paper.date)}</time></td>
+                    <td className="paper-table__family"><span title={paper.problem_families.join(', ')} aria-label={paper.problem_families.join(', ')}>{paper.problem_families.map(compactProblemFamily).join(', ')}</span></td>
+                    <td className="paper-table__date">{paper.acceptance ? <a href={paper.acceptance.source_url} target="_blank" rel="noreferrer"><time dateTime={paper.acceptance.date}>{formatPartialDate(paper.acceptance.date)}</time></a> : <span aria-label="No formal acceptance">—</span>}</td>
+                    <td className="paper-table__date">{paper.arxiv_url ? <a href={paper.arxiv_url} target="_blank" rel="noreferrer"><time dateTime={paper.date}>{formatPublicDate(paper.date)}</time></a> : <span aria-label="No arXiv preprint">—</span>}</td>
                     <td><span className="paper-table__venue" title={paper.venue}>{compactVenue(paper.venue)}</span></td>
                     <td><div className="table-resources"><a href={paper.paper_url} target="_blank" rel="noreferrer">Paper</a>{paper.code_url && <a href={paper.code_url} target="_blank" rel="noreferrer">Code</a>}<Link to={`/papers/${paper.id}`}>Note</Link></div></td>
                   </tr>

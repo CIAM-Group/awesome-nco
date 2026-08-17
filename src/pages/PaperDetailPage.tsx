@@ -1,7 +1,7 @@
 import { ArrowLeft, Code2, ExternalLink, FileText } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
-import { assetUrl, formatPublicDate, getPaper, paradigmLabels, relatedPaperId, relationKindLabels, relationsForPaper, scopeLabels, scopeShortLabels } from '../lib/data'
+import { assetUrl, formatPartialDate, formatPublicDate, getPaper, paradigmLabels, relatedPaperId, relationKindLabels, relationsForPaper, scopeLabels, scopeShortLabels } from '../lib/data'
 
 export function PaperDetailPage() {
   const { id } = useParams()
@@ -14,7 +14,7 @@ export function PaperDetailPage() {
       <PageMeta title={paper.short_title} description={paper.summary} />
       <Link className="back-link" to={`/${paper.scope}`}><ArrowLeft size={15} aria-hidden="true" /> Back to {scopeShortLabels[paper.scope]} timeline</Link>
       <header className="paper-detail__header">
-        <p className="eyebrow">{scopeLabels[paper.scope]} · First public {formatPublicDate(paper.date)}</p>
+        <p className="eyebrow">{scopeLabels[paper.scope]}</p>
         <h1>{paper.title}</h1>
         <p>{paper.authors.join(' · ')}</p>
       </header>
@@ -23,6 +23,8 @@ export function PaperDetailPage() {
         <aside className="paper-metadata" aria-label="Paper metadata">
           <dl>
             <div><dt>Venue</dt><dd>{paper.venue} {paper.year}</dd></div>
+            <div><dt>Accepted</dt><dd>{paper.acceptance ? <a href={paper.acceptance.source_url} target="_blank" rel="noreferrer"><time dateTime={paper.acceptance.date}>{formatPartialDate(paper.acceptance.date)}</time></a> : '—'}</dd></div>
+            <div><dt>Preprint</dt><dd>{paper.arxiv_url ? <a href={paper.arxiv_url} target="_blank" rel="noreferrer"><time dateTime={paper.date}>{formatPublicDate(paper.date)}</time></a> : '—'}</dd></div>
             <div><dt>Scope</dt><dd>{scopeShortLabels[paper.scope]}</dd></div>
             <div><dt>Paradigm</dt><dd>{paradigmLabels[paper.paradigm]}</dd></div>
             <div><dt>Institutions</dt><dd>{paper.institutions.join(' · ')}</dd></div>
