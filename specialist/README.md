@@ -19,6 +19,285 @@ The paradigm describes the proposed solver pipeline, not every auxiliary operati
 Select a paper title to open its research note.
 
 <!-- GENERATED_PAPER_INDEX_START -->
+### [Learning to Segment for Vehicle Routing Problems](l2seg.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Capacitated Vehicle Routing Problem
+- **Venue:** ICLR
+- **Year:** 2026
+- **First public:** 2025-06-22
+- **Institutions:** Massachusetts Institute of Technology
+
+### [Improving Generalization of Neural Combinatorial Optimization for Vehicle Routing Problems via Test-Time Projection Learning](ttpl.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2025
+- **First public:** 2025-06-03
+- **Institutions:** Southern University of Science and Technology
+
+### [Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](constraint-tightness.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem; Vehicle Routing Problem with Time Windows
+- **Venue:** NeurIPS
+- **Year:** 2025
+- **First public:** 2025-05-30
+- **Institutions:** Southern University of Science and Technology
+
+### [Generation as Search Operator for Test-Time Scaling of Diffusion-Based Combinatorial Optimization](gensco.md)
+
+- **Paradigm:** Constructive + Improvement
+- **Problems:** Traveling Salesman Problem
+- **Venue:** NeurIPS
+- **Year:** 2025
+- **First public:** 2025-05-23
+- **Institutions:** Shanghai Jiao Tong University
+
+### [Learning to Insert for Constructive Neural Vehicle Routing Solver](l2c-insert.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2025
+- **First public:** 2025-05-20
+- **Institutions:** Southern University of Science and Technology
+
+### [Learning to Reduce Search Space for Generalizable Neural Routing Solver](l2r.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** KDD
+- **Year:** 2026
+- **First public:** 2025-03-05
+- **Institutions:** Southern University of Science and Technology; City University of Hong Kong
+
+### [Destroy and Repair Using Hyper-Graphs for Routing](drhg.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** AAAI
+- **Year:** 2025
+- **First public:** 2025-02-22
+- **Institutions:** Southern University of Science and Technology
+
+### [DGL: Dynamic Global-Local Information Aggregation for Scalable VRP Generalization with Self-Improvement Learning](dgl.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem
+- **Venue:** IJCAI
+- **Year:** 2025
+- **First public:** 2025-01-15
+- **Institutions:** Nanyang Technological University
+
+### [Neural Deconstruction Search for Vehicle Routing Problems](nds.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Capacitated Vehicle Routing Problem; Vehicle Routing Problem with Time Windows
+- **Venue:** TMLR
+- **Year:** 2025
+- **First public:** 2025-01-07
+- **Institutions:** TU Dortmund University
+
+### [Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization](fast-t2t.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** NeurIPS
+- **Year:** 2024
+- **First public:** 2024-12-09
+- **Institutions:** Shanghai Jiao Tong University
+
+### [Learning to Handle Complex Constraints for Vehicle Routing Problems](pip.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Vehicle Routing Problem with Time Windows; Orienteering Problem
+- **Venue:** NeurIPS
+- **Year:** 2024
+- **First public:** 2024-10-28
+- **Institutions:** Nanyang Technological University
+
+### [Adversarial Generative Flow Network for Solving Vehicle Routing Problems](agfn.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICLR
+- **Year:** 2025
+- **First public:** 2024-09-28
+- **Institutions:** Nanyang Technological University
+
+### [Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems](sil.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICLR
+- **Year:** 2025
+- **First public:** 2024-09-26
+- **Institutions:** Southern University of Science and Technology
+
+### [Rethinking Light Decoder-based Solvers for Vehicle Routing Problems](reld.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICLR
+- **Year:** 2025
+- **First public:** 2024-09-26
+- **Institutions:** Nanyang Technological University
+
+### [Hierarchical Neural Constructive Solver for Real-world TSP Scenarios](hncs.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** KDD
+- **Year:** 2024
+- **First public:** 2024-08-07
+- **Institutions:** National University of Singapore
+
+### [UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems](udc.md)
+
+- **Paradigm:** Constructive + Improvement
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2024
+- **First public:** 2024-07-01
+- **Institutions:** Southern University of Science and Technology
+
+### [Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems](softdist.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** ICML
+- **Year:** 2024
+- **First public:** 2024-06-02
+- **Institutions:** Microsoft Research Asia
+
+### [DPN: Decoupling Partition and Navigation for Neural Solvers of Min-max Vehicle Routing Problems](dpn.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Min-max Multiple Traveling Salesman Problem
+- **Venue:** ICML
+- **Year:** 2024
+- **First public:** 2024-05-27
+- **Institutions:** Southern University of Science and Technology
+
+### [Instance-Conditioned Adaptation for Large-Scale Generalization of Neural Routing Solver](icam.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem; Asymmetric Traveling Salesman Problem
+- **Venue:** IEEE T-ITS
+- **Year:** 2026
+- **First public:** 2024-05-03
+- **Institutions:** Southern University of Science and Technology; City University of Hong Kong
+
+### [Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferable Local Policy](elg.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** IJCAI
+- **Year:** 2024
+- **First public:** 2024-04-11
+- **Institutions:** University of Science and Technology of China
+
+### [Less Is More -- On the Importance of Sparsification for Transformers and Graph Neural Networks for TSP](less-is-more.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** arXiv
+- **Year:** 2024
+- **First public:** 2024-03-25
+- **Institutions:** Chalmers University of Technology
+
+### [Self-Improvement for Neural Combinatorial Optimization: Sample without Replacement, but Improvement](gumbeldore.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** TMLR
+- **Year:** 2024
+- **First public:** 2024-03-22
+- **Institutions:** German Cancer Research Center
+
+### [Ant Colony Sampling with GFlowNets for Combinatorial Optimization](gfacs.md)
+
+- **Paradigm:** Constructive + Improvement
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** AISTATS
+- **Year:** 2025
+- **First public:** 2024-03-11
+- **Institutions:** KAIST; Mila
+
+### [PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization](polynet.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICLR
+- **Year:** 2025
+- **First public:** 2024-02-21
+- **Institutions:** TU Dortmund University
+
+### [INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer](invit.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICML
+- **Year:** 2024
+- **First public:** 2024-02-04
+- **Institutions:** Shanghai Jiao Tong University
+
+### [GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time](glop.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Asymmetric Traveling Salesman Problem; Capacitated Vehicle Routing Problem; Prize Collecting Traveling Salesman Problem
+- **Venue:** AAAI
+- **Year:** 2024
+- **First public:** 2023-12-13
+- **Institutions:** Soochow University; Singapore Management University
+
+### [T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization](t2t.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-12-11
+- **Institutions:** Shanghai Jiao Tong University
+
+### [Combinatorial Optimization with Policy Adaptation using Latent Space Search](compass.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-11-13
+- **Institutions:** InstaDeep
+
+### [Distance-Aware Attention Reshaping for Enhancing Generalization of Neural Solvers](dar.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** IEEE TNNLS
+- **Year:** 2025
+- **First public:** 2023-11-01
+- **Institutions:** South China University of Technology; Victoria University of Wellington
+
+### [Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt](neuopt.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-10-27
+- **Institutions:** Nanyang Technological University
+
+### [Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization](lehd.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-10-12
+- **Institutions:** Southern University of Science and Technology; City University of Hong Kong
+
 ### [DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization](deepaco.md)
 
 - **Paradigm:** Constructive + Improvement
@@ -27,6 +306,114 @@ Select a paper title to open its research note.
 - **Year:** 2023
 - **First public:** 2023-09-25
 - **Institutions:** Soochow University; Singapore Management University; Tsinghua University
+
+### [Efficient Neural Collaborative Search for Pickup and Delivery Problems](ncs.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Pickup and Delivery Problem; Pickup and Delivery Problem with Time Windows
+- **Venue:** IEEE TPAMI
+- **Year:** 2024
+- **First public:** 2023-08-01
+- **Institutions:** Nanyang Technological University
+
+### [Learning Feature Embedding Refiner for Solving Vehicle Routing Problems](fer.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** IEEE TNNLS
+- **Year:** 2024
+- **First public:** 2023-06-15
+- **Institutions:** Nanyang Technological University
+
+### [Meta-SAGE: Scale Meta-Learning Scheduled Adaptation with Guided Exploration for Mitigating Scale Shift on Combinatorial Optimization](meta-sage.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** ICML
+- **Year:** 2023
+- **First public:** 2023-06-05
+- **Institutions:** KAIST
+
+### [Towards Omni-generalizable Neural Methods for Vehicle Routing Problems](omni-vrp.md)
+
+- **Paradigm:** Constructive + Improvement
+- **Problems:** Capacitated Vehicle Routing Problem; Vehicle Routing Problem with Time Windows
+- **Venue:** ICML
+- **Year:** 2023
+- **First public:** 2023-05-31
+- **Institutions:** Nanyang Technological University
+
+### [Select and Optimize: Learning to Solve Large-Scale TSP Instances](select-and-optimize.md)
+
+- **Paradigm:** Improvement
+- **Problems:** Traveling Salesman Problem
+- **Venue:** AISTATS
+- **Year:** 2023
+- **First public:** 2023-04-25
+- **Institutions:** Hikvision Research Institute
+
+### [H-TSP: Hierarchically Solving the Large-Scale Traveling Salesman Problem](h-tsp.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** AAAI
+- **Year:** 2023
+- **First public:** 2023-04-19
+- **Institutions:** Huazhong University of Science and Technology; Microsoft Research Asia
+
+### [Pointerformer: Deep Reinforced Multi-Pointer Transformer for the Traveling Salesman Problem](pointerformer.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** AAAI
+- **Year:** 2023
+- **First public:** 2023-04-19
+- **Institutions:** Huazhong University of Science and Technology; Microsoft Research Asia
+
+### [Unsupervised Learning for Solving the Travelling Salesman Problem](utsp.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-03-19
+- **Institutions:** Cornell University
+
+### [ASP: Learn a Universal Neural Solver!](asp.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** IEEE TPAMI
+- **Year:** 2024
+- **First public:** 2023-03-01
+- **Institutions:** Peking University
+
+### [DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization](difusco.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-02-16
+- **Institutions:** Carnegie Mellon University
+
+### [Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time](tam.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem; Traveling Salesman Problem
+- **Venue:** ICLR
+- **Year:** 2023
+- **First public:** 2023-02-01
+- **Institutions:** Alibaba Group
+
+### [BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization](bq-nco.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Traveling Salesman Problem; Capacitated Vehicle Routing Problem
+- **Venue:** NeurIPS
+- **Year:** 2023
+- **First public:** 2023-01-09
+- **Institutions:** NAVER LABS Europe
 
 ### [DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems](dimes.md)
 

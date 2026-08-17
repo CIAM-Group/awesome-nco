@@ -126,13 +126,31 @@ export function RelationsPage() {
     }
   }, [filteredRelations])
 
+  const labelledNodeIds = useMemo(() => {
+    const ids = new Set(graphData.nodes.filter((node) => node.degree >= 5).map((node) => node.id))
+    if (!focusId) return ids
+
+    ids.add(focusId)
+    for (const relation of filteredRelations) {
+      if (!relation.papers.includes(focusId)) continue
+      ids.add(relation.papers[0])
+      ids.add(relation.papers[1])
+    }
+    return ids
+  }, [filteredRelations, focusId, graphData.nodes])
+
   useEffect(() => {
     const linkForce = graphRef.current?.d3Force('link')
-    linkForce?.distance(width < 600 ? 72 : 104)
+    linkForce?.distance(width < 600 ? 86 : 132)
     const chargeForce = graphRef.current?.d3Force('charge')
-    chargeForce?.strength(width < 600 ? -92 : -145)
+    chargeForce?.strength(width < 600 ? -128 : -225)
     graphRef.current?.d3ReheatSimulation()
   }, [graphData, width])
+
+  useEffect(() => {
+    if (!focusId || graphData.nodes.some((node) => node.id === focusId)) return
+    setFocusId('')
+  }, [focusId, graphData.nodes])
 
   function updateFilter(key: string, value: string) {
     const param = key === 'query' ? 'q' : key
@@ -185,7 +203,7 @@ export function RelationsPage() {
               <ForceGraph2D
                 ref={graphRef}
                 width={width}
-                height={width < 600 ? 460 : 680}
+                height={width < 600 ? 500 : 820}
                 graphData={graphData}
                 backgroundColor="#fcfbf8"
                 nodeVal={(node: any) => relationNodeValue(node.degree)}
@@ -198,11 +216,12 @@ export function RelationsPage() {
                 linkCurvature={(link: any) => relationKindStyles[link.kind as RelationKind].curvature}
                 linkCanvasObjectMode={() => 'after'}
                 linkCanvasObject={(link: any, context, globalScale) => drawRelationMarker(link, context, globalScale)}
-                cooldownTicks={140}
-                onEngineStop={() => graphRef.current?.zoomToFit(450, width < 600 ? 46 : 82)}
+                cooldownTicks={220}
+                onEngineStop={() => graphRef.current?.zoomToFit(600, width < 600 ? 54 : 108)}
                 onNodeClick={(node: any) => navigate(`/papers/${node.id}`)}
                 nodeCanvasObjectMode={() => 'after'}
                 nodeCanvasObject={(node: any, context, globalScale) => {
+                  if (!labelledNodeIds.has(node.id)) return
                   const fontSize = Math.max(3.5, 12 / globalScale)
                   context.font = `600 ${fontSize}px IBM Plex Sans`
                   context.textAlign = 'center'
