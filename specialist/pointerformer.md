@@ -13,6 +13,9 @@ authors:
   - "Jiang Bian"
 year: 2023
 date: 2023-04-19
+acceptance:
+  date: "2022-11-18"
+  source_url: "https://aaai-23.aaai.org/aaai23call/"
 venue: "AAAI"
 paper_url: "https://ojs.aaai.org/index.php/AAAI/article/view/25982"
 arxiv_url: "https://arxiv.org/abs/2304.09407"

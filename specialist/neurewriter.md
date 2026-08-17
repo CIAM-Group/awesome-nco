@@ -7,6 +7,9 @@ authors:
   - Yuandong Tian
 year: 2019
 date: 2018-09-30
+acceptance:
+  date: "2019-09-04"
+  source_url: "https://neurips.cc/Conferences/2019/Dates"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2019/hash/131f383b434fdf48079bff1e44e2d9a5-Abstract.html
 arxiv_url: https://arxiv.org/abs/1810.00337

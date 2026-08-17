@@ -10,6 +10,9 @@ authors:
   - "Yuming Deng"
 year: 2023
 date: 2023-02-01
+acceptance:
+  date: "2023-01-21"
+  source_url: "https://iclr.cc/Conferences/2023/Dates"
 venue: "ICLR"
 paper_url: "https://openreview.net/forum?id=6ZajpxqTlQ"
 institutions:

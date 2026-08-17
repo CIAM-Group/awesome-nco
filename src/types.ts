@@ -9,6 +9,11 @@ export interface PaperFigure {
   source_url: string
 }
 
+export interface PaperAcceptance {
+  date: string
+  source_url: string
+}
+
 export interface Paper {
   id: string
   short_title: string
@@ -16,6 +21,7 @@ export interface Paper {
   authors: string[]
   year: number
   date: string
+  acceptance?: PaperAcceptance
   venue: string
   paper_url: string
   arxiv_url?: string

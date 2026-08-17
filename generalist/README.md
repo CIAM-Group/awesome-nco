@@ -32,17 +32,9 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Vehicle Routing Problem with Time Windows; Pickup and Delivery Vehicle Routing Problem
 - **Venue:** ICML
 - **Year:** 2026
-- **First public:** 2025-09-27
+- **Accepted:** [2026-04-30](https://icml.cc/Conferences/2026/Dates)
+- **arXiv:** [2025-09-27](https://arxiv.org/abs/2509.23413)
 - **Institutions:** Southern University of Science and Technology
-
-### [SHIELD: Multi-task Multi-distribution Vehicle Routing Solver with Sparsity and Hierarchy](shield.md)
-
-- **Paradigm:** Constructive
-- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Time Windows
-- **Venue:** ICML
-- **Year:** 2025
-- **First public:** 2025-06-10
-- **Institutions:** National University of Singapore
 
 ### [MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver](mtl-kd.md)
 
@@ -50,8 +42,29 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Pickup and Delivery Vehicle Routing Problem
 - **Venue:** NeurIPS
 - **Year:** 2025
-- **First public:** 2025-06-03
+- **Accepted:** [2025-09-18](https://neurips.cc/Conferences/2025/CallForPapers)
+- **arXiv:** [2025-06-03](https://arxiv.org/abs/2506.02935)
 - **Institutions:** Southern University of Science and Technology
+
+### [RouteFinder: Towards Foundation Models for Vehicle Routing Problems](routefinder.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Time Windows; Pickup and Delivery Vehicle Routing Problem
+- **Venue:** TMLR
+- **Year:** 2025
+- **Accepted:** [2025-08](https://openreview.net/forum?id=QzGLoaOPiY)
+- **arXiv:** [2024-06-21](https://arxiv.org/abs/2406.15007)
+- **Institutions:** TU Dortmund University; KAIST
+
+### [SHIELD: Multi-task Multi-distribution Vehicle Routing Solver with Sparsity and Hierarchy](shield.md)
+
+- **Paradigm:** Constructive
+- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Time Windows
+- **Venue:** ICML
+- **Year:** 2025
+- **Accepted:** [2025-05-01](https://icml.cc/Conferences/2025/Dates)
+- **arXiv:** [2025-06-10](https://arxiv.org/abs/2506.08424)
+- **Institutions:** National University of Singapore
 
 ### [A Mixed-Curvature based Pre-training Paradigm for Multi-Task Vehicle Routing Solver](mixed-curvature.md)
 
@@ -59,7 +72,8 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Backhauls
 - **Venue:** ICML
 - **Year:** 2025
-- **First public:** 2025-01-28
+- **Accepted:** [2025-05-01](https://icml.cc/Conferences/2025/Dates)
+- **arXiv:** —
 - **Institutions:** Nanyang Technological University
 
 ### [CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention](cada.md)
@@ -68,7 +82,8 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Backhauls; Pickup and Delivery Vehicle Routing Problem
 - **Venue:** ICML
 - **Year:** 2025
-- **First public:** 2024-11-30
+- **Accepted:** [2025-05-01](https://icml.cc/Conferences/2025/Dates)
+- **arXiv:** [2024-11-30](https://arxiv.org/abs/2412.00346)
 - **Institutions:** Southern University of Science and Technology
 
 ### [GOAL: A Generalist Combinatorial Optimization Agent Learner](goal.md)
@@ -77,17 +92,19 @@ Select a paper title to open its research note.
 - **Problems:** Asymmetric Traveling Salesman Problem; Capacitated Vehicle Routing Problem; Capacitated Vehicle Routing Problem with Time Windows; Orienteering Problem; Job Shop Scheduling Problem; Uniform Machine Scheduling Problem; Knapsack Problem; Minimum Vertex Cover
 - **Venue:** ICLR
 - **Year:** 2025
-- **First public:** 2024-06-21
+- **Accepted:** [2025-01-22](https://iclr.cc/Conferences/2025/Dates)
+- **arXiv:** [2024-06-21](https://arxiv.org/abs/2406.15079)
 - **Institutions:** NAVER LABS Europe
 
-### [RouteFinder: Towards Foundation Models for Vehicle Routing Problems](routefinder.md)
+### [Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization](mtpomo.md)
 
 - **Paradigm:** Constructive
-- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Time Windows; Pickup and Delivery Vehicle Routing Problem
-- **Venue:** TMLR
-- **Year:** 2025
-- **First public:** 2024-06-21
-- **Institutions:** TU Dortmund University; KAIST
+- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Backhauls; Pickup and Delivery Vehicle Routing Problem
+- **Venue:** KDD
+- **Year:** 2024
+- **Accepted:** [2024-05-16](https://www.kdd.org/kdd2024/research-track-call-for-papers/)
+- **arXiv:** [2024-02-23](https://arxiv.org/abs/2402.16891)
+- **Institutions:** Southern University of Science and Technology
 
 ### [MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts](mvmoe.md)
 
@@ -95,7 +112,8 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Backhauls; Pickup and Delivery Vehicle Routing Problem
 - **Venue:** ICML
 - **Year:** 2024
-- **First public:** 2024-05-02
+- **Accepted:** [2024-05-01](https://icml.cc/Conferences/2024/Dates)
+- **arXiv:** [2024-05-02](https://arxiv.org/abs/2405.01029)
 - **Institutions:** Nanyang Technological University
 
 ### [Cross-Problem Learning for Solving Vehicle Routing Problems](cross-problem-learning.md)
@@ -104,17 +122,9 @@ Select a paper title to open its research note.
 - **Problems:** Capacitated Vehicle Routing Problem; Vehicle Routing Problem with Time Windows; Orienteering Problem
 - **Venue:** IJCAI
 - **Year:** 2024
-- **First public:** 2024-04-17
+- **Accepted:** [2024-04-16](https://ijcai24.org/call-for-papers/index.html)
+- **arXiv:** [2024-04-17](https://arxiv.org/abs/2404.11677)
 - **Institutions:** Nanyang Technological University
-
-### [Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization](mtpomo.md)
-
-- **Paradigm:** Constructive
-- **Problems:** Capacitated Vehicle Routing Problem; Open Vehicle Routing Problem; Vehicle Routing Problem with Backhauls; Pickup and Delivery Vehicle Routing Problem
-- **Venue:** KDD
-- **Year:** 2024
-- **First public:** 2024-02-23
-- **Institutions:** Southern University of Science and Technology
 <!-- GENERATED_PAPER_INDEX_END -->
 
 ## Adding a Generalist Solver

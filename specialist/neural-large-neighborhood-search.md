@@ -7,6 +7,9 @@ authors:
   - Kevin Tierney
 year: 2020
 date: 2019-11-21
+acceptance:
+  date: "2020-01-15"
+  source_url: "https://ecai2020.eu/call-for-papers/mainconference/"
 venue: ECAI
 paper_url: https://ebooks.iospress.nl/doi/10.3233/FAIA200283
 arxiv_url: https://arxiv.org/abs/1911.09539

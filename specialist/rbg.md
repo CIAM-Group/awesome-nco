@@ -5,6 +5,9 @@ title: 'RBG: Hierarchically Solving Large-Scale Routing Problems in Logistic Sys
 authors: [Zefang Zong, Hansen Wang, Jingwei Wang, Meng Zheng, Yong Li]
 year: 2022
 date: 2022-08-12
+acceptance:
+  date: "2022-05-18"
+  source_url: "https://kdd.org/kdd2022/cfpResearch.html"
 venue: KDD
 paper_url: https://doi.org/10.1145/3534678.3539037
 institutions: [Tsinghua University, Beijing Tsingroc, Hitachi China Research and Development Corporation]

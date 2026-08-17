@@ -5,6 +5,9 @@ title: 'Simulation-Guided Beam Search for Neural Combinatorial Optimization'
 authors: [Jinho Choo, Yeong-Dae Kwon, Jihoon Kim, Jeongwoo Jae, André Hottung, Kevin Tierney, Youngjune Gwon]
 year: 2022
 date: 2022-07-13
+acceptance:
+  date: "2022-09-14"
+  source_url: "https://neurips.cc/Conferences/2022/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/39b9b60f0d149eabd1fff2d7c7d5afc4-Abstract-Conference.html
 arxiv_url: https://arxiv.org/abs/2207.06190

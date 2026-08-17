@@ -12,6 +12,9 @@ authors:
   - "Qingfu Zhang"
 year: 2025
 date: 2025-05-20
+acceptance:
+  date: "2025-09-18"
+  source_url: "https://neurips.cc/Conferences/2025/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7e3192a54b4ce5855a90dc182eac2036-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2505.13904"

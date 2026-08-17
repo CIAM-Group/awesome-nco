@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { compactVenue, formatPublicDate, paradigmLabels, relationCount } from '../lib/data'
+import { formatPartialDate, formatPublicDate, paperTimelineLabel, paradigmLabels, relationCount } from '../lib/data'
 import type { Paper } from '../types'
 import { InstitutionMarks } from './InstitutionMarks'
 
@@ -15,8 +15,10 @@ export function TimelinePaperCard({ paper }: TimelinePaperCardProps) {
       <Link to={`/papers/${paper.id}`} aria-label={`Read the ${paper.short_title} research note`}>
         <div className="timeline-paper-card__topline">
           <InstitutionMarks institutions={paper.institutions} />
-          <span className="timeline-paper-card__public" title={`${formatPublicDate(paper.date)} · ${paper.venue}`}>
-            <time dateTime={paper.date}>{formatPublicDate(paper.date)}</time> · {compactVenue(paper.venue)}
+          <span className="timeline-paper-card__public" title={paperTimelineLabel(paper)}>
+            {paper.acceptance && <time dateTime={paper.acceptance.date}>Accepted {formatPartialDate(paper.acceptance.date)}</time>}
+            {paper.acceptance && paper.arxiv_url && ' · '}
+            {paper.arxiv_url && <time dateTime={paper.date}>arXiv {formatPublicDate(paper.date)}</time>}
           </span>
         </div>
         <h3>{paper.short_title}</h3>

@@ -12,6 +12,9 @@ authors:
   - "Jie Zhang"
 year: 2024
 date: 2024-10-28
+acceptance:
+  date: "2024-09-25"
+  source_url: "https://neurips.cc/Conferences/2024/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a9d2a5fd12d34250c21b5e4fa8d906b0-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2410.21066"

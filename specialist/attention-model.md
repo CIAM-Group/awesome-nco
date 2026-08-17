@@ -8,6 +8,9 @@ authors:
   - Max Welling
 year: 2019
 date: 2018-03-22
+acceptance:
+  date: "2018-12-22"
+  source_url: "https://iclr.cc/Conferences/2019/CallForPapers"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=ByxBFsRqYm
 arxiv_url: https://arxiv.org/abs/1803.08475

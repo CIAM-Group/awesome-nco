@@ -2,12 +2,12 @@ import { ArrowRight, BookOpenText, Layers3, SearchCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
 import { PaperCard } from '../components/PaperCard'
-import { papers, papersForScope, scopeDescriptions } from '../lib/data'
+import { papers, papersForScope, scopeDescriptions, sortPapersByFirstPublicNewestFirst } from '../lib/data'
 
 export function HomePage() {
   const specialistCount = papersForScope('specialist').length
   const generalistCount = papersForScope('generalist').length
-  const latest = papers.slice(0, 3)
+  const latest = sortPapersByFirstPublicNewestFirst(papers).slice(0, 3)
 
   return (
     <div className="home-page">

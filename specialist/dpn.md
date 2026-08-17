@@ -11,6 +11,9 @@ authors:
   - "Ke Tang"
 year: 2024
 date: 2024-05-27
+acceptance:
+  date: "2024-05-01"
+  source_url: "https://icml.cc/Conferences/2024/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v235/zheng24m.html"
 arxiv_url: "https://arxiv.org/abs/2405.17272"

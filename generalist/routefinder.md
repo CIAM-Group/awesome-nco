@@ -14,6 +14,9 @@ authors:
   - "Jinkyoo Park"
 year: 2025
 date: 2024-06-21
+acceptance:
+  date: "2025-08"
+  source_url: "https://openreview.net/forum?id=QzGLoaOPiY"
 venue: "TMLR"
 paper_url: "https://openreview.net/forum?id=QzGLoaOPiY"
 arxiv_url: "https://arxiv.org/abs/2406.15007"

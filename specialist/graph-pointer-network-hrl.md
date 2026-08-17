@@ -10,6 +10,9 @@ authors:
   - Iddo Drori
 year: 2020
 date: 2019-11-12
+acceptance:
+  date: "2019-12-06"
+  source_url: "https://deep-learning-graphs.bitbucket.io/dlg-aaai20/"
 venue: 'AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications'
 paper_url: https://arxiv.org/abs/1911.04936
 arxiv_url: https://arxiv.org/abs/1911.04936

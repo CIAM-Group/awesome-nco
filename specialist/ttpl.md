@@ -9,6 +9,9 @@ authors:
   - "Zhenkun Wang"
 year: 2025
 date: 2025-06-03
+acceptance:
+  date: "2025-09-18"
+  source_url: "https://neurips.cc/Conferences/2025/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6edd46d69ef91f4555d67f7b321d6902-Abstract-Conference.html"
 code_url: "https://github.com/CIAM-Group/TTPL"

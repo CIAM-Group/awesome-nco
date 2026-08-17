@@ -19,12 +19,34 @@ export const requiredSections = [
 ]
 
 const isoDate = /^\d{4}-\d{2}-\d{2}$/
+const partialIsoDate = /^\d{4}(?:-\d{2}(?:-\d{2})?)?$/
 
 function isRealIsoDate(value) {
   if (!isoDate.test(value)) return false
   const date = new Date(`${value}T00:00:00Z`)
   return !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value
 }
+
+function isRealPartialIsoDate(value) {
+  if (!partialIsoDate.test(value)) return false
+  const year = Number(value.slice(0, 4))
+  if (year < 1900 || year > 2200) return false
+  if (value.length === 4) return true
+
+  const month = Number(value.slice(5, 7))
+  if (month < 1 || month > 12) return false
+  if (value.length === 7) return true
+
+  return isRealIsoDate(value)
+}
+
+const acceptanceSchema = z.object({
+  date: z.preprocess(
+    (value) => value instanceof Date ? value.toISOString().slice(0, 10) : typeof value === 'number' ? String(value) : value,
+    z.string().refine(isRealPartialIsoDate, 'acceptance.date must be a real YYYY, YYYY-MM, or YYYY-MM-DD date'),
+  ),
+  source_url: z.string().url(),
+}).strict()
 
 export const paperSchema = z.object({
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -36,6 +58,7 @@ export const paperSchema = z.object({
     (value) => value instanceof Date ? value.toISOString().slice(0, 10) : value,
     z.string().refine(isRealIsoDate, 'date must be a real YYYY-MM-DD date'),
   ),
+  acceptance: acceptanceSchema.optional(),
   venue: z.string().min(1),
   paper_url: z.string().url(),
   arxiv_url: z.string().url().optional(),
@@ -52,7 +75,22 @@ export const paperSchema = z.object({
     caption: z.string().min(1),
     source_url: z.string().url(),
   }).strict().optional(),
-}).strict()
+}).strict().superRefine((paper, context) => {
+  if (paper.venue === 'arXiv' && paper.acceptance) {
+    context.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['acceptance'],
+      message: 'arXiv-only papers must not declare acceptance metadata',
+    })
+  }
+  if (paper.venue !== 'arXiv' && !paper.acceptance) {
+    context.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['acceptance'],
+      message: 'formally published papers must declare acceptance metadata',
+    })
+  }
+})
 
 export const relationSchema = z.object({
   papers: z.tuple([z.string().min(1), z.string().min(1)]),
@@ -96,7 +134,8 @@ export function renderMarkdown(markdown) {
 }
 
 export function parsePaper(raw, { filePath, expectedScope }) {
-  const parsed = matter(raw, { engines: { yaml: (source) => YAML.parse(source) } })
+  const normalizedRaw = raw.replace(/\r\n?/g, '\n')
+  const parsed = matter(normalizedRaw, { engines: { yaml: (source) => YAML.parse(source) } })
   const metadata = paperSchema.parse(parsed.data)
   const filename = path.basename(filePath, path.extname(filePath))
 
@@ -120,7 +159,25 @@ export function parsePaper(raw, { filePath, expectedScope }) {
   }
 }
 
+function sortablePartialDate(date) {
+  if (date.length === 4) return `${date}-00-00`
+  if (date.length === 7) return `${date}-00`
+  return date
+}
+
+export function timelineDate(paper) {
+  return paper.acceptance?.date ?? paper.date
+}
+
 export function sortPapersNewestFirst(papers) {
+  return [...papers].sort((first, second) => (
+    sortablePartialDate(timelineDate(second)).localeCompare(sortablePartialDate(timelineDate(first)))
+    || second.date.localeCompare(first.date)
+    || first.title.localeCompare(second.title)
+  ))
+}
+
+export function sortPapersByFirstPublicNewestFirst(papers) {
   return [...papers].sort((first, second) => second.date.localeCompare(first.date) || first.title.localeCompare(second.title))
 }
 
@@ -198,5 +255,5 @@ export async function loadRelations(root = process.cwd(), papers) {
 export async function loadContent(root = process.cwd()) {
   const papers = await loadPapers(root)
   const relations = await loadRelations(root, papers)
-  return { version: 2, papers, relations }
+  return { version: 3, papers, relations }
 }

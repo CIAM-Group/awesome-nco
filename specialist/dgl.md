@@ -14,6 +14,9 @@ authors:
   - "Ying Jiang"
 year: 2025
 date: 2025-01-15
+acceptance:
+  date: "2025-04-28"
+  source_url: "https://2025.ijcai.org/important-dates/"
 venue: "IJCAI"
 paper_url: "https://www.ijcai.org/proceedings/2025/964"
 code_url: "https://github.com/wuyuesong/DGL"

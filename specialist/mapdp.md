@@ -5,6 +5,9 @@ title: 'MAPDP: Cooperative Multi-Agent Reinforcement Learning to Solve Pickup an
 authors: [Zefang Zong, Meng Zheng, Yong Li, Depeng Jin]
 year: 2022
 date: 2022-06-28
+acceptance:
+  date: "2021-11-29"
+  source_url: "https://aaai.org/conference/aaai/aaai-22/"
 venue: AAAI
 paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/21236
 institutions: [Tsinghua University, Hitachi China Research and Development Corporation]

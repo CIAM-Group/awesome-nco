@@ -10,6 +10,9 @@ authors:
   - "Zhenkun Wang"
 year: 2025
 date: 2024-11-30
+acceptance:
+  date: "2025-05-01"
+  source_url: "https://icml.cc/Conferences/2025/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v267/li25bi.html"
 arxiv_url: "https://arxiv.org/abs/2412.00346"

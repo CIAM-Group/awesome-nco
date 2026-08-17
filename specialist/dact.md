@@ -12,6 +12,9 @@ authors:
   - Jing Tang
 year: 2021
 date: 2021-10-06
+acceptance:
+  date: "2021-09-28"
+  source_url: "https://neurips.cc/Conferences/2021/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2021/hash/5c53292c032b6cb8510041c54274e65f-Abstract.html
 arxiv_url: https://arxiv.org/abs/2110.02544

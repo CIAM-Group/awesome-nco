@@ -10,6 +10,9 @@ authors:
   - Le Song
 year: 2017
 date: 2017-04-05
+acceptance:
+  date: "2017-09-04"
+  source_url: "https://neurips.cc/Conferences/2017/Dates"
 venue: NIPS
 paper_url: https://papers.nips.cc/paper_files/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html
 arxiv_url: https://arxiv.org/abs/1704.01665

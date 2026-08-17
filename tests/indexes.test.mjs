@@ -9,6 +9,8 @@ const paper = {
   venue: 'ICLR',
   year: 2025,
   date: '2024-05-01',
+  acceptance: { date: '2025-01-22', source_url: 'https://example.com/decision' },
+  arxiv_url: 'https://arxiv.org/abs/2405.00001',
   institutions: ['Example University'],
 }
 
@@ -17,13 +19,15 @@ describe('README index generation', () => {
     const rendered = renderPaperIndex([paper])
     expect(rendered).toContain('### [Example Paper](example.md)')
     expect(rendered).toContain('- **Paradigm:** Constructive')
+    expect(rendered).toContain('- **Accepted:** [2025-01-22](https://example.com/decision)')
+    expect(rendered).toContain('- **arXiv:** [2024-05-01](https://arxiv.org/abs/2405.00001)')
     expect(rendered).not.toContain('|')
   })
 
-  it('orders entries by first-public date with the newest first', () => {
+  it('orders entries by acceptance date with the newest first', () => {
     const rendered = renderPaperIndex([
-      { ...paper, id: 'older', title: 'Older Paper', date: '2020-01-01' },
-      { ...paper, id: 'newer', title: 'Newer Paper', date: '2025-01-01' },
+      { ...paper, id: 'older', title: 'Older Paper', date: '2025-01-01', acceptance: { date: '2024', source_url: 'https://example.com/older' } },
+      { ...paper, id: 'newer', title: 'Newer Paper', date: '2020-01-01', acceptance: { date: '2025-01', source_url: 'https://example.com/newer' } },
     ])
     expect(rendered.indexOf('Newer Paper')).toBeLessThan(rendered.indexOf('Older Paper'))
   })

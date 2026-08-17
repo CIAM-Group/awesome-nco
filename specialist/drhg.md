@@ -9,6 +9,9 @@ authors:
   - "Qingfu Zhang"
 year: 2025
 date: 2025-02-22
+acceptance:
+  date: "2024-12-09"
+  source_url: "https://aaai.org/conference/aaai/aaai-25/"
 venue: "AAAI"
 paper_url: "https://ojs.aaai.org/index.php/AAAI/article/view/34018"
 arxiv_url: "https://arxiv.org/abs/2502.16170"

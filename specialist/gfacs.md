@@ -11,6 +11,9 @@ authors:
   - "Yoshua Bengio"
 year: 2025
 date: 2024-03-11
+acceptance:
+  date: "2025-01-21"
+  source_url: "https://aistats.org/aistats2025/dates.html"
 venue: "AISTATS"
 paper_url: "https://proceedings.mlr.press/v258/kim25a.html"
 arxiv_url: "https://arxiv.org/abs/2403.07041"

@@ -1203,7 +1203,7 @@ select:focus-visible {
 
 .paper-table {
   width: 100%;
-  min-width: 1180px;
+  min-width: 1260px;
   border-collapse: collapse;
   background: rgba(252, 251, 248, 0.52);
   font-size: 0.76rem;
@@ -1234,9 +1234,31 @@ select:focus-visible {
   width: 96px;
 }
 
+.paper-table__family {
+  width: 120px;
+  max-width: 120px;
+}
+
+.paper-table__family span {
+  display: inline-block;
+  max-width: 120px;
+  line-height: 1.35;
+}
+
+.paper-table__date {
+  width: 96px;
+  white-space: nowrap;
+}
+
+.paper-table__date a,
+.paper-metadata dd a {
+  color: var(--accent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent), transparent 55%);
+}
+
 .paper-table__venue {
   display: inline-block;
-  max-width: 150px;
+  max-width: 130px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

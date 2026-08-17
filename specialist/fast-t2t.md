@@ -9,7 +9,10 @@ authors:
   - "Hongyuan Zha"
   - "Junchi Yan"
 year: 2024
-date: 2024-12-09
+date: 2025-02-05
+acceptance:
+  date: "2024-09-25"
+  source_url: "https://neurips.cc/Conferences/2024/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/352b13f01566ae34affacc60e98c16af-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2502.02941"

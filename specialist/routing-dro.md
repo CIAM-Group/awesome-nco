@@ -5,6 +5,9 @@ title: 'Learning to Solve Routing Problems via Distributionally Robust Optimizat
 authors: [Yuan Jiang, Yaoxin Wu, Zhiguang Cao, Jie Zhang]
 year: 2022
 date: 2022-02-15
+acceptance:
+  date: "2021-11-29"
+  source_url: "https://aaai.org/conference/aaai/aaai-22/"
 venue: AAAI
 paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/21214
 arxiv_url: https://arxiv.org/abs/2202.07241

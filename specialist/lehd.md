@@ -10,6 +10,9 @@ authors:
   - "Zhenkun Wang"
 year: 2023
 date: 2023-10-12
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1c10d0c087c14689628124bbc8fa69f6-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2310.07985"

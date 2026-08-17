@@ -11,6 +11,9 @@ authors:
   - Seung-Jai Min
 year: 2020
 date: 2020-10-30
+acceptance:
+  date: "2020-09-26"
+  source_url: "https://neurips.cc/Conferences/2020/Dates"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2020/hash/f231f2107df69eab0a3862d50018a9b2-Abstract.html
 arxiv_url: https://arxiv.org/abs/2010.16011

@@ -12,6 +12,9 @@ authors:
   - "Chi Xu"
 year: 2024
 date: 2024-05-02
+acceptance:
+  date: "2024-05-01"
+  source_url: "https://icml.cc/Conferences/2024/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v235/zhou24c.html"
 arxiv_url: "https://arxiv.org/abs/2405.01029"

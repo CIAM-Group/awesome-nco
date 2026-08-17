@@ -38,17 +38,29 @@ export const relationKindStyles: Record<RelationKind, RelationKindStyle> = {
 export const relationNodeRelSize = 2.6
 
 export function relationNodeValue(degree: number) {
-  return 2 + degree * 0.55
+  return Math.min(6, 2 + Math.sqrt(degree) * 0.72)
 }
 
 const compactVenueLabels: Record<string, string> = {
   'AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications': 'AAAI Workshop',
 }
 
+const compactProblemFamilyLabels: Record<string, string> = {
+  'Multi-objective Optimization': 'Multi-object. Opt.',
+  'Generative Optimization': 'Generative Opt.',
+  'Robust Optimization': 'Robust Opt.',
+  'Graph Optimization': 'Graph Opt.',
+  'Subset Selection': 'Subset Sel.',
+}
+
 const institutionConnectorWords = new Set(['of', 'and', 'the'])
 
 export function compactVenue(venue: string) {
   return compactVenueLabels[venue] ?? venue
+}
+
+export function compactProblemFamily(problemFamily: string) {
+  return compactProblemFamilyLabels[problemFamily] ?? problemFamily
 }
 
 export function institutionInitials(institution: string) {
@@ -76,9 +88,34 @@ export function publicYear(paper: Paper) {
   return Number(paper.date.slice(0, 4))
 }
 
+export function timelineDate(paper: Paper) {
+  return paper.acceptance?.date ?? paper.date
+}
+
+export function timelineYear(paper: Paper) {
+  return Number(timelineDate(paper).slice(0, 4))
+}
+
 export function formatPublicDate(date: string) {
   return new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric', timeZone: 'UTC' })
     .format(new Date(`${date}T00:00:00Z`))
+}
+
+export function formatPartialDate(date: string) {
+  if (date.length === 4) return date
+  const normalizedDate = date.length === 7 ? `${date}-01` : date
+  return formatPublicDate(normalizedDate)
+}
+
+export function paperTimelineLabel(paper: Paper) {
+  const labels: string[] = []
+  if (paper.acceptance) labels.push(`Accepted ${formatPartialDate(paper.acceptance.date)}`)
+  if (paper.arxiv_url) labels.push(`arXiv ${formatPublicDate(paper.date)}`)
+  return labels.join(' · ')
+}
+
+export function sortPapersByFirstPublicNewestFirst(source: Paper[]) {
+  return [...source].sort((first, second) => second.date.localeCompare(first.date) || first.title.localeCompare(second.title))
 }
 
 export function filterPapers(source: Paper[], filters: PaperFilters) {
@@ -100,7 +137,7 @@ export function filterPapers(source: Paper[], filters: PaperFilters) {
       && (filters.scope === 'all' || paper.scope === filters.scope)
       && (filters.paradigm === 'all' || paper.paradigm === filters.paradigm)
       && (filters.family === 'all' || paper.problem_families.includes(filters.family))
-      && (filters.year === 'all' || publicYear(paper) === Number(filters.year))
+      && (filters.year === 'all' || timelineYear(paper) === Number(filters.year))
   })
 }
 
@@ -126,15 +163,22 @@ export function filtersFromSearchParams(searchParams: Pick<URLSearchParams, 'get
   }
 }
 
-export function groupPapersByPublicYear(source: Paper[]): TimelineGroup[] {
+export function groupPapersByTimelineYear(source: Paper[]): TimelineGroup[] {
   const groups = new Map<number, Paper[]>()
   for (const paper of source) {
-    const year = publicYear(paper)
+    const year = timelineYear(paper)
     groups.set(year, [...(groups.get(year) ?? []), paper])
   }
   return [...groups.entries()]
     .sort(([first], [second]) => second - first)
-    .map(([year, groupedPapers]) => ({ year, papers: groupedPapers }))
+    .map(([year, groupedPapers]) => ({
+      year,
+      papers: [...groupedPapers].sort((first, second) => (
+        timelineDate(second).localeCompare(timelineDate(first))
+        || second.date.localeCompare(first.date)
+        || first.title.localeCompare(second.title)
+      )),
+    }))
 }
 
 export function getPaper(id: string) {

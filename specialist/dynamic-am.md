@@ -7,7 +7,10 @@ authors:
   - Jiahai Wang
   - Zizhen Zhang
 year: 2019
-date: 2019-11-16
+date: 2020-02-09
+acceptance:
+  date: "2019"
+  source_url: "https://doi.org/10.1007/978-981-15-5577-0_51"
 venue: ISICA
 paper_url: https://doi.org/10.1007/978-981-15-5577-0_51
 arxiv_url: https://arxiv.org/abs/2002.03282

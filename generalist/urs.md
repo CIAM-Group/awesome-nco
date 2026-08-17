@@ -12,6 +12,9 @@ authors:
   - "Qingfu Zhang"
 year: 2026
 date: 2025-09-27
+acceptance:
+  date: "2026-04-30"
+  source_url: "https://icml.cc/Conferences/2026/Dates"
 venue: "ICML"
 paper_url: "https://icml.cc/virtual/2026/poster/61527"
 arxiv_url: "https://arxiv.org/abs/2509.23413"

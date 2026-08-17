@@ -143,12 +143,42 @@ describe('52-paper survey expansion', () => {
     })
   })
 
-  it('connects every added paper with two to four undirected thematic relations', async () => {
+  it('keeps every added paper connected while allowing the curated graph to grow without a maximum', async () => {
     const content = await loadContent(process.cwd())
+    expect(content.relations.length).toBeGreaterThan(155)
     for (const [id] of surveyExpansionRoster) {
       const count = content.relations.filter((relation) => relation.papers.includes(id)).length
-      expect(count, id).toBeGreaterThanOrEqual(2)
-      expect(count, id).toBeLessThanOrEqual(4)
+      expect(count, id).toBeGreaterThan(0)
+    }
+    expect(Math.max(...content.papers.map((paper) => content.relations.filter((relation) => relation.papers.includes(paper.id)).length))).toBeGreaterThan(5)
+  })
+
+  it('records sourced acceptance dates for formal papers and leaves both arXiv-only entries unset', async () => {
+    const { papers } = await loadContent(process.cwd())
+    const formallyPublished = papers.filter((paper) => paper.venue !== 'arXiv')
+    const arxivOnly = papers.filter((paper) => paper.venue === 'arXiv')
+
+    expect(formallyPublished).toHaveLength(90)
+    expect(formallyPublished.every((paper) => /^\d{4}(?:-\d{2}(?:-\d{2})?)?$/.test(paper.acceptance?.date ?? '') && Boolean(paper.acceptance?.source_url))).toBe(true)
+    expect(arxivOnly.map((paper) => paper.id).sort()).toEqual(['efficient-graph-convnet-tsp', 'less-is-more'])
+    expect(arxivOnly.every((paper) => paper.acceptance === undefined)).toBe(true)
+  })
+
+  it('uses arXiv v1 dates when a preprint link is present', async () => {
+    const { papers } = await loadContent(process.cwd())
+    const correctedDates = {
+      agfn: '2025-03-03',
+      reld: '2025-03-02',
+      'fast-t2t': '2025-02-05',
+      udc: '2024-06-29',
+      'graph-guided-local-search': '2021-10-11',
+      'multi-decoder-attention-model': '2020-12-19',
+      'dynamic-am': '2020-02-09',
+      'pointer-networks': '2015-06-09',
+    }
+
+    for (const [id, date] of Object.entries(correctedDates)) {
+      expect(papers.find((paper) => paper.id === id), id).toMatchObject({ date, arxiv_url: expect.stringContaining('arxiv.org/abs/') })
     }
   })
 })

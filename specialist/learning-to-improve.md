@@ -8,6 +8,9 @@ authors:
   - Shuang Yang
 year: 2020
 date: 2019-09-25
+acceptance:
+  date: "2019-12-19"
+  source_url: "https://iclr.cc/Conferences/2020/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=BJe1334YDH
 code_url: https://github.com/rlopt/l2i

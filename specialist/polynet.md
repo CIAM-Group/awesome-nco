@@ -8,6 +8,9 @@ authors:
   - "Kevin Tierney"
 year: 2025
 date: 2024-02-21
+acceptance:
+  date: "2025-01-22"
+  source_url: "https://iclr.cc/Conferences/2025/Dates"
 venue: "ICLR"
 paper_url: "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c7b9810b2e27bccdc8d605a3a54c8cd6-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2402.14048"

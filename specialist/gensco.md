@@ -10,6 +10,9 @@ authors:
   - "Junchi Yan"
 year: 2025
 date: 2025-05-23
+acceptance:
+  date: "2025-09-18"
+  source_url: "https://neurips.cc/Conferences/2025/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8e9869fa827226ff68db9290659a20c-Abstract-Conference.html"
 code_url: "https://github.com/Thinklab-SJTU/GenSCO"

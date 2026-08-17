@@ -7,7 +7,10 @@ authors:
   - Meire Fortunato
   - Navdeep Jaitly
 year: 2015
-date: 2015-06-10
+date: 2015-06-09
+acceptance:
+  date: "2015"
+  source_url: "https://neurips.cc/Conferences/2015/Dates"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2015/hash/29921001f2f04bd3baee84a12e98098f-Abstract.html
 arxiv_url: https://arxiv.org/abs/1506.03134

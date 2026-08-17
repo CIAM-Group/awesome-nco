@@ -12,6 +12,9 @@ authors:
   - "Yeow Meng Chee"
 year: 2024
 date: 2023-06-15
+acceptance:
+  date: "2023"
+  source_url: "https://doi.org/10.1109/TNNLS.2023.3285077"
 venue: "IEEE TNNLS"
 paper_url: "https://doi.org/10.1109/TNNLS.2023.3285077"
 institutions:

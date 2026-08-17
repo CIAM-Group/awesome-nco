@@ -5,6 +5,9 @@ title: 'Step-Wise Deep Learning Models for Solving Routing Problems'
 authors: [Liang Xin, Wen Song, Zhiguang Cao, Jie Zhang]
 year: 2021
 date: 2020-10-15
+acceptance:
+  date: "2020"
+  source_url: "https://doi.org/10.1109/TII.2020.3031409"
 venue: IEEE TII
 paper_url: https://doi.org/10.1109/TII.2020.3031409
 institutions: [Nanyang Technological University, National University of Singapore, Shandong University]

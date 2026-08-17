@@ -9,6 +9,9 @@ authors:
   - "Junchi Yan"
 year: 2023
 date: 2023-12-11
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html"
 code_url: "https://github.com/Thinklab-SJTU/T2TCO"

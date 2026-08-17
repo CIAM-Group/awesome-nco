@@ -9,6 +9,9 @@ authors:
   - "Yi Mei"
 year: 2025
 date: 2023-11-01
+acceptance:
+  date: "2025"
+  source_url: "https://doi.org/10.1109/TNNLS.2025.3588209"
 venue: "IEEE TNNLS"
 paper_url: "https://doi.org/10.1109/TNNLS.2025.3588209"
 institutions:

@@ -5,6 +5,9 @@ title: 'Efficient Active Search for Combinatorial Optimization Problems'
 authors: [André Hottung, Yeong-Dae Kwon, Kevin Tierney]
 year: 2022
 date: 2021-06-09
+acceptance:
+  date: "2022-01-24"
+  source_url: "https://iclr.cc/Conferences/2022/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=nO5caZwFwYu
 arxiv_url: https://arxiv.org/abs/2106.05126

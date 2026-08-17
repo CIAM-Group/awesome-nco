@@ -8,7 +8,10 @@ authors:
   - "Zhiguang Cao"
   - "Xu Chi"
 year: 2025
-date: 2024-09-28
+date: 2025-03-03
+acceptance:
+  date: "2025-01-22"
+  source_url: "https://iclr.cc/Conferences/2025/Dates"
 venue: "ICLR"
 paper_url: "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b210c387381713a14a4f5a607aff3520-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2503.01931"

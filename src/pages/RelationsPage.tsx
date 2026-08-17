@@ -127,7 +127,12 @@ export function RelationsPage() {
   }, [filteredRelations])
 
   const labelledNodeIds = useMemo(() => {
-    const ids = new Set(graphData.nodes.filter((node) => node.degree >= 5).map((node) => node.id))
+    const ids = new Set(
+      [...graphData.nodes]
+        .sort((first, second) => second.degree - first.degree || first.name.localeCompare(second.name))
+        .slice(0, 8)
+        .map((node) => node.id),
+    )
     if (!focusId) return ids
 
     ids.add(focusId)
@@ -141,9 +146,9 @@ export function RelationsPage() {
 
   useEffect(() => {
     const linkForce = graphRef.current?.d3Force('link')
-    linkForce?.distance(width < 600 ? 86 : 132)
+    linkForce?.distance(width < 600 ? 96 : 146)
     const chargeForce = graphRef.current?.d3Force('charge')
-    chargeForce?.strength(width < 600 ? -128 : -225)
+    chargeForce?.strength(width < 600 ? -155 : -270)
     graphRef.current?.d3ReheatSimulation()
   }, [graphData, width])
 
@@ -216,7 +221,7 @@ export function RelationsPage() {
                 linkCurvature={(link: any) => relationKindStyles[link.kind as RelationKind].curvature}
                 linkCanvasObjectMode={() => 'after'}
                 linkCanvasObject={(link: any, context, globalScale) => drawRelationMarker(link, context, globalScale)}
-                cooldownTicks={220}
+                cooldownTicks={260}
                 onEngineStop={() => graphRef.current?.zoomToFit(600, width < 600 ? 54 : 108)}
                 onNodeClick={(node: any) => navigate(`/papers/${node.id}`)}
                 nodeCanvasObjectMode={() => 'after'}

@@ -11,6 +11,9 @@ authors:
   - "Mingxuan Yuan"
 year: 2024
 date: 2024-02-23
+acceptance:
+  date: "2024-05-16"
+  source_url: "https://www.kdd.org/kdd2024/research-track-call-for-papers/"
 venue: "KDD"
 paper_url: "https://doi.org/10.1145/3637528.3672040"
 arxiv_url: "https://arxiv.org/abs/2402.16891"

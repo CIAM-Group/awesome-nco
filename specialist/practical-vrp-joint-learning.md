@@ -12,6 +12,9 @@ authors:
   - Yinghui Xu
 year: 2020
 date: 2020-08-23
+acceptance:
+  date: "2020-05-15"
+  source_url: "https://www.kdd.org/kdd2020/calls/view/kdd-2020-call-for-research-papers.html"
 venue: KDD
 paper_url: https://doi.org/10.1145/3394486.3403356
 institutions:

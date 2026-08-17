@@ -5,6 +5,9 @@ title: 'Learning to Delegate for Large-Scale Vehicle Routing'
 authors: [Sirui Li, Zhongxia Yan, Cathy Wu]
 year: 2021
 date: 2021-07-08
+acceptance:
+  date: "2021-09-28"
+  source_url: "https://neurips.cc/Conferences/2021/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html
 arxiv_url: https://arxiv.org/abs/2107.04139

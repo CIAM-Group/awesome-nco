@@ -5,6 +5,9 @@ title: 'Learning Improvement Heuristics for Solving Routing Problems'
 authors: [Yaoxin Wu, Wen Song, Zhiguang Cao, Jie Zhang, Andrew Lim]
 year: 2022
 date: 2019-12-12
+acceptance:
+  date: "2021"
+  source_url: "https://doi.org/10.1109/TNNLS.2021.3068828"
 venue: IEEE TNNLS
 paper_url: https://doi.org/10.1109/TNNLS.2021.3068828
 arxiv_url: https://arxiv.org/abs/1912.05784

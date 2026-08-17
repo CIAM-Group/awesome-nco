@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
-import { loadContent, loadPapers, loadRelations, parsePaper, renderMarkdown, sortPapersNewestFirst } from '../scripts/content-lib.mjs'
+import { loadContent, loadPapers, loadRelations, parsePaper, renderMarkdown, sortPapersByFirstPublicNewestFirst, sortPapersNewestFirst } from '../scripts/content-lib.mjs'
 
 const temporaryDirectories = []
 const sections = `
@@ -33,6 +33,7 @@ function paperMarkdown(overrides = {}) {
     authors: ['Ada Researcher'],
     year: 2025,
     date: '2024-03-02',
+    acceptance: { date: '2025-01-22', source_url: 'https://example.com/decision' },
     venue: 'ICLR',
     paper_url: 'https://example.com/paper.pdf',
     institutions: ['Example University'],
@@ -45,8 +46,11 @@ function paperMarkdown(overrides = {}) {
   }
   const lines = ['---']
   for (const [key, value] of Object.entries(metadata)) {
+    if (value === undefined) continue
     if (Array.isArray(value)) {
       lines.push(`${key}:`, ...value.map((item) => `  - ${item}`))
+    } else if (typeof value === 'object' && value !== null) {
+      lines.push(`${key}:`, ...Object.entries(value).map(([nestedKey, nestedValue]) => `  ${nestedKey}: ${nestedValue}`))
     } else {
       lines.push(`${key}: ${value}`)
     }
@@ -89,12 +93,34 @@ describe('paper content schema', () => {
   it('parses unquoted YAML dates and renders a valid paper', () => {
     const paper = parsePaper(paperMarkdown(), { filePath: 'sample-paper.md', expectedScope: 'specialist' })
     expect(paper.date).toBe('2024-03-02')
+    expect(paper.acceptance.date).toBe('2025-01-22')
     expect(paper.body_html).toContain('<h2>Motivation</h2>')
   })
 
   it('rejects invalid dates and paradigms', () => {
     expect(() => parsePaper(paperMarkdown({ date: '2024-02-31' }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow()
     expect(() => parsePaper(paperMarkdown({ paradigm: 'hybrid' }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow()
+  })
+
+  it('accepts year, month, and day precision for decisions and rejects impossible values', () => {
+    for (const date of ['2025', '2025-01', '2025-01-22']) {
+      const paper = parsePaper(paperMarkdown({ acceptance: { date, source_url: 'https://example.com/decision' } }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })
+      expect(paper.acceptance.date).toBe(date)
+    }
+    expect(() => parsePaper(paperMarkdown({ acceptance: { date: '2025-13', source_url: 'https://example.com/decision' } }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow()
+    expect(() => parsePaper(paperMarkdown({ acceptance: { date: '2025-02-31', source_url: 'https://example.com/decision' } }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow()
+  })
+
+  it('requires decisions for published work and omits them for arXiv-only papers', () => {
+    expect(() => parsePaper(paperMarkdown({ acceptance: undefined }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow('formally published papers must declare acceptance metadata')
+    const preprint = parsePaper(paperMarkdown({ venue: 'arXiv', acceptance: undefined, arxiv_url: 'https://arxiv.org/abs/2403.00001' }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })
+    expect(preprint.acceptance).toBeUndefined()
+    expect(() => parsePaper(paperMarkdown({ venue: 'arXiv' }), { filePath: 'sample-paper.md', expectedScope: 'specialist' })).toThrow('arXiv-only papers must not declare acceptance metadata')
+  })
+
+  it('normalizes Windows line endings before parsing YAML front matter', () => {
+    const paper = parsePaper(paperMarkdown().replaceAll('\n', '\r\n'), { filePath: 'sample-paper.md', expectedScope: 'specialist' })
+    expect(paper.id).toBe('sample-paper')
   })
 
   it('rejects missing required fields, invalid scopes, and invalid URLs', () => {
@@ -173,17 +199,18 @@ describe('relation content schema', () => {
 })
 
 describe('content output', () => {
-  it('builds the repository collection as version 2', async () => {
+  it('builds the repository collection as version 3', async () => {
     const content = await loadContent(path.resolve('.'))
-    expect(content.version).toBe(2)
+    expect(content.version).toBe(3)
     expect(content.relations.length).toBeGreaterThan(0)
   })
-  it('sorts papers by first-public date in descending order', () => {
+  it('sorts collection timelines by acceptance and preserves first-public sorting for the home page', () => {
     const sorted = sortPapersNewestFirst([
-      { id: 'old', title: 'Old', date: '2020-01-01' },
-      { id: 'new', title: 'New', date: '2024-01-01' },
+      { id: 'old', title: 'Old', date: '2020-01-01', acceptance: { date: '2025', source_url: 'https://example.com/old' } },
+      { id: 'new', title: 'New', date: '2024-01-01', acceptance: { date: '2024-05', source_url: 'https://example.com/new' } },
     ])
-    expect(sorted.map((paper) => paper.id)).toEqual(['new', 'old'])
+    expect(sorted.map((paper) => paper.id)).toEqual(['old', 'new'])
+    expect(sortPapersByFirstPublicNewestFirst(sorted).map((paper) => paper.id)).toEqual(['new', 'old'])
   })
 
   it('sanitizes scripts and marks external links safely', () => {

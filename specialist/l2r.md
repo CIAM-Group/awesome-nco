@@ -9,6 +9,9 @@ authors:
   - "Qingfu Zhang"
 year: 2026
 date: 2025-03-05
+acceptance:
+  date: "2025-11-23"
+  source_url: "https://kdd2026.kdd.org/research-track-call-for-papers/"
 venue: "KDD"
 paper_url: "https://doi.org/10.1145/3770855.3818173"
 arxiv_url: "https://arxiv.org/abs/2503.03137"

@@ -8,6 +8,9 @@ authors:
   - "Kevin Tierney"
 year: 2025
 date: 2025-01-07
+acceptance:
+  date: "2025-05-05"
+  source_url: "https://openreview.net/forum?id=bCmEP1Ltwq"
 venue: "TMLR"
 paper_url: "https://openreview.net/forum?id=bCmEP1Ltwq"
 arxiv_url: "https://arxiv.org/abs/2501.03715"

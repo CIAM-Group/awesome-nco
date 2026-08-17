@@ -7,6 +7,9 @@ authors:
   - "Yiming Yang"
 year: 2023
 date: 2023-02-16
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/0ba520d93c3df592c83a611961314c98-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2302.08224"

@@ -59,6 +59,8 @@ try {
     await assertNoHorizontalOverflow(collection, `${viewport.name} collection`)
     const timelineCard = collection.locator('.timeline-paper-card').first()
     await timelineCard.waitFor()
+    if (!/^Accepted |^arXiv /i.test((await timelineCard.locator('.timeline-paper-card__public').innerText()).trim())) throw new Error(`${viewport.name}: timeline card does not expose acceptance/preprint timing`)
+    if (await collection.locator('.select-field', { hasText: 'Timeline year' }).locator('select').count() !== 1) throw new Error(`${viewport.name}: timeline-year filter is missing`)
     if (await timelineCard.locator('.institution-marks').count() !== 1) throw new Error(`${viewport.name}: timeline institution marks were not rendered`)
     const timelineRadius = await timelineCard.evaluate((element) => getComputedStyle(element).borderRadius)
     if (timelineRadius !== '8px') throw new Error(`${viewport.name}: timeline card radius is not 8px`)
@@ -75,7 +77,9 @@ try {
     await papers.goto(`${siteUrl}/papers?scope=generalist&paradigm=constructive`, { waitUntil: 'networkidle' })
     await papers.getByRole('heading', { name: 'All papers' }).waitFor()
     if (await papers.locator('.paper-table tbody tr').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: combined paper filters returned an unexpected result count`)
-    if (await papers.getByRole('columnheader', { name: 'Institution' }).count() !== 1) throw new Error(`${viewport.name}: papers table is missing the Institution column`)
+    const expectedColumns = ['Paper', 'Institution', 'Scope', 'Paradigm', 'Problem family', 'Accepted', 'Preprint', 'Venue', 'Resources']
+    const actualColumns = await papers.locator('.paper-table thead th').allTextContents()
+    if (JSON.stringify(actualColumns) !== JSON.stringify(expectedColumns)) throw new Error(`${viewport.name}: papers table columns are incorrect (${JSON.stringify(actualColumns)})`)
     if (await papers.locator('.paper-table tbody .institution-marks').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: papers table institution marks were not rendered`)
     await assertNoHorizontalOverflow(papers, `${viewport.name} papers`)
     const tableWrap = papers.locator('.paper-table-wrap')
@@ -84,6 +88,19 @@ try {
       if (!scrollable) throw new Error('mobile: paper table should scroll inside its wrapper')
     }
     await papers.screenshot({ path: path.join(artifacts, `papers-${viewport.name}.png`), fullPage: true })
+
+    const compactFamily = await context.newPage()
+    await compactFamily.goto(`${siteUrl}/papers?family=Multi-objective+Optimization`, { waitUntil: 'networkidle' })
+    const familyCell = compactFamily.locator('.paper-table__family').first()
+    await familyCell.waitFor()
+    if (!(await familyCell.innerText()).includes('Multi-object. Opt.')) throw new Error(`${viewport.name}: long problem-family label was not compacted`)
+    if (!(await familyCell.locator('span').getAttribute('title'))?.includes('Multi-objective Optimization')) throw new Error(`${viewport.name}: compact problem-family label lost its full tooltip`)
+
+    const arxivOnly = await context.newPage()
+    await arxivOnly.goto(`${siteUrl}/papers?q=Less+Is+More`, { waitUntil: 'networkidle' })
+    const arxivOnlyCells = arxivOnly.locator('.paper-table tbody tr').first().locator('th, td')
+    if ((await arxivOnlyCells.nth(5).innerText()).trim() !== '—') throw new Error(`${viewport.name}: arXiv-only paper must show an empty Accepted value`)
+    if (!(await arxivOnlyCells.nth(6).innerText()).includes('Mar 2024')) throw new Error(`${viewport.name}: arXiv-only paper is missing its Preprint date`)
 
     const relationPage = await context.newPage()
     await relationPage.goto(`${siteUrl}/relations`, { waitUntil: 'networkidle' })
@@ -99,6 +116,7 @@ try {
     const detail = await context.newPage()
     await detail.goto(`${siteUrl}/papers/attention-model`, { waitUntil: 'networkidle' })
     await detail.getByRole('heading', { name: 'Motivation' }).waitFor()
+    if (await detail.locator('.paper-metadata dt', { hasText: 'Accepted' }).count() !== 1 || await detail.locator('.paper-metadata dt', { hasText: 'Preprint' }).count() !== 1) throw new Error(`${viewport.name}: detail metadata does not separate Accepted and Preprint`)
     await detail.locator('.paper-figure img').waitFor()
     const imageLoaded = await detail.locator('.paper-figure img').evaluate((image) => image.complete && image.naturalWidth > 0)
     if (!imageLoaded) throw new Error(`${viewport.name}: framework image did not load`)

@@ -12,6 +12,9 @@ authors:
   - "Qingfu Zhang"
 year: 2025
 date: 2024-09-26
+acceptance:
+  date: "2025-01-22"
+  source_url: "https://iclr.cc/Conferences/2025/Dates"
 venue: "ICLR"
 paper_url: "https://proceedings.iclr.cc/paper_files/paper/2025/hash/264f2e10479c9370972847e96107db7f-Abstract-Conference.html"
 code_url: "https://github.com/CIAM-Group/SIL"

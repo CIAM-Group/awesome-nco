@@ -5,6 +5,9 @@ title: 'DIMES: A Differentiable Meta Solver for Combinatorial Optimization Probl
 authors: [Ruizhong Qiu, Zhiqing Sun, Yiming Yang]
 year: 2022
 date: 2022-10-08
+acceptance:
+  date: "2022-09-14"
+  source_url: "https://neurips.cc/Conferences/2022/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/a3a7387e49f4de290c23beea2dfcdc75-Abstract-Conference.html
 arxiv_url: https://arxiv.org/abs/2210.04123

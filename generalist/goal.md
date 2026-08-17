@@ -8,6 +8,9 @@ authors:
   - Jean-Marc Andreoli
 year: 2025
 date: 2024-06-21
+acceptance:
+  date: "2025-01-22"
+  source_url: "https://iclr.cc/Conferences/2025/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=z2z9suDRjw
 arxiv_url: https://arxiv.org/abs/2406.15079

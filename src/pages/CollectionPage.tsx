@@ -8,9 +8,9 @@ import {
   filtersFromSearchParams,
   papersForScope,
   paradigmLabels,
-  publicYear,
   scopeDescriptions,
   scopeLabels,
+  timelineYear,
   uniqueValues,
 } from '../lib/data'
 import type { PaperFilters, Scope } from '../types'
@@ -23,7 +23,7 @@ export function CollectionPage({ scope }: CollectionPageProps) {
   const [searchParams, setSearchParams] = useSearchParams()
   const source = useMemo(() => papersForScope(scope), [scope])
   const families = useMemo(() => uniqueValues(source.flatMap((paper) => paper.problem_families)), [source])
-  const years = useMemo(() => uniqueValues(source.map((paper) => String(publicYear(paper)))).sort((a, b) => Number(b) - Number(a)), [source])
+  const years = useMemo(() => uniqueValues(source.map((paper) => String(timelineYear(paper)))).sort((a, b) => Number(b) - Number(a)), [source])
   const paradigmValues = Object.keys(paradigmLabels)
 
   const filters = filtersFromSearchParams(searchParams, { paradigms: paradigmValues, families, years })
@@ -65,8 +65,8 @@ export function CollectionPage({ scope }: CollectionPageProps) {
               options: [{ value: 'all', label: 'All problem families' }, ...families.map((value) => ({ value, label: value }))],
             },
             {
-              key: 'year', label: 'First public', value: filters.year,
-              options: [{ value: 'all', label: 'All public years' }, ...years.map((value) => ({ value, label: value }))],
+              key: 'year', label: 'Timeline year', value: filters.year,
+              options: [{ value: 'all', label: 'All timeline years' }, ...years.map((value) => ({ value, label: value }))],
             },
           ]}
           resultCount={filtered.length}
