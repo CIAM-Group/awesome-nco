@@ -12,6 +12,9 @@ const expectedPaperCount = generatedContent.papers.length
 const expectedGeneralistConstructiveCount = generatedContent.papers.filter(
   (paper) => paper.scope === 'generalist' && paper.paradigm === 'constructive',
 ).length
+const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
+const basePath = process.env.GITHUB_ACTIONS && repositoryName ? `/${repositoryName}` : ''
+const siteUrl = `http://127.0.0.1:4173${basePath}`
 
 const vite = path.join(root, 'node_modules', 'vite', 'bin', 'vite.js')
 const server = spawn(process.execPath, [vite, 'preview', '--host', '127.0.0.1', '--port', '4173'], {
@@ -22,7 +25,7 @@ const server = spawn(process.execPath, [vite, 'preview', '--host', '127.0.0.1', 
 async function waitForServer() {
   for (let attempt = 0; attempt < 40; attempt += 1) {
     try {
-      const response = await fetch('http://127.0.0.1:4173/')
+      const response = await fetch(`${siteUrl}/`)
       if (response.ok) return
     } catch {
       // The preview server is still starting.
@@ -45,13 +48,13 @@ try {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } })
 
     const home = await context.newPage()
-    await home.goto('http://127.0.0.1:4173/', { waitUntil: 'networkidle' })
+    await home.goto(`${siteUrl}/`, { waitUntil: 'networkidle' })
     await home.getByRole('heading', { name: 'A focused index of neural solvers.' }).waitFor()
     await assertNoHorizontalOverflow(home, `${viewport.name} home`)
     await home.screenshot({ path: path.join(artifacts, `home-${viewport.name}.png`), fullPage: true })
 
     const collection = await context.newPage()
-    await collection.goto('http://127.0.0.1:4173/specialist', { waitUntil: 'networkidle' })
+    await collection.goto(`${siteUrl}/specialist`, { waitUntil: 'networkidle' })
     await collection.getByRole('heading', { name: 'Specialist Neural Solvers' }).waitFor()
     await assertNoHorizontalOverflow(collection, `${viewport.name} collection`)
     const timelineCard = collection.locator('.timeline-paper-card').first()
@@ -69,7 +72,7 @@ try {
     await collection.screenshot({ path: path.join(artifacts, `specialist-${viewport.name}.png`), fullPage: true })
 
     const papers = await context.newPage()
-    await papers.goto('http://127.0.0.1:4173/papers?scope=generalist&paradigm=constructive', { waitUntil: 'networkidle' })
+    await papers.goto(`${siteUrl}/papers?scope=generalist&paradigm=constructive`, { waitUntil: 'networkidle' })
     await papers.getByRole('heading', { name: 'All papers' }).waitFor()
     if (await papers.locator('.paper-table tbody tr').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: combined paper filters returned an unexpected result count`)
     if (await papers.getByRole('columnheader', { name: 'Institution' }).count() !== 1) throw new Error(`${viewport.name}: papers table is missing the Institution column`)
@@ -83,7 +86,7 @@ try {
     await papers.screenshot({ path: path.join(artifacts, `papers-${viewport.name}.png`), fullPage: true })
 
     const relationPage = await context.newPage()
-    await relationPage.goto('http://127.0.0.1:4173/relations', { waitUntil: 'networkidle' })
+    await relationPage.goto(`${siteUrl}/relations`, { waitUntil: 'networkidle' })
     await relationPage.getByRole('heading', { name: 'Paper relations' }).waitFor()
     await relationPage.locator('.relation-graph canvas').waitFor()
     if (await relationPage.locator('.relation-legend .relation-style-key').count() !== 4) throw new Error(`${viewport.name}: relation style legend is incomplete`)
@@ -94,7 +97,7 @@ try {
     await relationPage.screenshot({ path: path.join(artifacts, `relations-${viewport.name}.png`), fullPage: true })
 
     const detail = await context.newPage()
-    await detail.goto('http://127.0.0.1:4173/papers/attention-model', { waitUntil: 'networkidle' })
+    await detail.goto(`${siteUrl}/papers/attention-model`, { waitUntil: 'networkidle' })
     await detail.getByRole('heading', { name: 'Motivation' }).waitFor()
     await detail.locator('.paper-figure img').waitFor()
     const imageLoaded = await detail.locator('.paper-figure img').evaluate((image) => image.complete && image.naturalWidth > 0)
@@ -113,7 +116,7 @@ try {
     await detail.screenshot({ path: path.join(artifacts, `detail-${viewport.name}.png`), fullPage: true })
 
     const detailWithoutFigure = await context.newPage()
-    await detailWithoutFigure.goto('http://127.0.0.1:4173/papers/practical-vrp-joint-learning', { waitUntil: 'networkidle' })
+    await detailWithoutFigure.goto(`${siteUrl}/papers/practical-vrp-joint-learning`, { waitUntil: 'networkidle' })
     await detailWithoutFigure.getByRole('heading', { name: 'Motivation' }).waitFor()
     if (await detailWithoutFigure.locator('.paper-figure').count()) throw new Error(`${viewport.name}: an empty framework image block was rendered`)
     await assertNoHorizontalOverflow(detailWithoutFigure, `${viewport.name} detail without figure`)
