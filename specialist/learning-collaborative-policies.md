@@ -5,6 +5,9 @@ title: 'Learning Collaborative Policies to Solve NP-hard Routing Problems'
 authors: [Minsu Kim, Jinkyoo Park, Joungho Kim]
 year: 2021
 date: 2021-10-26
+acceptance:
+  date: "2021-09-28"
+  source_url: "https://neurips.cc/Conferences/2021/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2021/hash/564127c03caab942e503ee6f810f54fd-Abstract.html
 arxiv_url: https://arxiv.org/abs/2110.13987

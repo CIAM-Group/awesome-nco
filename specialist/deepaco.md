@@ -10,6 +10,9 @@ authors:
   - Yong Li
 year: 2023
 date: 2023-09-25
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper_files/paper/2023/hash/883105b282fe15275991b411e6b200c5-Abstract-Conference.html
 arxiv_url: https://arxiv.org/abs/2309.14032

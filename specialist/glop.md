@@ -11,6 +11,9 @@ authors:
   - "Fanzhang Li"
 year: 2024
 date: 2023-12-13
+acceptance:
+  date: "2023-12-09"
+  source_url: "https://aaai.org/conference/aaai/aaai-24/"
 venue: "AAAI"
 paper_url: "https://ojs.aaai.org/index.php/AAAI/article/view/30009"
 arxiv_url: "https://arxiv.org/abs/2312.08224"

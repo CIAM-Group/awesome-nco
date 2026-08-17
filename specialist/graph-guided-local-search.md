@@ -4,7 +4,10 @@ short_title: RGLS
 title: 'Graph Neural Network Guided Local Search for the Traveling Salesperson Problem'
 authors: [Benjamin Hudson, Qingbiao Li, Matthew Malencia, Amanda Prorok]
 year: 2022
-date: 2021-10-12
+date: 2021-10-11
+acceptance:
+  date: "2022-01-24"
+  source_url: "https://iclr.cc/Conferences/2022/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=ar92oEosBIg
 arxiv_url: https://arxiv.org/abs/2110.05291

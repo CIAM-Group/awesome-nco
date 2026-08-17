@@ -4,7 +4,10 @@ short_title: MDAM
 title: 'Multi-Decoder Attention Model with Embedding Glimpse for Solving Vehicle Routing Problems'
 authors: [Liang Xin, Wen Song, Zhiguang Cao, Jie Zhang]
 year: 2021
-date: 2020-12-18
+date: 2020-12-19
+acceptance:
+  date: "2020-12-01"
+  source_url: "https://aaai.org/conference/aaai/aaai-21/"
 venue: AAAI
 paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/17430
 arxiv_url: https://arxiv.org/abs/2012.10638

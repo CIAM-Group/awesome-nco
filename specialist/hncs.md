@@ -11,6 +11,9 @@ authors:
   - "Wee Sun Lee"
 year: 2024
 date: 2024-08-07
+acceptance:
+  date: "2024-05-16"
+  source_url: "https://www.kdd.org/kdd2024/research-track-call-for-papers/"
 venue: "KDD"
 paper_url: "https://doi.org/10.1145/3637528.3672053"
 arxiv_url: "https://arxiv.org/abs/2408.03585"

@@ -10,6 +10,9 @@ authors:
   - "Shiliang Pu"
 year: 2023
 date: 2023-04-25
+acceptance:
+  date: "2023-01-19"
+  source_url: "https://aistats.org/aistats2023/"
 venue: "AISTATS"
 paper_url: "https://proceedings.mlr.press/v206/cheng23a.html"
 institutions:

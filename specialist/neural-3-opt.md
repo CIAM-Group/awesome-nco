@@ -5,6 +5,9 @@ title: 'Learning 3-opt Heuristics for Traveling Salesman Problem via Deep Reinfo
 authors: [Jingyan Sui, Shizhe Ding, Ruizhi Liu, Liming Xu, Dongbo Bu]
 year: 2021
 date: 2021-11-17
+acceptance:
+  date: "2021-09-17"
+  source_url: "https://www.acml-conf.org/2021/"
 venue: ACML
 paper_url: https://proceedings.mlr.press/v157/sui21a.html
 institutions: [Institute of Computing Technology, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Zhongke Big Data Academy]

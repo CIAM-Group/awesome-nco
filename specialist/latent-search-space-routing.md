@@ -5,6 +5,9 @@ title: 'Learning a Latent Search Space for Routing Problems Using Variational Au
 authors: [André Hottung, Bhanu Bhandari, Kevin Tierney]
 year: 2021
 date: 2020-09-25
+acceptance:
+  date: "2021-01-14"
+  source_url: "https://iclr.cc/Conferences/2021/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=90JprVrJBO
 code_url: https://github.com/ahottung/learning-a-latent-search-space

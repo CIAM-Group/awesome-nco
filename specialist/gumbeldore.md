@@ -7,6 +7,9 @@ authors:
   - "Dominik G. Grimm"
 year: 2024
 date: 2024-03-22
+acceptance:
+  date: "2024-06"
+  source_url: "https://openreview.net/forum?id=agT8ojoH0X"
 venue: "TMLR"
 paper_url: "https://openreview.net/forum?id=agT8ojoH0X"
 arxiv_url: "https://arxiv.org/abs/2403.15180"

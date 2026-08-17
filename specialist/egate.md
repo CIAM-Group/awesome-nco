@@ -11,6 +11,9 @@ authors:
   - Zhixin Liu
 year: 2020
 date: 2020-02-20
+acceptance:
+  date: "2020-05-20"
+  source_url: "https://groups.google.com/g/search-list/c/XmRwwEX9laY"
 venue: IJCAI HSI Workshop
 paper_url: https://hsi-workshop.github.io/hsi2020-website/hsi2020/Learn%20to%20Design%20the%20Heuristics%20for%20Vehicle%20Routing%20Problem.pdf
 arxiv_url: https://arxiv.org/abs/2002.08539

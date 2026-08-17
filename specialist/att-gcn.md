@@ -5,6 +5,9 @@ title: 'Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances'
 authors: [Zhang-Hua Fu, Kai-Bin Qiu, Hongyuan Zha]
 year: 2021
 date: 2020-11-26
+acceptance:
+  date: "2020-12-01"
+  source_url: "https://aaai.org/conference/aaai/aaai-21/"
 venue: AAAI
 paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/16916
 code_url: https://github.com/Spider-scnu/TSP

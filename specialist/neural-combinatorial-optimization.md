@@ -10,6 +10,9 @@ authors:
   - Samy Bengio
 year: 2017
 date: 2016-11-29
+acceptance:
+  date: "2017-02-06"
+  source_url: "https://iclr.cc/archive/www/doku.php%3Fid%3Diclr2017%3Amain.html"
 venue: ICLR
 paper_url: https://arxiv.org/abs/1611.09940
 arxiv_url: https://arxiv.org/abs/1611.09940

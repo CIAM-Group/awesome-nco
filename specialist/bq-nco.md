@@ -10,6 +10,9 @@ authors:
   - "Jean-Marc Andreoli"
 year: 2023
 date: 2023-01-09
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2301.03313"

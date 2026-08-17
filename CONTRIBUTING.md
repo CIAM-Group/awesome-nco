@@ -25,7 +25,7 @@ Required fields:
 - **`title`:** Full paper title.
 - **`authors`:** One author per YAML list item, in paper order.
 - **`year`:** Conference or journal year.
-- **`date`:** First public release date in `YYYY-MM-DD` format, normally the arXiv v1 date.
+- **`date`:** First public release date in `YYYY-MM-DD` format. When `arxiv_url` is present, use the arXiv v1 date.
 - **`venue`:** Conference, journal, or `arXiv`.
 - **`paper_url`:** Original paper page or public PDF.
 - **`institutions`:** Human-readable institution names.
@@ -46,6 +46,14 @@ Optional fields:
   - **`source_url`:** Public URL for the original paper or PDF containing the figure.
 
 Framework images must be cropped from a publicly available original paper, not generated or redrawn. Crop the figure body without the printed caption, keep labels legible, and use a PNG around 1600–2000 px wide. If no reliable original image is publicly available, omit `figure` entirely.
+
+Formally accepted papers must also declare an **`acceptance`** block. Its `date` may use `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`; record only the precision supported by an official decision record, publisher history, or conference notification page. `source_url` must link to that evidence. Do not infer a decision month from the proceedings date or venue year. Papers whose venue is `arXiv` must omit this block.
+
+```yaml
+acceptance:
+  date: '2025-01-22'
+  source_url: https://iclr.cc/Conferences/2025/Dates
+```
 
 ## Paper Relations
 

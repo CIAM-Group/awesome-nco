@@ -7,6 +7,9 @@ authors:
   - Shikui Tu
 year: 2020
 date: 2020-01-01
+acceptance:
+  date: "2020"
+  source_url: "https://doi.org/10.1109/ACCESS.2020.3000236"
 venue: IEEE Access
 paper_url: https://doi.org/10.1109/ACCESS.2020.3000236
 institutions:

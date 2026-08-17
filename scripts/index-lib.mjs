@@ -10,7 +10,8 @@ const paradigmLabels = {
 export function renderPaperIndex(papers) {
   if (papers.length === 0) return '_No papers have been added yet._'
 
-  const sorted = [...papers].sort((first, second) => second.date.localeCompare(first.date) || first.title.localeCompare(second.title))
+  const timelineDate = (paper) => paper.acceptance?.date ?? paper.date
+  const sorted = [...papers].sort((first, second) => timelineDate(second).localeCompare(timelineDate(first)) || second.date.localeCompare(first.date) || first.title.localeCompare(second.title))
   return sorted.map((paper) => [
     `### [${paper.title}](${paper.id}.md)`,
     '',
@@ -18,7 +19,8 @@ export function renderPaperIndex(papers) {
     `- **Problems:** ${paper.problems.join('; ')}`,
     `- **Venue:** ${paper.venue}`,
     `- **Year:** ${paper.year}`,
-    `- **First public:** ${paper.date}`,
+    `- **Accepted:** ${paper.acceptance ? `[${paper.acceptance.date}](${paper.acceptance.source_url})` : '—'}`,
+    `- **arXiv:** ${paper.arxiv_url ? `[${paper.date}](${paper.arxiv_url})` : '—'}`,
     `- **Institutions:** ${paper.institutions.join('; ')}`,
   ].join('\n')).join('\n\n')
 }

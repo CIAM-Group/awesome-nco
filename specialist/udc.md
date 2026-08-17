@@ -9,7 +9,10 @@ authors:
   - "Mingxuan Yuan"
   - "Zhenkun Wang"
 year: 2024
-date: 2024-07-01
+date: 2024-06-29
+acceptance:
+  date: "2024-09-25"
+  source_url: "https://neurips.cc/Conferences/2024/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0b8e4c8468273ee3bafb288229c0acbc-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2407.00312"

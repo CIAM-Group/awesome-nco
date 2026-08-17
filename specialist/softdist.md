@@ -11,6 +11,9 @@ authors:
   - "Jiang Bian"
 year: 2024
 date: 2024-06-02
+acceptance:
+  date: "2024-05-01"
+  source_url: "https://icml.cc/Conferences/2024/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v235/xia24f.html"
 arxiv_url: "https://arxiv.org/abs/2406.03503"

@@ -5,6 +5,9 @@ title: 'Pareto Set Learning for Neural Multi-Objective Combinatorial Optimizatio
 authors: [Xi Lin, Zhiyuan Yang, Qingfu Zhang]
 year: 2022
 date: 2022-03-29
+acceptance:
+  date: "2022-01-24"
+  source_url: "https://iclr.cc/Conferences/2022/Dates"
 venue: ICLR
 paper_url: https://openreview.net/forum?id=QuObT9BTWo
 arxiv_url: https://arxiv.org/abs/2203.15386

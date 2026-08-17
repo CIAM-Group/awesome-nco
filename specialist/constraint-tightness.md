@@ -9,6 +9,9 @@ authors:
   - "Zhenkun Wang"
 year: 2025
 date: 2025-05-30
+acceptance:
+  date: "2025-09-18"
+  source_url: "https://neurips.cc/Conferences/2025/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8fc784104e74f1b427865d30ad22931-Abstract-Conference.html"
 code_url: "https://github.com/CIAM-Group/Rethinking_Constraint_Tightness"

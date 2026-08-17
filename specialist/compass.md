@@ -12,6 +12,9 @@ authors:
   - "Thomas D. Barrett"
 year: 2023
 date: 2023-11-13
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/18d3a2f3068d6c669dcae19ceca1bc24-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2311.13569"

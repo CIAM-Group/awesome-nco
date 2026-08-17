@@ -11,6 +11,9 @@ authors:
   - "Wee Sun Lee"
 year: 2025
 date: 2025-06-10
+acceptance:
+  date: "2025-05-01"
+  source_url: "https://icml.cc/Conferences/2025/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v267/goh25a.html"
 arxiv_url: "https://arxiv.org/abs/2506.08424"

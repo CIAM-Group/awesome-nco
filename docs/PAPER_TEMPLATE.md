@@ -12,6 +12,10 @@ authors:
   - Second Author
 year: 2025
 date: 2024-01-01
+acceptance:
+  # Use only the precision supported by the linked official source: YYYY, YYYY-MM, or YYYY-MM-DD.
+  date: '2025-01-22'
+  source_url: https://example-conference.org/official-dates
 venue: Conference or Journal
 paper_url: https://example.com/paper.pdf
 # arxiv_url: https://arxiv.org/abs/0000.00000
@@ -71,5 +75,7 @@ Explain the research problem, prior limitation, and why the proposed direction m
 - **Checkpoints:** Availability.
 - **Main paper references:** Relevant sections, tables, figures, or appendices.
 ```
+
+For an arXiv-only paper, set `venue: arXiv` and remove the `acceptance` block. When `arxiv_url` is present, `date` must represent the arXiv v1 date.
 
 If a public original framework image is available, crop only the figure body into `public/paper-assets/paper-id/framework.png`; otherwise leave the entire `figure` block commented out. Add at least one undirected thematic connection for the new paper in `data/relations.yml`.

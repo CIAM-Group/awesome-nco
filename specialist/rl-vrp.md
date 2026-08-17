@@ -9,6 +9,9 @@ authors:
   - Lawrence V. Snyder
 year: 2018
 date: 2018-02-12
+acceptance:
+  date: "2018-09-05"
+  source_url: "https://neurips.cc/Conferences/2018/Dates"
 venue: NeurIPS
 paper_url: https://papers.nips.cc/paper_files/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html
 arxiv_url: https://arxiv.org/abs/1802.04240

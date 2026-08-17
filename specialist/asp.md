@@ -10,6 +10,9 @@ authors:
   - "Yaodong Yang"
 year: 2024
 date: 2023-03-01
+acceptance:
+  date: "2024"
+  source_url: "https://doi.org/10.1109/TPAMI.2024.3352096"
 venue: "IEEE TPAMI"
 paper_url: "https://doi.org/10.1109/TPAMI.2024.3352096"
 arxiv_url: "https://arxiv.org/abs/2303.00466"

@@ -5,6 +5,9 @@ title: 'Matrix Encoding Networks for Neural Combinatorial Optimization'
 authors: [Yeong-Dae Kwon, Jinho Choo, Iljoo Yoon, Minah Park, Duwon Park, Youngjune Gwon]
 year: 2021
 date: 2021-06-21
+acceptance:
+  date: "2021-09-28"
+  source_url: "https://neurips.cc/Conferences/2021/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2021/hash/29539ed932d32f1c56324cded92c07c2-Abstract.html
 arxiv_url: https://arxiv.org/abs/2106.11113

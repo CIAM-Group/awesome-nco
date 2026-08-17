@@ -9,6 +9,9 @@ authors:
   - "Cathy Wu"
 year: 2026
 date: 2025-06-22
+acceptance:
+  date: "2026-01-25"
+  source_url: "https://iclr.cc/Conferences/2026/Dates"
 venue: "ICLR"
 paper_url: "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f274af80a7a3aa9ed23ba6f7908470bc-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2507.01037"

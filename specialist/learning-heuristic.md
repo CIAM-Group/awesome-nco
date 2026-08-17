@@ -10,6 +10,9 @@ authors:
   - Louis-Martin Rousseau
 year: 2018
 date: 2018-06-26
+acceptance:
+  date: "2018"
+  source_url: "https://doi.org/10.1007/978-3-319-93031-2_12"
 venue: CPAIOR
 paper_url: https://doi.org/10.1007/978-3-319-93031-2_12
 code_url: https://github.com/MichelDeudon/encode-attend-navigate

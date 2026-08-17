@@ -5,6 +5,9 @@ title: 'Diffusion Models as Plug-and-Play Priors'
 authors: [Alexandros Graikos, Nikolay Malkin, Nebojsa Jojic, Dimitris Samaras]
 year: 2022
 date: 2022-06-17
+acceptance:
+  date: "2022-09-14"
+  source_url: "https://neurips.cc/Conferences/2022/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/5e6cec2a9520708381fe520246018e8b-Abstract.html
 arxiv_url: https://arxiv.org/abs/2206.09012

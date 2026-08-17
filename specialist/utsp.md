@@ -8,6 +8,9 @@ authors:
   - "Carla P. Gomes"
 year: 2023
 date: 2023-03-19
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/93b8618a9061f8a55825c13ecf28392b-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2303.10538"

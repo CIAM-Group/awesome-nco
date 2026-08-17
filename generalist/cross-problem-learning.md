@@ -12,6 +12,9 @@ authors:
   - "Senthilnath Jayavelu"
 year: 2024
 date: 2024-04-17
+acceptance:
+  date: "2024-04-16"
+  source_url: "https://ijcai24.org/call-for-papers/index.html"
 venue: "IJCAI"
 paper_url: "https://www.ijcai.org/proceedings/2024/0769"
 code_url: "https://github.com/Zhuoyi-Lin/Cross_problem_learning"

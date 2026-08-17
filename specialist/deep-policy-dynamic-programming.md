@@ -5,6 +5,9 @@ title: 'Deep Policy Dynamic Programming for Vehicle Routing Problems'
 authors: [Wouter Kool, Herke van Hoof, Joaquim Gromicho, Max Welling]
 year: 2022
 date: 2021-02-23
+acceptance:
+  date: "2022"
+  source_url: "https://doi.org/10.1007/978-3-031-08011-1_14"
 venue: CPAIOR
 paper_url: https://doi.org/10.1007/978-3-031-08011-1_14
 arxiv_url: https://arxiv.org/abs/2102.11756

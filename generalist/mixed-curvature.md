@@ -9,6 +9,9 @@ authors:
   - "Yew-Soon Ong"
 year: 2025
 date: 2025-01-28
+acceptance:
+  date: "2025-05-01"
+  source_url: "https://icml.cc/Conferences/2025/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v267/liu25b.html"
 institutions:

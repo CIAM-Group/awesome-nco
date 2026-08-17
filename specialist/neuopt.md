@@ -8,6 +8,9 @@ authors:
   - "Yeow Meng Chee"
 year: 2023
 date: 2023-10-27
+acceptance:
+  date: "2023-09-21"
+  source_url: "https://neurips.cc/Conferences/2023/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9bae70d354793a95fa18751888cea07d-Abstract-Conference.html"
 arxiv_url: "https://arxiv.org/abs/2310.18264"

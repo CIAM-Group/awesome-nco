@@ -10,6 +10,9 @@ authors:
   - "Jie Zhang"
 year: 2023
 date: 2023-05-31
+acceptance:
+  date: "2023-04-24"
+  source_url: "https://icml.cc/Conferences/2023/Dates"
 venue: "ICML"
 paper_url: "https://proceedings.mlr.press/v202/zhou23o.html"
 arxiv_url: "https://arxiv.org/abs/2305.19587"

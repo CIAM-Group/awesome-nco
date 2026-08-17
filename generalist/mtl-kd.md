@@ -10,6 +10,9 @@ authors:
   - "Yu Zhou"
 year: 2025
 date: 2025-06-03
+acceptance:
+  date: "2025-09-18"
+  source_url: "https://neurips.cc/Conferences/2025/CallForPapers"
 venue: "NeurIPS"
 paper_url: "https://proceedings.neurips.cc/paper_files/paper/2025/hash/899c6a43b9976e1077522fe5a39cafa3-Abstract-Conference.html"
 code_url: "https://github.com/CIAM-Group/MTLKD"

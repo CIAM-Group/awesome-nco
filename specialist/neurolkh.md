@@ -5,6 +5,9 @@ title: 'NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heur
 authors: [Liang Xin, Wen Song, Zhiguang Cao, Jie Zhang]
 year: 2021
 date: 2021-10-15
+acceptance:
+  date: "2021-09-28"
+  source_url: "https://neurips.cc/Conferences/2021/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper/2021/hash/3d863b367aa379f71c7afc0c9cdca41d-Abstract.html
 arxiv_url: https://arxiv.org/abs/2110.07983

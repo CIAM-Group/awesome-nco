@@ -11,6 +11,9 @@ authors:
   - "Qingfu Zhang"
 year: 2026
 date: 2024-05-03
+acceptance:
+  date: "2026"
+  source_url: "https://doi.org/10.1109/TITS.2026.3674538"
 venue: "IEEE T-ITS"
 paper_url: "https://doi.org/10.1109/TITS.2026.3674538"
 arxiv_url: "https://arxiv.org/abs/2405.01906"

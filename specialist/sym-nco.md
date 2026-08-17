@@ -5,6 +5,9 @@ title: 'Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization'
 authors: [Minsu Kim, Junyoung Park, Jinkyoo Park]
 year: 2022
 date: 2022-05-26
+acceptance:
+  date: "2022-09-14"
+  source_url: "https://neurips.cc/Conferences/2022/CallForPapers"
 venue: NeurIPS
 paper_url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/0cddb777d3441326544e21b67f41bdc8-Abstract-Conference.html
 arxiv_url: https://arxiv.org/abs/2205.13209
