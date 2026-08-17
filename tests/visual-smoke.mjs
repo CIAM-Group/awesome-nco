@@ -9,6 +9,9 @@ await fs.mkdir(artifacts, { recursive: true })
 const generatedContent = JSON.parse(await fs.readFile(path.join(root, 'src', 'generated', 'content.json'), 'utf8'))
 const expectedRelationCount = generatedContent.relations.length
 const expectedPaperCount = generatedContent.papers.length
+const expectedGeneralistConstructiveCount = generatedContent.papers.filter(
+  (paper) => paper.scope === 'generalist' && paper.paradigm === 'constructive',
+).length
 
 const vite = path.join(root, 'node_modules', 'vite', 'bin', 'vite.js')
 const server = spawn(process.execPath, [vite, 'preview', '--host', '127.0.0.1', '--port', '4173'], {
@@ -68,9 +71,9 @@ try {
     const papers = await context.newPage()
     await papers.goto('http://127.0.0.1:4173/papers?scope=generalist&paradigm=constructive', { waitUntil: 'networkidle' })
     await papers.getByRole('heading', { name: 'All papers' }).waitFor()
-    if (await papers.locator('.paper-table tbody tr').count() !== 1) throw new Error(`${viewport.name}: combined paper filters returned an unexpected result count`)
+    if (await papers.locator('.paper-table tbody tr').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: combined paper filters returned an unexpected result count`)
     if (await papers.getByRole('columnheader', { name: 'Institution' }).count() !== 1) throw new Error(`${viewport.name}: papers table is missing the Institution column`)
-    if (await papers.locator('.paper-table tbody .institution-marks').count() !== 1) throw new Error(`${viewport.name}: papers table institution marks were not rendered`)
+    if (await papers.locator('.paper-table tbody .institution-marks').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: papers table institution marks were not rendered`)
     await assertNoHorizontalOverflow(papers, `${viewport.name} papers`)
     const tableWrap = papers.locator('.paper-table-wrap')
     if (viewport.name === 'mobile') {
