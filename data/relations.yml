@@ -230,3 +230,237 @@ relations:
   - papers: [routing-dro, efficient-graph-convnet-tsp]
     kind: learning
     description: DRO uses graph-based routing components while changing training toward worst-case instance distributions rather than nominal sampling alone.
+  - papers: [lehd, attention-model]
+    kind: architecture
+    description: LEHD and AM are autoregressive attention solvers; LEHD moves most relational modeling into a heavier dynamic decoder to improve scale transfer.
+  - papers: [bq-nco, attention-model]
+    kind: architecture
+    description: BQ-NCO and AM construct routes sequentially, while BQ-NCO compresses decision-equivalent states before scoring the remaining actions.
+  - papers: [difusco, diffusion-plug-and-play-priors]
+    kind: architecture
+    description: Both use diffusion to refine soft combinatorial structure, with DIFUSCO learning a graph-conditioned reverse process and DMPP supplying a plug-and-play prior.
+  - papers: [t2t, diffusion-plug-and-play-priors]
+    kind: search
+    description: Both optimize continuous noisy solution representations before discrete decoding; T2T emphasizes objective-gradient search at test time.
+  - papers: [neuopt, dact]
+    kind: search
+    description: NeuOpt and DACT learn iterative routing improvements, using flexible k-opt moves across feasible and infeasible regions and paired node actions respectively.
+  - papers: [ncs, dact]
+    kind: search
+    description: Both apply learned policies repeatedly to improve incumbent routes; NCS coordinates multiple complementary policies for pickup-and-delivery neighborhoods.
+  - papers: [utsp, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: UTSP and GCN learn non-autoregressive edge structure for TSP, using unsupervised relaxation and supervised heatmap learning respectively.
+  - papers: [less-is-more, efficient-graph-convnet-tsp]
+    kind: architecture
+    description: Both study graph-based TSP prediction, with Less Is More isolating candidate-graph sparsity as a central representation choice.
+  - papers: [compass, efficient-active-search]
+    kind: search
+    description: COMPASS and EAS adapt a pretrained solver to a target instance, searching a latent policy code and updating lightweight active-search parameters respectively.
+  - papers: [polynet, pomo]
+    kind: learning
+    description: PolyNet and POMO obtain multiple constructive trajectories, through learned strategy embeddings and symmetric multi-start rollouts respectively.
+  - papers: [h-tsp, graph-pointer-network-hrl]
+    kind: architecture
+    description: Both use hierarchical routing structure to extend learned construction beyond small graphs, but decompose and connect subroutes differently.
+  - papers: [tam, graph-pointer-network-hrl]
+    kind: scope
+    description: TAM and GPN/HGPN transfer small routing policies to larger instances through learned high-level decomposition and local construction.
+  - papers: [pointerformer, attention-model]
+    kind: architecture
+    description: Pointerformer retains attention-based autoregressive construction while adding reversible encoding and a multi-pointer decoder for larger TSPs.
+  - papers: [reld, attention-model]
+    kind: architecture
+    description: ReLD revisits the AM-style encoder-decoder balance and preserves selected dynamic context in a much lighter sequential decoder.
+  - papers: [meta-sage, efficient-active-search]
+    kind: learning
+    description: Both adapt neural solvers after pretraining; Meta-SAGE meta-learns a cross-scale adaptation schedule while EAS optimizes a small parameter subset per instance.
+  - papers: [ttpl, efficient-active-search]
+    kind: learning
+    description: TTPL and EAS use test-time learning to improve a pretrained routing policy, aligning shifted representations and adapting instance-specific parameters respectively.
+  - papers: [omni-vrp, goal]
+    kind: scope
+    description: Both seek broad coverage, with Omni-VRP targeting compound routing shifts and GOAL sharing a backbone across distinct combinatorial problem families.
+  - papers: [routefinder, goal]
+    kind: scope
+    description: RouteFinder and GOAL use shared backbones with problem information and lightweight adaptation, within VRP variants and across broader optimization families respectively.
+  - papers: [select-and-optimize, graph-guided-local-search]
+    kind: search
+    description: Both learn where downstream TSP search should focus, selecting promising tour regions and graph edges respectively.
+  - papers: [l2seg, graph-guided-local-search]
+    kind: search
+    description: L2Seg and RGLS improve incumbent tours with learned structural guidance, using adaptive route segments and edge-guided local moves respectively.
+  - papers: [udc, learning-to-delegate]
+    kind: scope
+    description: UDC and L2D decompose large routing instances into solvable subproblems, with different learned partitioning and coordination mechanisms.
+  - papers: [glop, graph-pointer-network-hrl]
+    kind: architecture
+    description: Both combine high-level structure with local route construction; GLOP pairs global heatmap partitions with autoregressive local paths.
+  - papers: [fast-t2t, diffusion-plug-and-play-priors]
+    kind: search
+    description: Fast T2T and DMPP refine continuous diffusion representations, while Fast T2T trains the landscape for shorter objective-driven test-time search.
+  - papers: [gensco, diffusion-plug-and-play-priors]
+    kind: search
+    description: Both reuse diffusion at inference, with GenSCO treating conditional generation as an incumbent-aware search operator.
+  - papers: [pip, attention-model]
+    kind: learning
+    description: PIP augments attention-based construction with a learned look-ahead signal for constraints whose infeasibility is not visible from an immediate mask.
+  - papers: [constraint-tightness, attention-model]
+    kind: learning
+    description: Constraint Tightness conditions an AM-like routing policy on feasibility-regime information so decisions change with how restrictive the instance is.
+  - papers: [invit, attention-model]
+    kind: architecture
+    description: INViT and AM are autoregressive attention solvers, but INViT replaces one global view with normalized nested neighborhoods for transfer.
+  - papers: [dar, attention-model]
+    kind: architecture
+    description: DAR reshapes AM-style attention with explicit normalized distance information to stabilize geometric generalization.
+  - papers: [dpn, mapdp]
+    kind: scope
+    description: DPN and MAPDP coordinate multiple routes or agents, focusing on min-max workload partitioning and cooperative pickup-delivery decisions respectively.
+  - papers: [hncs, graph-pointer-network-hrl]
+    kind: architecture
+    description: HNCS and GPN/HGPN use hierarchical spatial representations to connect locally constructed TSP segments at larger scales.
+  - papers: [mvmoe, goal]
+    kind: scope
+    description: MVMoE and GOAL share parameters across tasks, using sparse experts for VRP variants and task adapters across wider optimization families.
+  - papers: [mtpomo, pomo]
+    kind: learning
+    description: MTPOMO extends POMO-style multi-start policy optimization from separately trained routing tasks to a shared multi-task checkpoint.
+  - papers: [softdist, efficient-graph-convnet-tsp]
+    kind: search
+    description: SoftDist and GCN evaluate how soft edge guidance interacts with strong post-hoc TSP search rather than treating the neural scores as final tours.
+  - papers: [gfacs, deepaco]
+    kind: search
+    description: Both learn proposal information for ant-colony search; GFACS uses a reward-proportional GFlowNet and DeepACO predicts instance-specific heuristic measures.
+  - papers: [elg, attention-model]
+    kind: architecture
+    description: ELG reorganizes attention-based routing around transferable local policies and ensembles them under scale or distribution shift.
+  - papers: [l2r, efficient-graph-convnet-tsp]
+    kind: search
+    description: L2R and GCN both restrict downstream routing search with learned candidate edges, using adaptive reduction and heatmap-guided decoding respectively.
+  - papers: [cross-problem-learning, goal]
+    kind: scope
+    description: Both share a backbone and lightweight problem-aware components, across related VRPs and across multiple combinatorial problem families respectively.
+  - papers: [cada, goal]
+    kind: scope
+    description: CaDA and GOAL separate shared representation learning from problem information, through dual constraint attention and task adapters respectively.
+  - papers: [fer, attention-model]
+    kind: architecture
+    description: FER and AM use attention-based sequential construction; FER adds lightweight state-aware refinement to otherwise static node embeddings.
+  - papers: [icam, attention-model]
+    kind: architecture
+    description: ICAM conditions an attention routing policy on each instance's scale, density, and geometry to improve large-instance transfer.
+  - papers: [asp, pomo]
+    kind: learning
+    description: ASP and POMO learn families of solver behavior rather than one deterministic trajectory, through adaptive portfolios and symmetric starts respectively.
+  - papers: [urs, goal]
+    kind: scope
+    description: URS and GOAL are shared neural solvers; URS targets zero-shot coverage of many VRP constraint combinations while GOAL spans broader problem families.
+  - papers: [gumbeldore, pomo]
+    kind: learning
+    description: Gumbeldore and POMO exploit multiple constructive trajectories, using without-replacement sampling for self-improvement and symmetric starting states.
+  - papers: [agfn, pomo]
+    kind: learning
+    description: AGFN and POMO train distributions over routing trajectories, emphasizing adversarial flow-based diversity and symmetric multi-start optimization respectively.
+  - papers: [sil, attention-model]
+    kind: learning
+    description: SIL strengthens an attention-based constructive solver with self-generated training targets and optional partial-route reconstruction.
+  - papers: [l2c-insert, attention-model]
+    kind: architecture
+    description: L2C-Insert changes AM-style appending into joint node-and-position selection, enabling both construction and insertion-based reconstruction.
+  - papers: [mixed-curvature, goal]
+    kind: scope
+    description: Mixed-Curvature and GOAL pretrain shared representations across tasks, using geometric latent spaces and a common Transformer backbone respectively.
+  - papers: [shield, goal]
+    kind: scope
+    description: SHIELD and GOAL combine shared task learning with structural specialization, through sparse routing hierarchies and task-specific adapters.
+  - papers: [mtl-kd, goal]
+    kind: learning
+    description: MTL-KD and GOAL train shared multi-task solvers, using specialist-teacher distillation and joint imitation learning respectively.
+  - papers: [dgl, attention-model]
+    kind: architecture
+    description: DGL modifies attention-based CVRP construction by dynamically fusing compact global summaries with normalized local neighborhoods.
+  - papers: [drhg, neural-large-neighborhood-search]
+    kind: search
+    description: DRHG and NLNS learn destroy-and-repair search, with hypergraph group selection and neural customer removal or reinsertion respectively.
+  - papers: [nds, neural-large-neighborhood-search]
+    kind: search
+    description: NDS and NLNS alternate learned destruction with repair; NDS deliberately uses a simple greedy insertion rule for reconstruction.
+  - papers: [lehd, bq-nco]
+    kind: architecture
+    description: Both target large-scale autoregressive routing efficiency, through a decoder-heavy dynamic representation and bisimulation-based state compression.
+  - papers: [difusco, t2t]
+    kind: search
+    description: DIFUSCO and T2T learn continuous solution distributions and spend test-time computation on denoising or objective-gradient refinement.
+  - papers: [neuopt, ncs]
+    kind: search
+    description: Both broaden learned improvement beyond one fixed move, through flexible k-opt decisions and coordinated policy neighborhoods.
+  - papers: [utsp, less-is-more]
+    kind: architecture
+    description: UTSP and Less Is More study label-free or structure-driven TSP learning, with sparse candidate graphs providing a shared geometric inductive bias.
+  - papers: [compass, polynet]
+    kind: learning
+    description: Both represent multiple construction strategies in one network, adapting a latent policy code per instance and evaluating learned strategy embeddings respectively.
+  - papers: [h-tsp, tam]
+    kind: architecture
+    description: H-TSP and TAM learn hierarchical decomposition so small lower-level routing policies can operate on graphs with thousands of nodes.
+  - papers: [pointerformer, reld]
+    kind: architecture
+    description: Both redesign attention construction for efficient scale transfer, emphasizing reversible multi-pointer modeling and a carefully retained light decoder.
+  - papers: [meta-sage, ttpl]
+    kind: learning
+    description: Meta-SAGE and TTPL adapt pretrained routing solvers after a distribution shift, through meta-learned updates and representation projection.
+  - papers: [omni-vrp, routefinder]
+    kind: scope
+    description: Both broaden VRP generalization across variants and distributions, combining diverse training with improvement and a shared attribute-based foundation model.
+  - papers: [select-and-optimize, l2seg]
+    kind: search
+    description: Both allocate large-scale improvement effort to learned route regions, using promising local windows and adaptive segment boundaries.
+  - papers: [udc, glop]
+    kind: architecture
+    description: UDC and GLOP learn divide-and-conquer routing pipelines that normalize and solve smaller subproblems before reconstructing a global route.
+  - papers: [fast-t2t, gensco]
+    kind: search
+    description: Both scale diffusion-based solving at test time, by shortening optimization-consistent refinement and reusing generation as an incumbent-aware operator.
+  - papers: [pip, constraint-tightness]
+    kind: learning
+    description: Both expose constraint information to a constructive policy, predicting future infeasibility and conditioning decisions on constraint severity.
+  - papers: [invit, dar]
+    kind: architecture
+    description: INViT and DAR improve geometric transfer with normalized spatial signals, using nested local views and distance-aware attention reshaping.
+  - papers: [dpn, hncs]
+    kind: architecture
+    description: DPN and HNCS separate global assignment from local navigation, for min-max multi-route balance and real-world hierarchical TSP respectively.
+  - papers: [mvmoe, mtpomo]
+    kind: learning
+    description: Both train shared policies across VRP variants, using sparse mixture-of-experts specialization and POMO-style multi-task learning.
+  - papers: [softdist, gfacs]
+    kind: search
+    description: Both emphasize the downstream search budget behind final solutions, through controlled edge guidance and GFlowNet-assisted ant sampling.
+  - papers: [elg, l2r]
+    kind: search
+    description: ELG and L2R reduce large routing decisions to transferable local candidates, through policy ensembles and a learned sparse search space.
+  - papers: [cross-problem-learning, cada]
+    kind: scope
+    description: Both share one routing backbone across constraint variants, with lightweight problem components and explicit constraint-aware dual attention.
+  - papers: [fer, icam]
+    kind: architecture
+    description: FER and ICAM adapt attention representations to the current routing context, refining partial-solution features and conditioning on whole-instance geometry.
+  - papers: [asp, urs]
+    kind: scope
+    description: ASP and URS pursue broad solver reuse, through adaptive solver behavior within a problem and one constraint-conditioned checkpoint across many VRPs.
+  - papers: [gumbeldore, agfn]
+    kind: learning
+    description: Both encourage diverse high-quality construction trajectories, using without-replacement self-improvement and adversarial generative flow training.
+  - papers: [sil, l2c-insert]
+    kind: search
+    description: SIL and L2C-Insert improve large-scale construction with partial-route reconstruction, using appending-based self-improvement and flexible insertion.
+  - papers: [mixed-curvature, shield]
+    kind: architecture
+    description: Both improve shared multi-task VRP representations, through mixed geometric spaces and sparse hierarchical attention across distributions.
+  - papers: [mtl-kd, dgl]
+    kind: learning
+    description: MTL-KD and DGL use stronger generated supervision to improve generalization, through specialist distillation and self-improvement learning.
+  - papers: [drhg, nds]
+    kind: search
+    description: Both learn large-neighborhood destruction while delegating reconstruction to a repair stage, using hypergraph groups and neural deconstruction.
