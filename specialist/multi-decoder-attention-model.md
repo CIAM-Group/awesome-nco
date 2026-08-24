@@ -41,7 +41,10 @@ A single autoregressive decoder tends to concentrate probability on a narrow fam
 
 ## Methodology
 
-1. Encode all routing nodes with multi-head attention. 2. Feed the shared representation to several decoders. 3. Let each decoder construct a feasible route with its own parameters and embedding glimpse. 4. Train by policy gradient and return the best candidate across decoders and augmentations.
+1. Same encoder/decoder architecture as "Attention, learn to solve routing problems!", but with multiple decoders
+2. Encourage decoders to output diversified routes with KL-divergence loss
+3. Introduce EG-layer to update embedding after each decoding step: same idea as "Step-Wise Deep Learning Models for Solving Routing Problems"
+4. Add a "merge" technique for beam search: delete bad local solutions
 
 ## Experiments
 
