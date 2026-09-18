@@ -30,11 +30,11 @@ Static embeddings become stale as customers are visited, vehicle capacity change
 
 - Introduces step-wise graph encoding for sequential routing decisions.
 - Combines dynamic representations with reinforcement-learning construction.
-- Evaluates TSP and CVRP variants and size transfer.
 
 ## Methodology
 
-1. Encode the current feasible nodes and route state. 2. Decode the next node with attention. 3. update masks, capacity, and residual graph. 4. Re-run the encoder and continue until the solution is complete.
+1. Encode again on the remaining map after each(or every p, with p a constant) decoding step
+2. Rerun only the top layer of encoder to reduce computational cost
 
 ## Experiments
 
