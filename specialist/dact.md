@@ -54,22 +54,27 @@ Transformers are effective construction models, but standard positional encoding
 - Introduces cyclic positional encoding to represent the rotation and reflection symmetries of routing solutions.
 - Uses a dual-aspect decoder to combine action proposals derived from node and positional views.
 - Introduces a curriculum-learning strategy for more stable and sample-efficient PPO training.
+- Evaluates both representation and training choices through ablations on dual-aspect encoding, cyclic positional encoding, and curriculum learning.
 
 ## Methodology
 
 1. The current route is represented through node features and positions in the cyclic solution.
-2. Two embedding streams encode node and positional information separately.
-3. Collaborative attention lets each stream refer to the other without prematurely merging their representations.
-4. The decoder produces a distribution over pairwise local actions that modify the current solution.
-5. The policy is trained with n-step Proximal Policy Optimization and a curriculum over improvement horizons.
-6. At inference, the learned operator is applied iteratively, optionally with augmentation and a larger step budget.
+2. Node feature embeddings and positional feature embeddings are encoded in separate streams.
+3. Cyclic positional encoding represents route positions so adjacent positions across the tour boundary remain close in the positional representation.
+4. Dual-aspect collaborative attention lets each stream refer to the other while avoiding premature fusion of node and position correlations.
+5. The decoder generates node-pair action proposals from both aspects and aggregates them into a distribution over pairwise local actions.
+6. Infeasible node pairs, diagonal choices, and immediately repeated node pairs are masked before sampling or selecting a move.
+7. The policy is trained with n-step Proximal Policy Optimization and a curriculum that gradually exposes the agent to higher-quality initial states.
+8. At inference, the learned operator is applied iteratively, optionally with augmentation and a larger step budget.
 
 ## Experiments
 
 - **Problems:** TSP and CVRP
 - **Synthetic sizes:** Primarily 20, 50, and 100 nodes/customers
+- **Initial solutions:** Uses randomly generated initial solutions during training and greedy solutions during inference.
+- **Search budget:** Reports results with iterative limits such as 5,000 and 10,000 steps, with optional data augmentation for stronger inference.
 - **Benchmark data:** TSPLIB and CVRPLIB, including instances larger than the main training sizes
-- **Main baselines:** Transformer-based improvement models, construction models, OR-Tools, LKH, and other learned search methods
+- **Main baselines:** Transformer-based improvement models, construction models, OR-Tools, LKH, Concorde for TSP, and other learned search methods
 - **Metrics:** Objective value, optimality gap, runtime, and cross-size generalization
 - **Ablations:** Dual-aspect representation, cyclic positional encoding, and curriculum learning
 - **Main finding:** DACT improves over the compared Transformer-based improvement methods and shows stronger cross-size and benchmark generalization, at the cost of iterative inference.
@@ -91,7 +96,7 @@ Author-reported constraints and curator observations are separated to keep inter
 
 ## Reproducibility
 
-- Official implementation: [yining043/VRP-DACT](https://github.com/yining043/VRP-DACT)
-- Pretrained checkpoints: available
-- Notebook/demo: available
-- Main paper references: Sections 3-5 and Appendices C-E
+- **Official implementation:** [yining043/VRP-DACT](https://github.com/yining043/VRP-DACT)
+- **Checkpoints:** Available in the official repository.
+- **Notebook/demo:** Available in the official repository.
+- **Main paper references:** Sections 3-5 and Appendices C-E.
