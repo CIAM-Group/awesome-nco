@@ -50,15 +50,21 @@ export function renderNavigationBadges(papers) {
   const generalistCount = main.filter((paper) => paper.scope === 'generalist').length
   const specialistCount = main.filter((paper) => paper.scope === 'specialist').length
   const studyCount = main.filter((paper) => paper.scope === 'study').length
-  const referenceCount = papers.length - main.length
 
   return [
     `[![Website](https://img.shields.io/badge/Website-Awesome%20NCO-3e6177?style=flat-square)](${websiteUrl})`,
     `[![Generalist Solvers: ${generalistCount} papers](https://img.shields.io/badge/Generalist-${generalistCount}-805e6f?style=flat-square)](#generalist-solvers)`,
     `[![Specialist Solvers: ${specialistCount} papers](https://img.shields.io/badge/Specialist-${specialistCount}-315f86?style=flat-square)](#specialist-solvers)`,
     `[![Research Studies: ${studyCount} papers](https://img.shields.io/badge/Studies-${studyCount}-58765b?style=flat-square)](#research-studies)`,
-    `[![Reference collection: ${referenceCount} papers](https://img.shields.io/badge/References-${referenceCount}-7a756a?style=flat-square)](#reference-collection)`,
   ].join(' ')
+}
+
+export function renderReviewSummary(papers, batch) {
+  const reviewedCount = papers.filter(paper => paper.review_status === 'verified').length
+  const batchSummary = batch
+    ? ` Conference batch: **${batch.completed_papers} reviewed notes**, with **${batch.deferred_papers} deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).`
+    : ''
+  return `<!--\n**Full-text review: ${reviewedCount} / ${papers.length} papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence.${batchSummary}\n-->`
 }
 
 function renderPaperRow(paper) {

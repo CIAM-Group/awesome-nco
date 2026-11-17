@@ -5,12 +5,13 @@
 <!-- A curated research index of neural combinatorial optimization: generalist and specialist solvers, alongside theory, benchmarks, and evaluation studies.-->
 
 <!-- GENERATED_REVIEW_START -->
-<!-- **Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).-->
+<!--
+**Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).
+-->
 <!-- GENERATED_REVIEW_END -->
 
 <!-- GENERATED_NAVIGATION_START -->
-[![Website](https://img.shields.io/badge/Website-Awesome%20NCO-3e6177?style=flat-square)](https://ciam-group.github.io/awesome-nco/) [![Generalist Solvers: 48 papers](https://img.shields.io/badge/Generalist-48-805e6f?style=flat-square)](#generalist-solvers) [![Specialist Solvers: 388 papers](https://img.shields.io/badge/Specialist-388-315f86?style=flat-square)](#specialist-solvers) [![Research Studies: 46 papers](https://img.shields.io/badge/Studies-46-58765b?style=flat-square)](#research-studies) 
-<!-- [![Reference collection: 22 papers](https://img.shields.io/badge/References-22-7a756a?style=flat-square)](#reference-collection)-->
+[![Website](https://img.shields.io/badge/Website-Awesome%20NCO-3e6177?style=flat-square)](https://ciam-group.github.io/awesome-nco/) [![Generalist Solvers: 48 papers](https://img.shields.io/badge/Generalist-48-805e6f?style=flat-square)](#generalist-solvers) [![Specialist Solvers: 388 papers](https://img.shields.io/badge/Specialist-388-315f86?style=flat-square)](#specialist-solvers) [![Research Studies: 46 papers](https://img.shields.io/badge/Studies-46-58765b?style=flat-square)](#research-studies)
 <!-- GENERATED_NAVIGATION_END -->
 
 </div>
