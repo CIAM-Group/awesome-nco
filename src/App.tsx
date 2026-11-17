@@ -28,7 +28,7 @@ export function App() {
           <Route path="/generalist" element={<CollectionPage scope="generalist" />} />
           <Route path="/studies" element={<CollectionPage scope="study" />} />
           <Route path="/papers" element={<PapersPage />} />
-          <Route path="/references" element={<PapersPage referenceOnly />} />
+          <Route path="/references" element={<Navigate to="/papers" replace />} />
           <Route path="/relations" element={<RelationsPage />} />
           <Route path="/papers/:id" element={<PaperDetailPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

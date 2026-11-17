@@ -1,24 +1,30 @@
 import { ArrowLeft, Code2, ExternalLink, FileText } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { PageMeta } from '../components/PageMeta'
-import { assetUrl, citationEvidenceLabel, citationEvidenceUrl, formatPartialDate, formatPublicDate, fullTextReviewComplete, getPaper, paperClassification, scopePath, relatedPaperId, relationsForPaper, scopeLabels, scopeShortLabels, reviewStatusLabels, reviewRecordUrl } from '../lib/data'
+import { Pagination } from '../components/Pagination'
+import { usePagination } from '../lib/usePagination'
+import type { Paper } from '../types'
+import { assetUrl, citationEvidenceLabel, citationEvidenceUrl, formatPartialDate, formatPublicDate, getPaper, paperClassification, scopePath, outgoingReferences, scopeLabels, scopeShortLabels } from '../lib/data'
 
 export function PaperDetailPage() {
   const { id } = useParams()
   const paper = id ? getPaper(id) : undefined
-  if (!paper) return <Navigate to="/" replace />
-  const related = relationsForPaper(paper.id)
+  if (!paper) return <Navigate to="/papers" replace />
+  return <PaperArticle key={paper.id} paper={paper} />
+}
+
+function PaperArticle({ paper }: { paper: Paper }) {
+  const page = usePagination(outgoingReferences(paper.id), 'paper-references')
 
   return (
     <div className={`paper-detail paper-detail--${paper.scope} page-shell`}>
       <PageMeta title={paper.short_title} description={paper.summary} />
-      <Link className="back-link" to={paper.inclusion === 'reference' ? '/references' : scopePath(paper.scope)}><ArrowLeft size={15} aria-hidden="true" /> Back to {paper.inclusion === 'reference' ? 'reference collection' : `${scopeShortLabels[paper.scope]} timeline`}</Link>
+      <Link className="back-link" to={scopePath(paper.scope)}><ArrowLeft size={15} aria-hidden="true" /> Back to {scopeShortLabels[paper.scope]} timeline</Link>
       <header className="paper-detail__header">
         <p className="eyebrow">{scopeLabels[paper.scope]}</p>
         <h1>{paper.title}</h1>
         <p>{paper.authors.join(' · ')}</p>
       </header>
-      <p className={`review-notice review-notice--${paper.review_status}`}><strong>{reviewStatusLabels[paper.review_status]}.</strong> <a href={reviewRecordUrl(paper.id)} target="_blank" rel="noreferrer">Read the source evidence and review record</a>.{paper.inclusion === 'reference' && <> Reference collection: {paper.inclusion_reason}</>}</p>
 
       <div className="paper-detail__layout">
         <aside className="paper-metadata" aria-label="Paper metadata">
@@ -49,20 +55,17 @@ export function PaperDetailPage() {
           <article className="paper-note" dangerouslySetInnerHTML={{ __html: paper.body_html }} />
         </div>
       </div>
-      {(['outgoing', 'incoming'] as const).map(direction => {
-        const entries = related.filter(relation => direction === 'outgoing' ? relation.citing === paper.id : relation.cited === paper.id)
-        return <section className="related-papers" key={direction} aria-label={direction === 'outgoing' ? 'References in this collection' : 'Cited by this collection'}>
-          <p className="eyebrow">Verified in-text citations</p>
-          <h2>{direction === 'outgoing' ? 'References in this collection' : 'Cited by this collection'}</h2>
-          {entries.length === 0 && <p>No verified internal citations recorded in this direction.{!fullTextReviewComplete && ' Citation coverage remains provisional while the full collection is reviewed.'}</p>}
+      <section className="related-papers listing-target" id="paper-references" aria-label="References in this collection">
+          <h2>References in this collection</h2>
+          {page.total === 0 && <p>No references to papers in this collection.</p>}
           <div className="related-papers__grid">
-            {entries.map((relation) => {
-              const relatedPaper = getPaper(relatedPaperId(relation, paper.id))!
-              return <article className="related-paper-card" key={relatedPaper.id}><span>{direction === 'outgoing' ? 'Cites' : 'Cited by'}</span><h3><Link to={`/papers/${relatedPaper.id}`}>{relatedPaper.short_title}</Link></h3><p className="related-paper-card__title">{relatedPaper.title}</p><p>{relation.description}</p>{relation.evidence.map((item, index) => <p key={index}><a href={citationEvidenceUrl(item)} target="_blank" rel="noreferrer">{citationEvidenceLabel(item)} · {item.locator}</a></p>)}</article>
+            {page.items.map((relation) => {
+              const relatedPaper = getPaper(relation.cited)!
+              return <article className="related-paper-card" key={relatedPaper.id}><span>Cites</span><h3><Link to={`/papers/${relatedPaper.id}`}>{relatedPaper.short_title}</Link></h3><p className="related-paper-card__title">{relatedPaper.title}</p><p>{relation.description}</p>{relation.evidence.map((item, index) => <p key={index}><a href={citationEvidenceUrl(item)} target="_blank" rel="noreferrer">{citationEvidenceLabel(item)} · {item.locator}</a></p>)}</article>
             })}
           </div>
+          <Pagination {...page} label="References" />
         </section>
-      })}
     </div>
   )
 }

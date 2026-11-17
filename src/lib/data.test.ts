@@ -11,10 +11,10 @@ import {
   institutionInitials,
   paperTimelineLabel,
   papers,
+  getPaper,
+  outgoingReferences,
+  relations,
   relatedPaperId,
-  relationKindStyles,
-  relationNodeRelSize,
-  relationNodeValue,
   relationsForPaper,
 } from './data'
 import type { Paper, Relation } from '../types'
@@ -112,12 +112,8 @@ describe('timeline grouping', () => {
 describe('compact paper metadata', () => {
   it('uses the agreed method abbreviations without changing stable ids', () => {
     expect(Object.fromEntries(papers.map((paper) => [paper.id, paper.short_title]))).toMatchObject({
-      'neural-combinatorial-optimization': 'PN-AC',
       'rl-vrp': 'VRP-RL',
       'attention-model': 'AM',
-      'dynamic-am': 'AM-D',
-      'efficient-graph-convnet-tsp': 'GCN',
-      'learning-heuristic': 'Learning Heuristic',
     })
   })
 
@@ -151,18 +147,14 @@ describe('compact paper metadata', () => {
   })
 })
 
-describe('relation graph presentation', () => {
-  it('gives every relation kind a distinct non-color line treatment', () => {
-    const styles = Object.values(relationKindStyles)
-    expect(styles).toHaveLength(1)
-    expect(relationKindStyles.citation.width).toBeGreaterThan(0)
+describe('public collection', () => {
+  it('does not expose retained reference notes as website papers', () => {
+    expect(papers.every(paper => paper.inclusion === 'main')).toBe(true)
+    expect(getPaper('neural-combinatorial-optimization')).toBeUndefined()
+    expect(getPaper('dynamic-am')).toBeUndefined()
   })
-
-  it('keeps degree-scaled node radii in the compact target range', () => {
-    const radius = (degree: number) => Math.sqrt(relationNodeValue(degree)) * relationNodeRelSize
-    expect(radius(1)).toBeGreaterThanOrEqual(4)
-    expect(radius(1_000)).toBeLessThanOrEqual(8)
-    expect(relationNodeValue(1_000)).toBe(relationNodeValue(10_000))
+  it('keeps all indexed outgoing citations in the correct direction', () => {
+    for (const paper of papers) expect(outgoingReferences(paper.id)).toEqual(relations.filter(relation => relation.citing === paper.id))
   })
 })
 

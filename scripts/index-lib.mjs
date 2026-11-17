@@ -62,7 +62,10 @@ export function renderNavigationBadges(papers) {
 }
 
 function renderPaperRow(paper) {
-  const resources = [renderLink('Note', `${websiteUrl}papers/${paper.id}`, true)]
+  const noteUrl = paper.inclusion === 'reference'
+    ? `https://github.com/CIAM-Group/awesome-nco/blob/main/${paper.note_path}`
+    : `${websiteUrl}papers/${paper.id}`
+  const resources = [renderLink('Note', noteUrl, true)]
   if (paper.code_url) resources.push(renderLink('Code', paper.code_url))
 
   const cells = [

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { FilterBar } from '../components/FilterBar'
 import { PageMeta } from '../components/PageMeta'
 import { Timeline } from '../components/Timeline'
+import { clearPages } from '../lib/pagination'
 import {
   filterPapers,
   filtersFromSearchParams,
@@ -29,12 +30,12 @@ export function CollectionPage({ scope }: CollectionPageProps) {
 
   const filters = filtersFromSearchParams(searchParams, { paradigms: paradigmValues, families, years })
 
-  const filtered = filterPapers(source, filters)
+  const filtered = filterPapers(source, { ...filters, year: 'all', inclusion: 'main' })
 
   function updateFilter(key: string, value: string) {
     const typedKey = key as keyof PaperFilters
     const keyMap: Record<keyof PaperFilters, string> = { query: 'q', scope: 'scope', paradigm: 'paradigm', family: 'family', year: 'year', type: 'type', inclusion: 'inclusion' }
-    const next = new URLSearchParams(searchParams)
+    const next = clearPages(new URLSearchParams(searchParams))
     if (value === '' || value === 'all') next.delete(keyMap[typedKey])
     else next.set(keyMap[typedKey], value)
     setSearchParams(next, { replace: true })
@@ -64,10 +65,6 @@ export function CollectionPage({ scope }: CollectionPageProps) {
             {
               key: 'family', label: 'Problem family', value: filters.family,
               options: [{ value: 'all', label: 'All problem families' }, ...families.map((value) => ({ value, label: value }))],
-            },
-            {
-              key: 'year', label: 'Timeline year', value: filters.year,
-              options: [{ value: 'all', label: 'All timeline years' }, ...years.map((value) => ({ value, label: value }))],
             },
           ]}
           resultCount={filtered.length}

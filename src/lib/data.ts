@@ -1,5 +1,5 @@
 import generated from '../generated/content.json'
-import type { CollectionData, Paper, PaperFilters, Paradigm, Relation, RelationKind, RelationKindStyle, Scope, PaperType, TimelineGroup } from '../types'
+import type { CollectionData, Paper, PaperFilters, Paradigm, Relation, RelationKind, Scope, PaperType, TimelineGroup } from '../types'
 
 export const collection = generated as CollectionData
 export const papers = collection.papers
@@ -40,18 +40,7 @@ export const relationKindLabels: Record<RelationKind, string> = {
   citation: 'Explicit citation',
 }
 
-export const relationKindStyles: Record<RelationKind, RelationKindStyle> = {
-  citation: { color: '#315f86', width: 1.5, dash: [], curvature: 0.08, marker: 'none' },
-}
-
-export const scopeColors: Record<Scope, string> = { specialist: '#315f86', generalist: '#805e6f', study: '#58765b' }
 export function scopePath(scope: Scope) { return scope === 'study' ? '/studies' : `/${scope}` }
-
-export const relationNodeRelSize = 2.6
-
-export function relationNodeValue(degree: number) {
-  return Math.min(6, 2 + Math.sqrt(degree) * 0.72)
-}
 
 const compactVenueLabels: Record<string, string> = {
   'AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications': 'AAAI Workshop',
@@ -209,9 +198,21 @@ export function assetUrl(relativePath: string) {
   return `${base}${relativePath.replace(/^\//, '')}`
 }
 
-export function relationsForPaper(id: string, source: Relation[] = relations) {
-  return source.filter((relation) => relation.papers.includes(id))
+const relationsByPaper = new Map<string, Relation[]>()
+const outgoingByPaper = new Map<string, Relation[]>()
+for (const relation of relations) {
+  for (const id of relation.papers) {
+    if (!relationsByPaper.has(id)) relationsByPaper.set(id, [])
+    relationsByPaper.get(id)!.push(relation)
+  }
+  if (!outgoingByPaper.has(relation.citing)) outgoingByPaper.set(relation.citing, [])
+  outgoingByPaper.get(relation.citing)!.push(relation)
 }
+
+export function relationsForPaper(id: string, source: Relation[] = relations) {
+  return source === relations ? relationsByPaper.get(id) ?? [] : source.filter((relation) => relation.papers.includes(id))
+}
+export function outgoingReferences(id: string) { return outgoingByPaper.get(id) ?? [] }
 
 export function relatedPaperId(relation: Relation, id: string) {
   return relation.papers[0] === id ? relation.papers[1] : relation.papers[0]

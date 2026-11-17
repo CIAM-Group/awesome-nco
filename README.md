@@ -5,7 +5,7 @@
 A curated research index of neural combinatorial optimization: generalist and specialist solvers, alongside theory, benchmarks, and evaluation studies.
 
 <!-- GENERATED_REVIEW_START -->
-**Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation graph records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).
+**Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).
 <!-- GENERATED_REVIEW_END -->
 
 <!-- GENERATED_NAVIGATION_START -->
@@ -19,7 +19,7 @@ A curated research index of neural combinatorial optimization: generalist and sp
 - **Problem coverage** — Routing, scheduling, packing, graph matching, integer programming, and satisfiability.
 - **Solution methods** — Constructive, improvement, hybrid, and neurodynamic approaches.
 - **Structured research notes** — Motivation, contributions, methodology, experiments, limitations, and reproducibility.
-- **Verified citations** — A directed graph records explicit in-text citations with original-page evidence; verification progress is reported separately.
+- **Verified citations** — A citation register records explicit in-text citations with original-page evidence; verification progress is reported separately.
 
 <a name="generalist-solvers"></a>
 
@@ -851,8 +851,8 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://link.springer.com/chapter/10.1007/978-3-032-37553-7_1">LEGO-Puzzles: How Good Are MLLMs at Multi-Step Spatial Reasoning?</a> | ECCV 2026 | <a href="https://arxiv.org/abs/2503.19990">2025-03-25</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/lego-puzzles-how-good-are-mllms-at-multi-step-spatial-reasoning" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Tangkexian/LEGO-Puzzles">Code</a> |
-| <a href="https://doi.org/10.1145/3774904.3792224">VSAL: A Vision Solver with Adaptive Layouts for Graph Property Detection</a> | WWW 2026 | <a href="https://arxiv.org/abs/2602.13880">2026-02-14</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Jiahao-Xie-86/VSAL">Code</a> |
+| <a href="https://link.springer.com/chapter/10.1007/978-3-032-37553-7_1">LEGO-Puzzles: How Good Are MLLMs at Multi-Step Spatial Reasoning?</a> | ECCV 2026 | <a href="https://arxiv.org/abs/2503.19990">2025-03-25</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/lego-puzzles-how-good-are-mllms-at-multi-step-spatial-reasoning.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Tangkexian/LEGO-Puzzles">Code</a> |
+| <a href="https://doi.org/10.1145/3774904.3792224">VSAL: A Vision Solver with Adaptive Layouts for Graph Property Detection</a> | WWW 2026 | <a href="https://arxiv.org/abs/2602.13880">2026-02-14</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Jiahao-Xie-86/VSAL">Code</a> |
 
 </details>
 
@@ -861,7 +861,7 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://proceedings.mlr.press/v258/kim25a.html">Ant Colony Sampling with GFlowNets for Combinatorial Optimization</a> | AISTATS 2025 | <a href="https://arxiv.org/abs/2403.07041">2024-03-11</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/gfacs" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ai4co/gfacs">Code</a> |
+| <a href="https://proceedings.mlr.press/v258/kim25a.html">Ant Colony Sampling with GFlowNets for Combinatorial Optimization</a> | AISTATS 2025 | <a href="https://arxiv.org/abs/2403.07041">2024-03-11</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/gfacs.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ai4co/gfacs">Code</a> |
 
 </details>
 
@@ -870,7 +870,7 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://arxiv.org/abs/2403.17159">Less Is More -- On the Importance of Sparsification for Transformers and Graph Neural Networks for TSP</a> | arXiv 2024 | <a href="https://arxiv.org/abs/2403.17159">2024-03-25</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/less-is-more" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://arxiv.org/abs/2403.17159">Less Is More -- On the Importance of Sparsification for Transformers and Graph Neural Networks for TSP</a> | arXiv 2024 | <a href="https://arxiv.org/abs/2403.17159">2024-03-25</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/less-is-more.md" target="_blank" rel="noopener noreferrer">Note</a> |
 
 </details>
 
@@ -879,7 +879,7 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://proceedings.mlr.press/v206/cheng23a.html">Select and Optimize: Learning to solve large-scale TSP instances</a> | AISTATS 2023 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/select-and-optimize" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/honey0920/select-and-optimize">Code</a> |
+| <a href="https://proceedings.mlr.press/v206/cheng23a.html">Select and Optimize: Learning to solve large-scale TSP instances</a> | AISTATS 2023 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/select-and-optimize.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/honey0920/select-and-optimize">Code</a> |
 
 </details>
 
@@ -888,8 +888,8 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/7070_ECCV_2022_paper.php">A Comparative Study of Graph Matching Algorithms in Computer Vision</a> | ECCV 2022 | <a href="https://arxiv.org/abs/2207.00291">2022-07-01</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/a-comparative-study-of-graph-matching-algorithms-in-computer-vision" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/vislearn/gmbench">Code</a> |
-| <a href="https://doi.org/10.1007/978-3-031-08011-1_14">Deep Policy Dynamic Programming for Vehicle Routing Problems</a> | CPAIOR 2022 | <a href="https://arxiv.org/abs/2102.11756">2021-02-23</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/deep-policy-dynamic-programming" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/wouterkool/dpdp">Code</a> |
+| <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/7070_ECCV_2022_paper.php">A Comparative Study of Graph Matching Algorithms in Computer Vision</a> | ECCV 2022 | <a href="https://arxiv.org/abs/2207.00291">2022-07-01</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/a-comparative-study-of-graph-matching-algorithms-in-computer-vision.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/vislearn/gmbench">Code</a> |
+| <a href="https://doi.org/10.1007/978-3-031-08011-1_14">Deep Policy Dynamic Programming for Vehicle Routing Problems</a> | CPAIOR 2022 | <a href="https://arxiv.org/abs/2102.11756">2021-02-23</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/deep-policy-dynamic-programming.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/wouterkool/dpdp">Code</a> |
 
 </details>
 
@@ -898,9 +898,9 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://proceedings.mlr.press/v157/sui21a.html">Learning 3-opt Heuristics for Traveling Salesman Problem via Deep Reinforcement Learning</a> | ACML 2021 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/neural-3-opt" target="_blank" rel="noopener noreferrer">Note</a> |
-| <a href="https://www.ijcai.org/proceedings/2021/212">Graph Edit Distance Learning via Modeling Optimum Matchings with Constraints</a> | IJCAI 2021 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/csypeng/graph_edit_distance_learning">Code</a> |
-| <a href="https://proceedings.mlr.press/v139/ren21c.html">Integrated Defense for Resilient Graph Matching</a> | ICML 2021 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/idr-gm" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://proceedings.mlr.press/v157/sui21a.html">Learning 3-opt Heuristics for Traveling Salesman Problem via Deep Reinforcement Learning</a> | ACML 2021 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/neural-3-opt.md" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://www.ijcai.org/proceedings/2021/212">Graph Edit Distance Learning via Modeling Optimum Matchings with Constraints</a> | IJCAI 2021 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/csypeng/graph_edit_distance_learning">Code</a> |
+| <a href="https://proceedings.mlr.press/v139/ren21c.html">Integrated Defense for Resilient Graph Matching</a> | ICML 2021 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/idr-gm.md" target="_blank" rel="noopener noreferrer">Note</a> |
 
 </details>
 
@@ -909,12 +909,12 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://doi.org/10.1007/978-981-15-5577-0_51">A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems</a> | ISICA 2020 | <a href="https://arxiv.org/abs/2002.03282">2020-02-09</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/dynamic-am" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Roberto09/Dynamic-Attention-Model-for-VRP---Pytorch">Code</a> |
-| <a href="https://doi.org/10.1109/ACCESS.2020.3000236">A Graph Neural Network Assisted Monte Carlo Tree Search Approach to Traveling Salesman Problem</a> | IEEE Access 2020 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/gnn-mcts-tsp" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/CMACH508/2020-GNN-MCTS-TSP">Code</a> |
-| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/5733">Predicting Propositional Satisfiability via End-to-End Learning</a> | AAAI 2020 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/predicting-propositional-satisfiability-via-end-to-end-learning" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ChrisCameron1/End2EndSAT">Code</a> |
-| <a href="https://arxiv.org/abs/2002.08539">Learn to Design the Heuristics for Vehicle Routing Problem</a> | IJCAI HSI Workshop 2020 | <a href="https://arxiv.org/abs/2002.08539">2020-02-20</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/egate" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/water-mirror/NeuLNS">Code</a> |
-| <a href="https://doi.org/10.3233/FAIA200124">Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem</a> | ECAI 2020 | <a href="https://arxiv.org/abs/1911.09539">2019-11-21</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/neural-large-neighborhood-search" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ahottung/NLNS">Code</a> |
-| <a href="https://arxiv.org/abs/1911.04936">Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning</a> | AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications 2020 | <a href="https://arxiv.org/abs/1911.04936">2019-11-12</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/graph-pointer-network-hrl" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/qiang-ma/graph-pointer-network">Code</a> |
+| <a href="https://doi.org/10.1007/978-981-15-5577-0_51">A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems</a> | ISICA 2020 | <a href="https://arxiv.org/abs/2002.03282">2020-02-09</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/dynamic-am.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/Roberto09/Dynamic-Attention-Model-for-VRP---Pytorch">Code</a> |
+| <a href="https://doi.org/10.1109/ACCESS.2020.3000236">A Graph Neural Network Assisted Monte Carlo Tree Search Approach to Traveling Salesman Problem</a> | IEEE Access 2020 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/gnn-mcts-tsp.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/CMACH508/2020-GNN-MCTS-TSP">Code</a> |
+| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/5733">Predicting Propositional Satisfiability via End-to-End Learning</a> | AAAI 2020 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/predicting-propositional-satisfiability-via-end-to-end-learning.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ChrisCameron1/End2EndSAT">Code</a> |
+| <a href="https://arxiv.org/abs/2002.08539">Learn to Design the Heuristics for Vehicle Routing Problem</a> | IJCAI HSI Workshop 2020 | <a href="https://arxiv.org/abs/2002.08539">2020-02-20</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/egate.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/water-mirror/NeuLNS">Code</a> |
+| <a href="https://doi.org/10.3233/FAIA200124">Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem</a> | ECAI 2020 | <a href="https://arxiv.org/abs/1911.09539">2019-11-21</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/neural-large-neighborhood-search.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/ahottung/NLNS">Code</a> |
+| <a href="https://arxiv.org/abs/1911.04936">Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning</a> | AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications 2020 | <a href="https://arxiv.org/abs/1911.04936">2019-11-12</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/graph-pointer-network-hrl.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/qiang-ma/graph-pointer-network">Code</a> |
 
 </details>
 
@@ -923,8 +923,8 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/4399">Learning to Solve NP-Complete Problems: A Graph Neural Network for Decision TSP</a> | AAAI 2019 | <a href="https://arxiv.org/abs/1809.02721">2018-09-08</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/machine-reasoning-ufrgs/TSP-GNN">Code</a> |
-| <a href="https://arxiv.org/abs/1906.01227">An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem</a> | arXiv 2019 | <a href="https://arxiv.org/abs/1906.01227">2019-06-04</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/efficient-graph-convnet-tsp" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/chaitjo/graph-convnet-tsp">Code</a> |
+| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/4399">Learning to Solve NP-Complete Problems: A Graph Neural Network for Decision TSP</a> | AAAI 2019 | <a href="https://arxiv.org/abs/1809.02721">2018-09-08</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/machine-reasoning-ufrgs/TSP-GNN">Code</a> |
+| <a href="https://arxiv.org/abs/1906.01227">An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem</a> | arXiv 2019 | <a href="https://arxiv.org/abs/1906.01227">2019-06-04</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/efficient-graph-convnet-tsp.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://github.com/chaitjo/graph-convnet-tsp">Code</a> |
 
 </details>
 
@@ -933,9 +933,9 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://doi.org/10.1007/978-3-319-93031-2_12">Learning Heuristics for the TSP by Policy Gradient</a> | CPAIOR 2018 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/learning-heuristic" target="_blank" rel="noopener noreferrer">Note</a> |
-| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/11339">Cellular Network Traffic Scheduling With Deep Reinforcement Learning</a> | AAAI 2018 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/cellular-network-traffic-scheduling-with-deep-reinforcement-learning" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://bitbucket.org/sandeep_chinchali/aaai18_deeprlcell">Code</a> |
-| <a href="https://proceedings.neurips.cc/paper_files/paper/2018/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html">Post: Device Placement with Cross-Entropy Minimization and Proximal Policy Optimization</a> | NeurIPS 2018 | — | <a href="https://ciam-group.github.io/awesome-nco/papers/post-device-placement" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://doi.org/10.1007/978-3-319-93031-2_12">Learning Heuristics for the TSP by Policy Gradient</a> | CPAIOR 2018 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/learning-heuristic.md" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://ojs.aaai.org/index.php/AAAI/article/view/11339">Cellular Network Traffic Scheduling With Deep Reinforcement Learning</a> | AAAI 2018 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/studies/cellular-network-traffic-scheduling-with-deep-reinforcement-learning.md" target="_blank" rel="noopener noreferrer">Note</a> · <a href="https://bitbucket.org/sandeep_chinchali/aaai18_deeprlcell">Code</a> |
+| <a href="https://proceedings.neurips.cc/paper_files/paper/2018/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html">Post: Device Placement with Cross-Entropy Minimization and Proximal Policy Optimization</a> | NeurIPS 2018 | — | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/post-device-placement.md" target="_blank" rel="noopener noreferrer">Note</a> |
 
 </details>
 
@@ -944,7 +944,7 @@ Preprints, workshops, and publications outside the main inclusion criteria remai
 
 | Paper | Publication | Preprint | Links |
 | :--- | :--- | :--- | :--- |
-| <a href="https://openreview.net/forum?id=Bk9mxlSFx">Neural Combinatorial Optimization with Reinforcement Learning</a> | ICLR Workshop 2017 | <a href="https://arxiv.org/abs/1611.09940">2016-11-29</a> | <a href="https://ciam-group.github.io/awesome-nco/papers/neural-combinatorial-optimization" target="_blank" rel="noopener noreferrer">Note</a> |
+| <a href="https://openreview.net/forum?id=Bk9mxlSFx">Neural Combinatorial Optimization with Reinforcement Learning</a> | ICLR Workshop 2017 | <a href="https://arxiv.org/abs/1611.09940">2016-11-29</a> | <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/neural-combinatorial-optimization.md" target="_blank" rel="noopener noreferrer">Note</a> |
 
 </details>
 <!-- GENERATED_REFERENCE_INDEX_END -->

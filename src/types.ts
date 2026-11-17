@@ -56,14 +56,6 @@ export interface Relation {
   description: string
 }
 
-export interface RelationKindStyle {
-  color: string
-  width: number
-  dash: number[]
-  curvature: number
-  marker: 'none' | 'opposed-triangles'
-}
-
 export interface CollectionData {
   version: number
   papers: Paper[]
