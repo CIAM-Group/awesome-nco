@@ -2,10 +2,10 @@
 
 # 📚 Awesome Neural Combinatorial Optimization
 
-A curated research index of neural combinatorial optimization: generalist and specialist solvers, alongside theory, benchmarks, and evaluation studies.
+<!-- A curated research index of neural combinatorial optimization: generalist and specialist solvers, alongside theory, benchmarks, and evaluation studies.-->
 
 <!-- GENERATED_REVIEW_START -->
-**Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).
+<!-- **Full-text review: 504 / 504 papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence. Conference batch: **140 reviewed notes**, with **23 deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).-->
 <!-- GENERATED_REVIEW_END -->
 
 <!-- GENERATED_NAVIGATION_START -->
