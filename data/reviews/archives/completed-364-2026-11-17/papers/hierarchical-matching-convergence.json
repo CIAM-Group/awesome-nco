@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "paper_id": "hierarchical-matching-convergence",
+  "note_path": "specialist/hierarchical-matching-convergence.md",
+  "baseline_note_sha256": "f6082dfcf6d46ee9394b37a0ae7260a50ff272c31ab950431aede7f92f72e022",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1992/file/3a066bda8c96b9478bb0512f0a43028c-Paper.pdf",
+      "version": "Official NIPS1992 volume5 scanned proceedings,8pages401-408",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1992/file/3a066bda8c96b9478bb0512f0a43028c-Paper.pdf",
+      "local_path": "research/import-272/nco-38c23e3af1.pdf",
+      "sha256": "2944592edfefbc166afcd5bced922a26904e14ec317c7fe80e23e44dbfba28f0",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh pp1-4 read: Utans/Gindi Yale plus current Berkeley/SUNY addresses, known identity single stored object, translation-only sticks hierarchical Gaussian grammar, intermediate matches/grouping clamped known, bottom permutation matching+analog parameters jointMAP. Not general multigraph recognition or arbitrary missing parts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh pp5-8 all9refs. Bootstrap integrates latent analogs/sums permutations formally, then uses equal-average-variance highT approximation uniform matches, estimates top position then known offsets initializes middle, restarts random bottommatches. One gingerbread3level known-object model, Figure5 only10trials; convergence iterations conditioned ONLY correct solutions and threshold .95/.05; success permutation validity notlabel correctness. sigma1sq=2sigma2sq identical parts, notgeneral unequal variances. References related Yale technicalreport/journal differenttitle notsilently matched NIPS1988 without versionidentity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Joint part labels and analog parameters can converge to wrong matches; bootstrap estimates analog variables first.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            5
+          ],
+          "locator": "Abstract and section2"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Three-level stochastic grammar, reduced Frameville architecture and two-pass bootstrap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          "locator": "Sections1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Known single-object identity and prematched intermediate frames; uniform matches/highT average-variance approximation initializes top and middle parameters, then restart random matches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7
+          ],
+          "locator": "Section1.2 and equations4-6"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "One gingerbread model, plotted10trials, identical partnoise sigma1sq=2sigma2sq; convergence-iteration averages include only correct solutions and require .95/.05 activation thresholds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section2.3 and fullFigure5caption"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Similar-variance approximation, valid permutation may label wrong parts, no general global-convergence theorem.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Approximation caveat and simulation text"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Hand-designed hierarchical known-object matching, specialist/neurodynamic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "locator": "Architecture and bootstrap"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1992/file/3a066bda8c96b9478bb0512f0a43028c-Paper.pdf",
+      "locator": "PDFp1 Yale affiliation, currentaddresses footnotes ICSI Berkeley/SUNY StonyBrook."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1992/hash/3a066bda8c96b9478bb0512f0a43028c-Abstract.html",
+      "locator": "Official NIPS1992 volume5 record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1992/hash/3a066bda8c96b9478bb0512f0a43028c-Abstract.html",
+      "locator": "Manual landing inspection Bibtex/Metadata/Paper only; complete8pages, no appendix or separate attached scientific material."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1992/file/3a066bda8c96b9478bb0512f0a43028c-Paper.pdf",
+      "locator": "Visualcheck jointdistribution, equations4-6, diagrams and fullFigure5caption; no new image asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read8pages and9references, visually inspected equations/figures.",
+    "Specified known single-object and prematched intermediate-level assumptions.",
+    "Replaced vague early-estimation summary with actual uniform-assignment highT average-variance two-pass bootstrap.",
+    "Recorded only10plotted trials and success-conditioned iteration averaging rather than unconditional runtime.",
+    "Did not equate related technicalreport/journal citations with a different NIPSentry without sourceidentity."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1a6877b53c1ee6f4a4f6fb20c4bcad4470dacad2709d4273cf5865d6ce5d6c33"
+}

@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "paper_id": "sensor-placement-ppo",
+  "note_path": "specialist/sensor-placement-ppo.md",
+  "baseline_note_sha256": "4b26e5fe6ffff18639c1504396154019c82da446cbd7166f05743a13885ea048",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9708c7d3a0fef3710f33ba05a74e10b3-Paper-Conference.pdf",
+      "version": "CompleteformalNeurIPS2025publisher25p includingrefs/checklist/scienceA-N;actualSHA andfullauthorblockchecked",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9708c7d3a0fef3710f33ba05a74e10b3-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8243463fa5.pdf",
+      "sha256": "a36f6d22ed3c94f48724ee320893905a7d3e2ea33df0ef9ee5fc8450efd68d3e",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read allPDF1authorblock GuanchengWan not oldFrankWan/UCLA, flowreconstructionboundarymesh unknownexplicitPDE assumptions/fourCOMSOLDNS synthetic datasets, directionalGNNandTwostepPPOsensorselection frame."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullEq2-7 andAlg1/P1-3: GNNlatentadvectionanalogy; selection givencompletefield/offline input; independentBernoulli cardinalitym butsampleGumbellogp topm (distributionmismatch curatorn2m1p.8,.2 ->.8vs16/17); saddlepointprintedrootpsi vspsiprime/-ktvsm; appendproof/codepending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullP3claim anylambda>0+equivalence andLipschitz narrative; all32Table2MSEscaled1e-4 entries; SST80/10/10dates/10%sensors6.853vs7.96914.01%; policy10%PPO~15%Fig4, reconstructionmodelnotpolicySST; nofield-realfluidmeasurements claim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read acknowledgementseveryfullreferenceSIMPLE/LiuEPPpartI/Goodman etc;Kool2020bibtitleodd notexistingIDcandidatewithoutidentity; NOAAreference1990-2016vsmain1989-2023mismatch not silentlymerged. Allbibcomplete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read completechecklist1-7 authorYesclaims/limits/proofs/repro/codefuture/statisticalsignificanceassertion; actualreporteduncertainty tocheckappendI notinferfromchecklist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read checklist8-16 all guidelines/authorreplies computeYescodefuture/nohuman/LLMNA. Actualsoftware15filescurrentrelease containsreconstructionnotPPO coreonly checkingallfiletokens."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read finalchecklist/Areal-worldsimulationlimitation/Bimpacts/C allbaselineandDTAhyperparams/pcount266260/Dcomplexityfixedprecision,maxiterations disclaimerNewtonlocalnotglobal; EBayesstart. Currentfullmain/model/utils read reconstructiononly/noPPO implementationyetalltreefilesinspectpending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "Read E normalizer-relativeerror proof invokes standardasymptoticregimenotuniformallp; F6layer128/1.5M+0.5Mstepslambda.00015LR1e-5to1e-7/PPO5updates/.2clip; GfixedQRtrajectoryvsrandomperframe; Hconditioncorrelation; allI-Jtables/Kablationintro."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Read allKablations/LTwoStepablationvalues andinferencecardinality/Gumbelstill/saddlelikelihoodnotimplementedrelease; M5hardwareconfig/NallSSTvisualcaptions. Complete25pagesrefschecklistA-Nread; visual8keypages separatelyinspected."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Irregular3Dboundaryreconstruction and reconstructor-specificsensorplacement motivatesDTA/PPO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/motivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "DTA-GNN plus4COMSOLgeometries/TwoStepPPO/CFD SSTturblence/OOD/ablations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Entiremethod/results/A-N"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive exact-count boundarysubset selection; geometry/ratio andSSTreconstruction notcross-nativepolicysharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            9,
+            22,
+            23
+          ],
+          "locator": "Nativeproblem/experiments"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "DTA6x64/mask16/MLP4;policy6x128/1.5M+.5M/λ.00015;completefieldpolicyinput. GumbellogpconditionalBernoulli mismatch/printedEq7typos/Prop3needsrewardrelativeλ,asymptoticsneedsregime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22
+          ],
+          "locator": "Eq1-11/Alg1/Prop1-3/C-F andcuratorchecks"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Allresultsread32mainconditions/SST14.01%improvement/10%policy~15%/QRfixedvsrandomperframe/8.71%OODdegradation/uncertaintyunquantified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Fulltables/figures/checklist/AppendG-N"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "SimulatedCFD/noisedeployment/completefieldpolicy; exactconditionalvssampler/punishmentcounterexample/asymptoticqualification currentreleasePPOabsent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22,
+            24
+          ],
+          "locator": "A/Props/curatornotbenchmarkinvalidation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "25completepages+A-N/12visual;official15filereconstructiononly/404supp403API/fullPDFGuanchengvsHTMLFrank/datadaterangeconflict/0catalogedges.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Fullaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9708c7d3a0fef3710f33ba05a74e10b3-Abstract-Conference.html",
+      "locator": "FormalPDF1eightUCLAauthors namesGuanchengWan;officialrepoBibTeXconfirmsGuancheng;HTMLmetadataFrankWan conflictpreserved. NeurIPS2025vol38/DOI10.52202/085713-3500/citationpublicationdate2026-04-23."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9708c7d3a0fef3710f33ba05a74e10b3-Abstract-Conference.html",
+      "locator": "ManualpublisherHTMLPaperonly/no separateattachment;standardSupplementalPDFandZIP404cached;APIv1/v2exacttitle403. IntegratedA-N20-25fullread;no separatelyspecifiedmissing scientificattachment. Official15filetree noPDFZIP."
+    },
+    {
+      "field": "version,figures",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9708c7d3a0fef3710f33ba05a74e10b3-Paper-Conference.pdf",
+      "locator": "Actualformal25pSHAa36f6d22ed3c94f48724ee320893905a7d3e2ea33df0ef9ee5fc8450efd68d3e allrefs/checklist/A-Nread. Render1/3/5/6/7/8/9/21/22/23/24/25 checked formula,proof,results/SST."
+    },
+    {
+      "field": "scope,theory,statistics",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9708c7d3a0fef3710f33ba05a74e10b3-Abstract-Conference.html",
+      "locator": "P4policyinputcompletefield/negativeMSE/exactcardinality. P5Eq4logpGumbel vs P6conditionalBernoulli .8vs16/17exactexample;P6/7Prop3allλ counterexample R=suma-2,λ.1 preferredinfeasible11;Eq7rootψinsteadψprime/exponent-knot-m;Dfixediterations/Estandardregime notuniform. Ownnormalizerfixedk=.5variance~1countersequence14.34%atn10000; nohistoricalexperimentinvalidation. SSTrangeconflictmain8vsreference11; tablesnoexplicitreplicate/uncertaintyrecipe despitechecklistYes."
+    },
+    {
+      "field": "code_url,reproduction",
+      "source_url": "https://github.com/RuoyanLi2002/Flow-Field-Reconstruction-with-Sensor-Placement-Policy-Learning.git",
+      "locator": "Officialcommit ae1b4594c1da8c870233908bf61c73503b4d6b98 fifteenfiles/14py noPDFZIP/checkpoints. Fullmain205/model245/utils288read;remainingdataprocessing/statisticsinventoried+allpytexttokenschecked. NoPPO/Gumbel/saddle/Newton/actor/critic routines identified/currentreconstructiononly. nearest-neighborimputationvsprintedrandomunknownnodeinit noted. recompute_scope.py/json arithmetic/probabilities/hashes noNN/CFDbenchmarkrerun."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Rewrotefull25pageaudit andcorrectedsecondauthorfromPDF+authorrepo/datefrompublisher.",
+    "Qualifiedprintedprobability/penalty/asymptoticsand limitedreleasedreconstructioncode, notempiricalinvalidation; allintegratedscience/0supportedcatalogedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ca83c21cf562e9c02e83920731fd79d975ae9a8d87a259655163aef11029f6ca"
+}

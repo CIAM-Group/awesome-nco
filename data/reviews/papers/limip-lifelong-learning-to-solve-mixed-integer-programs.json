@@ -1,0 +1,339 @@
+{
+  "version": 1,
+  "paper_id": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+  "note_path": "generalist/limip-lifelong-learning-to-solve-mixed-integer-programs.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "3beee82662b95481e946d38c8f4905a45f635874cc011c3eeb9cf1d01faa57bd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2208.12226",
+      "retrieval_url": "https://arxiv.org/pdf/2208.12226",
+      "version": "Identifiedarxiv2208.12226v3dated2023-06-30 matchingacceptedLIMIPtitle/byline,all13pages/fullreferences/AppendicesA1–A11read;v1date2022-08-24/formal2023-06-26separate.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-c294e1db99/arxiv.pdf",
+      "sha256": "e5b6ee8873697ed5ca5b7eb3a0a77568def0702c54a20bbc9c0c8f57f2b1ecd9",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fulltwo-authorIITDelhibyline/arxivv3June302023/formalAAAI2023identity, motivationcatastrophicforgetting/strongbranchimitation, Fig1SCdensitysequence and4contributions, MILPdefinition/B&Bstart. ExplicitfullrelatedworkAppendixA.1samearxivneededflag; onecontinuallyupdatedmodelclaimnotyetclassifiedpendingseparate/crossfamilyexperiment."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allB&B/strongbranching/LifelongLearningProblem1/2, bipartitecoefficientweightedGATtwohalfaggregationsEqs1/2, featureappendixA.2andmultiheadA.3explicitflagged, crossentropystrongbranchimitationEq3, pastlogitKDsmallmemoryEq4 andrationalevsreplay. No theoremthatstrongbranchalwaysminimumtree adopted; finalmodel/tasksequencestilltoinspect."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fullfixedreservoir500past(s,z), KD+empirical squared-gradient EWC Eq5 andcombinedloss (printedlogtermplussignvsEq3negative flaggedimplementationcheck), AlgA4needed. Full3familiesSC/MIS/CFLseparatedriftingsequences,SC6densities700x800/MIS6sizeaffinity; SCIP45min96coreXeon6248A10040GB2heads/rootcutsonrestartoff,150k/10k train30k/2kvaltest,20testx5SCIPseeds/geomean/relativeSD; allbaselines/forgettingplottext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allmainresults/lowdata/ablations/conclusion andfullreferencesAchterbergthroughRiemer. LowdataSC.047300strongbranchsamplesfine-tunevs150kmain; Table1LIMIP14.05/441vsGCNN16.01/607, unfinetuned15.05/602; scratchGAT17.06worseGCNN. Table2GAT7.9vs8.21SC/22.25vs25.73MIS/33.94vs35.14CFL. Mainthreewithin-familydriftsnotcrossnativeonecheckpoint; AppendixA9facilities/A11ablationstillneeded."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read allremainingreferencesTaha..Zhou, completeAppendixA1learningMIPs/continuallearninginclTreeMDPfootnote2205.11107, A2solverfeatureTable3pointer/A3multiheadconcatformula/A4allAlg1linesKD/EWC/reservoir, A5facilitydemands/capacitieschanginguniformboundsbegin. Printedcombinedloss/Alg4positive logvsEq3negative recurring, codecheckpendingnotconclusionfailure."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allTable3rawMILPfeaturesC5/E1/V19, A5facility100customers/facilities+MSconstraint, A6heads2hidden32Adam.001alpha1.5beta100/validationconvergence, A7EWC1000GCNN64, A8nodesplots6/7/A9facility/defaultSCIPTable4allrows, A10TreeGateSC.05reproducedweakerteacher24.1s764vs11.01s320, A11KD-only andbuffer200first/lastCFLplots9/10. Figurelabelscomplexstillrenderneeded."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 13,
+      "last_page": 13,
+      "notes": "Read completefinalAppendixA11GATbackbonebaselines/Figs11/12text, all13arxivv3pages/fullreferences/AppendixA1–A11read; actualplotaxes/nativeconstraintsequencependingrenderinspection. Noadditionalnamedscienceattachmentsafterp13."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Continual strong-branch imitation suffers empirical forgetting; sequential updates should retain earlier runtime performance.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/Fig1/Problems1–2"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "BipartiteGAT+bufferedKD+EWC andfinite synthetic drift/constraint/lowdata experiments.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Contributions/Method/completeAppendA"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Two edge-aware attention halfpasses, strongbranchnegativeCE, reservoirpastoutputs andsquaredgradientimportancepenalty.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            10,
+            11
+          ],
+          "locator": "Eqs1–5/Alg1/featureTable3"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "20testx5SCIPseeds45min;150klabels/task;lowdata300fine-tune14.05s441nodesvsGCNN16.01/607,finiteforgettingplotsnotguarantee.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            7,
+            11,
+            12,
+            13
+          ],
+          "locator": "Setup/Table1–5/Fig4–12"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "No sharedSC/MIS/CFLcheckpoint; printedMS/perfacilitycustomercap differs releasedopenfacilitycardinality; codeMSEvsKL/CEvscombined+log.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Printedobjectives/Alg1/A5/datafigs; necessarycurrentcode separatelyinmetadata"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Finite generalist evidence samefacilitysequencefinalcheckpointwithordinaryandMS variant; eachSC/MISseparatelytrained.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            11,
+            12,
+            13
+          ],
+          "locator": "Datasetfamilies/A5/Figs7/8/11 samefinalmodelacrossconstraintsequence"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "All13pv3/fullrefs/A1–A11read; actualprimarybyline/arxivhistory/formaldate separated.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Byline/fullrefs/integratedscienceappendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2208.12226",
+      "locator": "p1exactLIMIPtitle/SahilManchanda/SayanRanuIITDelhi; pinnedauthorlinkedREADMEagrees."
+    },
+    {
+      "field": "venue, formal publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/26086",
+      "locator": "SavedCrossrefonline2023-06-26 AAAI37(7)9047–9054 DOI10.1609/aaai.v37i7.26086; notconferenceeventdate."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2208.12226",
+      "locator": "Savedprimaryv1Aug24202209:05:40UTC/v2Aug26/v3June30202311:01:01UTC; actualPDFwatermarkv3/titlematchesaccepted,all13pagesinclA1–A11read. Topdatev1separateformal."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2208.12226#page=12",
+      "locator": "Figs7/8p12 and11p13samefinalfacilitycheckpointretained earlierordinaryandMSconstrainttask; A5p11MSprintcustomercap vsreleasedgenerator457sumopenfac<=maxfacopen. Limitedgeneralistordinary/cardinalityCFL, notcommonSC/MIS/CFLcheckpoint. Rootapprovedboundedclassification."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://underline.underline.io/lecture/67715-limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "locator": "PrimaryalternateUnderline200savedNEXTDATAlecture67715 identifiesVideoAAAI_LiMIP_upload.pdf slides1,768,611expectedbytes; actualURL403146byteAccessDeniedlogged, noPDFregistered/no posterDocument, ordinarytalknotaudited. Completearxiv13pcontainsallnamedAppendA1–A11. Publisher520challenge; officialZIP14members10filesnoPDF/sciencearchive. Noexplicitmissingproof/resultappendix."
+    },
+    {
+      "field": "code version, loss and constraint implementation",
+      "source_url": "https://github.com/idea-iitd/LiMIP/tree/5be8420737d47953963f4114c9e0425447c282e9",
+      "locator": "PinnedcurrentOid5be842...committedDate2022-12-29T19:27:35+05:30 savedprimaryHTML,ZIPinventory14members10files. READMEallread;train124–131CE/MSE,272–340actualbackward+EWC. Generator379–468especially457maxopenfacsumyj <=maxfacopen vsA5customercapprinted. Historicalweights/dataabsent; noexecution/claimedreproduction."
+    },
+    {
+      "field": "figures, tables, algorithms",
+      "source_url": "https://arxiv.org/pdf/2208.12226#page=4",
+      "locator": "All12figs5tables andgraph/KD/EWC/multihead/Alg1 displays renderedpp4–7/10–13 plusp1actualfullimageview; origFig2crop54,54,558,218viewed. Qualitativecurvesnotconverted toinventedexactnumbers."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Uses the bipartite solver-state features and strong-branching imitation baseline to study forgetting.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            8,
+            10,
+            11
+          ],
+          "locator": "Explicitbodymanysections andfullNeurIPS2019bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "cited": "gcomb",
+      "reference_label": "Manchanda et al. (2020)",
+      "description": "Cites GCOMB in the introductory context of combinatorial-optimization applications, not as a component of the brancher.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "LiteralbodyIntroductionp1 andcompleteNeurIPS2020GCOMBbibp8"
+        }
+      ]
+    },
+    {
+      "citing": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Discusses hybrid branching among related learning-to-branch methods; direct baseline is omitted because of its CPU-oriented focus.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            6,
+            8,
+            10
+          ],
+          "locator": "ExplicitbodyIntroduction/setup/A1; completeNeurIPS2020bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al. (2020)",
+      "description": "Reproduces a TreeGate reliability-pseudocost imitation comparison on SC0.05, with the teacher difference stated.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            9,
+            10,
+            12
+          ],
+          "locator": "Bodybaseline/A1/A10Table5 andcomplete2002.05120referencep9 identifiesAAAI2021target"
+        }
+      ]
+    },
+    {
+      "citing": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Appendix A.1 footnote 4",
+      "description": "Cites Tree-MDP reinforcement learning for branching in related-work discussion, separately from imitation learning.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "ExplicitRLrelatedbody andfullfootnoteScavuzzoLearningtobranchwithTreeMDPs/arxiv2205.11107p10"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithcomplete13pv3/fullrefs/A1–A11.",
+    "Limitedgeneralistscope tosamefinalCFLconstraintsequence;nojointSC/MIS/CFLcheckpoint andcodeMSsemanticsclear.",
+    "Preserved20instance5SCIPseed/45min/150klabels/300samplefine-tune/finiteforgetting scope.",
+    "DocumentedCE/KD/MSimplementationdifferenceswithoutclaiminghistoricalinvalidity; actualrepo/dates/byline/suppinventoryandorigFig2/5literalbody+bibedges."
+  ],
+  "reviewed_note_sha256": "bcf751db11316f8fabe854ca61ab6d357e7e9a7fd504cdff12ec91c6f25621d4"
+}

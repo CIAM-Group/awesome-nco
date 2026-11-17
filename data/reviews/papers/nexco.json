@@ -1,0 +1,756 @@
+{
+  "version": 1,
+  "paper_id": "nexco",
+  "note_path": "specialist/nexco.md",
+  "baseline_note_sha256": "a7da8939a61cbbbb6f9e67e9a9a7559188b5f794a12bf936321da02ae2e04df3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3d681cc4487b97c08e5aa67224dd74f2-Paper-Conference.pdf",
+      "version": "Formal ICLR2026 21pages complete main/references/AppendicesA–F freshly read",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3d681cc4487b97c08e5aa67224dd74f2-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-21a2178ddf.pdf",
+      "sha256": "5ce3a1fc2ec05731a4ecb33b61643e799a6762a6bb115b186bafdc6296ff2a62",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Freshall1–4/Fig1/Table1:5authorsJLUAI/SJTUAI/JLUFutureScience/MOERC,formalPDFtitleNExCO NativeSolutionExpansion differsoldAdaptive titlecheckpublisher. nativeAEpartialaddones,zero conflatesmask/unselected(no3state);separateTSP/MIS/CVRP likely. PrelimEq3fliprateincorrect1-prod(1-beta)vs1/2(1-prod(1-2beta))notcoremaskprocess."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh5–8fullEq5–8/Alg1/Prop1/Table2–4. Binaryzero maskunification,CEtaskloss,selectionfractionrho+threshold. GreedyfeasibilitynotexactargmaxEq8 generalMIS;A2existsprogressnotensurechosenztprogress(needfullAppendproof). Table2classicalbetter,strongspecificspeednotuniform;FastT2T1000greedy.58vsNAE5.63,NAE3TSP500.39vssame.39;trained100→1k3.86worseFast3.08/T2T3.16. refsheuristiclabelsallowednotalloptimal. Mixed0..1independentmask supportsnotnestedunlesscoupled."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Fresh9–12 fullTables5–6/Figs3–4/ethics/repro/startrefs. CVRPproseincorrectspeedclaimNAE3.04/.08/.27slowerCOExpander.03/.06/.20;NAE5.06/.12/.39 vsSym.09/.19/.36 notallfaster. MISRBlargeNAE5size40.94<COExpander41.09;KaMISallbetter. Capacity40/50/80,demandpaper1..10 needsactualdata;trainCVRP1.28M640K32K test10K10K100. FormalmainTSPoptional2opt needscodebudget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "FreshallremainingReferences13–14/AppendA/B1/B2. ActualSIL7authorsformalentry. B1crossdistp.2/.3/.4andRB350–400/1400–1600KaMISmuchstronger;B2TSP10K sparse100neighbors mayrestrictglobalopt,industrial/partial-labelbootstrappingfuture NOTdemonstrated. CurrentMISrewrite_steps1/rewrite_iterations100testdiffersformal5/7 constructnativeNFE."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 21,
+      "notes": "Freshall17–21 Tables8–14/B3–6/C/D/E/F. TSP10K52s1.53vsFast701.63/LKH332betterquality;TSP29case.09meanfirstfourduplicateeil51error,lin105.54etcnegative;20expansion. B6formalexplicitno complete rebuild butreleaseMIS actually fullrebuild/remask. A2existencevsactualchosenactivation noforcedprogress norproof. C2undefinedt0termsdespitetimeagnostic,C4all12GCN/KNN50(500)/100(1000). TSP100Table13 1502kvs1280ktext;MIS128ER256RB;hardwareA40/Xeon5220singlethread. HGSmainmisreferencesHelsgaun17 correctedVidal14licensetableforbaselineonly. Complete21references/A–F read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Nativepartialsolutionexpansion avoids repeatedly wrapping a fullglobaldiffusionpredictor while retainingfeasibilitypredicates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "locator": "Introduction/Table1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Absorbingmaskdropsonlyones,zero/maskunification,timeagnosticpaired-referenceconsistencyandconfidenceguidedexpansion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations5–8/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Task-specific12layerGCNs/pairedmasks/feasiblepartialgrowth;separateTSP/MIS/CVRPcheckpointsnotasharedgeneralist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            19,
+            20,
+            21
+          ],
+          "locator": "Architectureandprotocol"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "TSP100–1000/10K/TSPLIB,MISRB/ER,CVRP50–200,all14tablesnegativeclassical/neural/timecasesretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Allresults/ablations/parameters"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "A2existsprogressdoesnotforceactualcandidateprogress;greedyprojectionnotgeneralexactweightedargmax;resource/transferlimits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "PrintedProp1/Eq8andnegativecomparisons"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Publishedmethodspecialistconstructive:separateweightsandempty-to-completepartialgrowth;currentreleasefullrebuildandincumbentrewriteversiondistinguished.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            19,
+            20,
+            21
+          ],
+          "locator": "FormalNAEdefinition andtestedtaskmodels"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and title variants",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/3d681cc4487b97c08e5aa67224dd74f2-Abstract-Conference.html",
+      "locator": "FiveformalYuWang/YangLi/JialeMa/JunchiYan/YiChangandfouraffiliationsread;publisherexplicit2026-04-20retained. PublishertitleNativeAdaptive... retainedversusPDF/READMEshortNExCO NativeSolutionExpansiontitle."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://iclr.cc/virtual/2026/poster/10011968",
+      "locator": "All21main/refs/Algorithm1/Proposition1/A–Fread;4figures14tablesvisuallychecked.2.999MBposterall3overlappingtilesread;noextraseparateslides.115treeuntruncated/ZIP11639.49MB/twoREADMEfullread/noPDFnotebooknestedarchive;no bundledcheckpoint."
+    },
+    {
+      "field": "reported protocols and countervailing rows",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3d681cc4487b97c08e5aa67224dd74f2-Paper-Conference.pdf#page=9",
+      "locator": "CVRPtwoNAEbudgetsactuallyslowerCOExpanderall3sizes;NAE5CVRP200.39slowerSym.36. MISNAE5large40.94<41.09;KaMISallhigher. TSP100→1K3.86worseFast3.08/T2T3.16;TSP10K1.5352squality/time tradeoff;29TSPLIBDs20negativecases/duplicatedmeanrow. TrainTSP1001.502Mtablevs1.28Mprose recorded."
+    },
+    {
+      "field": "printed theory and exact local checks",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3d681cc4487b97c08e5aa67224dd74f2-Paper-Conference.pdf#page=7",
+      "locator": "A2existsmasknotactualchosenmask;singleisolatedMISidentityGamma/score.1<alpha.5stays0despiteA1–A3. Eq8greedystar.9center<1.2leaves,originalMISdecoderexecconfirms;Eq3prelimsfliptrue.18vsprinted.19notcoremask. boundary-checks.jsonrecordsformal/scopedcodeexamples."
+    },
+    {
+      "field": "current public implementation and scope",
+      "source_url": "https://github.com/yuuuuwang/NExCO",
+      "locator": "CompleteMISConsistency/test/modelcallpathread:fulldecode/remask,hardcommitnotpassedtolibrary;originaltwo-nodeexampledropspriornode. TSP/CVRPsimilarlycompletegreedy+localrepairpercall. MISexample1step/100rewrites102calls,TSP5step5rewriteand5000twooptvsREADME0rewrite;nohistoricalbenchmarkreplay. MasksharedUabsorbingandtimeagnosticforwardconfirmed. Classificationretainsformalconstructiveanddistincttaskweights."
+    },
+    {
+      "field": "original figure and citation identities",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3d681cc4487b97c08e5aa67224dd74f2-Paper-Conference.pdf#page=3",
+      "locator": "OriginalFigure1crop105,70,507,374fullcaptionvisuallyverified.31explicitbibliographytargetsmatchedincludingSIL7authorformalBoosting;Costa2020notsubstitutedDeudon2018."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "nexco",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "coexpander",
+      "reference_label": "COExpander: Adaptive Solution Expansion for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "diffuco",
+      "reference_label": "A Diffusion Model Framework for Unsupervised Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "gensco",
+      "reference_label": "Generation as Search Operator for Test-Time Scaling of Diffusion-Based Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Learning a Latent Search Space for Routing Problems Using Variational Autoencoders",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Learning Collaborative Policies to Solve NP-hard Routing Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "learning-to-delegate",
+      "reference_label": "Learning to Delegate for Large-Scale Vehicle Routing",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Learning What to Defer for Maximum Independent Sets",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "maskco",
+      "reference_label": "MaskCO: Masked Generation Drives Effective Representation Learning and Exploiting for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "neural-3-opt",
+      "reference_label": "Learning 3-opt Heuristics for Traveling Salesman Problem via Deep Reinforcement Learning",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "unico",
+      "reference_label": "UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "softdist",
+      "reference_label": "Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References pp11–14, fully read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al. 2023",
+      "description": "LCbackgroundandexplicitRL4COrepositorymention; cited2023arxiv2306.17100 mapsvia sameprimaryID toKDD2025representative, not futurepublicationclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            15
+          ],
+          "locator": "Actually read complete body citation paragraphs: Berto et al. 2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Berto et al. 2023"
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "Li et al. 2023a",
+      "description": "Graph/binaryCOformulation paragraph explicitly cites Li2023b;a; exactHardSATGEN title/nineauthors verifies identity though it is contextual background, not methodreuse evidence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read complete body citation paragraphs: Li et al. 2023a"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Li et al. 2023a"
+        }
+      ]
+    },
+    {
+      "citing": "nexco",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "Xiao et al. 2024",
+      "description": "Globalpredictionliterature list; exactAAAI2024seven-author distillationtitle/pages20274?20283.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Actually read complete body citation paragraphs: Xiao et al. 2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Xiao et al. 2024"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall21formalpages/completeA–F/refs/Algo1/Prop1/fourfigures14tablesandwholeofficialposter.",
+    "Expandedfouraffiliationsandretainedpublishertitle/datewithPDFshorttitlevariantdocumented.",
+    "Keptspecialistconstructiveaccordingpublishedmethod,explicitlyseparatedcurrentreconstruction/rewriteversion.",
+    "Addedexactprotocols/resources/negativequality-timecomparisonsandprintedtrainingcount/meanrowinconsistencies.",
+    "VerifiedlimitedProp1progresscounterexampleandEq8greedystar;executedoriginalMISdecoderandrecordedsourcehashes,notNNbenchmarkreplay.",
+    "DocumentedcurrentNFE/local-searchbudgets/scheduler/forwarddetailsandadded31explicitcitations/originalFigure1.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3048b9729a06faf36b2cf9b9b3b0b6f023e91f0ca072fd1d6341809da72e97e5"
+}

@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "paper_id": "gnn-uniform-facility-location",
+  "note_path": "specialist/gnn-uniform-facility-location.md",
+  "baseline_note_sha256": "e89bfec4f67583321ea7518961dae15b5b6e4400536bb54433f129e718f58850",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/qian26d/qian26d.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/qian26d/qian26d.pdf",
+      "local_path": "research/import-272/nco-823cbbd13d.pdf",
+      "sha256": "754887160fd6a46889c3001097cfbe9ce572bcd66a41b5a739252f095bca2d52",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read4authors4institutions,uniformmetricun capacitatedfacilityobjective/contributions andallrelatedintro; guaranteeinitializationvsarbitrarylearnedweights requiresfullproof; kmeansvariant claimedmayclassificationchecklater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Readallmetric/pseudometricdefinitions/unituniformfacilitynormalization/radiusEq2andweighted≤1graph; SIMPLEUNIFORMFLrandomopen+fallbackProp2O(logn)expected bound notlearnednetworkguarantee; localdiscretizationstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadexpectedcostEq5strictdistinctdistanceassumption/sampling+fallback,existentialProp3Olognforfixednnotalltrainedweights,Prop4lower≥lnn/2cannotexcludeOlognvsprose,recursivealgorithmprobability/stateandfinitecompactdataProp5supervisedprobabilitylabels+regularizercondition, graphselfloopsempiricalresolveprelimdefinition."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallTables1–5synthetic/city/cost/time/five-seed/1000samples, exactsolver24hincumbentsnotoptcity/nonmetricroadqualification, zero-shotlargersizevsdegree negative1.124/mixedpretrainrecovery andkmeanslossseparatelychanged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadallTables6–7mixeddegree/clusteringlossretrained5runs, kmeanscontinuouscentroidbaselinebeatsGNN/MPNNinit2Dnegative, limitations/futuregradientdescentguaranteefuture/sizegeneralizationclaimmustcheckProp5; fullbibfirstpage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allactualtwo-columnbib11–12exactauthors/titles/versions; Erdos/learningCO/NeuroSAT/RLAFcurrentprimary IDs candidates andexternaltheory/algorithmworks distinguished."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Readlastfullreferences/extendeddefinitions/LipschitzMPNN/FNNparameterizationandrelatedexpressivity, exactRLAFarxiv2505.16053identitylinkedformalstableID; theoreticalguaranteeassumptionsmustremainingproofallread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "ReadallrelatedappendixC1Lemma6geometricradiusset/exponentialfailureproofandProp2expectedopen+connectionbound; fullProposition8statementfixednexistsparam/theoremsnottrainingguarantee, Eq7start."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Readfullradiusapproximationproofandprobmap/continuity/Ecoststeps,rendercheckedEq4nonpositiveagainstnondecreasingt notextractionerror, lowerboundsymmetryproofLemma9anditdoesnotexcludeOlogn."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadallrecursiveLemmas10–13 fullproof/c≥6/Prremaining≤1/10notapprox1.1, continuationfixedncompactProp14 Lipschitzcoverregularizer andconditionaltrainingloss not gradientconvergence/notcrosssize; completeallassumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Readcompletefinitecoverproofr/epsilonbound andallDexperimentdetails/ILPselfloopassignment/100-roundfallback/100hypergrid/fiveseed1000sample nestedmean/mixedhardware andseparatelytrainedclustering/noallntraining guarantee; allTables8–10/Alg1."
+    }
+  ],
+  "claims": [
+    {
+      "id": "unifl-contribution",
+      "category": "contribution",
+      "statement": "Unsupervised expected-cost MPNN facility opening combines classical randomized local algorithms with geometric/city/size/degree/clustering experiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1–3"
+        }
+      ]
+    },
+    {
+      "id": "unifl-method",
+      "category": "method",
+      "statement": "Neural probabilities and random sampling/fallback construct complete facility sets; current implementation directly predicts sigmoid probabilities and breaks equal-distance ties.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1–3/Eq5 and author models.py/sample_gnn.py"
+        }
+      ]
+    },
+    {
+      "id": "unifl-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: native UniFL neural construction, squared-distance clustering separately retrained; classical cluster refinement is not neural incumbent editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9
+          ],
+          "locator": "Section4/Table7 and separate author training commands"
+        }
+      ]
+    },
+    {
+      "id": "unifl-experiment",
+      "category": "experiment",
+      "statement": "Strong geometric ratios and city incumbent improvements coexist with degree-shift1.124 loss, unavailable city optima, separately retrained clustering and asymmetric hardware/sample-time budgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            20,
+            21,
+            22
+          ],
+          "locator": "Tables1–10/AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "unifl-theory-limit",
+      "category": "limitation",
+      "statement": "Printed increasing t_i makes Eq4 radius estimate nonpositive; proof reuses it; lower bound is Omega(log n), while conditional generalization theorem is fixed-size not arbitrary trained-size transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            17,
+            22,
+            23
+          ],
+          "locator": "Eq4/Propositions3–5/Appendix8,14; root independently checkedp4–5/17"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/qian26d.html",
+      "locator": "FormalPDFp1 fourauthors/fourinstitutions, publisheridentityand23pageschecked."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/qian26d.html",
+      "locator": "OfficialPMLRpublished2026-09-29/volume306/pp100849–100871, distinctfromconferenceeventdate."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/qian26d.html",
+      "locator": "ManualpublisherHTMLintegrated23pPDFplusSoftwarelink;allscientificappendicesread. Author26191B26memberarchivecompleteinventory/README/28cellnotebook/noadditionalPDFTeXimages. Officialevent66751poster265386Bfullimageviewed; normalassetAPI404/ORAPI403recordednobypass/noexplicitmissingscientificsupp."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/chendiqian/FacGNN",
+      "locator": "models.py directprobabilities/tieindex, sample_gnn.py singleforward+lastsampletimer and postfallbackdistance, trainer.pyunsupervised, data/dataset.py80/10/10vsnotebooktestonlycopycell, READMEseparatelosstraining/Paris6vspaper10."
+    },
+    {
+      "field": "theory",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/qian26d/qian26d.pdf",
+      "locator": "Renderedformal4–5/17monotonicityandEq4sign independentlyrootconfirmed;Prop4Omega(logn)notexcludeO(logn);Prop5/14fixednconditionalcoverlabelregularization notGDoralllargern guarantee."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            15
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            15
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas (2020)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            15
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "neural-set-function-extensions",
+      "reference_label": "Karalias et al. (2022)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "geometric-constrained-nco",
+      "reference_label": "Karalias et al. (2025)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            15
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-uniform-facility-location",
+      "cited": "rlaf-sat",
+      "reference_label": "Tönshoff & Grohe (2025)",
+      "description": "Explicit related-work citation and matching full bibliography; precursor identity retained where cited as arXiv.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Tönshoff and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full23pages/appendix/proofs/references/officialposter and author26membercode28cellnotebook read;8explicitinternalcitations;publisherdate/codeverified,conditionaltheoryandroot-confirmedprinted-signgap,incumbentvoptimum/budget/negativecasesandseparateretrainpreciselyqualified."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b253f2552a379bfca09580f88e1098fc1408fdab3d77a0b8e5d7a2c07c6e564e"
+}

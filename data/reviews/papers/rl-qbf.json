@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "paper_id": "rl-qbf",
+  "note_path": "specialist/rl-qbf.md",
+  "baseline_note_sha256": "a8716c1e6f073626d32694c18b9cd1efeabf036eccce5320bbe8c5de1a1c46f5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1807.08058",
+      "version": "arXiv:1807.08058v3 (2019-10-30); actual read version",
+      "retrieval_url": "https://arxiv.org/pdf/1807.08058v3",
+      "local_path": "research/import-272/nco-5f02c89bd9.pdf",
+      "sha256": "0484bb1d8e975d3407f8dfdc0d3ea8c0cf827e8d1e936bacbab2a918d92b5b9c",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "formal",
+      "url": "https://ptolemy.berkeley.edu/publications/papers/20/LedermanEtAl_QBF_ICLR_2020.pdf",
+      "retrieval_url": "https://ptolemy.berkeley.edu/publications/papers/20/LedermanEtAl_QBF_ICLR_2020.pdf",
+      "version": "Author-hosted accepted ICLR2020 PDF, published-as-conference header",
+      "local_path": "research/full-text-review/rl-qbf/formal-author.pdf",
+      "sha256": "b993233700e2ede7517887b1af387fabbb4aa6f6e7ac7fc183a6b7855e8c33e5",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read actual arXiv1807.08058v3dated2019-10-30title/authors, RLbranchingwithinproof-capableCADET, forall-existsQBFscope, exacthostvslearnedpolicy, generalizationlimits andBooleanlogicbackground."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read forall-exists2QBF restriction, CADETproof rationale, baselines, literal/clauseGNN equations16/64dims and7variablefeatures, global5featurespolicy, reductionsdatafilter and modelarchitecture; printedtrainingcodeis anonymized."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read exactreward-1e4terminal1and400steplimits, shallow8353parambestmodel, cactuswalltime120vs110solvedonehour, sub10sregression, QBFEVAL111vs125VSIDS, relatedworkandconclusion10xclaim withcontext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read everyremainingauthor-yearreference and matchedcatalogueincludingNeuroSATandCircuitSAT; noassumedrelationfromnoncitingtaskoverlap."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allintegratedA–F global5features literal7features QDIMACSexamples training10Msteps C5/rates/gamma/clipping, Boolean/Wordsindependentmodels and Words30sizetransfer, generationdetails andallcactusplots."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read allGencoder variants positive/negativeedge model, tiedvsuntiedweights residual/norm/GRUstudies, zero-roundandactivity-featureablations and complete Figure7; singleiterationbestwallclocknotallmetrics."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "FreshreadacceptedICLR2020header/authors,title andallintro/2QBFscopechanges; authorfootnoteexplicitlyidentifiesearlierarXiv1807.08058; readBoolean/CDCLbackground."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullaccepted2QBF/MDPcorrectness, allGNNpolicyequationsandexplicitmaskingofuniversaloralreadyassignedvariables; correctedformaldata4608/2573countsandofficiallederg/learningqbflink."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read acceptedexactdata1835train/200test,400steprewardprotocol, allresults/cactus and111vs125adverseQBFEVAL,120vs110onehour, sub10sregression; acceptedrelatedworkaddsGraphQ,SLS,GCNNandcoloring."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allacceptedbibliographyonpp10–12, matchesGraphQarXiv1909.11830underprevioustitle andNeuralRewriter1810.00337underLearningtoprogressivelyplan, plusGasse/SLS/coloringcandidate."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read acceptedlastreferences andentireAppendixA–Dfeatures/QDIMACS/hyperparameters; AppendixEWords/Boolean separate-modelgeneration with formalpageshift and exactcactuscaption."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read everyacceptedAppendixE–Gpage: Words/Boolean independentmodels, Words30sharedsizedecisiontransfer and encoderablations, zeroroundworseVSIDS/activitydegradation, allFigures5–7."
+    }
+  ],
+  "claims": [
+    {
+      "id": "integration",
+      "category": "contribution",
+      "statement": "A smallgraphpolicy choosesbranches insidecertifyingCADET forforall-exists2QBF.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1–4"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "category": "method",
+      "statement": "REINFORCEuses400decisionepisodes terminalsuccess1andnegativeperdecisionreward; bestmodeloneiteration8353parameters.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Sections5.2–5.3"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Experimentsare2QBFspecialization; Boolean/WordsretrainwhileWords30shareswithin-familymodel.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            8,
+            15,
+            16,
+            17
+          ],
+          "locator": "2QBFscope andAppendicesE–F"
+        }
+      ]
+    },
+    {
+      "id": "outcome",
+      "category": "experiment",
+      "statement": "OnehourReductions120vs110solves contrastswithshorttimeregressionandQBFEVAL111vs125.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Figure3andSection5.3"
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "category": "reproducibility",
+      "statement": "Accepteddata4608minus2573minus200equals1835train, hyperparametersinthe integratedappendix.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            6,
+            7,
+            14,
+            15
+          ],
+          "locator": "Sections5.1–5.2AppendixD"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://iclr.cc/virtual_2020/poster_BJluxREKDB.html",
+      "locator": "OfficialICLR2020title; acceptedPDFp1headerandformalPDFauthororder"
+    },
+    {
+      "field": "version",
+      "source_url": "https://ptolemy.berkeley.edu/publications/papers/20/LedermanEtAl_QBF_ICLR_2020.pdf",
+      "locator": "18pageacceptedPDFwithallpagesPublishedasconferencepaperICLR2020; p3footnotecallsearlierarXivversion; formalcorrectsdataandaddsrelatedwork"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://ptolemy.berkeley.edu/publications/papers/20/LedermanEtAl_QBF_ICLR_2020.pdf",
+      "locator": "pp2,4restrictforall-exists2QBF; Sections5/AppendicesE–Fspecializedmodelswithlimiteddistributiontransfer"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=BJluxREKDB",
+      "locator": "Manuallycheckedforumchallenge,bothpublicAPIs403, supplementaryattachment403; accepted18pandearlierv3containallreferencedAppendicesA–Gandfullyread; authorcodeURLemptyAPI409, cachedchecks"
+    },
+    {
+      "field": "code_availability",
+      "source_url": "https://github.com/lederg/learningqbf",
+      "locator": "Acceptedp6footnoteauthorlink; publicpagestatesrepositoryempty andrecursiveGit tree409; noavailablecodeclaimed"
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/abs/1909.11830",
+      "locator": "graph-q-sat: Currenttitle Can Q-Learning with Graph Networks Learn a Generalizable Branching Heuristic for a SAT Solver?, exact same four authors, camera-ready NeurIPS2020 comment; v1Sep26,2019/v2Nov25,2020. Exact stable arXiv1909.11830 disambiguates changed title and year; cited2019 precursor, not claim source saw2020 results."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1807.08058",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-07-20; title on abstract page: Learning Heuristics for Quantified Boolean Formulas through Deep Reinforcement Learning. This date is preprint history, not formal publication. Cached research/full-text-review/rl-qbf/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl-qbf",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al.(2018)",
+      "description": "DirectGNN SATrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1,
+            8,
+            12
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    },
+    {
+      "citing": "rl-qbf",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al.(2019)",
+      "description": "DifferentiableCircuitSATrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1,
+            8,
+            9
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    },
+    {
+      "citing": "rl-qbf",
+      "cited": "graph-q-sat",
+      "reference_label": "Kurin et al.(2019)",
+      "description": "formal p11 Kurin,Godil,Whiteson,Catanzaro2019 Improving SAT solver heuristics with graph networks and reinforcement learning,arXiv1909.11830. Exact stable arXiv1909.11830 disambiguates changed title and year; cited2019 precursor, not claim source saw2020 results.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    },
+    {
+      "citing": "rl-qbf",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu & Póczos(2019)",
+      "description": "GraphRLlocalSATsearchrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    },
+    {
+      "citing": "rl-qbf",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al.(2019)",
+      "description": "GraphMILPbranchingrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    },
+    {
+      "citing": "rl-qbf",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian(2018)",
+      "description": "SamearXiv1810.00337underprevioustitleLearningtoprogressivelyplan.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Explicitauthor-yearintextcitationandmatchingacceptedbibliography/arXividentity"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fullyread17pagearXivv3andnewlyfound18pageauthor-hostedacceptedversion; mainclaimsnowuseformalpages.",
+    "Restrictedscope toforall-exists2QBF andcorrectedformaldata counts.",
+    "Separatedonehour/solve-countimprovementfromnegativeQBFEVALandshort-timecases.",
+    "Added6explicitacceptedbibliographyrelationsincludingalternatepreprinttitles.",
+    "RecordedformalcodeURLisemptyratherthanclaimingreproducibilitycodeavailable."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e9fcb244f8d670ce57a1a07d7b8da43799d1714d8719cf56648e82266a7113a5"
+}

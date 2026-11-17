@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "paper_id": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+  "note_path": "specialist/combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "2246e31b22b49a0bd0323e9cb28f6b07dff1a1418ba9bcea9f6fa4013ebe2b8f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2312.09086v2",
+      "retrieval_url": "https://arxiv.org/pdf/2312.09086v2",
+      "version": "arXiv2312.09086v2 datedJan1,2024,12pages withcompletebibliography and3page scientificSupplementaryMaterial; AAAI2024 identitymatched",
+      "local_path": "research/full-text-review/combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems/reading-candidate.pdf",
+      "sha256": "ca56791a4305998d5f84d717e1cb00dd2f8a8f14a80d2ed971d180f709a6dacb",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "All actual pp1-4 read, fullbodyrelatedwork/problem/teacherGCN/studentKD/degreeweightedboosting/Equations1-14. The so-calledLP retains binaryvariables and is ILP, not continuousLP. MVCprunedconstraints omit edgeswithbothendpointsremoved; paperlater explicitly reportsincompletecoverage. MVC/MISseparateproblem-specificmodels, no generalistcheckpoint, no neuralincumbentediting."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 9,
+      "notes": "All actual pp5-9 read: everyreal/syntheticruntimegraph/table/classificationrecall/allrefs. Allthreecontactimages actuallyviewed. Time limit1hour forCPLEX, LSMVC32/48hoursandmissingbigcases, runtimesnotalltrainedendtoendcertified speedups. Table2Pubmed3806vsLP3805 contradicts exactoptimalprose; Table3LSMIS Slashdot50897/53840 worse51323/54184. High99.98coverage is not feasibleMVC. No automaticprecisionrounding=exactness. Printedatleast2x qualified byplotted1.8/1.9."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "All actual complete supplementary pp10-12 read: allthreeclassicalalgorithms/allpseudocode, MIS/MVCreducedILP, BA1k/Cora50percentnodesplit, 4layer128teacher/4layerMVCor3layerMIS32student,500/1000epochs,lr1e-3/1e-4,dropout.5,T1,lambda.8, Xeon6226R/256GB/3090, Tables6-7 allrows andexplicituncoveredMVCexplanation. Pinned132entry tree noPDF/TeX/notebook;READMEallread includingseparateMVC/MIS workflow/academicCPLEXrequirement. No external scientific supplementmissing; noexecution."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Reduce search candidate count before classical algorithms.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Teacher/studentGCN, KD and problem-specific node weight boosting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Method/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Prune predictednegative nodes, run binaryIP/greedy/classicalLS; per-problemmodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            10,
+            11
+          ],
+          "locator": "Equations1-20/algorithms"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SeparateMVC/MIS models and no learnedincumbent editing; specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10,
+            11
+          ],
+          "locator": "Problem-specificweights/networkconfig"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "BA1k andCora training transfer tolargergraphs, heterogeneoustimegains andnegativequalitycases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            11,
+            12
+          ],
+          "locator": "Allresulttables/runtimeplots"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "MVCcoveragebelow100percent violatesoriginalfeasibility; reducedcandidateobjective cannotcertifyunprunedoptimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            11,
+            12
+          ],
+          "locator": "Equation14/coverage/supplement"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete12p withscientificsupplementread, sourceprotocolandpinnedinventorychecked withoutbenchmarkexecution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Codefootnote/bibliography/supplement"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication dates",
+      "source_url": "https://doi.org/10.1609/aaai.v38i18.30070",
+      "locator": "Exactthreeauthors/AAAI2024 pages20812-20820/pub2024-03-24; arxivhistoryv1Dec14,2023/v2Jan1,2024saved; affiliationsactualfirstpage."
+    },
+    {
+      "field": "supplements scientific coverage and code inventory",
+      "source_url": "https://arxiv.org/pdf/2312.09086v2",
+      "locator": "All12pcompleteactualread, allreferences and full3pSupplementaryMaterial/all4algorithms/Table1-7;3contactimages/fulloriginalFigure1actualview.132entryofficialtree/noextraPDF/TeX/notebook/fullREADMEread, no benchmarks/weights execution."
+    },
+    {
+      "field": "classification limitations and figure",
+      "source_url": "https://arxiv.org/pdf/2312.09086v2#page=3",
+      "locator": "Per-task degreeweights/architectures/trainfiles implyspecialistconstructive pruning; classicalLSonly. Equations12-14 suppressdoublyprunedMVCedges, Tablescoverage<100 notvalidcover. Pubmed3806vs3805/SlashdotMISnegative. OriginalFigure1crop52,48,561,252at3xfullcaptionviewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al.2020",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "gcomb",
+      "reference_label": "Manchanda et al.2020",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.2017",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn, Seo and Shin2020",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.2016",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.2015",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li, Chen and Koltun2018",
+      "description": "Exact full title/authorship in bibliography and explicit background/related-work body citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Introduction/relatedwork plus complete bibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read main/references/complete scientificsupplement and retained task-specific classification.",
+    "Clarified binaryprogram vs continuousLP and originalMVCfeasibility loss.",
+    "Preserved negativequality/runtimeboundaries ratherthanunqualifiedtwofold/optimalclaims.",
+    "Added original Figure1 and seven literal body/bibliography edges."
+  ],
+  "reviewed_note_sha256": "68121a2b388fd148be8dcf5faac9ecf9e14569f58ee3eda2eb962e26657e00fc"
+}

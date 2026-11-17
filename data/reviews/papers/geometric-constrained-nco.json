@@ -1,0 +1,888 @@
+{
+  "version": 1,
+  "paper_id": "geometric-constrained-nco",
+  "note_path": "specialist/geometric-constrained-nco.md",
+  "baseline_note_sha256": "07bd8a94bbf1dc302015d103e47378b79c8c73f15e6b8e6c6803aa77c0abb766",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Paper-Conference.pdf",
+      "version": "Actual official NeurIPS2025 final49-page PDF, all scientific appendices/checklist freshly read.",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-163b2ff9b2.pdf",
+      "sha256": "62eff881f2d1c3c85f06ec83f6a0d39b256ae7e64ef9cbef003b6a3b29e56366",
+      "pages": 49,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Supplemental-Conference.zip",
+      "archive_member": "Greedy_Algorithmic_alignment_final.pdf",
+      "version": "Actual official Supplemental ZIP sole member: earlier anonymous46-page manuscript, all pages freshly read and differences compared with final.",
+      "local_path": "research/full-text-review/geometric-constrained-nco/supplement-paper.pdf",
+      "sha256": "3a47149f651106109948074a3399be894ccd9607860484c82d4ec6b0a06e0888",
+      "pages": 46,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshNeurIPS2025formal49pages first2read7authors MIT/NYU/UCSD/TUM, first2equal. GeometrydecomposeNNpointinconvhullfeasiblecorners, expectationextensionloss/recoverbestcorner roundingboundnotglobalNNoptimality. Applicabilityrequiresfastlinearoptimizationoracle;notarbitraryNPpolytopeaccessible. Fig1mustvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fullrelatedworkandformalsetupread: booleanfeasibleC,well-describedrationalpolytopefacetcomplexityphi,stronglinearoptimizationoracle;expectationoverfeasiblesetsFnotpenalties. ObjectiveMAXbuttextcallsminimizeF signneedsactualcodechecklater. NodepredpointinsideconvC assumed;projectionanddecompositionmustfeasible/oracle efficient conditional. NoglobalNNoptimalityinference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FullAlg1/Theorem4.1/Prop4.2/3requirementsread. NeedinsideP andstrongoracle/well-describedrational polytope,lexictiebreakscoefficientaepiecewise derivatives; theorynvertexformula vsprosen+1 mismatchdo notoverstate n exact. ExactDCnormalizedbestcorner>=weightedexpectation,practicalscaledb/lapproxtrationneedsmass/errorchecklater. Projectionormaintainedinteriorperturbation feasible; strongoraclealone notendtoendallrequirements."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Full4.2theory: exactconvexextensionglobalmaxmatchesdiscrete butgradientnotglobalcertificate;roundbest>=F exactnormalized. Cardinalitytopkgreedyvertex a=min selectedx,1-maxunselected,<=n support hypdimn-1;Prop4.4centerz/scaleinteriormean mu divisionedge0/1needhandling. Partition/spanning fullforest examples;MISusesfractionalstable relaxation notintegeroracle, mustreadroundingAppD beforeclaimfeasibilityquality. ExperimentsMaxCoverageprimary3GraphSage residualnorm weightedcoverage, baselinesrandom240s/Gurobi120s/greedy1-1e/SSL/RL, UCOMclassifiednonlearningempiricallyonlyauthorsinterpretation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fullmainexperiments:shortdecomposeNNoutput/noTTO;mediumlocalclassicalswapwithotherdecomp-supportsets, longdataaug notautomaticNNtestgrad. Twitchalllearnedpoor/CardNNTTOAdamstrong, greedy/UCOMoftenbetter. Actual7thtaskcardinalityconstrainedMAXCUTablation2datasets2k distinctrandompoint/Adamdirect/testtrainedNN/SSLtrainedNN. Blueprintonlystrongoracleandpolytopeops efficiency conditional;theoryexamplesnotallbenchmarked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Acknowledgementsandfullbib1-17read actualCircuitSAT2018inreference(nooverrideformalICLR2019targetyear), Bello2016arxivnotformalworkshop, UCOM2formalICML2024 andclassicalCaratheodorymatroidproofrefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Fullbib18-51 read CRA2024/EGN2020arxiv/NeuralSetExtensions2022 andAM/POMO existingIDs. Ref30Hong2024arxiv2411.00003possibleformalchangedtitleidentitycheckcatalog later. DC3/projection/NeuralSort refs scopeexact noforcedgenerics. Pubformal7authorsunchanged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Fullbib52-95read inclGumbelSinkhorn/HybridScattering/PermutationBirkhoff/CombOptNet/Blackbox/DIMES/DiffUCO/ApproxRatios/PrincipledRelax/CardNN/LinSAT/GLinSAT; CardNNprinted2022butformalICLR2023samepaperpreservecitedyear. Potentialmissingexisting AnnealedTraining,PhysicsGNN,MaxCSP,TilingNN,AreGNNoptimal,UTNCOshouldcatalogchecklater. Allformal95referenceitemsread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "FullA/Bdefinitions/GLSTheoremB3proof read;oraclepolynomialboundbitencoding notpracticaluniversalfast. Convdecomp xassumedINP, <=n+1vertices truegeneral;formula t0..n-1offbyoneforfulln. B1informal face Fcontainingxt claimedargmaxc xt^Tc generallyfalseforinterior(e.gsquare(.2,.3)maxvertex(1,1));neednotrepeatthisasvalidminimalfaceprocedure, readcontinuedproofbeforequalification. Perturbationlexicographicuniquevertex plusoptimizationtoseparationlinesearch formalassumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "Fullgeneralproofsupportfunctionratios/hyperplaneLPandcompactfacetEq14read. Validcoeffminfacet slack/(b-a·vertex) ifproperminimalface/supportvertex andxinside;zeroa ifarbitraryoraclemaxxnormalvectornotminimalface, cannotclaimgenericpracticalalgorithmwithoutfaceprocedure. OracleLPsupportfnrequiresbitcomplexity/separationnotmereconvexinstant. TSPoraclehardbutquadraticpermobjective/Birkhofflinearassignment easy offloadNPdifficultyintof objective, mainmaxcoveragecardinalitynohardlinearoracle."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "FullB2/Crescalingproof/Dhypersimplexderivationread. Approxresidualproduct_i(1-ai)*xrem, supportweights partialsum<1unlessresidualclosed/normalized;qualityroundingneedsnormalizedmassor f>=0 assumptions. Cboundrate(1-ell)^k silentlyrequiresai>=ell;fallbackoriginalai may<ell;proofalsoassumesresidualxtnorm<=original (notgenerally). Canpresentconditionalproductboundnotunqualifiedpublishedrate. Cardinalitytopk preservesmassk/0-1 monotonicface fixes, correctn boundduehypersimplexdimn-1;prooftextswapskzeros/n-kones typo avoid."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Fullhypersimplexproofcompletion/Prop4.4masskandcoordinatebounds;mu0/1singularitylimitingconstantcenterneedsimplementationhandling,endpointk0/nexcludedinteriorunlessspecialcase. EpartitionmatroidBASEequalblockcardinalitiesnotarbitraryupperbounds;producthypersimplexes topki/globalamax,uniformblockcentering. FullE1definition/inductionfirsthalfread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 27,
+      "notes": "FullE1proof/Algorithm2/E2scaling/E3graphicalsetupread. Partitionalgorithmendswhenresidualiteratevertexwithoutshownappend; exactweightsmass1requiresaddingfinalremainingvertex (checkcode). Graphicalbasefullspanningforestrank n-components, weightedmaxspanforestvertex nextcoefficientallrankinequalities. Theoreticalworkedexamples notmeasuredMaxCoveragebenchmark."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "FullAlgorithm3/rankratio/E4E5/SFMbinarysearch/E6effectiveresistance read. Graphicalfeasibility min_Fg(lambda,F)>=0 (emptyF gives0 ALWAYS so prose >0 branch cannotliteral);binarysearcheps vs exactcoefficientaederivative needseparate. Rankratioonlypositive denominators, unionallsubsets exponentialnaive/SFMpolynomialconditionalnotpracticallyconstant. MSTsupportavoidszeroedges butnotaloneproofminimalfacehandling. Weightedtree marginalsw_e*b_e^TLdaggerb_e exact;relintbridgescoordinates1,needpositiveweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 30,
+      "last_page": 31,
+      "notes": "FullTheoremE7weightedspanningmarginalproofandF1fractionalMISread. E7claimcontinuity/differentiabilityALLnonnegativefalsewhenpositive-weight support disconnects:2nodesoneedge w>0marginal1 vsw0pseudoformula0, trianglezeroscutedgecompetition pathdependent. Restrictvalidanalyticresultpositiveweights(orconnectedpositive-supportneighborhood), noallboundaryguarantee. FSTABhalf-integralverticesnotindependentsets;Eq34indicatorcase notgeneralhalfvariablefacetformula, do notassertdiscreteMISroundingbound. NeedremainingFprojectiondetails."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 32,
+      "last_page": 33,
+      "notes": "FullFfinish fractionalMIS handledbyzeroobjectivepenaltyoraddingclique/oddcycle/normconstraints, notautomaticintegralfeasibleeverycorner, noMISempiricaltable here. ProjectionReLUslackguaranteeneedsassumptions positive slack notalways preservedifclippingnegatives, do notrepeatunqualified. GfullDatasets/hardware/80epochtraining: 100syntheticgraphs/train?actualsplitneedcode;RandomV500/U1000,V1000/U2000,weighted1-100, Paretoalpha1-2trainTwitch6graphsviewerlog. RailwayV507/516/582 U63009/47311/55515. 9bscalesparallel, entropy.05cosine0epoch30/sharp.3to1epoch80/noise.05decay/AdamWlr.005warm50min5e5wd1e4/batch4/drop.1/seed42/16CPU+RTX8000."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 35,
+      "notes": "FullG2-G6all3modes/localpoolablation/UCOMtables1-4 read. Short9scalesx50sets=450candidates/noLS;medium9x100=900 then10single-replacements/staticpoolfirstkoutsidebasefromb.1;long5extraauggraphs0-30%feature/edgedrop,localuptok fromsupportpool optimizeORIGINALgraph, notNNtestgradient. Candidatepoolvsrandomablation positives. UCOMclassificationauthorsablation-specific notglobalmethodnonlearningfact;100graphSDdatascope nottrainingseed. Gurobixshortwarmstart classic optional notcore."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 36,
+      "last_page": 39,
+      "notes": "FreshtextANDactualvisualall32plotpanelsFigures3-6read across8dataset/ksettings. ShortstrongvsnonTTOlearned butTwitchabsolute~8kvsclassical25-30k, Medium/LongbelowCardNNTTO/greedyTwitch;RailwayGurobi/greedyoftenbetter;plotsbenefit/time tradeoffsnotallSOTA. Legend19methodvariantsverifiedactualsymbols."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 40,
+      "last_page": 41,
+      "notes": "AllFULLTables5-8textblock+visualread. ShortNOTdominateallneural noTTO:Rand1000k20short29810/.825 vsRL29912/.102;Railk50short7411/2.084vsRL7456/.219;EGNnaiveRand500k10quality15262>short15177. Needqualifyabstractmainallparetodominance. Twitchlongk2018526/26.44s<greedy25855/.397s. Gurobi120timelimitnotallprovenoptimal andshort+Gurobisometimesbetterdisplayedobjective, baselineconfig/splitunknowndo notlabelopt. UCOMTable2longRand50010says15779vsTable5 15679 discrepancyrecord. TableSD acrossdataset+methodnotmultitrainseed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 42,
+      "last_page": 43,
+      "notes": "FullHablationTable9+methods:IMDB1000/ER100050-100 p.15 splits60/20/20 filter<nk;IMDBk5/15 ER15/60. DirectAdam150steps lr.015/.012;8layerGatedGraphConv+2linear RWPE10,NNoptimizedontestdistinctSSLnoTTO. Greedysmallkbetter(.985vsSSL.899ER);largekNNIMDB.932>greedy.801 butERSSL.889<greedy.900;scoresnormalizationnotstatedhereavoidapprox-ratioinference. Checklist43fullclaims/limitsread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 44,
+      "last_page": 45,
+      "notes": "Entirechecklist44-45read. CheckliststatisticalNOduecompute/time despitetableSD means noindependentstatisticalsignificancetest;notinferCI. OldanonymouscodeURLinchecklist publicofficialGHavailable. Paperclaimallproofsvalid notcuratorproofverification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 46,
+      "last_page": 47,
+      "notes": "Allchecklist46-47fullread resources/impact/licensingboilerplate;statisticalclaimsnotupgradebasedongenericguidelines."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 48,
+      "last_page": 49,
+      "notes": "Finalfullchecklist48-49read;all49formalpagescurrentlyfreshlyread (scienceA-H proofs/numericalresults+checklist). Supplemental46earlieranonymousdifferentPDFstillpending coverage;noverifiedmark."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshactualofficialZIP46-pageanonymousmanuscriptfirst2read. Sameworktitle/corepipelinebutanonymousSubmittedNeurIPS2025withlinenumbers, strongerabstractgeneralizeswordingvsformalworkedexamples;notformalPDFbyteidentity. Figure1requiresinspectsourceversionifdifferences, mainformalusednote."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Freshanonymous3-4fullrelated+setupread; noformalpolyhedraloraclebackground inolder, p4claimprobabilitydifferentiablevsformala.e.;sameBooleanextensionEq2number vsformalEq3, earlieremphasisapproxconstruction. Remainversionsseparate."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Freshanonymous5-6fullAlgorithm1/informalGLS4.1 andcardinality4.2read. Formaladdsnewgeneraloracle a.eproof/Prop4.2rescaling earliernotmain. Old algorithmx0,t1initialindexshorthand;allcurrentnoteusesformalcorrectidentifiedversion andnormalizationconditions. OldTheorem4.2continuousa.evsformala.eonlyretaineddifference."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Freshanonymous7-9fullmethod/exps/conclusionread. MaterialversiondifferenceMISolderStep3greedyindependentset vsformalstrongoracleFSTABhalf-integral;oldspanningparagraphwronglysaidstep4cardinalitycoefficient (formalrankconstraintsadded). SameTTOclassicalswaps/aug andMaxCutablation, sameoverstrongshortneuraldominance;FigureTable1overviewrequiresvisualsuppreadinglater."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresholdbib1-49allread, oldBello2017OpenReviewvsformal2016arxiv, duplicateActorCriticrefs43/44, differentnumericlabelsmostlysamework. Preserveformalreferencelocatorsforrelationsratherthanmixoldnumbers."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Freshanonymousbib50-94fullread, duplicatedDIMES69/70samework no2edges, oldGLinSATarxiv2409.17500/CombOptNetsame, allformalrefsidentitiesnotborrowfuturemetadata. Bibliographycompleteforbothsources."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "FresholdA/B/Cproofreadall. Materialversionfix: oldfacetcoefficientEq9denom z_i·(vertex-x) algebrawrong, formalEq14uses b_i-z_i·vertex. Formalalsoaddsstrongoracle support-function proof beyondoldcompactdescriptiondiscussion. OldCprodsummationstarts1vst0residualsame, expboundnext. NoteformalrepresentativeusednotuncriticallyswapPDFs."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "FresholdC/D/E1 proofs fullread, sameexp-rateunstatedlowerboundissue, cardinalityprooffixedcoordinates andsamecenterz. OldE1assertscontinuous+differentiableeverywhere vsformala.e weaker;partitionalgorithmexactblockk notupperboundgeneric. Noempiricalnewmatroiddata."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "FresholdE1/E2 blockscaling/fullGraphicalAlgorithm3prooffirstcasesread. Materialformalcorrection: anonymousAlgorithm3ONLYbox coefficient no rank-subsetterm;formaladdsEq30rankratios andSFM/binarysearch. Oldclaimgloballycontinuousdifferentiable weakenedformala.e. Retainformalalgorithm/proofscope;oldgraphicalnotassumedidentical."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Freshanonymousgraphicalproofremainingcases/effectiveresistance/allboundaryE5claimandF1fullread. MaterialMISversiondifferenceoldEq45hasx_i/v_i and(1-x)/(1-v)coordinatehalfvertexratios withn+|E|termination,formalEq34indicatorstyle/nohalfdivisors andn+1;neithertreatasautomaticintegerMISrounding. Sameboundarycontinuityfalsebothsources, formalrepresentativenotolderunqualifiedequivalent."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "Freshanonymous28-29fullFprojection/Gdataset/hardware/baselines/trainingread. OldMISnorm n/(Delta+1) reductionheuristic retaineddifferentformalzeroobjectivepenalty addition. NoempiricalMISsupportadded. SameMaxCoverage8datasetsconfig/dataset100graphs/9scales withclassicalbudgets. Needcodeactualsplitandsemanticmetric."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 30,
+      "last_page": 31,
+      "notes": "Freshanonymous30-31fulltraining/localmodes/poolablationandallUCOM2Tables2-4read. No formalshort+Gurobiablationsection/table yet;formaladdsGurobiwarmstartrows. OldvsformalUCOMlong15779/15679difference needsversionnotmerge. Same9scale50/100/5aug/strictrealobjectiveLS meansconstructivewithclassicpostprocess."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 32,
+      "last_page": 35,
+      "notes": "Freshanonymousall32comparisonplotpanelsactuallyvisuallyread+captions32-35. SimilarformalplotsbutNOshort+Gurobirows/legend; learningnosuperiorityandTwitchfailurespersist. Fullnumericoldtablesnextmustreadbecausepaperlineoutcomesversionmaydifferent."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 36,
+      "last_page": 37,
+      "notes": "FreshalloldrotatednumericalTables9/10blockorderread, same8settingsvalues/asformal5-8 notreferrawplotcaptionaspromisedallwins. NoGurobiwarmstartrowsolder;45k?readallnumbersmeansstd/time."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 38,
+      "last_page": 39,
+      "notes": "FresholdTable11allclassical+ours numerical8settingsread, sameformal5-8(notshortGurobi)UCOMlong15679inmainvs15779ablation sameinconsistency. H39allMaxCutmethod/table12read, olddescriptiontwoeightlayerGatedGraphConv vsformaloneeightlayer;oldtableexactsame4settingmeanstd values, metricnormalizationnotdefined. Willformalfirstpluscodecheck."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 40,
+      "last_page": 42,
+      "notes": "Freshentireoldchecklist40-42read claims/proofs/repro/details/codeandstatisticalNOsameformal. Noadditionalscientificpointerexceptanonymouscode linkpublicofficialavailable."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 43,
+      "last_page": 46,
+      "notes": "Freshentirefinaloldchecklist43-46read complete. All46anonymousscientificsourcepagesnowreadplus49formal=95;notmereZIPinspection. Needcode/proofdeterministiccounterexamples/sourceversioncomparevisual/metadata beforeverified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "extension",
+      "category": "contribution",
+      "statement": "Constrained convex-decomposition objective extension and rounding, cardinality implementation, conditional oracle theory and theoretical matroid/fractional-MIS worked cases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            18,
+            19,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "locator": "Sections1-4 and complete AppendicesB-F; final vs older supplemental differences explicitly recorded."
+        }
+      ]
+    },
+    {
+      "id": "decomposition",
+      "category": "method",
+      "statement": "Exact normalized feasible decomposition supports best>=expectation; all-coordinate residual normalization required, finite release differs. Static learned candidate pools followed by exact-gain classical swaps, no parameterTTO in primary protocols.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            22,
+            23,
+            33,
+            34
+          ],
+          "locator": "Algorithms1-2/AppendicesC-D/G, public decompose_loss.py process_single_scaling_factor and unified_refinement read."
+        }
+      ]
+    },
+    {
+      "id": "coverage",
+      "category": "experiment",
+      "statement": "Main weighted maximum coverage with nine scales/short-medium-long budgets, real/synthetic graphs and quality/runtime exceptions; separate cardinality-MaxCut train/test optimization, score normalization unclear and no uniform dominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42
+          ],
+          "locator": "Complete main results, AppendixG/H all plots/full numeric Tables1-9 read and key pages visually checked."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialist constructive retained: static neural candidate pool, subsequent exact objective classical swaps; theoretical multiple polytopes and separate task/k checkpoints are not one shared generalist model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            33,
+            34,
+            42
+          ],
+          "locator": "Actual primary workflow and experiments; parent-approved taxonomy boundary."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/713939ee5a7b14a6fecf69e692ec3799-Abstract-Conference.html",
+      "locator": "Final official NeurIPS2025 titlepage7authors and MIT/NYU/UCSD/TUM, first2equal; year precision retained, no invented acceptance/preprint day."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Supplemental-Conference.zip",
+      "locator": "Downloaded actual official ZIP and manually inspected sole member Greedy_Algorithmic_alignment_final.pdf,46pages older anonymous manuscript; all46 freshly read in addition to final49, including complete proofs/plots/tables/checklist. Public83-entry tree inspected no separate PDF/TEX/IPYNB scientific attachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/frankx2023/Neural_Combinatorial_Optimization_with_Constraints",
+      "locator": "README, complete decomposition/refinement functions, model feasible map and selected train/test/config/data code manually read; release recurrence updates selected coordinates differently, finite mass redistribution,4stage vs3stage model and schedule/budget differences recorded; no benchmark rerun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/713939ee5a7b14a6fecf69e692ec3799-Paper-Conference.pdf",
+      "locator": "Original final Figure1 PDFpage2 crop Rect(118,73,496,285),4x; source page visually inspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/713939ee5a7b14a6fecf69e692ec3799-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/geometric-constrained-nco/publisher-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/713939ee5a7b14a6fecf69e692ec3799-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2026-04-23; primary cachedHTML research/full-text-review/geometric-constrained-nco/publisher-landing.html; citation_title=['Geometric Algorithms for Neural Combinatorial Optimization with Constraints']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[1]",
+      "description": "[1] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [1]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual matching reference title/authors/version [1]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[35]",
+      "description": "[35] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [35]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actual matching reference title/authors/version [35]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "neural-set-function-extensions",
+      "reference_label": "[36]",
+      "description": "[36] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [36]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actual matching reference title/authors/version [36]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "principled-co-relaxation",
+      "reference_label": "[87]",
+      "description": "[87] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [87]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actual matching reference title/authors/version [87]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "cra-co",
+      "reference_label": "[33]",
+      "description": "[33] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [33]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual matching reference title/authors/version [33]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "diffuco",
+      "reference_label": "[72]",
+      "description": "[72] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [72]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actual matching reference title/authors/version [72]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "[56]",
+      "description": "[56] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [56]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual matching reference title/authors/version [56]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "hybrid-scattering-clique",
+      "reference_label": "[57]",
+      "description": "[57] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [57]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual matching reference title/authors/version [57]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "birkhoff-extension",
+      "reference_label": "[62]",
+      "description": "[62] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [62]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual matching reference title/authors/version [62]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "gnn-approximation-ratios",
+      "reference_label": "[74]",
+      "description": "[74] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [74]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actual matching reference title/authors/version [74]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "pointer-networks",
+      "reference_label": "[85]",
+      "description": "[85] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [85]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actual matching reference title/authors/version [85]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "linsatnet",
+      "reference_label": "[89]",
+      "description": "[89] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [89]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actual matching reference title/authors/version [89]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "glinsat",
+      "reference_label": "[95]",
+      "description": "[95] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [95]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actual matching reference title/authors/version [95]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "ucom2",
+      "reference_label": "[10]",
+      "description": "[10] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence [10]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual matching reference title/authors/version [10]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "cardnn",
+      "reference_label": "[88]",
+      "description": "[88] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit cited occurrence [88]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actual matching reference title/authors/version [88]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "attention-model",
+      "reference_label": "[45]",
+      "description": "[45] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [45]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actual matching reference title/authors/version [45]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "dimes",
+      "reference_label": "[69]",
+      "description": "[69] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [69]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actual matching reference title/authors/version [69]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "pomo",
+      "reference_label": "[47]",
+      "description": "[47] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [47]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actual matching reference title/authors/version [47]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[5]",
+      "description": "[5] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [5]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual matching reference title/authors/version [5]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "blackbox-backprop",
+      "reference_label": "[68]",
+      "description": "[68] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [68]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual matching reference title/authors/version [68]."
+        }
+      ]
+    },
+    {
+      "citing": "geometric-constrained-nco",
+      "cited": "comboptnet",
+      "reference_label": "[65]",
+      "description": "[65] actual explicit in-text citation and complete bibliography matched to stableID. Printed preprint year/title is preserved: CircuitSAT2018, Bello2016, CardNN2022, Blackbox2019 and Birkhoff2024 refer to their early manuscripts, not assumed future formal editions. Noncatalog related works are not forced into existing IDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit cited occurrence [65]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual matching reference title/authors/version [65]."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh full reading of49 final and46 distinct official supplemental pages; actual ZIP sole older manuscript, all scientific material covered.",
+    "Expanded generic note to evidenced six sections, actual primary maximum coverage plus separate cardinality-constrained MaxCut and theoretical-only matroid/MIS scopes.",
+    "Retained specialist constructive based on static learned pool and classical exact-gain swaps; pool/random ablation quantifies neural contribution, no cross-task shared weights assumption.",
+    "Qualified rounding/optimization/oracle assumptions, fractional-MIS corners, approximation coefficient bounds and boundary tree differentiability; deterministic curator counterexamples saved.",
+    "Disclosed release selected-coordinate normalization discrepancy and leftover-mass redistribution, architecture/schedule/mode differences; no claimed benchmark rerun or upstream correction.",
+    "Replaced blanket dominance with exact numerical quality/time counterexamples, Twitch weakness, capped Gurobi/warmstarts, UCOM table inconsistency and unclear MaxCut score normalization.",
+    "Restored original Figure1 crop, official metadata year precision,21 actual explicit bibliography-supported stableID relations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "dd422ae587132fe2954793bc1fc45a44d9704b2936e25d52a2fc02a81266ccd0"
+}

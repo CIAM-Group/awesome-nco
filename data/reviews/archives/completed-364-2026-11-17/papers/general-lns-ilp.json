@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "paper_id": "general-lns-ilp",
+  "note_path": "specialist/general-lns-ilp.md",
+  "baseline_note_sha256": "e5a718fcbee7a6144b496766062541a16f00ddc04be8482335bbb01d7abb2d76",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Paper.pdf",
+      "local_path": "research/import-272/nco-bb6bdd50ea.pdf",
+      "sha256": "41a699d46d0a3e1c85ba9304dcbd4ad2ad0f68bebaf8746abb7b294858139611",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/general-lns-ilp/supplement.pdf",
+      "sha256": "105d7a2e5b10df62fd408c773503421d3ff0c76f088988c65fd8fa732ed33635",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read generalblackboxLNSmotivationandlimitedcommercialinterfaces, randompartitionbaselinecontribution, algorithmconfigversusdecompositiondistinction and fullLNS/ILPbackground."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completedisjointkpartitionLNSsweepandbestofrandomdemonstrations, BCversusforwardtrainingadaptivecollection, REINFORCEgamma1 andbothgraph/ILPfeatures+currentvalues; all4tasks100/10/50data5seedsandinitializationcostincludedpathplanning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read everyTable1–6objective comparisonandnegativeRLandBurerMaxCutcase, Gurobi9k2–5t1–3sconfigs/longestLNSrunbudget,10/100iterationcaseplotsnotuniversalspeedup, learnedSCIPextension andcrosssolvercomparisonlimitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allbroaderimpactacknowledgementsand51references; mappeddeviceplacement37,Gasse22,graphRL29,andneuralroutingLNS27explicitly; prose31misreferencesgraphgreedyvsrunheuristicsnotassumeedgefromtypo."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read everyhyperparametersweepTable7–13, qualitativepathdecompositionFigure4, exactPCA+MLPtaskarchitecturesTable14(notGNN), allspecializedheuristicdefinitions; noindependentsharedcross-taskcheckpointreported."
+    }
+  ],
+  "claims": [
+    {
+      "id": "decompose",
+      "category": "contribution",
+      "statement": "Genericdisjoint-variablepartitionLNSreusesofftheshelfsolverandcanlearndecompositionpolicies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Section3.2Algorithms1–3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Random-bestdemonstrationssupportBC/forwardtraining; REINFORCEusesobjectiveimprovementreturns.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4.1–4.2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Task-specificPCAandMLParchitecturesdifferacrossnativeproblems; sharedinterfaceisnotsharedweights.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "AppendixA3Table14"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "RLcanloseRandomLNS andBurerMaxCutbeatsbestLNS despiteGurobiboundedtimeimprovements.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1–5"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "reproducibility",
+      "statement": "Gurobi9.0getsmaximumLNSruntime, initialpathplanning3sisincluded, k/taretunedandmain10sweeps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Section5.1–5.2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e769e03a9d329b2e864b4bf4ff54ff39-Abstract.html",
+      "locator": "OfficialNeurIPS2020volume33record; PDFp1authorRaviLankacapitalization"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Supplemental.pdf",
+      "locator": "AppendixA3Table14distincttaskPCAandMLPdimensions/heads"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e769e03a9d329b2e864b4bf4ff54ff39-Paper.pdf",
+      "locator": "Section5.1weightedMVC/weightedMAXCUT/CATS/risk-awarepathplanning"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e769e03a9d329b2e864b4bf4ff54ff39-Abstract.html",
+      "locator": "ManuallycheckedSupplemental3pageappendixA1–A4, allconfigurationtables/architecture/visualization/heuristicsread"
+    },
+    {
+      "field": "code_availability",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e769e03a9d329b2e864b4bf4ff54ff39-Abstract.html",
+      "locator": "Noauthor-confirmedofficialimplementationlinkfoundinpublisherpaperorfullsupplement; noavailabilityclaimed"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "general-lns-ilp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[29]",
+      "description": "Graphoptimizationrelatedworkandfeaturetasksetting; intro[31]isnotusedasitsidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            11
+          ],
+          "locator": "Explicit in-text citation [29] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "general-lns-ilp",
+      "cited": "gcnn-branching",
+      "reference_label": "[22]",
+      "description": "LearnedbranchingrelatedworkandTable6comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation [22] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "general-lns-ilp",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[27]",
+      "description": "Problem-specificlearnedroutingrepairrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "Explicit in-text citation [27] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "general-lns-ilp",
+      "cited": "rl-device-placement",
+      "reference_label": "[37]",
+      "description": "Combinatorialengineeringdesignapplicationcitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [37] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full12+3pageauditwithconfigurationtablesandallnegativecomparisons.",
+    "CorrectedmodeldescriptiontoPCA+MLP, notgraphneuralnetwork.",
+    "Addedfouractualnativeobjectives andretainedspecialistweightscope.",
+    "Separatedrepresentativeinstance speedprofilesfromaggregateclaims andprimalheuristicfromglobaloptimality.",
+    "CorrectedRaviLankaauthorcapitalizationandrecordedofficialcodeunconfirmed."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1160f29e8ce1913bae4b24778c61242422938202014896d63a8325aa4c85b568"
+}

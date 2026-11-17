@@ -1,0 +1,480 @@
+{
+  "version": 1,
+  "paper_id": "sdds",
+  "note_path": "specialist/sdds.md",
+  "baseline_note_sha256": "190e39695094d5ed0c27e94add62e8950cb23f5d0c764c91dbff2081cc87b23c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d87eadbe6114b768e76c5d5e8eb39388-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2025 proceedings PDF,30pages including all references and scientific AppendicesA1-A12; May1,2025",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d87eadbe6114b768e76c5d5e8eb39388-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-96c9451fb6.pdf",
+      "sha256": "73b71fcfef9539d8df7029aac4cbeb210457e57b1a8efd30131edbe2f72907ee",
+      "pages": 30,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title/authors/three affiliations and full abstract/intro/preliminaries. PDF author order differs publisher (Ennemoser before Haoyu Peter Wang); publisher order retained explicitly. Data-free binary Boltzmann target, joint-path KL upper bound, reverse vs forward objective distinction; reverse sixofseven UCO claim and forward sampling claim need full evidence."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full QUBO/UCO annealing loss, finite vs asymptotic self-normalized importance distinction and exact partition Z estimator, joint-path fKL estimator and rKL policy-gradient mapping, full path MH correction. Learned marginal not exact likelihood; full-support/reliable mixing requirements need proofs. Memory claim relates stored autodiff activations, not necessarily eliminating trajectory data."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read related work/full setup and Tables1/2all rows; seven datasets four native problems,4000train500val1000test; separate target-energy runs, new DiffUCO baseline adds normalization/cosine and budget changes. 30sample mean vs150 best distinct; CE may expensive. 4/7 significant+2/7 insignificant wins, BA-largeMaxCut exception; Gurobi CPU/time-limits not exactuniformopt. Ising U-net300steps/ESS/three sampling seeds."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read full bestof150 Table3/Ising24x24 Table4/free-energy and ESS allmetrics; fKL ESS fraction.0102 notnearideal1; rKL worse thanreportedAR butbettermatchedAR. OriginalDiffUCO collapsedIsing. Full limitations/acknowledgments and bibliography firstpage including duplicatedBother entries. Gurobi table ambiguities kept as reported heuristic/time limits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read every full bibliographic entry pp13-15 including EGN/Khalil/Li2018/DiffUCO/VAG identities; no alias-based edge inferred. Need lastbibpage16 and body locators before exactrelationregistration."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read last bibliography page all entries and AppendixA1/A2/A2.1-A2.3 importance/SNIS/fullpath identity/MH detailedbalance. Conditional integrals require proposal support; finite normalized weights ratio estimator not generally finite-sample unbiased. No need claim otherwise despite section shorthand."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read all A2.4-6 path MH marginal identity, induction/policy-gradient mapping, SNIS fKL estimator and A3.1noise/A3.2CE. Printed p20 entropy gradient identity writes total derivative of Elogq as0 incorrectly; intended expected partial score term vanishes, need render and qualify typo/proof exposition notinvalidate policy-gradient result. SNIS final equality MCasymptotic notfiniteexact. CE claims feasibility need actualproblemenergyconditions next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read coverage epsilon-clipping assumptions (reported not empirically helpful), integrated autocorrelation criterionC5, full Algorithms1/2/PPO/TDlambda/GNN64andUNetarchitectures. ActualbuffersstorepathslinearT despite activationminibatchsavings. PrintedAlgorithm1lossalreadyincludesgradient+updateanothergradient and PPOpositive-minimized sign need releasedcode clarify, notconclude main objective false."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read all Table5 energies A1B1.1 inclMDS higher-orderproduct notgenericpureQUBO, RB/BA distributions and labels, matched activation-budget explanation and tuning; Table6 caption3vs2seed inconsistency. A7Ising480kSNIS/400iterations1200chains/A10040GB, A8figure/tabletrainingtime note prosecallsper-epoch buttable d:h:m clearly fullrun context; need avoid misstate. ReadSpinGlassstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Finished all30formalpages including every reference/AppendixA1-A12/Tables1-12. EA16x16 noexactFtruth:forwardbestFbutWORST ESS3.2e-6 vsoriginal5.22e-6 andrKL8.56e-6; notuniversalforwardcoveragebenefit. Groundstate10x10separateinstanceoptimization/200samples/printerrorbar ambiguous notquoteasprecise. Fullhardware/annealinghyperparams/extendedbaselines/readtimeafterJITcompile. Needvisualproof/pseudocode/tables next."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Data-free energy targets and diffusion activation memory motivate path objectives plus corrected endpoint estimation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections1-2"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "PPO reverse KL, self-normalized forward-KL time minibatches, joint-path IS/MH corrections.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Section3/all scientific derivations and pseudocode"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate native energy/dataset/Ising checkpoints; specialist graph constructor/sampler framework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            24,
+            25,
+            28,
+            29
+          ],
+          "locator": "All native experimental protocols; official per-task checkpoint README"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Joint-path likelihood enables time minibatches and correction; SNIS is asymptotic under support, buffers remain linearT, practical PPO surrogate distinguished from exact gradient.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Equations1-10/A1-A5; full-support clipping and mixing conditions"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "7datasets30mean vs150best;4significant2insignificant wins; BA-largecut exception; Ising480k/ESS.0102; EA fKL worstESS despite best estimatedF; actual hardware/JIT/CE costs retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "All12tables/Fig1, exact caption and protocol comparisons"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "No finite-sample unbiased SNIS/finite-time exact MCMC/optimum guarantee; printed entropy total derivative/pseudocode issues precisely limited and actual code clarifies intended method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            10,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            27,
+            28
+          ],
+          "locator": "Curator analysis of A2.5 entropy score vs total derivative and A3 pseudocode, not empirical invalidation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All30p/all refs/A1-A12,8visual;203entry code-only ZIP;bothAPI403;official code selected scopes inspected; no experiments rerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "Full reading log/manual supplemental inventory and code evidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d87eadbe6114b768e76c5d5e8eb39388-Abstract-Conference.html",
+      "locator": "Publisher exact6authors,May1,2025 metadata;PDFp1 three institutions. Publisher Haoyu Wang beforeMartinEnnemoser, PDF Ennemoser beforeHaoyuPeterWang; retain publisher order/name with explicit note."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d87eadbe6114b768e76c5d5e8eb39388-Abstract-Conference.html",
+      "locator": "Manual publisher supplementalZIP2052764bytes SHA8f5f9277da7db5b09f75d5947eed7ab2c890dfcf35d82ecc56e1e007da577254,203entries,165files:143py/10pickle/8txt/2markdown/1yml/1gitignore; noPDF/other scientificdoc. Both READMEs and commands checked; allscience integrated A1-A12. OpenReview peNgxpbdxB v1/v2 403. Official1039files noPDFZIP scientificattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d87eadbe6114b768e76c5d5e8eb39388-Abstract-Conference.html",
+      "locator": "Formal30p SHA73b71fcfef9539d8df7029aac4cbeb210457e57b1a8efd30131edbe2f72907ee fully read incl every ref/all12tables. Visual PDF5/9/10/20/23/25/27/28 confirms method, print issues, metrics and Fig1."
+    },
+    {
+      "field": "code_url,implementation scope",
+      "source_url": "https://github.com/ml-jku/DIffUCO",
+      "locator": "Commit39d3e25861174045d6fe34d568a0b6a1b8de66be1039files. Full191lineREADME.markdown/82lineevaluate_unbiased_sampling.py; selected ForwardKLTrainer125-245/PPOTrainer529-569 read. Actual scalar weighted negative logloss/negative clipped actor, per-task/seed weights and evaluation_factor3. TSP explicitly absent frompaper. No experiment rerun."
+    },
+    {
+      "field": "derivation and estimator scope",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d87eadbe6114b768e76c5d5e8eb39388-Abstract-Conference.html",
+      "locator": "A2.5PDF20 total entropy derivative printed0; expected partial score cancellation is intended. Bernoulli derivative log(p/(1-p)) shows distinction. PDF23 Algorithm1loss contains extra derivative/PPO text positive surrogate minimized; released code clarifies scalar loss/negative actor. SNIS ratios finite biased/asymptotic; logpartition nonlinear; coverage/mixing separate. Do not infer main algorithm invalid."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sdds",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al.(2024)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Body/tablePDF2 Sanokowski et al.(2024); full reference PDF15."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang(2023)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16
+          ],
+          "locator": "Body/tablePDF7 Sun & Yang(2023); full reference PDF16."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas(2020)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Body/tablePDF7 Karalias & Loukas(2020); full reference PDF14."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.(2023)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16
+          ],
+          "locator": "Body/tablePDF7 Zhang et al.(2023); full reference PDF16."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.(2017)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Body/tablePDF7 Khalil et al.(2017); full reference PDF14."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al.(2020)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            29,
+            12
+          ],
+          "locator": "Body/tablePDF29 Ahn et al.(2020); full reference PDF12."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "mean-field-annealing",
+      "reference_label": "Bilbro et al.(1988)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            30,
+            12
+          ],
+          "locator": "Body/tablePDF30 Bilbro et al.(1988); full reference PDF12."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "meta-egn",
+      "reference_label": "Wang & Li(2023)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16
+          ],
+          "locator": "Body/tablePDF7 Wang & Li(2023); full reference PDF16."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski et al.(2023)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            15
+          ],
+          "locator": "Body/tablePDF7 Sanokowski et al.(2023); full reference PDF15."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.(2018)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Body/tablePDF7 Li et al.(2018); full reference PDF14."
+        }
+      ]
+    },
+    {
+      "citing": "sdds",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Bother et al.(2022a/b)",
+      "description": "Explicit body/extended-table citation; full bibliographic identity checked, duplicate bibliography labels consolidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "Body/tablePDF7 Bother et al.(2022a/b); full reference PDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded native graph benchmarks and separate checkpoint scope; not paper TSP fromrepository.",
+    "Separated asymptotic SNIS/full-support/mixing conditions from finite exactness; retained ESS failures and CE/JIT/hardware costs.",
+    "Recorded precise entropy-score/pseudocode print issues with implementation clarification, not broad invalidity.",
+    "Complete30p allrefs/science and203member code-only supplementary inventory."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4783359bd61b698979037d20c04e5e717060fde311498311ab543944507fc6b9"
+}

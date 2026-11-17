@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "paper_id": "placeto",
+  "note_path": "specialist/placeto.md",
+  "baseline_note_sha256": "d663dbd707dcd0e49a8abee464bedb22a9b58a46ff942b96091b10e1e3e9e295",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/71560ce98c8250ce57a6a970c9991a5f-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/71560ce98c8250ce57a6a970c9991a5f-Paper.pdf",
+      "local_path": "research/import-272/nco-925f2bf8e0.pdf",
+      "sha256": "474bd0c4543518deb0e2603d2acea108cc99adb738a13cd21999ea1c4f28b6e1",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement0",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/71560ce98c8250ce57a6a970c9991a5f-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/71560ce98c8250ce57a6a970c9991a5f-Supplemental.zip",
+      "archive_member": "appendix.pdf",
+      "version": "publisher-linked ZIP scientific supplement PDF",
+      "local_path": "research/full-text-review/placeto/supplement-0.pdf",
+      "sha256": "0f5d552443df9c2abf7e048c882b1e0cbab98775c815f3b7444d9c19756b761b",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "ReadNeurIPS2019identity/authoraffiliation; iterative current-node reassignmentMDPwithgraphfamilypolicy,predefinedgrouping,structuralinvariance claim; rewardterminalvsincremental andmemorypenalty."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read two-direction message passing andparent/child/parallelpooling, trainingprofiling/simulation,manualgroupingandstrongRNNofficialTFbaseline, realhardwareevaluationrule andcodefootnote."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Table1 allsixcases: Inception2GPUruntimeworseRNN,NMT4GPUmoreevaluations despitebetterruntimes. Read per-familyzero-shotCDFs and64ordergeneralization,architectureablations,manualgroupingfuturelimits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read all28bibliographyentries. Exactinternalcitationshierarchicalplacement,RLdeviceplacement,Spotlight; PaliwalreinforcedGA andMaoDecima aredifferenttitlesnotcurrentcataloguepapers."
+    },
+    {
+      "source_id": "supplement0",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete REINFORCE equationandbaseline,benchmarkarchitectures,batchsizesandopcounts,32graphfamilygeneration16/16splits,intermediaterewardablation,simulatorqueueprofiling,graphfigures6-7."
+    },
+    {
+      "source_id": "supplement0",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read simulatorhandlers/validation,groupmerging,allhyperparametersand8workers,1000episode2percentconvergencestop,memorypenalty,andhardware. RewardprintedA7signcontradictsSection2.1; authorcompute_rewards codeusesoldminusnewconsistentmain."
+    }
+  ],
+  "claims": [
+    {
+      "id": "placeto-contribution",
+      "category": "contribution",
+      "statement": "Iterative reassignment with structuralGNN embeddings enables newgraphtransfer withintrainedfamilies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Sections2,4.2,Figure5"
+        }
+      ]
+    },
+    {
+      "id": "placeto-method",
+      "category": "method",
+      "statement": "Manualgrouping andprofiled simulator support REINFORCE;memorypenalties andintermediaterewards requiremultipleevaluations.",
+      "evidence": [
+        {
+          "source_id": "supplement0",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "A.1,A.4–A.7"
+        }
+      ]
+    },
+    {
+      "id": "placeto-results",
+      "category": "experiment",
+      "statement": "Table1 contains a slight Inception2GPUruntime regression andNMT4GPUgreatersamplecount,alongside selected16.5percent runtimeand6.1Xsamplegains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "AllsixTable1rows"
+        }
+      ]
+    },
+    {
+      "id": "placeto-scope",
+      "category": "classification",
+      "statement": "Zero-shottransfer isbetweenunseen graphswithin each ofthreefamilies,notsharedweightsacrossnativecombinatorialtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8
+          ],
+          "locator": "Datasetconstructionandperdatasetgeneralization"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper/2019/hash/71560ce98c8250ce57a6a970c9991a5f-Abstract.html",
+      "locator": "FormalNeurIPS2019titlewithoutPlaceto prefix;publisherPDFp1 titlewithprefixandfiveauthorsMIT;normalizedfirstauthorcapitalization"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/71560ce98c8250ce57a6a970c9991a5f-Supplemental.zip",
+      "locator": "ManualpublisherSupplementallinkZIP200 containssoleappendix.pdf6pages;allA.1–A.7scientificcontentandfiguresread"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/aravic/generalizable-device-placement",
+      "locator": "MainPDFp6footnote2exactauthorlink;README/model/sim/datasetinstructionsread;rewardcompute_rewards sourcechecked;referencecodequalificationpreserved"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "placeto",
+      "cited": "rl-device-placement",
+      "reference_label": "[13] Mirhoseini et al. (2017)",
+      "description": "Explicit recurrentplacementpredecessor andmanualgrouping/benchmarkdiscussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            10
+          ],
+          "locator": "Explicit in-text citation [13] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "placeto",
+      "cited": "hierarchical-device-placement",
+      "reference_label": "[12] Mirhoseini et al. (2018)",
+      "description": "Explicit hierarchicalplacement predecessor and RNNbaselineimplementation discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation [12] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "placeto",
+      "cited": "spotlight-placement",
+      "reference_label": "[6] Gao et al. (2018)",
+      "description": "Explicit sophisticatedpolicyoptimizationplacementpredecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            10
+          ],
+          "locator": "Explicit in-text citation [6] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "placeto",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "[11]",
+      "description": "Placeto graph-embedding architecture inspiration explicitly cites Decima; exact five-author title and arXiv1810.01963(2018) precursor of catalogued SIGCOMM2019, not a citation to future formal publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actually read complete body citation paragraphs: [11]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [11]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readnewlycachedsix-pageofficialZIPappendixinfull;correctedfirstauthorcapitalization.",
+    "PreservednegativeTable1casesanddistinguishedplacementcounts,episodecostandelapsedtrainingtime.",
+    "Documentedmain/appendixreward-signconflictwithauthorcodeconfirmationandwithin-familygeneralizationscope;3exactcitationedges.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0b428d9029239a774503a3adb15951c424d1fa84c10c194c26889b7a229a80bf"
+}

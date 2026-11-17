@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "paper_id": "graph-matching-benchmark-position",
+  "note_path": "studies/graph-matching-benchmark-position.md",
+  "baseline_note_sha256": "55d484ebce412535886ba176838244a6e89e59820fd6765943cc7cef4a37a356",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/roy25a/roy25a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/roy25a/roy25a.pdf",
+      "local_path": "research/import-272/nco-4d91a52327.pdf",
+      "sha256": "8c6171896f0dd221ac5a1e4597882ff62d469d7961ca169c1a89c6219ac533ed",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read allfrontmatter/introduction/contributions/variablecostGED/QAPpreliminaries/exactandneuralsolvers/OTrelatedwork; unequalcost/cost-input/alignment distinctions, actual5authorsIITBombay/EPFL."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullAlgorithm1/orderandallProposition4.1/Theorem4.2proof assumptions; theoremstatementzeroNS vsproofclosingbroaderpositiveNS wordingdistinguished. CompleteTable1/rawcounts,splitprotocol, leakageexperiments. IMDB26463/45150=58.61vsprinted34.1andAIDSwithout4268/9870=43.24vsprinted21.1needvisualcrosscheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTable2elevenmodels/twoschemesandTable3costshiftrows; noteGEDGNNMSEandGraphSimlabelledAIDS exceptions toallworseprose. Eq1counts/cNS0policy and costaugmentationalgos2-5, fixedcosttrainingnoncomparableMSEacrosscostmagnitudes,fullAlternativeViews/conclusion/impact andfirstreference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allremainingbibliography exacttitles/authors/sourceidentity; noautomaticinternalcandidate. PrimarycodeURLnow410 repository_expired;OpenReviewv1/v2both403cached."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read duplicatefullTable4/A1alltrends,all7costsettingsTable5(allNS=0), allCode2Table6rows/twoschemes/A2. BroadercNS<sumstatementinA2notusedasgeneraltheorem; actualcostgridzeroNS."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read everyrow allMutag/Molpcba/MolhivTables7-9across7costs/twotestschemes, repeatedGMNrowMutagandMolhivKtauLowerIsBetterlabel notednotadopted. MSEsamecostcomparisonsnotallmetricuniversalsuperiority."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Read allC1training4-costnodefeatureprotocol, all4datasetTables10-13everynumericrow/twoschemes and finalconclusions; nofulltraininghardware/seedprotocolprovided. Entire20pages/fullbibliography/A1-A2sciencecomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "ExpensiveGEDlabels/smallreuseddatasets/permutationinvarianceobscurerecallversusgeneralization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            9
+          ],
+          "locator": "Full introduction/alternativeviews"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Benchmarkdiagnosis,isomorphismfiltering,disjointgraphs/multiplepairprotocols andcostinvariantlabelreuse; notnewneuralsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Allcontributions/Algorithms1-5"
+        }
+      ]
+    },
+    {
+      "id": "theorem",
+      "category": "method",
+      "statement": "FormalTheorem4.2requirescNS=0andotherfourcostspositive;actualTable5allsevenC0-C6satisfythis. Proposition4.1inequalityaloneisnotfullinvariancecondition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            14
+          ],
+          "locator": "Fullprintedproposition/theorem/proofandcostgrid visuallyread"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "method",
+      "statement": "60/20/20uniquegraphsplitwithinselfpairsandretrievaltest;MIPF2pathsreweighted;mainC0andappendixC1trainwithfourcostnodefeatures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            14,
+            18
+          ],
+          "locator": "AllAlgorithms2-5/A2.3protocol"
+        }
+      ]
+    },
+    {
+      "id": "leakage-results",
+      "category": "experiment",
+      "statement": "LINUX1000records89uniqueand91.3/94.8%reportedleakage;ISONETintraMSE.323→5.146andtau.903→.646;exceptionsprecludeallmodelsworseclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            13
+          ],
+          "locator": "AllTables1/2/4rows andmainobservations"
+        }
+      ]
+    },
+    {
+      "id": "cost-results",
+      "category": "experiment",
+      "statement": "Code2GraphEdXC0trainMSE.76C0/688.71C4vsGMNMatch1.68/28743.35;selectededgeawareadvantagebutnotallmetricwinners;crosscostMSEscalesnotcomparable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "AllcostTables3/5-13/twoschemes"
+        }
+      ]
+    },
+    {
+      "id": "positive-substitution-counterexample",
+      "category": "limitation",
+      "statement": "Curatoranalysis:broaderproof/A2.1cNS<sumwordingfailsfor3nodepathlabelsABC/ACB,NS1,NA=ND2,EA=ED.1→2;optimalpermutationchangesfromswap23cost.2toidentitycost2. DoesnotrefuteformalzeroNSstatementorexperimentalgrid.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Exactbroaderprintedclaimsversusformaldeclaration;ownall6permutationscachedinresearch/curator-positive-substitution-example.json"
+        }
+      ]
+    },
+    {
+      "id": "count-arithmetic",
+      "category": "limitation",
+      "statement": "CuratorarithmeticTable1IMDB26463/45150=58.61not34.1;AIDSunlabelled4268/9870=43.24not21.1;notindependentdatasetreconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "ExactvisuallyreadTable1rawcountsandpercentages"
+        }
+      ]
+    },
+    {
+      "id": "scope-limits",
+      "category": "classification",
+      "statement": "Position/benchmarkstudyseparatingGEDscalar/rankingfromexplicitpermutationcertificate;filteringchangesdatapopulationsandisomorphismremovalnotallleakagesources.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            9,
+            13,
+            14,
+            18,
+            20
+          ],
+          "locator": "Fullscope/alternativeviews/actualmetrics"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Fulltraininghardwareseedprotocolnotstandalonecomplete;author/publisheranonymousrepoexplicitbut410expired,notfalselyabsentcodeclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            13,
+            14,
+            18,
+            20
+          ],
+          "locator": "Allarticleprotocolsandexplicitp5codelink plusactualHTTPcheck"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publicationdate",
+      "source_url": "https://proceedings.mlr.press/v267/roy25a.html",
+      "locator": "OfficialPMLR267pages82131-82150,ICML2025July13-19 record;exactfiveauthors/IITBombayEPFLmatchedPDFp1. ReplacedunsupportedimportOctober6with2025-07."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v267/roy25a.html",
+      "locator": "Manuallychecked allpublisherRelatedMaterial:PDF/OpenReview/Software,noseparatescientificsupplementlink. Complete20pageformalPDFincludingfullbibliography/all13tables/AppendixA1-A2.3andallfivealgorithmsread;two4pagecontactsheetsp4/5/6/7/8/14/17/18visuallychecked. BothOpenReviewnotesAPIv1/v2forumGYZLed4d3M403cached. ExplicitsoftwareURLandfilesAPIboth410repository_expired,thereforecannotclaimcodeassetinventory. Noarticleexplicitlyreferencedmissingseparatescientificattachmentidentified."
+    },
+    {
+      "field": "sourceversion",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/roy25a/roy25a.pdf",
+      "locator": "ActualofficialPMLR20page2025versionidentity/SHAchecked;scientificappendixintegrated."
+    },
+    {
+      "field": "code/dataaccess",
+      "source_url": "https://anonymous.4open.science/r/better-graph-matching-7146/",
+      "locator": "Explicitp5andpublisherSoftwarelinkverifiedasauthorprovided,currently410repository_expiredbothREADMEandapi/repo/.../files. Code/dataunavailableforinspection,linkdocumentedinprose ratherthanclaimnorepositoryexists."
+    },
+    {
+      "field": "theoremconditions",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/roy25a/roy25a.pdf",
+      "locator": "Theorem4.2p5NSzeroformal;prooflastline/A2.1p14inequalityonlybroaderwordingseparated. PositiveNSexampleall6permutationsenumeratedandcachelocretained;whenNS0nodeeditcountconstantandedgeadd-minus-deleteconstant explainslegitimateinvariance. ActualsevenexperimentsallNS0. Parentnotifiedforindependentcheck."
+    },
+    {
+      "field": "empiricalqualifications",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/roy25a/roy25a.pdf",
+      "locator": "Table1intraIMDB/AIDSunlabelledpercentagesnotmatchingcounts;Table2GEDGNNMSE/GraphSimlabelledAIDSexceptions;scalarMSE/taucostshiftnotdirectpermutationcertificate;MSEdifferentcostunitsnotnormalizedrobustnessmeasure. Allbibliographycheckedagainstexisting364IDcatalog,noexactinternalmatches."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v267/roy25a.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-10-06; cached evidence research/full-text-review/graph-matching-benchmark-position/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.mlr.press/v267/roy25a.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2025-10-06; primary cachedHTML research/full-text-review/graph-matching-benchmark-position/supplement-landing.html; citation_title=['Position: Graph Matching Systems Deserve Better Benchmarks']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ExpandedrealGEDcostconditions/graphsplit/pairprotocolsandactualelevenmodel/fourdatasetexperiments.",
+    "QualifiedtheoremzeroNSversusbroaderwordingwithminimalcuratorcounterexample;actualexperimentalgridkeptvalidscope.",
+    "RecordedexactprintedTable1arithmeticmismatchandnonuniformmetrictrendswithoutinferringallbenchmarkinvalid.",
+    "Full20pages/bibliography/AppendixA/all13tables/5algorithms/8visualpages/manualpublisher/API/expiredsoftwarecheckscomplete;zerointernalcitationedges;studyunchanged/datefixed.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "12e58a407b0dd2869ff4f9df8d0166ae8e83f301107ef385f4949b91e50784e3"
+}

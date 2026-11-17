@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "paper_id": "approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s",
+  "note_path": "specialist/approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "e3164bf55336fe6302dfb49d0ca51375164a765e420b5e40d1cea9945d9d18a6",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/ZJU-DAILY/MLIM/79eb8fa837ee3fbeb6a56f0d1880194d5205a6d9/SIGKDD26_MLIM_technical_report.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/ZJU-DAILY/MLIM/79eb8fa837ee3fbeb6a56f0d1880194d5205a6d9/SIGKDD26_MLIM_technical_report.pdf",
+      "version": "Author technical report at immutable MLIM commit79eb8fa8,14pages including complete scientific Appendices A-C and68references",
+      "local_path": "research/full-text-review/approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s/reading-candidate.pdf",
+      "sha256": "82ba53879dd4e61d80659bcada47b24e9c51f609ddfb6acdbc628bd35366c5c8",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Complete actual text pp1-3 read: exact formal DOI/five authors, multilayer IC/LT hybrid model, all related-work citations and network-copy semantics. All four contact sheets actually visually inspected subsequently. Distinguish classical STARIM from learned LGQIM; total layer exposure is not unique-user union. DeepIM[27] baseline differs from Ling ICML[38]."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Complete actual pp4-6 read: M-RR stratified estimator, exact-marginal greedy and probabilistic STARIM guarantees, Algorithm1-2 and all GCN/Q feature definitions. Figure3 framework/fullcaption actualviewed, no transfer of classical approximation guarantee to Q network. One-hop uncovered-neighbor feature is not exact multi-hop spread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Complete actual pp7-10 read: reward/undiscounted n-step target, dataset statistics and10percent subgraph protocol, node-level train/test split, nine datasets/five runs, allFigures4-12/Tables1-3, conclusion and bibliography through48. Training excluded runtime, offline MRIS labels, intra-task crossgraph drop and MRIS-score ablation retained. Main κ linear vs appendix exponential; SF README count differs from paper."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 14,
+      "notes": "Complete actual pp11-14 read: remaining bibliography49-68, Algorithms3-5, full A algorithms/B union extension/C1-C7 proofs. All science appendices actually present in technical report, no missing scientific supplement. Guarantees classical and conditional on model/sampling; C5 per-layer-tail to summed exponent step not independently certified. Pinned139file tree inventoried, sole scientific PDF is report, full README seen in split chunks; no training or dataset replication."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Hybrid multilayer IC/LT influence maximization counts exposure over node-layer copies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Model/problem"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "STARIM approximation and separate learned LGQIM heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1-2/framework"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Offline MRIS labels, graph encoder and adaptive Q-policy sequential seed construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            11,
+            12
+          ],
+          "locator": "Equations9-16/Algorithms4-5"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Dataset-specific models and same-native-task crossgraph transfer only; specialist constructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9
+          ],
+          "locator": "Protocol/Table3"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Nine network statistics but 10percent subgraph evaluation, node split, training excluded runtimes and heterogeneous gains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Figures4-12/Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Neural heuristic lacks STARIM guarantee; architecture/schedule specifications differ; union extension not main benchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "Theorems/Appendices A-C"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full scientific appendices and pinned source inventory available, without independently executed training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "Author report/complete appendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://doi.org/10.1145/3770855.3817870",
+      "locator": "Primary exact DOI/five authors/KDD2026 pp354-365; publisher online Aug8/printAug9. Immutable author technical report includes matching title/byline/DOI; no inferred arXiv date."
+    },
+    {
+      "field": "supplements complete scientific inventory",
+      "source_url": "https://raw.githubusercontent.com/ZJU-DAILY/MLIM/79eb8fa837ee3fbeb6a56f0d1880194d5205a6d9/SIGKDD26_MLIM_technical_report.pdf",
+      "locator": "All14pages actualtextread and fourcontact images viewed: all68references, Appendix A algorithms/B union extension/C1-C7 proofs.139file pinnedtree sole scientificPDF; fullREADME read in split output, source/data not executed."
+    },
+    {
+      "field": "classification results figure",
+      "source_url": "https://raw.githubusercontent.com/ZJU-DAILY/MLIM/79eb8fa837ee3fbeb6a56f0d1880194d5205a6d9/SIGKDD26_MLIM_technical_report.pdf#page=6",
+      "locator": "Dataset-specific training and Table3 CS-to-VT/FTY remain same native task; p7 explicitly10percent subgraphs/node split, Table2 FTY lower spread and heterogeneous runtime gains, Table3 transfer losses. Figure3 fullcaption crop51,52,563,199 at3x inspected."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s",
+      "cited": "deepim",
+      "reference_label": "[38]",
+      "description": "Exact Ling et al. ICML2023 background citation, distinct from DeepIM baseline[27].",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Related work and complete reference38"
+        }
+      ]
+    },
+    {
+      "citing": "approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s",
+      "cited": "gcomb",
+      "reference_label": "[40]",
+      "description": "Exact GCOMB title/NeurIPS2020 identity used in graph-learning/selection context.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            10
+          ],
+          "locator": "Body and complete reference40"
+        }
+      ]
+    },
+    {
+      "citing": "approximation-and-learning-based-algorithms-for-influence-maximization-in-multilayer-s",
+      "cited": "influence-maximization-via-graph-neural-bandits",
+      "reference_label": "[17]",
+      "description": "Exact KDD2024 title/three-author bandit work in related learning methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Body and complete reference17"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read complete report and all proofs, separated classical approximation from neural heuristic.",
+    "Corrected native-task transfer classification and subgraph/training-cost interpretation.",
+    "Resolved two distinct works called DeepIM; added only three actual body-plus-bibliography edges.",
+    "Added original Figure3 and honest pinned code inventory."
+  ],
+  "reviewed_note_sha256": "76de05a2979471873ca21b978569b84eae47aaaeaddacdddd8e2fb684cd0140e"
+}

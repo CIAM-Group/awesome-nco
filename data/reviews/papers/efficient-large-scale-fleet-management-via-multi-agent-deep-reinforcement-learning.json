@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "paper_id": "efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning",
+  "note_path": "specialist/efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "33a24f0f218640f4b9845d373542867ab5628a22c7ba64bc95dfd01e64b9c98b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1802.06444v2",
+      "retrieval_url": "https://arxiv.org/pdf/1802.06444v2",
+      "version": "Actualarxiv1802.06444v2 2018-11-01 tenpageKDD2018title/DOI/fourauthors/twoalgorithms;all10pages/30refsread.",
+      "local_path": "research/full-text-review/efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning/arxiv-v2.pdf",
+      "sha256": "14e17907fa90880cfc3f80e6596ec8222abbfe8c6b19bac67476143803cb6749",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readactualarxivv2KDD2018layout10pagesnotv3futureexpanded3algorithmversion.4authorsLinMSU/ZhaoXuDiDi/ZhouMSU/noequalcorrespond. Nativefleetrepositionhomogeneousvehicles7neighborstay/globalstategridsIDtime/averagearrivinggridincome rewards;sharedpolicyconstructsonlinereallocationnotincumbentedit.144tenminintervals/orderclassicalassignedsameor6neighbors."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "AllcDQN/cA2C4algorithmequations1–12read. Destinationgridsharedvalue/geo+collaborativemaskonlynondecreasingvalue(neighbor>=current);cA2Cpositivepolicyweightsnormalized/centralvaluefeedsEXECUTIONcontext too notfullylocalMFRLstyle. Replayexpectedvalueofflineepochupdates/warmstartvaluefixedtable. Chengdu4weeks504grids/10minsequencevehicleonofflineMLE/orderbootstrap/twostagedispatch/pre-dispatchavailable5356.15trainepisodes10futureevalepisodes/separaterandomseedsets/3runs. Calibrationr2.9331corr.9853doesnotproveperfectcounterfactualemulator."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FullTables1–4trainingbudgets/ablationread.15episodes4000batch3000/criticandactorseparateeach4000/MLP1286432Adam1e-3/extra10episodevaluewarmstart;DQN100percentfirstcolumnbest3of6vs3allothers. cA2C115.27±.70GMV94.99±.48ORR vsbaseline10081.80;90percentcDQN114.29>cA2C113.85. Cost.6RMB/movebreaksdestinationvalueeq2socDQNexcludedcosttable,cA2C112.70/94.74/408859vsDQN110.81/92.50/606932. Maskablretained65.37percentmoves=34.63percentreductionNOT65.37percentreduction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readqualitativeairport7gridcase10trainingepisodesdistinctmain15/onetest;conclusion30refscomplete(nointernalcatalogNCOcandidate). Noadditionalappendixpointer. Actualv2all10pagescomplete;v3expandedtitle/3algorithmsnotusedasconferenceevidence."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contrib",
+      "category": "contribution",
+      "statement": "cDQNtiesdestinationgridvalues;cA2Cusescentralvalueandsharedpolicywithcontextmasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "§4;Eq2–12;Fig2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Geographicmaskremovesinvalidmoves;collaborativemaskonlyallowsnondecreasingcentralvalues;criticneededtoformexecutioncontext.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1–4;Figure2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Homogeneousvehiclepolicyconstructsonline7actionrelocationswithinonenativefleetallocationtask;notincumbentediting/generalist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "MDP;contextualpolicy"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "15trainepisodes/10test/3runsplus10warmstart;cA2Ccostfree115.27GMV94.99%ORR;costcase112.70/94.74/408859moves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Experimentalsettings;Tables1–4"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "DQN100percentcolumnbest3of6;destination-onlyidentityinvalidwithcost;cDQNexcludedcostexperiment;simulationnotfielddeployment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Setup;costextension;Table1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions",
+      "source_url": "https://arxiv.org/pdf/1802.06444v2",
+      "locator": "p1Lin/ZhouMSU,Zhao/XuDiDi;noequal/correspondmarkers;officialauthorhomepageandpublisher4authoridentity"
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3219819.3219993",
+      "locator": "published-online/print2018-07-19"
+    },
+    {
+      "field": "date/arxiv_url/version",
+      "source_url": "https://arxiv.org/abs/1802.06444",
+      "locator": "Savedprimaryhistoryv1Feb18_2018/v2Nov1_2018/v3Dec2_2019;actualreadv2conference2algorithms/10p;laterchangedtitlethreealgorithmsv3notreadorsubstituted"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/illidanlab/Simulator",
+      "locator": "All10v2pagesincl30refsread/noadditionalappendixpointer. Manuallyinventoried17trackedpathsnoPDFTeXZIPnotebook/fullREADME/solewikiHome.mdallread/emptyreleases. Relevantmodelmaskandrunconfigsread;privateorderdataabsent/syntheticexampleavailable."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/1802.06444v2",
+      "locator": "OriginalFig2v2p5Rect316,218,563,390@5x;actualviewpubliccrop/keyformulasall4tablescalibrationairportplots"
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "KeptKDD2018v2separatefrom2019v3expandedretitledwork.",
+    "Executioncriticdependencyandcostidentitylimitationexplicit.",
+    "Correctedinterpretation65.37percentretainedmoves=34.63percentreduction."
+  ],
+  "reviewed_note_sha256": "1b873d61dd9dbc6d00dd36d8964076db285b725fec6f48ed2ca010fe73842247"
+}

@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "paper_id": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+  "note_path": "specialist/discrete-cycle-consistency-based-unsupervised-deep-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "c00a95edff6dddd03813f88e2db406cda7c5ce07a4941d92245af40000ede426",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/abs/2307.08930v3",
+      "retrieval_url": "https://arxiv.org/abs/2307.08930v3",
+      "version": "arXiv2307.08930v3, 2023-07-22, old title/order and 12 pages including integrated Appendix; independently read all pages; not v5/formal byte identity.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-ee6e9901e4/arxiv-v3.pdf",
+      "sha256": "2f6e6d04c24e97adf96f5699081b3132383d4fe6b304653e2bd276033f1f61c4",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "latest",
+      "url": "https://arxiv.org/abs/2307.08930v5",
+      "retrieval_url": "https://arxiv.org/abs/2307.08930v5",
+      "version": "arXiv2307.08930v5, 2024-02-11, 14 pages including full detailed-result Appendix; exact formal title/byline order, explicit author repository DOI continuity; not claimed publisher byte identity.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-ee6e9901e4/arxiv-v5.pdf",
+      "sha256": "be1820b99cc1ee857184e22e851f553977e0df2d30eeac2c6bddc2d19ae1d485",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readcompleteolderv3pp1–3 title/authororder(HeidelbergTourani,Rother,KhanMBZUAI,Savchynskyy), intro/relatedwork/LAPvsQAP/batchtripletframework, blackboxfinite-differencegradientEq1–3 andcyclelossfortrainingonlynotinferenceguarantee. Primaryhistoryrevealedv3dateJuly22,2023(notv5February11,2024); correctedsourceversionandacquiredv5forcurrentversionreading, nofalseversionverified."
+    },
+    {
+      "source_id": "latest",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fullreadlatestv5title/bylineaffiliations,relatedwork,LAP/QAP/MGM,solvergradientEq1,trainonlycycleconsistencyandnotMGMtestconstraint."
+    },
+    {
+      "source_id": "latest",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "FullreadQAPEq4/5partialmatching,blackboxEq2/3,cyclelossandderivative6/7,Algorithm1,networkVGG16SplineCNNself/crossattention/RPEandcostEq8?11."
+    },
+    {
+      "source_id": "latest",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fullreadentiresetup/datasets/resultsablationandconsolidatedTable1,qualitativeFig5,acknowledgmentsandbib1?31. Distinguishaccuracies/F1,5runs,conditionalsharedframeworknotcrossnativecheckpoint."
+    },
+    {
+      "source_id": "latest",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fullreadremainingreferences32?51plusAppendixdetailedWillowTable3andfilteredPascalTable4. NoteCLBBGMandCLUM-Lmainvsappendixmeansdiffer."
+    },
+    {
+      "source_id": "latest",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FullreadAppendixunfilteredPascalF1Table5andSPairTable6allrows/categoriesandmeans. Observedmain/appendixbaselinevaluesinconsistent,CLUMmainresultsconsistent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Independentlyfullreadolderv3pp4?6QAP/partialassignment/cyclelossderivative/Algorithm1andarchitecture/crossattentionanddatasetssetup,explicitolderarchitecturewithoutv5SA/RPE."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fullreadolderv3datasets/splits,allmainresultsandablations,semisupervisedexperimentnotpresentv5,conclusionacknowledgmentsandrefs1?20. Olderresults60.1/40.4/92.7/41.4notv5."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fullreadolderv3remainingrefs21?43andcompleteAppendixA1?A3allclassTables4?7,includingrotatedwidePascalandSPairtablestext;willrenderkeytablesformath/rowinspection."
+    }
+  ],
+  "claims": [
+    {
+      "id": "clum-contribution",
+      "category": "contribution",
+      "statement": "Unsupervised discrete triplet cycle loss trains neural matching costs through black-box LAP/QAP solver differentiation.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections2–4/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "clum-method",
+      "category": "method",
+      "statement": "At-most-one binary partial matching and surrogate finite-difference gradients; only unary perturbations; no cycle consistency enforced at inference.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Explicit inference distinction; Equations1–7"
+        }
+      ]
+    },
+    {
+      "id": "clum-results",
+      "category": "experiment",
+      "statement": "Table1 CLUM62.4/43.5/95.6/43.1 uses accuracy except unfiltered F1; main/appendix baseline numbers differ and supervised references remain higher.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            7,
+            8,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "Tables1–6 full rows/rendered"
+        }
+      ]
+    },
+    {
+      "id": "clum-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: neural visual costs plus hard solver assignment, no complete-incumbent neural editing or cross-native shared checkpoint.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            2,
+            3,
+            7
+          ],
+          "locator": "Framework/inference/dataset protocol"
+        }
+      ]
+    },
+    {
+      "id": "clum-limit",
+      "category": "limitation",
+      "statement": "Cycle loss zero need not imply semantic truth; all-zero feasible partial assignment has zero loss. Printed Eq8 cross-attention value index collapses for p=0, unlike current code.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Rendered Equations4–8 and curator algebra; code model253–254"
+        }
+      ]
+    },
+    {
+      "id": "clum-repro",
+      "category": "reproducibility",
+      "statement": "Primary code README explicitly identifies AAAI DOI; current tree training entry/config/cycle loss differ from displayed unsupervised triplet recipe.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Official code availability; actual repo tree/code inventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/28332",
+      "locator": "Publisher exact title/four authors/affiliations and Published2024-03-24; Crossref cache formal38(6)5252–5260 DOI matches v5 byline. Repository formal BibTeX directly confirms continuity."
+    },
+    {
+      "field": "date/arxiv versions",
+      "source_url": "https://arxiv.org/abs/2307.08930",
+      "locator": "Cached arxiv.html submission history v1July18,2023/v3July22,2023/v5February11,2024; actual v3 old title/order12p versus v5 formal title/order14p. Registered version timestamp corrected before verification."
+    },
+    {
+      "field": "supplements/inventory",
+      "source_url": "https://arxiv.org/abs/2307.08930v5",
+      "locator": "Complete v5 integrated detailed-result Appendix pp11–14 and older v3 Appendix pp11–12 all read. Formal indexed text directs ablations/details to technical report. Official28653galley labeledVideo/Poster currently restricted; attempted author links404, no claim presentation read. Complete untruncated GitHub tree b98f6b8ae31811e85a69b3c9549e5447fc08c570 inspected; no scientific PDF/ZIP beyond integrated arxiv contents."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/abs/2307.08930v5",
+      "locator": "Original Fig2+complete caption v5p3 croppedRect40,60,572,232 at3x; public/paper-assets/discrete-cycle-consistency-based-unsupervised-deep-graph-matching/framework.png exists and actual view_image checked. Key v5pp3–6/8/11–14 and v3pp8/11/12 rendered."
+    },
+    {
+      "field": "current code boundary",
+      "source_url": "https://github.com/skt9/clum-semantic-correspondence",
+      "locator": "Untruncated tree SHA b98f6b8ae31811e85a69b3c9549e5447fc08c570; README names missing train.py/JSON; train_dino.py124–161 supervised/Hamming/pairs,178test-dataloader loop; loss_utils.py21–26 product-identity; model.py227–228 negative unary affinities/253–254 second-graph values. Historical experimental implementation not established."
+    },
+    {
+      "field": "citation identity exclusions",
+      "source_url": "https://arxiv.org/abs/2307.08930v5",
+      "locator": "All51refs pp8–10 manually matched against527catalogue;9direct identities, duplicate DGMC refs16/17 oneedge. TPAMI extension43 not mapped to conference predecessor; old v3 PCA citation points to unrelated actual bib36 and does not justify PCA edge. No self-edge38."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[16–17]",
+      "description": "Direct duplicate bibliography entries for Fey et al., ICLR2020; differentiable graph matching related work.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References16–17"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "a-comparative-study-of-graph-matching-algorithms-in-computer-vision",
+      "reference_label": "[19]",
+      "description": "Direct Haller et al., ECCV2022 benchmark citation for assignment formulations and solver comparisons.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference19"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "self-supervised-learning-of-visual-graph-matching",
+      "reference_label": "[27]",
+      "description": "Direct Liu et al., ECCV2022 SCGM citation; unsupervised comparison/pretraining.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference27"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[32]",
+      "description": "Direct Rolinek et al., ECCV2020 BBGM citation; feature/solver baseline.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference32"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "blackbox-backprop",
+      "reference_label": "[41]",
+      "description": "Direct Vlastelica et al. black-box solver differentiation citation; cited preprint2019 corresponds to same formal ICLR2020 paper.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference41"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "gann",
+      "reference_label": "[42]",
+      "description": "Direct Wang/Yan/Yang NeurIPS2020 GANN citation; unsupervised comparator.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference42"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "joint-deep-multi-graph-matching-and-3d-geometry-learning-from-inhomogeneous-2d-image-c",
+      "reference_label": "[47]",
+      "description": "Direct Ye/Yenamandra/Bernard/Cremers AAAI2022 citation in universe-based matching discussion.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference47"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "cie-h",
+      "reference_label": "[49]",
+      "description": "Direct Yu/Wang/Yan/Li ICLR2020 CIE-H identity; bibliography prints2019, not a different title/paper.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference49"
+        }
+      ]
+    },
+    {
+      "citing": "discrete-cycle-consistency-based-unsupervised-deep-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[50]",
+      "description": "Direct Zanfir/Sminchisescu CVPR2018 graph matching citation.",
+      "evidence": [
+        {
+          "source_id": "latest",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference50"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending metadata with primary formal identity and separate arXiv dates.",
+    "Read both registered versions fully; corrected erroneous initial v3 timestamp before verification.",
+    "Restricted scope/decoder/consistency and optimization claims.",
+    "Preserved main/appendix numerical differences, printed attention boundary, and actual public-code recipe limitations.",
+    "Only explicit matching bibliography identities create relations; no substantive journal-extension alias.",
+    "Updated explicit comparative-benchmark note link after its supported migration to studies; citation identity unchanged."
+  ],
+  "reviewed_note_sha256": "39de7e87e3e9d95f06e7d710f5e6e596d3d4362cb972c4d51734c4bed6d4d7e5"
+}

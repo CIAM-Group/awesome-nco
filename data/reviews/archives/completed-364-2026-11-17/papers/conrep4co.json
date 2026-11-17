@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "paper_id": "conrep4co",
+  "note_path": "specialist/conrep4co.md",
+  "baseline_note_sha256": "c62fcf7799011cf177fc913524341eabee736a38567c504dafc68635ea2d0411",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7d2938962f0e77f701b2faa0efeb8b7a-Paper-Conference.pdf",
+      "version": "Formal ICLR2026 proceedings22 pages, full main/references/AppendicesA–G freshly read",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7d2938962f0e77f701b2faa0efeb8b7a-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-ee2795f325.pdf",
+      "sha256": "38378e8db8cbbed08537477b035a0a4d2bbc58fb49101ca51fd1491da102d406",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshformal1-3read4authorsSJTU/SII/ECNU+MEA+PMMPlabs. 7GDPdecisionpretraining+4downstreamMVC/MIS/MC/MDSoptimization. SATpairedcontrastive+decisionloss,notSATassignmentconstructionbydefault. NeedactualsharedcheckpointdeploymentvsseparateGNNencoders beforeclassification;current specialistretainedpendingmethods. GDPbinaryaccuracynotfeasibility/solutionqualitycertificate;NPdecision/optreductiondiffcost."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "4-6readallFigures1–3/Eqs1–2/Table1~6backbones2sizes allcells. ExplicitnGDPseparatemodels+1sharedSATteacher;distinctgraphencodersnotonecheckpointmulti-problemdeployment. DownstreamSATfrozenalignmentteacherthenfine-specificsolver,retainspecialist. Eq2excludespositiveIjnei incontrastive denominator unusualvsstandardCLIPreleasecheckneedednotautomaticerror. NegativecasesPGNmediumClique72<72.4/MIS67.2<68.1,GPSeasyautomorph66.4<67.4,GPSmediumMatching57.2<69.4. Allmeanimprovementsnotallindividual. Warmstartdecisiononly,βdecisionlossjointphase."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "7-9allTables2–6read. Balanced50/50GDPdatasets160k/20k/20ktrainvaltest per7easy/medium;hard20ktestonly. FouroptimizationMVCER3sizes/MIS-MCRB2sizes/MDSBA2sizes. Avg61.27/32.20/36.46/45.29are relative reductions inABSOLUTEheuristic-referencegaps NOTobjective%gains. unseen6of7pretrain→NEWgraphencoderalignfrozenSAT+20ktargetFT,NOTzero-shot. StrongbaselineGPSMatchingmedium57.2<69.4 andhard60.1<63.9 negatives. 2CLIPbugsneedactualreleasecheck;pubZIP72membersnoscienceextras/codeonly+MacOSmetadata."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "10-12Table7domaincountablation+conclusion/statements/refs1–32allread. MoredomainsnonmonotonicMVC50Ours6gap.06betterOurs7.08;MISsmallOurs6best19.57>19.56;MDS5/6better7. Ours1–7alignment5k+1kval,specificsolvernativeoriginaltrainingfollowsbaseline noendtoendfullresourcecounts. SourceGOAL2024but13thICLR2025title3authsame;correctcitedidentitynotyearblind. Referencesbegin11continue15pending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fullrefs33–76read inclT2T/FastT2T/GenSCO/ML4TSP/UniCO/FLD/NeuroSAT/LinSAT/OptGNN/GFlow etc exactfullauthors. PointerGraphNetworks[55]NOTPointerNetworks avoidsubstring. SourceUniCOauthorWenzhenvsverifiedWenzhengonechar typo;sourceGOAL2024wrongvenueyear qualified. PrintedcontrastiveEq2excludespositiveandpublishercodeDOESMATCH(exactnegrow/col=sum-pos),soNOTanerror;2Naveragevsprintsumscaling specifyonlyifneeded. README/requirements/fullloss/scriptread,script3domains/differentdefaultsnotfullpaper7."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "A/B/C16-17FULLBLOCKORDERread afterlayoutrejected24k limits (nothingtruncatedcounted). BroadNPdecisionSATreducibilitydoesnotproveefficienttraining/inference/optimization. Sourcecalls6of7NPC butincludesnontrivialGraphAutomorphismnotknownNPC;perfectMatchingP. DatasetTable8all7sizeranges4–30 (automorphmax12),notlargescaleNPopt. Cliqueclaimedexpectedcount1 p exponentprintedvchoose2insteadkchoose2 inconsistentneedsprimarymathcounterexample;MVC/Colorclique-basedthresholdclaimsnotgeneralexpectedoptguarantees. Notejustheuristicgenerationandclassificationqualification,notfakeformalproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "18-20allC2/D/E1-2readinclallSATstatsTable9/deepGNNupdates/randomlearnedconstant+kembed/NeuroSATLSTM/GCN/VCG. SAT4extraSR/3SAT/CA/PSlabelsCaDiCaL/DRATtrimadditionalactualassignment/coretasksFpending. NoteGDPdecisioncircuitsbinarynotcertificates. PolynomialSATencodinggraphblowupTable9e.gcliquehard114vars5670clausesvs20-25node;notnegligibleinallregimes. H10080GBalltraininginference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "21-22fullE/F/GallTable10–13/Fig4 read. LR1e-4/32SATiterations12graphlayers/2MLP/tau.1easy.5medium/beta.5–1/H10080. 40hjointpretrain+5–6hPERgraphfinetunevs15hbaselineeach not40htotalfullsuite. F1oppositelabelnegativesmeans69.3/67.1<71.9/69.1,comparableclaimqualified. F2 7–20xgraphrequires1/8targetdataFT,notzero-shot;F3same-volumeGCN7x160kcontrol69.3vs71.9,notuniversal proofacrossbackbones. ExtraSAT4datasetsdescribedbutNOnewFtaskresultsassignment/unsatcoretables;do notclaimtestednewpredictiontaskswithoutreport."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Problem-specific encoders can use SAT reductions for cross-domain representation transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            16
+          ],
+          "locator": "Introduction and Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Joint seven separate GDP models and shared SAT teacher, then align/fine-tune native optimization solvers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Figure3 and Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Equivalent graph/CNF positive pairs; task-batch negatives; positive-excluded bidirectional contrastive denominators; supervised warm start; frozen downstream teacher.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Equations1–2 and architecture/training appendices"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Balanced decision data, H10080GB, 40h joint pretrain plus per-model FT; relative absolute-gap reductions and target-supervised transfer, with individual regressions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            21,
+            22
+          ],
+          "locator": "All Tables1–13"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Separate deployed solvers, labels/conversion/FT required, clique formula/code and MDS graph-label ambiguities; no assignment/core experiment table.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10,
+            17,
+            18,
+            22
+          ],
+          "locator": "Section3.4, C.1/C.2 and F"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: graph encoders and native optimizers are separate; shared SAT is an alignment teacher rather than one deployed cross-native optimization policy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Figure3 and actual downstream protocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7d2938962f0e77f701b2faa0efeb8b7a-Abstract-Conference.html",
+      "locator": "Formal p1 four full authors, SJTU/SII/ECNU and two labs; publisher date2026-04-20 and formal22page identity checked."
+    },
+    {
+      "field": "supplements and scientific companion inventory",
+      "source_url": "https://iclr.cc/virtual/2026/poster/10009771",
+      "locator": "Formal22 main/fullrefs/A–G/all13tables/all4figures fully read; entire4505x2516officialposter read in3overlappingtiles. PublisherZIP48971B72members code/macOS metadata only, no PDF/TEX/notebook/nestedZIP/video. CompleteGitHub36tree at90b0ef8aa0df922525ea4e9e17ed610be15d6200 read;28matchingfiles27codeidenticalGitblob hashes,READMEonlydiff. API403notinspected."
+    },
+    {
+      "field": "sharing and target supervision",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7d2938962f0e77f701b2faa0efeb8b7a-Paper-Conference.pdf#page=6",
+      "locator": "Figure3+3.4 nseparateGDPencoders+oneSATteacher; native downstreamspecificsolveralignmentthenFT. HeldoutTable3 NEWencoder20ktargetFT. F2uses1/8targetdataFT. Retain specialistconstructive,notdenying representationtransfer."
+    },
+    {
+      "field": "results and qualified printed claims",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7d2938962f0e77f701b2faa0efeb8b7a-Paper-Conference.pdf#page=8",
+      "locator": "AllTables1–13 numerically read;61.27/25.74/32.20/36.46/45.29 meanrelativeABSgapreduction,notobjectivepercentgain. Table1PGN/GPSnegativecells/Table2matchingnegative/Table7nonmonotonic. p17renderconfirmsvchoose2cliqueexponent while generatoruseskchoose2, elementaryexpectedcliquecountchecked. p17NPCGAstatementqualifiedusingprimarySymmetricBlockingSection3p6. MDSBAin4.1/Table5vsRBTable7."
+    },
+    {
+      "field": "code and figure",
+      "source_url": "https://github.com/Thinklab-SJTU/ConRep4CO",
+      "locator": "FullREADME/install/requirements/loss/generator plusjointtrain186–315 and graphdispatcher read. Eq2positiveexcluded matchesrelease,notbug; trainmeanpoolpassesoverride;contrast_start_epoch0needsoverridewarmstart. Only3GDPgenerators,dispatcherGCN/SAGE/GNN/GIN;GraphGPSclasselsewheredoesnotinstantiatebackbone;noOptGNN/GFlowNetdownstreamdrivers. Allfourfiguresvisuallyread;finalFig3originalp4wholebranches+captioncrop65,66,547,335seen."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "conrep4co",
+      "cited": "cl-lns",
+      "reference_label": "Searching Large Neighborhoods for Integer Linear Programs with Contrastive Learning",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "cryptoanfnet",
+      "reference_label": "Learning Plaintext-Ciphertext Cryptographic Problems via ANF-based SAT Instance Representation",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "fld-co",
+      "reference_label": "Fractional Langevin Dynamics for Combinatorial Optimization via Polynomial-Time Escape",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "gcnn-branching",
+      "reference_label": "Exact Combinatorial Optimization with Graph Convolutional Neural Networks",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "gensco",
+      "reference_label": "Generation as Search Operator for Test-Time Scaling of Diffusion-Based Combinatorial Optimization",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "gflownet-combopt",
+      "reference_label": "Let the Flows Tell:  Solving Graph Combinatorial Problems with GFlowNets",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "hrl-aug-branching",
+      "reference_label": "Towards Imitation Learning to Branch for MIP: A Hybrid Reinforcement Learning based Sample Augmentation Approach",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Learning Combinatorial Optimization Algorithms over Graphs",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "linsatnet",
+      "reference_label": "LinSATNet: The Positive Linear Satisfiability Neural Networks",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "maskco",
+      "reference_label": "MaskCO: Masked Generation Drives Effective Representation Learning and Exploiting for Combinatorial Optimization",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors. Source gives GOAL year 2024; full title and all three authors match the formal 2025 work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "neurosat",
+      "reference_label": "Learning a SAT Solver from Single-Bit Supervision",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "unico",
+      "reference_label": "UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors. UniCO first name is misspelled Wenzhen in source; complete title and remaining authors match the target work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "contrastive-sat",
+      "reference_label": "Augment with Care: Contrastive Learning for Combinatorial Problems",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "gnn-approximation-ratios",
+      "reference_label": "Approximation Ratios of Graph Neural Networks for Combinatorial Problems",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    },
+    {
+      "citing": "conrep4co",
+      "cited": "ml4tspbench",
+      "reference_label": "Unify ML4TSP: Drawing Methodological Principles for TSP and Beyond from Streamlined Design Space of Learning and Search",
+      "description": "Explicit complete bibliography identity manually matched against full title and authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full References pp11–15; exact work identity, not title-prefix inference."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read all22 formal pages, all references, AppendicesA–G,13tables,4figures and whole official poster.",
+    "Replaced generic note with training/architecture/native optimization/transfer and exact data/hardware protocols.",
+    "Retained specialist classification based on separate deployed graph models while explicitly preserving common SAT representation transfer.",
+    "Corrected interpretation of gap reductions and target-supervised heldout/size-transfer experiments; retained negative results.",
+    "Qualified printed clique formula versus release, GA complexity statement, MDS family label and unreported auxiliary SAT tasks.",
+    "Inspected complete publisher/code material inventories and same-source blob hashes; did not mislabel positive-excluded loss as an error.",
+    "Added19 manually matched explicit bibliography edges and original Figure3."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4b7d950c4a4d96c7a659ff36933393b08a3d7757692e40306f587ab87ba0cd52"
+}

@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "paper_id": "gcomb",
+  "note_path": "specialist/gcomb.md",
+  "baseline_note_sha256": "6b6f4287ea1879663dc6d1febca31faf8afcb1be247a7abada79a66f3eb90238",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Paper.pdf",
+      "local_path": "research/import-272/nco-847194e12e.pdf",
+      "sha256": "e6e734a6df97e934a6bd548d5eef7d318992d3317dd9ae4a343c796410eff0b0",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/gcomb/supplement.pdf",
+      "sha256": "365b1eb0b3dbc3ac48d3b4edd1843466bffffa67e46671bcdd9e3ac3230ce838",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read problemagnosticarchitecturebutperPobjective formulation, exactMCP/budgetedmaximumvertexcover/IMdefinitions and hybridpruningGCNsupervised+Qpipeline; avoidpaperpriorworkMISmaximal/decisionmisstatements."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read greedy30runscorelabels Δ0.01, normalizeddegree-rankbudgetpruning, MSEGCN, Qnstate/locality/rewardequations and meanimportance theorem, testcomplexities, hardware12hourtraining5run protocol and baselineepsilons."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Read complete MCP/IMalltablesandplots, matchedgreedybutnotcertifiedlargeoptimality, IMedgesplitand10kMonteCarloquality, billionmeansedgesnotnodes, memoryfailures, ablations and disclosures/firstreferences."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read remaining references includingdecisionTSPandallIMbaselines; manuallyscanned33entriesforcataloguerelations."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read ICdiffusion/spreadnormalization, exactgreedyguarantee belongsbaseline, completeprobabilisticgreedypseudocode and GraphSAGEmeanpoolGCNdescription withscoretraining andimportance-neighborroles."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read GCNAlgorithm3 QAlgorithm4epsilon/replay/nstepdetails, exactheap Vlogl complexitybeforeapproximation, entiregraphmemoryneeded, parametercounts and importanceweightedestimator proofsetup."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read alllemma/proof algebra, identified expectation-of-ratio replaced byratioexpectations withoutjustification so notindependentlyvalidatedconcentration; readphasecosts, exacthyperparams and10percenttargetgraphprunerfitting plusedge-disjointtestnote."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allremainingK–Nexperiments:MCPGowalla SGaccuracy/speed, MVCBA/realmodels and allTable5equalities, size/sampling/embeddingablation and goodnodescaleFigure8."
+    }
+  ],
+  "claims": [
+    {
+      "id": "pipeline",
+      "category": "contribution",
+      "statement": "GCOMB combines probabilisticgreedy supervisednodequality and candidatepruning with separateQpolicy setconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.4"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Pruning depends on normalizedbudget; GCN provides scoreandlocality feeds Qnetwork, withimportance sampling and wholegraph storage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.2–3.4"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Objectiveprovidedtraining solves threebudgetedset tasks; noonecheckpointcrossobjective transferdemonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6
+          ],
+          "locator": "Objectiveformulation and trainingsetups"
+        }
+      ]
+    },
+    {
+      "id": "scale",
+      "category": "experiment",
+      "statement": "Largestdatasets have41.6/65.6millionnodes and1.5/1.8billionedges, with reportedIMtiming andcomparatorcrashes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8,
+            9
+          ],
+          "locator": "Table1a and Section4.3"
+        }
+      ]
+    },
+    {
+      "id": "calibration",
+      "category": "reproducibility",
+      "statement": "MCPpruner interpolators arefitted on10percenttargetnetworkedges, withremaining90percenttested.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "AppendixH"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "category": "limitation",
+      "statement": "Lemma1uses expectation-of-ratioasratio-of-expectations withoutcondition; theorem isonlyclaimedsamplingconcentration notoptimizationguarantee.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "AppendixFEquation5Lemma1proof andLemma2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e7532dbeff7ef901f2e70daacb3f452d-Abstract.html",
+      "locator": "PublisherNeurIPS2020volume33title/authors andpaperp1"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Paper.pdf",
+      "locator": "Section2definesmaximumcoverage,budgetconstrainedmaximumvertexcover,IM; supplementMspecifiesMVCtests"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e7532dbeff7ef901f2e70daacb3f452d-Paper.pdf",
+      "locator": "p3objectivelearnsforproblemP, traininginputsincludeobjectivef, task-specificsetups; noexplicitsharedcrossobjectivemodel"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e7532dbeff7ef901f2e70daacb3f452d-Abstract.html",
+      "locator": "ManuallycheckedSupplementalPDFlink:9pagesAppendicesA–N, allreadinclproof,cost,parameters,additionalMCP/MVC"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/idea-iitd/GCOMB",
+      "locator": "Paperp6authorlink andrepositoryREADMEtitle/authors/IM+MaxCovercomponents"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gcomb",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[7]",
+      "description": "S2VDQN predecessor and empiricalbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation [7] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcomb",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[19]",
+      "description": "GCN-guidedtreesearch predecessor and adaptedbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            8,
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcomb",
+      "cited": "gcnn-branching",
+      "reference_label": "[9]",
+      "description": "MILPgraphbranching relatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [9] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcomb",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "[27]",
+      "description": "Related work explicitly discusses Prates etal decision-TSP and distinguishes it from set CO; exact AAAI2019 title/five-author/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced minimalnote with12+9page full audit.",
+    "Addedbudgetedmaximumvertexcoverand separatedbillionsofedges fromnodes.",
+    "Recordedtargetgraphprunercalibration, explicittraining/quality/timingprotocols andsmallcase nonoptimality.",
+    "Limitedsamplingtheoremclaim and identifiedunjustifiedrandom-denominatorproofstep.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "444f06e2bb9a57db39972e15753a038d92620bc70802f0f5cab5bd27c7677ff0"
+}

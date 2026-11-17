@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "paper_id": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+  "note_path": "generalist/boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "5edf3c2ec5b6a7cc3bb5bc08f8cf23b97197c450a21d7c5b468e63212253e96e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2502.12188v4",
+      "retrieval_url": "https://arxiv.org/pdf/2502.12188v4",
+      "version": "arxiv2502.12188v4 dated2026-03-11 complete21p authorversion with fullmain/references/scientificAppendicesA-F, formally publishedAAAI2026 identity independently established",
+      "local_path": "research/full-text-review/boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v/reading-candidate.pdf",
+      "sha256": "cf017a0eb968ff9a77da3ba65fa92c112b9749fadc1933a8fa66cecae702a5b8",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Actual complete reading of introduction, related work, graph/discrete diffusion definitions and all energy/adaptation equations. Frozen TSP prior, problem-specific energies, greedy feasible decoding, recursive noisy heatmap updates rather than incumbent-tour improvement. Inspected original rendered formulas: zero/positive violation g with log(-g) undefined, Equation13 score sign, squared-energy gradient proportionality need qualifications."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 13,
+      "notes": "Actual complete reading of Algorithm1, complete numerical protocols, Tables1-3/Figure3 and references1-36. Same frozen DIFUSCO TSP checkpoints reused without training on PCTSP/OP; 100 recursive cycles with five renoising/one guided denoising, common greedy decoding, V100. Main hidden width256. Preserve zero-shot gain and greater latency than DIFUSCO, classical ILS/Compass stronger. Read all exact bibliography titles/authors against body, including T2T year discrepancy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 17,
+      "notes": "Actual complete reading references37-42, full AppendicesA/B/C and first AppendixD. Ten thousand instances20/50/100; exactGurobi20 vs heuristicILS/Compass50/100. Appendix hidden128 differs main256; PCTSP max-tour-length phrasing does not specify prize generation fully. C.2 OP equates maximum cardinality with maximum feasible tour cost; direct finite Euclidean depot0/nearnegative/farpositive counterexample enumerated and saved, not a replication of benchmarks. PCTSP theorem explicitly removes minimum-prize constraint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Actual complete reading remainingD and fullE/F, Tables4-5 and Figures4-7; all six contact sheets viewed, all scientific plots/tables inspected. D weighted/directed constrained transform does not prove frozen Euclidean-prior invariance. E TSPTW conceptual no empirical run. PCTSP128 large instances: GLOP-S14.3/19.8 vs14.5/21.7 and faster; FastT2T stronger in Table5. Original Fig1/full caption cropped and visually checked. OfficialPDF520/HTML not registered, all scientific appendices in identified21p v4; no own code/additional supplement link established."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Avoid target-task retraining when adapting pretrained TSP diffusion priors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/related work"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Energy-guided sampling and recursive partial renoising support zero-shot PCTSP/OP transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Method/Algorithm1/Table1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Frozen TSP checkpoints, greedy decoder,100cycles five renoise/one guided denoise; main256 vs Appendix128 hidden width.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            15
+          ],
+          "locator": "Algorithm1/main setup/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Actual frozen TSP checkpoint reuse for distinct PCTSP/OP tasks establishes generalist constructive; scale-specific source models remain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            15
+          ],
+          "locator": "Experimental setup"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Reported zero-shot gains coexist with latency, stronger classical solvers and negative GLOP/FastT2T comparisons.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Tables1-5/Figures3-7"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Printed barrier-domain issue, OP proof cardinality-length inequivalence and conditional/conceptual transformations do not establish universal transfer correctness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            16,
+            17,
+            18
+          ],
+          "locator": "Equations2/13 andAppendicesC-E"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete21p authorversion with scientificAppendicesA-F and detailed though inconsistent setup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Version header/AppendicesA-F"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication arxiv history",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40948",
+      "locator": "Publisher indexed primary record and exact DOI10.1609/aaai.v40i43.40948 deposit match five authors/pages36289-36297/publication2026-03-14; actualarxivhistory v1Feb15,2025/v4Mar11,2026; same version chain despite title revisions. PublisherPDF520 not registered/read."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://arxiv.org/pdf/2502.12188v4",
+      "locator": "All21p including full scientificAppendicesA-F read and six contact sheets visually inspected. No separate scientific supplementary material or own public implementation link established from all PDF links/targeted code searches; no inventedCode. All42fullreferences read/bodychecked."
+    },
+    {
+      "field": "printed mathematical and empirical scope",
+      "source_url": "https://arxiv.org/pdf/2502.12188v4#page=17",
+      "locator": "Barrier log(-g) with zero/positive violations undefined, Eq13 score sign printed opposite conventionalLangevin; C.2OP max-feasible-length not equivalent max uniform cardinality: saved exhaustive finite1D Euclidean counterexample; no benchmark-refutation claim. D/E conceptual conditional transforms; 256/128 hiddenwidth disagreement, heuristic larger-size reference gaps. StrongerILS/Compass/GLOP/FastT2T and different hardware retained."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://arxiv.org/pdf/2502.12188v4#page=2",
+      "locator": "OriginalFigure1 crop70,65,544,304 at3x; full diagram+caption actual visual inspection, allTables1-5/7figures checked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "difusco",
+      "reference_label": "[6]",
+      "description": "Frozen pretrained source and zero-shot baseline; exact title/two authors/reference6.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            8,
+            11
+          ],
+          "locator": "Actual body citation and complete matching reference 6"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "t2t",
+      "reference_label": "[7]",
+      "description": "Gradient-guided diffusion baseline; bibliography exact title/four authors but year2024, mapped to matching NeurIPS2023 identity, not a new2024 paper. Identity crosscheck: Complete four-author YangLi/JinpeiGuo/RunzhongWang/JunchiYan reference gives the exact substantive From Distribution Learning... title but omits the catalogue title acronym prefix T2T. Printed NeurIPS36/2024 reference date retained; no substitution with the different five-author FastT2T.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            8,
+            12
+          ],
+          "locator": "Actual body citation and complete matching reference 7 Final manual literal bibliography/body identity resolution: Complete four-author YangLi/JinpeiGuo/RunzhongWang/JunchiYan reference gives the exact substantive From Distribution Learning... title but omits the catalogue title acronym prefix T2T. Printed NeurIPS36/2024 reference date retained; no substitution with the different five-author FastT2T."
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "fast-t2t",
+      "reference_label": "[8]",
+      "description": "Consistency-based diffusion work, exact five-author title and Table5 comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            19
+          ],
+          "locator": "Actual body citation and complete matching reference 8"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[9]",
+      "description": "Graph-CO learning background; exact five-author NeurIPS2017 bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            12
+          ],
+          "locator": "Actual body citation and complete matching reference 9"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "attention-model",
+      "reference_label": "[10]",
+      "description": "Routing architecture/data and baseline; identical three-author preprint mapped to formal AttentionModel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            12,
+            14
+          ],
+          "locator": "Actual body citation and complete matching reference 10"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "asp",
+      "reference_label": "[11]",
+      "description": "Cross-problem adaptation comparison; exact TPAMI ASP title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            10,
+            12
+          ],
+          "locator": "Actual body citation and complete matching reference 11"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "cross-problem-learning",
+      "reference_label": "[12]",
+      "description": "Fine-tuning-based routing transfer baseline; same-title arxiv2404.11677 identity and full author list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            11,
+            12,
+            14
+          ],
+          "locator": "Actual body citation and complete matching reference 12"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "pomo",
+      "reference_label": "[19]",
+      "description": "Autoregressive solver background; matching six-author2020 POMO title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Actual body citation and complete matching reference 19"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "sym-nco",
+      "reference_label": "[20]",
+      "description": "Symmetry-based routing background; matching three-author2022 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Actual body citation and complete matching reference 20"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[21]",
+      "description": "Latent-search routing background; exact ICLR2021 three-author title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Actual body citation and complete matching reference 21"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[22]",
+      "description": "Graph diffusion backbone lineage; same three-author/title arxiv1906.01227.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            13
+          ],
+          "locator": "Actual body citation and complete matching reference 22"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "att-gcn",
+      "reference_label": "[23]",
+      "description": "Small-model generalization/MCTS context; exact AAAI2021 title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            13
+          ],
+          "locator": "Actual body citation and complete matching reference 23"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "dimes",
+      "reference_label": "[24]",
+      "description": "Non-autoregressive graph-CO background; exact three-author NeurIPS2022 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Actual body citation and complete matching reference 24"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "diffuco",
+      "reference_label": "[25]",
+      "description": "Unsupervised diffusion background; same-title three-author arxiv2406.01661 identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            13
+          ],
+          "locator": "Actual body citation and complete matching reference 25"
+        }
+      ]
+    },
+    {
+      "citing": "boosting-cross-problem-generalization-in-diffusion-based-neural-combinatorial-solver-v",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[38]",
+      "description": "Baseline and Appendix comparison categories explicitly include MDAM; complete Xin/Song/Cao/Zhang AAAI2021 pp12042–12049 bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14,
+            15
+          ],
+          "locator": "Actual complete body context and full exact bibliography entry inspected; cited work/version and any source terminology error explicitly qualified."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all21p authorv4/fullA-F rather than substituting an abstract for full review.",
+    "Corrected generalist classification using actual same frozen checkpoint protocol, not broad method naming.",
+    "Separated scale-matched/cross-scale tables, heuristic-reference gaps and negative quality/time results.",
+    "Qualified printed theorem/equation conditions and configuration conflicts, retained genuine source figure and14 actual internal citations.",
+    "Schema validation: unavailable optional code URL omitted rather than represented as null.",
+    "Final manual residual citation review: restored newly available CP–RL target or checked exact body/bibliography identity; no title-only edge.",
+    "Resolved final lexical citation-identity flag from actual complete bibliography/body and exact byline/version, preserving source title/date discrepancies."
+  ],
+  "reviewed_note_sha256": "ea01bc8316a2612e09fd5c783d9b19b86ac14a6079a23c85e7ee1d8e8e570452"
+}

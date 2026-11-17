@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "paper_id": "learning-heuristic",
+  "note_path": "specialist/learning-heuristic.md",
+  "baseline_note_sha256": "0edfa4435fb709a5e974d92210eda6cc2705bf4f3e376e36a77b4c27794e8e9d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://stage.hanalog.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf",
+      "retrieval_url": "https://stage.hanalog.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf",
+      "version": "Undated author/lab-hosted13-page manuscript including complete appendix; matches published title/authors; exact typeset byte/version identity not asserted",
+      "local_path": "research/full-text-review/learning-heuristic/paper.pdf",
+      "sha256": "974a50dab1c92262638d65d0a1badb060445a3a394d1760c9d667458e90fdc82",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh pp1-3 author-hosted13page manuscript read; fiveauthors/order andPolytechniqueFrance/ElementAI/HECMontreal/PolytechniqueMontreal; hybridattention-onlyTSPpolicy+classical2opt, RLframework andexplicitBello/S2V/Pointercitations. OfficialSpringerfirstonline2018-06-08 independentconferenceJun26; CP mainexcludedreference. No acceptance date established."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh pp4-6: PCAcenteredcoords, attentionencoderresidualLayerNorm+batchnormembedding, decoder3previousactionembeddingsnotLSTMfullhistory;pointer maskEq4beforeEq5tanh potentiallynonzeromasked probability unlesspostmaskimplementation; inspectsourcecode. REINFORCEminlength criticglimpseq0+2ReLUFC,MSE,ontheflygraphs. InferenceT>1explicit, clippingC. Code rawREADME/master404notyetproofrepogone."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Freshpp7-9:1000uniforminstances20/50/100,20/50trained models100transferfrom50,128samplesbestthenclassical2opt;20kstepsbatch2562K80~2h. TSP1008.85→8.16 vsOR7.99 Con7.77, sooverallparityclaimlimited; 50timingsCPUOR.02/Con.05/LKH.14 vsGPUours.06/Ptr.30 hardwaremixedand2optincrementnotseparated. OfficialfootnoteGitHubrepo now404 independentlyAPI+web, removecurrentcodebuttonbutretainhistoricalprovenance.18of25refsread remainingnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Freshpp10-13 remainingrefs19-25 pluscompleteappendix:optimizationreviewbranching/constraintsMDD,Fig1encoderFig2decodercompleteandFig3TSP100before/after2opt. All25refschecked;exactinternalBello1,S2V2,Pointer18 (AAAI2016LearnToBranchnotGCNN2019). All13read; formalpublisherappendixHTMLalsofollowedforcomparison; no byteidentityclaimedto12pagetypesetversion."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Attention-only architecture andclassical2opt improveonLSTMpolicyframework for2DEuclideanTSP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Abstract/introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Three-actiondecoder,selfattentionencoder andcritic,REINFORCE plusbestof128/optional2opt,size50to100test.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections3-5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "PCA,3stacks16heads128embed; REINFORCEcriticMSE;20000steps256batch2K80~2h. LiteralEq4maskbeforeEq5tanhneedsadditionalexclusionforstrictzeroprobability.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Architecture/training;maskcompositioncuratoranalysis"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "1000per20/50/100;model+2opt3.82/5.77/8.16;100transfers50butOR7.99/Ptrsample8.05better. CPUvsGPUtimesand2optincrementunseparated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            13
+          ],
+          "locator": "Table1/protocol/illustrativetours"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "SyntheticTSPonly,noglobaloptimum;printedmaskcomposition/decoderfigureschematiccaveats;officialcoderepocurrent404.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            12
+          ],
+          "locator": "Text/figure/externalrepositoryavailabilityevidence"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive neuralstage; optionalclassical2optisnotlearnedimprovement andsameTSPsizetransfernotgeneralism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8
+          ],
+          "locator": "Decoder/actualexperiments"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication date, venue, authors, affiliations",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-319-93031-2_12",
+      "locator": "FirstOnline08June2018/pp170-181/full5authors and4affiliations;CPAIORreferenceclassificationretained."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://stage.hanalog.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf",
+      "locator": "Author/lab-hosted13pPDF,noexplicitrevisiondate;title/authors/scienceidentitycheckedagainstformalrecord,notbyteidenticaltypesetclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-319-93031-2_12",
+      "locator": "ReadfullauthorPDFappendixpp11-13 andformalHTMLAppendix1.1/threefiguredescriptions;nofurtherattachedscientificsourceidentified."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://stage.hanalog.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf#page=12",
+      "locator": "CompleteFigures1-2crop[180,140,505,635]PDFpointsat3x,restoresinput/captions;visuallychecked."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://api.github.com/repos/MichelDeudon/encode-attend-navigate",
+      "locator": "Articlep8/publisherNotesidentifyauthorrepo;repoAPI/contentsAPI/rawREADMEandGitHubweb404on2026-11-16;cachecontainsresponsemetadata."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-heuristic",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[1] Bello et al. (2016)",
+      "description": "Extends the pointer actor-critic approach, retaining REINFORCE while replacing recurrent encoding/decoding with attention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Abstract/relatedwork/method/Ptrbaseline/bibliography1"
+        }
+      ]
+    },
+    {
+      "citing": "learning-heuristic",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[2] Khalil et al. (2017)",
+      "description": "Discusses structure2vec fitted-Q construction as related neural combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            9
+          ],
+          "locator": "Motivation/relatedwork andbibliography2"
+        }
+      ]
+    },
+    {
+      "citing": "learning-heuristic",
+      "cited": "pointer-networks",
+      "reference_label": "[18] Vinyals et al. (2015)",
+      "description": "Cites the pointer-network architecture for conditional sequence generation over input positions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Relatedwork andbibliography18"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RecoveredauthorlabPDFandfreshlyreadall13pages/25references/fullscientificappendix.",
+    "CorrectedfirstonlineJune8vsconferenceJune26,removedunverifiedacceptance,correctedFrance/MontrealaffiliationsandCIRRELTackonly.",
+    "Explained3actioncontext,criticandactual128sample/classical2optbudgets.",
+    "Recordedsize100baselinefailuresandhardwaretiminglimits.",
+    "QualifiedprintedmaskcompositionandFigure2schematicwithoutclaimingunseenimplementationfailure.",
+    "RestoredcompleteoriginalfiguresandremoveddeadcurrentCodebuttonwithhistoricalattributionretained.",
+    "ConfirmedthreeexplicitinternalcitationsandavoidedsubstitutingdifferentAAAI/GCNNbranchingpapers."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d2703d42a477e784322c5e0ff38648b6f48e3d89ed6e748da0ff53e15c1ae416"
+}

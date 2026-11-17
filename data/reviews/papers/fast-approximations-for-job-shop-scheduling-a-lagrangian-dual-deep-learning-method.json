@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "paper_id": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+  "note_path": "specialist/fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "6fa3f9b07d68b1b6930aef1a264fd3d960b448daa56316f039a49ca7cfa10803",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/20685/20685-13-24698-1-2-20220628.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/20685/20685-13-24698-1-2-20220628.pdf",
+      "version": "AAAI2022formal8p allbody/referencesread; principalclaims/version.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-2b4e17cf1f/formal.pdf",
+      "sha256": "9a573cb3e545c4dd50b4176710e9d98ea35fd316a898756975c892832d544e00",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2110.06365v1",
+      "retrieval_url": "https://arxiv.org/pdf/2110.06365v1",
+      "version": "arxiv2110.06365v1onlyhistory2021-10-12;15pallreadincludingAppendA–D additionaltiming/environment/hypers; versiondifferencesexplicit.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-2b4e17cf1f/arxiv.pdf",
+      "sha256": "e6c720f928f09c094327fffbe35fe905a4edf78cd1b7be94b25468772736fec1",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read byline affiliations, introduction/references, fixed machine assignment focus with variable processing times; JSP formulation1/2 and unique tie-break labels, no neural feasibility guarantee from penalties alone."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read supervised start-time MSE with nonnegative violation penalties; disjunction min of two overlaps, dual multiplier updates approximate warm-start SGD not exact dual solve/convergence theorem; dedicated job/machine MLP and FC baseline squeezing nonfeasible makespan."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read JM architecture/Fig2/3, LP recovery Model2 and acknowledged infeasible induced orderings with greedyfallback never needed on tests; printed Alg2 has while-empty/enqueue current-task issues. Read root-specific5000 slowdowninstances ≤50percent, CP labels secondaryL1,80/20 split,5seed hypersearch and1800s CP reference not provedoptimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read entire Table2 11roots/FC/JSP-DNN/5dispatchrules, CP-equivalence runtimes and actual≤30ms recovery assertion, 4runtimegraphs and limitations CP1800s references understate truegaps; all34bibliography entries including duplicate Pointer/OptNet/Wilderrefs and exact data-generation work."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshread earlier15p v1 byline/abstract/intro/contributions/relatedworkandJSP/NNprelims; samefixedroutingdurationmapping, JSS-DNNnaming and Model1 indexrange printedtypos differfromformal, no supplementyet."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read whole pages4–6 including repeated oldSec6/JSS text and revisedSec7, identical Fig1 baseline flaws, fullLagrangian formulas and min-overlap violation/MSE definitions; do notinterpret genericdualintroasNNconvergenceproof."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "FullreadAlg1/duallearning/JMbranchesFigs2/3andLP/Alg2recovery; retainsformalprintedwhile-emptyandsuccessorenqueueissues; feasibleLPconditiongraphconsistency acknowledged, fallbackneverusedexperimental; noapproximationbound."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read Table1 v1 lrmax.002 differsformal.02, entireTable2same11roots, datasetCP1800labels/80:20/seedselection, recoveredqualityruntime/CPpotentialhoursnotoptimum, conclusion/acknowledgementandfirst8bibentries; nohardoptimalityclaim."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allremainingbib9–35 plusAppendA timing11roots/BXeon8260software/C5000slowdownlabelsL1stabilitycodefuturerelease/DTable4root-specificrates; inference2.9–7.5ms vsLP8.6–30.1ms andtraining500epoch ratios668–2617s, v1lrtablemax.002 conflictsactualratesupto.01; noextraappendixunread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Fixed-routing processing-time perturbations require fast feasible schedule predictions; rawFCoverlapinvalidatesmakespan.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Sections3–5"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "JM branches, violation-awaredualtrainingandclassicalrecovery combine empirical JSPapproximation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Contributions/Sections6–9"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "MSEplusmin-disjunctionoverlapandprecedencepenalties withapproxwarmstartSGD; LPconsistentorderingsandgreedyfallback,notrawNNfeasibility.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Eqs3–7/Alg1/Model2/Alg2"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "11roots5000one-machine≤50percentslowdowns80:20;5seedconfigurationselection;gaprelative1800sCPincumbent notprovenoptimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Setup/Table2/Figure4"
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "category": "experiment",
+      "statement": "Separate2.9–7.5msinference8.6–30.1msrecovery,668–2617strain;Xeon8260/environmentexplicit.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "locator": "AppendA–D/Table3/4"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Fixedrootmodelsclassicalrecovery, printedAlgorithm2queueoperations/Model2orderinginconsistentwithprose;v1/formallrmaxdifferent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Model2/Alg2/Table1/Results"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Allformal8+v115pagesincludingallrefsAppendA–Dread; noidentifiedofficialcodereleaseonlyfuturepromise.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            13,
+            14,
+            15
+          ],
+          "locator": "CompleteReferences/AppendA–D"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructivelearnedstarttimesfixedjobshoprouting;LPpostprocessisnotlearnedimprovementorcross-nativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "locator": "Scopeinput/fixedrouting/architecture/recovery/experimentalsetup"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://cdn.aaai.org/ojs/20685/20685-13-24698-1-2-20220628.pdf",
+      "locator": "FormalPDF1 exactthreeauthorbyline andSyracuse/GeorgiaTechaffiliations; arxiv1andbothauthorprimarypublicationpagesagree."
+    },
+    {
+      "field": "date, arxiv v1 and publication date",
+      "source_url": "https://arxiv.org/abs/2110.06365",
+      "locator": "Savedarxiv-primary.html canonical2110.06365/title/authors, onlyv1historyTue12Oct202121:15:19UTC. FormalOJS/Crossrefpublishedonline2022-06-28,vol36no7pp7239–7246; donotuseconferenceFebdatesorpreprintasformaldate."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://arxiv.org/pdf/2110.06365v1",
+      "locator": "Formal8pfullrefsread; formalp6namedtimingAppendixcoveredbyv1p14–15AppendA–D. Complete15pv1inclall35refsandfourappendicesread. ManualpublisherHTML520cached; OpenReviewlookup400cachednotinventedattachments. AuthorFioretto/Kotaryprimaryentriesonlyformal/arxivlinks/noextrascientificPDF/repo. Exacttitle+JSP-DNN+arxividcodesearchnoneidentified. Noexplicitmissinguniqueproof/resultbeyondintegratedappendices."
+    },
+    {
+      "field": "scope, paradigm, code availability",
+      "source_url": "https://nandofioretto.github.io/publications/",
+      "locator": "Cachedexactpub-itemformal+AlphaXivonly; Kotaryprimaryentryarxivonly. Scientificfixedrouting/readpp1/3/6, separatebenchmarkdimensions, LPclassicalrecovery; specialistconstructive. arxivAppendCpromiseallcodewillbereleaseduponpublication, notactualcodeURL. NoCodebadgelinkfabricated/noimplementationexecution."
+    },
+    {
+      "field": "visual and version checks",
+      "source_url": "https://cdn.aaai.org/ojs/20685/20685-13-24698-1-2-20220628.pdf#page=5",
+      "locator": "Renderedactualviewformal1/3/4/5/7+arxiv10/14/15 coversallfourfig/fouruniquetables/algorithms; Fig2crop52,47,299,197cleanview. PrintedAlg2emptyqueue/current-taskenqueue andModel2directionvsorderedmidpointsreportedlimitedspecificationambiguities. FormalTable1max.02vsarxiv.002/Table4>.002 retained. Formal30msprosevsarxiv30.1msroundedcellnotquietlycorrected."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Prior pointer-style neural combinatorial optimization discussed in related work; exact arXiv1803.08475 identity matches the later ICLR2019 work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "FormalRelatedWorkp2;completeKool/VanHoof/Wellingtitle+arxiv1803.08475bibliographyp8"
+        }
+      ]
+    },
+    {
+      "citing": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Cites learned graph combinatorial optimization as related neural solving, not a backbone used by JSP-DNN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "FormalRelatedWorkp2;completeKhalil/Dai/Zhang/Dilkina/SongNIPS6348–6358bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015a,b)",
+      "description": "Cites pointer networks as prior sequence-style neural optimization; duplicate bibliography variants refer to one work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Formalintro/RelatedWorkpp1–2;bothcompletePointerNetworksNeurIPS2692–2700bibentriesp8"
+        }
+      ]
+    },
+    {
+      "citing": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogančić et al. (2020)",
+      "description": "Discusses differentiating combinatorial solvers as related optimization-in-network work; JSP-DNN does not claim to use that layer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "FormalIntroductionp1; exactPogančić/Paulus/Musil/Martius/RolinekICLR2020bibp8"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithcomplete23pageformal+arxivscientificreviewandoriginalarchitecturefigure.",
+    "Scopedfixedroutingduration-generalizationandclassicalfeasibilityrecovery, notgeneralistsolver.",
+    "QualifiedCPincumbentgaps/offlinelabelcost/versionparameterandprintedrecoveryambiguities; nohistoricalreproductionclaimed.",
+    "Addedfourliteralbody+bibinternalcitations; nojournalextensionorarchitecture-onlyedges."
+  ],
+  "reviewed_note_sha256": "0a74ca969b3b4cc4a7bff6908cdd74f7afc460d08f18af9e3c7627b6b7778b08"
+}

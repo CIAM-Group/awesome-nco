@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "paper_id": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+  "note_path": "specialist/neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "13edb6f98cd90b95c4adab45d7b59187d5593014810219c50bfd52d9ed6fdae0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2412.14052v1",
+      "retrieval_url": "https://arxiv.org/pdf/2412.14052v1",
+      "version": "IdentifiedarXiv2412.14052v1 submitted2024-12-18, all13p main/References/AppendicesA–Dactualread; formalAAAI2025-04-11eligibilityseparatelycheckednotbytecompared.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-c20cf947ab/arxiv.pdf",
+      "sha256": "1cbcfb655e03f3595caa26c6b7e1f36760c3f8d626abce2542c832f7efae11dd",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://assets.underline.io/lecture/112195/poster_document/045fb753425986ae89485647870605ed.pdf",
+      "retrieval_url": "https://assets.underline.io/lecture/112195/poster_document/045fb753425986ae89485647870605ed.pdf",
+      "version": "OfficialAAAI2025Underline112195 Poster_AAAI_25.pdf explicitprimaryposterDocument510043bytes, fullsinglepageactualtext/figures/table/1600pxvisualread.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-c20cf947ab/poster.pdf",
+      "sha256": "ea0df420651fcc3dd7dd7f08f984f25d886e3359e24e3b022d682eb1234f8bb6",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read completearxiv1–2 bylineTUe/Delmia/officialcodepointer, purposeofflinefixedschedulebeforeprocessingrealizations, relateddeterministic/dynamic/stochasticJSP, fullFJSP/uncertainformulation andVaRalpha.95definition. SPMmodulararchitectureisnotonesharedcrossnativepolicy; distinctobjectives notnecessarilyonecheckpoint."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read all3–4 commonactionacrossdeterministic+state scenarios independentrewardscenarios, exactlowerboundrewards f(Ct)-f(Ct1) telescopeundiscountedgamma1conditionalfinite-sceneobjective; inducedattentionSPMAvgMHAB(H,MHAB(I,H)),3SPMsoperation/machine/pair feedingDAN/critic, allPPOprocedure. NoformalpopulationVaRguarantee andinducingfixedmlinearinnscnnotnoperation."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fullAlgorithm1,PDR/DAN/DAN-stoch/CPstochbaselines(1hour10or25scenarios), SD1/SD3generators andallsyntheticTables1/2rows includingCPstoch10x5betterthanours, greedySPM10x5SD1worseDAN, sample40x10SD3worsegreedy; 1000episodes/100state+1000rewardscenarios,4separatetrain sizes/SD1+SD3,train1–14h,100testinstances+100candidate inference. BiggerCPstochOOMnotreported."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all7–8 benchmarkTable3/fullerexpectedobjectiveTable4/B-LB-LBGdistributionTable5/everyTable6train100vs200andtest50/100/200scenario row, conclusion/acknowledgments. Negative mkDANbetter/edataCPbetter, expected10x5/20x5CPbetter, sample40x10SD3greedybetter; distributionssamepolicy butone nativeproblem. Moretrainingstates notmonotonic; inferredgeneralizationqualified."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read entireallReferencespp9–10 includingCPAIORuncertaintyvsnewAAAIstructuralnotconfused, DANjournalexact2023title, SongTII2022, L2DNeurIPS2020, MatNet/POMO andTIIhierarchicaldynamic. Citeonlyactualbody+fullbib527/activecatalogmatching."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Read allscientificAppendicesA?D pp11?13: separatelytrainedSPM-L2DJSP10x10and3sizetable7, detailedCP-stochAlgorithm2, ttests8/9 inclSD1small/mknoeffects/edataGreedyp.07, allbenchmarkTables10?12trainedSD3/SD1small. CPpseudocodeVaRround(.95n)countsothersgreater, differscode andempiricalVaR95mustcheckindependently; codeguardedoptionalintervalsdifferentfromprinting. NootherappendixbeyondD."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read entire officialUnderline112195 1pageposterbyline/introduction/contributions/trainingformulas/SPMarchitecture+syntheticTable; actual1600pxfullrenderalsoinspected. Paper13pcompleteA–D suppliesfulltechnicalmaterial, postersummarynoextrauniquescientificappendix."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Offlinefullscheduleunderunknownprocessingrealizations requiresstochasticfeatures beyondimplicitdynamicMDP.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Problemformulation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "InducedattentionSPM/independentrewardstates/generalobjectivePPO andseparatelytrainedDAN/L2D experiments.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            11
+          ],
+          "locator": "Contributions/Fig1/Algorithm1/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Commonactionallscenarios,3entityfeatureSPMsmeanaggregation, fixedsamplef(Ct)-f(Ct1) telescopegamma1notpopulationriskcertificate.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "MDP/Reward/SPM/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "SD1/SD3fourtrain sizes,100states1000reward/100candidates,100testinstances; CP1h10/25scenarios; metricsvaryandnegativerowsexist.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Setup/Tables1–6"
+        }
+      ]
+    },
+    {
+      "id": "supplement",
+      "category": "experiment",
+      "statement": "SeparateSPM-L2DJSPtrain10x10, all3additionalbenchmarkpoliciesTables10–12 andttests8/9 incledataGreedyp.07.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            12,
+            13
+          ],
+          "locator": "AppendicesA–D/Tables7–12/Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "category": "limitation",
+      "statement": "PrintedCP-stochVaRrankround(.95n)contrastsactualround((1-alpha)n)andfinitesamplequantileconventions; optionalinterval/presenceguards codevsprint.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Algorithm2 completeVaRblock"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separatebackbones/objectives/sizepolicies notonecrossnativecheckpoint; stochasticconstructiveadvanceplanning.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            11
+          ],
+          "locator": "Problemformulation/training/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete13parxivA–D+official1pposter/5952fileofficialarchive; currentSPMgrouping/head/LN andsamplingmin-on-eval/timer boundaries explicitlynotexperimentrerun.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            4,
+            5,
+            11,
+            12,
+            13
+          ],
+          "locator": "Officialcodereference/Configuration/completeappendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2412.14052v1",
+      "locator": "p1bylineIgorG.Smit/YaoxinWu/PavelTroubil/YingqianZhang/WimP.M.Nuijten,3TUedepartment/instituteaffiliations+DelmiaR&D DassaultSystemes; publisherindexedandCrossrefagreefiveauthors."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/34870",
+      "locator": "PublisherindexedPublished2025-04-11 anddepositedCrossrefpublished-online2025-04-11; AAAI39(25)26678–26687 DOI10.1609/aaai.v39i25.34870, OJSliveHTML/PDF520notregisteredasPDF."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2412.14052",
+      "locator": "Savedprimaryhistorysinglev1Wed18Dec202417:05:33UTC, watermarkp1agrees;date2024-12-18,all13pcompleteinclA–Dread beforecutoff. Formaleligibilityseparate, notbyteidentityclaim."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2412.14052v1",
+      "locator": "p5separateSD1/SD3x4sizepolicies,p7newmeanobjectivepolicies,p11separatelytrainedL2D/JSP; nomulti-native sharedcheckpoint. Sameactionacrossprocessingtimeoutcomesnotadaptivefuture-awarepolicy; constructivefixedschedule."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://underline.io/lecture/112195-neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "locator": "ManualpublisherindexedPoster tracedofficialUnderline112195 __NEXT_DATA__ posterDocument explicitpublicPDF510043bytes, full1pageactualread+1600pxvisual; slideshow=null,duration=null,noscientificvideolink. Completearxiv13pallA–D/allreferencesactualread. Completeauthorrepo6044treeentries/5952files noPDF/video/archive orsciencecompanion; code/data/3L2DweightsinventorySHA, nofakeweightpagecounts."
+    },
+    {
+      "field": "code availability, source version and execution boundary",
+      "source_url": "https://github.com/ai-for-decision-making-tue/NCO-for-Stochastic-FJSP/tree/1b92d3d934adc146688792d76ac8c1c682e335f8",
+      "locator": "Primarycommit2026-01-29 complete24,106,053byteZIP; 5952files enumerated/SHA. CoreSPMmainmodel233–378/scenariolayers,train267–361/412–476/params,reward+evalsplit andCP165–223/269–377 actualread. NNs/CP/datasetsnotexecuted/deserialized. MainFJSPweights/stochasticgeneratedinstancesnotbundled; L2D3weights16npy/5862fjs inventoriednotpapertexts."
+    },
+    {
+      "field": "mathematical, evaluation and visual checks",
+      "source_url": "https://arxiv.org/pdf/2412.14052v1#page=12",
+      "locator": "pp4/6/7/8/11/12/13andfullposter renderedactualviewed; originalFig1clip50,50,563,216fullviewpass. local-boundary-check.json exactASTrank10/25enumeration, labeledtensorreshape/swaptrace andgenericselectiontoy; noactualtrainedmodeloutputs asserted. Currentmin-on-eval/runtimestop andonehead/noLN/tensorlayout code separatefromprintedauthorclaims/historicalresults."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Stochastic reward extends constructive dispatching background and AppendixA separately trains an SPM-L2D adaptation; this is modular transfer, not a shared DAN/L2D checkpoint.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            10,
+            11
+          ],
+          "locator": "Explicitbodyp2/3andAppendixA p11; fullNeurIPS2020L2Dbibliography p10."
+        }
+      ]
+    },
+    {
+      "citing": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Cites matrix-encoding scheduling networks as NCO scheduling background, without claiming their checkpoint or model is reused.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "RelatedWorkNCOforFJSPp2; completeMatNetNeurIPS2021referencep9."
+        }
+      ]
+    },
+    {
+      "citing": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Literal related-NCO citation; the bibliography identifies POMO and does not establish that SPM-DAN uses POMO training or solves its routing tasks.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "RelatedWorkstochastic/dynamicNCOparagraphp2; completePOMONeurIPS2020referencep9."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingplaceholder withcomplete13pscientificarxivA–D+officialposter1p.",
+    "Keptspecialistconstructive: explicitlydistinguishedadvanceplan/revealedrealisations andseparatelytrainedDAN/L2D/mean/VaRmodels.",
+    "Preservedqualitygainsalongwithsmall/mk/edata/CPcases, nooptimumgapoverclaim andttestboundaries.",
+    "QualifiedcurrentCPquantile/pseudocode,SPMlayout/head/LN, min-on-eval candidate selection andtimerwithlocalchecks/nohistoricalrerunclaim.",
+    "AddedfulloriginalFig1/3body+bibliographyinternalreferences andcomplete5952fileartifactinventory."
+  ],
+  "reviewed_note_sha256": "463a027660b204f4919abee3c65b36cf3133b00f79f82810f25236724a2b1179"
+}

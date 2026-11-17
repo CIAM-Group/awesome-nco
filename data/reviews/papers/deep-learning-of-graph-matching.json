@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "paper_id": "deep-learning-of-graph-matching",
+  "note_path": "specialist/deep-learning-of-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "65f94b75a1ebafe2d96bf3b7bb0ba0324ba227f6f92d63e3270a965b20291cf5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Zanfir_Deep_Learning_of_CVPR_2018_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Zanfir_Deep_Learning_of_CVPR_2018_paper.pdf",
+      "version": "OfficialCVFCVPR2018ten-page2684–2693 two-authorPDF complete main/derivations/experiments/38references.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-881a470f4b/publisher.pdf",
+      "sha256": "afd832d4d011ec15c97391dac33df58f9cd1487b78d60f6bd759e53c8d59f0f6",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Allpp1–3read2authorsIMAR/Lund, unaries/pairfeaturelearnedendtoend;binaryoneoneQAPrelaxdropsboth mapping+binary to Rayleighleadingeigenvector, nonnegativeM confidence nothardpermutation/optimalQAP. Factorizationincidence/edgeconcats/blockLambda analyticmatrixbackprop need rest derivatives/inference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Completepp4–6read poweriteration finiteN/structuredbackprop pqtensors,postsoftbistochastic/votingsoftmaxalpha200displacementloss;actualhardindexvariant rowargmax notHungarian uniqueness. Sintel disablesbistochastic manytoone continuousflow,18/5video split and4x4blocks;~2sec completeforwardbackTitanX notinferenceonly;PCK92.6vsUCN91.5. Needsemantic experiments and whether weights sharedcrossnative."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Allpp7–10read CUB15x256candidategrid/5000pose-neighbor pairs trainedCUB,softvotingEPE17.02PCK.86 vsrowmax18.22/.83 (nohardbijectionguarantee);Pascaltrainoneclassagnosticmodel20classes classavg40.6vsUCN38.9/weighted45.3vs44 distinctmetrics. All38refsreadOptNetnotcatalogue? no actualcandidate outputs. Noindependent scientificsuppmentioned;CVFmain/videoonly."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gmn-contribution",
+      "category": "contribution",
+      "statement": "End-to-end unary/pairwise visual feature learning through structured affinity/spectral/normalization/voting layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1–3/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "gmn-method",
+      "category": "method",
+      "statement": "Rayleighrelaxationdropsbinary+mappingconstraints;finitepoweriteration thensoftvoting, discretevariantrowmax notHungarian.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations1–2/12/22/Section4 Matchingnetworks"
+        }
+      ]
+    },
+    {
+      "id": "gmn-results",
+      "category": "experiment",
+      "statement": "SintelPCK92.6/CUBEPE17.02PCK.86/Pascalclassavg40.6;timingsinclude forwardbackward;metricsnotpermutationaccuracy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Tables1–3"
+        }
+      ]
+    },
+    {
+      "id": "gmn-limit",
+      "category": "limitation",
+      "statement": "Nohardbijection/optimalQAPguarantee;rectangularlandmarkgrid/Sintelmanytoone;printedEq11Ygradienttranspose discrepancy vsEq10.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations1/2/10/11,Sections3.4/4"
+        }
+      ]
+    },
+    {
+      "id": "gmn-class",
+      "category": "classification",
+      "statement": "Specialistconstructive learnedmatching/rowmaxvariant;continuousvotinglocalization distinguished,no sharedcrossnativecheckpointdemonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Matchingnetworks and separatelydescribedtrainingprotocols"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR.2018.00284",
+      "locator": "Exacttwoauthor/title DOI cachedprint2018-06;formalbylineIMAR/Lundpp1;Lundprimary cached https://portal.research.lu.se/en/publications/deep-learning-of-graph-matching/ sameidentity."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content_cvpr_2018/html/Zanfir_Deep_Learning_of_CVPR_2018_paper.html",
+      "locator": "OfficialvisiblemainPDF+ordinaryvideoonly;Lundprimary DOIonly;exacttitlearxiv/code/supp search noidentified originalsciappendix/repo;formalcomplete10pderivations/38refs noexplicitmissing extra. LaterThinkMatch293members noPDF/ZIP/ipynb;GMN README read, notoriginalauthorcode."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Zanfir_Deep_Learning_of_CVPR_2018_paper.pdf",
+      "locator": "OriginalFig1wholecaptionformalPDFp4Rect46,69,554,309at2.5xphysicallysaved/viewed;mathpp2–5/fullresulttablespp6–7/qualp8rendered."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://openaccess.thecvf.com/content_cvpr_2018/papers/Zanfir_Deep_Learning_of_CVPR_2018_paper.pdf",
+      "locator": "All38refspp9–10actualread/candidatecheck0activeinternaltargets;OptNetnotCombOptNet."
+    },
+    {
+      "field": "implementation_provenance",
+      "source_url": "https://github.com/Thinklab-SJTU/ThinkMatch",
+      "locator": "Alreadypinned9f669cb22916f3e06c214f058daa5ac349bd7e15 currentPCAaliasarchive,GMN-specificREADMEread as thirdpartyreimplementation only. Formalp6rowmax/voting controlsnote."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full10formalpages/38refs read and keymath/results/figureactuallyviewed.",
+    "Originalsoftvoting/rowmaxdecoding preserved rather than importing laterHungarian reproduction.",
+    "Separatedspectralrelaxation/discretecandidatevariant fromcontinuouslocalizationand exactQAP;nohardbijectionclaim.",
+    "PrintedEq11transpose discrepancy scoped vs precedingEq10,not historicimplementationaccusation."
+  ],
+  "reviewed_note_sha256": "37be8e994a0ea74d8ba02aad286a3313c4792a0d9f94da530e3d471effcff55b"
+}

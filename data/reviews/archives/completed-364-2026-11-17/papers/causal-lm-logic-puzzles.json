@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "paper_id": "causal-lm-logic-puzzles",
+  "note_path": "specialist/causal-lm-logic-puzzles.md",
+  "baseline_note_sha256": "65ef29139d59be909b3e47993a05287b80dfc91c3c81b09ab8f33d1637ee88eb",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/67b31ca159553d5593e62d7b998d63ea-Paper-Conference.pdf",
+      "version": "NeurIPS 2024 formal proceedings, DOI 10.52202/079017-1805, complete 29 pages including Appendices A-I and checklist",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/67b31ca159553d5593e62d7b998d63ea-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8bdd71c8db.pdf",
+      "sha256": "76405e77651358e971946c1a8be7f721dca8e1f6198f50330897b04bece80b8a",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all4authorsUTA/Google,taskscope filteredpolynomiallydeducible1.9MSudokus7humanrules and320kZebra3x3-6x6owncubicnonbacktrackteacher. Main94.21requiresbeam5,87.18greedy,oraclepositionhintsseparate99.02cellaccuracy. Frontier4shot3000notcomparablefulltraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read 42M GPT2 8layers/heads576dim,1.8Mtrain.1Mtest,onlysolutiontokensloss;7ruleteacher only2rulesfill andnoexpliciteliminationtrace.Fixed58.64cell7.2puzzle/random52cell1puzzle;teacherorder vsoraclehints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read exacthinting RANDOM-order54.57cell(earlier1-3logfixedwordingcorrected),logical94.23cell87.18puzzle;beam3/5=91.36/94.21puzzle. Hints99.02cell,onlycellnotpuzzle. Candidateprobe states35:5:75,beamfiniteexploredsequenceprobmax."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read topklogitsprobe(nolearnedlinearprobe),k=oraclecandidatesetsize,averagedovercorrectlysolvedpuzzlesonly;overlap93.19to99.37notexactsetmatchnorallpuzzles. Syntheticdeductivesubsetlimitations.Nofullsearchtrace. ReadrefsA-NinclBello,policygradientlandscape."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainingbibliographyYIL23RRNPPW18,AppAZebranaturalwordexample,AppBsurveyLLMplanningandprobing. Currentexperiments symbolicnotnaturallanguage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read AppBtraditionalstrongersolversandYIL23/PPW18,all7Sudokurulesand7Zebracluetypes. Zebra0.3Mtrain15ktest,m,nindependently3-6,teacheruses1-3cluesubsets. AdamWlr1e-4batch64fourmillionsteps,cosine,4000warmupprintedtokens. Splitcalledtestandvalidationinterchangeably."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read RRN18000eval beam5ours95.43vsRRN96.6(notsuperior),ratingdefinitioninconsistentp5maxdepthvs19averageguesses. Allfailure/candidatesetexamples.Zebraseparatetraininglogical91.17puzzle95.63cellat1kevaluation;small-sizeimbalanceacknowledged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read Table5Zebra91.17greedy92.04beam5;320k20keach16sizecombos15ktestremaining305kcontrastsrounded.3M. Checklistno theoreticalresults,methodstudy ratherthannewSOTA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read checklistopen code and explicitemptyerrorbars/multipleseedsnotreportedcomputelimitation;theoryNA,computeanswerclaimnotindependenthardwareproof;ethics/assetsstatements."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "Read wholefinalchecklistnewassetsfuturecodewordingcontradicts25butcurrentrepoofficialavailable;humanNA,noadditionalappendix. All29publisherpagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Assignmentordering separateschoosingdeduciblecellfromvaluegeneration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Intro/Sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Ordering/hint/beam/logitcandidateexperiments show syntheticcapabilitiesunderteacherdata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            8,
+            9,
+            10,
+            21,
+            22
+          ],
+          "locator": "Contributions andactualresults"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructiveapproach separatelytrainedSudoku/Zebra/orderconditions,nojointcheckpoint;authorsstudycausalLMnottraditionalCSPdominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            16,
+            18,
+            20,
+            21
+          ],
+          "locator": "Architecture/protocols/AppendixBexplicitgoal"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "42M8layer8head576dim causaltriplets solutionloss;teacherassignmentorderwithoutfullruletrace;logitinspectionnottrainedlinearprobe.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            10,
+            16,
+            17,
+            18
+          ],
+          "locator": "Sections2-4.2/AppC-D"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Sudoku87.18greedy94.21beam5whole,oraclehints99.02cell;Zebra91.17greedy92.04beam5whole,RRN95.43vs96.6;candidateoverlapconditionedcorrectpuzzlesoraclek.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            9,
+            10,
+            19,
+            21,
+            22
+          ],
+          "locator": "Tables1-5/explicitdenominators"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Teacher-solvablesyntheticnonbacktracksubset,nogeneralguarantee/noerrorbars;difficultydefinitioninconsistentp5vs19.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            10,
+            18,
+            19,
+            25
+          ],
+          "locator": "Authorslimitations,checklist andqualifiedcuratorcomparison"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full29pA-I/checklist/allrefs8visualmanualsupp/API/repo/readREADMEand4modules;currentreleasevsprintsettings/data differ;noexperimentrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "locator": "Actualreadinglogs/visuals/manualsourcecache"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/67b31ca159553d5593e62d7b998d63ea-Abstract-Conference.html",
+      "locator": "PublisherHTMLcitation_title/fourcitation_author/citation_publication_date2024-12-16/DOI10.52202/079017-1805. p1UTA/Googleaffiliationsverified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/67b31ca159553d5593e62d7b998d63ea-Abstract-Conference.html",
+      "locator": "ManualpublisherHTMLalllinksPaper/Bibtex/DOIonlynoseparate scientificPDF/ZIP. Complete29pA-Iintegrated/read;references11-14/checklist22-29. ExacttitleAPIv1/v2both403manual-api-check.json. Authorrepo18filescommit66a49af440cf52eef087793727f6bd41b8c19eb2nonePDF/ZIP,READMEanddata/configmodulesinspected. Noexplicitlyreferencedmissing scientificattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/67b31ca159553d5593e62d7b998d63ea-Abstract-Conference.html",
+      "locator": "Formalpublisher29pSHA76405e77651358e971946c1a8be7f721dca8e1f6198f50330897b04bece80b8a. Actualvisualsrestart-main6/8/10/19andappendix17/20/22/23."
+    },
+    {
+      "field": "code_url,reproducibility",
+      "source_url": "https://github.com/kulinshah98/llm-reasoning-logic-puzzles",
+      "locator": "OfficialpaperlinkandREADMEidentityverified;18filetreecommit66a49af440cf52eef087793727f6bd41b8c19eb2. EntireREADME3983bytes+Sudokudata225/main165+Zebradata174/main142=706codelinesread. Separatedtaskpipelines/nojointcheckpoint. DatapreprocessdeletesstrategyIDs;currentmainlr.0002vsprint.0001/warmups10000/5000vs4000andsteps2^22/2^21vs4M. READMEZebra1.5M/.1Mvsprint320k/15kexplicitqualifiedcurrentreleasenotpaperconfiguration;nodatasetsdownloaded/executed."
+    },
+    {
+      "field": "classification,experimental_conditions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/67b31ca159553d5593e62d7b998d63ea-Abstract-Conference.html",
+      "locator": "p10directlogittopkoraclecandidatesizeandonlycorrectlysolvedpuzzles;abstractlinearprobingoverstatesactualtrainedprobe. p7hintmodelrandomorder54.57/solverorder99.02cell;wholebeammetricsnotmixed. p5ratingmaxdepthv19averageguessesnotresolved. Main9x9only/Zebra3-6withintrainmix,noheldoutsizeproof;currentREADMEuniquesolutionSudokus."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "causal-lm-logic-puzzles",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "BPL+16",
+      "description": "Related-work comparison to neural combinatorial optimization with reinforcement learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16,
+            11
+          ],
+          "locator": "AppendixBbodyp16explicitlabel;fullreferencep11"
+        }
+      ]
+    },
+    {
+      "citing": "causal-lm-logic-puzzles",
+      "cited": "policy-gradient-landscape-co",
+      "reference_label": "CFK+23",
+      "description": "Related-work comparison to optimization of solution samplers and policy-gradient landscape.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16,
+            11
+          ],
+          "locator": "AppendixBbodyp16explicitlabel;fullreferencep11"
+        }
+      ]
+    },
+    {
+      "citing": "causal-lm-logic-puzzles",
+      "cited": "recurrent-transformer-csp",
+      "reference_label": "YIL23",
+      "description": "Explicit comparison to recurrent Transformers that bake in Sudoku constraints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16,
+            14
+          ],
+          "locator": "AppendixBbodyp16explicitlabel;fullreferencep14"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedgenericexplicitruletraceaccountwithactualassignmentorder/directlogitinspection.",
+    "Separatedgreedy/beam5/oraclepositioncellmetrics,conditionedprobe/teacherfilter/taskcheckpoints.",
+    "Documentedcurrentreleaseconfiguration/data differences andreportinglimits;formal29pagesallsupplementscientificcontentread."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2ab74ae0b5c99f9e0465095b97379df34930158de67e4f4c01878c380a353385"
+}

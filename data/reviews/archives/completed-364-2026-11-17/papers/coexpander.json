@@ -1,0 +1,986 @@
+{
+  "version": 1,
+  "paper_id": "coexpander",
+  "note_path": "specialist/coexpander.md",
+  "baseline_note_sha256": "6c56728ceaaee1f6b32a51f47b3410e55354ec24216db8ef87fd67857eadd99b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/ma25r/ma25r.pdf",
+      "version": "Actual official PMLR267 ICML2025 35-page proceedings PDF, all main text/references/AppendicesA-H freshly read.",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/ma25r/ma25r.pdf",
+      "local_path": "research/import-272/nco-cd9e1b7446.pdf",
+      "sha256": "10ee419170eac185eebf158ef52043b0e1710ad2bb7d59d2121447395efbb018",
+      "pages": 35,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshofficialICMLPMLR2672025 titlepageJialeMa/WenzhengPan equalcontribution,YangLi/JunchiYan SJTU+ShanghaiInnovation. AE partialprompt fullheatmaps adaptivecommit decisions, six tasks29bench50-10k;scopewithineachproblemtype notmultitaskweights. DefinitionsVDPgranularityGP/LC/expansion conceptual, nooptimalityproof. Introallcitationsread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ActualpipelineFig1andAlgorithm1 fullread: staticpartial prompts, alpha.9massrho0elseuniformfraction,diffusionresetfreshnoiseeachcommit multi-steppredict. SL BCE labels,Equation3 triangleinequality invocation notgenerallyvalidforBCE becauseBCEnotmetric;do nottreatasguaranteeconsistency. Incrementpartialdetermined masks suggestsconstructive notincumbentedits;needoperator. AllrelatedGP/LCreferencesinclDIFFUCO/GOAL/T2T/FastT2Tread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FulloperatorsMISselecthighblockneighbors,MVCselectlowexclude+neighborcover,cliqueselecthighblocknonneighbors,cutconfidencepartition,noincumbentedit. GrapharchitecturetasktailoredembeddingsedgeATSP,sharedarchitecturedoesnotmeanweightsneedAppF. MetricsTimeperinstancebatch1/singlethread,dropclassicalreference notalloptimal. Table1MIS20commit1denoise4samplesSATLIB424.78worseS1 425.05,qualitynotuniform,needneutral. Conventionaltechniquesnextpage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FullTables2-4read: classical2optmainrouting(default5000),ATSPoperatornode relocate notsymmetricreverse;beam16 optionalDs1GPnotAE;MCutfine-tuneobjectiveontrainingdataset notpertestadapt. Table4GIANTMIS46.64<Gurobi1h48.56/MVC2400.36>2396.78,notallgiantwins;TSP10kexplicitfinetune1knotzeroshot. maxcutnegativegapvsGurobitimelimitnottrueoptimum. alltableprotocolbudgetsS/Ds/Isdifferent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullTable5Algorithm2MISclassicalRLSApostprocessoroptional: initialfeasible plusnoise caninfeasibleintermediate, claimnoFAILfinite empiricalnotformalguarantee,twiceiterationsstandalonefairtimesnotexactmatch. Actual7thtaskCVRPTable6ALLsizesworseSymNCOwithClassicLSbutfaster,addtaskevidence. FullbibA-KreadincludingRLSA2025arxiv/Deudon/Hudson2021preprint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "FullremainingbibK-Zread includesSILactual6authorSelfImproved2024precursor toformalBoosting lineageaudit, T2Tprefixomitted, neural3optACML2021existscatalog;neuralGLSSui2023notHudsonGNNGLSdonotconflate, RL-LKHZheng2021/dualoptcheckcatalog. DeepACOprinted2024NeurIPS36preserve."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FullAdditionalrelatedworkA explicitallMLclassicalhybrids andD&C inclsixauthorSIL2024 versioncontinuitylineagequalified;notadoptincorrectAttGCNconstructorclassificationfromauthors secondhand. FullB1pipelineLC/GP/AE partialmaskmonotonicconstructive;Fig3/4requiresvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "AllB2/B3limitationsstudiesTable7/8rawFastT2Tmoredenoise sometimesWORSE(notmonotonic), tableheatmapconflict vsqualitycorrelationnotcausalproof. B4explicitLwD/dualOPTsameAElabelpartialvariableconstruction;Table10COExpanderTSP10k1.45>worseDualOPT1.21%butfaster29.5vs33.9s,dualOPT†copiedorigexceptionunifiedhardware. LwDretrain20kPPOcodefixes."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "FullC6formaldefinitionsmetricATSPtriangleunlikegeneralATSP. DnonlearnwrapperGurobi11.0.3 rootrelaxation delays empiricaltwoinstances notgeneralnoheuristicduringrootguarantee; timeoutsnotoptimal. LKH3.0.7 SPECIALremovedchangesGain23 etc Table11readnext;do notgeneralizeauthorclaimall2/3optdisabledwithoutsource. Concorde03.12.19/KaMISfootnotev3.0not0.3.0typo."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadfullLKHpackagecomparisonTable11timeandgapsbothchangesnotuniversal100xobjectiveimprovement;Eall29datasetsTable12 withseparateMODELperproblem+size,severalheuristictraininglabels notexact. TestTSP1280small/1285001000/1610k,ATSP2500small/100large;RB500/testgiant50,ER128/SATLIB500/Twitter195/COLLAB1000. GraphsRB200-300/800-1200/2000-3000,ERp.15,BAattach4,ATSPmetricnorenorm. Full29datasetrowsread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "FullF/Table13 all21INDIVIDUALLYtrained models curriculum+MCutFT (notgeneralist);12layers256 AdamWwd1e4cosineH80080G/Xeon8558batch1eval,base50epochs2e4/scalefine10epochs5e5butTSP100/500/1k andATSP100/200still50table. KNNtableTSP1k100 vsproseall50 inconsistencyretainactualtable;empirical100%optedgekeepnotuniversalguarantee. ATSPdensebecauseKNNlosesoptedges. G1alphaablationfirst7epochsMISsmallonly. FullTable14read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "FullTables15-17allalpha first7epochcounts, GCNbackbonecontrol20determstepsstillmorecalls/time thanstatic;notbackboneagnosticproofallarchitectures. Table17equalcallsDs20Is1vsDs1Is20improvesmostbutnotall(MClLarge8.817vs12.672 yes; cut etc),Ds20clique8.817worseDs10 8.355 so no monotonictheorem. ReadfullG2/G3narrativeclaimsneedactualtablesnext;moreMCutperformanceNOTimprovedlarge."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "FullTables18/19allrowsactualread. CriticalTable4GIANTMCl84.12/1.52exactmatchesTable19GP S4Ds1Is1Beam16notAE;recordheadlineincludesdegenerateGP. Dropmeaninstancegapnotratioofmeanobjectives;MClnegative6.424vsmean3.19notarithmeticerror. RealworldMClAE4Ds20 Twitter3.997%worseMetaEGN3.812 butGPbeam2.766better;S1AEworseonbothrealsets. MISlargeDs50not20 actualApp row. NotuniversalAE superiority."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "FullTables20/21allrowsread. MVCsmallmainTable2values206.75/.48 differAppTable20sameS1Ds20Is1 206.576/.398;retainonlyconsistentlarge. AnotherTable4GIANTMCut7381.92/1.76mapsTable21FT S4Ds1Is50 GPnotAE,DiffUCO7387.76betterquality. MCutFTdoesnotuniformimprove(S1Ds20worsebase). LargeS4timessomefasterS1unspecifiedimplementationparallelnotnested varianceproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "FullTables22/23allrows block-orderread. TSP10kAE1.45%29.495s vsFast1.59540.938 andGLOP5.7811.776qualitytime tradeoff;LKH0%332.758. ATSPmain+2opt vsunrefinedseparate learnedgain, actual4samples3commit5denoise5001.5681%6.597s vsLKH.001%1.022s100trials,so classicalcanbothbetterfaster. MainGOAL500runtime3.26vsApp4.056tableinconsistency;notclaimalluniform."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 32,
+      "notes": "Full49TSPLIBrows andwholeTable25readblockorder. TSPLIBmix100/500/1000models perrow rawEuclidean notstandardTSPLIBroundedoptimum;printedmean.367%. Summary ATSPprior4.253%7.816s EXACTcopiesMISsummary;actual4ATSPbaselinerows average3.21815%9.25825s, soheadline3.807/4x reliesinconsistenttable notindependentlyvalidated. TSPGPqualityimprovedbuttime.839>.729 not4xall. GPbeamcliqueandGPFTcut includedsummary. Needarithmeticchecksave."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 33,
+      "last_page": 35,
+      "notes": "FullH1-H3complete: labeleddataseveralhours/tenshour generationnotzero, missingGauss/cluster/HK/WSOODacknowledged. CVRP7thtask4sizeseparate10epochsHGS1.28m/.64m/32k/12.8k,cap40/50/80/100demands1-10,test10k/10k/100/100. Table26smallHGS10.489vsmain10.37 inconsistentretained. AEfixeswholefeasiblepartialroutes/classicLShelpsbutstillworseSymNCOALL. H3PPOisUNIMPLEMENTEDfutureproposalnotactualRLmethod;fullPPO/assignment/constraintformulasreadnotclaimedguarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Partial-prompted global heatmaps plus greedy group determination;29settings/six main tasks and measured weaker CVRP extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            9,
+            20,
+            33
+          ],
+          "locator": "Sections1-6/Algorithm1/Table12/26."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Two-noise supervised classification with partial masks, alpha.9 unprompted mass, task-specific monotonic commitment; optional classical2opt/RLSA/beam, MCutFT offline nottestadaptation; BCE triangle argument qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            16,
+            21,
+            22,
+            34,
+            35
+          ],
+          "locator": "Equations1-12/Algorithms1-2/AppendicesF/H."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Fullper-setting budgets and21separate mainmodels;10kfine-tune, GPconfigheadlinegiantrows, duplicatedATSPsummary, negativegapsvsheuristicrefs, weakerCVRP/seeduncertainty and classicaltradeoffs qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "locator": "Tables1-26 includingfullappendix result rows andsummary."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive from partialvariablecommitments, not learnedincumbentmove; separatetask/scaletraining21mainmodels; classicalpostprocessing/GPbeamsettingsdo notmakegeneralistorneuralimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            9,
+            21,
+            26,
+            28,
+            33
+          ],
+          "locator": "Actualpipeline/Algorithm1/Table13."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, problems",
+      "source_url": "https://proceedings.mlr.press/v267/ma25r.html",
+      "locator": "ActualPMLR267:42130-42164 ICML2025;actualHTMLpublicationmeta2025/10/06retained, fourauthors/titlep1SJTU+ShanghaiInnovation andfirsttwoequalcontrib. AddedactualCVRPmeasuredextension beyond6coretasks."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v267/ma25r.html",
+      "locator": "Manualpublisherpagecombined35pagePDF/OpenReview/software, noseparatescienceattachment. AllA-Hread. OpenReviewAPI403 notclaimedunknownattachmentsinspected. Complete104entryofficialtreenoPDFZIPTEXscientificextra; data/weightslinksidentifiedasreproassets."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/COExpander",
+      "locator": "README/selectedfulltrainingedgefunction andmaskoperator/inference/schedules/MISdecode+test/CVRPsolverread;two-noiseCrossEntropy, partialcommitfixed, tasksize thresholds;MISexampleS1Ds1Is1RLSAfalse vsstrongAEsettings;frameworkdependencyversionsinconsistentnotvalidatedenvironment."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/ma25r/ma25r.pdf#page=3",
+      "locator": "OriginalcompleteFigure1/page3Rect(61,64,534,227)4x;all6scientificfiguresplusAlgorithm1/BCEandcriticaltables19/21/22/23/25/26visuallychecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "coexpander",
+      "cited": "glop",
+      "reference_label": "Ye2024b",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "udc",
+      "reference_label": "Zheng2024",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "neuopt",
+      "reference_label": "Ma2023",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "attention-model",
+      "reference_label": "Kool2018 actual arxiv1803.08475",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "unico",
+      "reference_label": "Pan2025",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "dimes",
+      "reference_label": "Qiu2022",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "difusco",
+      "reference_label": "SunYang2023",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "t2t",
+      "reference_label": "Li2023 prefix omitted",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "fast-t2t",
+      "reference_label": "Li2024",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "ml4tspbench",
+      "reference_label": "Li2025",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn2020",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "meta-egn",
+      "reference_label": "WangLi2023 arxiv2301.03116",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "utsp",
+      "reference_label": "Min2024 printed year",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski2024",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon2021",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "goal",
+      "reference_label": "Drakulic2024",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "rld-co",
+      "reference_label": "FengYang2025 arxiv2502.00277",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson2021 arxiv2110.05291",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "neural-3-opt",
+      "reference_label": "Sui2021 ACML actual title",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "deepaco",
+      "reference_label": "Ye2024a NeurIPS36 as printed",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "gfacs",
+      "reference_label": "Kim2025",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "sil",
+      "reference_label": "Luo2024 Self-Improved Learning six-author precursor",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    },
+    {
+      "citing": "coexpander",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski2023",
+      "description": "Explicit in-text citation and matching actual bibliography; preserve cited preprint/year. SIL maps the actual2403.19561 six-author precursor to the formal representative by separately documented distinctive text/figure/equation continuity, not arxiv retitling. Noncatalog NeuralGLS/DualOPT/VSRLKH not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Actual explicit author-year citation in main text orAppendixA."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year; referenced versions retained."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh all35officialPMLRpages/A-H/26tables/49TSPLIBrows/6figures/fullequationsfuturePPOread;publisher+104entrytreeinventory.",
+    "Added measured7thCVRPextension(notpart29corebench) andweakerthanSymNCOfull4sizes/10epochdifferentdatasets;H3PPOunimplementedfuture notexistingRLsolver.",
+    "Retained specialistconstructive with21individualmainmodelscurriculum/MCutofflineFT/tasktailoredarchitecture,10kfinetunednotzeroshot; classicalpostprocessnotneuralimprovement.",
+    "Qualified GPbeamgiantclique/GPFTgiantcut Table4AElabelsagainstTables19/21; mixed giantwins andclassicstronger/fastsettings,bookkeepactualS/Ds/Is/beam/RLSA.",
+    "Saved arithmeticcounterexample Eq3BCEtriangleinvalidgenerally, Table25ATSPsummaryduplicatesMISactualrowmeans3.21815%9.25825s vsprinted4.253%7.816s;headlineaggregatequalifiednotindependentlyvalidated.",
+    "Retainedexactprimarypublicationmeta2025-10-06; metricATSP andfloatingEuclideanTSPLIBreference/heuristiclabels/meanperinstancegaps/sparsitytablevsprose differences documented.",
+    "ActualoriginalFigure1added,selectedcodeverifiespartialcommitandtestdefaultsRLSAfalse,33explicitcitationedgeswithqualifiedSIL2024precursoridentity noforcednoncatalog."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7eb9240bcce54472b29a92a69266978395b19de593804fb558a26325eee58adb"
+}

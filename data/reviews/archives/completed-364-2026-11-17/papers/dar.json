@@ -1,0 +1,912 @@
+{
+  "version": 1,
+  "paper_id": "dar",
+  "note_path": "specialist/dar.md",
+  "baseline_note_sha256": "a28e4983b08821f01fc44fbd96986e702c757f05a5b999019bef3d5a7624d114",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2401.06979",
+      "retrieval_url": "https://arxiv.org/pdf/2401.06979",
+      "version": "arXiv2401.06979v1, 2024-01-13,9pages earlyCVRP-only manuscript, distinct from15page2025 formalextension",
+      "local_path": "research/full-text-review/dar/paper.pdf",
+      "sha256": "8e0ddfe0476beec223699f55b2ef2cfee82d91be038a5832a5f0d830e03d2b3c",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "published",
+      "url": "https://doi.org/10.1109/TNNLS.2025.3588209",
+      "retrieval_url": "file:///G:/changliang/awesome-nco/addpapers/Wang%20%E7%AD%89%20-%202025%20-%20Distance-Aware%20Attention%20Reshaping%20for%20Enhancing%20Generalization%20of%20Neural%20Solvers.pdf",
+      "version": "Formal IEEE TNNLS 36(10), 2025, 15 pages 18900-18914; user-provided local copy, accepted 2025-07-08, published 2025-07-17",
+      "local_path": "research/full-text-review/dar/published.pdf",
+      "sha256": "9cc896743bb4e0adffdde170b076e663b8bff2062f103afb7c4fbc4dd75110bf",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshactualarxiv2401.06979v1 Jan13,2024 titleDistanceaware...Enhance...Large-scaleVRP differentformal2025 title sameauthors. NOtrainingDARfixeddistancebias/POMObase, relatedworksread. Need currentarxivversion/formalmetadata inventory, taskTSPnotyetseen mainappearsCVRP only."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Freshactualv1DAR additivefixedb=-logdnearestK otherwise-d nothardcandidateprune, thenC50tanhmasksoftmax. NoadditionalDARparamsbutbase225ksteps100then100-500 trainingRTX3090. CVRPonlyv1alltables, SetX5.66vsprose5.27different32subset; sixXXL7-90s, greedyandGLOPfaster butworse, K50Leuven1better100. Needformalextendedversion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "All9actualarxivv1pages concludedincludingrefs; formal2025journal15pages extends6tasks+theory vsCVRPv1so sourcecoveragegapexplicitawaitformalcopy. Officialftwangyang/DARmaster584-membertreecheckednoPDFZIP, README6taskcommands, formalabstractdistinct. Noverifieduntilnewformalextensionresolved."
+    },
+    {
+      "source_id": "published",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "FreshuserformalIEEE15pagesOct2025 pp18900-18914, DOIverified. Exactaccepted2025-07-08 published07-17 currentversion10-09;2institutions4authors. Extended6tasksTSPATSPCVRPVRPTWCARPKP explicit, currentDARintegratedtrainingnotjustv1noretrainclaim. RelatedworksnewINViT/promptetc read."
+    },
+    {
+      "source_id": "published",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "FreshformalProp1boundedscaleindependentlogitrange entropy~lnn assumptionnotoptimality; DARgeneralmetriccanbeexpertpriority, b=-logdtopK else-d NOhardpruning; formalnewweightsomega1/2 andexplicitDARINTRAIN notposthoc, unlikev1claim. Prop2proofassumesmassshiftalreadyhigherprobs (empirical81.39percentordering notuniversal), Taylor smallperturbation. Needqualifytheoryguarantee."
+    },
+    {
+      "source_id": "published",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "FreshProp2completeconditionalmassordering,Prop3idealizedd~1/sqrtn andsecondneighbor sqrt2 ratios vs-d/1/d/-lnd, tanhC50changesasymptoticproofacknowledged. FixedexpertfunctionnoNNparamsbutbasejointRLtrainingmulti-startREINFORCE. Algo1imagependingvisual. Needweightsparameteractualfixed/settinglater."
+    },
+    {
+      "source_id": "published",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Freshformal6taskexperimentalsettingsK100omega=.5/.5fixed NNparamsnotadded, DARparticipatesRLtraining200k100+25k100-500 forTSP/CVRP. RTX3090Pytorch1.13, allneuralgreedynoextra search claimsmultistartbudgetverifycode. CARP128ktrain/100testdegree1-5costdemand1-10capacity100, POMOencoderGCNreplacementtask-specific. TableI-IIimagespendingvisual; 49TSP/100CVRP med,6XXL; remains3.69/5.66/10.82 gaps, LEHDbeatsTSP/classicalbettermed. Significanceunitnotinfer."
+    },
+    {
+      "source_id": "published",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "FreshformalextendedATSPMatNetK50train20/50test200 due256onehotlimit; VRPTW100train->1000, CARPV50E100train endpoint-averageedgeproximity, KPweight/profitreciprocal distance train100, taskseparatetrainall. TablesIII-VIII andFig8-9imagespendingzoom. Formalnotclaimv1CVRPonly; alphaweightsfixed. Negative/ratioexpressionsneedtypedaccurate."
+    },
+    {
+      "source_id": "published",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "FreshXML35alltableimagepending, RRC100/aug8separateadditionalinferencestrategiesnotdefault. Uniform10kTSPCVRP100 LKHreference, main DARnotalwaysbestCVRP. KproblemdependentVRPTWlargerworse, weights .5/.5 notlearned. Entropyvisualsinglefirststepillustrationnotfullqualityproof. Need14-15refs."
+    },
+    {
+      "source_id": "published",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Completedformal15pages all56refs+biographies, noappendix/extra scientificmaterialpointer. Sixproblemextension/theory nowactualfullread notabstractinference. Needvisualallrastertables/Alg1 thenrecordresolveissue. Formalref17T2TCOsameT2Ttitle, nofutureedges."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dar",
+      "category": "contribution",
+      "statement": "Fixedproximityscore addedtologits withnoextraNNweights, formalinsideRLtrainingnotposthocpatch.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            4,
+            5,
+            7
+          ],
+          "locator": "Equations10-14/31 Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "Entropytheoryconditionalboundedrange/massordering/idealizedspacing; no universaloptimality qualityguarantee.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Propositions1-3 assumptions andtanhcaveat"
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "category": "method",
+      "statement": "Actual6separatelytrainedtasks, MatNetATSP/GCNCARP/weightprofitKP distinction.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1,
+            8,
+            10
+          ],
+          "locator": "Sections4A/4C"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "All12tables budgets/benchmarkexceptions/residualgaps/optionalRRCaugmentation andtableerrata/significanceunitlimitsqualified.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "TablesI-XII Figures7-10"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive corefixedDAR-guided autoregressive decisions, optionalRRCdistinct taskmodelsseparate.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Sections3C/4A/4C TableVIII"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, acceptance, publication, date",
+      "source_url": "https://doi.org/10.1109/TNNLS.2025.3588209",
+      "locator": "Userprovidedformal15pagetitlepage accepted2025-07-08 publication2025-07-17 versionOct9 issueOct2025,4authors2institutions. Datearxivfirst2024-01-13 replacesunsupported2023-11-01."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://doi.org/10.1109/TNNLS.2025.3588209",
+      "locator": "Formal15pagesFULLREADnoappendix ormissing-scientificpointer; earlierarxivv1all9read keptseparate. Publisherrobotverification, authorJia/MeilistingsDOIonly, official584-membermastertree manuallyinspectednoPDFZIPsupplement. Priorformalextensioncoverageissue resolvedbyuserprovided15pagefile, notbyabstract."
+    },
+    {
+      "field": "code_url, configurations",
+      "source_url": "https://github.com/ftwangyang/DAR",
+      "locator": "FullREADME, TSP/CVRPconfig andCVRP/test_vrplib_time.py read:250kstepsconfig vs225kpaper, TSPaug1/CVRPaug8, benchmarkmin(n,1000)starts greedymaxbest, noNNweightupdates; budgetskeptdistinct."
+    },
+    {
+      "field": "problems, training, theory",
+      "source_url": "https://ieeexplore.ieee.org/ielx8/5962385/11195929/11083123.pdf#page=5",
+      "locator": "FormalDARparticipatestrainingexplicit; omega1/2fixed.5/.5, sixdedicatedtaskmodels, expandedtheoryassumptionsnotuniversalqualityproof. Replacedoldgenericnormalizedgeometry/lowoverheadnote."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ieeexplore.ieee.org/ielx8/5962385/11195929/11083123.pdf#page=4",
+      "locator": "FormaloriginalFigure3 Rect(310,48,565,190)5x, allrasterTablesI-XII Algorithm1 andtheoryformulasvisuallychecked;TableIILeuven1costtypoandpvalueunitlimitsdocumented."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2401.06979",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-01-13; title on abstract page: Distance-aware Attention Reshaping: Enhance Generalization of Neural Solver for Large-scale Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/dar/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dar",
+      "cited": "neurewriter",
+      "reference_label": "5cited2018formalbib",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "6",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "attention-model",
+      "reference_label": "9",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "pomo",
+      "reference_label": "10",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "att-gcn",
+      "reference_label": "11",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "asp",
+      "reference_label": "14",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "t2t",
+      "reference_label": "17T2TCO",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "lehd",
+      "reference_label": "18",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "elg",
+      "reference_label": "19IJCAI2024",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "omni-vrp",
+      "reference_label": "20",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "invit",
+      "reference_label": "22",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "23",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "rbg",
+      "reference_label": "28",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "tam",
+      "reference_label": "29",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "h-tsp",
+      "reference_label": "30arxiv2023",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "udc",
+      "reference_label": "31",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "glop",
+      "reference_label": "32",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "36",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "sym-nco",
+      "reference_label": "37",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "pointerformer",
+      "reference_label": "38",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "fer",
+      "reference_label": "46",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "mvmoe",
+      "reference_label": "50",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "51",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "bq-nco",
+      "reference_label": "55arxiv2023",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "difusco",
+      "reference_label": "56",
+      "description": "Explicit formal numberedintext citation plus matching formalbibliography; actualcitedyear/venue retained.",
+      "evidence": [
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "published",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching formal numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "pointer-networks",
+      "reference_label": "arxivv1:Vinyals2015",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "arxivv1:Bello2016arxiv",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "efficient-active-search",
+      "reference_label": "arxivv1:Hottung2021arxiv",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "arxivv1:Khalil2017",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "dact",
+      "reference_label": "arxivv1:Ma2021",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "dar",
+      "cited": "learning-to-delegate",
+      "reference_label": "arxivv1:Li2021",
+      "description": "Explicit citation in earlieractualreadarxivv1 only; not falsely attributedtoformal2025reference list.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitv1author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingv1bibliography."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readformal15pageextension inadditiontoearlierv1ninepages, replacingpreviousmissingformalcoverageissue.",
+    "Correcteddate2023-11-01toarxivfirstJan13,2024; exactacceptanceJuly8/publicationJuly17,2025.",
+    "Addedofficialcode andexpandedactual6tasks includingPacking, formalscoreweights/trainingnotposthoc, conditionaltheoryqualification.",
+    "Qualifiedalltablebudgets/currentcodeaugstarts, benchmarklossesresidualgaps andnoformaloptimalityclaims.",
+    "DocumentedTableIprose mismatch/TableIIGLOPcosttypo andunreproduciblesixcaseexactWilcoxonpvalueswithoutidentifiedreplicates.",
+    "OriginalformalFigure3 and31explicitcitationedges withformal/v1provenance separate."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "bd0d41170c084e86e2d01503349d209237674c2ca0447c2295a707832e3187d0"
+}

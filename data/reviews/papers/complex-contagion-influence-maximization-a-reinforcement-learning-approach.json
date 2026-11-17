@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "paper_id": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+  "note_path": "specialist/complex-contagion-influence-maximization-a-reinforcement-learning-approach.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "4074e2857db42a5687c54dd2625ca4c57007990c3196dc08d1b178b8a781fadb",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2023/0614.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2023/0614.pdf",
+      "version": "Formal IJCAI2023 MainTrack ten-page proceedings PDF, complete main/fullrefs read",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-b85479c5f0/publisher.pdf",
+      "sha256": "eebe1e384ad80aaf06524b073f7c11a13e13bf1712bc9c261a248cac2100adc5",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "author-full",
+      "url": "https://drive.google.com/file/d/1tqBiyHeAdOA7_IL8ShiMmgYz2MUN-Kg1/view",
+      "retrieval_url": "https://drive.usercontent.google.com/download?id=1tqBiyHeAdOA7_IL8ShiMmgYz2MUN-Kg1&export=download",
+      "version": "Author12-page HarvardTeamcore-linked manuscript including full scientific AppendicesA-E and repeatedmain/fullrefs, allactuallyread",
+      "local_path": "research/full-text-review/complex-contagion-influence-maximization-a-reinforcement-learning-approach/author-with-appendices.pdf",
+      "sha256": "f5600c0c1554c727cf09c9e274a13c99006e8beb16b65fe951afd2d15ee696d4",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Read full10formalpages including2pagefullrefs/allresults. KnownmissingAppendixA-Eproofs/hyperparams/networks/MIP/extraresultsexplicitlycited; formal10pnotcompleteaux. AuthorHaipengweb10pduplicatealsoomitsappendices. HarvardteamcoreextendedPDFindexedwithAppendicesbutnormalGET403/web503; keepreadingpendingaux. GATDoubleDQN/filteringearlyexplorationannealed/fullsetfallback/reward+TD-PER/nsteppiorities/globalleaveoneoutshaping. Modelsgraph-specific;9networkssmallV100<2htraining,15runsbestvalidationnotmean,Random+50mean andstochbaseline20mean;TableOPTSPY67time-limitcontradiction meansnotallOPTcertified. Fig4prosevariesp1 contrarynonzeroKmodel/writtenp0 needauxcheck. Theorem3anySsubsetA too broad:triangle+isolatedK2T3 restrictedA3vsoptimal4, scopedconceptualcounterexampletocheckauxproof, notexperimentrefutation."
+    },
+    {
+      "source_id": "author-full",
+      "first_page": 1,
+      "last_page": 12,
+      "notes": "Read complete12-page HarvardTeamcore currentpublicDrive manuscript including allrepeatedmain/fullrefs andA-E, supplementneverin10pformal/otherauthorcopies. A suppliesTheorem1non-submodularcounterexample,Bactualhyperparams5000steps/n5/.0005batch32/8headGAT/50trainMC1000evalMC/pernetworkomega&beta,C40-410nodes,DprintedMIP missingseed/persistenceterms/domaindeclarations confirmedhighresactualpage12,Eseedvisualization. Bothsourceversionsidentitysixauthors/fivetaskedinstitutionschecked; currentteamcorepublicationHTMLlinksDriveexactid andoldHarvard403notbypassed. Allscientificmainfigures+appendixoriginalFig6/Table2 visuallyviewed contact0/1/5 andMIPcloseup; cropFig3revised45,45,567,2482.5x finalpublicimageviewed. Noownimplementationrepoestablished; promisedDPIMimplementationnotobtained, so noexactcode/reproductionorcertifiedMIPclaims."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Non-submodularseedcomplementarity creates usefulsolution andcredit sparseness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/Theory/motivatingexample"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Structuralexplorationfilter+rewardawarePER+globalmarginalshaping withGATDoubleDQN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Contributions/Algorithm1/Eq5-7"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Sequentialseedconstruction,full-nodeexplorationfallback, return-basedpriority andepisodicshape.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "MDP/Algorithm1/Eq5-7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Known-networktrainedseedconstructor; cross-networkreuse explicitfuturework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Experiments/Limitations/Conclusion"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "9smallgraphs, bestvalidated15RLruns notmean, reportedTable1wins/ties andremainingMIPgaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Section6/Table1"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Printedfilterunrestrictedclaimcounterexample, MIPseed/persistence/domainomissions andfinitehorizon/referenceuncertainty.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Theorem3/MIPbenchmarkdescription"
+        }
+      ]
+    },
+    {
+      "id": "supplement",
+      "category": "reproducibility",
+      "statement": "FullauthorAppendixA-Eactualproof,hyperparameters40-410graphsizes,MIPandseedvisualization.",
+      "evidence": [
+        {
+          "source_id": "author-full",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "AppendicesA-E"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and reading copy",
+      "source_url": "https://ijcai.org/proceedings/2023/bibtex/614",
+      "locator": "FormalMainTrack5531-5540sixauthors/fiveinstitutiongroups,month8/year2023 exactDOI614. Nomatchingarxivestablished. Completeformal10+author12 actualreadindependently; article-specificscientificAppendicesA-EonlyinDrive12p."
+    },
+    {
+      "field": "supplements scientific inventory and public recovery",
+      "source_url": "https://teamcore.seas.harvard.edu/publications/",
+      "locator": "CurrentprimaryTeamcorepage directDriveid1tqBiyHeAdOA7_IL8ShiMmgYz2MUN-Kg1 points12pPDF SHA f5600c0c1554c727cf09c9e274a13c99006e8beb16b65fe951afd2d15ee696d4; sourceurl/retrievalseparate. OldHarvard403/web503, HaipengrawandNTU10pomitA-E. OfficialJSONvideos[]; scientificA-Ecomplete. PromisedDPIMcodecouldnotbeestablished; transparentlynotclaimedread/reproduced,noCodeURL."
+    },
+    {
+      "field": "protocol and printed qualifications",
+      "source_url": "https://drive.google.com/file/d/1tqBiyHeAdOA7_IL8ShiMmgYz2MUN-Kg1/view",
+      "locator": "AppB5000steps/n5/lr.0005/b32/8head/target2500then20/50MCtrain1000eval/pernetworkomega&beta;AppC40-410nodes;AppDMIPx0<=neighborseeds/K,xt<=neighborprev/K lacks seed/persistence/domains confirmedactualp12image. Theorem3triangle+isolatedexample/finiteenumeration boundary-check.json, notbenchmarkinvalidity."
+    },
+    {
+      "field": "figures tables and reference identities",
+      "source_url": "https://ijcai.org/proceedings/2023/0614.pdf#page=5",
+      "locator": "Allformalfigures/Table1 andAppA/Efigures/Table2actualviewed contacts0/1/5; MIPp12zoomed. OriginalFig3crop45,45,567,248 at2.5x completecaptionfinalpublicfileviewed.13actualbody+bibinternalrefs,attentiontypo andpreprintyearvariants qualified."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.2016",
+      "description": "Neural CO background; actual arxiv1611.09940 retained reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.2017",
+      "description": "Sequential graph-CO foundation and replaced S2V approximation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2018",
+      "description": "Attention constructor background; printed Attention,llearn typo/year2018 matches same three-author formal ICLR2019 title. Identity crosscheck: Complete reference prints Attention,llearn to solve routing problems! with duplicated l and ICLR2018. Exact Kool/vanHoof/Welling byline, title and actual attention-body references identify the known work; typographic/venue-year errors disclosed rather than creating a different paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked. Final manual literal bibliography/body identity resolution: Complete reference prints Attention,llearn to solve routing problems! with duplicated l and ICLR2018. Exact Kool/vanHoof/Welling byline, title and actual attention-body references identify the known work; typographic/venue-year errors disclosed rather than creating a different paper."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.2020",
+      "description": "RL/multiple-rollout background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            10
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "gcomb",
+      "reference_label": "Manchanda et al.2020",
+      "description": "Large-graph IM background; no claim RL4CCIM inherits billion-node scalability.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            8,
+            10
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.2018",
+      "description": "Recurrent-policy CO background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al.2018",
+      "description": "Policy-gradient CO background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.2019",
+      "description": "Beam-search background, actual arxiv1906.01227.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al.2021",
+      "description": "MCTS/test-time search background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al.2021",
+      "description": "Neural-guided dynamic programming background; four authors/arxiv2102.11756 identify same formalCP2022 article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.2021",
+      "description": "Active-search background; same exact three-author article formally ICLR2022.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "Mao et al.2019",
+      "description": "Application background cites actual SIGCOMM2019 Decima title/fiveauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    },
+    {
+      "citing": "complex-contagion-influence-maximization-a-reinforcement-learning-approach",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al.2020",
+      "description": "Jobshopapplication background cites exactNeurIPS2020title/sixauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicitbodyreference and matchingcompletebibliography; year/titlevariants manuallychecked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Recovered current author12p manuscript with complete A-E appendices after legacy403; read both22registeredpages.",
+    "Added actualbyline/task-specific constructive classification and best-of15ratherthanmean protocol.",
+    "Recorded observedgains/ties/MIPgaps andliteralfilter/MIPcounterexamples withoutrefutingunavailablecodeexperiments.",
+    "Preserved formalmonthprecision/noinventedarxiv/code, originalFig3 and13directinternalcitationidentities.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged.",
+    "Resolved final lexical citation-identity flag from actual complete bibliography/body and exact byline/version, preserving source title/date discrepancies."
+  ],
+  "reviewed_note_sha256": "315af66e3a789c3bc106c114e90e42d9ee3e19a4c196e619fa540b6f4a4abb15"
+}

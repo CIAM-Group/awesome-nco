@@ -1,0 +1,658 @@
+{
+  "version": 1,
+  "paper_id": "compass",
+  "note_path": "specialist/compass.md",
+  "baseline_note_sha256": "7d822e19924cc6cf4c6bb772c8e528bb959c229952ff471ece1b0a47dd12cda5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/compass/paper.pdf",
+      "sha256": "c668f514df7a825c31f9cca99635d610b82d65f3a363dfa6aae9fb8e7260f4fa",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Supplemental-Conference.zip",
+      "version": "PublisherZIPscientificappendix14pagesprinted14-27,completeAppendicesA-N;allreadandnestedcodeinventorychecked.",
+      "local_path": "research/full-text-review/compass/appendix.pdf",
+      "archive_member": "supplementary/appendix.pdf",
+      "sha256": "63c134e0c3f418b72be2fd8289530ea0df5d0248b50933b0cdd988a04e33f219",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh author/title/allInstaDeepaffiliation, motivationandrelatedwork, actualTSP/CVRP/JSSP scope andcontinuouslatentconditionalconstructivepolicy, sameparameters-versusdifferentproblemcheckpoints distinction pendingfullmethods."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 13,
+      "notes": "Fresh entiremainmethods16Duniformlatent/bestconditiontraining/CMAESandVoronoi, all mainTable1-2 exactbudgets/TPUhardware/10kvs1kroutingcounts, altereddistributions/searchplots/limits,completeauthor-yearreferences. OfficialpublishedZIPsupplementlinkmanuallyidentified anddownloadunderway;AppendicesA-Lnotyetread."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Fresh all extendedTable3 andmutationTable4 values, searchmetrics distinction, nine mutation definitions, task-specificroutingvsJSSParchitectures,16Dlatent100scaling,2Dvisualizationprotocol. ZIPmanuallyinventoriedoneappendixPDFplusnestedcodeZIPwithREADMEonlyscientificdocumentcandidate."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 14,
+      "notes": "Fresh allremaininglatentvisualization/searchablation/alternatives, trainingAlgorithm1 tie-exclusion, explicit128conditions/batch8/CMAESparameters,4.5/5.5dayTPUcosts, few-shotTable6/limits/relatedwork,timingTable7,undertrainingTable/plots, andAppendixN explicitoriginalEASimplementationdifference/Table8."
+    }
+  ],
+  "claims": [
+    {
+      "id": "family",
+      "category": "contribution",
+      "statement": "16Dconditionalconstructivepolicyfamily trainedonbestconditionedtrajectory; testCMAESchangeslatentnotnetworkweights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Section3.2"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "Separate routingPOMO andJSSPattentionactorcritic networks, latentQKVversusMLPconditioning; no sharedcrossproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "128conditions/batch8reported, tiesexcluded, 4.5/5.5/4.5dayTPUtraining and100amplification; multipleCMAEScomponents.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            9,
+            10
+          ],
+          "locator": "AppendicesE-G"
+        }
+      ]
+    },
+    {
+      "id": "mainresults",
+      "category": "experiment",
+      "statement": "FormalTable1 nineofelevenselectedRLcomparisons, EASbetterCVRP150/200 andclassicalstrongerJSSP;10krouting100/1klarger dataset times.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections4-4.1 Table1"
+        }
+      ]
+    },
+    {
+      "id": "extended",
+      "category": "experiment",
+      "statement": "ExtendedEAS-L2D3.7%beatsCOMPASS4.7%JSSP10x10; allmutationTable4 andfewshotTable6qualifybroadclaims.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Tables3,4,6"
+        }
+      ]
+    },
+    {
+      "id": "version",
+      "category": "experiment",
+      "statement": "FormalAppendixNwholedecoderEASbackprop differsoriginal; currentREADMEdescribeslatercorrection, formalnumberskeptseparate.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "AppendixN Table8"
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "category": "experiment",
+      "statement": "TPUTSP100500evaluationtiming0.28msCMAESversus297.99msdecoding, not completebudgetlatency; undertrainedmodelablation.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12,
+            13
+          ],
+          "locator": "AppendicesL-M"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive: separateproblemcheckpoints, freshrolloutspercode, no incumbent-neighborhoodedit or networkweightadaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.2-4"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Paper-Conference.pdf",
+      "locator": "TitlepageallsevenauthorsInstaDeep;ClémentaccentandThomasD.BarrettpreservedfromPDF;NeurIPS2023formalyear."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2311.13569",
+      "locator": "Manualhistoryfirstsubmission13November2023; noindividualacceptancenotificationevidence."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Supplemental-Conference.zip",
+      "locator": "Manualofficialpagelinkinspection; complete93,786,465byteZIPacquired. Exactoutermembers supplementary/,appendix.pdf,compass.zip. appendix14pagesA-Nfullyread; nestedcodeZIP199files,onlyREADMEamongPDF/ZIP/MD/TXTdocumentcandidates;READMEfullyread."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/instadeepai/compass",
+      "locator": "Mainp7footnote1; currentREADMEandpublishednestedREADMEread; codeconfigs inspectedJSSP100testinstancesandTable5/defaultdifferences. EASimplementationcorrectionexplicit."
+    },
+    {
+      "field": "citation version identity",
+      "source_url": "https://arxiv.org/abs/2210.03475v1",
+      "locator": "Poppyold2022titlePopulation-BasedRL,threeauthors; samearXivv2renamedWinnerTakesItAllandexpandedauthors. Actualoldercitationpreserved."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/18d3a2f3068d6c669dcae19ceca1bc24-Paper-Conference.pdf#page=4",
+      "locator": "OriginalFigure1PDFp4 Rect(125,70,487,206)5x; completepanelsvisuallycheckedandatomicallyinstalled. MainTable1andsuppTables3-8,search/latent/mutationplotsvisualchecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/18d3a2f3068d6c669dcae19ceca1bc24-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/compass/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2311.13569",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-11-13; title on abstract page: Combinatorial Optimization with Policy Adaptation using Latent Space Search. This date is preprint history, not formal publication. Cached research/full-text-review/compass/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "compass",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arXiv",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018CPAIOR",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "attention-model",
+      "reference_label": "Kool2019ICLR",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "pomo",
+      "reference_label": "Kwon2020NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn/Furelos-Blanco/Barrett2022arXiv2210.03475Population-based oldtitle",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017NeurIPS(asprinted)",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022ICLR",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021AAAI",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2021ICLR",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2020ECAI",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2022TNNLS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "dact",
+      "reference_label": "Ma2021NeurIPS",
+      "description": "Explicitauthor-yearcitationandmatchingreference; PoppyoldertitleverifiedfromarXivversionchain, nofuturepublicationattributed.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingcompletebibliographyentry;actualcitedversionpreserved."
+        }
+      ]
+    },
+    {
+      "citing": "compass",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al., 2020",
+      "description": "Related work cites ECO-DQN for MaxCut neural optimization; exact four-author AAAI2020 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredomittedJSSPandSchedulingfamily;separatetaskmodels/architecturesremainsspecialistconstructive.",
+    "Clarifiedlatentcodesearchnotnetworkweightorincumbentadaptation,continuousfamilynotinfiniteprovablydistinctsolvers.",
+    "AddedcompletepublisherZIPscientificappendixmanualinventoryandall14pagesreading,alltraining/candidate/budget/hardwareprotocols.",
+    "Qualifiedformal9of11claimwithEASCVRPfailuresandextendedEAS-L2DstrongerJSSP10x10;separatedheuristicgapanddatasetcount/timing.",
+    "RecordedformalEASimplementationdifferenceandlaterofficialREADMEcorrection,pluspaper/defaultcodediscrepancieswithoutmixingnumbers.",
+    "ResolvedPoppyoldpreprinttitle/versionmapping,restoredauthoraccent,removedgenericnotificationacceptanceday,andinstalledtraceableoriginalFigure1crop.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "eb7d59c5930f88388aa06e7b78fcb3e3c972b67074664f1c90f5ca92780dbd8c"
+}

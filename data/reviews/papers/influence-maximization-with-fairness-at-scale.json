@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "paper_id": "influence-maximization-with-fairness-at-scale",
+  "note_path": "specialist/influence-maximization-with-fairness-at-scale.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "bdc6e3989503efbd2e6057bff8890ce96027a2ae14ba7825f810dc79ddf28541",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2306.01587",
+      "retrieval_url": "https://arxiv.org/pdf/2306.01587",
+      "version": "arXiv2306.01587v2 Jun6 2023,12p extendedversion including fullscientificAppendixA1-A4",
+      "local_path": "research/full-text-review/influence-maximization-with-fairness-at-scale/reading-candidate.pdf",
+      "sha256": "2dbe32011d1dc80739db9c63e397f8bf9b416ba63da17ba2e8857a06c2799793",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Actual allpp1-4 read:fourauthor identity/relatedwork/fullfairnessdefinitions/equity proportionalaffectedpopulation notequalseeds, CV sigmoidscore, FPSsampling/NNtraining. No diffusiontopologyrequiredbyproposedembeddingfit but baselinesuseit. Specificsensitiveattributes requirelearnedembeddings; no universalcheckpoint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Actual allpp5-8 read: bothfullNNarchitectures/NCE+fairnessMSE/sharedhiddenFAC, fairgreedyAlg1/normallocation/toplambdaheuristic/alpha.2, complete datasets and baseline protocols/splits60-20-20/10epochs/dim50/lr.1. Fullfairbaselines onlysmallsubsamples vs full1.17MWeibo/336kDigg fairnessagnosticcomparators; heldoutcascadeDNI notlivefieldorIC optimum. Weibo genderandFPS+FAC negative/qualifications retained."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Actual allpp9-12 read: fullunbalancedgenderintervention/attributecombination results, complete30references, fullscientificAppendixA1-A4 complexity/distributions/50percent influencer50percentmale flip/concatvsjointtraining. All3contact sheets allplots/table/keyformulasactuallyviewed; Fig1fullcaption viewed. ExactFairEmbbodyp3+7/bib10edge established. Declaredprimarycodeurl ordinaryGitHub404/gitnotfound; exacttitle/code search no verifiedreplacement, no codeinventoryclaim. DOIprimarypagination differs institutionalcitation so no unqualified pagination claim."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Scale equity-aware influence selection using logged cascades.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "FPS/FAC/fairgreedy and sensitive-attribute experiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Sections3-6/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Equity score, sampled cascade training/shared FAC representations, surrogate greedy seedconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations1-14/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Attribute-specific trainedembeddings/concatenation notone sharedcheckpoint; constructive neuralembedding+classicalgreedy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            9,
+            11,
+            12
+          ],
+          "locator": "Learning/decoder/A4"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Chronological loggedcascadeDNI, sampled fairbaselines vscompleteagnosticbaselines, syntheticDigg/intervenedWeibo andnegativecombo cases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Evaluation/Figures2-10"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "No certifiedseed/fairness guarantee; data/sensitiveprofile/surrogate/comparator boundaries.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Method/evaluation/appendix"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full12p andA1-A4read, primaryidentity/history, declaredcodeunavailable noinventoryclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            10,
+            11,
+            12
+          ],
+          "locator": "Byline/codefootnote/bibliography/appendix"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and versionhistory",
+      "source_url": "https://doi.org/10.1145/3580305.3599847",
+      "locator": "Fourauthors/title/KDD2023 publishedAug4; actualarxiv v1Jun2/v2Jun6 2023. PrimaryDOI page4046-4055 vsinstitutional518-528 conflict preserved rather thanasserting one unqualifiedrange."
+    },
+    {
+      "field": "supplements scientific sourceinventory",
+      "source_url": "https://arxiv.org/pdf/2306.01587v2",
+      "locator": "All12p refs/fullA1-A4 read;all3contacts/everyfigure/table/keymath viewed. Declaredcodeurl footnote2 ordinary404/gitnotfound savedcode-access.html; exactsearch no verifiedreplacement, no inventory/execution claim."
+    },
+    {
+      "field": "classification and originalfigure",
+      "source_url": "https://arxiv.org/pdf/2306.01587v2#page=5",
+      "locator": "Attribute-specificFPS/FAC embeddings/greedydecoder. OriginalFig1p5crop50,73,562,257at3x fullcaption viewed. FairEmb exactbodyp3/7 and completebibp10."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "influence-maximization-with-fairness-at-scale",
+      "cited": "adversarial-graph-embeddings-for-fair-influence-maximization-over-social-networks",
+      "reference_label": "[17]",
+      "description": "Adversarial FairEmbedding is related work and a gender-only small-sample baseline; exact six-author IJCAI2020 bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            10
+          ],
+          "locator": "Related work/baseline/fullreference17"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read complete extended scientific appendix and distinct heldout/synthetic/intervention protocols.",
+    "Qualified equity and seed-decoder surrogates without inventing an approximation guarantee.",
+    "Separated small-sample fair baselines and full-dataset fairness-agnostic comparisons.",
+    "Recorded unavailable declared code and unresolved pagination difference."
+  ],
+  "reviewed_note_sha256": "5f9547712842ca79faed098f340b1c98ab2aef31ff7f04056dd0e290388c1e96"
+}

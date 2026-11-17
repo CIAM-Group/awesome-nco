@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "paper_id": "deep-graph-matching-under-quadratic-constraint",
+  "note_path": "specialist/deep-graph-matching-under-quadratic-constraint.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "5c3c4f541ff83626e3b54c65c0bf1c491b30e3862da25913e0b74a09fb3558e9",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Gao_Deep_Graph_Matching_Under_Quadratic_Constraint_CVPR_2021_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Gao_Deep_Graph_Matching_Under_Quadratic_Constraint_CVPR_2021_paper.pdf",
+      "version": "Formal CVF CVPR2021 ten-page5069–5078 five-author reading copy, all main/48references and key visuals checked.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-5112d6f0a1/publisher.pdf",
+      "sha256": "d052b61e70bb33a4121e440a077b541c7fe9e857e24a5a7f1dbc7d90c62a801f",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all formal pp1?3 byline Wuhan/SCUT5authors; unary CNN+coordinate features and deep-feature weighted adjacency constraints; nonconvex relaxed KBQAP with proper initialization; motivation class imbalance FMloss, differentiability via modified FrankWolfe; distinction relaxation/discrete output and no unconditional global optimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read complete pp4?5 geometric weighted adjacency inner product, GCN+selfupdate and exp affinity; objective ||AD?XBDXT||F??tr(XuTX) quartic in relaxedX despite QAP shorthand; modified FW projected/Sinkhorn training Hungarian inference; expressly local approximate no global min guarantee; training soft iteration not complete-incumbent neural feedback. FMloss class imbalance motivation/numerical boundary."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "All pp6?8 read Eq15 exponent falsepositive/falsenegative mass alpha2 beta.1,supervised VGG/SGD.001,3x5FWtraining steps,GCNvsSpline2versions; Pascalfiltered70.3mean vsunfilteredF152.6<BBGM61.4,Willow97.7vs96.8butmbike98.8<99.4/duck92.8<93.8;syntheticoutliersonlyinference;topology-similaritylimit explicit;ablation69.3/68.5/68.3/67.8nested not independent;lossplotcurves truncatedafterexplosionnotconvergenceproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All48references pp9?10 read identities:DGMC13/GCNN14/BBGM32/PCA39/LCS42/CIE45/deepGM46 direct;differenttitleNGM40andPCAjournal41notconferencealiases. Fulltheorynoindependentappendixindicatedinpaper."
+    }
+  ],
+  "claims": [
+    {
+      "id": "qc-contrib",
+      "category": "contribution",
+      "statement": "Weighted visual/geometric graph features, approximate structural refinement and false-matching supervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Figure2/Eqs2–15"
+        }
+      ]
+    },
+    {
+      "id": "qc-method",
+      "category": "method",
+      "statement": "Nonconvex relaxed adjacency discrepancy with Sinkhorn training and Hungarian-based approximate inference; no global guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Algorithm1/Eqs7–13"
+        }
+      ]
+    },
+    {
+      "id": "qc-results",
+      "category": "experiment",
+      "statement": "Filtered Pascal69.3/70.3 versus unfiltered F152.0/52.6<BBGM61.4; Willow97.7mean with class negatives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–4/Figures6–8"
+        }
+      ]
+    },
+    {
+      "id": "qc-limit",
+      "category": "limitation",
+      "statement": "Topology agreement and known annotated keypoints constrain scope; numerical plots not universal stability/convergence proof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            7,
+            8
+          ],
+          "locator": "Sections3.3/4.3"
+        }
+      ]
+    },
+    {
+      "id": "qc-class",
+      "category": "classification",
+      "statement": "Specialist constructive learned affinities+classical refinement, not neural editing of complete incumbent or cross-native shared policy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithm1/GCN and Spline variants"
+        }
+      ]
+    },
+    {
+      "id": "qc-repro",
+      "category": "reproducibility",
+      "statement": "Complete10p/48refs and key visuals read; full51member code/README and necessary current loss/decoder inspected.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "References/source inventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR46437.2021.00503",
+      "locator": "Cached Crossref exact5authors/title DOI published-print2021-06; formal p1 Wuhan/SCUT. CVF10p printed5069–5078 vs deposited5067–5074 discrepancy recorded."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2103.06643",
+      "locator": "Cached canonical arxiv history v1March11,2021/v2March14; reading formal CVF PDF not arxiv bytes."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/html/Gao_Deep_Graph_Matching_Under_Quadratic_Constraint_CVPR_2021_paper.html",
+      "locator": "CVF landing only paper/arxiv, full10p no missing science appendix named; exact title supplement/arxiv search and official full51member archive f4ad8ce06e3711434ae44f5e267135972e3c4692 noPDFZIPipynb, entire README checked. Checkpoint links not scientific supplement."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Gao_Deep_Graph_Matching_Under_Quadratic_Constraint_CVPR_2021_paper.pdf",
+      "locator": "OriginalFig2 wholecaption PDFp2/5070 Rect40,65,572,236 at2x physicallysaved/actualview; pp2/4–8 architecture/math/algorithms/loss/traces/alltables/qual viewed."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Zerg-Overmind/QC-DGM",
+      "locator": "Necessary full utils/qc_opt.py and fm_loss.py plus QCDGM/model.py98–158 and eval.py79–88 read. Current vs printed iteration/loss differences explicitly attributed; no historical performance invalidity inferred."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Gao_Deep_Graph_Matching_Under_Quadratic_Constraint_CVPR_2021_paper.pdf",
+      "locator": "All48bib pp9–10 read;7direct identities. Refs40/41 distincttitle substantive journal works excluded as conference aliases."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "13",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[13]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "gcnn-branching",
+      "reference_label": "14",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[14]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "32",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[32]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "39",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[39]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "42",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[42]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "cie-h",
+      "reference_label": "45",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[45]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-graph-matching-under-quadratic-constraint",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "46",
+      "description": "Direct actual bibliography full-title/byline identity, not different-title substantive journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[46]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending draft after complete10formal pages/48refs read.",
+    "Retained unfiltered F1 deficit and class negatives; no universalSOTA/optimality claim.",
+    "Separated exact current code loss/iteration differences from printed method.",
+    "Recorded formal CVF/Crossref pagination discrepancy without fabricating exact publication day."
+  ],
+  "reviewed_note_sha256": "f6933468830210dff677fe32565250e94c57651c0f53e4604b4850fcd10f2c46"
+}

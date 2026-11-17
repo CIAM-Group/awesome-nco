@@ -1,0 +1,366 @@
+{
+  "version": 1,
+  "paper_id": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+  "note_path": "specialist/contrastive-general-graph-matching-with-adaptive-augmentation-sampling.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "04e01617dfa5e39b9e4020422dacc3485265ebf0a3f880621208011d3374d0f2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2024/0412.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2024/0412.pdf",
+      "version": "OfficialIJCAI2024accepted9p3724–3732; exact2authors.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-7f5b058973/publisher.pdf",
+      "sha256": "93e6a2c1f083c64b48640e761721bcc4eb94a3b9ad10d5761ae3c113d830ec94",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://smufang.github.io/paper/IJCAI24_GCGM_supp.pdf",
+      "retrieval_url": "https://smufang.github.io/paper/IJCAI24_GCGM_supp.pdf",
+      "version": "AuthorlinkedIJCAI24_GCGM_supp.pdf6pAppendixA–F/completebibliography, allread.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-7f5b058973/supp.pdf",
+      "sha256": "f9a9a7bb41f04f84d35eceaffad5540fdc6fcf5380f6ebc32d3aee3d73980e32",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://smufang.github.io/paper/IJCAI24_GCGM_slides.pdf",
+      "retrieval_url": "https://smufang.github.io/paper/IJCAI24_GCGM_slides.pdf",
+      "version": "Authorlinked22pageIJCAI24_GCGM_slides.pdf, alltextandimagepanelsread/rendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-7f5b058973/slides.pdf",
+      "sha256": "2275946195b6796ab44cc77c492aa6ba0b15ff850c6f37031ac384b917a9a7f1",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://smufang.github.io/paper/IJCAI24_GCGM_poster.pdf",
+      "retrieval_url": "https://smufang.github.io/paper/IJCAI24_GCGM_poster.pdf",
+      "version": "Authorlinked1pageIJCAI24_GCGM_poster.pdf, allpanelsreadandrendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-7f5b058973/poster.pdf",
+      "sha256": "51fa4cf7282a398fbb7ffcb1bd5e64aa4d2749d8aeb4359e66d1340d21e23aaa",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exactIJCAI9pagebyline2SMUauthors,fullintro/relatedwork andtraining/inferencefrozenencoder/affinity/classicalsolver;nodecontrastivelossEq1?4 andaugmentationtrackedselfsupervision."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullLmatch/Lnodeobjective,detailedNI/NR/ER/FSaugmentationpool,BiASboundedmomentumweightandF1selflabels,alldatasets/protocols/Table2?3. NotedBBGMunfiltered36.2<SCGM36.6 negativeexception, imagefeaturesfrozennotabsent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadfullablationTables4?5includingpool/tunetime,conclusionacknowledgmentsandallbibliography. ThreeTPAMIdifferent-titleextensions2020/2021/2023 notautomaticallysameconferenceIDs. Realmatchingtaskstillonefamily despitegeneralname."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read completeappendixA?Falg/encoder,hypers/TableAandallaugmentationsTableB/syntheticandrealprotocols,binaryF1definition,syntheticclassicalresultsTableC andablationanalysis."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allperclassTablesD/E,fullBiASablationTableF,informationlevelTableG/pool/sensitivityFiguresA/Bandallappendixrefs. Mainnegative36.2vs36.6confirmed;syntheticclassicalRRWM80.9/60.9beatsGCGM58.1/39.9."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 11,
+      "notes": "Read allslides1?11title/overview/introduction/correspondenceexamples/sideinformationframework andnodeinsertionexample. Willrenderimage-basedpanelsbeforefinalverification."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 12,
+      "last_page": 22,
+      "notes": "Readallslides12?22poolconstruction,BiASnumericalexamplelambda.6alpha2weights1.09/1.93,allresultslides17?20andconclusions;image-basedtableswillvisuallyinspect."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read fullauthorpostertext/header/byline/SMU,method/augmentation/weightupdate/experimentspanels;image-basedtableswillrenderandcrosscheckformalresultsbeforefinalverification."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gcgm-motivation",
+      "category": "motivation",
+      "statement": "Reduce category/image-augmentation dependence by graph-centric self-generated correspondence training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Sections1–2"
+        }
+      ]
+    },
+    {
+      "id": "gcgm-contribution",
+      "category": "contribution",
+      "statement": "Contrastive matching plus diverse augmentation pool and difficulty-smoothed BiAS sampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.4/Fig1/Eq6"
+        }
+      ]
+    },
+    {
+      "id": "gcgm-method",
+      "category": "method",
+      "statement": "GraphSAGE representations feed BBGM or NGMv2; self-generated surviving node correspondences train contrastive/matching losses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.2–3.4; code non-dummy identity matching and LPMP/Hungarian"
+        }
+      ]
+    },
+    {
+      "id": "gcgm-results",
+      "category": "experiment",
+      "statement": "Visual meanF1 gains have matched-backend negative cases; synthetic58.1/39.9 below classical RRWM80.9/60.9; Table5 timing is tuning plus training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables2–5"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "TableC stronger classical synthetic results; TablesF/G negative cases."
+        }
+      ]
+    },
+    {
+      "id": "gcgm-limits",
+      "category": "limitation",
+      "statement": "No universal superiority; component removal and alternate sampler sometimes improve. Frozen VGG pretraining and labeled validation model selection qualify label-free pipeline claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections3–4/Table4–5; AppendixF; current validation source"
+        }
+      ]
+    },
+    {
+      "id": "gcgm-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: trained graphs then discrete decoder, no same checkpoint across native CO tasks and no incumbent editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "Figure1/Section4.1; dataset-specific AppendixTableA"
+        }
+      ]
+    },
+    {
+      "id": "gcgm-repro",
+      "category": "reproducibility",
+      "statement": "Author appendix, slides and poster all read, with complete repo inventory and algorithm/code decoder checks.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "AppendixA–F/all references; author publications materials inventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2024/412",
+      "locator": "Official9p3724–3732/byline two SMUauthors; cached Crossref exactDOI/title/byline issued/publishedprint year2024 month8, no day. PublisherBibTeXmonth8 matches."
+    },
+    {
+      "field": "date/arxiv",
+      "source_url": "https://arxiv.org/abs/2406.17199",
+      "locator": "Cachedprimary arxiv.html submissionhistory v1Tue25Jun2024 01:08:03UTC; matchingtitle/byline."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://sites.google.com/site/fangyuan1st/publications",
+      "locator": "Cached author-pubs.html GCGMentry links exactauthor6pIJCAI24_GCGM_supp.pdf,22pslides,1pposter plusofficialpaper/code. All4sources38pages actuallyread; algorithm/results rendered. Completeuntruncatedrepo185entrytreeSHA2e04884faf9682988f516ad0f6d50262dca55bf1 has READMEonlyMD/noPDF/ZIP/ipynb; fullREADME read."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0412.pdf",
+      "locator": "OriginalFig1+fullcaptionformalPDFp3 cropRect40,45,572,2403x;public/paper-assets/contrastive-general-graph-matching-with-adaptive-augmentation-sampling/framework.png178380bytes exists andactualview_image checked; all keytables/algorithm and supplemental figures rendered."
+    },
+    {
+      "field": "classification/code/protocol",
+      "source_url": "https://github.com/jybosg/GCGM-BiAS",
+      "locator": "SHA2e04884faf9682988f516ad0f6d50262dca55bf1 model303–356 LPMP/Hungarian,703–723 identitytargets;loss_func_gcgm142–175sharednon-dummy anchors;augmentation167–178momentumupdate;train_eval349–392GTvalidationF1earlystop. Separate datasetconfigs and differingwidths not crossnative sharedcheckpoint."
+    },
+    {
+      "field": "citations/exclusions",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0412.pdf",
+      "locator": "All mainbibpp8–9andappendix5–6read. Sixexactcatalogueidentities; Wang2023TPAMI mixturemodes, Wang2020TPAMI robustembedding and Wang2021TPAMINGM distinctjournalpapers not mapped to olderdifferent-titleconferenceIDs. Slides citeSCGMandInfoGraph, latteroutsidecatalogue."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "self-supervised-bidirectional-learning-for-graph-matching",
+      "reference_label": "[Guo etal.,2023]",
+      "description": "Exact Guo/Zhang/Tu/Xu AAAI2023 bidirectional graph matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Main References [Guo etal.,2023]"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "self-supervised-learning-of-visual-graph-matching",
+      "reference_label": "[Liu etal.,2022]",
+      "description": "Exact SCGM ECCV2022 reference and visual self-supervised comparator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Main References [Liu etal.,2022]"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "rgm",
+      "reference_label": "[Liu etal.,2023]",
+      "description": "Exact ICLR2023 revocable RL/outlier-robust graph matching reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Main References [Liu etal.,2023]"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[Rolinek etal.,2020]",
+      "description": "Exact ECCV2020 BBGM reference and black-box matching backend.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Main References [Rolinek etal.,2020]"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "cie-h",
+      "reference_label": "[Yu etal.,2019]",
+      "description": "Same CIE-H paper cited using its2019 preprint year; fulltitle/fourauthoridentity matches ICLR2020 formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Main References [Yu etal.,2019]"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-general-graph-matching-with-adaptive-augmentation-sampling",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[Zanfir and Sminchisescu,2018]",
+      "description": "Exact CVPR2018 GMN bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Main References [Zanfir and Sminchisescu,2018]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced all pending placeholders after38actualsourcepages read.",
+    "Restricted general title to graph-centric input regime; specialist/constructive based on actual experiments and discrete decoder.",
+    "Retained synthetic classical superiority and visual/ablation negative cases; qualified timing and validation-label dependence.",
+    "Sixactualcitationidentities; excluded different-titlejournalextensions rather than merging conference aliases."
+  ],
+  "reviewed_note_sha256": "95e26fb535c04d6dd4f54b9c55e1c0f3f11f4f844ec1f51aa6c9f0f435c8e132"
+}

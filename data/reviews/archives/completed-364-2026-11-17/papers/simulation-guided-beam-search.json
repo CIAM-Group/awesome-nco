@@ -1,0 +1,672 @@
+{
+  "version": 1,
+  "paper_id": "simulation-guided-beam-search",
+  "note_path": "specialist/simulation-guided-beam-search.md",
+  "baseline_note_sha256": "e8ad787fcbf50ab19d838fb782179bc4ce2bb230160ce6b1dd80e232066df071",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/39b9b60f0d149eabd1fff2d7c7d5afc4-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/39b9b60f0d149eabd1fff2d7c7d5afc4-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/simulation-guided-beam-search/paper.pdf",
+      "sha256": "dd29dd9e6ff1d620841a3b52ae04bf1143afc510a027838f818994438ffcd79f",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/39b9b60f0d149eabd1fff2d7c7d5afc4-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/39b9b60f0d149eabd1fff2d7c7d5afc4-Supplemental-Conference.pdf",
+      "version": "Publisher scientific supplement, complete AppendicesA-I,6pages",
+      "local_path": "research/full-text-review/simulation-guided-beam-search/supplement.pdf",
+      "sha256": "0dc2f2a40f3625fc63327a331f42fd3d6861130ae7346dd8759d792a6c69d7f8",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/authors/twoinstitutions, full related work including constructive/improvement distinction, RLpreliminaries and breadth-first search framing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh complete Algorithm1 per-parent topgamma then greedy rollout pruning, deterministic SGBS and EAS-Lay-only alternating adaptation, equal-candidate comparison and30hourCVRP example."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh early-stopped pretraining requirement, adjustedsingleA10080GB runtime protocol; fullroutingTable1 and FFSPTable2, hybrid200hourbudgets and no globalFFSPstateoftheartclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh references1-39 with precise identities/versionlabels including INFORMSsessionpreprint, learnedSAT,placement,dispatch and generalizedneighborhoodrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Fresh references40-52 and complete checklist; authors state no errorbars onmainresults."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh XE3000epochpergrouptraining and10parallelruns, fullabsolutegapTableA; rolloutreuse beta*(gamma-1), equalcandidatebudget and asymmetricinitialnode MCTS setup, hyperparameterplots."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh adjustedbaselineFFSPCPUtimes, actualearlystoppedpretraining, best8of128augmentations,2hourpretrainplus3hoursearch qualifier, fullentropyregularizationEquationsI.1-I.2 andplots."
+    }
+  ],
+  "claims": [
+    {
+      "id": "beam",
+      "category": "contribution",
+      "statement": "Per-parent topgamma expansion, single greedy completion and reward pruning, not accumulated-likelihood beam.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "category": "method",
+      "statement": "Alternates deterministic SGBS with EAS-Lay added-layer adaptation; fresh constructive search rather than local incumbent moves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section4 Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "reuse",
+      "category": "method",
+      "statement": "Reuse best greedy continuation: atmostbeta*(gamma-1)newrollouts, approximate1200/2400candidate test with differing MCTSstartingnode.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "AppendicesB-C"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Dataset-total routing hybrid15/30/50hours andFFSP50/100/200hours; FFSPGapabsolute makespanunits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables1-2"
+        }
+      ]
+    },
+    {
+      "id": "xe",
+      "category": "experiment",
+      "statement": "DistinctXEgroupbase models train3000epochs;TableAabsolute gaps andthree independent runs withtenparallelcopies.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "AppendixA TableA"
+        }
+      ]
+    },
+    {
+      "id": "pretraining",
+      "category": "experiment",
+      "statement": "Earlystop andbest8of128FFSPaugmentations; shortpretrainclaimincludes3hourtestsearch.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "AppendicesF-I"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate POMO/MatNet taskmodels with constructive beam/parameter adaptation, so specialist constructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/39b9b60f0d149eabd1fff2d7c7d5afc4-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS2022MainConferenceTracklanding andpublisherpage1,7authors,SamsungSDSandBielefeld;firsttwoequalcontribution."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2207.06190",
+      "locator": "Firstsubmission13July2022;formalpublication2022separatefromarXivhistory."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/yd-kwon/SGBS",
+      "locator": "Mainpage9authorlink;manuallyreadcompleteREADMEinferenceTSP/CVRP/FFSP,libraryversionsandexternalFFSPmodeldataarchive."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/39b9b60f0d149eabd1fff2d7c7d5afc4-Abstract-Conference.html",
+      "locator": "ManualofficiallandinginspectionshowsoneSupplementalPDF;all6pagesAppendicesA-Iread. AuthorREADMEFFSParchiveisimplementation/model/dataandnoreferencedscientificappendixmissing."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/39b9b60f0d149eabd1fff2d7c7d5afc4-Paper-Conference.pdf#page=4",
+      "locator": "ExistingassetvisuallymatchedcompleteoriginalFigure1onPDFpage4:all3phases,toplabelsandfullrolloutarrowsretained,nochange."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/39b9b60f0d149eabd1fff2d7c7d5afc4-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-12-06; cached evidence research/full-text-review/simulation-guided-beam-search/page-1.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2207.06190",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-07-13; title on abstract page: Simulation-guided Beam Search for Neural Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/simulation-guided-beam-search/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "efficient-active-search",
+      "reference_label": "[1]Hottung2022",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[3]BelloICLRWorkshop2017",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "attention-model",
+      "reference_label": "[4]Kool2019",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "pointer-networks",
+      "reference_label": "[7]Vinyals2015",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "rl-vrp",
+      "reference_label": "[8]Nazari2018",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[9]Kool2021arXiv",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[11]Khalil2017",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-heuristic",
+      "reference_label": "[12]Deudon2018",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[13]Kwon2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            9,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "pomo",
+      "reference_label": "[14]Kwon2020",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[15]Hottung2020",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "neurewriter",
+      "reference_label": "[16]Chen2019",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[18]Wu2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "dact",
+      "reference_label": "[19]Ma2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[20]Kim2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-to-delegate",
+      "reference_label": "[21]Li2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "neurolkh",
+      "reference_label": "[22]Xin2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[24]Xin2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[27]Zhang2020",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[28]Yolcu2019",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "graph-q-sat",
+      "reference_label": "[29]Kurin2020",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[30]Li2018",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "deepplace-deeppr",
+      "reference_label": "[32]Cheng2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[34]JoshiINFORMS2019session",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "gnn-mcts-tsp",
+      "reference_label": "[35]Xing2020",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "simulation-guided-beam-search",
+      "cited": "att-gcn",
+      "reference_label": "[36]Fu2021",
+      "description": "Explicit numbered in-text citation and matching work/version in bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citations and matching reference"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ClarifieddeterministicstandaloneSGBS,per-parentexpansionandrolloutreuse;hybridusesEAS-Layonly.",
+    "Addedexactdataset-totalhourbudgets,referencegapdenominatorsandFFSPabsolutegapunits.",
+    "QualifiedequalcandidatecomparisonswithMCTSinitialization,earlystopandbest8of128augmentationselection.",
+    "AddedXEpergrouptraining,absoluteTableAgaps,andpretrainingversustest-timecostdistinction.",
+    "Removedunsupportedindividualacceptancedateandrestoredauthoraccent.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f3de5b687bb8d8cdf3768dbd50344b0b80b3b601a37713f3a1064ab9c3f57922"
+}

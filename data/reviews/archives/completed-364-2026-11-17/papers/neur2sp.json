@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "paper_id": "neur2sp",
+  "note_path": "specialist/neur2sp.md",
+  "baseline_note_sha256": "a3bfbdebc416a06b1afbf9554362281341fbce401b6c8c6b42444bcff229052c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-20c2148b9a.pdf",
+      "sha256": "3c83d4eb38ad52aa1d38f4d9c80f786f1c1e3dd3d13cd35c06eb4b91777bc5b6",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Supplemental-Conference.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/neur2sp/supplement.pdf",
+      "sha256": "9093615edaa6f235b907dcbc49ffa70659d526addd86faf06fe3234386d9d0d7",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fourTorontoauthors/formalNeurIPS2022identity; learnedReLUrecourse-value surrogate embeddedinMIP,firststage2SPobjective/SAAformulation,exactReLUindicatorencodingversusapproximatevaluefunction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read explicit related-work citations, NN-P scenario-wise and NN-E set-embedding surrogate formulations, exact ReLU encoding versus approximate recourse function, architecture and offline label construction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Read all four problem classes, fixed-base-instance training and scenario-set transfer, hardware/data/training costs, Tables2–6 true-objective comparisons, all negative INVP/pooling cases and EF incumbent/reference limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 14,
+      "notes": "Read complete bibliography and checklist; manually matched exact internal cvae-sip reference and checked other stochastic-learning titles against catalogue; no unsupported alias substitutions."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete architecture/embedding details and all mathematical benchmark formulations, including relatively complete CFLP recourse slack, INVP integrality variations and nonconvex pooling; read separate generation/training costs."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read every detailed true-versus-surrogate objective table, known-optimum SIPLIB gaps, all hyperparameter ranges and per-problem winning configurations; visually checked exact negative cases and surrogate discrepancies."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read and visually checked all validation-MAE random-search boxplots and both CFLP10_10 dataset-size ablations; these do not establish universal sample-complexity/error bounds."
+    }
+  ],
+  "claims": [
+    {
+      "id": "neur2sp-contribution",
+      "category": "contribution",
+      "statement": "NN-P scenario-wise and NN-E expected-recourse regressors embed small ReLU models into a solver-representable first-stage surrogate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3–5"
+        }
+      ]
+    },
+    {
+      "id": "neur2sp-guarantee",
+      "category": "method",
+      "statement": "Exact neural encoding gives exact surrogate forward evaluation, not a certified approximation or optimum for the original two-stage stochastic program.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "ReLU embedding and surrogate formulations"
+        }
+      ]
+    },
+    {
+      "id": "neur2sp-results",
+      "category": "experiment",
+      "statement": "Reported 0.11–1.66s NN-E times exclude offline learning and true-recourse reevaluation; EF-incumbent differences are not universal optimality gaps and small INVP/pooling cases show negative results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables2–6 and objective-difference captions"
+        }
+      ]
+    },
+    {
+      "id": "neur2sp-specialist",
+      "category": "classification",
+      "statement": "Models train for fixed base instances/configurations and transfer across scenario sets/counts, with no demonstrated unchanged model across four native problem families.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Training/evaluation construction and separate problem models"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Paper-Conference.pdf",
+      "locator": "PDFp1 title, UniversityTorontoMIE affiliation, JustinDumouchelle/RahulPatel equal-contribution author order and EliasB.Khalil; official repository BibTeX agrees; landing metadata reverses first two names"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/9793671e4be9858a69a32545204d59d1-Abstract-Conference.html",
+      "locator": "Direct primary HTML meta citation_publication_date=2022-12-06 cached in publisher-metadata.html; formal NeurIPS2022 record"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/9793671e4be9858a69a32545204d59d1-Supplemental-Conference.pdf",
+      "locator": "Manually checked publisher Supplemental sole8pPDF, all science read; official recursive repository inventory only README,nsp/README and PaperResults.ipynb as documents; both READMEs and notebook markdown checked, table-reproduction material no extra scientific PDF"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/khalil-research/Neur2SP",
+      "locator": "Paperp7 explicit author URL; both official READMEs and table notebook checked, sequential/parallel runner and separate SIPLIB download instructions verified"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neur2sp",
+      "cited": "cvae-sip",
+      "reference_label": "Wu et al. (2022)",
+      "description": "Explicit related-work citation and exact Learning Scenario Representation for Solving Two-stage Stochastic Integer Programs bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all22 scientificpages and manually checked published supplementary/official repository documents.",
+    "Corrected PDF author order/fullname and distinguished compact surrogate size from offline/end-to-end cost.",
+    "Preserved true-versus-predicted objectives, EF incumbent versus known-optimum gaps, negative INVP/pooling/linear-regression cases and specialist scope."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a8efa5c362fe3534c1c7501d9972ed444305d032604d231167d2fc1f2077bba2"
+}

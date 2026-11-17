@@ -1,0 +1,344 @@
+{
+  "version": 1,
+  "paper_id": "neurewriter",
+  "note_path": "specialist/neurewriter.md",
+  "baseline_note_sha256": "9d219080cd31f0e72fd539c511d46fe4dde533db00d0f53ba101d3ceeaf13839",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/neurewriter/paper.pdf",
+      "sha256": "af344845b9a8d8aab9dc9f78b3eacb7c3a6299260b55a31b2860eea54014d987",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Supplemental.zip",
+      "version": "publisher scientific supplement inside ZIP",
+      "archive_member": "supp.pdf",
+      "local_path": "research/full-text-review/neurewriter/supp-supp.pdf",
+      "sha256": "86dd0952d3c0f0439fac3cd08845c174de05a341a47a783d50603c417608abfa",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/affiliations, three-domainproblemsetting, allrelatedwork, region/rulefactorizationandQ-actor-criticdefinition."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh Qcritic/regression andruleactorloss, Halide19rulecategories, actualsinglemachinemultiresourceschedulingdefinition, CVRPencoding andexpressionexperiments."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh allmainfigures3-5 andTable1, slowdownobjective/jobdistributions, routequality/crossdistributiontransfer andlocalrewriteglobalchangelimit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh all53bibliographyentries andmatchinginternalpaperreferences."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh Halidegrammar/datasetstats andallresource/CVRPgeneration, uphillrewrite andjobreschedulingAlgorithm1."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Fresh task-specificLSTM/MLP/attentionarchitectures andjob/CVRPfeatures; training/evaluation stoppingrules andallhyperparameters."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Fresh full scheduling Tables 3-5, CVRP Table 6 and route trace, all expression simplification traces in Appendix G."
+    }
+  ],
+  "claims": [
+    {
+      "id": "factorization",
+      "category": "contribution",
+      "statement": "Region and rule policies learn task-specific local search over complete solutions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections 3-4, Equations 1-3"
+        }
+      ]
+    },
+    {
+      "id": "critic",
+      "category": "method",
+      "statement": "Q regression uses sampled discounted returns; rule actor uses the corresponding advantage, not bootstrapped DQN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Section 4"
+        }
+      ]
+    },
+    {
+      "id": "schedule",
+      "category": "method",
+      "statement": "Online single-machine multiple-resource scheduling minimizes mean slowdown; rewrite repairs affected jobs.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Algorithm 1 and C.2"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "method",
+      "statement": "50 expression/schedule or 200 CVRP rewrite steps; distinct encoders and models.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "C-D, Algorithm 2"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "CVRP lengths 6.16/10.51/16.10, with 50-to-100 transfer worsening to 17.33.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Figures 5, Table 1, Section 6.3"
+        }
+      ]
+    },
+    {
+      "id": "full-tables",
+      "category": "experiment",
+      "statement": "Scheduling slowdown and CVRP results are supported by the complete supplemental tables; expression figures show absolute reductions.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables 3-6, Figures 10-12"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One framework with task-specific models and encodings; incumbent rewrites justify specialist improvement classification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections 3-5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, venue, year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Paper.pdf",
+      "locator": "Publisher PDF page 1: Xinyun Chen (UC Berkeley), Yuandong Tian (FAIR), NeurIPS 2019; Chen partly worked as FAIR intern."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/1810.00337",
+      "locator": "Submission history: v1 30 September 2018; v5 30 October 2019."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/facebookresearch/neural-rewriter",
+      "locator": "Main paper page 1 author code link and manually read official README, all three tasks and generators."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2019/hash/131f383b434fdf48079bff1e44e2d9a5-Abstract.html",
+      "locator": "Manually inspected publisher landing and Supplemental ZIP inventory: sole member supp.pdf, all 8 scientific pages A-G freshly read; no additional scientific attachment linked."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/131f383b434fdf48079bff1e44e2d9a5-Paper.pdf#page=2",
+      "locator": "Complete Figure 1 crop Rect(105,180,510,247) points at 4x; atomic PNG replacement, visually inspected policy selection and local-state transition."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1810.00337",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-09-30; title on abstract page: Learning to Perform Local Rewriting for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/neurewriter/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neurewriter",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[7] Bello et al. 2016 arXiv",
+      "description": "Constructive neural RL predecessor; preserve cited 2016 preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurewriter",
+      "cited": "learning-heuristic",
+      "reference_label": "[16] Deudon et al. 2018",
+      "description": "Constructive TSP related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurewriter",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[28] Khalil et al. 2017",
+      "description": "Graph-based combinatorial optimization related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurewriter",
+      "cited": "attention-model",
+      "reference_label": "[29] Kool et al. 2019",
+      "description": "Constructive routing baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurewriter",
+      "cited": "rl-vrp",
+      "reference_label": "[35] Nazari et al. 2018",
+      "description": "Constructive CVRP baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            7,
+            9,
+            11
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurewriter",
+      "cited": "pointer-networks",
+      "reference_label": "[50] Vinyals et al. 2015",
+      "description": "Supervised pointer-network predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            12
+          ],
+          "locator": "Explicit numbered in-text citations and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected classical job-shop label to online single-machine multi-resource scheduling; added expression simplification domain.",
+    "Added complete task models, legal-rule provenance, uphill moves, stopping rules and actual resource repair.",
+    "Added full experimental values, hardware/search budgets, negative transfer and solver limitations.",
+    "Removed unsupported conference-wide acceptance date and replaced clipped framework figure."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f8d7159d28fca94fa9ca1347f5b5c8ab9ec84235cfc9242dfe4567d83adfae7f"
+}

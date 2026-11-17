@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "paper_id": "attention-model",
+  "note_path": "specialist/attention-model.md",
+  "baseline_note_sha256": "613bd2e9df15b2dc2f85ac977e1089804741593e2044ab55486f544095e92e85",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1803.08475v3",
+      "retrieval_url": "https://arxiv.org/pdf/1803.08475",
+      "version": "arXiv:1803.08475v3, 7 February 2019; published-at-ICLR-2019 header",
+      "local_path": "research/full-text-review/attention-model/paper.pdf",
+      "sha256": "fa783d096ff3986d5e9745acf75152cecb4ec7b3d1d0798ba765449e9eace4fd",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Fresh restart-round full reading, including equations, protocol, results and references on these pages; separately checked key original page images."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Attention architecture and a greedy-rollout training baseline independently contribute to performance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            16
+          ],
+          "locator": "Introduction; Section 5.2; Table 2"
+        }
+      ]
+    },
+    {
+      "id": "encoder",
+      "category": "method",
+      "statement": "Three attention layers use 128-dimensional embeddings, eight heads, 512-unit feed-forward blocks, residuals and batch normalization, without positional encoding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            13
+          ],
+          "locator": "Sections 3.1 and 5; Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "decoder",
+      "category": "method",
+      "statement": "A context-dependent glimpse and final single-head clipped attention choose feasible nodes; TSP context includes graph, first-node and last-node embeddings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Section 3.2 Equations 4-8"
+        }
+      ]
+    },
+    {
+      "id": "rollout",
+      "category": "method",
+      "statement": "REINFORCE uses a frozen greedy baseline; replacement requires a one-sided paired t-test on 10000 evaluation instances at alpha 0.05.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section 4 and Algorithm 1"
+        }
+      ]
+    },
+    {
+      "id": "cvrp",
+      "category": "method",
+      "statement": "Capacity and node-demand state determine masks; split deliveries add remaining demand to keys and values.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "locator": "Appendix C Equations 19-23"
+        }
+      ]
+    },
+    {
+      "id": "op",
+      "category": "method",
+      "statement": "OP masks candidate nodes whose visit and return to the depot would exceed the remaining route budget.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            21
+          ],
+          "locator": "Appendix D Equations 25-27"
+        }
+      ]
+    },
+    {
+      "id": "pctsp",
+      "category": "method",
+      "statement": "The remaining prize controls depot feasibility; SPCTSP retrains the model and updates this state with realized prizes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Appendices E-F Equations 30-35"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "Test sets have 10000 instances; inference uses greedy decoding or 1280 samples; timing totals refer to the test set with differing GPU/CPU hardware.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section 5 and Table 1"
+        }
+      ]
+    },
+    {
+      "id": "tsp-results",
+      "category": "experiment",
+      "statement": "TSP100 AM greedy and sampling results are 8.12/4.53 percent and 7.94/2.26 percent, against reference 7.76.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Table 1 TSP100 rows"
+        }
+      ]
+    },
+    {
+      "id": "non-tsp-results",
+      "category": "experiment",
+      "statement": "CVRP100 sampled result 16.23 is compared with LKH3 15.65; those non-TSP gaps need not be certified optimality gaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Table 1 and problem-specific reference descriptions"
+        }
+      ]
+    },
+    {
+      "id": "generalization",
+      "category": "limitation",
+      "statement": "Quality deteriorates away from training sizes; complex feasibility constraints motivate future backtracking rather than a demonstrated universal mask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            15,
+            16
+          ],
+          "locator": "Discussion; Appendix B.5; Figure 5"
+        }
+      ]
+    },
+    {
+      "id": "stochastic-scope",
+      "category": "classification",
+      "statement": "SPCTSP is explicitly retrained instead of sharing the deterministic PCTSP model; common hyperparameters do not imply a generalist checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            24
+          ],
+          "locator": "Section 5; Appendix F.1"
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "category": "reproducibility",
+      "statement": "The paper directly links the author-maintained attention-learn-to-route repository.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Footnote 2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/1803.08475v3",
+      "locator": "PDF page 1 title, authors and affiliations"
+    },
+    {
+      "field": "venue, publication year, source version",
+      "source_url": "https://arxiv.org/pdf/1803.08475v3",
+      "locator": "Published-at-ICLR-2019 page header; matches arXiv author statement and official article identity"
+    },
+    {
+      "field": "date, arxiv_url",
+      "source_url": "https://arxiv.org/abs/1803.08475",
+      "locator": "Submission history v1 22 March 2018; final v3 7 February 2019"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/wouterkool/attention-learn-to-route",
+      "locator": "Author repository README and pretrained directory; directly linked in PDF page 6 footnote 2"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=ByxBFsRqYm",
+      "locator": "Manually attempted official OpenReview forum and v1/v2 API on2026-11-16; all returned403 verification. Accepted arxiv1803.08475v3 includes all scientific AppendicesA-F, read completely throughPDFpage25. No claim of having inspected unavailable formal attachments; arxivfull-text fallback accepted under user review scope."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1803.08475",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-03-22; title on abstract page: Attention, Learn to Solve Routing Problems!. This date is preprint history, not formal publication. Cached research/full-text-review/attention-model/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "attention-model",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "The paper explicitly cites the supervised Pointer Network as prior architecture and compares its results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Section 2 discussion of supervised Pointer Networks; bibliography Vinyals et al. 2015"
+        }
+      ]
+    },
+    {
+      "citing": "attention-model",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "The paper explicitly cites the RL-trained pointer policy and replaces its principal learned-critic baseline with a frozen greedy rollout.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            9,
+            10
+          ],
+          "locator": "Sections 2-4 and 5.2; bibliography Bello et al. 2016"
+        }
+      ]
+    },
+    {
+      "citing": "attention-model",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "The paper discusses graph-embedding insertion policies and includes the reported learned-heuristic comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            10
+          ],
+          "locator": "Section 2 graph-embedding Q-learning discussion; TSP comparison; bibliography Dai et al. 2017"
+        }
+      ]
+    },
+    {
+      "citing": "attention-model",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "The paper identifies independent concurrent work, compares decoder/training designs, and reports a controlled rerun of its code.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10,
+            14,
+            15
+          ],
+          "locator": "Section 2; Appendix B.4 concurrent-work comparison; bibliography Deudon et al. 2018"
+        }
+      ]
+    },
+    {
+      "citing": "attention-model",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "The paper explicitly cites the earlier RL vehicle-routing model and follows its instance-generation setup for VRP comparisons.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11,
+            17
+          ],
+          "locator": "Section 2; VRP experiments; Appendix C.1 instance generation; bibliography Nazari et al. 2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Independent restart-round reread confirmed the current detailed note against all registered full-text pages; no new scientific correction required."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "613bd2e9df15b2dc2f85ac977e1089804741593e2044ab55486f544095e92e85"
+}

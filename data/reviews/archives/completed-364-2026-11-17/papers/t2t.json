@@ -1,0 +1,884 @@
+{
+  "version": 1,
+  "paper_id": "t2t",
+  "note_path": "specialist/t2t.md",
+  "baseline_note_sha256": "881cd867800532f7943f18138b0d531e1c94cdaf932973bc7b22180fa11f4edf",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9c93b3cd3bc60c0fe7b0c2d74a2da966-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9c93b3cd3bc60c0fe7b0c2d74a2da966-Paper-Conference.pdf",
+      "version": "NeurIPS2023 publisher21page integratedmain+AppendicesA-G",
+      "local_path": "research/full-text-review/t2t/paper.pdf",
+      "sha256": "75e60674aa1cd2a7f1d42b0aad0ab88b8782f84141d550495c3f0516f957b792",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh titlepage four SJTU authors; TSP plus MIS missing metadata; explicit improvement paradigm; diffusion discrete Bernoulli anisotropic GNN, feasibility postprocessing, relaxed MIS penalty and TSP distance objective, no model-weight updates at inference; all related work and equations1-7 read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Fresh Eq8-13 Taylor energy-gradient approximation, no optimal y or model updates, incumbent noising alpha/10step guidedreconstruction and greedy feasibility plus optional2opt; A1004train1test; TSP1280/128 trainlabels Concorde/LKH; smallgreedy50steps vs largeinit20 +3x10 andDIFUSCO120; originalalpha.25 vs currentREADME.4 difference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Fresh all Tables2-5, fourcrossscaletransferrows including TSP50->1000 loss, MISKaMIS/Gurobitimelimited strongerquality, TSPLIB50-200model100, complete references1-37 including actualcitedpreprintyears."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 17,
+      "notes": "Fresh refs38-78, all29smallTSPLIB and19large rows includingpr1002 despite1000label; A distributions/iterations, B applicability limited binary/countable+problemgreedy, C exactBayes identity proof notapproxgradient convergence, D completeincumbent improvement definition; Table4one transfer loss retained."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Fresh Table11k ablation/Table12improvement definition, all E1-E4architecture12layer256TSP128MIS embedding/timestep placement, FDDIM skip derivation, Gtraining table1.502M/128k/64k4A10019h8m/59h55m/22h46m/38h35m, conflictingG2/G3smallinitsteps vs main50, paperalphaTable14 inversecurrentREADME, allGbaseline/sparsity/fiveroundvisualization. All21pagesA-G complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rewrite",
+      "category": "contribution",
+      "statement": "Objective-guided noising/denoising complete solution rewriting, separately trained TSP/MIS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "locator": "Sections1-3"
+        }
+      ]
+    },
+    {
+      "id": "gradient",
+      "category": "method",
+      "statement": "Taylor energy guidance through predicted expectations, noisy solution updates only; greedy feasibility and optional2opt, bestsofar.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            16,
+            17
+          ],
+          "locator": "Equations7-13 AppendixB/C"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "12layer edgegatedGCN256TSP128MIS, separate checkpoints,k50large.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "AppendixE/G4"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "1280/128TSPtests, A100 training resources, sampling/rewriting budgets, KaMISbetter and transfer exception.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            15,
+            16,
+            17,
+            20,
+            21
+          ],
+          "locator": "Tables1-14 AppendixG"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistimprovement: borrowedDIFUSCOinitialpoint, own core completeincumbentrewrite not modelweightadapt; MaximumIndependentSet restored.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            17,
+            18
+          ],
+          "locator": "Section3.1/3.3 AppendixD Table12"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Manualprimarypublisher record/titlepage fourSJTUauthors NeurIPS2023; exact individual acceptance/publication day unsupported, use2023."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Manualpublisherlanding integratedPDF only/noextra; all21pages A-G read. ORforum/API challenge403 saved. GitHub recursive tree noPDF/ZIP scientificextra; main/dataREADME read."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/T2TCO",
+      "locator": "Official exacttitle/authors, fullmain/dataREADMEs and tsp500.sh read; paperalpha.25small/.4large oppositeREADME, scriptlarge.4; smallinit50 main conflicts genericappendix20/120."
+    },
+    {
+      "field": "paradigm, problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9c93b3cd3bc60c0fe7b0c2d74a2da966-Paper-Conference.pdf#page=18",
+      "locator": "Explicit completeincumbentimprovement; initialDIFUSCO point doesnotmake own separateconstructor. Restored Maximum Independent Set actualmaxcardinality Section3.1; separatecheckpoints."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9c93b3cd3bc60c0fe7b0c2d74a2da966-Paper-Conference.pdf#page=7",
+      "locator": "Original Figure3 crop Rect(145,70,465,224),6x; formulas/approximation and allmain/appendixtables visually inspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/t2t/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2023-12-15; primary cachedHTML research/full-text-review/t2t/page-1.html; citation_title=['T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "t2t",
+      "cited": "neurewriter",
+      "reference_label": "5",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "pomo",
+      "reference_label": "6",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "learning-to-delegate",
+      "reference_label": "7",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "sym-nco",
+      "reference_label": "8arxiv2022",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "pointer-networks",
+      "reference_label": "10",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "attention-model",
+      "reference_label": "12arxiv2018",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "erdos-goes-neural",
+      "reference_label": "13",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "14",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "roco",
+      "reference_label": "15",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "16arxiv2016",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "efficient-active-search",
+      "reference_label": "17arxiv2021",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "meta-egn",
+      "reference_label": "18arxiv2023",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "difusco",
+      "reference_label": "19arxiv2023",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "latent-search-space-routing",
+      "reference_label": "23",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "hubrouter",
+      "reference_label": "27",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "prnet-chip-design",
+      "reference_label": "28",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "32",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "33arxiv2019",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "att-gcn",
+      "reference_label": "34",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "dimes",
+      "reference_label": "35arxiv2022",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "37actual2021",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "tam",
+      "reference_label": "38",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "gflownet-combopt",
+      "reference_label": "43arxiv2023",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "principled-co-relaxation",
+      "reference_label": "56",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "59arxiv2022",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "learning-heuristic",
+      "reference_label": "67",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "graph-guided-local-search",
+      "reference_label": "68arxiv2021",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "70",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "71arxiv2022",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "learning-what-to-defer",
+      "reference_label": "72",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "t2t",
+      "cited": "omni-vrp",
+      "reference_label": "78arxiv2023",
+      "description": "Explicit numbered in-text/table citation and corresponding bibliography; actual cited preprint year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching numbered reference entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected constructive to improvement from completeincumbent rewrite and explicitAppendixD.",
+    "Restored MIS/GraphOptimization; Maximum not abstractMaximal cardinality objective.",
+    "Separated testsolution gradients from neuralweightupdates and approximateguidance from feasibility/optimality.",
+    "Added full architecture, offline A100/data/training, inference/2opt/sampling budgets and exact comparison caveats.",
+    "Preserved paper/appendix/README smallstep andalpha inconsistencies, transfer failure and strongerMISheuristics.",
+    "Removed unsupported exactacceptance/date, restoredoriginalFigure3, rebuilt31explicitcitations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "265deac0af19f06b146ff66aa613df80e5fd34758a2afced2bb41fb508a5deb0"
+}

@@ -1,0 +1,656 @@
+{
+  "version": 1,
+  "paper_id": "cs-probing-nco",
+  "note_path": "studies/cs-probing-nco.md",
+  "baseline_note_sha256": "f5302a3d6ee5d22705d73b01c912984ebb6d250a14531374bfe3973fcf4c5e63",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/becf96dcee66f9df08169e4c96bbbd8c-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/becf96dcee66f9df08169e4c96bbbd8c-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c2ec7c6869.pdf",
+      "sha256": "89b2a792c6792a818a7747ad0936309a3ac0b985fbbfb675cda7a00ddf220c84",
+      "pages": 39,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "coefficients-figure",
+      "url": "https://raw.githubusercontent.com/123zhangzq/NeurIPS2025_probing/main/assets/fig_csprobe_models_p1p2.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/123zhangzq/NeurIPS2025_probing/main/assets/fig_csprobe_models_p1p2.pdf",
+      "version": "authorrepository static Figure15 duplicate, retrieved2026-11-16",
+      "local_path": "research/full-text-review/cs-probing-nco/assets_fig_csprobe_models_p1p2.pdf",
+      "sha256": "d257c5bef3a7a2e2f94397cbb19b2dd2084e12719856249571ff562d34b9848f",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "two-dimension-figure",
+      "url": "https://raw.githubusercontent.com/123zhangzq/NeurIPS2025_probing/main/assets/fig_csprobing_2d_seed_1.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/123zhangzq/NeurIPS2025_probing/main/assets/fig_csprobing_2d_seed_1.pdf",
+      "version": "authorrepository static Figure6 duplicate, retrieved2026-11-16",
+      "local_path": "research/full-text-review/cs-probing-nco/assets_fig_csprobing_2d_seed_1.pdf",
+      "sha256": "4cbc76177b053d1a939637a583853006705dec944a7caa845f3261a39480fd7d",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshread exactfourauthors/SMU-MIT. Linearprobes fourtasks(TSPdistance/antimyopic,CVRPdemand/sameroute),AM/POMO/LEHD and layerlocations. Need interactionterms mean squarediffprobesnotrawlinear; associationsnotcausality. Alltableslater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allmainTSP/CVRP andextensionclaims. Keyqualifier: interactiontermsmakeaugmentednonlinearfeatures; predictiveprobe notcausaluse/strategicglobaloptimalguarantee. AM/POMOdispersedvsLEHDfewhighmagnitude dimensions. DIFUSCO/ATSP/JSSP separate appendices toread. PublisheronlyPaper/Bibtexnoexternal supplement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "FullCScoefficients256/BH-FDR.05,topdims31/69distance31/97myopia across20to100. Predictiveassociation plus targetedlastembeddingablation table3/4:full.57,two.65,bothzero60.43 notentirenetwork2D. LEHDdifferentcheckpointwordingneedscheckAppendix. No proofdimensionreusecausalgeneralization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read Table5allrows: lambda1e-6TSP10003.17to2.87/TSPLib5.26to4.94,lambda1e-3TSPLib8.61 worse; no universalsparsitybenefit. Fullrefs1-38 exact18candidateidentity scan. Needfullappendixandcodecomplete. Formalpublisher2025vsrepoBibtex2026noteformaleligibilitybyvenue."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fullremainingrefs39-48 and checklist1-5read. Empiricalpaper explicitlyNA theory; AppendixE promised limitations. All48mainreferencescovered; PointerinAppendixextrabib stillneedread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read checklist6-13 entirely: ambiguitySDvsmainSEMnotresolvedbyclaim;10proberuns. Compute/datasetcollection/assetdetails deferredintegratedB/E. No scientificattachmentmentionedoutsideintegratedAppendices."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "CompletedremainingchecklistandrelatedworkA1/A2, allexplicitNCOcitations20. PointerNetworks genericarchitecturalphrase but no specificVinyalsbibentry=>notedge. Fullprobedmodelstructurescurrentstart/destinationnodes and decoderreembeddingread. DatasetflowbeginB."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read fullfourtasklabelprocedures: Gurobiopt+bestofNgreedy, forcing/forbiddingedges checksTSPambiguity; CVRPsameroutelabelsHGSapproxnotexact. 10kroutinginstances eachscale20/100/200TSP,20/100CVRP. Pairinputsconcat orHadamardinteractions; fixedfeaturelinearprobevsnonlinear originalembeddingfeatures. Testsplitclaims beforedetailedcounts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read Tables6-8allrows, datasetstatistics/correlationheatmaps/B3codeinventory. Tasks1/3=10kobservations,2/4=20kpairedlabels;interactiontask3productonlydifferentthanconcatplusproduct1/2. Per-scaleoriginalmodelscorrespondingsizes. Probingdatasetreleaseplanned notassertallreleased."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Read fullTable9/10 allmetrics/rows,OLS/MLE/resources andlayerinterpretation. CriticalrawdistanceTask2AUC.64 inAppendixC1.1/Fig11 not.5 asmaintextasserts; report nontrivialbaseline. Noevidenceallmodels inherentlysuperior or globaloptimalityknowledge.10repeatedprobeuncertainty notNCOseeduncertainty."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "FullCVRPlimitations(probeperformance notstrongcorrelatedsolver), DIFUSCO20epochnodeprobe,MatNetnonEuclidean, JSSPprecedenceAUC1vs.5 ablation read. Figure12rawdist.57notperfectchance. Table11full. Addedextendedproblemsqualitativelywithoutuniversalcheckpointclaim; top-levelanalysisstillroutingpredominant."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 36,
+      "notes": "Read allTable12/13, ownscale100to200probing andLEHDnoncurrentnodeprobe versusattentionprojection; completeD1training/D2generalization/Fig14/15topdimensionplots. No causalproofgeneralization; specificbasisandcheckpoint. Maintwo-dimensionaldecisionablationsneednoassumptionsotherhiddenlayerscompressed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 37,
+      "last_page": 39,
+      "notes": "FinishedallTable14/15/S16rows andotherseedplotsD4, CVRPgeneralizationD5andfullE. Exactlabels expensive/heuristicreplacementexplicit;datasetsplanned. All39publisherpages/48refs/A-E/checklistread. Table14reusepartialnotrankingstability; CVRPhighleveldimsnotstable andprobequalitynotstrongperformancecorrelation."
+    },
+    {
+      "source_id": "coefficients-figure",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read andvisuallyinspected officialauthorrepo scientificfigurePDF: duplicatefullFigure15coefficientandp-valuedimensionplots across3models20to100; noadditionalsciencebeyondpublisherp36."
+    },
+    {
+      "source_id": "two-dimension-figure",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read andvisuallyinspected officialauthorrepo scientificfigurePDF: duplicateFigure6 seed1 optimal/greedy/keydims31and97; noadditionalsciencebeyondpublisherp9."
+    }
+  ],
+  "claims": [
+    {
+      "id": "knowledge-probes",
+      "category": "contribution",
+      "statement": "Four routing probes assess distance/optimal-vs-greedy edges/demandaddition/HGS-reference-sameroute; CS-Probing uses coefficient magnitudes and significance rather than new universal solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "All fourtaskdefinitions/inputtables andCSmethod"
+        }
+      ]
+    },
+    {
+      "id": "labels-features",
+      "category": "method",
+      "statement": "GurobiTSP optimaledge labels checked by forcing/forbidding; CVRPHGSapproxreference. Pairconcat andHadamard interactions have differentdecodability meaning; BH-FDR.05across256reported.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            22,
+            23,
+            24,
+            25,
+            27,
+            28
+          ],
+          "locator": "AppendixB all labels/features andmainmultiplehypothesiscorrection"
+        }
+      ]
+    },
+    {
+      "id": "main-probe-results",
+      "category": "experiment",
+      "statement": "20node rawconcat distanceR2.2529/.1981/.9418 andanti-myopiaAUC.76/.76/.86 forAM/POMO/LEHD; interactionfeatures change ranking/magnitude.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            29,
+            30
+          ],
+          "locator": "Tables1/9/10, everyrowread and visuallychecked"
+        }
+      ]
+    },
+    {
+      "id": "targeted-ablation",
+      "category": "experiment",
+      "statement": "RetainingLEHDfinaldims31/97 givesTSP100gap.65vsfull.57;zeroingboth60.43;notentirenetwork2D. Regularizationlambda1e-6TSP1000gap3.17to2.87,butbenefitsnotuniformandlambda1e-3TSPLib8.61vs5.26.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "FullTables2-5 and finalprojectionintervention"
+        }
+      ]
+    },
+    {
+      "id": "extensions",
+      "category": "experiment",
+      "statement": "PreliminaryDIFUSCO/MatNetATSP/JSSP-GNNprobes extendtool;CVRPprobingqualitydoesnotstronglytracksolverquality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "locator": "CompleteAppendicesC/Dincluding allremainingtables/ablations"
+        }
+      ]
+    },
+    {
+      "id": "causality-baseline",
+      "category": "limitation",
+      "statement": "Decodability anddimensionreuse are notproofcausaluse/generalizationguarantee;Appendixrawdistanceanti-myopiaAUC.64notmaintextapprox.5;heuristiclabelcollectionexpensive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            8,
+            9,
+            10,
+            28,
+            31,
+            39
+          ],
+          "locator": "BodyversusFigure11baseline, interventionextent andEfullcostlimitations"
+        }
+      ]
+    },
+    {
+      "id": "reproduction",
+      "category": "reproducibility",
+      "statement": "Publicexample notebook splits pairedrows80/20,standardizesfeatures, fitslogisticcoefficients ontraining; samplecode requiresoriginalmodel/checkpoints and does notenforceinstancegroupedholdout.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            24,
+            27,
+            28,
+            39
+          ],
+          "locator": "Articleprotocol anddatareleaseplans, authorprimarysampleNotebook cells7/15/18/19 manuallyreadfully"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "RepresentationanalysiswithtargetedLEHDvariant, separatearchitectures/taskcheckpointsandqualitativeextensions;remainstudy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            9,
+            10,
+            24,
+            25,
+            32,
+            33
+          ],
+          "locator": "Actual mainandappendixdomains/checkpoints"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/becf96dcee66f9df08169e4c96bbbd8c-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS38MainConference2025 exacttitle/fourauthors/DOI10.52202/085713-4389 manuallyopened; PDFp1SMU/MIT checked. Retained formal2025year despitecurrentrepoBibtex2026."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/becf96dcee66f9df08169e4c96bbbd8c-Abstract-Conference.html",
+      "locator": "Manuallychecked publisheralllinks:Paper/Bibtex,no externalSupplemental. All39pages incl48refs/checklist/AppendicesA-E read. Alsomanuallyinventoried officialrepoentire13-filetree,foundtwo1pagePDFfigureassets;downloaded,registered,fullyreadandvisuallychecked asduplicatepaperFigures15/6. All41registeredpagesread; noneidentifiedmissing. Visuallycheckedpaperpp3/8/9/10/28/29/30/39 and bothassetpages."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/123zhangzq/NeurIPS2025_probing/",
+      "locator": "ExplicitauthorURLPDFp1/B3andpublisher checked. FullREADME,regREADME,data_gen.py,allNotebooksourcecells,relevantmodel/trainerL1implementation andembeddingextractionpoints read;samplefilesplusoriginalmodeldependencies,notself-containedallresultsreproduction. Entiretreecached; nootherPDFscience."
+    },
+    {
+      "field": "probe split and significance",
+      "source_url": "https://github.com/123zhangzq/NeurIPS2025_probing/blob/main/sample_codes/3_probing_exp/example_probing_exp.ipynb",
+      "locator": "Allsourcecellsread:cell7twooppositelabelrowsperinstance;cell15train_test_splitrows,test_size.2/random_state42,StandardScalertrainfit,linearFCclassification;cell18statsmodelsLogittrainX/y;cell19rawpvaluestars. MainpaperBH-FDRstatementrecordedseparately; donotclaimnotebookcontainscorrection."
+    },
+    {
+      "field": "regularization",
+      "source_url": "https://github.com/123zhangzq/NeurIPS2025_probing/blob/main/sample_codes/4_LEHD_%20regularization/TSPModel.py",
+      "locator": "Model175L1outbeforefinalprojection,208-214tokenL1normmean;Trainer196-197lambda1e-6addtotrainingloss. READMEinstructsreplaceoriginalLEHDfiles;no claimalllambda/seedexperimentsrerun."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/becf96dcee66f9df08169e4c96bbbd8c-Paper-Conference.pdf",
+      "locator": "Exactpublisher39pagePDFidentity/formalversionchecked. TwoauthorrepofigurePDFsversionidentifiedascurrentstaticduplicatedFigure15and6;sourceSHA retained."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/becf96dcee66f9df08169e4c96bbbd8c-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/cs-probing-nco/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cs-probing-nco",
+      "cited": "deepaco",
+      "reference_label": "[2] Ye et al. (2023)",
+      "description": "Uses neural-ant prior as NCOmotivation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbody PDFp1, exactbibliographicidentity PDFp11: [2] Ye et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "attention-model",
+      "reference_label": "[11] Kool, van Hoof and Welling (2018 preprint; ICLR2019)",
+      "description": "Mainprobedarchitecture anduniformroutinggenerator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody PDFp2, exactbibliographicidentity PDFp11: [11] Kool, van Hoof and Welling (2018 preprint; ICLR2019)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "pomo",
+      "reference_label": "[12] Kwon et al. (2020)",
+      "description": "Mainprobedarchitecture andtraining comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody PDFp2, exactbibliographicidentity PDFp11: [12] Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "lehd",
+      "reference_label": "[13] Luo et al. (2023)",
+      "description": "Mainprobedarchitecture,interventionsandregularization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody PDFp2, exactbibliographicidentity PDFp11: [13] Luo et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "difusco",
+      "reference_label": "[18] Sun and Yang (2023)",
+      "description": "Runs supplementarydiffusionmodelprobe.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Explicitbody PDFp5, exactbibliographicidentity PDFp11: [18] Sun and Yang (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "t2t",
+      "reference_label": "[19] Li et al. (2023)",
+      "description": "Mentions furtherdiffusionmodelsasfutureanalysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicitbody PDFp5, exactbibliographicidentity PDFp12: [19] Li et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "fast-t2t",
+      "reference_label": "[20] Li et al. (2024)",
+      "description": "Mentions furtherdiffusionmodelsasfutureanalysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicitbody PDFp5, exactbibliographicidentity PDFp12: [20] Li et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[21] Khalil et al. (2017)",
+      "description": "Backgroundneuralgraphcombinatorialmethods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [21] Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[23] Kool et al. (2022)",
+      "description": "Routingrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [23] Kool et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[25] Bello et al. (2016)",
+      "description": "Recurrentpointerroutingbackground.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [25] Bello et al. (2016)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "rl-vrp",
+      "reference_label": "[26] Nazari et al. (2018)",
+      "description": "Recurrentpointerroutingbackground.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [26] Nazari et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "learning-to-improve",
+      "reference_label": "[27] Lu, Zhang and Yang (2019)",
+      "description": "Attentionrelatedroutingmethods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [27] Lu, Zhang and Yang (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "dact",
+      "reference_label": "[28] Ma et al. (2021)",
+      "description": "Attentionrelatedroutingmethods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [28] Ma et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "neuopt",
+      "reference_label": "[29] Ma, Cao and Chee (2023)",
+      "description": "Attentionrelatedroutingmethods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [29] Ma, Cao and Chee (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "glop",
+      "reference_label": "[30] Ye et al. (2024)",
+      "description": "Attentionrelatedroutingmethods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            12
+          ],
+          "locator": "Explicitbody PDFp20, exactbibliographicidentity PDFp12: [30] Ye et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "dar",
+      "reference_label": "[45] Wang, Jia, Chen and Mei (2024 arxiv draft)",
+      "description": "Discusses explicitdistanceattentionmethod; authoridentitymatchescurrentformalDARtitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            31,
+            13
+          ],
+          "locator": "Explicitbody PDFp31, exactbibliographicidentity PDFp13: [45] Wang, Jia, Chen and Mei (2024 arxiv draft)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "icam",
+      "reference_label": "[46] Zhou, Lin, Wang, Tong, Yuan and Zhang (2024 arxiv2405.01906)",
+      "description": "Discusses instanceconditioneddistanceawareattention; exactarxivID/currentformalICAMidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            31,
+            13
+          ],
+          "locator": "Explicitbody PDFp31, exactbibliographicidentity PDFp13: [46] Zhou, Lin, Wang, Tong, Yuan and Zhang (2024 arxiv2405.01906)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[47] Kwon et al. (2021)",
+      "description": "RunsMatNetATSPdistanceprobe.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            32,
+            13
+          ],
+          "locator": "Explicitbody PDFp32, exactbibliographicidentity PDFp13: [47] Kwon et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "cs-probing-nco",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[48] Zhang et al. (2020)",
+      "description": "RunsJSSPprecedenceprobeonGNNmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            33,
+            13
+          ],
+          "locator": "Explicitbody PDFp33, exactbibliographicidentity PDFp13: [48] Zhang et al. (2020)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedshallowdescriptionwithallfourtaskdefinitions/labels/features,mainmetrics/ablation/regularizationandATSP/JSSPextensions.",
+    "Clarifiednoncausalprobeinterpretation/coordinate-specificfindings/finaloutputonly2Dintervention andnonuniformregularizationbenefits.",
+    "CorrectedrawdistancebaselineAUC.64byAppendixFigure11;distinguishedHGSreferencefromglobaloptimalcertificates.",
+    "Readpublicexamplecodeandrecordedrow-wise80/20split/traincoefficientfit/originalcode dependencies,notclaimedcompleteindependentinstanceholdout.",
+    "41registeredpagesfullyreadincltwoduplicateauthorfigurePDFs;19exactinternalcitationsincludingrenamedDAR/ICAM; genericPointerNetworksphrasenotcitation;no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "078838b733aa60fae796b6d55ffe29a0e9e016bff1bc71332dc5f7f862435a53"
+}

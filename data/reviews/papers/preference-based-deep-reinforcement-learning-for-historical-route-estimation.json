@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "paper_id": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+  "note_path": "specialist/preference-based-deep-reinforcement-learning-for-historical-route-estimation.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "ec8b677d268e13766a56f8ffe7599425dad6a18fbb7196857d2555398bc7cf01",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2025/0955.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2025/0955.pdf",
+      "version": "ActualIJCAI2025formalPDF9pages8591-8599fullyread,all41refs/tables/conclusion;metadataindependentlypublisherverified.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-e71b9fae5e/publisher.pdf",
+      "sha256": "37563bf34de5280a2415d9b56cea41d3bb56eb901ddc46b140eb3d85661c56dc",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readformal8591-8593sixauthorDUT/TUe/SMU/HouZhangcorrespond; preferenceARroutegenerationfromhistoricalsupervision, arc-differenceobjective/deterministicCVRP/REINFORCEbackground/PbRLBradleyTerry. Tasknotonlyinverseprediction: generatesnewfeasibleroutes."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readformal8594-8596rewardnegativeweightedlength/arcsetdifference,beta0-1,BTradifference/policylogratio andpairwiseobjective. Eq9indicatorr1<r2versusmaxlogpref1signneedsqualifyactualrelease. Trainingonlysimulatedpreferencesfromsingle73customerCVRPlibsubsample20/randomdemands/E.8-1.2/30historicalroutes,batch50. Notrealhumannotatedhistory.4090/i5/32GB. Tables1-3ADobjective notroutecost."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readformal8597-8599allTables4-5generalization/limitations/conclusion/ackandcomplete41bib. MatchedAD3.15/12.5%,unseen6.68/26.5%,unseen100AD8.82;beta1onlyAD(noexplicitlengthterm). Datasettestcounts/splits/epochs/inferencebudgetnotstated. Noexternalsciencesupppromised;futuretime-dependent/dynamicnotcurrent."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Arc-disagreementrewardandpairwisepreferenceoptimizationforPOMOconstructiveCVRProutegeneration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Framework/Sections3-4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Negativeweightedlength/ADreward,one-sidedarcsetdisagreement;beta1removeslength. PrintedEq9signvsreleasegreater-rewardmaskandlinearlogdifference+REINFORCEexplicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations1-9 and actualCVRPTrainer/CVRPEnv"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Single73customerCVRPlibbase/20customersamples/randomdemands/U.8-1.2costperturbation/30syntheticroutes/batch50/4090. AD3.15/12.5%matched,6.68/26.5%unseen,100nodeAD8.82.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1-5/setup"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Noindependenthumannotatedpreferences,nofullbudget/time/seedCI;proxydoesnotproveshorterroute;dynamicVRPfuture. Manuscript/releaseconventionsneedreconcile.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Experimentalprotocol/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "SpecialistconstructiveCVRP:newfeasibleroutegenerationfromPOMOpolicy,notonlyinverseprediction,nolearnedincumbentediting/crossnativeproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            7
+          ],
+          "locator": "Task/action/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actual9formalpages/all41bibread;91entryofficialrepomanualinventory/fullREADME/keyloss+reward/config,originalFigure1actualview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "locator": "Byline/fullrefs/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2025/955",
+      "locator": "Primarypublisher/actualformalbyline6/HouandZhangcorrespond,DUT/TUe/SMU/lab. OfficialBibTeXmonth8vsdepositedCrossrefpublished-print2025-09 =>year2025only."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/pandarking/Preference-based-DRL",
+      "locator": "All9formalpagesincl41refsfullyread; noappendix/separateproofpromised. Actualofficialrepo91entrytreeSHA0f74c7bd2a411d6fb9d040c476292861c55911a9manuallyinspected:noPDF/TeX/ZIP/notebookscientificsupp;releases[].FullREADMEread. Normalexacttitle/arxivsearchfoundformal/acceptedcopyonly."
+    },
+    {
+      "field": "code objective/classification",
+      "source_url": "https://github.com/pandarking/Preference-based-DRL/tree/0f74c7bd2a411d6fb9d040c476292861c55911a9",
+      "locator": "ActualCVRPTrainer244-268greater-rewardmask/linearlogprobabilitydifferenceplusREINFORCE;CVRPEnvdonebeta1negativeAD;train_n20epochs100/B50. PrintedEq9r1<r2 differshigherrewardconvention andactualcode. ConstructiveCVRPoneproblem."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://www.ijcai.org/proceedings/2025/0955.pdf#page=2",
+      "locator": "FulloriginalFigure1p2Rect51,54,297,176@5xatomicPNGviewed;renderedp2/4/5/6/7allkeyformulas/routecomparison/Tables1-5actualview."
+    },
+    {
+      "field": "citation versions",
+      "source_url": "https://www.ijcai.org/proceedings/2025/0955.pdf#page=8",
+      "locator": "All41bibpp8-9plusbodymanualchecked. AM2018arxiv1803.08475/Bello2016arxiv1611.09940actualcitedversions;Lin2025PreferenceOptimizationdifferentworkmatchingfull7authorcatalogueidentity. Noforcednear-topic/independentextensionedge."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018), arXiv1803.08475",
+      "description": "Explicitbodycitationandmatchingfullbibliography,actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Introduction/method/setup + full Referencespp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv1611.09940",
+      "description": "Explicitbodycitationandmatchingfullbibliography,actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Introduction/method/setup + full Referencespp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Explicitbodycitationandmatchingfullbibliography,actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Introduction/method/setup + full Referencespp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbodycitationandmatchingfullbibliography,actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            8
+          ],
+          "locator": "Introduction/method/setup + full Referencespp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "preference-based-deep-reinforcement-learning-for-historical-route-estimation",
+      "cited": "preference-optimization-co",
+      "reference_label": "Lin et al. (2025)",
+      "description": "Explicitbodycitationandmatchingfullbibliography,actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Introduction/method/setup + full Referencespp8-9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingbyline/task/publication/figurefieldswithformalprimary/fullreading.",
+    "SpecialistconstructiveCVRPgenerator;simulatedhistorynotrealdriverpreferencevalidation.",
+    "PreciseAD/normalizedAD/minimumandunseenprotocol;betatradeoff/noexplicitlengthat1.",
+    "PreserveprintedEq9signandactualreleasedgreater-rewardlinearlogratio+REINFORCEdifferencewithoutclaimingtrainreproduction.",
+    "All9pages/41refs/scientificinventory/originalfigureviewcomplete;5confirmedexplicitinternaledges."
+  ],
+  "reviewed_note_sha256": "e98197968f54372de06308a083e4e7d1bd668a1753a1ec2d9b4f115230cbf7f2"
+}

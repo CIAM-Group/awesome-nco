@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "paper_id": "fmip",
+  "note_path": "specialist/fmip.md",
+  "baseline_note_sha256": "0b2682089df4ad34e9262398925c6a5b53be5d15125e12f8548e94de520d0f48",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f5a24b8fa97f7073aff5e8baadf583f1-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f5a24b8fa97f7073aff5e8baadf583f1-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-5a975ff3c6.pdf",
+      "sha256": "b368eac5a0a420a8cfb06c8f3de7bae6f881d86ac4cd347b187fad59b8148df5",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read formal7authors/6affiliations andjointcontinuous-binarygenerativeflowmotivation,actualauthorcodeURL; iterativecontinuousdenoisingnotautomaticallyprimalimprovement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read actualboundedintegerMILPwithcontinuousvariables, distinctnodefeatures andcontinuous/discreteflowpaths/rates. PrintedKboundvsnumbercategories andfinite-stepcategoricalnormalization requirecode/appendixchecks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read jointdenoisingcontinuousMSE/(1-t)+integerCE, cosinediscretization, penaltyobjectiveboundprojection/sampleandratereweightguidance; printedexp(+f/psi) versusminimizef mustverifyactualcode. Alliterativecandidatesmayinfeasible, classicalPSintegration."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read adaptedintegerdiffusionbaselines,4backbones/4downstreamcontrollersandall32resultcells; BKSnotcertopt, MIPLIBPPdifferencevsrelativegapreductionmixedheadline, Gurobi3600bestMIPLIBmean. Apollo repeated3predictionsclassicalpartialfixing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read allbackbone/runtime/ablation/adaptiveschedulecells: inferenceexcludessolver,morestepsdegrade,fullnotmonotonic; w/oContinuousnotworstdespiteprose, adaptiveTable5objective11.79differentmainIP13.92referencepoint requiresqualification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Read entirefirst3bibpagesactualDIFUSCO+LNSdistinction, ConPaSduplicatea/b, CAMBranch/TreeMDP/hybrid/PS/Apolloidentity andPMVBpaper; allreferencesversion-scoped."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 16,
+      "notes": "Read remainingbibandAppendixA(noLLMscience),B5static+1statefeatures,Ctypedgatedmessagepassing/TriGCNheads andtimeconditioning. No neuralrepresentation/solver guarantee fromarchitecture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Read COPT3600s12threadlabels, task90/10splits andMIPLIBmodelpooledtrainingotherdatasets; H100/12CPUthreads,12layer64dim300epoch/12stepdefaults, positiveguidancetemperatures, downstreamthresholdvsrankedselectiondefinitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read allApollo/pseudocode plusMIPLIBbreakdownandmillionvariableSCtables/AppendixH. Recordpositivefweight/+gradientandGaussianlabels pseudocodeinconsistenciesseparatelyfromactualcodeminussigns; largeSC60snegativecaseandwebsiteBKSdifferentreference."
+    }
+  ],
+  "claims": [
+    {
+      "id": "fmip-contribution",
+      "category": "contribution",
+      "statement": "Joint integercategorical/continuousregressiongenerativeflowcapturescouplingandpermitscompletecandidateobjective/violationguidance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4.1–4.3/Eq4–7"
+        }
+      ]
+    },
+    {
+      "id": "fmip-method",
+      "category": "method",
+      "statement": "Typedbipartite12layer64dimGNN,continuous/discretepathsandguidancefeedclassicalGurobirestrictedcontrollers; candidatesnotguaranteedfeasible.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21
+          ],
+          "locator": "Mainmethod/AppendicesB–F/H"
+        }
+      ]
+    },
+    {
+      "id": "fmip-experiments",
+      "category": "experiment",
+      "statement": "Reported8benchmark/4controllermeanswithmanyties; BKSandbudgetdifferences, mixedrelative/PPheadlinearithmetic,ablation/scalefailuresseparated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            17,
+            20,
+            21
+          ],
+          "locator": "Tables1–9/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "fmip-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive onverifiednative-family pipelines; MIPLIBpooledtrainingdisclosedwithoutclaimofunchangednative-testcheckpointgeneralism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            17,
+            18,
+            19,
+            21
+          ],
+          "locator": "D.1perdataset/pooledMIPLIBtraining andclassicalwrapperroles; actualreleasepaths"
+        }
+      ]
+    },
+    {
+      "id": "fmip-limits",
+      "category": "limitation",
+      "statement": "Printedpositiveintegerguidanceweightandpseudocodeinconsistenciesdifferfromcurrentnegative-scorecode; noglobalfeasibility/optimalityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Eq2–7/Algorithm1/E/H; codeprovenanceinmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f5a24b8fa97f7073aff5e8baadf583f1-Abstract-Conference.html",
+      "locator": "FormalPDFp1 sevenauthors/sixaffiliations, exactFMIPjointflowtitle distinctotherfast-modelreductionwork."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f5a24b8fa97f7073aff5e8baadf583f1-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2026-04-20."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f5a24b8fa97f7073aff5e8baadf583f1-Abstract-Conference.html",
+      "locator": "ManualpublisheronlyPaper/Bibtex; all21integratedformalpagesA–H/bibread. Author76423968byteZIP82membersnoPDF/TeX/ipynb,READMEandscientificframePNGread. OfficialICLRevent10007730poster3162298bytesread; ORkyvW6S0u3zidentified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Lhongpei/FMIP",
+      "locator": "Fullarchive/README; pl_gmip_model.py139–146MSE+CEwithoutprinted1/(1-t),268–271negative-softmaxguidance,288–302continuousdescent; arg.py30stepdefault; gurobi_predsearch.py79–129integerprobabilitytrustregionwithoutCvarStart, taskcheckpointpaths224."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://github.com/Lhongpei/FMIP",
+      "locator": "Train_scriptsseparatenativefamilies/models/{problem_set}; formalD.1p17MIPLIBpooledotherbenchmarks acknowledged,butnomappednativeevaluationmanifestforthatpooledcheckpoint; partialmodelconstructionnotneuralincumbentediting."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "fmip",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            13,
+            19
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "cambranch",
+      "reference_label": "Lin et al. (2024a)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Lin and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "conpas",
+      "reference_label": "Huang et al. (2024a,b)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            13
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "hrl-aug-branching",
+      "reference_label": "Zhang et al. (2024)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            6,
+            7,
+            12,
+            18
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "fmip",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Explicit body author-year and matching full bibliography; duplicate ConPaS references collapsed by identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh21formalpages/A–H/fullrefsplusofficialposterandrepoframePNGread; inventoried76423968bytecodeZIP; specialistconstructive retainedwithpooledMIPLIBtrainingdisclosed; actualformulas/code/PSintegration/BKS/headlinearithmeticandnegativesqualified;10explicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a5ae23fe616f2827f5d7fd556815fd5005aed45cbdefdf40981c3fd1cd5cf0a2"
+}

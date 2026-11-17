@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
+  citationEvidenceLabel,
+  citationEvidenceUrl,
   compactProblemFamily,
   compactVenue,
   filterPapers,
@@ -18,6 +20,9 @@ import {
 import type { Paper, Relation } from '../types'
 
 const base: Paper = {
+  inclusion: 'main',
+  review_status: 'pending',
+  paper_type: 'solver',
   id: 'sample',
   short_title: 'Sample',
   title: 'A Sample Routing Paper',
@@ -52,20 +57,30 @@ describe('paper filters', () => {
     expect(filterPapers([base], { query: 'scheduling', scope: 'all', paradigm: 'all', family: 'all', year: 'all' })).toEqual([])
   })
 
+  it('separates studies by type and restores their shared filter URL', () => {
+    const study: Paper = { ...base, id: 'study', scope: 'study', paper_type: 'benchmark', paradigm: undefined }
+    const filters = filtersFromSearchParams(new URLSearchParams('scope=study&type=benchmark'), {
+      scopes: ['specialist', 'generalist', 'study'], paradigms: ['constructive'], families: ['Routing'], years: ['2025'],
+    })
+    expect(filterPapers([base, study], filters)).toEqual([study])
+    expect(filterPapers([base, study], { ...filters, type: 'theory' })).toEqual([])
+  })
+
   it('restores valid filter state from a shareable URL and rejects stale values', () => {
     const options = { scopes: ['specialist', 'generalist'], paradigms: ['constructive'], families: ['Routing'], years: ['2025'] }
     const restored = filtersFromSearchParams(new URLSearchParams('q=route&scope=specialist&paradigm=constructive&family=Routing&year=2025'), options)
-    expect(restored).toEqual({ query: 'route', scope: 'specialist', paradigm: 'constructive', family: 'Routing', year: '2025' })
+    expect(restored).toEqual({ inclusion: 'main', type: 'all', query: 'route', scope: 'specialist', paradigm: 'constructive', family: 'Routing', year: '2025' })
 
     const stale = filtersFromSearchParams(new URLSearchParams('scope=archive&paradigm=hybrid&family=Unknown&year=1999'), options)
-    expect(stale).toEqual({ query: '', scope: 'all', paradigm: 'all', family: 'all', year: 'all' })
+    expect(stale).toEqual({ inclusion: 'main', type: 'all', query: '', scope: 'all', paradigm: 'all', family: 'all', year: 'all' })
   })
 })
 
 describe('paper relations', () => {
   const relation: Relation = {
+    citing: 'sample', cited: 'related', reference_label: '[1]', evidence: [{ source_id: 'paper', pdf_pages: [2], locator: 'Introduction' }],
     papers: ['sample', 'related'],
-    kind: 'architecture',
+    kind: 'citation',
     description: 'The methods share an autoregressive construction architecture.',
   }
 
@@ -81,6 +96,11 @@ describe('paper relations', () => {
 })
 
 describe('timeline grouping', () => {
+  it('uses the documented publication year when an acceptance date is unavailable', () => {
+    const published: Paper = { ...base, acceptance: undefined, date: '2023', publication: { date: '2024-07', source_url: 'https://example.com/proceedings' } }
+    expect(groupPapersByTimelineYear([published]).map(group => group.year)).toEqual([2024])
+    expect(paperTimelineLabel(published)).toBe('Published Jul 2024')
+  })
   it('groups by acceptance year and falls back to first-public year for arXiv-only work', () => {
     const older = { ...base, id: 'older', date: '2020-01-01', acceptance: { date: '2021', source_url: 'https://example.com/older-decision' } }
     const preprint = { ...base, id: 'preprint', date: '2024-03-01', acceptance: undefined, venue: 'arXiv', arxiv_url: 'https://arxiv.org/abs/2403.00001' }
@@ -134,11 +154,8 @@ describe('compact paper metadata', () => {
 describe('relation graph presentation', () => {
   it('gives every relation kind a distinct non-color line treatment', () => {
     const styles = Object.values(relationKindStyles)
-    expect(styles).toHaveLength(4)
-    expect(new Set(styles.map((style) => `${style.dash.join(',')}|${style.curvature}|${style.marker}`)).size).toBe(4)
-    expect(new Set(styles.map((style) => style.color)).size).toBe(4)
-    expect(styles.every((style) => style.width >= 2.7 && style.width <= 3.1)).toBe(true)
-    expect(relationKindStyles.scope.marker).toBe('opposed-triangles')
+    expect(styles).toHaveLength(1)
+    expect(relationKindStyles.citation.width).toBeGreaterThan(0)
   })
 
   it('keeps degree-scaled node radii in the compact target range', () => {
@@ -146,5 +163,20 @@ describe('relation graph presentation', () => {
     expect(radius(1)).toBeGreaterThanOrEqual(4)
     expect(radius(1_000)).toBeLessThanOrEqual(8)
     expect(relationNodeValue(1_000)).toBe(relationNodeValue(10_000))
+  })
+})
+
+
+describe('citation source links', () => {
+  const evidence = { source_id: 'paper', pdf_pages: [3, 4], locator: 'References', source_url: 'https://example.com/paper.pdf#old' }
+  it('opens a PDF at the first evidence page', () => {
+    expect(citationEvidenceUrl(evidence)).toBe('https://example.com/paper.pdf#page=3')
+    expect(citationEvidenceLabel(evidence)).toBe('PDF p. 3, 4')
+  })
+  it('names a PDF inside an archive and opens the archive without a PDF fragment', () => {
+    const member = { ...evidence, source_url: 'https://example.com/supp.zip', archive_member: 'appendix.pdf' }
+    expect(citationEvidenceUrl(member)).toBe('https://example.com/supp.zip')
+    expect(citationEvidenceLabel(member)).toContain('appendix.pdf')
+    expect(citationEvidenceUrl({ ...evidence, source_url: 'https://example.com/supp.zip?download=1' })).toBe('https://example.com/supp.zip?download=1')
   })
 })

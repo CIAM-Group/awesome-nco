@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "paper_id": "neural-set-function-extensions",
+  "note_path": "studies/neural-set-function-extensions.md",
+  "baseline_note_sha256": "c20c642a7bdb8287c52e9f7095ab4f8b343acbda002ef2b1ace4d3960f790b18",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-968d72155b.pdf",
+      "sha256": "eaf20bb25b7b4119c36c75aa52a5640e23e2db95909f243101bd52777ca713f0",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Supplemental-Conference.zip",
+      "archive_member": "lovasz_neurips2022_supp.pdf",
+      "version": "official NeurIPS2022 scientific supplement lovasz_neurips2022_supp.pdf,21pages,extracted from publisher ZIP",
+      "local_path": "research/full-text-review/neural-set-function-extensions/supplement-scientific.pdf",
+      "sha256": "ccb47cd060ded341ee5e9ce87e28d9a18ae271bdebf35bbb513092a4206ee677",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Fresh full reading of motivation, all scalar variants, global-minimum proposition, LP/SDP lifting and eigenvector/domain/truncation discussion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Read complete task results, exact ratio definitions, all figures/ablations and all related work; distinguished dataset-task networks and global versus local claims."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 15,
+      "notes": "Read the entire five-page main bibliography and exact citation identities/editions."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read full LP/SDP dual derivations and start of convex-combination global-minimum proof."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "Read every scalar proof: Lovasz continuity, Toeplitz inverse, bounded-cardinality boundary caveat, singleton negative-unique-minimum condition, permutation and multilinear variants."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 11,
+      "last_page": 14,
+      "notes": "Read full lifting proof/normalization and eigen-continuity assumptions, actual hardware/split protocol, training objectives, power-method approximation, baselines and reference solver details."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read decision evaluation, all image-training details, both complete forward pseudocodes, limitations/impact and beginning of supplement references."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Read remaining complete supplement references. Visually checked main definitions/tables/all key figures, global-minimum proof, bounded-cardinality caveat, lifting proof, eigen implementation and pseudocode."
+    }
+  ],
+  "claims": [
+    {
+      "id": "framework",
+      "category": "contribution",
+      "statement": "A scalar distribution-based extension framework is lifted to high-dimensional matrix representations for neural losses/layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections2-4; scalar and neural SFE definitions"
+        }
+      ]
+    },
+    {
+      "id": "global",
+      "category": "method",
+      "statement": "No bad minima proposition concerns equality of global minima and convex hull of global minimizers, not absence of suboptimal stationary/local points.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Supplement B complete Proposition4 proof"
+        }
+      ]
+    },
+    {
+      "id": "assumptions",
+      "category": "method",
+      "statement": "Lifting proof invokes normalized nonnegative weights, distinct eigenvalues and sign/domain conventions; practical approximation uses four eigenvectors and five power iterations.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            11,
+            12,
+            13,
+            16
+          ],
+          "locator": "Supplement D, F.2 and Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "exceptions",
+      "category": "limitation",
+      "statement": "Bounded-cardinality variant has boundary continuity caveat; singleton is not dual-LP feasible and has a separate proof with negative unique discrete minimum.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Supplement C.2-C.3"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Table1 neural Lovasz improves scalar in8of10 comparisons, but is not uniformly best; deviations are across test graphs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Table1 and Section5; Supplement F protocol"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "reproducibility",
+      "statement": "Actual implementation details include modified density objectives, dataset/baseline-specific choices and code/prose split inconsistencies.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Supplement E-G; separately inspected archive code data.py lines241-254 recorded in metadata"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A general extension/loss framework with separately trained graph/image applications is a methodological theory study, not one multi-task learned optimizer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Problem setup; distinct tasks/backbones; conclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/6294a235c0b80f0a2b224375c546c750-Abstract-Conference.html",
+      "locator": "Manually opened official NeurIPS2022 record; full canonical Joshua W. Robinson name. Main PDFpage1 affiliations:EPFL,MIT CSAIL,Prescient Design/Genentech/Roche. Publisher gives2022year, no December6 day."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Supplemental-Conference.zip",
+      "locator": "Manually inspected official ZIP:lovasz_neurips2022_supp.pdf21pages plus code_SFE.zip. All21 scientific supplement pages read. Nested code ZIP complete member inventory checked:no further scientific PDFs."
+    },
+    {
+      "field": "implementation and split discrepancy",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/6294a235c0b80f0a2b224375c546c750-Supplemental-Conference.zip",
+      "locator": "Read code_SFE.zip member SFE/data/data.py get_loaders lines241-254: training=floor(.6*N),validation=floor(.3*num_trainpoints),test=remainder, approximately60/18/22. Main p7 labels60/30/10 train/test/val; Supplement p12 labels train/val/test. Note attributes table results without claiming which conflicting protocol generated them. No code/pickle executed."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/6294a235c0b80f0a2b224375c546c750-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-12-06; cached evidence research/full-text-review/neural-set-function-extensions/supplement-landing.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/6294a235c0b80f0a2b224375c546c750-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2022-12-06; primary cachedHTML research/full-text-review/neural-set-function-extensions/supplement-landing.html; citation_title=['Neural Set Function Extensions: Learning with Discrete Functions in High Dimensions']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al. (2018 as printed), Learning to solve circuit-sat",
+      "description": "Cites an unsupervised differentiable discrete-objective approach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicit body citation on PDF page9; matching full reference on PDF page11: Amizadeh et al. (2018 as printed), Learning to solve circuit-sat"
+        }
+      ]
+    },
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Evaluates and conceptually compares probabilistic multilinear-style unsupervised graph optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "Explicit body citation on PDF page7; matching full reference on PDF page13: Karalias and Loukas (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Cites neural combinatorial optimization when motivating discrete set-function layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit body citation on PDF page2; matching full reference on PDF page11: Bello et al. (2016), arXiv:1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "Contrasts embedded satisfiability/optimization solvers with analytical-program-based extensions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            15
+          ],
+          "locator": "Explicit body citation on PDF page10; matching full reference on PDF page15: Wang et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "blackbox-backprop",
+      "reference_label": "Vlastelica Pogancic et al. (2019 as printed), Differentiation of blackbox combinatorial solvers",
+      "description": "Contrasts solver differentiation with the extension approach; exact title/authors identify the existing ICLR2020 work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page10; matching full reference on PDF page14: Vlastelica Pogancic et al. (2019 as printed), Differentiation of blackbox combinatorial solvers"
+        }
+      ]
+    },
+    {
+      "citing": "neural-set-function-extensions",
+      "cited": "comboptnet",
+      "reference_label": "Paulus et al. (2021)",
+      "description": "Contrasts actual ILP solver layers with LP/SDP formulations used only analytically.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page10; matching full reference on PDF page14: Paulus et al. (2021)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded complete six-section note with36pages scientific reading and all proofs/supplement results.",
+    "Restricted no-bad-minima claim to global minima and stated variant/lifting assumptions, normalization and approximate-power-method choices.",
+    "Separated layer/framework reuse from shared-generalist-checkpoint claims; added MIS and k-Clique Decision metadata.",
+    "Documented conflicting paper/supplement/code split protocols without claiming an invented resolution or independently reproduced results.",
+    "Added real supplementary code availability and actual training-objective/baseline details.",
+    "Removed unsupported December6 publication day and used official year; recorded six exact internal citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c34af17adbf1e331829872873c6177963103ab0f8468978615d3909add10a217"
+}

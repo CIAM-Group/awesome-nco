@@ -1,0 +1,790 @@
+{
+  "version": 1,
+  "paper_id": "memento",
+  "note_path": "specialist/memento.md",
+  "baseline_note_sha256": "08427de12d65dd88094e11ce8f767d1f583585ed5c80c55fdbec1b25ad8fc7ab",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f888eaccece0de24cc29d3ed02fd54b-Paper-Conference.pdf",
+      "version": "Actual official NeurIPS2025 32-page proceedings PDF, completechecklist/main/references/AppendicesA-K freshlyread; official nestedcodeZIP manuallyinspected andselectedcode/configread.",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f888eaccece0de24cc29d3ed02fd54b-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-16e657d4e9.pdf",
+      "sha256": "b3fad03b38b013314e20e0eee4091ea0646f26ed2074408de45c612ee396a405",
+      "pages": 32,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalNeurIPS2025first2pages title6authors ThomasDBarrett(notTomformal)/InstaDeep+UCT; memorylearnedupdateat inference fromonlinecollecteddata, 2taskTSPCVRPto500. Existingimprovementclassificationmaywrongpolicyadaptationnotincumbentedits,verifyfullmethod.11/12claimscopeRLmethodsbudgetnotallneuralSL. Introrefsfullread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullrelateddiversityvsPOLICYimprovement distinction explicitauthors exclude solutionimprovementmethods; MEMENTOlogitscorrectwholeconstructivetrajectories. Fig2memorytransitions node/action/logprob/return andMLPauxcorrectlogits plusbase; pretrainedAM/POMO/POPPY/COMPASSappliednotalltaskscheckpoint. Oldparadigm improvementshouldconstructiveonactualnewmechanism,notpolicywording."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Stored8transitionfeatures+remainingbudget retrievedsamecurrentnode(notfullstatekNN),auxMLPscalaronehotactionaggregate additive logits. Inferencebothbase+auxweightsFROZENmemoryonlychanges,notRLfinetuneno incumbent edit. Trainingpositivebest-sofarimprovementweightedlogbudgetneedBformulas. TPUv3-8JAXJumanji;Table1all8sets100train125/150/200OOD,1600ATTEMPTS eachNforcedstart trajectories (1600Nroutes)not1600samples;LKHCVRPheuristiczero nottrueoptimal. SGBSstarcopiedbias."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Mainno8foldaug,Table1MEMENTObetterEASall8butTSP200SGBSstar.619vsMEMENTO.664(notalltreebest). P7prose60%gaindoesnotmatchprinted.185to.045 (~75.7)vsEAS.161(~13),useactualtable. SamePOMOtrainedauxzero-shotCOMPASSswitchonat50%budgetnotimmediateallrounds;large500baseRLwarm100+efficientattention+gradacc4days thenCOMPASS/auxextra. NegativeCVRPLKHgapnotopt."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullFig6/Tables3/4large500budget25000/100000completedattemptsnot1600N?NeedAppD. HighCVRP EAS37.185-.120%36m beatsMementoCompass37.251+.059%36m andMementoPOMO37.306+.206%65m;11/12qualifiedfailureexact. LargeTSPMementoCompass1.58610m/1.50729m notclassicalnearzero. ExcludesmethodagnosticLSfromotherbaselineheadlines;MOCOconcurrentcitednotall2025methods. Scaling1000timingonlynotqualitytrained1000. Explicitfixedaux/weights memoryoverhead."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "FullbibliographyA-Kread. MOCOactual2402.04915/MARCOIJCAI2024/ECO-DQN2020/ECORD2022checkcatalognotforced;PolyNet2024actualpreprintsamearxivchain ratherthanformal2025citation;FERauthorJingwennameprintedreversedpreservematchingDOI."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FullremainingbibliographyL-Zread. PointerformerTable3mentionhasNOmatchingbibliographyentry so noedge byrules;Sun2024LearningEncodingsNeedingRegret maybeexistingIDcheck. MainintroDai2017mapsactualKhalilpaperlearning-co-over-graphs notauthorrewrites. Allbibscancomplete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Entirechecklistp15-16read, authorsclaimnoformaltheoreticalresults vsAppendixFreinforceexpressivityderivation, codemodel/dataavailabilityreportednotindependentlybenchmarkreproduced. Boilerplateguidancefullread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Checklistp17-18FULLread includingexplicitdetailsinZIPcodefile;mustmanualpublisherZIPinventory. StatisticalYesunspecifiedmainseeds/errorbarsdefinitionnotautomaticallyevidenceindependenttrainings. BasicresourcesTPUv3-8onlytotalcomputeunknown."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Entirechecklist19-20read nonexperimentalboilerplate. Primaryinventory hasactualNeurIPSSupplementalZIP;mustdownload/manualinventory code/scientificfiles beforeverified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "Checklist21done;A22explicitstandardTable5PERINSTANCE times butexternalcomparisonTable8/largeTables3/4fullDATASETtimes;avoidmixing. AugTable6EASbetterCVRP125/150 (notMementoall8),noaugtuning. ActualZIPdownload750590bytes2membersneednestedinventory. FullAppendixA setupread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "FullA23-24Tables5/6allnumbers standardPERINSTANCE e.gCVRP200Memento392s vsEAS179s (slower2.19x), MementoCompass272vsCOMPASS85s whilegapbetter;TSP20088vs49s tiny.348vs.349. AugTSP200EAS.403betterMemento.526plusCVRP125/150fail;generalizationnotallgain. MainSGBScopieddiffcheckpoint+aug+CVRPstartpreselection notfairdirecttreeclaim. LargebudgetCOMPASSlatent10 reducesstartcount10fold andmemoryperstart/JIT impactsruntime,notapplesidenticalparallelism. Fulltablesread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "FullTables7/8/9 read: matchedruntimeMemento6of8 vsEAS, failsTSP200.681>.672,CVRP100.086>.081 thoughobjective15.660<15.663 inconsistentrefgap;do notaggregatefalsecertainty. FixedattemptCVRP200392vs179notuniversalruntimegain. Memory40entries5float32pernodeperstart=8MBTSP100;linearNonlyFIXEDstartcount,allNstartsN² total. Table9timing50starts100iterations vsdepth100starts160;do notbakeintomainbudget. NestedZIP356members4branchescode/yaml/README noPDF/TEX/notebooks listed;mustreadselectedpublishedcodeconfigsdetails."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "FullB/C/D/Algorithm1/Table10. TrainingupdatesALLbaseencoderdecoderaux thenoptionalbasefrozenauxrefineLRx.1hours;inferencefixednotonlyauxtraining. MultishotK200,100train64batch100starts200accum;500TSP32batch30starts400accum/memory80trainvs40test;CVRP8batch100starts800accum40memory. lrbase1e4/aux.004,2x8GELU. Algorithm1 updatesbestbeforecomputingpositiveimprovement(line11before12) wouldzero;followprose andactualcode notliteralpseudocode. Sumpositiveimprovements=changeinbestuptoinitialbaseline, cannotrawnegativebestreturn."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "FullD/E/F/G: 500POMO200trainstarts64/32batchgradacc1/2;COMPASS16latent64/32samples8batch8/16acc. Fderivationonlyselectedlogit R(1-pi(a)),fullsoftmaxgradientothercomponents -Rpi(b) notshown, soinformalREINFORCElikecomponentnotexactfullgradient/parameterupdateequivalenceproof. Gfullfeatureablationunbudgetedtime/variancecurves needvisual. Alltext/formulasread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 32,
+      "notes": "FullH/I/J/Klastpagesread: same-node retrievalefficientheuristic vsfullpartialsolutionkNN not exactequivalence;budgetheatmapsqualitativeconditionotherfeaturesfixed. KTable13TSP100trainedbudgets100/200/300,noalltaskmismatchguarantee/200tuningbias;printedgapsnear.0074%notconsistentroundedobjectives7.768vs7.765 soavoidexactgapreuse. Entire32formalpagesinclchecklistandA-Kread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "memory",
+      "category": "contribution",
+      "statement": "Node-indexed online memory and learned correction logits augment constructive solvers, multishot offline learning and task-matched zero-shot COMPASS integration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          "locator": "Sections1-4/Figures2-3."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Offline trainbase+aux andoptionalauxonlyrefine, inferencefreezesbothweights andchangesmemory;40entries/node/start weightedonehot corrections,meanaggregation/provenancecode; selectedlogitREINFORCEanalogyqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            25,
+            26,
+            27,
+            28,
+            29,
+            31
+          ],
+          "locator": "Sections3/AppendicesA-F/I;actualpublishedcodeZIPselectedfunctions."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "1600attempts xNstartsstandard, fixedtime/augexceptions andhighCVRP500EASbest limit11/12claim;standardtimesperinstancevslargewhole128set;trainingbudgets/memoryreplication andunreconciledtablepercentagesqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            22,
+            23,
+            24,
+            25,
+            26,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "locator": "Tables1-13/allscientificappendices."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Correct specialistconstructive: memorycorrectslogitswhileconstructingnewtours, no neuralincumbentmove, frozenweightsmemorychangesnotimprovement;separatetask100/500models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            27,
+            28,
+            29
+          ],
+          "locator": "Section2explicitexcludessolutionimprovement;Section3andcheckpointAppD."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2f888eaccece0de24cc29d3ed02fd54b-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS38/2025sixauthors;formalPDFtitlepageThomasD.Barrett vslandingTomBarrettalias, InstaDeep/UCT verified, yearprecisionretainednoinventedfirstdate."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f888eaccece0de24cc29d3ed02fd54b-Supplemental-Conference.zip",
+      "locator": "ActualofficialSupplementalZIP750590bytes,2outermembersincludingnested813026bytecode.zip;manuallyinventory356nestedmembers/4branches Python/YAML/sh/README/PNG, noPDFTEXIPYNB. FourPNGbyteidenticalSHA2bfe413d63b9f7fe... originalframeworkvisuallyread;selectedpublishedREADME/loss/fullmemoryMLP/trainer/memory/configsciencechecked;allA-Kinmain32pagePDFread. Public82entrytreealsoinspectednoPDFZIPTEX."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/instadeepai/memento",
+      "locator": "PublishedZIPselectedfunctions/configs read confirms firstrawreturnthenclippedimprovement andlossbeforebestupdate, jointbaseauxtraining,40entries/correctionMLP/meanonehots+logitclip/CVRPcapacitydelta;nottrainingbenchmarkreproduced."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2f888eaccece0de24cc29d3ed02fd54b-Paper-Conference.pdf#page=4",
+      "locator": "OriginalfullFigure2/page4Rect(113,104,499,268)4x;all11figures andcriticalextendedtables/equationsvisuallyinspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2f888eaccece0de24cc29d3ed02fd54b-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/memento/publisher-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2f888eaccece0de24cc29d3ed02fd54b-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2026-04-23; primary cachedHTML research/full-text-review/memento/publisher-landing.html; citation_title=['Memory-Enhanced Neural Solvers for Routing Problems']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "memento",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "compass",
+      "reference_label": "Chalumeau2023b",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "lehd",
+      "reference_label": "Luo2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017 actualKhalilpaper authorordering",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "polynet",
+      "reference_label": "Hottung2024arxiv2402.14048",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "meta-sage",
+      "reference_label": "Son2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "fer",
+      "reference_label": "Jingwen2023 DOI3285077 actualLiJingwennameprinted",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021 dataset citation",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "dimes",
+      "reference_label": "Qiu2022",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "difusco",
+      "reference_label": "SunYang2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "deepaco",
+      "reference_label": "Ye2023",
+      "description": "Actual explicit in-text author-year citation and full matching bibliography; keep PolyNet2024preprint and FERprintedname. Pointerformer is table-only with no bibliography match, and noncatalog MOCO/MARCO/ECO-DQN/ECORD/regret encoding not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual explicit cited main-text occurrence."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual full bibliography title/authors/year identity."
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al. 2020",
+      "description": "Max-Cut background and explicit ECO-DQN-inspired budgeted improvement reward; exact four-author AAAI34 pages3243?3250 title. Edge records actual citation without adopting source paragraph construction categorization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5
+          ],
+          "locator": "Actually read complete body citation paragraphs: Barrett et al. 2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Barrett et al. 2020"
+        }
+      ]
+    },
+    {
+      "citing": "memento",
+      "cited": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "reference_label": "I. Garmendia et al. 2024",
+      "description": "Policy-update/exploration related work explicitly discusses MARCO; exact four-author IJCAI2024 pages6931?6939 and DOI10.24963/ijcai.2024/766.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read complete body citation paragraphs: I. Garmendia et al. 2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: I. Garmendia et al. 2024"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshcomplete32officialpages/checklist/A-K/all13tables/11figures, actualpublishednestedZIPinventory2outer356inner/noextraPDFTEXIPYNB, selectedpublishedcodeconfigs+identicalframeworkPNGread.",
+    "Corrected improvement to constructive onactualwhole-routeconstructionlogitcorrection; frozenbothnetworks at inference onlymemorychanges; trainingjointbaseauxandoptionauxfinetune separatetask100/500specialist.",
+    "FormalThomasDBarretttitlepagename vsTomalias recorded;yearprecisionpublicationandaffiliations retained.",
+    "Corrected1600attempts xNstarts vs1600routes; standardperinstancesecondsvslargefull128setminutes, low25k/high100kbudget andCOMPASS10latent/startreduction, offlinebase4daysnotwholecompute.",
+    "Restricted11of12includeshighCVRP500exceptionEASbetter,aug/timeexceptions/SGBScopiedmismatchedbase,slowstandardruntime despitequality/tinyTSPCompassgain;notall2025neuralSL/classicalSOTA.",
+    "Qualified informalREINFORCEselectedcomponentnotcompletegradient, Algorithm1bestupdatetiming vsactualcodefirstrawreturn/meanbaseline/logweights, simplified8MBaccountingnotactualcompletefieldsNstartreplicationquadratic.",
+    "Added actualoriginalFig2and22explicitmatchedcitationedges; noforcedPointerformerwithoutbib/MOCO/MARCO/ECO-DQN/ECORD/regretencoding.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "15c94055c3c1ca48fa11a6853832f2489f7dc9cb327fe4a2c942ada846f90e49"
+}

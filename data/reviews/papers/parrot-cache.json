@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "paper_id": "parrot-cache",
+  "note_path": "specialist/parrot-cache.md",
+  "baseline_note_sha256": "425e585c811f550fa4308d9386b479df2c71e4457f7b692e987a7618c4e1a495",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v119/liu20f/liu20f.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v119/liu20f/liu20f.pdf",
+      "local_path": "research/import-272/nco-d4271e92dc.pdf",
+      "sha256": "4baa4c9ad8fe2dc81b0c2cc030f81b6f1c504a6a2bda8f9a8358f72be2f022ba",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v119/liu20f/liu20f-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v119/liu20f/liu20f-supp.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/parrot-cache/supplement.pdf",
+      "sha256": "ba187979663bc008c60ab06c8d0838bf9a08624f953b441aca44088ea1bd12fa",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read ICML2020five-authoridentity,Stanford/Googleaffiliations,cachemodel/Beladyoracle/onlinehistoryinputs,fullMDPandsinglelevelobjective;notedabstractmissratewordingcontradictsbodyhitrateimprovement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read LSTMhistoryattention,DAgger5000refresh,ranking+logreuseauxloss,byteembedder,cachehierarchy/traces80/10/10,normalizationandGliderdifferenttracequalification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read rawhitTable1 andnormalizedFigure5,Gliderwins3programs,byteperformancegap,DAggerablationnegativecases,historysaturation80,practicallatency/memorylimitationsandcodeenvironmentrelease."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read allbibliographyentries; noexactinternal364cataloguepapersidentified; rejectedgeneralMLattention/DAggerworksanddifferentcachingtitles."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full architectureattentionmath,unknownembedding,TopK/reusedistancegapallTable2rows,allhyperparametersboldvaluesandcacheindices,completeTable3programcounts/unseenaccesspercentdefinitions."
+    }
+  ],
+  "claims": [
+    {
+      "id": "parrot-contribution",
+      "category": "contribution",
+      "statement": "Direct eviction imitation uses Beladylabels,on-policyrefresh,rankingandlogreuseauxiliarysupervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3–4,Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "parrot-method",
+      "category": "method",
+      "statement": "A per-program LSTMhistoryattentionpolicyusespast/currentinputsonlyatinference,withfuturetraceoraclelabelsduringtraining;single-levelobjective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            9
+          ],
+          "locator": "MDP,architecture,oracleandfuturework"
+        }
+      ]
+    },
+    {
+      "id": "parrot-results",
+      "category": "experiment",
+      "statement": "WebSearch rawhit45.5to59.0percent is13.5percentagepoints andabout61percentoracle-gapclosure;Gliderwins3SPECprograms;neuraldeploymentlatencyunmeasured.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Table1,Figure5,limitations"
+        }
+      ]
+    },
+    {
+      "id": "parrot-scope",
+      "category": "classification",
+      "statement": "Sharedhyperparameters do notmean sharedweights;policiesfitindividualprogramtraces foronecacheevictiontask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Traceconstruction,train/validation/testandmodels"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v119/liu20f.html",
+      "locator": "FormalICML2020title,fiveauthors,PMLR1196237–6247;PDFp1fullEvanZheranLiu andStanford/GoogleResearchaffiliationsverified"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v119/gh-pages/_posts/2020-11-21-liu20f.md",
+      "locator": "Explicitdate/issued2020-11-21 distinctfromJuly13–18conferenceperiod"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v119/liu20f.html",
+      "locator": "ManualRelatedMaterialSoftwareandSupplementaryPDF;linkedliu20f-supp.pdf3pagesallA/Barchitecture/results/settingsread,noadditionalscientificappendixidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/google-research/google-research/tree/master/cache_replacement",
+      "locator": "Paperp9andpublisherSoftwareexactlink;officialREADMEread,explicitoriginaltracesunreleased andtoy/analogoustraceinstructionsavailable"
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Separatedrawhitpercentagepoints,normalizedoracle-gapclosure,Gliderrelativecomparisons andabstractmissratetypo.",
+    "Addedcompletearchitecture/training/data/supplementdetailsandnegativeablationcases;qualifiedsingle-leveloracleanddeploymentclaims.",
+    "Verifiedofficialcodeavailabilityandexplicitunreleasedoriginaltraceconstraint;noexactinternalcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b1dcbb7078859a9b0957e1f9dc0fc2c9f12387bff34af773683ebb470c5e489b"
+}

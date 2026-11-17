@@ -1,0 +1,725 @@
+{
+  "version": 1,
+  "paper_id": "invit",
+  "note_path": "specialist/invit.md",
+  "baseline_note_sha256": "d341ad185ba00d4047d83ec8bd5cd093e1857ddb207297a59a447168fd768a3a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24c/fang24c.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24c/fang24c.pdf",
+      "version": "ICML2024 PMLR235 publisher20-page PDF including AppendixA1-A4",
+      "local_path": "research/full-text-review/invit/paper.pdf",
+      "sha256": "b15dc03fb0a5b8479e1c126135a7cb39b145dfa03fff44f3ae852c1f53e09b25",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh publisher20-page full text begun: four authors SJTU plus Duke Kunshan (missing); explicit code Kasumigaoka-Utaha/INViT. Constructive autoregressive local-state/action sparsification motivated embedding aliasing, distance attention and optimal-neighbor statistics. ELG explicitly refers to arxivv1 preprint. Related work all read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh invariant normalization/projection equations3-8 and autoregressive architecture allread: dynamic kNN state/action reduction, independent view encoders, concatenated common-intersection nodes. Train augmented-average reward greedy baseline vs sampled policy; baseline epoch replacement, test best augmentation. MSVDRP4 distributions plus counts2000/200/20, public77TSPLIB/100CVRPLIB referenceopt/heuristic distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all mainTables1-4 read including losses: strongestlarge generalized tables, modest100/500losses; public groupedOOM. Separate2V/3V tasks trained100uniform150ksteps batch128~5days each,8trainingaug/100maxrollouts singleinstance no batching RTX4090+i712700; refs heuristic. Ablations4V/eightviews andnormalization/localimportance. Need appendix for fullprotocol exceptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "All bibliography entries freshly read, graphpointer/MDAM etc cited onlyappendix locate later; independent SNComputerScience2021 2opt expanded article not blindly map originalICLR workshop. ExplicitELGv1preprint. Need scan allappendixintext beforeedges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "FreshAppendixA1/A2 empiricalkNNstatistics nottheorem; CVRPfar-nodecoupling. DatasetgeneratorprintedGaussianmu1sigma0suspicious checkcode. ReferenceLKH20000runs10/1 andCVRP5000HGS4h explainslowergap;128mainvs64appendixbatchinconsistency. Encoder2decoder3,width128/512,8heads8aug500epochs300steps andOOMpomosizereduction needqualified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "FreshA2specificsELGCVRPretrained100k50 notprovided;OmniFOMAML,PointerFormerspecialcoordinate scaling/OOMreducedpomo. A3all explicit citations actualversions recorded; authorscallASetciterative but repositorytaxonomy separatelyactualpipeline. Table5allrows throughu1432 inspected individualINViTlossespr152,1002 etc."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Fresh all remainingTSPLIB/CVRPLIB100rows read, largeOOMnotaveragedblindly;3Vnotuniversallybetter2V orothers e.gX85618.55vsLEHD2.97. All20pages scientificAppendixA1-A4complete, originaltable/architecture/statisticalfigurevisual pendingfinal."
+    }
+  ],
+  "claims": [
+    {
+      "id": "nested",
+      "category": "contribution",
+      "statement": "Dynamic nested candidate/context neighborhoods plus invariant normalization/projection address empirical embedding/generalization issues.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3/4 Figures2-3"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "category": "method",
+      "statement": "Independent encoders concatenate common nodes; restricted next-node construction, augmented REINFORCE mean training vs best test.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15
+          ],
+          "locator": "Equations5-8 AppendixA2"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "150ksteps~5days perproblem,100rolloutcap withOOMreductions, datasets2000/200/20 andheuristicreference limits; metadata/code discrepancies explicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            15,
+            16
+          ],
+          "locator": "Section5 AppendixA2"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Strong large averages but small/medium losses; public perinstance exceptions and OOM, ablations qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Tables1-6"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive independent TSP/CVRP models, partialsolution-baseddecisions, nolearnedincumbentediting orweightadaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections3.1/4/5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.mlr.press/v235/fang24c.html",
+      "locator": "PMLR235 ICML2024 pp12973-12992 andformalpage1 fourauthors SJTU/DukeKunshan; restoredDukeKunshan. Publicationyear2024, removedgenericMay1acceptancenotindividualevidence."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2402.02317",
+      "locator": "Manualarxivhistory first2024-02-04,v3May26; actualformalPMLR20pagecopyread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/fang24c.html",
+      "locator": "ManualPMLRPDF+OpenReviewlink inventory;ORpage/API403challenge. All20publisherpages integratedA1-A4read. Sourcecode/datasetavailability statement points officialcode/data; downloaded91-memberofficialsourcearchiveinventory noPDFZIPscientificextras, no inaccessibleORattachmentclaim."
+    },
+    {
+      "field": "code_url, settings",
+      "source_url": "https://github.com/Kasumigaoka-Utaha/INViT",
+      "locator": "Formalpage1exactlink; fullREADME andtrain.py/generator/getcheckpointlogheaderschecked. Paperbatch128mainvs64appendix; code/log16augvs8paper,250epochlogs vs500paper; clusterN(0,1) codevsprintedmu1sigma0 retainedseparate."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24c/fang24c.pdf#page=5",
+      "locator": "OriginalFigure3 Rect(60,70,553,261)5x, mainallformulas/tables andAppendixstatsviews visuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v235/fang24c.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-07-08; cached evidence research/full-text-review/invit/page-1.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.mlr.press/v235/fang24c.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-07-08; primary cachedHTML research/full-text-review/invit/page-1.html; citation_title=['INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2402.02317",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-02-04; title on abstract page: INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer. This date is preprint history, not formal publication. Cached research/full-text-review/invit/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "invit",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "pointerformer",
+      "reference_label": "Jin2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "utsp",
+      "reference_label": "Min2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "lehd",
+      "reference_label": "Luo2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "elg",
+      "reference_label": "Gao2023explicitv1arxiv2308.14104v1",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "dimes",
+      "reference_label": "Qiu2022",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023Efficienttitle",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "routing-dro",
+      "reference_label": "Jiang2022",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2017arxiv",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "h-tsp",
+      "reference_label": "Pan2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "tam",
+      "reference_label": "Hou2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "glop",
+      "reference_label": "Ye2023arxiv",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma2019arxiv",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "invit",
+      "cited": "difusco",
+      "reference_label": "SunYang2023",
+      "description": "Explicit author-year in-text citation and matching bibliography; ELG specifically cited as v1preprint and actual cited preprints retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching author-year bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredDukeKunshan/officialcode andremovedgenericacceptancedate.",
+    "Replacedgenericnote withfullnestedcandidate/context normalization/projection concatenation andtraining/test details.",
+    "Documentedall20pages and datasets/hardware/OOMbudgets/heuristicreferences andpublicrowexceptions.",
+    "Preservedbatch/augmentation/epoch/generator discrepancy acrosspaper/code withoutinventedresolution.",
+    "AddedoriginalFigure3 and23explicitcitationedges. SNComputerScience2021daCostareferenceis independentexpandedarticle, notforcemappedtooriginalworkshopID.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "310c73b2b9e40fee4d4eb3486ff4699e13743abdd8a55cb1cf71fe9dc359362f"
+}

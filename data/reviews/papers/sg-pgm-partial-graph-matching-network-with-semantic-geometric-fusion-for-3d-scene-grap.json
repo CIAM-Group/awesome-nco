@@ -1,0 +1,345 @@
+{
+  "version": 1,
+  "paper_id": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+  "note_path": "specialist/sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "3100010852e9035e9df97e2ac55a808dec25669faa178d1c17dd3ac20820b81b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xie_SG-PGM_Partial_Graph_Matching_Network_with_Semantic_Geometric_Fusion_for_CVPR_2024_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xie_SG-PGM_Partial_Graph_Matching_Network_with_Semantic_Geometric_Fusion_for_CVPR_2024_paper.pdf",
+      "version": "Official CVF CVPR2024 Open Access accepted PDF11pages28401–28411 exactthreeauthorDFKIbyline;allmainand56referencesread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-ec3898c615/publisher.pdf",
+      "sha256": "f44e93a13912814a90da1747d9e16d84fb4ed137930e5924eabeeb411e99a3c8",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Xie_SG-PGM_Partial_Graph_CVPR_2024_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Xie_SG-PGM_Partial_Graph_CVPR_2024_supplemental.pdf",
+      "version": "OfficialCVF5pageSupplementaryMaterial SectionsA–E/Tables8–14/Figures8–10;allscientificpagesread/rendered includingfailedmosaicking.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-ec3898c615/supp.pdf",
+      "sha256": "f0bce7d60300ed3ff276661596b68a7c1b08e7a95e2fa324224fe961443b4644",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full formal title/threeauthorsDFKI, intro/relatedwork/discretepartial3Dsemanticnodeassignment vscontinuousregistration, allSection1?3.1 andFig2 caption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read GATv2/skipsemanticencoder,AIS/Sinkhorn/dummytopK/AFA-U,P2SGclustering,additiverescoring,allloss/overlapformulasanddatasetsplits,fullTable1/Fig6,mainlowoverlapfalsepositive20pointdrop."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full downstream Tables2?7 withmetricdirections,randomtransformationSCC,mosaicking/dynamicsnegativeHits1scenarioii90vs90.6,ablationGTalignmentoraclevslearned andallrefs1?27."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read entire remaining bibliography28?56;matching catalogue identities toverifyandexcludecontinuous-onlydownstreamtechnicalrefs."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read full supplementA/B/C/D1:exact10epochAdam1e-4decay,zero/onehotAFA,metricsformulas,controlledsemanticnoiseTable8,predictedgraphTable9faircomparisonexplicitcaveat."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Read entire remaining supplementTables10?14allrows/AISparameterFigure8andallqualitativeFigures9?10includingexplicitFAILEDmosaickingexample;OPOpoorvsO2O,rankingvsF1/lowoverlapdetailedmetrics."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sgpgm-contribution",
+      "category": "contribution",
+      "statement": "Neural partial node matching combines frozen geometric features/P2SG fusion with semantic GATv2 and learned cardinality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1–3/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "sgpgm-method",
+      "category": "method",
+      "statement": "Partial correspondence decoder is distinct from downstream continuous registration; current code Hungarian+greedy enforces row/column exclusivity with predicted test count.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.5;actualsg_pgm219–223/greedy_perm64–75"
+        }
+      ]
+    },
+    {
+      "id": "sgpgm-results",
+      "category": "experiment",
+      "statement": "Ranking and hard F1 differ; low-overlapF1 74.86vs95.21 high-overlap;negativeHit1scenarioii90.0vs90.6 andidentityFMR99.73vsSGA99.85 retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–6;SupplementTable12"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Table12 explicit74.86/95.21 low/high-overlapF1."
+        }
+      ]
+    },
+    {
+      "id": "sgpgm-classification",
+      "category": "classification",
+      "statement": "Specialist constructive scene matching; shared output used for geometric downstream tasks is not cross-native combinatorial shared-checkpoint evidence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "locator": "Framework/soft-to-hard partialmatching/downstream scope"
+        }
+      ]
+    },
+    {
+      "id": "sgpgm-loss-boundary",
+      "category": "limitation",
+      "statement": "PrintedEq5 is identicallyzero on binary nonzeroGT entries, butactualcode uses−logpred atGTpositions. No conclusion empiricalrunsusedzeroformula.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "Rendered binarySdefinition/Equation5;actualmodules/loss/loss.py13–22"
+        }
+      ]
+    },
+    {
+      "id": "sgpgm-repro",
+      "category": "reproducibility",
+      "statement": "AllSupplementA–E read;groundtruthregionablation/faircomparisoncaveat/failureFigure10 and metricRMS-vsmean implementation distinction preserved.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Supplement complete;actualevaluator114–117"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52733.2024.02683",
+      "locator": "Cached crossref-query.json exact title/threeDFKIauthors/DOI;IEEE published-print/issued2024-06-16. FormalCVF11p28401–28411 byline matches;not inferred conference schedule date."
+    },
+    {
+      "field": "date/arxiv",
+      "source_url": "https://arxiv.org/abs/2403.19474",
+      "locator": "Cachedprimaryarxiv.html fullhistoryv1Thu28Mar2024 15:01:58UTC,exacttitle/threeauthors."
+    },
+    {
+      "field": "supplements/inventory",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Xie_SG-PGM_Partial_Graph_CVPR_2024_supplemental.pdf",
+      "locator": "OfficialCVFprimarypage directscientificsuppPDF5p,allSectionsA–E/Tables8–14/Figures8–10read/rendered incl failedmosaic. CompleteuntruncatedrepoSHA233d852cbc8e40de051352da55d49b3e4466461f noextraPDF/ZIP;READMEandextensionsREADMEread. ExternalYouTubepresentation _xqNhcBC-jI endpointthrottled,notclaimedread;scientifictextdoesnotidentifyunprovidedindependentresults."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xie_SG-PGM_Partial_Graph_Matching_Network_with_Semantic_Geometric_Fusion_for_CVPR_2024_paper.pdf",
+      "locator": "OriginalFig2+completecaptionformalPDFp3 cropRect40,53,572,2583x;public/paper-assets/sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap/framework.png386429bytes exists and actualview_image checked. Keymainpp4–8/all5supp rendered."
+    },
+    {
+      "field": "code/decoder/loss/metric boundaries",
+      "source_url": "https://github.com/dfki-av/sg-pgm",
+      "locator": "Tree233d852cbc8e40de051352da55d49b3e4466461f: sg_pgm.py212–223GTcounttraining/predicted×mintest/Hungarian+greedy;greedy_perm64–75row/colchecks. Matchingloss13–22mean−logpred;printedEq5reversed. evaluatorloss.py114–117meanpointnormvsprintedRMS. READMEtrainingpathscript/scripttypo,JSONlocaldataroot,publicweightsfolderlists sg-pgm_best_model.pth;no benchmark rerun."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Xie_SG-PGM_Partial_Graph_Matching_Network_with_Semantic_Geometric_Fusion_for_CVPR_2024_paper.pdf",
+      "locator": "Full56bibpp9–11read;8exactidentities manuallymatched against527 notes,scanneronlyaid. [11]year2019preprintsameDGMCformalICLR2020,notdifferentpaper. No topical edges from continuousregistration outsidecatalogue."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[11]",
+      "description": "Direct Fey etal. DGMC title/byline, cited2019preprint of same ICLR2020 paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference11"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+      "reference_label": "[15]",
+      "description": "Direct He/Huang/Wang/Zhang CVPR2021 learned matching for multiple-object tracking citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference15"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "sigma-matching",
+      "reference_label": "[22]",
+      "description": "Direct Liu/Hughes/Hassoun/Liu ICML2021 Stochastic Iterative Graph Matching citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference22"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "[27]",
+      "description": "Direct Mena/Snoek/Linderman/Belanger ICLR2018 latent permutation citation for Sinkhorn machinery.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference27"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "interpretable-neural-subgraph-matching-for-graph-retrieval",
+      "reference_label": "[33]",
+      "description": "Direct Roy/Velugoti/Chakrabarti/De AAAI2022 subgraph matching citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference33"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "[43]",
+      "description": "Direct Wang/Yan/Yang ICCV2019 combinatorial embedding citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference43"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "reference_label": "[44]",
+      "description": "Direct Wang/Guo/Jiang/Yang/Yan CVPR2023 differentiable top-k partial matching citation and reused pipeline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference44"
+        }
+      ]
+    },
+    {
+      "citing": "sg-pgm-partial-graph-matching-network-with-semantic-geometric-fusion-for-3d-scene-grap",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[52]",
+      "description": "Direct Zanfir/Sminchisescu CVPR2018 matching citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reference52"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending formal identity/dates and task placeholders with source-grounded evidence.",
+    "Separated hard partial graph assignment from continuous downstream registration and ranking from F1.",
+    "Recorded printedloss/currentcode discrepancy, exactmetricdifference, oracleablation and negativecases withoutinvalidatingexperiments.",
+    "All16PDFpagesread;officialscientificsupp/repositoryinventorycomplete;originalfigureexistsandviewed;8directcitationidentities."
+  ],
+  "reviewed_note_sha256": "24c7d83fc23005840549250fa09eb79cebde2351abc89ecfdc8fce29b077c632"
+}

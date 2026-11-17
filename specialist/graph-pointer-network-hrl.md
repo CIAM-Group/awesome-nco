@@ -1,178 +1,139 @@
 ---
 id: graph-pointer-network-hrl
 short_title: GPN/HGPN
-title: 'Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning'
+title: Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning
 authors:
-  - Qiang Ma
-  - Suwen Ge
-  - Danyang He
-  - Darshan Thaker
-  - Iddo Drori
+- Qiang Ma
+- Suwen Ge
+- Danyang He
+- Darshan Thaker
+- Iddo Drori
 year: 2020
-date: 2019-11-12
-acceptance:
-  date: "2019-12-06"
-  source_url: "https://deep-learning-graphs.bitbucket.io/dlg-aaai20/"
+date: '2019-11-12'
 venue: 'AAAI Workshop on Deep Learning on Graphs: Methodologies and Applications'
 paper_url: https://arxiv.org/abs/1911.04936
 arxiv_url: https://arxiv.org/abs/1911.04936
 code_url: https://github.com/qiang-ma/graph-pointer-network
 institutions:
-  - Columbia University
-  - Cornell University
+- Columbia University
+- Cornell University
 scope: specialist
 paradigm: constructive
 problem_families:
-  - Routing
+- Routing
 problems:
-  - Traveling Salesman Problem
-  - Traveling Salesman Problem with Time Windows
-summary: Graph Pointer Networks combine dynamic relative-coordinate embeddings with an autoregressive pointer decoder, while a hierarchical reinforcement learning extension separates constraint satisfaction from objective optimization.
+- Traveling Salesman Problem
+- Traveling Salesman Problem with Time Windows
+summary: A constructive graph-pointer policy uses relative-coordinate context for size transfer; a separately trained lower policy supplies soft logits to an upper TSPTW policy, with feasibility and sampling-reporting limitations.
 figure:
   path: paper-assets/graph-pointer-network-hrl/framework.png
-  alt: Two-layer hierarchical Graph Pointer Network with graph context, LSTM encoders, and combined pointer vectors.
-  caption: 'Figure 3: Two-layer hierarchical architecture of the Graph Pointer Network.'
-  source_url: https://arxiv.org/pdf/1911.04936
+  alt: Original two-layer HGPN diagram combines lower-policy pointer logits with upper-policy logits before choosing the next city.
+  caption: 'Figure 3: lower-layer pointer scores act as a soft prior for the upper constructive policy.'
+  source_url: https://arxiv.org/pdf/1911.04936v1#page=4
+inclusion: reference
+inclusion_reason: AAAI2020 Deep Learning on Graphs workshop poster/spotlight, outside the approved main-conference criteria.
+publication:
+  date: '2020'
+  source_url: https://deep-learning-graphs.bitbucket.io/dlg-aaai20/
 ---
-
 # Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning
 
-> **TL;DR:** GPN dynamically encodes the positions of candidate cities relative to the current city and selects the next city with a pointer decoder, while HGPN uses a lower policy to guide feasibility and a higher policy to optimize constrained tours.
+> **TL;DR:** GPN extends a recurrent pointer policy with a context-embedding branch and uses current-city-relative coordinates for transfer to larger TSPs. HGPN first trains a feasibility-oriented lower policy, freezes it, and adds its pointer logits as a **soft prior** to an upper policy. Neither the hierarchy nor greedy decoding guarantees time-window feasibility. **This is an AAAI workshop reference, outside the qualifying main-conference list.**
 
 ## Motivation
 
-Pointer Networks formulate the Traveling Salesman Problem as an autoregressive decision process and select the next city from the input set. However, the original Pointer Network primarily encodes cities as a sequence and does not explicitly model the relational structure among the candidate cities.
-
-Graph neural networks offer a natural way to represent relationships between entities in a combinatorial optimization problem. The paper therefore extends the Pointer Network with a graph-based context encoder, producing the Graph Pointer Network. It also introduces a relative-coordinate representation intended to improve transfer from small training instances to much larger TSP instances.
-
-For constrained problems such as the Traveling Salesman Problem with Time Windows, directly combining route length and constraint violations in a single penalty-based reward may result in unstable training and requires careful tuning of penalty coefficients. The paper proposes a hierarchical reinforcement learning framework that separates constraint satisfaction from objective optimization across different policy layers.
+Small-size pointer models can perform poorly when applied to much larger routing instances. Current-city-relative coordinates expose local geometry directly. For constrained routing, mixing objective and feasibility penalties in one training reward can be unstable; the hierarchy instead learns a constraint-oriented policy before an objective-oriented policy. The proposed hierarchy combines decisions during construction, rather than editing an already completed lower-policy tour. [Sections 1/3/4.](https://arxiv.org/pdf/1911.04936v1#page=1)
 
 ## Contributions
 
-- Introduces the Graph Pointer Network, which combines a graph-based context encoder with an autoregressive pointer decoder.
-- Proposes vector context, representing every candidate city relative to the currently visited city rather than using only absolute coordinates.
-- Uses early stopping to reduce specialization to the training size and improve transfer from TSP50 or TSP100 to substantially larger instances.
-- Introduces a hierarchical Graph Pointer Network for constrained combinatorial optimization.
-- Trains the hierarchy from the bottom up, assigning different objectives to lower and higher policies.
-- Uses the lower policy's pointer logits as latent information that biases the decisions of the higher policy.
-- Evaluates the method on synthetic Euclidean TSP, large-scale cross-size TSP, TSP with Time Windows, and selected TSPLIB instances.
+- A graph-pointer architecture combines an LSTM point/history branch with a context branch and an attention pointer decoder.
+- Relative coordinate context and early stopping improve transfer from small synthetic TSPs to larger sizes in the tested setting.
+- Layer-wise RL trains a lower constraint-oriented policy and an upper policy informed by its logits.
+- Evaluates small TSP, size transfer, optional classical 2-opt refinement, synthetic TSPTW20 and a limited TSPLIB study. [Sections 4-6.](https://arxiv.org/pdf/1911.04936v1#page=4)
 
 ## Methodology
 
-1. **Sequential decision formulation.** A state contains the cities visited so far, and an action selects the next unvisited city. The policy generates a complete permutation autoregressively. The negative tour cost is used as the reinforcement-learning signal for the unconstrained TSP.
+### GPN construction and relative context
 
-2. **Point encoder.** At each decoding step, the coordinate of the current city is linearly embedded and passed through an LSTM. The LSTM hidden state represents the current city together with information accumulated from the previously visited sequence.
+The current city is embedded and processed by an LSTM. A separate branch embeds the candidate-city context through three 128-dimensional layers, and attention compares candidate representations with the recurrent query. Visited-node masking prevents repeats. Small TSP experiments use absolute point context; transfer experiments use **X-current_city**, recomputed as the current city changes. It is not a sparse candidate graph or a fixed relative encoding computed once per instance. [Equations 6-10/Figure 2.](https://arxiv.org/pdf/1911.04936v1#page=4)
 
-3. **Dynamic vector context.** Suppose the current city is \(x_i\). The model subtracts \(x_i\) from every candidate coordinate in the instance. Each row of the resulting matrix is therefore a vector pointing from the current city to one candidate city. This context is translation-invariant and is recomputed after every selected city.
+The paper calls its context branch a graph embedding network. In the inspected official implementation, the named graph layers are node-wise linear/ReLU branches after flattening node features, with an initial LSTM processing the context. They do not explicitly sum neighbor messages in those branches. The larger-instance notebook enables relative coordinates and size normalization, whereas the small-instance file comments out the relative subtraction. Thus a literal modern message-passing GCN description, or a general permutation-invariance guarantee, would overstate the inspected implementation.
 
-4. **Graph context encoder.** The vector-context matrix is processed by three graph embedding layers with a hidden dimension of 128. Each layer combines a transformed residual branch with a nonlinear aggregation branch controlled by a trainable coefficient.
+### Hierarchical policy and training
 
-5. **Pointer decoder.** The LSTM hidden state acts as the query, while the encoded candidate contexts act as references. A Bahdanau-style additive attention mechanism produces one logit for every candidate city.
+A two-layer HGPN combines upper and lower pointer scores through **softmax(u_upper + alpha*u_lower)**, with learned alpha. The lower network is trained first and its parameters are kept fixed while training the upper network. It supplies a soft action prior, rather than a hard feasibility mask or a proven feasible action set. Both networks participate in selecting each next city. [Algorithm 1/Section 4.2.](https://arxiv.org/pdf/1911.04936v1#page=3)
 
-6. **Feasibility mask.** Logits corresponding to previously visited cities are set to negative infinity. Applying softmax to the remaining logits produces a probability distribution over feasible next cities.
+Vanilla TSP training uses REINFORCE with a central self-critic: an instance's greedy return plus a batch-centered sampled-minus-greedy correction. TSPTW instead uses the stated moving-average-style baseline and separately designed layer rewards. The lower policy focuses on violations; the upper policy combines elapsed-time cost and penalties. No optimal-route labels are needed for policy training, although 2-opt-generated witness routes are used to create feasible time-window datasets. [Equations 4-5/Section 5.3.](https://arxiv.org/pdf/1911.04936v1#page=6)
 
-7. **Route generation.** During training, the next city is sampled from the policy to support exploration. During inference, the route can be generated greedily or by repeatedly sampling complete tours and retaining the best result.
+### Task and classification boundaries
 
-8. **Policy-gradient training.** GPN is trained with REINFORCE. The paper presents a central self-critic baseline that combines the reward of a greedy rollout for the current instance with the average sampled-versus-greedy reward difference across the batch.
-
-9. **Hierarchical policy structure.** In a two-layer HGPN, the lower and higher layers are separate GPN policies. At every decision step, the lower policy produces a pointer-logit vector. This vector serves as the latent variable supplied to the higher layer.
-
-10. **Logit-level fusion.** The higher policy computes its own pointer logits and adds a trainable multiple of the lower policy's logits. Softmax is applied to the combined logits, and the resulting higher-level distribution selects the next city. The final route is therefore generated by the higher policy, while the lower policy acts as a learned prior.
-
-11. **Layer-wise optimization.** Policies are trained from the bottom up. The lower layer is trained first and then frozen. When training the higher layer, the frozen lower policy produces latent logits at each state, while gradients update only the higher policy.
-
-12. **TSPTW decomposition.** For the Traveling Salesman Problem with Time Windows, the lower policy is trained to reduce time-window violations. The higher policy is trained to reduce the route-time objective while retaining the feasibility guidance supplied by the lower policy.
-
-13. **TSPTW training schedule.** In the reported experiment, the lower layer is trained for one epoch, after which the higher layer is trained for 19 epochs using the fixed lower-level policy.
+Classification remains **specialist / constructive**. Separate models handle ordinary TSP and TSPTW. Hierarchical logits guide autoregressive construction; they do not perform learned incumbent edits. GPN+2opt adds an **external classical** local-search postprocessor, whose additional time and quality must be reported separately. Training with RL and learning a lower-level constraint policy do not certify optimality or constraint satisfaction for every test case.
 
 ## Experiments
 
-- **Problems:** Symmetric two-dimensional Euclidean TSP and Traveling Salesman Problem with Time Windows.
-- **Synthetic distribution:** Coordinates are generated uniformly from the two-dimensional unit square.
-- **Small-scale training:** TSP20 and TSP50, with training instances generated on the fly.
-- **Large-scale transfer:** Models trained on TSP20, TSP50, or TSP100 are evaluated on TSP250, TSP500, TSP750, and TSP1000.
-- **Constrained setting:** Two-layer HGPN evaluated on synthetic TSPTW20 instances.
-- **Real-world benchmark:** Selected TSPLIB instances with fewer than 1,500 nodes.
-- **Baselines:** Pointer Network, Attention Model, structure2vec DQN, nearest neighbor, random insertion, farthest insertion, Christofides, 2-opt, OR-Tools, LKH, Concorde, and Ant Colony Optimization.
-- **Metrics:** Tour length, optimality gap, runtime, TSPTW objective cost, and percentage of feasible TSPTW solutions.
-- **Default hyperparameters:** Three graph embedding layers, hidden dimension 128, batch size 512, Adam optimizer, learning rate \(10^{-3}\), and 2,500 training steps per epoch.
+### Training and size transfer
 
-### Small-Scale TSP
+Table 1 defaults are **batch 512, 2,500 steps per epoch, Adam 1e-3 with .96 decay and 100 epochs**, with uniformly generated coordinates. On one Tesla P100, an epoch takes about seven minutes for TSP20 or 30 minutes for TSP50. For large-size transfer, GPN is deliberately early-stopped at **10 TSP50 epochs**, while PN/s2v-DQN/AM retain **100 epochs**. Test inference uses batch 50 on **1,000 cases per size**. These are different training schedules, and times in Tables 2-3 are for the **whole 1,000-case set**, not per instance. [Sections 5.1-5.2/6.1.](https://arxiv.org/pdf/1911.04936v1#page=5)
 
-On TSP20 and TSP50, GPN produces better solutions than the original Pointer Network, supporting the value of the additional context encoder. However, it remains worse than the Attention Model on these small fixed-size instances.
+| Method | TSP500 mean length / total time | TSP1000 mean length / total time |
+| --- | --- | --- |
+| GPN | 19.605 / 111 s | 28.471 / 393 s |
+| GPN + classical 2-opt | 18.358 / 974 s | 26.129 / 4,410 s |
+| AM transferred from TSP50 | 24.789 / 14 s | 34.055 / 136 s |
+| Farthest insertion | 18.288 / 160 s | 25.741 / 945 s |
+| LKH | 16.542 / 23,070 s | 23.130 / 50,680 s |
 
-### Large-Scale Generalization
+GPN improves the transferred AM's tour length but is slower than that AM row. GPN+2opt remains worse than LKH and is dominated by farthest insertion at these two displayed sizes. At TSP1000, s2v-DQN is slightly shorter, **26.046**, than GPN+2opt, while taking 5,600 seconds. The paper's transfer claim concerns selected neural baselines, not a new exact or overall best TSP solver. On small TSP20/50, GPN beats Pointer Networks but loses to AM. [Figure 4/Table 2.](https://arxiv.org/pdf/1911.04936v1#page=6)
 
-A GPN trained on TSP50 for 10 epochs is evaluated on TSP250, TSP500, TSP750, and TSP1000. It generalizes better than the compared Pointer Network and Attention Model when all are trained on TSP50.
+Training on TSP20/50/100 produces TSP1000 lengths **33.649/28.471/28.036**. Early-stopping ablation is non-monotone: TSP50 training at epochs 1/5/10/100 gives TSP1000 lengths **29.23/28.52/28.48/29.28**. These observations support the chosen training/transfer setting without a universal size-generalization guarantee. [Tables 3/6.](https://arxiv.org/pdf/1911.04936v1#page=7)
 
-For TSP1000, the reported average tour lengths are:
+The TSPLIB experiment selects cases with fewer than 1,500 nodes. Table 5 reports **GPN+2opt gap 9.35 +/-3.45%, 200 seconds**, versus a Concorde row **.13 +/- .6%, 1,377 seconds**. The table does not enumerate the exact subset or explain the nonzero Concorde reference gap. Preserve the numbers as reported rather than claiming that every cited reference run was proven optimal. [Table 5.](https://arxiv.org/pdf/1911.04936v1#page=7)
 
-- Pointer Network: 32.714
-- Attention Model: 34.055
-- GPN: 28.471
-- GPN with 2-opt: 26.129
-- Farthest insertion: 25.741
-- LKH: 23.130
-- Concorde: 23.110
+### TSPTW data, budgets and outcomes
 
-These results show that GPN transfers better than the compared neural autoregressive baselines, but it does not outperform strong classical solvers. The paper presents GPN as a possible learned initialization for local search: GPN with 2-opt obtains quality similar to structure2vec DQN and standalone 2-opt while reducing the reported runtime.
+Time windows are generated around a 2-opt witness route on 20 uniform nodes, so the constructed datasets have a feasible witness. The lower layer trains for **one epoch**, the upper layer **19 epochs**. Evaluation uses **10,000 instances** and compares greedy decoding with **100 or 500 complete samples**. [Section 5.3.](https://arxiv.org/pdf/1911.04936v1#page=6)
 
-Training on larger instances improves transfer. On TSP1000, the reported tour length improves from 33.649 for a model trained on TSP20 to 28.471 for TSP50 training and 28.036 for TSP100 training.
+| Reported method | Cost | Total time | Reported feasible cases |
+| --- | --- | --- | --- |
+| OR-Tools Savings | 4.045 | 121 s | 72.06% |
+| Single GPN greedy | 4.209 | 1 s | 99.87% |
+| HGPN greedy | 4.178 | 1 s | 99.88% |
+| HGPN, 100 samples | 4.013 | 99 s | 100% |
+| HGPN, 500 samples | 3.991 | 494 s | 100% |
 
-### TSP with Time Windows
+The greedy hierarchy's feasibility gain over the single GPN is small, and both have failures. Sampled rows add substantial compute. The 100% figure is empirical on generated TSPTW20 data, not a theorem for arbitrary windows or larger instances. [Table 4.](https://arxiv.org/pdf/1911.04936v1#page=6)
 
-The TSPTW20 experiment compares OR-Tools, Ant Colony Optimization, a single-layer GPN, and the two-layer HGPN.
+### Formula and implementation qualifications
 
-The reported results are:
+- **Penalty sign:** printed Equation 12 uses **max(l_i-c_i,0)** while describing lateness. The code instead tests **arrival>leave**; the printed sign is inconsistent with that description. The implementation adds a fixed ten-unit violation penalty, rather than the printed continuous lateness magnitude.
+- **Objective definition:** Equation 11 writes a sum of visit/arrival times. The inspected greedy tester accumulates **travel plus waiting plus return travel**, a completion-time-style quantity. It should not be silently called a faithful implementation of the printed sum-of-arrivals objective.
+- **Sampling aggregation:** `test_hier_sampling.py` independently takes the minimum cost and minimum penalty over sampled tours. The two minima **need not belong to the same tour**. Consequently the reported minimum cost together with 100% feasible coverage does not establish that the selected minimum-cost route was feasible; source code needs joint route/feasibility selection to reproduce a best-feasible-cost claim.
+- **Baseline comparability:** inspected OR-Tools code fixes node zero as depot, shuffles the other nodes, and averages reported costs only over successful assignments. Neural data generation shuffles all nodes and the neural tester averages costs over all cases. The current OR-Tools script also uses a 1,000-second limit and a ten-case default, which are not the paper's 10,000-case protocol. These differences require care before treating Table 4 as a fully matched feasibility/cost benchmark.
+- **Clipping/code paths:** the larger-instance notebook clips with 100, matching the transfer discussion, while the small-instance file clips with ten. Lower-policy logits are a soft addition, not a rule that blocks every late decision.
 
-- OR-Tools: cost 4.045, feasibility 72.06%
-- Ant Colony Optimization: cost 4.655, feasibility 62.10%
-- GPN greedy: cost 4.209, feasibility 99.87%
-- HGPN greedy: cost 4.178, feasibility 99.88%
-- HGPN with 100 samples: cost 4.013, feasibility 100%
-- HGPN with 500 samples: cost 3.991, feasibility 100%
-
-The greedy HGPN provides a small improvement over the single-layer GPN. The larger improvement is obtained by sampling multiple complete tours and selecting the best candidate, which increases inference time from approximately one second for greedy decoding to 99 seconds for 100 samples and 494 seconds for 500 samples.
-
-### TSPLIB
-
-On the selected TSPLIB instances, GPN with 2-opt reports an average optimality gap of \(9.35 \pm 3.45\%\) and a runtime of 200 seconds. The reported Concorde comparison has a gap of \(0.13 \pm 0.6\%\) and a runtime of 1,377 seconds. The learned method is faster in this comparison but produces substantially longer tours.
+These are source-level discrepancies and reporting limits, not independently measured corrections to the published numeric rows.
 
 ## Limitations
 
 ### Reported by the Authors
 
-- GPN improves over the original Pointer Network on small instances but remains worse than the Attention Model in the TSP20 and TSP50 experiments.
-- GPN does not outperform strong TSP solvers such as LKH or farthest insertion in the large-scale experiments.
-- The method is presented partly as an initialization for local search rather than a replacement for established TSP solvers.
-- Cross-size generalization depends strongly on early stopping. Training the TSP50 model for 100 epochs produces worse TSP500 and TSP1000 results than stopping after approximately 10 epochs.
-- Models trained on larger instances generally transfer better, so generalization is not independent of the training scale.
-- The real-world TSPLIB experiment shows a substantial solution-quality gap relative to Concorde.
-- The hierarchical experiment is demonstrated only on a two-layer architecture for synthetic TSPTW20.
+- Ordinary GPN does not beat LKH/farthest insertion in the large-TSP comparisons; it is proposed as a useful initialization.
+- Point-context transfer and longer small-instance training can generalize poorly; early stopping is important.
+- Feasible generated TSPTW instances can still yield infeasible neural/heuristic outputs. [Sections 5-6.](https://arxiv.org/pdf/1911.04936v1#page=5)
 
 ### Curator Notes
 
-- The generic graph embedding equation describes aggregation over neighboring nodes, but the released implementation flattens candidate representations and applies shared linear and ReLU transformations independently to each candidate. It does not contain an explicit sum or attention operation across different candidate nodes in the graph encoder.
-- Consequently, the main relational signal in the released implementation comes from the dynamic relative vector \(x_j-x_i\), rather than from conventional message passing between different candidate cities.
-- The vector context must be recomputed and re-encoded after every selected city. GPN is therefore fully autoregressive and dynamic, unlike a static graph encoder that is evaluated only once per instance.
-- The lower HGPN does not directly choose the final route. Its pointer logits are added to the higher policy's logits as a prior, and the actions sampled by the higher policy determine the state transitions.
-- HGPN performs layer-wise training rather than joint end-to-end optimization. Once the lower layer is trained, it is fixed while the higher layer learns, so errors or biases in the lower policy may be inherited by the higher policy.
-- The proposed hierarchy is a hierarchy of reward objectives and logit priors rather than temporal abstraction: the lower layer does not generate macro-actions that persist across several higher-level time steps.
-- The paper presents a central self-critic baseline in the general policy-gradient section, but the TSPTW experiment explicitly states that an exponential-moving-average critic baseline is used. These should not be treated as the same experimental setting.
-- The printed TSPTW violation formula uses \(\max(l_i-c_i,0)\), although the accompanying text defines a violation as arriving after the leaving time. The intended penalty should increase when \(c_i>l_i\), and the released code checks this condition directly.
-- The masking condition in the printed pointer-attention equation has ambiguous indices. The released implementation uses a standard visited-city mask.
-- The TSPTW data are constructed around a route obtained with 2-opt so that every generated instance has at least one feasible solution. This may represent a narrower feasibility distribution than unconstrained real-world TSPTW data.
-- Runtime comparisons combine different hardware utilization, search limits, sampling budgets, and local-search procedures. Solution quality should therefore be interpreted together with the reported inference budget.
-- The improvement of greedy HGPN over greedy GPN on TSPTW20 is small; much of the best reported result comes from evaluating 100 or 500 sampled tours.
+- HGPN supplies a learned soft prior and uses engineered rewards; it does not solve general constraint satisfaction by construction.
+- Large neural transfer comparisons use different training schedules and GPU batching; optional 2-opt is a separate quality/time budget.
+- TSPTW reward, objective, sampling selection and baseline protocol discrepancies limit strong claims about matched feasible costs.
+- Small-instance and transfer implementation branches differ, and the named graph layer should not be described as a verified general message-passing operator.
+- Workshop publication does not meet the main-list top-conference criterion.
 
 ## Reproducibility
 
-- **Official implementation:** [qiang-ma/graph-pointer-network](https://github.com/qiang-ma/graph-pointer-network)
-- **Dependencies:** The repository specifies Python 3.6 or newer and PyTorch 1.1.
-- **Training code:** Separate scripts are provided for small-scale TSP, large-scale transfer, lower-level TSPTW training, higher-level TSPTW training, and non-hierarchical TSPTW training.
-- **Evaluation code:** Greedy and sampling-based evaluation scripts are provided for TSP and TSPTW.
-- **Baselines:** The repository includes implementations or wrappers for nearest neighbor, 2-opt, farthest insertion, LKH, OR-Tools, and Ant Colony Optimization.
-- **Checkpoints:** The current repository snapshot does not contain tracked pretrained checkpoint files, although the paper and repository description refer to models.
-- **Datasets:** Training instances can be generated by the provided scripts, but the current repository snapshot does not include a packaged benchmark dataset.
-- **Documentation:** The repository provides basic commands but does not include a complete environment lock file, automated tests, or a step-by-step reproduction of every reported table.
-- **Main paper references:** Sections 3 and 4 describe hierarchical reinforcement learning and GPN/HGPN; Section 5 reports the synthetic TSP, cross-size, TSPTW, and TSPLIB experiments; Section 6 discusses vector context, early stopping, clipping, and hierarchical training.
+- **Full reading:** all **eight arXiv-v1 pages, 12 November 2019**, were reread, including all equations, figures, Tables 1-6 and references. There is no separate appendix in the manuscript.
+- **Publication scope:** the [official AAAI2020 Deep Learning on Graphs workshop page](https://deep-learning-graphs.bitbucket.io/dlg-aaai20/) lists this exact title/authors as a poster spotlight, and the author README confirms the workshop venue. `inclusion: reference` is retained. The former 6 December 2019 acceptance date was a workshop-calendar inference; it is removed, with workshop publication recorded only at year precision.
+- **Scientific materials:** the official 30-member repository tree, full README and workshop page were manually inspected. No scientific PDF/ZIP supplement was present or explicitly required by the article. The eight-page source covers the full scientific content used for the note.
+- **Official code:** [qiang-ma/graph-pointer-network](https://github.com/qiang-ma/graph-pointer-network), explicitly cited in reference 17. Small/large GPN branches, hierarchy training, greedy/sampling testers and OR-Tools baseline were inspected for the identified claims. Current tree contents do not establish availability of every trained checkpoint promised in the paper.
+- **Figure:** original Figure 3, PDF page 4, cropped directly from the source. Algorithms, reward formulae and all experimental tables/plots were visually checked.
+- **Verification scope:** no training or benchmark reruns were performed; original numeric claims remain attributed to the source, with the above reproducibility qualifications.

@@ -1,0 +1,779 @@
+{
+  "version": 1,
+  "paper_id": "symmetric-replay-training",
+  "note_path": "specialist/symmetric-replay-training.md",
+  "baseline_note_sha256": "fb148cfb6072a55b10114fbf68e29baee0477ee1af9531fcf5ebaf6a40216e4d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/kim24o/kim24o.pdf",
+      "version": "Actual official PMLR235 ICML2024 final27-page PDF, all A-E/13tables/12figures freshly read; publisher/public tree and selected fullcode paths inspected.",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/kim24o/kim24o.pdf",
+      "local_path": "research/import-272/nco-cd8cab62a9.pdf",
+      "sha256": "30d074c99979269cb132c956397560b9d3b185fc6710147285b93641bbd37886",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshformal27page first2read title4authorsKAISTPOSTECHOMELET. SRTgenerictrainingaddon reward-maximizingDRLthenhighrewardvalidsymmetrictrajectorylikelihoodreplay, savesextraoraclenotfreegradientcompute. ClassicalTSP+actualmolecule/hardwaredomains notsharedcrossproblemcheckpoint. Maximum entropy/random transform generic plusadversarial/importance alternativesreadlater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullrelatedworkbackgroundMDP+2stepmethodread:episodicdeterministicvalidactions, terminalobjectrewardtrajectorysymmetry notarbitrarynodepermutation; highrewardcollectiongreedy/prioritized/topK. BaseDRLseparateMLEimitatesvalidsymmetry withoutimportancecorrectionofRLgradient. Maxentropyuniformsymorbit notunconditionalpolicyentropyguarantee; awaittheoremassumptions. TSPstart+directionO1choicesbutmaterializedsequenceO(N)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FullSRTlossMLE -Elogpolicy,alpha10/100timeslessscaleRL, entropyidentityconditionalofactualpolicy vschosenreplaydist caveatcheckproofA. Adversarialminlikelihood2Norbit eval /ISpropto pi^-beta beta0uniform betainfmin allO(N)policycallsTSPnotnewreward. TSP50AM fourseeds2mrewardcalls Table1A2C6.129->6.038PG6.226->6.131PPO6.319->6.249GFN6.195->6.167;notfreecomputewalltimeclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FullFigures4-7/Table2/3read:16replayloopsbetterthanoverfitnonSym>8TSP50,adversarialslightlybestbutmaxEntgenericcheap. DPPchip/HBM15koraclecalls4seedsDevFormer,permuteplacementorder sameterminalplacement notspatialrotation;GFN12.784/26.469bestmain. PMO23oracles10kcalls5seedsSELFIES,stringrandomizationmoleculesame rewards. AverageAUCtop10GFN.431->.489REINVENT.615->.632 butmultipleper-tasklosses+oracle22allzero;notalltasksimprove, QEDdruglikenessproxy notvalidatedsafety."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fullconclusion/impact/ackandbibA-Kread. Mainreports12/23GFNwins vsroundedTable3direct13 apparentpositive+2ties,avoidrecountasconfirmed12withoutqualify. REINVENT18/23SELFIES,SMILES16/23appendixlater. RelevantexistingEAS/NLNS/LWD/SGBS/Neurewriter/learningCO allfullbibbutintextappendixlater. PublicREADMEexplicitCVRPATSPextra experimentsmetadataaddafterD7."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "FullremainingbibK-Zfreshread includingDevFormer/NeuroCrossExchange/SymNCO/GFACS/MatNet/LearningDelegate/NeuOpt/DIMES/MetaSAGE/EquityTransformer/LearningDispatch/LetFlows/MDAM/NeuroLKH/DeepACO. CitationyearNeuroCross2022printedformal2023samework preserve. Bio/BO/frameworkrefsnotforceifnoexistingIDs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "FullAppendixAproofread:entropychainrule Htau=Hobject+conditionaltrajectory actualpolicy, uniformmaxbound holdsfixedobjectmarginal; finiteMLEreplaydoesnotproveunconditionalpolicyentropyincrease orunchangedobjectmarginal. Boltzmanninversepi limitbeta0uniform/betainfconcentratesminlikelihood; tiesuniformamongmin notsingleKroneckerunlessunique,proofunnormalizedexponentassumesenergyshiftimplicitly."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "CompleteAppendixB1-B3read signsdisplayAlgorithmpositiveLRM/LSRTwithAdamgradambiguousmaximize, methodEq1negativeNLL authoritative/codecheck. StepBgreedyrolloutassumedhighrewardwithoutnewrewardcall notsameoldtrajectory always. PPOcritic eps.2/.1/.2 loops5/20/10;GFNTBbeta20/10/10 loops10/2/2 learnedZ2layermeanembedding, uniformbackward notrandomsingleparent. Genericoffpolicysupport vsactualonpolicyGFNrollouttrain separate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "AllCimplementationTables6/7read:TSPb100epoch10kcoeff.001/.001/1e-5/.1,L1/1/5/10;DPPb100epoch60015kcoeff.01/.01/.01/.1,L1/1/20/2 printedHBMPPOk10earlierdifference. PMOprioritizedbufferREINVENT24replaycoeff.001/GFN64coeff1. FullD1widthL16andD2A2CERhighvariancecounterpartread, noimportancebecauseauxMLEdifferentobjective notunbiasedonpolicyRLestimator."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "FullD3augRLcounterexampleTable8/fig10read:early16.851±11vsA2C6.78,2m6.179vsSRT6.038,showschosenISRLaugfailnotuniversalDAimpossibility. D4allwalltimeTable9read:chipPPO3884->4700~21%overhead,notallnegligible,GFN3528.75->3528.25same;HBM~30-36k simdominates. Noexplicitunit/hardwarespecinthistable,avoidinvent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "FullD5t-testtableone-tailedn5seedaverageAUCp.0045REINVENT/.0015GFN;conditionalaggregateonesidednotper23taskallstat sig/multiplecomparisons;Table10REINVENTmean.633vsmain.632roundingdifference. FullD6Table11all23namedoraclesreadSMILESavg.660->.661tiny16/23claimbutlossesdeco/gsk/median1/thiothixene/troglitazone/valsartan .182±.363->0, QEDtie. GPBO.609GraphGA.616notblanketalltaskSOTA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "FullD7Table12/13+all8curvepanelsread. AdditionalnativeCVRP50/100SymNCO(reducedaug5),TSPAMcritic;ATSP50/100MatNetSampled,FFSP50/100MatNet separateweights notgeneralist. ATSPcyclicsymvalidreversalNOTvalidasymmetric,FFSPcannotarbitraryjobpermuteclaimneedcode/limits. 2mATSP1002.915->2.513,FSSP10094.978->94.934tiny;budgetcomparisonsnotconventionalSOTA. addfamilyscheduling/tasktags."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 27,
+      "notes": "CompleteAppendixE1-4read27pagesfullsciencecovered:relatedworkexplicitexistingcitelearningCO/LWD/dispatch/MatNet/NeuroCrossExchange/GFACS/DeepACO/EAS/MDAM/NeuroLKH/Metasage etcnotnewexperimentsoutsideactualtasks. CoreSRTconstruction-onlysampleefficiency; VAEBOunrelatedmethodsnotforcedidentity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "replay",
+      "category": "contribution",
+      "statement": "Separate auxiliarymaximumlikelihood on valid equivalent highrewardconstructiontrajectories augments existingRL withoutnewobjectreward; uniform/adversarial/inversepolicyalternatives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            16
+          ],
+          "locator": "Sections1-4/Algorithm1/Equation1 actualNLLsignvsprintedpseudocodequalified."
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "Entropychainruleconditionalfixedobjectmarginalbound, finiteMLEnotguaranteepreserveobjectdistribution ormonotonicreward; beta limitminimizersset ifties. Validtask-specificsymmetries required.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14,
+            15,
+            24,
+            25
+          ],
+          "locator": "Theorem4.1/completeAppendixA/D7; publictransformationpathsread andvalidscopequalified."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP2m4seeds, DPP15k4seeds,PMO23oracles10k5seeds plusATSP/FFSP/CVRP separatepolicies; averagegainswithper-oraclelosses/one-sidedaggregatestats, wallclockoverhead/emptyoracle/mismatchedrounding qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Allresults/ablations/statistics13tables12figures fullread;no independentbenchmarkrerun."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive trainingaddon, symmetryreplayssameobjecttrajectory notneuralincumbentediting; task/backbone-specificweights not onegeneralist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            6,
+            7,
+            8,
+            24,
+            25,
+            26
+          ],
+          "locator": "Actualconstructivepolicies/directtrainingandexplicitexclusionimprovementinAppendixE."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://proceedings.mlr.press/v235/kim24o.html",
+      "locator": "Formal4authors KAISTPOSTECHOMELET;actualPMLRHTMLcitation_publication_date2024/07/08 supportsretainedpublicationday, no inventedfirstarxiv/acceptance."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/kim24o.html",
+      "locator": "ActualPMLRcompletePDF+OpenReviewonly,noseparatescienceattachment;OpenReviewcmD5E6ami4API403disclosed. AllnamedA-Eread27pages. Public2613treeinventoryupstreamDOGGenposteridentifiedothertitle,4AMvisualizationnotebooks2uniqueSHAidenticalcopiesinspectedforbaselinecontent, bundleddatasetarchives/demosnotassertedSRTattachments."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/kaist-silab/symmetric_replay",
+      "locator": "CompleteSRTutils andselectedfulltrainingbranchesread. ATSPreturnactionnotcomputedshift, defaultuniformTSPexcludeszero,hardcoded50orbit/None diagnostic,GFNmoleculeSRTbackwardwithoutstep,REINVENTstepcorrect,SELFIEScanonicalnonstereo/nonrandomdefault,FFSPmachineflipguidedprefixdrop allrecorded;notdeclaredfullyrunnable/reproduced."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/kim24o/kim24o.pdf",
+      "locator": "OriginalcompleteFigure1 PDFpage2 cropRect(86,64,500,231)4x; allkeysciencecurves/figures/tables/proofvisualchecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2018",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit cited occurrence Kool et al.,2018."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kool et al.,2018."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.,2023",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Ye et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Ye et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "devformer",
+      "reference_label": "Kim et al.,2023",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit cited occurrence Kim et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kim et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.,2022",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Qiu et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete bibliography title/authors/version Qiu et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.,2022",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Hottung et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actual complete bibliography title/authors/version Hottung et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "gfacs",
+      "reference_label": "Kim et al.,2024a",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Kim et al.,2024a."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kim et al.,2024a."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.,2023",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Zhang et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Zhang et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.,2017",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Khalil et al.,2017."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actual complete bibliography title/authors/version Khalil et al.,2017."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al.,2021",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Li et al.,2021."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Li et al.,2021."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al.,2020",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Zhang et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Zhang et al.,2020."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al.,2020b",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Ahn et al.,2020b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual complete bibliography title/authors/version Ahn et al.,2020b."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al.,2021",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit cited occurrence Kwon et al.,2021."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kwon et al.,2021."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "meta-sage",
+      "reference_label": "Son et al.,2023",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit cited occurrence Son et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete bibliography title/authors/version Son et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al.,2021a",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Xin et al.,2021a."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Xin et al.,2021a."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2017",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit cited occurrence Bello et al.,2017."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual complete bibliography title/authors/version Bello et al.,2017."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung & Tierney,2020",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Hottung & Tierney,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actual complete bibliography title/authors/version Hottung & Tierney,2020."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian,2019",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence Chen & Tian,2019."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual complete bibliography title/authors/version Chen & Tian,2019."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al.,2021b",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Xin et al.,2021b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Xin et al.,2021b."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Vinyals et al.,2015."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete bibliography title/authors/version Vinyals et al.,2015."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit cited occurrence Kwon et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kwon et al.,2020."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al.,2022",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Choo et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual complete bibliography title/authors/version Choo et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.,2022b",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence Kim et al.,2022b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kim et al.,2022b."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al.,2022a",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Kim et al.,2022a."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete bibliography title/authors/version Kim et al.,2022a."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "contrastive-sat",
+      "reference_label": "Duan et al.,2022",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit cited occurrence Duan et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actual complete bibliography title/authors/version Duan et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "symmetric-replay-training",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.,2023b",
+      "description": "Explicit actual in-text occurrence plusmatchingfullbibliography. AMcited2018earlymanuscript/GFACS2024arxiv2403.07041precursor/NeuroCROSSprinted2022ratherthanformal2023preserved;noassumptionfuturepublicationcited. MainMa2021hierarchicaldynamicpickupdeliverynotforcedtoanotherpaper; onlyactualNeuOpt2023brefmapped. Upstreambenchmark/molecular/equivariantframeworkreferencesnotforcedintoexistingIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit cited occurrence Ma et al.,2023b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Actual NeuOpt bibliography entry starts at bottom ofPDF11 and continues at top ofPDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh27formalpages allA-E13tables12figures, actualpublisher/OpenReviewstatus andauthortree/upstreamdocumentclassificationreadselectedfullcode.",
+    "ExpandedactualtasksCVRP/ATSP/FFSP/DPP/molecule beyondoldgenericTSP/Hardware, specialistconstructivebackbonespecificcheckpointsretained.",
+    "Qualifiedconditionalentropy/validsymmetry/MLENLLdifferentobjective, nofreegradientcomputeoruniversaloptimality/samplingguarantee.",
+    "Recordedexactoraclebudgets/fourseedsTSPDPP/fiveseedsPMO,23tasknegativecases/SMILEStinyaverage/one-sidedaggregatep-values/roundingandwincountdifferences.",
+    "Separatedrewardcallsvswalltime,PPOhardware21%overheadcounterexample, genericTSPcheapobjectiveassumption/DPPsimulatorrealuse.",
+    "DisclosedATSPidentityreturn/GFNSRTmissingstep/defaultTSPNonepath/nonuniformorbit/hardcodedN50,SELFIESnonstereo/nonrandomcanonicaldefault andFFSPmachineguidedsuffixreplay;novisiblecodeclaimedreproduced.",
+    "OriginalFigure1added, officialpublicationdayverifiedand25explicitmatchedstableIDcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7ae29e1af0effaa56930634bd355532b98cfbef5fcf5107ee34396803a803e10"
+}

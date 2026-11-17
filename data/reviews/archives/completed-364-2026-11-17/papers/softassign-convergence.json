@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "paper_id": "softassign-convergence",
+  "note_path": "studies/softassign-convergence.md",
+  "baseline_note_sha256": "2c1220b68e475fdc62c10699d4c46e7df11e8a2b623ea92464ae741b72698102",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/c8ba76c279269b1c6bc8a07e38e78fa4-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/c8ba76c279269b1c6bc8a07e38e78fa4-Paper.pdf",
+      "local_path": "research/import-272/nco-b826fddb4b.pdf",
+      "sha256": "043cc590a25b9a7b13424c61270aaf1e0f4b73d65059ff6c34e46453c2fabb39",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Fresh full reading of all7pages including complete5reference bibliography, projected positive-definiteness/self-amplification criterion, fixed-temperature KL decrease proof and actual one syntheticQAP numerical illustration. No integrated appendix or attachment referred."
+    }
+  ],
+  "claims": [
+    {
+      "id": "descent",
+      "category": "contribution",
+      "statement": "Provides fixed-temperature auxiliary-energy descent proof for softassignQAP with projected positive curvature and exact doubly stochastic constraints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Full Section2 Equations1-13 and step summary"
+        }
+      ]
+    },
+    {
+      "id": "spectral",
+      "category": "method",
+      "statement": "Uses r=I-eeT/N and R=r tensor r, selecting self-amplification from projected minimum eigenvalue; condition is on feasible tangent directions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Equations2-9 and explicit projected subspace text, visually inspected"
+        }
+      ]
+    },
+    {
+      "id": "kl",
+      "category": "method",
+      "statement": "Exact equal marginals cancel Lagrange terms and second update decreases energy by nonnegative KL expression.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations10-13 and final energy-difference formula, visually inspected"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "category": "experiment",
+      "statement": "A constructed C=-vvT example reports projected eigenvalue-.8152 and compares gamma0 versus.8162; no large benchmark or timing suite.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section3.1 and complete Figure1 caption; remaining applications/conclusion fully read"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Theory analysis of existing deterministic annealing/neural relaxation, not trained multibenchmark solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7
+          ],
+          "locator": "Motivation, proof, numerical illustration and application derivations"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Proof explicitly requires exact doubly stochasticity, fixed temperature and potentially expensive N2byN2 projected spectrum; no global discrete-optimality conclusion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Crucial assumption; spectral cost; step summary and full applications/conclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/c8ba76c279269b1c6bc8a07e38e78fa4-Abstract.html",
+      "locator": "Manually opened official NIPS1996 proceedings record, exact four authors and Alan L.Yuille canonical form. PublisherPDFp1 lists Yale, Smith-Kettlewell Eye Institute, CuraGen and UCSD. Retained official1996year."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/c8ba76c279269b1c6bc8a07e38e78fa4-Abstract.html",
+      "locator": "Official proceedings page manually inspected: paper/Bibtex/metadata only, no separate supplement or code. Complete7-pagePDF including all5references read; no scientific attachment referenced. Equations3-13 and Figure1 visually checked."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/c8ba76c279269b1c6bc8a07e38e78fa4-Abstract.html",
+      "locator": "No implementation URL or code attachment in full article or official landing. No unsupported code link added; numerical example not rerun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "softassign-convergence",
+      "cited": "softassign-vs-softmax",
+      "reference_label": "[2] Gold and Rangarajan, Softassign versus Softmax: Benchmarks in Combinatorial Optimization, NIPS8 (printed1996)",
+      "description": "Cites earlier softassign neural optimization and empirical benchmark evidence as motivation for the convergence analysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7
+          ],
+          "locator": "Explicit [4,2] body citation on PDFp1; exact [2] bibliography entry on PDFp7. Printed proceedings year1996 does not change identity of existingNIPS1995volume8paper."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded complete fixed-temperature proof assumptions and spectral/KL mechanism.",
+    "Replaced vague experiment description with actual constructedQAP Figure1 and exact parameter values; distinguished prior simulations from this paper.",
+    "Qualified energy decrease versus global optimum, annealing schedule and finite-tolerance implementation convergence.",
+    "Corrected canonical AlanL.Yuille and PDFinstitution form; study/theory retained, no scope migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a255f4436cafb801fb0bf9295fd45e03c376585d62a758d09830356259eefa9c"
+}

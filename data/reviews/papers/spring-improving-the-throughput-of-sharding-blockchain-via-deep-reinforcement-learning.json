@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "paper_id": "spring-improving-the-throughput-of-sharding-blockchain-via-deep-reinforcement-learning",
+  "note_path": "specialist/spring-improving-the-throughput-of-sharding-blockchain-via-deep-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "9052ccd2dc094f98bf2cb4e936fa7fc9d435aee9085a7dee21e114d1cc6fb347",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.mingxuansong.com/papers/SPRING-%20Improving%20the%20Throughput%20of%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20Based%20State%20Placement.pdf",
+      "retrieval_url": "https://www.mingxuansong.com/papers/SPRING-%20Improving%20the%20Throughput%20of%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20Based%20State%20Placement.pdf",
+      "version": "Author-hostedformalWWW2024camera-ready11p, matchingtitle/7authors/DOI/2024copyright,completeintegratedAppendicesA–C;all11pagesread.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-04d2dc8cc2/author.pdf",
+      "sha256": "a55cf9ed9fd1b6106006f1cbebb92393f12a9f6c837bc9e9033fc0d8075e46bc",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read all7authorbylinePeking/ThetaLabs, formalWWW2024 DOI/11p camera-ready identity, abstract/contributions consensus-phase new-state placement vsreconfiguration/classicalredistribution, CST/loadtradeoff, background andtwo-phase model. Headlineabstract36.03 vsintro36.09 ambiguity retainedpendingtables."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allstate-redistribution/RLrelatedwork andprotocol assumptions equalcomputepower,unforgeablesignatures/globaladversary<1/3,PoW/VRF/partial synchrony; A-Shard+T-ShardsPBFTrelay, newaddressesonly, placementnewstatesnotexistingmigration. FullFigs2/3 anddecentralizedpreprepare/prepareJaccardthreshold/commitmodelupdate, AppendixAexplicitnecessaryflagged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read completeMDP11k+1 state5blockhistoryCST/totalTX+senderlocation+contractflag, k-waynewstateplacement, inverseCSTRplus expnegativeL1workloadrewardlambda.5/beta.1,discount.99/PPO; blockstepvswithinblockaddressactiondistinction. ExperimentalA-ShardPython simulation/T-Shard64AlibabaVM16x4PBFT,6M2015/19/23Ethereum, fourbaselinesSkyChainadapted,Table1allhyperparams, .002sassign/.1supdate/30KB modeloverhead andnew20–200states/block; noendtoendA-Shardthroughputproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read completeFigs4–8/allresultstext/Table2. Blocksize100/200/500/1000/2000 each1000blocks thennt1000chosen; performance1Mtx/1000blocksperperiodcollectedDURINGtrainingfromscratch2015/19/23notheldout/sharedcheckpoint. Up26.63%CSTpeakvs2023CST20.99/TPS36.03 from437.961vsShardScheduler321.957;intro36.09inconsistent. Allloadlogplots/tradeoff/popularaddress73.7percent9/33899read, nohardbalanceguarantee; 2023baselineTPSonlyreported, noallperiodsamestatsinvented."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read complete53references andAppendixA securityprobabilityformula/Thm1safety/Thm2livenessproofs, conditionalperA-Shard<1/3Byzantine/PBFTquorum/partial synchrony/notglobalfractionalone; countsandrandomshufflingassumptions. AppendixBfullnetwork3linear2ReLU/2x64actor-criticinput11k+1/outputk/1 andexpecteddiscountedPPOobjective throughbatchcollection,Fig9flagforvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 11,
+      "notes": "Read completeAppendixB Algorithm1PPOtarget/GAE/Adamactor+criticloops andprintedratio/criticBellmanformulas, AppendixCfullShardScheduler/Monoxide/CBDSbaselineintroductions; endof11pageallscientificmaterialsread, noadditionalnamedscienceappendix."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Incremental new-state placement trades cross-shard coordination against load, distinct from existing-state redistribution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/2.3/3.2"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "PPO placement policy, decentralized protocol and historical-transaction/testbed evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Contributions/Sections3–5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "11k+1 history/location/type observation, k-way account action, inverseCSTR/exponentialload reward; 2x64 actor/critic PPO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            10,
+            11
+          ],
+          "locator": "Section4/Eqs1–6/Table1/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "A-Shard simulated,64VM16x4T-Shards; online training metrics separate periods,2023TPS437.961vs321.957=36.03%; peak26.63CSTnot2023samevalue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "CompleteEvaluation/Figs4–8/Table2"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "No heldout crossperiodsharedcheckpoint, nohardworkloadguarantee, per-shardByzantine/partialsynchrony securityconditions andsimulatedA-Shard.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            10
+          ],
+          "locator": "Assumptions/Setup/Results/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One native new-account placement task andseparatefromscratchperperiodpolicies: specialist constructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            7
+          ],
+          "locator": "3.2/MDP/5.5"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "All11camera-ready pages/53refs/AppendicesA–Cread, noidentifiedofficialpolicyimplementation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9,
+            10,
+            11
+          ],
+          "locator": "Byline/fullbibliography/completeintegratedappendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://www.mingxuansong.com/papers/SPRING-%20Improving%20the%20Throughput%20of%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20Based%20State%20Placement.pdf",
+      "locator": "Camera-readyp1sevenauthororder sixPekingUniversity/JieyiLongThetaLabs. ExactDOI/formalWWW2024identity11pages."
+    },
+    {
+      "field": "formal publication date, venue",
+      "source_url": "https://dl.acm.org/doi/10.1145/3589334.3645386",
+      "locator": "SavedCrossrefpublished-online/print2024-05-13,WWW2024pp2836–2846; matchingcamera-readyDOIand2024copyright. Noidentifiedsamepaperarxiv,topdateformal."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://www.mingxuansong.com/papers/SPRING-%20Improving%20the%20Throughput%20of%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20Based%20State%20Placement.pdf#page=7",
+      "locator": "NewstateassignedonceSection3.2vsredistributionSection2.3. Section5.5fromscratchper2015/19/23, notsharedcrossnativecheckpoint; specialistconstructive."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://dl.acm.org/doi/suppl/10.1145/3589334.3645386",
+      "locator": "Manualpublisher403 saved; authorprimarylinkscomplete11pcamera-ready containsall explicitlynamedAppendicesAsecurity/BnetworkPPO/Cbaselines,readpp10–11. Targetedtitle/arxiv/codeandprimaryauthorpage noidentifiedseparaterequiredscientificattachment/repo. NoPDFinventedfrom403orunrelatedSPRING."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://www.mingxuansong.com/",
+      "locator": "ActualauthorHTMLSPRINGPDFlink only; noverifiedofficialpolicyrepoidentifiedwithtitle/authorssearch. BlockEmulatorreference14testbednotclaimcompleteSPRINGpolicycode."
+    },
+    {
+      "field": "figures, algorithms, table arithmetic",
+      "source_url": "https://www.mingxuansong.com/papers/SPRING-%20Improving%20the%20Throughput%20of%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20Based%20State%20Placement.pdf#page=8",
+      "locator": "All9fig2tables plusMDP/reward/AppendA/BproofsandPPOalgorithm renderedpp2/4/5/6/7/8/10/11andviewed. OriginalFig2crop52,80,560,286viewed. 437.961/321.957-1=36.03%; intro36.09printconflict documented. Noscientificcodeexecution."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithall11camera-readypages/53refs/fullA–C.",
+    "Classifiednewstateconstructiveplacement distinctlyfromexistingstatemigration;noonesharedcrossperiod/nativecheckpoint.",
+    "Qualifiedtrainingtrace/testbed/simulatedA-Shard,36.03TPSvs26.63peakCSTandintrotypo,softbalancing/securityassumptions.",
+    "Verified7authors/formaldate/addedoriginalFig2/noinventedcodeorinternaledges."
+  ],
+  "reviewed_note_sha256": "1288d1a7cd6dff5bd82641da338c1e40a7dfacb8a30a03815c2f71c5e23e8c16"
+}

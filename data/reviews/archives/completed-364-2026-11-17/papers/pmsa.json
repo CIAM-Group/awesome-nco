@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "paper_id": "pmsa",
+  "note_path": "specialist/pmsa.md",
+  "baseline_note_sha256": "496ccd948fe8edcdf2e3ef821227941b8cae64df6f90b892da773b59bce4c428",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/jia26l/jia26l.pdf",
+      "version": "Formal ICML2026/PMLR30617pages main/references/AppendicesA–I all freshly read",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/jia26l/jia26l.pdf",
+      "local_path": "research/import-272/nco-a098b2e576.pdf",
+      "sha256": "5ca002524aa061854f9cdd2fa4b2ceca9f463dfa2fc697e6514678019eb789d7",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://icml.cc/media/icml-2026/Slides/63171.pdf",
+      "retrieval_url": "https://icml.cc/media/icml-2026/Slides/63171.pdf",
+      "version": "Official one-page scientific poster served as Slides; full text and all three high-resolution tiles freshly read",
+      "local_path": "research/full-text-review/pmsa/official-slides.pdf",
+      "pages": 1,
+      "sha256": "3777e27c86167e196933052d7af897acd085e5dc0e33ad5b48f50bb63b8503ad",
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readall1–3/Fig1/preliminaries. Fourauthors NJUSTMathStatistics,C2DLInstituteAutomationCAS/UCASBeijingandNanjing/AiRiA. Formalsoftwarelinkverifiedpublication;actualnodeedgeWS/POMOpreferenceframework,readfurtherforactualKPscope. Weighted-sumapproxPareto notallunsupportedpareto guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullEq3–11/edgeconstruction alltaskTSP2/3,CVRPtotalandlongestroute,KPratioheuristic,WECAFiLMglobalpref token/zeroedgepadding/fullNxNheads. 200epochs100kbatch64Adam1e-4/1e-6,Npref101/105,200testHV. Table1allrows:qualityusuallybetterbutTIMEslower thanWECA;BiCVRP20EMNH-AUG.4302>PMSA.4301, TSP20MOGLS.6279>.6270. Hardwareprinted contradictoryTITAN RTX3090 retainRTX3090uncertainty."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTables2–4/Figs2–3. BiKP100EMNH.4535>.4532PMSA,200.3603>.3602;TIMEmoreforPMSA,onlyselectedcrossbudget180×TriTSP10036svs1.8h. MainBiTSP100prose.28vsTable1.18notmerge. Neuralgap0relativePMSAAUGneedAppendC;nottruecertifiedPareto. BiTSP50noaug.6412<WECAaug.6413andTri50.4430<.4432. OOD3KroABcases,negativePOMOextreme. Prefadaptivefuture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadallacknowledgmentsandcompleteReferences. ICAMsame6authorsarxiv2405.01906precursor,PMOCO/CNH/WECA/EMNH/NHDE/GIMF/MDRL/PDC/Uniteformer/Eformer/DARpreciseidentities;sourceAdamwrongKinganamedbutnotnewtargetperson."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadfullA–Fstart/allproblemdata/CnormalizationTable5/DencoderdecoderEq14–22/Ecrossscaletraining. TSPindependentcoordinates,KPpositiveprofitsWEIGHTSuniform capacities12.5/25;CVRPQ30/40/50. Aug64BiTSP512TriTSP8CVRP. HVtextinstanceideal/nadirnormalizationvsfixedTable5 needscodeverify,notoptimalitygap. DqueriesexcludepreftokenkeysprintedbutFig/codecheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "ReadAlgo1/FTable6all3KroABtests and G–I TCHvsWS, GPUmemory andparameterTable7–9. NewAppendicesGHIoldnotenotpresent mustfullcoverage. TCHBiTSP20.6284>WS.6272,near2×memorynotfreecompute.9tables3figures17formalallread."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read complete official one-page scientific poster served as Slides, its full extracted text and all three overlapping high-resolution tiles; all architecture, Table 1 and generalization/ablation panels. Poster uses squared-distance typography, while formal Eq4 and released MOTSProblemDef.py use unsquared Euclidean cdist(p=2). No extra multi-page slide deck is present at this official URL."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Preference-conditioned node attention can miss objective-dependent local edge relationships.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/related work"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Coupled node/edge attention with preference-modulated bias and attention-based edge aggregation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            9
+          ],
+          "locator": "Figure1/Eqs4–11/ablations"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "POMO constructive policies with weighted-sum objectives, task-specific edges and separate task models; AppendixG Tchebycheff test.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Main architecture/AppendicesA–G"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Four tested objective/task settings,200-instance sets,101/105 preferences,augmentation64/512/8,limited size and3KroAB transfers,explicit countervailing baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            13,
+            15,
+            16,
+            17
+          ],
+          "locator": "All9tables/3figures"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Quadratic edge memory; fixed-HV convention ambiguity and non-certified zero gap; neural/classical exceptions and resource costs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            14,
+            16,
+            17
+          ],
+          "locator": "Tables1–9 and AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive because tasks have separate policies/input/edges/decoders; within-task preference/size generalization does not establish cross-problem shared weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13,
+            14,
+            15
+          ],
+          "locator": "Actual models and training protocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v306/jia26l.html",
+      "locator": "Formal four authors RongshengJia/JunZhang/YifanZhang/JianCheng; five affiliations on p1; explicit publisher date2026-09-29 retained."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://icml.cc/virtual/2026/poster/63171",
+      "locator": "All17formalpages/Algorithm1/AppendicesA–I/references,3figs9tables read; official one-page poster served as Slides full text and all3tiles read; tree47/ZIP48 with no extra scientific doc. One BiTSPcheckpoint/eightdatafiles only."
+    },
+    {
+      "field": "classification and method",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/jia26l/jia26l.pdf#page=4",
+      "locator": "Separate task edges/decoders/weights; weighted-sum/POMO REINFORCE; edge modulation/aggregation/full quadratic state. No shared cross-native model, no learned incumbent editing."
+    },
+    {
+      "field": "quantitative claims and limits",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/jia26l/jia26l.pdf#page=6",
+      "locator": "Tables1–9 fully visually checked; preserve EMNH/MOGLS/WS-LKH/POMO stronger cases, slower PMSA/near2xmemory;180x only specific noaug36s vsWECA-AUG1.8h;3KroABcases and mixed20–100training distinct. Zero gap not certified optimum."
+    },
+    {
+      "field": "current code and metric conventions",
+      "source_url": "https://github.com/RongshengJia/PMSA",
+      "locator": "MOTSPModel/Trainer/Env/Tester/ProblemDef/train/test/HV fully read. Shared token keys and nonzero affine/updated padded edge biases differ from formal; cdistp2 unsquared matchesEq4 versusposter squared. Fixed raw WFG/referencebox normalization differs from AppendixC perfront prose. No neural benchmark replay."
+    },
+    {
+      "field": "original figure and explicit citation matches",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/jia26l/jia26l.pdf#page=3",
+      "locator": "OriginalFig1crop56,58,552,310 completecaptionvisuallychecked;15candidatefullentries+manualsixauthor2405.01906ICAM matched for16explicitedges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "pmsa",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "dar",
+      "reference_label": "Distance-Aware Attention Reshaping for Enhancing Generalization of Neural Solvers",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "emnh",
+      "reference_label": "Efficient Meta Neural Heuristic for Multi-Objective Combinatorial Optimization",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "fer",
+      "reference_label": "Learning Feature Embedding Refiner for Solving Vehicle Routing Problems",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "gimf",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization via Graph-Image Multimodal Fusion",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "neat-weight-embedding",
+      "reference_label": "Rethinking Neural Multi-Objective Combinatorial Optimization via Neat Weight Embedding",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "pareto-set-learning",
+      "reference_label": "Pareto Set Learning for Neural Multi-Objective Combinatorial Optimization",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "pocco",
+      "reference_label": "Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit full bibliography title/authors manually matched.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–12, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "pmsa",
+      "cited": "icam",
+      "reference_label": "ICAM precursor, arXiv:2405.01906",
+      "description": "Full six-author reference and exact arXiv identifier match the catalogued ICAM precursor lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References, six-author arXiv:2405.01906 entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read17formalpages/allA–I/references/3figs9tables plus whole official scientific poster.",
+    "Expanded affiliations and added publication-verified code URL.",
+    "Retained specialist constructive and documented task-specific objective/edge/decoder distinction.",
+    "Replaced blanket performance implications with exact HV/time/memory/augmentation budgets and negative comparisons.",
+    "Qualified HV normalization/zero-gap convention, printed metric inconsistency and ambiguous GPU label.",
+    "Inspected complete release inventory and code/formal/poster differences without inferring false historical results.",
+    "Added original Figure1 and16manuallymatched explicit citation edges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "666e9f38b629c088d68c78e6b393f6c972f92d94347cb138149029a4b9a99ee0"
+}

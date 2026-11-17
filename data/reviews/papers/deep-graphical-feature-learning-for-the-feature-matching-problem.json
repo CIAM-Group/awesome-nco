@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "paper_id": "deep-graphical-feature-learning-for-the-feature-matching-problem",
+  "note_path": "specialist/deep-graphical-feature-learning-for-the-feature-matching-problem.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "b4886d553154ed8a357c1d4a7d77ad7261d7192ff336c95e02de53e72cf69665",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Deep_Graphical_Feature_Learning_for_the_Feature_Matching_Problem_ICCV_2019_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Deep_Graphical_Feature_Learning_for_the_Feature_Matching_Problem_ICCV_2019_paper.pdf",
+      "version": "OfficialCVFICCV2019ten-page5087–5096 two-author PDF.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-4352ef740a/publisher.pdf",
+      "sha256": "6892864c5f8a274d1f04aa6032c1d3769f8d5b4ccf2bf8876719cff03d0ca86c",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Zhang_Deep_Graphical_Feature_ICCV_2019_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Zhang_Deep_Graphical_Feature_ICCV_2019_supplemental.pdf",
+      "version": "OfficialCVFtwo-page scientific AppendixA/B Figures9–11;complete read/rendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-4352ef740a/supplement.pdf",
+      "sha256": "ad6356ec23dbd5842fd3684aca4f331f77dc7e125ae81895f3f57766595b8675",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Complete pp1–3 read two authors Adelaide/NUS workdoneNUS; coordinate-only geometric matching learned richfeatures then exact LAP Hungarian (notexact QAPoriginal); CMPNN global kernel dictionary softedgeattention efficiency; rowCEtraining differs global hardpermutation; kNNgraph and generic matching repeated native task specialist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "All pp4–6 read CMPNN factorized global dictionary/no independent peredgefullmatrix,8NN/16types/max/BNReLU/l2output512, Hungarian exact learned LAP not originalQAP;MPNN equivalence underlinearoutput reparamnotoptimization theorem. 9million synthetic30–60nodes/rotation/noise/outliers oneepoch to realCMU/PFPascal;traditionalfeaturesdifferent, BCAGMnoiselessfewoutliersbetter;officialrepoURL noted."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Allpp7–10read PFPascalTable1 88.5original/69.9rotationvsPointNet69.7/41.5, manyrotationnegativeclasses bus/dining/plant/train/tv; architectureablationmemorynormal76MB,nonmonotonewidth/depth/featuredim;31refscomplete. No polynomial exactQAP guarantee feature-objective replacement."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "All2scientificsupppagesread k8trained transferk4/12often butCMU k4failslargeangle,k2poor;Fig9–11 plots/full runtime GPUpreprocess+NN+Hungarian,30–40msCMUtotal unlike standalone6msNN;exacthardwareunspecified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dgfl-contribution",
+      "category": "contribution",
+      "statement": "Coordinate-only learned geometric descriptors via compositional kernel message passing and Hungarian LAP decoding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1/3/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "dgfl-method",
+      "category": "method",
+      "statement": "8NN16types max-residual512unitdescriptor, rowCE and learned-score LAP;MPNN reparameterization not QAP optimality theorem.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equations3–15/Section3.3"
+        }
+      ]
+    },
+    {
+      "id": "dgfl-results",
+      "category": "experiment",
+      "statement": "PFPascal88.5original/69.9rotated with class negatives;synthetic/CMU and architecture ablations not universal dominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Table1/Figures4–8"
+        }
+      ]
+    },
+    {
+      "id": "dgfl-supp",
+      "category": "experiment",
+      "statement": "k8trained transfer4/12 tested,k4CMUlargeview failures,k2poor;fullpreprocess/NN/LAPruntime decomposition.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "SupplementSectionsA/B Figures9–11"
+        }
+      ]
+    },
+    {
+      "id": "dgfl-limits",
+      "category": "limitation",
+      "statement": "Learned linearobjective replaces originalhigher-order one;renderedEq16 perpointnorm versus currentcode maxradius.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Equations6/16 and pinneddata/utils.py comparison"
+        }
+      ]
+    },
+    {
+      "id": "dgfl-class",
+      "category": "classification",
+      "statement": "Specialist constructive sharedcoordinatefeaturemodel plus Hungarian matching;no demonstrated crossnative solver or NNincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Pipeline/evaluation native geometric matching"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/ICCV.2019.00519",
+      "locator": "Cached exact2author/title DOI published-print2019-10;formal5087–5096;firstpage Adelaide/NUS/workdoneNUSfootnote. Canonicalarxiv searchnotidentified so no inventedv1."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhang_Deep_Graphical_Feature_Learning_for_the_Feature_Matching_Problem_ICCV_2019_paper.html",
+      "locator": "Official visible2p supplement link downloaded rawPDF and fullyread;fullgit-pinned524memberZIP inventory extensions/noPDF ZIP ipynb;txtmembers datasetannotations/pairs,READMEonlyscienceprose complete read."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/zzhang1987/Deep-Graphical-Feature-Learning",
+      "locator": "gitlsremoteHEADbf1981342ce5bd1aa004c53bb6d3274661158b7c pinnedcodeload;fullREADME/datautils/necessaryCMUtest46–70read currentnormalization+hardLAP."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Deep_Graphical_Feature_Learning_for_the_Feature_Matching_Problem_ICCV_2019_paper.pdf",
+      "locator": "OriginalFig3 fullcaptionp5Rect43,68,558,236at2.5xphysicalview;mainpp3/5/6/7/8andbothsupppagesrenderedinspected."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Zhang_Deep_Graphical_Feature_Learning_for_the_Feature_Matching_Problem_ICCV_2019_paper.pdf",
+      "locator": "31actualrefspp9–10 checkedcatalogue/candidates;noactiveidentityforMilan2017/actionrecognition,0internaledges."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Complete10formal+2sciencepages/31refs read.",
+    "Clarified learned LAP objective versus exact original QAP;preserved rotation class negatives and partial graph-neighborhood transfer.",
+    "Rendered Eq16 and inspected currentcode before recording normalization difference;no historical invalidity inference.",
+    "Pinned524membercode inventory/scienceappendix and physical original Figure3 checked."
+  ],
+  "reviewed_note_sha256": "112f916e6b9c259cfedd25936f9f09b5a1599a0eb98ec37985bff71dadcf7c71"
+}

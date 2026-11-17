@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "paper_id": "dynamic-am",
+  "note_path": "specialist/dynamic-am.md",
+  "baseline_note_sha256": "ba88714ce9d8ef9a5c8f8c05b75d319bb573f9de344da4c15167a5e51fd8a768",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2002.03282v1",
+      "retrieval_url": "https://arxiv.org/pdf/2002.03282",
+      "version": "arXiv:2002.03282v1,9February2020,15pages",
+      "local_path": "research/full-text-review/dynamic-am/paper.pdf",
+      "sha256": "6691cb992feebfc12c96356628608da64f6877d259dfa5b1251b89b5ad77bb06",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh titleblock/affiliation/version, motivations andallrelatedwork citations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh CVRPdefinition, allencoderEquations1-11 andtanhresidualarchitecture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh decoder/masks/capacityEquations12-21 anddepot-triggered fullreencodingEquations22-23; Figures4-6."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh current-policygreedybaselineAlgorithm1, allTable1results/hyperparameters, crosstransfer and2opt/Table2times."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh offline/onlinecostdiscussion, limitations/futurework, funding andall30references."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dynamic",
+      "category": "contribution",
+      "statement": "Recompute encoder frominitialnodeembeddings atdepotreturns, maskingservedcustomers andretainingdepot.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Section4Equations22-23; Figure6"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "Three128dimencoderlayers,eightheads, FF512 andtanhresidualequations; decodermeanoverunvisitednodes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations2-12"
+        }
+      ]
+    },
+    {
+      "id": "baseline",
+      "category": "method",
+      "statement": "Algorithm1usescurrentparameterstheta forsampleandgreedyrollouts, notaseparatefrozenbaselinepolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Equations24-25; Algorithm1lines6-8"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "CVRP100greedy16.40gap4.79percent; 2opt16.27gap3.96percent; LKH3reference15.65.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Table1"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "category": "experiment",
+      "statement": "CVRP100training250hours andgreedyaverage15.92msversus2opt2.21seconds pertestinstance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12,
+            13
+          ],
+          "locator": "Hyperparameters; Table2; discussion"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "limitation",
+      "statement": "20trainedmodelat100customershas17.37length10.99percentgap, worse thanRLgreedy17.23.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Table1lastrows andgeneralizationdiscussion"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "SeparateCVRP-sizepoliciesconstructroutes; optional2optisdistinctpostprocessing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Training/testprotocol and2optsection"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2002.03282v1",
+      "locator": "PDFp1titleblock andSpringerAuthorInformation: Peng,Wang,Zhang atSunYat-senUniversity."
+    },
+    {
+      "field": "year, publication date, venue",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-981-15-5577-0_51",
+      "locator": "FirstOnline26May2020; CiteThisPaper2020; ISICA2019event is distinctfrompublicationyear, CCIS1205pp636-650."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2002.03282",
+      "locator": "Solearxivv1submitted9February2020, matchingPDFwatermark."
+    },
+    {
+      "field": "code_url provenance",
+      "source_url": "https://github.com/Roberto09/Dynamic-Attention-Model-for-VRP---Pytorch",
+      "locator": "README manuallyread statescommunityPyTorchimplementationbasedon d-eremeev/ADM-VRP; noauthorofficialstatusestablished, paperhasnoauthorcodecitation."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-981-15-5577-0_51",
+      "locator": "ManualSpringerlandingandfulltextinspection2026-11-16: noscientificSupplementary/Electronicattachmentsection orreference; complete15pagearxivsourceincludesallmaincontentandreferences."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2002.03282v1#page=9",
+      "locator": "OriginalFigure6PDFp9 cropRect(130,480,486,595)points at4x; completebothpanelsandbottompartialsolutionboxes; atomicreplacementandvisualcheck."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2002.03282",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-02-09; title on abstract page: A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/dynamic-am/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dynamic-am",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[3] Belloetal2016arxiv1611.09940",
+      "description": "REINFORCEpointer predecessor; citedpreprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "rl-vrp",
+      "reference_label": "[4] NazariNeurIPS2018",
+      "description": "Inputembedding/CVRPprotocol andgreedybaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10,
+            11,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[5] KhalilNeurIPS2017",
+      "description": "Structure2vecDQNrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "learning-heuristic",
+      "reference_label": "[6] DeudonCPAIOR2018",
+      "description": "Attentionconstructive/local2optpredecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10,
+            12,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "attention-model",
+      "reference_label": "[7] KoolICLR2019",
+      "description": "Mainarchitecture andgreedyrolloutreference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10,
+            11,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "pointer-networks",
+      "reference_label": "[8] VinyalsNeurIPS2015",
+      "description": "Supervisedpointer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[16] LiNeurIPS2018",
+      "description": "Edge/nodeclassificationandtree-searchrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "dynamic-am",
+      "cited": "neurosat",
+      "reference_label": "[20] SelsamICLR2019",
+      "description": "SinglebitsupervisionSATclassifierrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Explicitnumberedtextcitationandmatchingreference"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Correctedpublicationyear2019to2020andfirstonline26May2020; retainedISICA2019eventlabelandreference-onlyinclusion.",
+    "Correctedimplementationprovenanceto communitycode, notofficialauthorrelease.",
+    "Specifiedcurrent-policygreedybaseline,tanhresidualarchitecture, fullreencodingonlyatdepotreturns.",
+    "Addedexacttraining/batch/GPU/inferencebudgets, heuristicgapunits, unfavorablecrosstransferandLKHcomparisons.",
+    "ReplacedclippedFigure6withfulloriginal; recordedeightexplicitinternalcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2b859a42a8c2bf3f5b4bd13c2dba7475dee53d5d1782b4032f9d6d1ceb9b4735"
+}

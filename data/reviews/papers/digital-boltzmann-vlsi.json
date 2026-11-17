@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "paper_id": "digital-boltzmann-vlsi",
+  "note_path": "specialist/digital-boltzmann-vlsi.md",
+  "baseline_note_sha256": "18653b838776b2b06cac93fa8def5399fac53c36a48387aa1c1f5dcc056b9732",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/1fc214004c9481e4c8073e85323bfd4b-Paper.pdf",
+      "version": "Official NIPS1993 volume6 scanned proceedings,8pages896-903",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/1fc214004c9481e4c8073e85323bfd4b-Paper.pdf",
+      "local_path": "research/import-272/nco-8f9c4e8dfe.pdf",
+      "sha256": "0dd3b458df2621a2a760233985cb73b862eca6c3461ee01f352bc908ccba7d13",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh pp1-4 reread unobscured in separate tool output. Stanford/Ricoh/Sun10authors; digital deterministic meanfieldBA not stochastic, CSP weightsloaded/schedulepreloaded,32neural+4weightprocessors,128annealed+32input max160. Teacher/studentphase coactivation update, limitations directly connected hiddenunits acknowledged. Throughput claims theoretical upperlimits, hardware design distinct from globaloptimization proof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh pp5-8 all10refs. TripleRAS overlaps currentanneal/lastupdate/nextload, teacherstudent stores;1.2um400ktransistors20,480weights,1500linesC/SBus. Crucial firstsilicon electricalDRAM1Vtransients/latchup/circuiterrors, fixes onlysimulated nextfabexpected fullyworking.3.5e8theoretical learning,12000typicalrecall notoptimizedCSPbenchmark, powerplot5V50-110MHz<2W vs125MHzdesignspec;16chipMCMfuture minimaloverheadproposal. RestoredPDFauthorBurr/Takahiro spellings."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Annealing cost motivates digital deterministic meanfield hardware for CSP/learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Abstract/introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "32neural+4weightprocessors, tripleactivationbanks andSBus host interface.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Functional/hardwaredesign"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Preloaded weights/sigmoid/schedule forCSP; teacher/studentcoactivationweightupdates and3waypipeline;128annealed+32inputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections2.2,3.1,3.2"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "3.5e8updates theoreticalmaximum/12000typicalrecall; Table1hardware spec/powerplot, no namedCSP solutionbenchmark. Firstsilicon faults unresolved, fixes onlysimulation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            7
+          ],
+          "locator": "Abstract,4.1,Table1/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Finiteprecision/capacity, explicit firstsilicon faults, hiddenunit learninglimitations, futureMCM nottestedsolveperformance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "locator": "Learningcaveat/firstsilicon/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Handloaded CSP energy and meanfieldhardware; specialist neurodynamic, no one trainedmodelcrossproblemdemonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "CSPoperation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/1fc214004c9481e4c8073e85323bfd4b-Paper.pdf",
+      "locator": "Visiblebylinep1 JamesB.Burr/TakahiroWatanabe andmiddleinitials vs officialHTMLBurg/Tokahiro discrepancy; Stanford/Ricoh/Sun."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/hash/1fc214004c9481e4c8073e85323bfd4b-Abstract.html",
+      "locator": "Official NIPS1993 volume6 record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/hash/1fc214004c9481e4c8073e85323bfd4b-Abstract.html",
+      "locator": "Manual entry check Bibtex/Metadata/Paper only, complete8pages no attachedscientificappendix."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/1fc214004c9481e4c8073e85323bfd4b-Paper.pdf",
+      "locator": "Fullvisualcheck pp1,4,6,7 authorbyline,architecture,die,Table1/power; no new asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read8pages/10references.",
+    "Corrected Burg/Tokahiro to scanned Burr/Takahiro with explicit primary-source discrepancy.",
+    "Qualified throughput as theoretical/typical, not time-to-solution benchmark.",
+    "Added critical first-silicon faults and simulation-only fixes; fullyworkingchip was anticipated.",
+    "Specified128annealed+32inputs, triplebankpipeline, externalCSPweights/schedule and futureMCM limits."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1eda7df911c2f8463d715e5801e7bf5c3504adb50fde2ee7f28ea220f93203c1"
+}

@@ -1,0 +1,381 @@
+{
+  "version": 1,
+  "paper_id": "lense",
+  "note_path": "specialist/lense.md",
+  "baseline_note_sha256": "c8d19a4f2048a868369d50ec86ddbb41eaa54492e57af681891aa00b6e55deb2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v162/ireland22a/ireland22a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v162/ireland22a/ireland22a.pdf",
+      "local_path": "research/import-272/nco-838a5c916d.pdf",
+      "sha256": "07483d05d8505c53bce0533dd260834d9d2d46960021b16d8211d45f5937e319",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read subgraphpruningpipeline, budgetedmaximizationformulation and heuristicreference notnecessarilytrueoptimum; contrastiveencoder requiresqualityclasses butInfoNCEdoesnotguaranteeordinalmonotonicity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read exactbudgetedMaxVertexCover andBudgetedMaxCut definitions(notminVC/unconstrainedMaxCut), neighborhood-expandedsubgraphnotfixedMvertices, centroiddistanceDQN/guidedheuristicseedexploration,95%heuristicreferencecutoff classes notoptimality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full24task-graphtable, heuristicreference ratios0.960-1.094 andpruning,Talk140xspeed study, multibudgetfailuresandcompletefirstbibliographypage. Classifier/GCOMBPqualitybettercasesretain,95%doesnottrueOPT."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read remainderofcompletebibliography, verifiedBello/S2V/Ptr/GCNN/GLSearch/GCOMB/AM/GPN/ECO/PPO-BiHyb/reversibleaction exactidentities forcataloguecomparison; noS2V2016encoderrelation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allAppendicesA-C/E-F, splitbyedgeswithoverlappingvertices, fulltask/dataset-specifichyperparamtable(dims/M/reward/testhorizon), GCOMBPonlynotfullGCOMBbaseline, exactlossablationtable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read fullmultibudgetTable4 andlosscomparison/2Dautoencoderfigures; IMb1.86/.86/.77andSkitterMVC.85exceptions; same-classInfoNCEdoesnotenforceordinalgeometry."
+    }
+  ],
+  "claims": [
+    {
+      "id": "lense-task",
+      "category": "method",
+      "statement": "ActualtasksarebudgetedMaxVertexCover(edgecoverage),BudgetedMaxCut andICInfluenceMaximization,notminVC/unconstrainedMaxCut.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Problemformulation/Section4/labeldefinition"
+        }
+      ]
+    },
+    {
+      "id": "lense-contribution",
+      "category": "contribution",
+      "statement": "HeuristiclabeledInfoNCEencoder+DQNroot-swapsnavigateexpandedneighborhoodregions thenexistingheuristicdecoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13,
+            14
+          ],
+          "locator": "Section3/Algorithms1-2/AppendicesA-C"
+        }
+      ]
+    },
+    {
+      "id": "lense-experiment",
+      "category": "experiment",
+      "statement": "Ratiosarefullgraphheuristicreferences;>140xspeed excludesfullofflineaccount; lowerbudget1failures.86/.86/.77/.85 andqualitytradeoffs retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            13,
+            15,
+            16,
+            17
+          ],
+          "locator": "Table1/Figure3/AppendicesB-F"
+        }
+      ]
+    },
+    {
+      "id": "lense-classification",
+      "category": "classification",
+      "statement": "Distinctper-task/per-graphencoders/policies/hyperparameters; sameframeworknotunchangedsharedmodelacrossnativeproblems.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13,
+            14,
+            15
+          ],
+          "locator": "Section4/AppendixC/Table3"
+        }
+      ]
+    },
+    {
+      "id": "lense-limit",
+      "category": "limitation",
+      "statement": "InfoNCEgeometry/proxyrewarddoesnotprovesafepruning/optimality; same-originalgraphedgesplit andglobalfeatures qualifier.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            13,
+            14,
+            16,
+            17
+          ],
+          "locator": "Encoder/goal/split/features/multibudgetdiscussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v162/ireland22a.html",
+      "locator": "Twopublisherauthors/pages9622-9638 match17pagePDF,WarwickWMG/Statisticsaffiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v162/ireland22a.html",
+      "locator": "HTMLcitation_publication_date2022/06/28 andrawmlresearch/v162gh-pagesissueddate, distinctfromconferenceevent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v162/ireland22a.html",
+      "locator": "ManuallycheckedpublisherRelatedMaterial/sourceextras[]; integratedAppendicesA-Fallread andkeyplotsrendered; fullauthorZIPinventoryhasnoadditionalscientificPDF/docs."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/davidireland3/LeNSE",
+      "locator": "OfficiallinkPDFp1;masterZIPinventory/README/MVCfunctions,environment,network,dqn_testread; taskseparatedpipelines andedgecoveragevsvertexcountcodeconflict documented."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.mlr.press/v162/ireland22a/ireland22a.pdf",
+      "locator": "Fresh full bibliography pages[10] plus actual body pages[2]: Body p2 direct solution prediction citation; bibliography title/three authors/arXiv1906.01227 exact target."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "lense",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma et al. (2019)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Ma and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "glsearch",
+      "reference_label": "Bai et al. (2021)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicit in-text citation Bai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "gcomb",
+      "reference_label": "Manchanda et al. (2020)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Manchanda and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021)",
+      "description": "Exact body and bibliography work identity; cited preprint year preserved independently of formal catalogue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Body p2 direct solution prediction citation; bibliography title/three authors/arXiv1906.01227 exact target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Joshi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "lense",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al. (2020)",
+      "description": "Discusses perturbative neural improvement from an existing solution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read citation body context: Relatedworkp3Barrett2020solutionperturbations; completeAAAI34pp3243–3250ECOentryp9."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Barrett et al. (2020); Exploratory Combinatorial Optimization with Reinforcement Learning. Relatedworkp3Barrett2020solutionperturbations; completeAAAI34pp3243–3250ECOentryp9."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall17publisherpages/allAppendicesA-F/tables/figures/bibliographyandmanuallycheckedsupplements.",
+    "ReplacedincorrectMinimumVertexCover/unconstrainedMaxCut labels withactualbudgetedtasks; qualified95%heuristicreference notglobaloptimum.",
+    "Preservedquality/pruningtradeoffs, edgeholdout/per-tasktraining, lowerbudgetfailures/offlinecost andcurrentMVCcodeobjective mismatch; restored9explicitcitations.",
+    "Follow-up complete bibliography audit restored explicit citation to efficient-graph-convnet-tsp; identity checked, no inferred topic edge.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "06c69674b9c9ac4254599f67d65dbedaf273c7f3ae94729bb72546dd8e3e38a9"
+}

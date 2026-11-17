@@ -1,0 +1,897 @@
+{
+  "version": 1,
+  "paper_id": "ml4tspbench",
+  "note_path": "studies/ml4tspbench.md",
+  "baseline_note_sha256": "4041aede4ab061344b64f3bc24ec71a981b0c7456be16860dfee236ac2c7c48f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a3dc6e903082902d8e916bb9fccbfcbc-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a3dc6e903082902d8e916bb9fccbfcbc-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c8c08dc335.pdf",
+      "sha256": "f71b12a8e2bc015cee500ff03a83ac96a5091d4b516be72388da9a182c3a6a2c",
+      "pages": 37,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read allfrontmatter/introduction/frameworkfiguretext and TSPformalization/learningfunctionalities. Principledablation andfactoryofseparatesolvers notonegeneralist;7exactauthors/3affiliations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read alltraininglossEqs1-4/metaobjective/testtimeactive/gradientsearchEq5, decoders,decoupledMCTS/predictionguidance and full dataset/metricsetup. TrainingLKHlabels versusConcordetestDrop distinguished."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full empiricalprinciples/ablationsTables1-6; node normalization heuristicnotfulljointfeasibilityguarantee, symmetry/randomstart/activegradientsearchcosts, MCTScompatibilityanddecoupledinitialization. DensemergedTable5/6 extraction requiresvisualreadnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read full recompositionandTSP500train generalizationTables7/8 including classicalLKH0.072%@4.2s betterquality/runtime than selected0.142%@55.3shybrid; no universal SOTAclaim. Ethics/reprostatement and fullreferencesAthruHudson,duplicateCheng/costarefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read complete remainingbibliographyJoshi–Zhou including duplicateLEHD/metaEGN, sourceyear/titlealiases; reference-only entries notautomaticallyedges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 16,
+      "notes": "Read appendixcontentsA-G1 including allsectionlocators."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 17,
+      "notes": "Read remainingcontentsG2-J."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 18,
+      "notes": "Read every row of hugefullTable9 acrossclassical,edgeprediction,regret,generation,sequentialfamilies inclalllength/drop/time/initialization/searchvariants and allAopening. Noteper-method tradeoffsnotuniformSOTA; selectedmain/appendix runtimesdiffer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read completeAclaims/BrelatedworksandC1/C2taskadaptation skeleton,C3protocols. MISLinSATconstraint is relaxed notexactMISpolytope, Table10. CVRPbatch100/HGSreference distinct mainTSPbatch;separateadaptation notjointmodel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read full crossproblemTables11-13andallminimalcodeexamples includingmean/stdonTESTinstances,7ksecondsearch/50restartsTSP500,32threadsLKHexampleandTSPLIBreal-valuedcoordinate rescaling—notoriginalroundedeuc2dcosts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read all20TSPLIBexampleinstances, allTable14distributionrows/Figs3-5captions, unsupervisedSAGdependency/lossdecoupling and LKHsupervisiontrials500/5k/50k notalwaysoptimal; MCTSdiscussionstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Read Figures6-8/allcaptions and MCTS100samplesoneinstanceevidence; all diffusionELBO/transition/posteriorEqs6-9, RLauxiliaryEq10 and symmetrylossEqs11-13, regretlabelsLKH10/5trialapproximation. Visualappendixsheet21/22/26/28checked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "Read allgradientsearch/MCTS modifications+size-timebudgets. LargeTSP seedrefresh andbest2optpart of comparedpipeline. GCNsinusoidalembedding/message/timestepEqs14-25/GAT26-27/SAGstart;consistentdimensions butdistinct architectures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 35,
+      "notes": "Read entire11methodTable15/SAGfilters28-32/Hthreeparadigmconceptualdiscussion/Fig10. Conceptual search/supervision argumentsnotproofsofper-instanceoptimality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 36,
+      "last_page": 37,
+      "notes": "Read allhardware/backbone/training/searchhyperparameters and fullJlimitations/impact. ActualGCN12x256/GAT3x128/SAG3x64 contradict generalmatchedarchitectureprose. Curriculum50→100→500separatecheckpoints; F3MCTS.005/.020/1seconds vsI1n/10seconds needs reconciliation."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Learningrepresentation/decoding/onlineoptimization/searchconfounding motivates modularpipeline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Completeintro/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Recombinesfourlearningfunctionalities/objectives/search andproposesnormalization/symmetry/decoupledMCTS; empiricaldesignprinciplesnotapproximationtheorems.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Allformalmethoddefinitions/principleablations"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Factoryofseparateconfigurations/checkpoints;TSPcurriculumseparate50/100/500;separateCVRP50/SATLIBMISadaptationaddsactualtagsnotjointgeneralist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            20,
+            21,
+            22,
+            37
+          ],
+          "locator": "C1-C3/I2actualprotocols"
+        }
+      ]
+    },
+    {
+      "id": "norm-symmetry",
+      "category": "method",
+      "statement": "Nodewisecouplingthenclipping doesnotguaranteefeasibletourdistribution;MISLinSATnormalizationexplicitlyrelaxed;randomtourMCTSretainslearnedheatmapguidance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            21,
+            28,
+            29,
+            32
+          ],
+          "locator": "ActualnormalizationandMCTSoperations"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP100greedynormDrop7.078→2.721;TSP500generativesymmetry9.639→6.695with1.2→1.6s;selected50randomMCTS.142%55.3s vsclassicalLKH.072%4.2s.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10,
+            18
+          ],
+          "locator": "ExactfullTables1/2/7/9 visuallychecked"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "TSP500trained models evaluatedTSP1000/20rescaledTSPLIB201-1002andselecteddistributions;CVRPbatch100/MISHGS-KaMISreferences/normalizationandgradientsearchtradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            21,
+            22,
+            24,
+            25,
+            26
+          ],
+          "locator": "AllTables8/10-14/TSPLIBexample"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Detailedbackbones12x256GCN/3x128GAT/3x64SAGnotuniformcapacity;traininglabelsLKHnotcertified;regretheuristiclabels;instancegapstdnottrainingCI.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            23,
+            24,
+            27,
+            29,
+            32,
+            36,
+            37
+          ],
+          "locator": "Fullarchitecture/label/teststatisticsdetails"
+        }
+      ]
+    },
+    {
+      "id": "print-inconsistency",
+      "category": "limitation",
+      "statement": "F3MCTStimes.005/.020/1s vsI1n/10s andselectedTables7/9timesdiffer;oneinstance100sampleMCTSevidencequalified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            18,
+            28,
+            29,
+            32,
+            36
+          ],
+          "locator": "Exactprintedrulesandtables, curator observationnoterratum"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "RTX3090/Threadripper3970XsingleGPU;source scripts/library/environment andtesttimecostsrecorded;all37pagesA-Jreadwithoutclaimingexecution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            23,
+            24,
+            36,
+            37
+          ],
+          "locator": "Fullreprostatement/codeexamples/hardware/trainingsettings"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publicationdate",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/a3dc6e903082902d8e916bb9fccbfcbc-Abstract-Conference.html",
+      "locator": "OfficialICLR2025conferencerecord andPDFp1 exact7authors/SJTU/ShanghaiInnovationInstitute/MITchecked. Unsupportedimport2025-05-01 changedtoyear2025."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/a3dc6e903082902d8e916bb9fccbfcbc-Abstract-Conference.html",
+      "locator": "ManualpublisherPaper/Bibtexlinks:noexternalSupplemental. OpenReviewv1/v2notesAPIforumgrU1VKEOLireturned403cached;complete37pageformalPDFwithallbibliography/AppendicesA-J/codeexamples/all15tablesread. Entireauthorrepo515filetree noPDFZIPscientificattachments. Three4pagecontactsheetsp2/8/9/10/21/22/26/28/7/27/31/36 visuallyreadinclformula/mergedtables/figures;noidentifiedmissing science."
+    },
+    {
+      "field": "sourceversion",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a3dc6e903082902d8e916bb9fccbfcbc-Paper-Conference.pdf",
+      "locator": "Actualidentifiedpublisher37pageICLR2025PDFidentity/version/SHAchecked;allscientificcontentintegrated."
+    },
+    {
+      "field": "code_url,reproducibility",
+      "source_url": "https://github.com/Thinklab-SJTU/ML4TSPBench",
+      "locator": "Explicitprimaryauthorrepo;completeREADMEandpinneddocs/environment.ymlread. Treecommita1b9b7b36f87f42e05f9ee78998573bfd2c90631inventory515files inclseparatesize/modeltrain/testscripts. Python3.8.18/torch2.0.1/CUDA11.7deps;oldimplementationandnewlibrarydistinguished. Datasets/checkpointslinksnotscientificmissingattachments;notdownloadedweights/data/rerun."
+    },
+    {
+      "field": "tasktagsandtechnicalqualifications",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a3dc6e903082902d8e916bb9fccbfcbc-Paper-Conference.pdf",
+      "locator": "C3actualCVRP50andMISexperiments supportaddingCVRP/MIS/GraphOptimizationtagswhilemaintainingstudy. GmatchedarchitectureprosequalifiedagainstI1specificdifferentdimensions/layers. F3vsI1MCTStimingdiscrepancyretainednotassumedresolved. TSP500.142%55.3sdoesnotbeatallclassicalmethodsinsameTable7. TSPLIB20actual201-1002rescalednonroundedreferencecosts."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/a3dc6e903082902d8e916bb9fccbfcbc-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-05-01; cached evidence research/full-text-review/ml4tspbench/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/a3dc6e903082902d8e916bb9fccbfcbc-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2025-05-01; primary cachedHTML research/full-text-review/ml4tspbench/supplement-landing.html; citation_title=['Unify ML4TSP: Drawing Methodological Principles for TSP and Beyond from Streamlined Design Space of Learning and Search']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ml4tspbench",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp12: Fu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp13: Kool et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "cryptoanfnet",
+      "reference_label": "Zheng et al. (2024)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp15: Zheng et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al. (2024)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp14: Sanokowski et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp14: Sun and Yang (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp14: Qiu et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2021b)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp12: Hottung et al. (2021b)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp2; exactfullbibliography PDFp13: Joshi et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp3; exactfullbibliography PDFp13: Karalias and Loukas (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al. (2024)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp13: Li et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2022)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp12: Hudson et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung et al. (2021a)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp4; exactfullbibliography PDFp12: Hottung et al. (2021a)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp13: Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp15: Wu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp13: Li et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2024)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            37,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp37; exactfullbibliography PDFp14: Luo et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "linsatnet",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            21,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp21; exactfullbibliography PDFp15: Wang et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "meta-egn",
+      "reference_label": "Wang and Li (2023/2022 duplicatedsamepaper)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp14: Wang and Li (2023/2022 duplicatedsamepaper)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "mis-self-training-dp",
+      "reference_label": "Brusca et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            11
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp11: Brusca et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "neuopt",
+      "reference_label": "Ma et al. (2024)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp14: Ma et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            11
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp11: Chen and Tian (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp26; exactfullbibliography PDFp15: Zhou et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp14: Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp13: Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang et al. (2022)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp3; exactfullbibliography PDFp15: Wang et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "prnet-chip-design",
+      "reference_label": "Cheng et al. (2022a/2022b duplicatedsamepaper)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp12: Cheng et al. (2022a/2022b duplicatedsamepaper)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "qap-qnn",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            15
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp15: Ye et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp13: Kim et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "t2t",
+      "reference_label": "Li et al. (2023b)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp13: Li et al. (2023b)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "tam",
+      "reference_label": "Hou et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp12: Hou et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "utsp",
+      "reference_label": "Min et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp1; exactfullbibliography PDFp14: Min et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp7; exactfullbibliography PDFp14: Sanokowski et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al. (2023)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            13
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp13: Kim et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "unico",
+      "reference_label": "Pan et al. (2025)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicitbody citation PDFp3; exactfullbibliography PDFp14: Pan et al. (2025)"
+        }
+      ]
+    },
+    {
+      "citing": "ml4tspbench",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al. (2022)",
+      "description": "Explicitbody discussion of related method or evaluatedbaseline; exact full reference identitychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            12
+          ],
+          "locator": "Explicitbody citation PDFp19; exactfullbibliography PDFp12: Geisler et al. (2022)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedactualfactoryofseparatecheckpoints/conditionaldesignprinciples/decoupledMCTSandallsize-timequalitysettings.",
+    "AddedactualCVRP50/MISexperiments andtagswithoutscopechange;TSP500checkpointtransfer/20rescaledTSPLIBactualcoverage.",
+    "QualifiedneuralSOTAclaimversusstrongclassicalbaselines,nonuniformarchitectures/labels/searchbudgetdiscrepancy/instancestd.",
+    "Full37pages/bibliography/A-J/codeexamples/all15tables/publisherAPIrepoattachmentinventorycomplete;35explicitinternalcitations;unsupportedexactdayremoved.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6b420ecb37fe68b3df86f641a565fe8b9e39531f69da7d1104e3a3bc15d6a7ab"
+}

@@ -1,0 +1,766 @@
+{
+  "version": 1,
+  "paper_id": "goal",
+  "note_path": "generalist/goal.md",
+  "baseline_note_sha256": "ad630373a9fae1c8a80b2bdcbc3630861dddd10a66e3dcb9f469176feb3c023f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2406.15079",
+      "retrieval_url": "https://arxiv.org/pdf/2406.15079",
+      "version": "Arxiv2406.15079v3Feb25,2025,22pagesallmain/references/AppendicesA-Ffreshread",
+      "local_path": "research/full-text-review/goal/paper.pdf",
+      "sha256": "ec3a873602454cf4c4f0799438011f1b8cc0e536a0f426262ede390f21e738d7",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "formal",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/826aea2253363fe04e8c4991b2a8869e-Paper-Conference.pdf",
+      "version": "FormalICLR2025proceedings24pagesallmain/references/AppendicesA-Ffreshread",
+      "local_path": "research/full-text-review/goal/formal.pdf",
+      "sha256": "bc7e5990614763fa7807c797043bdf8f3ad9dc8404dd0f21fd1b259917641ea3",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://iclr.cc/media/iclr-2025/Slides/27692.pdf",
+      "version": "OfficialICLR2025authorpresentation16pagesalltext/diagrams/resultsfreshread",
+      "local_path": "research/full-text-review/goal/slides.pdf",
+      "sha256": "d0b2cf61b4d150ef2e49acde41be848e25d6bd1f05d9bdd7ea08918679637c40",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 22,
+      "notes": "Fresh fullarxivv3Feb25,2025all22pagesmain+references10-13+AppendicesA-F14-22actuallyread (rereadp3and11afteroutputtruncation). Actual8trainedtasks+8newtargetFT allbackprop, 1Mlabels/task8V1007days400epochs2.1M9layer1288headsReZero codebooknode8edge4. UMSPunrelatednotuniform; sourceoracleHiGHSmainvsORToolsF15. GreedyGOALvsCOMPASSsearch3h exception;128testtotalsheuristicreference notallopt. MainCVRPmultitask3.16>single2.34>POMO1.21; size1000CVRP7.37>BQ5.88/OP15.62/JSSP22.53. Noarbitrarynewtaskzeroshotbecauseadaptersneeded; self-label128samples expert, bestover10runs notmean/confidence; supervised128labelsminutevsunsuphours. MISsourceconflatesmaximum/maximal butactualobjectivecardinality; actualadditionaltasksMCLP/OSSP/SOP/TRP/OCVRP/SDCVRP/PCTSP/MIS notalloneunchangedcheckpoint. Genericcalendaracceptanceremovalneeded. Newformal24PDFdownloadedunread, mustread/check beforefinish; reposcientificinventory136membersnoextraPDF/ipynb/archive/video. Figures/code stillnext."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 24,
+      "notes": "Fresh all24 formalproceedingspagesmain/references11-15/AppendicesA-F16-24read. Diffarxiv:formalauthorDrakulicaccent, removesopeninginfographic shiftsFig2toFig1, correctsMISmaximumdefinitionbutmain/oracleHiGHSvsORToolsF15remains. Main8tasks/8FTtables identical, 128test referenceoracles notallcertopt, COMPASSsearchbudgetexception, sourceCI100undefined. All24textactuallyread; sourcepreferredformal forfinalnoteevidence."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 16,
+      "notes": "Freshall16officialICLRslidesfulltextread (8-11rereadaftertruncation), allfour4pagecontactsrendersactuallyviewed. Progressiveintro2-4/singlemixed6-7/multitype8-9, extraBQ-MDPpathTSPillustration5, eighttasklist10, Table1duplicate11, unsupervised/supervisedcurves12-13/conclusion/ref16. Noindependentextraexperiment; allscientificdiagrams/outputsread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "SharedrepresentationsacrossstructurallydifferentnativeCOtasks ratherthanoneproblem/checkpoint.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Mixednodeedgeattention,lowranktaskadapters/sharedcodebookandparametertiedmultitypeTransformer.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            9,
+            16,
+            17
+          ],
+          "locator": "Architecture/equations/ablations"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "BQMDPconstruction/behavioralcloningof8tasks, newadapters/fullFTand128sampleteacher for8moretasks.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            16,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Actualtraining/state/mask/taskprotocol"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "8Msolvedinstances,8V1007days,128test/task, best10adaptationvsmeanablations; sharednegativecellsandunequalCOMPASSsearch.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            16,
+            17,
+            18
+          ],
+          "locator": "MainTables1-2/Figures2-7/AppendixA-E"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Noarbitrarynewtaskzeroshot, adapterdata/fullFT, quadraticattention, highofflineoracle/trainingcost andresidualsizegaps.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            6,
+            8,
+            9,
+            10,
+            16,
+            18
+          ],
+          "locator": "Explicitdiscussion/newtaskrequirements/negativeOOD"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Actualsharedbackbone8nativeproblems isgeneralistconstructive; selflabeltrainingnotlearnedtestincumbentediting; 8targetsseparateadaptation.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            4,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sharedcheckpoint/actualactions/FTboundary"
+        }
+      ]
+    },
+    {
+      "id": "slides",
+      "category": "reproducibility",
+      "statement": "All16officialpresentationslidesfullyread/rendered; repeatsarchitecture, BQMDPillustration, mainqualityandadaptationcurves.",
+      "evidence": [
+        {
+          "source_id": "slides",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "CompleteICLR2025authorpresentationincludingprogressiveanimationpagesandembeddedresulttables"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal identity and dates",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/826aea2253363fe04e8c4991b2a8869e-Abstract-Conference.html",
+      "locator": "Formal24pPDF/HTMLthreeauthorsDarkoDrakulicaccent/NAVERLABSEurope; actualICLR2025publicationyearverified, removedgenericJan22notificationdate. arxivv1June21,2024/v3Feb25,2025fromprimaryhistory."
+    },
+    {
+      "field": "supplements and versions",
+      "source_url": "https://iclr.cc/media/iclr-2025/Slides/27692.pdf",
+      "locator": "Freshread22arxivv3+24formalincludingfullA-F+16slides=62sourcepages. All16slidesrendered/read progressiveintro/architecture, extraBQMDPexample/mainqualityandFTcurves. OfficialZIP136membersnofurtherPDF/ipynb/archive/video."
+    },
+    {
+      "field": "current implementation",
+      "source_url": "https://github.com/naver/goal-co",
+      "locator": "FullREADME/args/attention.py/tuner.pyread, selectedtrajectorysampler+completeinstancegenerator+optimizer/setup. net.parametersfulloptimizer; fixedMISp.15andPCTSPU0,4/N/.12differliteralappendix. Passedtestdatasetunusedingeneratorfreshinstances, bestoutputiniton8newrandominstances, notclaimedtestleak."
+    },
+    {
+      "field": "figure and measurement qualification",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/826aea2253363fe04e8c4991b2a8869e-Paper-Conference.pdf#page=4",
+      "locator": "OriginalformalFig1completecrop105,60,507,378visuallychecked; formalallFigures1-7andTables1-2seen. SourceUMSPoracleHiGHSp7vsORToolsp24unresolved; COMPASSsearchmarkedp18; best10FTnotmean; AppendixCI100undefined."
+    },
+    {
+      "field": "task names and provenance",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/826aea2253363fe04e8c4991b2a8869e-Paper-Conference.pdf#page=20",
+      "locator": "FormalcorrectsmaximumMISvsarxivmaximalmixup; UMSPunrelatednotuniform; 8pretrained+8adaptedactualtasklist, not16unchangedcheckpoint."
+    },
+    {
+      "field": "citation_identity:sil",
+      "source_url": "https://arxiv.org/abs/2403.19561",
+      "locator": "The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/826aea2253363fe04e8c4991b2a8869e-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-05-01; cached evidence research/full-text-review/goal/publication-date-audit.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2406.15079",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-06-21; title on abstract page: GOAL: A Generalist Combinatorial Optimization Agent Learner. This date is preprint history, not formal publication. Cached research/full-text-review/goal/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "goal",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "dact",
+      "reference_label": "Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Deep Policy Dynamic Programming for Vehicle Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "efficient-active-search",
+      "reference_label": "Efficient Active Search for Combinatorial Optimization Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "gnn-mcts-tsp",
+      "reference_label": "A Graph Neural Network Assisted Monte Carlo Tree Search Approach to Traveling Salesman Problem",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "gumbeldore",
+      "reference_label": "Self-Improvement for Neural Combinatorial Optimization: Sample without Replacement, but Improvement",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "h-tsp",
+      "reference_label": "H-TSP: Hierarchically Solving the Large-Scale Traveling Salesman Problem",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Learning Combinatorial Optimization Algorithms over Graphs",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "learning-to-delegate",
+      "reference_label": "Learning to Delegate for Large-Scale Vehicle Routing",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Learning to Dispatch for Job Shop Scheduling via Deep Reinforcement Learning",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "meta-sage",
+      "reference_label": "Meta-SAGE: Scale Meta-Learning Scheduled Adaptation with Guided Exploration for Mitigating Scale Shift on Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Multi-Decoder Attention Model with Embedding Glimpse for Solving Vehicle Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Simulation-Guided Beam Search for Neural Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "slim-job-shop",
+      "reference_label": "Self-Labeling the Job Shop Scheduling Problem",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Exact formal-bibliography title/authors or preprint identity freshly checked.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References; exact identities with version identities checked manually; SIL precursor separately documented."
+        }
+      ]
+    },
+    {
+      "citing": "goal",
+      "cited": "sil",
+      "reference_label": "Luo et al. (2024), Self-Improved Learning, arXiv:2403.19561",
+      "description": "The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit source bibliography p14: old Self-Improved Learning arxiv2403.19561; The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read22arxiv+24formal+16officialslidesall62pageswithmanualcoverage.",
+    "CorrectedUnrelatedMachineSchedulingandadded8actuallyadaptedtasktags; primary8checkpointvs8FTclear.",
+    "Removedgenericacceptanceday, addedformalpublicationyearandaccentedauthor.",
+    "RewrotenotewithrealBQMDP/mixedattention/codebook/multitype/trainingandadaptationbudgets.",
+    "PreservednegativeCVRP/sharedvsindividual/largeinstancecells, heuristicgapsandCOMPASSsearchdistinction.",
+    "QualifiedUMSPoracle/sourcePCTSPformula/currentMISdistributionanddefaultbudgetswithoutinvalidatingpublishedmeasurements.",
+    "ReplacedimagebyformaloriginalFig1withcaption;33exactbibliographyedges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "60b588d04acd76f4015bfbbb9878b8b1a42e8070c3197a5539d04e62df2b6397"
+}

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "paper_id": "self-improving-wa-star",
+  "note_path": "specialist/self-improving-wa-star.md",
+  "baseline_note_sha256": "5b8a46e8e490eefc6ca3e1275c0fdf0d8f50d87119d97fc4b376da6595a918be",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/aichmuller26a/aichmuller26a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/aichmuller26a/aichmuller26a.pdf",
+      "local_path": "research/import-272/nco-2a3b018531.pdf",
+      "sha256": "c9ec694f3f570e88f8c34b47bfb784ed669b522179b0724371ff569223ea4948",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full identity, classical-planning domain/instance distinction, generalization limits and full related work/background; domain-general framework does not imply shared weights across domains."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete state-action WAstar/Q-learning search loop, return lower bounds, exact instance pool criterion, predicate-specific relational GNN and all training/evaluation protocols."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all IPC/puzzle/PushWorld tables and clocks/coverage denominators, failed sliding-tile training and search-vs-greedy negatives, ablation conclusions and limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete acknowledgments and bibliography, manually checked cited planning/search identities against catalogue without inventing similar-title edges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read complete model selection/5seed best-run protocol, explicit additional benchmark-test instances used for checkpoint selection in secondary HER comparison, search pseudocode/first-discovery visited set and both detailed tables with subset-conditioned clocks/quality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read every seed-mean ablation row including improved ablated variants and all ten domain training curves/captions; distinguished best-run main results from seed averages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Search/Q-learning loop obtains generalized within-domain planning heuristics without expert plans.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Motivation and Section4"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "Predicate-specific relational GNNs score state-actions in bounded WAstar, with achieved-return targets and first-discovery visitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            14
+          ],
+          "locator": "Sections4–5/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Strong size transfer coexists with inferior search coverage, full sliding-tile failure and classical runtime wins.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            15,
+            16,
+            17
+          ],
+          "locator": "Complete result/ablation tables and training curves"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Best-run and solved-subset evaluation plus explicitly test-assisted secondary checkpoint selection qualify claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13,
+            15,
+            16
+          ],
+          "locator": "Table captions and AppendixA.1/A.3"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Separate domain policies construct plans; training self-improvement is not complete incumbent editing or shared weights across native domains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            13,
+            14
+          ],
+          "locator": "Domain-instance scope/predicate parameters/search algorithm"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/aichmuller26a.html",
+      "locator": "HTML citation date2026/09/29; PMLR306/pages1434–1450; formalp1 full authors/affiliation"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/aichmuller26a.html",
+      "locator": "Manual publisher linked-material and assets API404/OpenReviewCk6Ort0wqc403 check; all integrated AppendixA read; complete71-entry code tree and both READMEs inspected, no extra PDF/TeX/notebook scientific document."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full17page audit; corrected constructive-improvement to constructive; documented within-domain policies, budgets, negative cases, main best-of5 and secondary test-assisted model selection."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1b65fdc2d81b12ad5367a897a91c92d13b456157489d0a36ead90261732f70d5"
+}

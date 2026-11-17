@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "paper_id": "learn-schedule-straight-line",
+  "note_path": "specialist/learn-schedule-straight-line.md",
+  "baseline_note_sha256": "4a71050b9c972c6d615487b19236d158b2c764f6fb3b5f726a72eef93bc9b60a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1997/file/bcc0d400288793e8bdcd7c19a8ac0c2b-Paper.pdf",
+      "version": "Official NIPS1997 volume10 scanned proceedings,7pages929-935",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1997/file/bcc0d400288793e8bdcd7c19a8ac0c2b-Paper.pdf",
+      "local_path": "research/import-272/nco-ef42a459e8.pdf",
+      "sha256": "635960adfa02cb6d9f8d9844b190fdce2043140eaff02be45304471c3572076a",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshpp1-3:7authors EliotMoss+UMass/Purdue, semanticsdependencyDAG reorderonly basicblocknotrewriting, greedyavailableinstruction pairwisecomparator overpartialstate. Enumerateoptimalcompletions small<=10 instructions labelsstrictpreferenceonly betterbestcompletion,92%blocks small butlargeexecuteoften. Four supervisedmethods firstITI/tablelookup/ELF; noRLresultssofar, chosenfeatureshandcrafted. NeedretainfullauthorMossidentity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Freshpp4-7 all12refs. Neuralvariant10hidden scaledconjugategradientBP, plusITI/TLU/ELF comparison. Alpha21064 SPEC95 18programs447127blocks2205466instructions;simallcache/TLBhitsidleentry.13Mchoicepairs26Mtriples small<=10 enumerate,select1%matchedpairs,18foldleaveprogramout. NNallblockratio.997 CI(.986,1.008) and98.1%optimalCHOICES notcertifiedschedules,DEC.983better,TLUbestlearned;CIsincludenoimprovement. SimfrequencyscaledcyclemetricsnotrealCPUruntime,NNtraining+compilecostunreported,RLqualitativelyworse. PrintedbylineEliotMoss;currentofficialHTMLprovidesJ.EliotB.Moss,PaulE.Utgoff,CarlaE.Brodley."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Architecture-sensitive instructionorder motivatesautomaticallylearnedlocalgreedyscheduling overdependenceDAGs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/formulation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Pairwisepreference labelsfromstrictoptimalcompletioncomparison,4learnersincl10hiddenNN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Learningformulation/learners"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Handselectedfivefeaturetypes, categoricalindicatorcodes;NNscaledconjugategradientbackprop,greedynextlegalinstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Section2/Table1"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "18SPEC95programs447127blocks;small<=10exhaustivelabels,1%pairs,18foldprogramheldout;NNratio.997CI.986-1.008/98.1%optimalchoices,DEC.983better.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Protocol/Table2"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "PredictedfrequencyweightedcyclesnotrealCPUmeasurements,CIincludes1,decisionaccuracyisnotoptimalwholeschedules;crossarchitecture/overheadunresolved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Simulator/Table2/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructivelearnednext-instructioncomparisonguideslocalblockpermutation,no fullprogram/globalsharedsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Nativeproblemspace"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1997/hash/bcc0d400288793e8bdcd7c19a8ac0c2b-Abstract.html",
+      "locator": "OfficialHTMLfull7authornames; scannedp1UMass/PurdueandEliotMossbyline."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1997/hash/bcc0d400288793e8bdcd7c19a8ac0c2b-Abstract.html",
+      "locator": "OfficialNIPS1997volume10record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1997/hash/bcc0d400288793e8bdcd7c19a8ac0c2b-Abstract.html",
+      "locator": "ManualentryBibtex/Metadata/Paper only; all7pagesread,noappendix/attachedscience."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1997/file/bcc0d400288793e8bdcd7c19a8ac0c2b-Paper.pdf",
+      "locator": "VisualfeaturesTable1 andallTable2 values/CIs, DAG/example;no newasset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read7pages/12references andvisualtables.",
+    "Restoredfullpublisherauthornames.",
+    "Specifiedneuralvariantamongfourlearners,strictpairwisepreference labelsandarchitecturefeatures.",
+    "Separated98.1%optimalchoicesfromglobaloptimalityandpredictedcyclesfromactualCPUmeasurements.",
+    "RecordedstrongerDECbaseline,learnedratioswithCIsincluding1 andunreportedtraining/compilecost."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5107350e0fea987478bf808b1287dfc2e1d13cec64580d66dc22bc1048b83986"
+}

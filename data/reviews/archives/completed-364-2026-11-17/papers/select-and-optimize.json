@@ -1,0 +1,612 @@
+{
+  "version": 1,
+  "paper_id": "select-and-optimize",
+  "note_path": "specialist/select-and-optimize.md",
+  "baseline_note_sha256": "df64e30382986bd947c46467a0c74cdfc7bc2a1ddaca5c0413df47330485b5fd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v206/cheng23a/cheng23a.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v206/cheng23a/cheng23a.pdf",
+      "version": "FormalAISTATS2023PMLR206:1219-1231,13pagesincludingembeddedSupplementA-B,actualfreshread.",
+      "local_path": "research/full-text-review/select-and-optimize/paper.pdf",
+      "sha256": "9a9eb44e4e764d90d4305c08678859253dead0b8a9b16f480a5c020b21132cbf",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshpublisher13pagetitle5authorsHikvision,AISTATSreferenceunchanged;select/optimizeincumbentsubpathsandheuristicdestroyrepair,nearlyO1claimhardwareparallelismqualifiedlater;allintro/relatedcitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullframeworkFigure1,O(N)contiguouswindowsallNoptimizedinparallel thenactualargmaximprovementnotseparatelearnedselectorhead,oneacceptedrewrite/hillclimb,fixedendHamiltonianpathconditional;nearlyO1parallelwallclaimnotworkcomplexity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fixedhead/taildecodercontextandmasking,MHA128/8headsclip10,REINFORCEbatchbaseline/endflips+2directioninference;D&Rlongedges/randomcutsLKrepairhillclimb,2checkpoints50/100training1.4m/2m1000epochs16/40h andfulltestbudgets."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTables1-4andFigure5CPU/GPUtiminginit+searchperinstance,mediumD&Roff,10knoendflipmemoryexception,20k8casesandactualquality/timeexceptions;Table3SO100lengthgapandAMgapinconsistencyidentified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullablationTables5/6weakD&Rgains2.7971vs2.8486at+6s,alllimits/futureCVRP/BPPnotexperimentsandcompletebibliographyactualpreprintversions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read fullsuppA1Kmeansanchorsn^.56/LKanchorcycle/nearestroughinsert/3clusterandsectionLKinit,deltaN4/500;allFigure6sensitivity/7TSPLIBsamples andsuppprovenance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 13,
+      "notes": "Read everyTable7TSPLIB18rowandTable8ablations,Table4runtimeisroundedmean499/11=45.4notclaimedtotal,baselineextremeoutlier3359/5622%notordinaryglobalbehavior;originalFigure/captions/full13sciencecomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "local",
+      "category": "contribution",
+      "statement": "Allcontiguousincumbentwindowspathsareoptimizedinparallel,actualgainargmaxselectsone;nospecificlearnedvaluehead.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure1Sections3.3-3.5"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Fixedendpointattentionpathpolicy,double-directionREINFORCE,50/100separatemodels;classicalKmeansLKinitandfragmentrepair.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            11
+          ],
+          "locator": "Equations2/3Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "Syntheticinit+refineversusablationtimes,20knumericinconsistency,TSPLIBmeansnotprosetotalandqualityexceptionsqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13
+          ],
+          "locator": "Tables1-8Figure5/6"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistimprovementrewritesfullincumbentsegments;classicalinitializationandtwo-sizecheckpointsnotlearnedgeneralistconstructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            11
+          ],
+          "locator": "FrameworkandAlgorithm1initializer;separateSO50/SO100"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://proceedings.mlr.press/v206/cheng23a.html",
+      "locator": "OfficialPMLR2061219-1231/fiveHikvisionauthors;actualHTMLcitation_publication_date2023/04/11andarticlepublishedtimestampconfirmApril11notconferenceApril25;genericacceptanceremoved;AISTATSreferenceinclusionunchanged."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v206/cheng23a.html",
+      "locator": "ManualRelatedMaterialcombinedPDFandSoftwareonly;all13pagesincludeA-Bsupp11-13allread. PublisherlinkedactualsourceZIP2membersroot/README,noextraPDFZIPTEXorcode."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/honey0920/select-and-optimize",
+      "locator": "FullREADMEsourcebeingorganized/readcommandsbutactualarchiveonlyREADME,nomodels/scripts,notclaimfullimplementationreleasedorread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.mlr.press/v206/cheng23a/cheng23a.pdf#page=3",
+      "locator": "OriginalFigure1Rect(60,76,552,245),5xcompletepipeline/caption;allscientificfigures/tables/formulas/plotsvisuallychecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "select-and-optimize",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2017arxivasprinted",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma2019arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "pomo",
+      "reference_label": "Kwon2020arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson2021arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2021",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "dact",
+      "reference_label": "Ma2021",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "routing-dro",
+      "reference_label": "Jiang2022",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler2021arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "dimes",
+      "reference_label": "Qiu2022arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021arxiv",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li2021",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "rbg",
+      "reference_label": "Zong2022",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "select-and-optimize",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn2020",
+      "description": "Explicit author-year introduction/relatedworkcitationandmatchingactualbibliography;preprintversionspreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching bibliographyactualtitle/authors/year."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshread13formalpagesincludingembedded3pagesupp/alltables/figures/pseudocode;manualpublisher/softwareZIPinventory.",
+    "CorrectedactualHTMLpublicationApril11notconferenceApril25,removedunsupportedgenericacceptancedate,referenceonlyretained.",
+    "Expandedrealmethod:allwindowsneuraloptimizethenactualgainargmaxnotseparatelearnedselectorhead,parallelwallclaimnotconstantwork.",
+    "DetailedfixedendpointTransformer/twodirections,SO50/SO100separatetraining,fullclassicalKmeansLKinitializerandD&R.",
+    "Qualifiedinit+refinement/ablationbudgets,qualityspeedexceptions,20k8cases/lengthgapconflicts,TSPLIBmeanversusprosetotalruntimeandhugefailedbaselineoutliers.",
+    "PrimarysoftwarerepositorycontainsREADMEonlysourcebeingorganized;commandsnotreleasedscriptsevidence,nomadeupcodereproduction.",
+    "OriginalFigure1fullcropand20explicitreferenceedges,actualcitedpreprintversionsretained."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "38f2d10726ebb79c1a04edace35260f701ebfb968f0b29c55897a43eabd33c18"
+}

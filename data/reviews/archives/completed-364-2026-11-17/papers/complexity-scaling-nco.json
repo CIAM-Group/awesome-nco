@@ -1,0 +1,428 @@
+{
+  "version": 1,
+  "paper_id": "complexity-scaling-nco",
+  "note_path": "studies/complexity-scaling-nco.md",
+  "baseline_note_sha256": "24a78b41aeb9ba1c5eca0a34fe428f1fe78308e657fe071e8fc207fb6dfedf29",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1c9dbe4d49fa0ac833959230a9895c06-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1c9dbe4d49fa0ac833959230a9895c06-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-0226f7ff27.pdf",
+      "sha256": "1865e32ceaf915e85814bb8182e610dd88736e3cd1481eba5afb77a553b1ce28",
+      "pages": 53,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh read exact3authors A.LynnAbbott notA.Abbott; VirginiaTech/Kensho. SymmetricuniformEuclideanTSP, varyingnodes/dimension,128MConcorde2Dlabels vs approximatehigherDlocalsearch; separateRL/PPO1Mupdates versusSFT~73k/oneepoch; absolutemeanlengthgap notpercentage. NeedSFTwarmstart/computecheckedlater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read scalegrids12models~60kto6M andn5to50separateRL/SFT/checkpoints,d2to100RLatn10/20; fitonlynearconverged subset,one seed per size; absolute sampleonce gap with1.28Meval. Empiricalnodeexponents1.86/1.69mustbreak beforeO(n)ceiling,40kintersection extrapolationnotmeasurement; negativeexponentialDfitselection nottheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadDlimitdiscussion/embeddingseparability assumptions, explicitlocal-searchanalogyNOTmechanisticproof,2optvs2exchange/depthconstrainedpowertrends, fullrelatedworkandlimitations:oneTSPproblem,one seed eachscale,finitecompute,nodetrendbreakmustoccur. VRP/OP/RSPonlyfuture scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete discussion limits/embeddingbottleneck/futurefinitecompute andbibliography1-34. General complexitylaws remainhypothesis beyondTSP; alltrainingcost/labelcost distinctions pendingAppendixF. PublicauthorREADME confirms fullA.LynnAbbott, separateRL/SFTscripts/dataset restrictions, fitsanddata modules."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allremainingbibliography35-78 including exactroutingprior62/63/64,Pointer18 andarxivTransformer70. Mainfullbibliographycomplete;futureVRP/OPnotactualsolverbenchmark."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read checklist1-7 full: linkedscientificsupplementproofs integratedlater; historicalsubmissionNoopenCode vscurrentpublicrepo differs; one seed meansnofitconstanttraininguncertaintydespite verytightinstanceCIs. No unnecessaryblockfrom historicalNo flag."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 22,
+      "notes": "Complete remainingchecklistcompute/ethics/impacts/safeguards/Concordeacademicassets/newassets/humans/IRB/LLMread. Historicalcode/modelreleaseanswersnotmisrepresented as currentavailability; repositorycurrentisindependentverifiedresource."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 25,
+      "notes": "Read completecontents2pages andAppendixA all3fitTables withexactforms/constants; LOOexplicitlynotmultiseed uncertainty. Nparameterexponents.582/.712,compute.439/.555, nodeoffset4.99 exponents1.86/1.69,dimensionasymptotes.0533/.209; trackhypothesesnotuniversalexactlaws."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 28,
+      "notes": "Read allLOOTable4/baselineTable5 andfullAppendixB convergence/inclusiondiagnostics: exclude unusuallygood168kRLfrontierpoint aswell aslargermodels,50nodeRL,SFTlargest,d11-15boundarymodels; boundaryexclusions partlyinferredfromneighbors notestablishedconvergence.1seed/LOOnotmultiseed; smallsamplelearningcurvescannegativegapestimates,notbetterthantrueoptimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 31,
+      "notes": "Read completeAppendixC/Figs9-12: SFTalso trainsoptimalcostcritic tomatcharchitectures; PPOmeanactorzero-centered but SDpowertrends; NLLnextnodecanimprovewhiletourgapworsens,notfulltourpredictionimprovement. Empiricalformsnotproofsofmechanism."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 32,
+      "last_page": 34,
+      "notes": "Read fullAppendixD landscape study:100kdescents smallbatches vs100descentlargebatches; bestfoundlocaloptimum surrogate notcertifiedglobal; countunderestimation/empiricalconvergenceonly;2exchangeactualnodeswapdistinct2optreversal. Limitedanalogyexplicit,not proof neuralinferenceislocalsearch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 35,
+      "last_page": 37,
+      "notes": "Read fullAppendixE validation:100/1000best2opt perinstance for10/20nodes,2Dtwo-samplet nonrejection not certificate,distinctdraws; highDBLO/discoverylimitations explicit. ComputeF separateCPUlabelgeneration10daysper1.28M50n fromGPUtraining; GarchitecturebeginsdirectPointer/Transformer policy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 38,
+      "last_page": 40,
+      "notes": "Read allG1-G3 architectures/PPOloss, noentropybonus, causalcompositionalcritic, five-seedbaselineablation30n(exception to mainone-seedgrid) and unfairgreedybaselineconditions. FullTable7 175minibatch,4minibatches,width184/3encoder/2decoder/2critic,Adam andLRschedule; BOHBHPO50n begins."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 41,
+      "last_page": 43,
+      "notes": "Read completeBOHBmethod/result/Table8-9/Fig18:400trials,HPO50n,PEDANOVA7/32complete quantile,retrospectivedatasetvariabilityvsseed. PublicauthortrainREADME explicitlyNOsplitSFT evalusesfirst10percentseenearly inoneepoch; sourcecached/fullparagraphread. Recordmaterialtrain/evaloverlap,notinventholdout."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 44,
+      "last_page": 46,
+      "notes": "Read completeLemma1randomtourmean nEedge incldependentadjacency, Lemma2variance adjacentcov only, Lemma3Jensenupperbound n sqrt(d/6) underiiduniformcoordinates and Theorem4beginasymptotic. Distinguish fixedn dimensionlimitfromfixed2Dnodeasymptotic; alltheoremsapplyrandomtoursnotlearnednetworklaws."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 47,
+      "last_page": 49,
+      "notes": "Read Theorem4limit andTheorem5variance/covarianceproofthroughEq8, coordinateindependencebutadjacentedgesdependent handled. Flag proofusesFatouLebesgueto interchangelim/E and assertsa.s.limitofcenteredproductswithoutUI/convergenceargument; notautomaticallycertified byformaldisplay. NeedTheorem6remainingbeforefinalassessment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 50,
+      "last_page": 53,
+      "notes": "Read fullremainingTheorem5Eq8to3n/40integrals+Fig20 and completeTheorem6contrast-boundargument/footnotes/nonnegativity: strictpositiveboundnotproved. Printedmomentinterchange/limexistencestepsneedqualification; boundedrangealone notproofsequenceconvergence. All53pages incl78refs,A-I/checklist nowread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "two-complexity-axes",
+      "category": "motivation",
+      "statement": "Uniform iid symmetric Euclidean TSP separates node-count tour-space growth from coordinate dimension at fixed tour count; studied complexity is controlled distributional scale, not general computational hardness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-4, full setup and grids"
+        }
+      ]
+    },
+    {
+      "id": "finite-selected-fits",
+      "category": "contribution",
+      "statement": "Selected near-converged models yield parameter/compute powerdecay, node powergrowth and dimension negativeexponential fits; all grids have separate checkpoints, with one seed per main scale.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Figures1/3/6/7/8, Tables1-4 and completeAppendicesA/B"
+        }
+      ]
+    },
+    {
+      "id": "architectures-training",
+      "category": "method",
+      "statement": "Pointer/Transformer policy and shared critic use PPO compositional values without entropy bonus or SFT teacherforcing plus optimalcostcritic, with different schedules/updates and nonembedding capacity fixed in dimension grids.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            27,
+            29,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "locator": "Complete model, PPOloss, critic, Table7 and BOHB details"
+        }
+      ]
+    },
+    {
+      "id": "reported-fits",
+      "category": "experiment",
+      "statement": "Absolute mean sampled-tour-length gap fits parameter exponents .582/.712, compute .439/.555 and node1.86/1.69; higherD references use bestof100/1000 2opt rather than certified optima.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            25,
+            35,
+            36,
+            37
+          ],
+          "locator": "Table1/2/3, AppendixE and fulltable6 diagnostics"
+        }
+      ]
+    },
+    {
+      "id": "selection-uncertainty",
+      "category": "limitation",
+      "statement": "Fit excludes both nonconverged scales and unusually good168k RL frontier point unrelated to convergence; LOO does not measure multiseed variability; five-seed baseline ablation is distinct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25,
+            26,
+            27,
+            28,
+            39
+          ],
+          "locator": "AppendixA/B entire inclusiondiscussion and Figure17 caption"
+        }
+      ]
+    },
+    {
+      "id": "local-search-analogy",
+      "category": "method",
+      "statement": "Depthlimited discrete2opt/2exchange reproduce related forms, but unrestricted2opt does not yield same nodepowerlaw and neural computation is not identified withlocalsearch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            32,
+            33,
+            34
+          ],
+          "locator": "Section5 and wholeAppendixD"
+        }
+      ]
+    },
+    {
+      "id": "random-baseline-theory",
+      "category": "contribution",
+      "statement": "Randomtour statistics under iidcoordinates bound baseline growth; these are not the neural fitted exponents, and strictpositivity of limiting randomgap is explicitly unproved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53
+          ],
+          "locator": "AllLemma1-3/Theorems4-6 proofs, figure19/20 and finaldiscussion; expectation-limit/existence steps not independently completed"
+        }
+      ]
+    },
+    {
+      "id": "reproduction",
+      "category": "reproducibility",
+      "statement": "Paper reports separateCPUlabelgeneration cost and GPUtraining; currentrepo trainREADME explicitly noSFTsplit, evaluation first10percent seenearly in oneepoch. This is not heldoutSFT generalization evidence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            27,
+            35,
+            36,
+            37,
+            40,
+            41,
+            42,
+            43
+          ],
+          "locator": "Dataset/training/compute/hyperparameters; primary currentauthortrainREADME cached and read fully for no-split statement"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Empirical/theoretical scaling analysis of separatelytrained TSP models, not one universal/generalist solver checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            9,
+            10
+          ],
+          "locator": "Scientificscope, all actualtaskgrids and limitations"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1c9dbe4d49fa0ac833959230a9895c06-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS38/2025 record manuallychecked. FullPDFp1 spells A.LynnAbbott, unlike abbreviated publisher A.Abbott; correctednote. Allthreeauthors,VirginiaTech/Kensho,formalyear verified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1c9dbe4d49fa0ac833959230a9895c06-Abstract-Conference.html",
+      "locator": "Manuallychecked everyofficialpublisherlink: Paper andBibtex, no separateSupplemental. Complete53pagePDF read including all78references/checklist/AppendicesA-I. Visuallyinspected three4pagecontact sheets pp2/5/6/8,25/27/28/36,39/47/50/52, including allmainfits, exclusions, surrogatevalidation and printedproof formulas. No identifiedmissing scientificattachment."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1c9dbe4d49fa0ac833959230a9895c06-Paper-Conference.pdf",
+      "locator": "Officialpublisher53pagePDF exacttitle/fullauthors/formalproceedings identity checked, full scientificmaterial integrated, SHA retained."
+    },
+    {
+      "field": "code_url, data and checkpoints",
+      "source_url": "https://github.com/lowellw6/complexity-scaling-laws",
+      "locator": "Explicitpaper authorURL manuallyopened, rawREADME/trainREADME/evalREADME/launchtrain_model_supervised.py/tspdatagen.py cached and read; authorREADME links DOIs10.7294/29374511,29374535,30359275. No largeassetdownload or numericalrerun."
+    },
+    {
+      "field": "SFT evaluation protocol",
+      "source_url": "https://github.com/lowellw6/complexity-scaling-laws/blob/main/train/README.md",
+      "locator": "Authorstates ForSFT,we didNOTsplittrain/evaldatasets; full12.8M oneepoch thenfirst10percent/1.28M seenearly usedeval. Instructionsremovechunk0 tocreate11.52M holdoutvariant. Fullparagraph and launch/dataimplementation manuallychecked; limitationplacedinExperiments/Limitations/Reproducibility."
+    },
+    {
+      "field": "proof qualification",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1c9dbe4d49fa0ac833959230a9895c06-Paper-Conference.pdf",
+      "locator": "AllAppendixI read. pp47-50 Theorem5 uses expectation-limit interchanges; pp51-53 Theorem6 uses finitebound/limitexistence. Curator has not independentlycompleted these standardanalysis steps, doesnot claim statedvariance3n/40 or gaplimit false; theory distinguishedfrom empiricalneuralfits."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/1c9dbe4d49fa0ac833959230a9895c06-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/complexity-scaling-nco/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "complexity-scaling-nco",
+      "cited": "pointer-networks",
+      "reference_label": "[18] Vinyals, Fortunato and Jaitly (2015)",
+      "description": "Uses pointer autoregressiveoutput architecture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody PDFp3; fullbibliographicidentity PDFp12: [18] Vinyals, Fortunato and Jaitly (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "complexity-scaling-nco",
+      "cited": "attention-model",
+      "reference_label": "[62] Kool, van Hoof and Welling (2019)",
+      "description": "Specifies simplifiedattentionmodel architecture and exactdifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            37,
+            14
+          ],
+          "locator": "Explicitbody PDFp37; fullbibliographicidentity PDFp14: [62] Kool, van Hoof and Welling (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "complexity-scaling-nco",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[63] Kool et al. (2022)",
+      "description": "Discusses alternative neuralrouting approaches in relatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicitbody PDFp10; fullbibliographicidentity PDFp14: [63] Kool et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "complexity-scaling-nco",
+      "cited": "neurolkh",
+      "reference_label": "[64] Xin et al. (2021)",
+      "description": "Discusses neural-guidedsearch alongsideroutingbaselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicitbody PDFp10; fullbibliographicidentity PDFp14: [64] Xin et al. (2021)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced shallow summary with allscalegrids/actualmetric/architecture/training/fittedsubsets/reference-quality/compute evidence.",
+    "Corrected A.LynnAbbott authorfullname; documented authorcode SFT train/evaloverlap instead of claiming heldouttestgeneralization.",
+    "Made one-seed/posthocfitselection/finitebudget and approximatehigherD reference limitations explicit.",
+    "Kept random-baseline theorem claims separate from neuralfits; qualified uncompletedproofsteps without claimingfalseconclusions.",
+    "All53publisherpages and officialsupplementlink inventory completed; fourexactinternalcites; no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "688c77c1862212e8d573c9793bbce6ccc70a734c214dfa5d6d443fb6b6ee9b3e"
+}

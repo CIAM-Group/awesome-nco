@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "paper_id": "predicting-propositional-satisfiability-via-end-to-end-learning",
+  "note_path": "studies/predicting-propositional-satisfiability-via-end-to-end-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "3e3afe27f1f2b6b8ea5d4e02ffe776edf6252274b60d3fff55efee461174fe3c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/paper.pdf",
+      "retrieval_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/paper.pdf",
+      "version": "AuthorprojectacceptedAAAI2020paper8pallscientificbody/refsread,notpublicationyearinferredfromfilename.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-eb4f3db8b9/paper.pdf",
+      "sha256": "2d642f64595b52404cbc9b5fcccd8356e1608978f436310736794e88dc9f0b2e",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/appendix.pdf",
+      "retrieval_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/appendix.pdf",
+      "version": "Authorprojectexplicitseparateappendix.pdf3pAppendA-Dcompleteallmethods/hardware/baselines/results/plotsread.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-eb4f3db8b9/supplement.pdf",
+      "sha256": "152a145ba59e2914db599f5d156c1f28d0dbb922b2278d2e12db43ca2a7dd914",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfull8pacceptedbylineUBC4authors/intro/relatedwork andsparseclause-variableexchangeableencoding/modelFig1; classifiergoalvsNeuroSATwitnesssearchexplicitdistinction; noexactsolverclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readfullsparse4termexchangeableformula/meanpoolBCE/auxvariableheadandaveragedloss/NeuroSAT32iterations,11balanced10kdatasets100-600/80-10-10split/valbest;all66Table1and30Table2cells,40htrainingvsforward/featurecostnotexactSATspeed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read20clause-removalPCAlatentpaths/concentrationconjecture4sizeKDE/Fig3-4/conclusion/ack/allreferencepage8; noindustrialdistributionorvalidwitnesssuccessclaimed. Actuallyviewmain3/4/6/7allmath/plots/tablecells."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "ReadentireseparateAppendA-Ddata/marchhilabels/61features/allbaselinehyperparams/hardware114nodesP100memorybudgets/overfitcurvesFig5/Tables3-5allcells,bitagreement70-73to1referenceassignmentnotvalidwitnessrate,leaveonesizeoutnegativegainsand8layer+sizeoverfit. Printed11kvs11x10k110k discrepancy; allrenderedpagesactualview."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "RawCNFpredictionavoidsmanualexpensivefeatureengineeringonhardrandomSATbutdoesnotclaimexactsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/RelatedWork"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Sparseexchangeablevsrecurrentmodelsplusauxassignmenthead/sizegeneralizationstudy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Model/Assignments/Experiments"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Fixed-depthsparse4termmeanaggregations/permutationequivariance/globalpoolBCE;auxvariableMLPexistsnotcertifiedwitness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Architecture/Assignments/losses"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "11balanced10kdatasets100-600/80:10:10/valbest;600+assignment83.7and100→60080.9classificationnotvalidSATsolving.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Setup/Table1/2"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Auxassignment70-73percentbitagreementtoonefoundassignmentnotvalidityrate;single-size8layer+sizeoverfits/mixedtrain60076.5vs83.7.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "D1/D2/D3/Tables3-5"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Studyanalysis/reference:explicitpredictionfocusandsingleassignmentbitmetrics,notactualtestedvalidwitness/searchsolver;auxoutputarchitecturepreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Predictivegoal/Assignments/evaluation/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Entireseparate3pAppendA-Dreadgeneration/baselines/hardware/allnegativeandassignment/mixedsizeoutcomes.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Allseparatescientificappendix"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions and date",
+      "source_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/paper.pdf",
+      "locator": "Authorprojectpaper8pbylineChrisCameron/RexChen/JasonHartford/KevinLeytonBrownUBCformal2020copyright. PublisherCrossrefpublishedApr3 2020AAAI34(4)3324-3331notPDFfilename2019norManchesterJun16metadata. Noidentifiedarxiv."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/",
+      "locator": "Manualofficialprojectexplicitpaper.pdf8p+appendix.pdf3p+data.zip+GitHub;allscientificmain/AppendA-Dfullyreadandrendered. Repo16members14filesnoPDF/TeX/video/notebook/ZIP. Publisher520ORAPI403recorded,nounreadrequiredscience. DataZIP1731623466bytesHTTP206centraldirectory12members(folder+11rawtar.gz)inventoryJSON;rawnestedcontentsnotread/notusedasproof."
+    },
+    {
+      "field": "scope and migration",
+      "source_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/appendix.pdf#page=2",
+      "locator": "Main2explicitpredictionnotdecodinggoal,main4auxheadoutputsvariableprobabilitiesexists,D2/Table4single-reference70-73percentbitagreementnotwholeCNFvalidwitnessrate;noevaluationactualsolverintegration. Rootapprovedstudy/analysis/reference; stableIDspecialist→studiesflatpath. Sharedsize/distributionsingleSATnotgeneralist."
+    },
+    {
+      "field": "code and version",
+      "source_url": "https://github.com/ChrisCameron1/End2EndSAT/commit/1ab9def160f70242e5461580b9cacf682c7ad909",
+      "locator": "Primarycommit2022-11-04T18:46:12-07:00;ZIP40086bytesSHA704a3600237b99eac5765e4a5914853a66e0d4243a462d73eba1d56466f8bd86/16members14files. READMEfull/train552-647read. Current577overwritesassigns_targetwithscalarSATtarget,609/615/631len>1skipassignmentloss/metricsinthissingleinstancebranch;nohistoricalreproductionclaim/noexecute/weights."
+    },
+    {
+      "field": "empirical and printed-number qualifiers",
+      "source_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/appendix.pdf",
+      "locator": "Main11x10000=110000vsAppendAprinted11000;balancedcountsdeliberate. 61featuresvslog2(91)forestexpression/hardwarecorewordinginconsistenciesnotinventedfixed. MainTable1SATonly600.811<RF.813;bitagreementnotwitness,leaveoneout600+assign.765vs.837negative; featurecomputationvsneuralclassificationnotexactSATspeedup."
+    },
+    {
+      "field": "visual checks",
+      "source_url": "https://www.cs.ubc.ca/labs/algorithms/Projects/End2EndSAT/paper.pdf#page=3",
+      "locator": "Actuallyviewedmain3/4/6/7allarchitecture/formulas/table1/2/Fig2-4andwholeAppend1-3allformula/plots/table3-5. CleanFig1crop318,47,560,158actualviewed."
+    },
+    {
+      "field": "topic inclusion after full scientific review",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/5733",
+      "locator": "SAT-label classification and auxiliary bit prediction; reported bit agreement is not a demonstrated valid SAT-witness solver."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Primary recurrent architecture comparison; this study evaluates SAT-label prediction and auxiliary assignment agreement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          "locator": "Bodyintro/relatedwork/method/implementationpp1-5;fullLearningaSATSolverfromSingleBitSupervisionICLR2019bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li, Chen and Koltun (2018)",
+      "description": "Related GCN-guided combinatorial search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8
+          ],
+          "locator": "BodyrelatedGNNheuristicsp3; exactCombinatorialOptimizationwithGCNNandGuidedTreeSearchNeurIPS31fullbibp8"
+        }
+      ]
+    },
+    {
+      "citing": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "Prates et al. (2019)",
+      "description": "Related decision-TSP neural prediction; the bibliographic identity is the AAAI decision-TSP paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8
+          ],
+          "locator": "BodyPratesmentionp3; fullLearningtoSolveNPCompleteProblemsAGNNforDecisionTSPAAAI33pp4731-4738bibp8;notassumetourconstructorfromloosebodywording"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwith11fullscientificpagesmain8+explicitseparateAppendA-D3/allrefs/plots/tables.",
+    "Migratedstudy/analysis/referenceunderrootagreement,preservedauxassignmentheadanddistinguishedbitagreementfromvalidSATwitness.",
+    "Correctdate/byline,documentedlimitedcurrentreleaseassignment-targetoverwrite/printeddatasetcountandnegativeexperimentswithoutclaiminghistoricalreplication.",
+    "AddedcleanoriginalFig1and3literalbody+bibcitations.",
+    "Final scope screen distinguishes direct NCO research resources from pure prediction/control or related boundary resources; publication validity and complete reading are retained."
+  ],
+  "reviewed_note_sha256": "216e5452b4d5e9f514c538ebfda1bfad7427d34a6958c7b1f4635cab83eb921d"
+}

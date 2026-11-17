@@ -1,0 +1,737 @@
+{
+  "version": 1,
+  "paper_id": "lehd",
+  "note_path": "specialist/lehd.md",
+  "baseline_note_sha256": "362ae7a0b110d37c173e702781ceefc37a6c428e231984118932962d83b01bee",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf",
+      "version": "Publisher mainPDF20pages including expanded integratedAppendicesA-F, allread.",
+      "local_path": "research/full-text-review/lehd/paper.pdf",
+      "sha256": "c58330003c644cf2a770902795d0261b30dcd28691b63ef0d04ccb402ff84132",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Supplemental-Conference.pdf",
+      "version": "Publisher-linked earlier line-numbered supplement8pages, completeAppendicesA-E;allread, uniqueadditionalrouteplots andversiondifferenceschecked.",
+      "local_path": "research/full-text-review/lehd/supplement.pdf",
+      "sha256": "c1df7b5c40c03cc9ee7e33d7fe0931a2a5d1c380dad8fb3c63c2159a71060136",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 9,
+      "notes": "Fresh title/fiveauthors/twoinstitutions, relatedwork and concurrentBQ, exactone-layerencoder/six-layerdynamicdecoder no normalization, supervised partial paths and accept-improving RRC, all Tables1-5 and different evaluation dataset counts/reference denominators."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 20,
+      "notes": "Fresh all56refs, extra comparisons, AppendicesA-F including normalization, ORTools low-quality labels, directRL and self-improved training, TSP/CVRP implementation, routes andlicenses; did not repeat outdated onlySL limitation as absolute."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 8,
+      "notes": "Fresh separatelypublished line-numbered older supplementA-E, normalization andresource details, allfourroutefigures includinguniquepr1002/X-n561-k42 panels, andlicense table; noted different numbering and X-n1001k43 3.1% vs main2.9% figure."
+    }
+  ],
+  "claims": [
+    {
+      "id": "model",
+      "category": "contribution",
+      "statement": "One attention encoder andsix-layerdynamicdecoder, cachedlightembeddings, no normalization, endpoints+available nodes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "locator": "Section3 andmodelsetting"
+        }
+      ]
+    },
+    {
+      "id": "rrc",
+      "category": "method",
+      "statement": "Initialneuralconstruction followed by learned incumbentsegment reconstruction acceptingonlyimprovements; networkfixed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Sections4.3-5"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "1Msize100taskdatasets, TSPConcorde/CVRPHGSheuristiclabels,partialpathtraining endingCVRPatthedepot; different150/40epoch schedules.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            17
+          ],
+          "locator": "Sections4,6 andAppendixD"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Table1dataset10k100/128larger, TSPoptimum/CVRPLKHgap, greedyversusRRC50-1000hourbudgets; HGSstronger.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Table1-2"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "Table5/12counts10k100/200and1k500/1000 differfrommaintable, leading57hTSP1000; normalizationablationsandBQreproductionqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14,
+            16
+          ],
+          "locator": "Tables3-5,8-9,12"
+        }
+      ]
+    },
+    {
+      "id": "selftraining",
+      "category": "method",
+      "statement": "AppendixB poorlabels,9hourdirectTSP20RL and2.7dayRLseed+RRC-generatedTSP100labels+SLmethod qualify mainonlySLrestriction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            15,
+            16
+          ],
+          "locator": "AppendixB Tables10-12"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Substantive neural initialconstructive policy andproposedneuralincumbentimprovementRRC supportconstructive-improvement; separateTSP/CVRPmodels remainspecialist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7
+          ],
+          "locator": "Contributions,Sections4.3-5 andTraining"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf",
+      "locator": "Titlepagefiveauthors, Luo/Lin equalcontribution, Wangcorresponding; SUSTech andCityU;NeurIPS2023formalyear, noindividualacceptanceday."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2310.07985",
+      "locator": "ManualarXivhistoryv1 12October2023; readpublisherversions."
+    },
+    {
+      "field": "paradigm",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf#page=6",
+      "locator": "Section4.3 neuralinitialsolution;Section5 RRC learnedrandomincumbentsegmentreconstruction acceptsbetteronly. Bothsubstantiveproposedphases, so constructive-improvement perrepositorydefinition."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1c10d0c087c14689628124bbc8fa69f6-Abstract-Conference.html",
+      "locator": "ManuallyinspectedofficialpageoneSupplementalPDF. Readmain20includingexpandedAppendicesA-F plusseparate8pageline-numberedA-E; uniquepr1002/X-n561plotsandX-n1001versionlabeldifferencechecked; nomissingscience."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/CIAM-Group/NCO_code/tree/main/single_objective/LEHD",
+      "locator": "TitlepageexplicitURL; officialrawREADME48lines fullyread, dependencies, datasetmirrors/format andPOMOacknowledgment; noexperimentrerun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf#page=4",
+      "locator": "OriginalFigure1PDFp4 Rect(106,70,503,205)4x, bottomNodeFeatures/SelectedProbabilityrestored;atomicreplacementandvisualcheck. Allmainresult/extra-trainingtablesanduniqueadditionalrouteplotsvisuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1c10d0c087c14689628124bbc8fa69f6-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/lehd/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2310.07985",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-10-12; title on abstract page: Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization. This date is preprint history, not formal publication. Cached research/full-text-review/lehd/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "lehd",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[1] Ahn ICML2020",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4] Bello2016arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "neurewriter",
+      "reference_label": "[6] ChenNeurIPS2019",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "select-and-optimize",
+      "reference_label": "[7] Cheng AISTATS2023 title prints aolve",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[8] Choo2022arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "learning-heuristic",
+      "reference_label": "[10] DeudonCPAIOR2018",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "bq-nco",
+      "reference_label": "[12] Drakulic2023arXiv Generalizable oldtitle",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "att-gcn",
+      "reference_label": "[13] FuAAAI2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[17] HottungECAI2020",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[18] HottungICLR2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "efficient-active-search",
+      "reference_label": "[19] Hottung2021arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "graph-guided-local-search",
+      "reference_label": "[20] Hudson2021arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[22] Joshi2019arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[24] KimNeurIPS2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "sym-nco",
+      "reference_label": "[25] Kim2022arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "attention-model",
+      "reference_label": "[27] KoolICLR2019",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[28] KoolCPAIOR2022",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "pomo",
+      "reference_label": "[29] KwonNeurIPS2020",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[30] KwonNeurIPS2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "learning-to-delegate",
+      "reference_label": "[32] LiNeurIPS2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[33] LiNeurIPS2018",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "learning-to-improve",
+      "reference_label": "[35] LuICLR2019 asprintedyearerror",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "dact",
+      "reference_label": "[36] MaNeurIPS2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "rl-vrp",
+      "reference_label": "[37] NazariNeurIPS2018",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "h-tsp",
+      "reference_label": "[38] PanAAAI2023",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "dimes",
+      "reference_label": "[42] Qiu2022arXiv",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "general-lns-ilp",
+      "reference_label": "[44] SongNeurIPS2020",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "pointer-networks",
+      "reference_label": "[51] VinyalsNeurIPS2015",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[52] WuTNNLS2021asprinted",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "step-wise-routing",
+      "reference_label": "[53] XinTII2020asprinted",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[54] XinAAAI2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    },
+    {
+      "citing": "lehd",
+      "cited": "neurolkh",
+      "reference_label": "[55] XinNeurIPS2021",
+      "description": "Explicit in-text number and complete bibliography match; actual cited version/year/title preserved, including BQ old preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and matching reference; BQ identity corroborated by its arXivv1/v2 title history."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Correctedparadigmtoconstructive-improvement basedonsubstantiveproposedRRCincumbentupdates, distinguishingfromEASweightadaptation.",
+    "Restoredprecisearchitecture/no-normalization/partialteachers/trainingandCVRPactiondetails.",
+    "Addedmainandablationdatasetcounts,budgethours,heuristicgapreferences,HGSnegativecomparisonsandbenchmarkcounts.",
+    "ReadintegratedAppendixB andqualifiedoutdatedonlySLlimitationwithpoorlabel/directRL/self-improvedTSPevidence.",
+    "ResolvedBQGeneralizablepreprintcitationwithstableID;retainedprintedbibliographicversions/errors.",
+    "Removedgenericnotificationacceptanceday;restoredfulloriginalFigure1bottomlabels anddocumentedsupplementversiondifferences.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a46a8d5d8f576b56bd14d38a70cc36a21c6511aabb2f62a0a214d80f431b75b3"
+}

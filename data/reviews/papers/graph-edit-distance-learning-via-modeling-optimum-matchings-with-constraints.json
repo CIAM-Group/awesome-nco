@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "paper_id": "graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints",
+  "note_path": "studies/graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "1b425d62fba371ad09c9812b961e2ef3230773d9a5d61ec05c6b40c95817ab57",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2021/0212.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2021/0212.pdf",
+      "version": "FormalIJCAI2021seven-page1534–1540threeHKBUauthors;completeallscience/21refsandkeyvisualsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-16dc2fe515/publisher.pdf",
+      "sha256": "a6cb7eb577e1dee7b23d8cd1fc488760ba89553e43d1f058c560a348c51607a3",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallformalpp1?3threeHKBUauthors;GEDunitcostdummy-paddedpermutationCBQP;multipleoptimalmatches motivatespartialBnBsubtreelabel plusplaneintersectionone-to-onepenalty;networkpredictsGEDviaassociationnodes,needverifyhardmatchingdecoder ratherthanassume fromtitle;UBQPpenaltyequivalenceweightdependentnotunconditional."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Readallpp4?5partialBnBrolloutlabelheuristic onlyselectedpathnotenumeratesalloptima,positive-onlylogmatchingloss;Lc sumrowsumsquare+conflictingproducts zero-setpermconditionalnottrainedzero guarantee. Criticalexplicitp5architecture:nodeembeddingssigmoidpredictsoftX;MEANgraphpoolseparateFCscalarGED?nothardmatchingcostdecode.2GNN32/ReLU,degreeonehot,batch1Adam.005600epochsvalidationMSEcheckpoint. Needclassifyasregressionstudy/referencevsneuraldiscretesolverrootdecision."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Allpp6?7read full5tables;MSE1.32/1.16/67.55/5.27notallfullregularizer(Table4LINUX1.44/PTC6.79 full vsbest1.16/5.27Lm);IMDB67.55worseBeam64.16;model18?22ms slowerallbaselines;larger31?50AIDSvalidationfromlargerdistribution2kpairssoOODcheckpointadaptationnotzeroexposure. All21refsread DGMC/CIE/surveyactual;Wang2019a distinctNGMjournal-lineage notconferencealias."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gedc-contrib",
+      "category": "contribution",
+      "statement": "Partialoptimalmatch supervision viafiniteBnBrollouts andcombinedrow/columnsum+conflictpenalties.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Eqs1–11/Figures1–3"
+        }
+      ]
+    },
+    {
+      "id": "gedc-method",
+      "category": "method",
+      "statement": "TypedassociationGNN withauxiliarysigmoidmatching andseparatemeanpooledscalarGEDhead.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section4.3/ParameterSettings"
+        }
+      ]
+    },
+    {
+      "id": "gedc-results",
+      "category": "experiment",
+      "statement": "MainMSE1.32/1.16/67.55/5.27 includesnoLc settingsforLINUX/PTC;IMDBBeam64.16better;alltimesslowerthanbaselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Tables1–4"
+        }
+      ]
+    },
+    {
+      "id": "gedc-generalization",
+      "category": "limitation",
+      "statement": "Larger31–50graphvalidationfromlargertestdistributionandvalidationcheckpointselection,notzeroexposureOOD.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "ParameterSettings/Section5.3/Table5"
+        }
+      ]
+    },
+    {
+      "id": "gedc-class",
+      "category": "classification",
+      "statement": "Referenceanalysis:actualevaluatedscalarGEDregressionwithsoftmatchingauxiliaryloss;nohardpathdecoderreported.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6
+          ],
+          "locator": "Section4.3/ParameterSettings/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "gedc-repro",
+      "category": "reproducibility",
+      "statement": "All7formalpages/21refsandkeyvisualsread;15memberofficialrepo/READMEandnecessaryforwardevalinspected.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References/officialcode"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.24963/ijcai.2021/212",
+      "locator": "Cachedexact3author/titleCrossrefpublished-print2021-08,officialIJCAIBibmonth8;formalbylineHKBU/1534–1540."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2021/212",
+      "locator": "Publisherprimaryfullpage/institutionalprimaryrecord/exacttitlearxiv-suppsearchnoidentifiedextrascience;complete15memberofficialarchivef555f6416a6a873cecff7dee24d1bb558d12b4b1 noPDFZIPipynb;fullREADMEread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ijcai.org/proceedings/2021/0212.pdf",
+      "locator": "OriginalFig3all6panels+entirecaptionformalPDFp4/1537Rect310,48,572,199at3xphysicalpublicasset/actualview;pp3–6math/examples/all5tablesrenderedinspected."
+    },
+    {
+      "field": "classification/code",
+      "source_url": "https://github.com/csypeng/graph_edit_distance_learning",
+      "locator": "FormalPDFp5explicitmeanembeddingFCscalarGEDseparatefromsigmoidsoftX;currentmain.py219–294sameindependenthead,pred_obj_of_qp=dgl.mean_nodes→fc3,428–433onlyscalarMSE;nohardmatchingdecoderincomplete15memberarchive. Rootclassificationconfirmationbeforefinalize."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://ijcai.org/proceedings/2021/0212.pdf",
+      "locator": "All21refsp7read DGMC/CIE/surveyactual;Wang2019aexplicitdifferenttitleNGMjournal-lineagepreprintexcludedasconferencealias."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al., 2020",
+      "description": "Directactualmainbibliographytitle/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Fey et al., 2020"
+        }
+      ]
+    },
+    {
+      "citing": "graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints",
+      "cited": "cie-h",
+      "reference_label": "Yu et al., 2020",
+      "description": "Directactualmainbibliographytitle/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Yu et al., 2020"
+        }
+      ]
+    },
+    {
+      "citing": "graph-edit-distance-learning-via-modeling-optimum-matchings-with-constraints",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "Yan et al., 2020",
+      "description": "Directactualmainbibliographytitle/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Yan et al., 2020"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftaftercomplete7formalpages/21refsread.",
+    "ReclassifiedreferenceanalysisduetoactualscalarGEDregressionandabsenceofhardeditpathdecoder.",
+    "RetainedTable2/4settingmismatch/IMDBBeamnegative/slowerinference/largerdistributionvalidation.",
+    "Preservedpartial-supervisionandzero-setideaswithoutoptimizationguarantee.",
+    "Updated direct survey citation note link after supported studies migration; identity unchanged."
+  ],
+  "reviewed_note_sha256": "00e7e0ae3e85cfc09a7d3aa9f6f7a53e3b491ddd7ffc33ab3f88581da9dc5ce1"
+}

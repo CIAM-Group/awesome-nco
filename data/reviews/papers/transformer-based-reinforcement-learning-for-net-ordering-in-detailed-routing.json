@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "paper_id": "transformer-based-reinforcement-learning-for-net-ordering-in-detailed-routing",
+  "note_path": "specialist/transformer-based-reinforcement-learning-for-net-ordering-in-detailed-routing.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "27a02eaff897e19a945a6400ebb5e72856178a1fc01d2a5300a9ab02049581f6",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2025/1055.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2025/1055.pdf",
+      "version": "ActualformalIJCAI2025AI4TechPDF9pages9492-9500,allmaintext/tables/24referencesfullyread;primarybyline/identityverified.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-10dcfbdef2/publisher.pdf",
+      "sha256": "f5b39b2c6e3e797e84d4701cfccf7480d18c6ae0562823d4be0215089bbabfd8",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readformal9492-9493actualfourauthorsSYSU/NJUandZhuocorrespond;IJCAI2025AI4Techtrack. TRENDlearnsnetorderingperGCellregion, notTSP/vehicle routing. GCNinfluence+Transformersequence+pointerindex constructiveorderingwithclassicmazerouter; needRNRclassificationfromremainingfullflow."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Readformal9494-9495net10feature/accessibility/availability/BBoverlapgraph,GCN10-64-128Transformer3layers/pointerquery360. Rewardweightedwl.5/vias4/DRV500normalizedhalfperimeter. Generatespermutationunroutednets; hostRNRnotautomaticallyNNincumbentimprovement. Actorcriticindependentparamssamearch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Readformal9496-9497criticREINFORCE/MSE,full20benchmarkcharacteristics,train18t1 30ksteps->19t3 20k(lr5e-5/2e-5),7x7regions/greedy/overlap.3fallback/64RNRiterations+shift.40coreXeon240GB2TitanXP24GB. QueueenabledTable3TRENDslowerTRall20(oftenlargefactor),Linroutingfaildash. Noqueue16bench19t7-10>100h omitted. NeedfullqualityTable4/5p7."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadcompletequalityTables4-5+all24bib/conclusionlimitations. Queueenabled20cleanexcept19t10both20DRV;DRVnotimprovedthere;smallWL/viastradeoffs. Noqueue19t2470vs173DRVbad,18t653vsLin32withcostworseLin;notuniversalbest. Offlineinferenceslow/learnedfromtwofixtures includingevaluationcases. FullrefsPointeronlyactiveconfirmedmatch;independentTCADextensionsnotforceISPD."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "RegionalnetoverlapGCN/Transformer/pointerorderingpolicywithcriticandXRoute-Envhost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1-4/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Tenfeatures/GCN10-64-128/3Transformer/query360/PTRpermutation;classicRNRhost;weights.5/4/500/halfperimeterreward. Actualtraincriticterm detacheserrorcontrarytoMSEdescription.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Table1/Equations1-5 +actualactor/traincode"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "18t1 30kthen19t320k,lr5e-5/2e-5;7x7GCells/.3fallback/64iterations;40core240GB2TitanXP. Queueenabled19/20zeroDRV,both20on19t10;TRENDslowerTRall20.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables2-4/protocol"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Noqueue16cases/largest4>100homitted;19t2DRV470vs173,18t6costworseLin;trainingfixturesincludedmainbench/uncertaintyabsent/hostdependentandruntimeheavy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Table5/limitations"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructivenetpermutation;notvehicle routing, neuralmoduleordersunroutednetsclassicalhostexecutes/reroutes, noindependentNNincumbentwireediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Actualaction/execution"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All9formalpages/24refsread;144entryrepo+3READMEsandbinaryfoldermanualinventory/noscienceextra;actualFigure3viewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            8,
+            9
+          ],
+          "locator": "Primaryformal/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2025/1055",
+      "locator": "OfficialpublisherHTML/BibTeXfourauthors9492-9500AI4Techspecialtrack,actualp1SYSU/NJU/Zhuocorrespond. PublisherBibmonth8vsCrossrefpublished-print2025-09 =>year2025precision."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/xrouting/trend",
+      "locator": "All9formalpages/all24refs/limitationsread; noextraappendix/proofnamed. Actual144entryofficialtreeSHA1ddc3025c6a1ecfcd56fc1ce2782a11f440a241dmanuallyinspected:noPDF/TeX/ZIP/notebook,3READMEsallread,releases[]. PublicauthorlinkedDrivefoldermanualHTMLtextnamesopenroad-noripup/openroad-ripup79.3MBeachbinarysimulatorsnotunreadscientificproof."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/xrouting/trend/tree/1ddc3025c6a1ecfcd56fc1ce2782a11f440a241d",
+      "locator": "ActorGCN10->64->128/3encoder/query360/visitedPTRsequenceconfirmed. train_trenddr=-r,withtorch.no_grad()disadvantage=dr-predictions;critic_loss=disadvantage.pow(2).mean()detached,notprintedMSEfitting. Snapshotonly/noendtoendrerun. Neuralactionconstructspermutationunroutednets,classicRNRhostnotNNimprovement."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://www.ijcai.org/proceedings/2025/1055.pdf#page=4",
+      "locator": "CompleteoriginalFigure3p4Rect47,50,568,182@4xatomicPNGviewed;p3/4/6/7allkeyphysical/method/formula/timing/qualitytablesrenderedactualview."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://www.ijcai.org/proceedings/2025/1055.pdf#page=9",
+      "locator": "24completebib+bodymanuallychecked againstactivecatalogue.PointerNetworksdecoderp4/bibp9exact. TCAD2021Linnet-orderpaperand2024LinunifiedSteinernotforcedontoindependentconferencecounterparts;noextrafalseedges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "transformer-based-reinforcement-learning-for-net-ordering-in-detailed-routing",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "PointerdecoderexplicitlybasedonPointerNetworks,matchingexactbyline/title/fullbib.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            9
+          ],
+          "locator": "Decoderdiscussionp4;ReferencesVinyalsetal.p9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingmetadatawithfourformalbyline/institutions/IJCAIAI4Techtrack/yearprecisionsource.",
+    "CorrecttaskVLSIdetailed-routingnetordering,specialistconstructive,classicRNRnotNNmixed.",
+    "Accurate18t1/19t3trainingincludedbenchfixtures/64iterations/queue-enabledvsdisabledprotocolandlargeruntimeoverhead.",
+    "Preserveboth20DRV19t10/noqueue19t2worse+18t6worseLincost;noforceduniformqualitysuperiority.",
+    "RecordactualpubliccriticdetachedMSEdifference,withoutfulltrainingreproductionclaim.",
+    "All9pages/24refs/scientificinventory/3README/binaryfolder/completeoriginalFigure3actualview;1confirmedbody+bibinternaledge."
+  ],
+  "reviewed_note_sha256": "8157ff6eca1f21d5363922ae4ef35a739782b575d6edd2b6f23934ac43384bdd"
+}

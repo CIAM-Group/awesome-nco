@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "paper_id": "hierarchical-device-placement",
+  "note_path": "specialist/hierarchical-device-placement.md",
+  "baseline_note_sha256": "d2a2ad88a39bb5f42e5fb5b2fbe0955ebd82f0ee5935dc16fa8327a53e845c7c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://storage.googleapis.com/gweb-research2023-media/pubtools/4317.pdf",
+      "version": "Google Research archived author manuscript, ICLR2018 submission header; byte-identical Cambridge reading copy",
+      "retrieval_url": "https://storage.googleapis.com/gweb-research2023-media/pubtools/4317.pdf",
+      "local_path": "research/import-272/nco-46161fabf0.pdf",
+      "sha256": "0d12319edd58ef7fa330eacc4e2bf9075c3ab231d94bf2ca64e24d2616133ec0",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read identified eleven-page ICLR2018 submission-header author manuscript; hierarchy,20d operation types, BFS adjacency and output-shape features,256groups, autoregressive LSTM placer; actual runtime objective and explicit predecessors."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read joint grouping/placement REINFORCE gradients, independent grouping and conditional placement;36GPU search example; candidate median-last5-of10steps, valid-onlyafter500updates; all six Table1 cases including8layerNMT worseexpert and ResNet/RNNLM ties."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read NMT4-layer placement visualization,8-layer4.9percent regression, ColocRL hardware/software mismatch, random group-order test, new policy per model and1000updates, at most3hours search, one-worker2.5hour example; checked GPU-hour arithmetic wording."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read alternative independent feed-forward and random grouping baselines, Table2 all six cases, proposed interleaving future direction, conclusion and every reference. Matched PointerNetworks,Bello,and previous RLdeviceplacement only."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hierarchy-contribution",
+      "category": "contribution",
+      "statement": "Joint learned grouping and recurrent placement replaces manually defined co-location groups and scales to83712operations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5
+          ],
+          "locator": "Section2,Figure1,NMT8-layergraph"
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-method",
+      "category": "method",
+      "statement": "REINFORCE uses negative square-root step runtime, independent grouping, autoregressive placement, actual hardware feedback and valid-only updates after500steps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Equations1–6 andTrainingDetails"
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-experiment",
+      "category": "experiment",
+      "statement": "Table1 has60.6percent two-layerNMT improvement,ResNet/RNNLM ties,and4.9percent eight-layerNMT regression; main search is1000updates/up to3hours and deployment times exclude search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Table1,Results,Overhead"
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-scope",
+      "category": "classification",
+      "statement": "A new policy is trained for each model; vision and language benchmarks are distinct applicationgraphs of one placement task, not shared cross-native-task weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Models;Overheadexplicitnewpolicypermodel"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://openreview.net/forum?id=Hkc-TeZ0W",
+      "locator": "ICLR2018 formal identity corroborated by officialICLRDownloads2018 title andGoogleResearch same sixauthors/ICLR2018 record; exactQuocV.Le punctuation corrected"
+    },
+    {
+      "field": "source_version",
+      "source_url": "https://storage.googleapis.com/gweb-research2023-media/pubtools/4317.pdf",
+      "locator": "AuthorlinkedGoogleResearch archive retrieved200,956688bytes,SHA2560d12319edd58ef7fa330eacc4e2bf9075c3ab231d94bf2ca64e24d2616133ec0 identical toCambridge eleven-pagecopy; submissionheader retained,not claimedfinalOpenReviewbytes"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://research.google/pubs/hierarchical-planning-for-device-placement/",
+      "locator": "Manual authorpage/conferenceentry plusfullPDF: onlyauthorPDF,no scientificattachment/appendixreferenced. OpenReviewforum429 andnotes/APIv1/v2/attachment403ChallengeRequired; discoverycache preserved; no separate scientificsourceidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://research.google/pubs/hierarchical-planning-for-device-placement/",
+      "locator": "No implementationlink in reviewedfullpaper orauthorrecord; no unverifiedthirdpartycode added"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hierarchical-device-placement",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit neural optimization predecessor and attention mechanism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hierarchical-device-placement",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Explicit predecessor and temperature/tanh exploration mechanism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hierarchical-device-placement",
+      "cited": "rl-device-placement",
+      "reference_label": "Mirhoseini et al. (2017)",
+      "description": "Explicit ColocRL predecessor, manual-grouping limitation and experimental comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Mirhoseini and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced summary with jointobjective, graph-specifictraining, featureandsearchbudget details; preservedtiesand8layerNMTregression.",
+    "Separatedpriorhardwareversions,persteptimefromsearchoverhead,andpaperGPU-hourarithmetic.",
+    "Verifiedauthorarchivebyteidentity,recordedsubmissionversionandmanualsupplementdiscoveryaccesslimits;3preciseinternalcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "78f1851c3a5c62ba1f11ff565eb4d3f1849baadb4d6b6c2b5117fbaa12b89ca1"
+}

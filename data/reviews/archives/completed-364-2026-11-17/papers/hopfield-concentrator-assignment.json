@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "paper_id": "hopfield-concentrator-assignment",
+  "note_path": "specialist/hopfield-concentrator-assignment.md",
+  "baseline_note_sha256": "aaae25e43d4252aea0f639308692b2e80aeb95c8b9c0b06aaf804764eab34314",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1987/file/77cdf4ffbd2afd02541e02533ec56820-Paper.pdf",
+      "version": "OfficialNIPS1987volume0scannedproceedings,8pages775-782;printedAIPcopyright1988",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1987/file/77cdf4ffbd2afd02541e02533ec56820-Paper.pdf",
+      "local_path": "research/import-272/nco-f758c4598e.pdf",
+      "sha256": "6411ef2f7d7c53e61d7b8877f86a29f0fa2898ce0e8137d92f384d746cd4ea58",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh scannedmainread: exactGeneA/EdwardWauthors,Clemson, analogHopfieldmodel energy/localstableminima, multifacility/concentratorresourceassignment; printedcopyright1988differsconference1987record."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read one-siteone-concentrator andcapacitatedsitecount constraints, assignmentcostobjective, binaryneuronmatrix, capacitynumberofslackneurons; experimentsassumeequalcapacity andsufficienttotalcapacity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read completeenergyconstraints/slack/binaryterms; costaddedthroughsymmetricreciprocalpair-costcoupling,notdirectlinearobjectiveEq3. Full12sites5concentrators capacity3/unit-square example; publishedparametersA=B=C=-2,D0.1,input6/5; needvisualequationcheckratherthanOCR transcription."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allcostmatrix/histograms,100repeatedrunsofone12x5instance,92inbest0.01%solutionrankremaining8best0.3%,nofoundglobaloptimum; exhaustivebacktrackingreference andall7bibliographyentries.Noneidentifyother364papers."
+    }
+  ],
+  "claims": [
+    {
+      "id": "array",
+      "category": "contribution",
+      "statement": "Neuronarrayrepresentscapacitatedassignmentwithpercolumncapacityslack.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Concentratorformulation/Figure4/energy"
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "category": "method",
+      "statement": "Equation3initiallyconstraints; costsaddedthroughreciprocalsum symmetriccouplings andfixedcurrents.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Equations3-6andcostadjustment"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "category": "experiment",
+      "statement": "One12site/5concentrator/capacity3map,100runs;0globaloptima,92best0.01%solutionrankand8best0.3%.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "ExampleandFigures5-7"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Nooptimalityguarantee,multi-instancebenchmarkorreportedruntime; rankpercentagesnotoptimalitygaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Results/conclusion/histograminterpretation"
+        }
+      ]
+    },
+    {
+      "id": "signs",
+      "category": "reproducibility",
+      "statement": "PrintedA=B=C=-2,D0.1andcurrents6/5areconnectionconventions, requiringenergy/couplingsigndisambiguation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Energy/couplingdisplaysandsimulationconstants"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Fixedtaskhand-designedHopfieldrelaxation,notlearnedpolicy; specialistneurodynamic. Fixedcapacitylinearassignmentallowsmincostflowformulation(curatorinference).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Taskconstraintsandnetworkconstruction"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1987/file/77cdf4ffbd2afd02541e02533ec56820-Paper.pdf",
+      "locator": "Scannedp1: GeneA.Tagliarini,EdwardW.Page,ClemsonComputerScience."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1987/hash/77cdf4ffbd2afd02541e02533ec56820-Abstract.html",
+      "locator": "OfficialNIPS1987volume0entryandBibTeXyear1987; printedp1copyright1988disclosed."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1987/hash/77cdf4ffbd2afd02541e02533ec56820-Abstract.html",
+      "locator": "ManualofficiallandingonlyBibtex/Metadata/Paper;all8scannedpagesread,no appendix/attachmentreference."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1987/file/77cdf4ffbd2afd02541e02533ec56820-Paper.pdf#page=4",
+      "locator": "OriginalFigure4fullarraycropPDFpoints[103,67,552,369]at3x;checkedagainstfullpageandcaption."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshread all8scannedpages andallreferences; visuallycheckedformula/table/histogramOCR.",
+    "Restoredauthor middleinitials anddisclosed1987proceedingsvs1988printedcopyright.",
+    "Specifiedslackrepresentationandactualreciprocalcostcoupling ratherthangenericlinearenergyclaim.",
+    "Distinguished100runsofoneinstance from100differentinstances, andsolutionrankpercentiles fromgaps.",
+    "Qualifiedfixedcapacitatedassignmentversusfacilitylocation/NP-hardness; keptneurodynamicclassification.",
+    "AddedcompleteoriginalFigure4;noinventedcitationedges/code/speedups."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8d2e998b5bf7fe1e4c866e8cfe3cb91bc4b920d8bf0cd7e9096f785bb86959fe"
+}

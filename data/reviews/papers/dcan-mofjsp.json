@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "paper_id": "dcan-mofjsp",
+  "note_path": "specialist/dcan-mofjsp.md",
+  "baseline_note_sha256": "f3e6f01401dcc67bbc8541d9052761a005f97d3d28c9f5eddd5f71abcfe19914",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/5c411eef5b6ee7d9895ad129a4bfc6cc-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2026 publisher30-page PDF including all references and scientificAppendicesA-O;publication2026-04-20",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/5c411eef5b6ee7d9895ad129a4bfc6cc-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-9b9f272982.pdf",
+      "sha256": "de3f6f221e76cf773f546373ae1c188749b636516cd019508e67e7ab6b11bec2",
+      "pages": 30,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallabstract/intro/related/ParetoDefs1-2/scalarweightlambda>=0sum1/FJSPstart. ActualDCANpreferenceconditionedmanyobjectivesnotautogeneralistnativeproblems,needsharedcheckpointvariants. WeightsumfinitecannotguaranteeallunsupportednonconvexParetopoints;zeroweightsweakParetoifunclean ties. Noauthorincorrectclaimconclusionuntilalltheoryproofsread. Modelweightsacrossobjectivecombinationsexplicitmainclaimneedtrainimplementation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallfiveobjectivesDefs3-7/MDP/state/reward/conditionalO/MnodesPPOAlg1/vectorcritic. Fiveobjectivesmakespan,tardiness,earliness,meanflowtime(Cjob-Sjob),costsum(pmax-duration)notmonetaryactual. Linearweighted telescopingdiscountgammaexpectationsneedAppendB. Authorsalreadyacknonconvexweighted/Tchebycheffp5=>boundnotnewfatalissue. Earliestappendactionsnoexplicitwait couldmissfultardiness/earliness schedules;waitcheckallappendix/code. Criticrt targetvsadvantagewordneedsAppendCactualimplementation. preference-onlyscopependingJSSPFFSPtransfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTable1-3/fullsetup/results. Synthetic4sizesseparatetrain20x10→30/40transfer;3objectivecombinationsmodelsseparatependingcode. Table1small10x5threeobjNSGA.6146>DCANsample.5130;publicNSGAwins3/4longrun. Table3rdata/edata/vdatacostconstanttrue2objectivesnot3. DSFJSPdeadline1.5summin,CP60secper101/105weightedsubproblemnotcertopt;negativeHVgapfiniteCPincumbent. GPUA100CPU9coreXeonvsbaseline16coreAMDtimeshardwareunequal. HJSSPFFSPwithoutmodificationsneedactualcheckpointsharedcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadallTables4-5/ablation/future/ack/refsfirst24. Quantitymorecandidatesdiminishingreturns,at10x5sampling10HV.4801>greedy1035.4771differentbudgetefficient. Rewardboundlargeimprovementfeatureincremental. Needallremainingrefs13-14+appendA30 beforeverified. Candidate6notexhaustiverefsWang2024maybegenco changedtitle?manualidentityneedcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readcompletebibliographyremainingallrefs. Catalogsixmatchedactualfulltitles. Wang2024singleDRLMO/Fan2025conditionalMO/Zhang2023dmetaMOmaynotexisting364checkmanualbeforeadding. FJSPbenchmark2012repoPDFexternalcitedtestreportnotownscience. Allrefs1-15completed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "ReadcompleteAppendAall9op8machine8pairfeatures/BProp1allproofgamma1constantlambda/CCPPOGAEalltargets/sign/Dfig1-2architecture. Prop telescopingvalidgamma1requiresHterminaltrueobj andinitialpolicyindependentforobjectiveequivalence;implementationdiscountcheck. CriticfulltargetA+VcorrectAppendCclearsmainwording. Weightedprefsharingnotnative generality. NeedHexplicitJSSP/FFSPnewtrain."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "ReadEintensity/FnormalizedHV/GIGDrefunionnonoptimal/HseparatetrainJSSP+FFSP/IseparateSD2train/J/Kearlinesslimitations/L/Mstart. HexplicittrainvalidateperJSSP/FFSP =>specialist,noactualsharednativecheckpoint. AuthorKexplicitnoallowwaitingpostprocessingearlinessnonregularsoframingrestrictionacknowledgednotnewcounterexample. HVreference1000NSGAinitworstcoords/lowerboundsnormalize/costconstantzeroaxisimplementationmustdrop. IGDpoolallmethodsreferenceconditionalnottruePareto. Currentmo_train182-185normalizedUinsteadprintedflatDirichlet1,params gamma1properproof. All30remaining22-30."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "ReadfullM/N/Otext/allTables6-10everyrows. IGD+benefitsvsHVonpublicexplicitnotuniform:mkNSGA.2403<sampleDCAN.2917;publiccostconstant3Dactually2effective. HowntrainJSSP/FFSPconfirmedTables9/10sizeastrain=>specialist. FFSP15x5NSGA.4492>DCAN.4385evenandsmaller;20x4DCAN.4521winsNSGA.4039. JSSP6x6MOEA.8729>sampleDCAN.8244;notuniformbaselinewins. AllfilesfullscienceintegratedA-O."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "ReadallTables11-15everyrows. SD2owntrainedmodels/meansnoconfidence. K4obj10x5NSGA.5628>sampleDCAN.4773 contrarybroadsuperiorphrasing;WI-DAN20x5.4177>DCAN.4147. Table14lessbudgetedataclassicNSGA50.5594>sampleDCAN.5463 evenmoretime103vs54;Table15samples400stillmk.3351<NSGA.3416/rdata.6561<.6586/edata.5883<.6439,onlyvdatahigher. AuthorNacknowledgesnotalwaysbetter. Codeearlinessnormalizationlowerbound0notHinitialupper,gooddistinctionvsAppendFgeneric. FormalBtelescopingtruegamma1/defaultcode1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "ReadallTable16/finalFig3-4all6sizesparetopoints. CombinedWI-DCANmixednotclearimprovemente.g10x5threeobj.5484>.5130but20x10.6170<.6314. Oneinstperdatasetillustrativefrontsnotstatisticalallinstanceproof. All30PDFpagesreadincludingA-O/allrefs. Needvisualremaining27-30andcodewrap beforeverified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "ApproximateParetofrontsneededwithoutseparatesolve/modelperpreference,richschedulingstate/boundrewards.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Introduction/problem/method"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Conditionalop/machinepreferenceattention/decompositionvectorcriticPPO/boundrewards5objectives/realJSSPFFSPand4objexperiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            10,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            26
+          ],
+          "locator": "Fullmethod/AppendA-O"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive perproblemtype/objectiveconfigtraining;HexplicitseparateJSSPFFSPtrain notFJSPcheckpointzeroshot.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            20,
+            23,
+            24
+          ],
+          "locator": "Actionconstruction/AppendHowntraining"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Prop1fixedlambda/gamma1telescopingvalid,needsHterminalobjectiveandinitialconstantforalignment;PPOclippedGAE+Vvectorcritic/notconvergenceorfullParetoproof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            16,
+            17,
+            19,
+            20
+          ],
+          "locator": "Allmath/proof/metrics"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Readall4fig16tables actualquality-timeexceptions/CPfinite60secpreference/degeneratecostbenchmarks/IGDunionreference/noindependenttrainseedCIs/separatenativebackbones.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "AllexperimentsA-O"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "EarlinessconstructorwaitrestrictionexplicitK;finiteweightsupportedfrontcoverage;currentnormalizeduniformsamplernotflatDirichlet/defaultconditionalgamma-betaextra/effectiveobjectivescaling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7,
+            16,
+            17,
+            19,
+            20,
+            21,
+            22,
+            26
+          ],
+          "locator": "Authorlimitationsandboundedreleaseformula/samplerchecks"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full30pA-O/refs16visualall4fig16tables;8303filerepocoreinspectionnoweights/extern2012referencePDFnotownscientificsupp/API4036catalogedges.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "Completeaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5c411eef5b6ee7d9895ad129a4bfc6cc-Abstract-Conference.html",
+      "locator": "PublisherApril20,2026/5authors/pages56306-56335. PDF1IgorG.Smitfullname/EindhovenTUdepartments+EAISI/DassaultDelmiaR&D."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5c411eef5b6ee7d9895ad129a4bfc6cc-Abstract-Conference.html",
+      "locator": "ManualpublisherHTMLPaperonly/complete30pA-Oscienceintegrated. OpenReviewYAgOaYedLQnotesAPIsv1/v2403cached. Officialtree8303filesonePDF2012BehnkeGeigerTestInstancesreport31p/titlepagechecked/SHAf3dd601b375016568600d3dddba659eb1fec1ec5937647fbe21c87a4a24af305 externalcitedbenchmarknotthisscientificappendix,nestedZIPnone/noexplicitmissingscientificmaterial."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5c411eef5b6ee7d9895ad129a4bfc6cc-Abstract-Conference.html",
+      "locator": "Formal30pSHAde3f6f221e76cf773f546373ae1c188749b636516cd019508e67e7ab6b11bec2.16visualpages5/6/8/9/10/16/17/18/23/24/25/26/27/28/29/30/all4fig16tablesfullProp1proof/centralconditionalattentionPPO."
+    },
+    {
+      "field": "scope,objectives,statistics",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5c411eef5b6ee7d9895ad129a4bfc6cc-Abstract-Conference.html",
+      "locator": "AppendH20JSSPownTaillardtrain/FFSPownsynthetictrain;prefsharingnotnativecheckpointsharing=>specialistretained,actualMOJSSP/MOFFSPadded. Objectivescostsyntheticpmax-pt/flowC-S/earlinesswaitingexplicitlimitationK21. Main100instancesmeansnoidentifiedtrainseedsCI. GPUA100+9coreXeonvs16coreAMDclassicalCP60sec×101/105preferences/negativegapnotcertifiedPareto."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/ai-for-decision-making-tue/Neural_Multi-Objective_CO_for_FJSP",
+      "locator": "Commitcaf60d8da721382c79009539a9c8d9ccbc39e7348303filesno.pt/.pthweights. Full101README/all373conditionalattention;mo_train1-235/PPO132-181+283-458/environmentMO1-368/base449-517/mainmodel584-795+871-896/test1-250 inspected. Rewardobjective-specificpositive multipliers/scaledweights;earlinessHVlower0vsrewardupper. Currenttrain182-185normalizedU(0,1)notprintedDirichlet1;attentiondefaultprefgamma/betatransform43-45/223-225unprinted. Gamma1/PPOGAE+oldvaluecorrectproofconditions. NofullNNrerun."
+    },
+    {
+      "field": "theory,citations,negative-comparisons",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5c411eef5b6ee7d9895ad129a4bfc6cc-Abstract-Conference.html",
+      "locator": "Prop1pp16-17finitefixedlambda/gamma1telescopes;doesnotshowPPOconvergence/completenessnonconvexPareto. FormalackTchebycheffnonconvexp5/waitrestrictionK21. Table1smallthreeobjNSGA.6146>DCANsample.5130;Table3NSGA3/4wins;Table12small4objNSGA.5628>DCAN.4773;Table15samples400stillNSGAwinsmk/rdata/edata.6fullidentitycatalogcites,otherabsenttitlesnotIDs."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay & Grimm (2024)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Pirnay & Grimm (2024);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Zhang et al. (2020);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Kwon et al. (2021);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "neat-weight-embedding",
+      "reference_label": "Chen et al. (2025)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2Chen et al. (2025);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "pareto-set-learning",
+      "reference_label": "Lin et al. (2022)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Lin et al. (2022);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini et al. (2024)",
+      "description": "Explicit body citation and matching full bibliography identity; publication/preprint year variants reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2Corsini et al. (2024);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "dcan-mofjsp",
+      "cited": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "reference_label": "Smit et al., 2025a",
+      "description": "Stochastic FJSP related work cites exact five-author AAAI2025 article with matching title/pages and DOI34870.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Actual body citation Smit et al., 2025a on PDF pp[2]; full bibliography entry on pp[13]. Title and author identity matched to the target reading record, independently of topic similarity. Stochastic FJSP related work cites exact five-author AAAI2025 article with matching title/pages and DOI34870."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedallscientificdetails/30pagesA-O16tables4figures/realMOJSSPFFSPwithseparatetrainboundary.",
+    "Recordedconditionalvalidtelescopingproof/metricanchors/nonconvexcoverage/earlinesswaitingandnegativequality-timecomparisons.",
+    "Documentedofficialcodecurrentpreference-sampler/defaultattention/scalingdifferencesand6realcitationedges.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b0893101ac4e009f72ad121ec33187ed35fd2c6cfd63f37c1468a3b112110b23"
+}

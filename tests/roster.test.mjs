@@ -1,5 +1,27 @@
+import fs from 'node:fs/promises'
 import { describe, expect, it } from 'vitest'
 import { loadContent } from '../scripts/content-lib.mjs'
+import { loadReviews } from '../scripts/review-lib.mjs'
+
+const manifest = JSON.parse(await fs.readFile(new URL('../data/imports/iclr-neurips-icml-2026-11.json', import.meta.url), 'utf8'))
+const conferenceManifest = JSON.parse(await fs.readFile(new URL('../data/imports/conference-163-2026-11-17.json', import.meta.url), 'utf8'))
+const importedIds = new Set([...manifest.papers, ...conferenceManifest.papers].map(paper => paper.paper_id))
+const reviews = await loadReviews(process.cwd())
+
+function expectHistoricalMetadata(paper, expected) {
+  expect(paper, expected.id).toBeDefined()
+  expect(paper.id).toBe(expected.id)
+  for (const [field, value] of Object.entries(expected)) {
+    if (paper[field] === value) continue
+    const review = reviews.get(paper.id)
+    expect(review?.status, `${paper.id}: correction to ${field} needs verified source evidence`).toBe('verified')
+    if (['scope', 'paradigm', 'paper_type'].includes(field)) {
+      expect(review.claims.some(claim => claim.category === 'classification')).toBe(true)
+    } else {
+      expect(review.metadata_evidence.length).toBeGreaterThan(0)
+    }
+  }
+}
 
 const roster = [
   ['pointer-networks', 'Ptr-Net', 'NeurIPS', 2015, 'constructive'],
@@ -19,7 +41,7 @@ const roster = [
   ['latent-search-space-routing', 'CVAE-Opt', 'ICLR', 2021, 'improvement'],
   ['step-wise-routing', 'Step-Wise', 'IEEE TII', 2021, 'constructive'],
   ['learning-improvement-heuristics', 'LIH', 'IEEE TNNLS', 2022, 'improvement'],
-  ['dimes', 'DIMES', 'NeurIPS', 2022, 'constructive-improvement'],
+  ['dimes', 'DIMES', 'NeurIPS', 2022, 'constructive'],
   ['simulation-guided-beam-search', 'SGBS', 'NeurIPS', 2022, 'constructive'],
   ['deep-policy-dynamic-programming', 'DPDP', 'CPAIOR', 2022, 'constructive'],
   ['sym-nco', 'Sym-NCO', 'NeurIPS', 2022, 'constructive'],
@@ -52,7 +74,7 @@ const surveyExpansionRoster = [
   ['invit', 'INViT', 'ICML', 2024, 'constructive', 'specialist'],
   ['dpn', 'DPN', 'ICML', 2024, 'constructive', 'specialist'],
   ['mvmoe', 'MVMoE', 'ICML', 2024, 'constructive', 'generalist'],
-  ['softdist', 'SoftDist', 'ICML', 2024, 'constructive', 'specialist'],
+  ['softdist', 'SoftDist', 'ICML', 2024, undefined, 'study'],
   ['mtpomo', 'MTPOMO', 'KDD', 2024, 'constructive', 'generalist'],
   ['hncs', 'HNCS', 'KDD', 2024, 'constructive', 'specialist'],
   ['elg', 'ELG', 'IJCAI', 2024, 'constructive', 'specialist'],
@@ -92,40 +114,34 @@ describe('confirmed 28-paper expansion', () => {
     const content = await loadContent(process.cwd())
     for (const [id, shortTitle, venue, year, paradigm] of roster) {
       const paper = content.papers.find((item) => item.id === id)
-      expect(paper, id).toMatchObject({ id, short_title: shortTitle, venue, year, paradigm, scope: 'specialist' })
+      expectHistoricalMetadata(paper, { id, short_title: shortTitle, venue, year, paradigm, scope: 'specialist' })
     }
   })
 
-  it('keeps every previously added paper connected after later expansions', async () => {
+  it('preserves original paper IDs even when unsupported edges are removed', async () => {
     const content = await loadContent(process.cwd())
-    for (const [id] of roster) {
-      const count = content.relations.filter((relation) => relation.papers.includes(id)).length
-      expect(count, id).toBeGreaterThanOrEqual(2)
-    }
+    for (const [id] of roster) expect(content.papers.some(paper => paper.id === id), id).toBe(true)
   })
 })
 
 describe('52-paper survey expansion', () => {
-  it('contains 92 papers with the approved venues, names, scopes, and paradigms', async () => {
+  it('preserves the original 92 papers and their reviewed metadata', async () => {
     const content = await loadContent(process.cwd())
-    expect(content.papers).toHaveLength(92)
+    expect(content.papers.filter(paper => !importedIds.has(paper.id))).toHaveLength(92)
     expect(surveyExpansionRoster).toHaveLength(52)
 
     for (const [id, shortTitle, venue, year, paradigm, scope] of surveyExpansionRoster) {
       const paper = content.papers.find((item) => item.id === id)
-      expect(paper, id).toMatchObject({ id, short_title: shortTitle, venue, year, paradigm, scope })
+      expectHistoricalMetadata(paper, { id, short_title: shortTitle, venue, year, scope, ...(paradigm ? { paradigm } : { paper_type: 'analysis' }) })
     }
   })
 
-  it('has the approved collection-level scope and paradigm totals', async () => {
-    const { papers } = await loadContent(process.cwd())
-    const count = (field, value) => papers.filter((paper) => paper[field] === value).length
-
-    expect(count('scope', 'specialist')).toBe(82)
-    expect(count('scope', 'generalist')).toBe(10)
-    expect(count('paradigm', 'constructive')).toBe(66)
-    expect(count('paradigm', 'improvement')).toBe(20)
-    expect(count('paradigm', 'constructive-improvement')).toBe(6)
+  it('retains all original papers as classifications are corrected', async () => {
+    const content = await loadContent(process.cwd())
+    const papers = content.papers.filter(paper => !importedIds.has(paper.id))
+    expect(papers).toHaveLength(92)
+    expect(new Set(papers.map(paper => paper.id)).size).toBe(92)
+    expect(papers.every(paper => ['specialist', 'generalist', 'study'].includes(paper.scope))).toBe(true)
   })
 
   it('uses formal publication records except for Less Is More', async () => {
@@ -134,7 +150,7 @@ describe('52-paper survey expansion', () => {
     expect(added.filter((paper) => paper?.venue === 'arXiv').map((paper) => paper.id)).toEqual(['less-is-more'])
 
     expect(papers.find((paper) => paper.id === 'l2r')).toMatchObject({ venue: 'KDD', year: 2026 })
-    expect(papers.find((paper) => paper.id === 'urs')).toMatchObject({ venue: 'ICML', year: 2026, paper_url: 'https://icml.cc/virtual/2026/poster/61527' })
+    expect(papers.find((paper) => paper.id === 'urs')).toMatchObject({ venue: 'ICML', year: 2026, paper_url: 'https://proceedings.mlr.press/v306/zhou26bg.html' })
     expect(papers.find((paper) => paper.id === 'icam')).toMatchObject({
       title: 'Instance-Conditioned Adaptation for Large-Scale Generalization of Neural Routing Solver',
       venue: 'IEEE T-ITS',
@@ -143,23 +159,18 @@ describe('52-paper survey expansion', () => {
     })
   })
 
-  it('keeps every added paper connected while allowing the curated graph to grow without a maximum', async () => {
+  it('retains expansion notes independently of citation degree', async () => {
     const content = await loadContent(process.cwd())
-    expect(content.relations.length).toBeGreaterThan(155)
-    for (const [id] of surveyExpansionRoster) {
-      const count = content.relations.filter((relation) => relation.papers.includes(id)).length
-      expect(count, id).toBeGreaterThan(0)
-    }
-    expect(Math.max(...content.papers.map((paper) => content.relations.filter((relation) => relation.papers.includes(paper.id)).length))).toBeGreaterThan(5)
+    for (const [id] of surveyExpansionRoster) expect(content.papers.some(paper => paper.id === id), id).toBe(true)
   })
 
-  it('records sourced acceptance dates for formal papers and leaves both arXiv-only entries unset', async () => {
+  it('records sourced acceptance or publication evidence for formal papers and leaves both arXiv-only entries unset', async () => {
     const { papers } = await loadContent(process.cwd())
     const formallyPublished = papers.filter((paper) => paper.venue !== 'arXiv')
     const arxivOnly = papers.filter((paper) => paper.venue === 'arXiv')
 
-    expect(formallyPublished).toHaveLength(90)
-    expect(formallyPublished.every((paper) => /^\d{4}(?:-\d{2}(?:-\d{2})?)?$/.test(paper.acceptance?.date ?? '') && Boolean(paper.acceptance?.source_url))).toBe(true)
+    expect(formallyPublished).toHaveLength(papers.length - 2)
+    expect(formallyPublished.every((paper) => /^\d{4}(?:-\d{2}(?:-\d{2})?)?$/.test((paper.acceptance ?? paper.publication)?.date ?? '') && Boolean((paper.acceptance ?? paper.publication)?.source_url))).toBe(true)
     expect(arxivOnly.map((paper) => paper.id).sort()).toEqual(['efficient-graph-convnet-tsp', 'less-is-more'])
     expect(arxivOnly.every((paper) => paper.acceptance === undefined)).toBe(true)
   })

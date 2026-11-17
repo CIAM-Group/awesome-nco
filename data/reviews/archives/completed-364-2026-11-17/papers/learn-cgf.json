@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "paper_id": "learn-cgf",
+  "note_path": "studies/learn-cgf.md",
+  "baseline_note_sha256": "6796b86062349df79e9d2594eec094cac1c5ab8e721da2bf628599e49213c75f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/71008846945765893f43abe829090bf8-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/71008846945765893f43abe829090bf8-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c4fabb0abb.pdf",
+      "sha256": "9c7010777ce043aab98fcba4efbfbb28c959308957ce8f3559269dffeaa785d1",
+      "pages": 26,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full intro/author/affiliation and claimed single/multirow CGF plus instance-specific neural selection, objective branch-and-cut tree size; pure ILP integralA,b and universal bounded feasible coordinates rho assumption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read cut validity from periodic/subadditive normalized CGF, GMI/CG examples; i.i.d. uniform-convergence/sample complexity with bounded truncated tree B, product variable scoring/depthfirst/one root cut; fixed tableaux rows, Lemma2.1 sign partition positive denominators and onedim construction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read one-row piecewise affine2params/mu0GMI/pdim; krow simplex positive params, rational coefficients, O(kn) generation; fixed row selection; ReLU instance-dependent selector pdim theorem5.1 and numerical setup100train/100test rootcuts Gurobi defaultcuts/heuristics/presolveoff."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read actual non-neural gridsearch one-row and121sample multirow tuning, first fractional row fixed; Table1 last best-one-row column is TRAIN hindsight nonpractical oracle, no neural selector trained. Mixed packing gains/notuniform; complete references throughH."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainder references incl neural algorithm selection/learningcut; A1 sign-pattern/A2 fixedalgorithm tree/A3 affine slack substitution; B1 full slope rectangle cases and B2 breakpoint statement, require visual proof checks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read B2 breakpoint proof/Prop3.1 affines and complete Thm3.2 sign-polynomial composition, C Thm4.2 lifting-region/onecoordinate shifts, lambda ceil/floor convex-envelope formula and positive q assumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read all Prop4.3 andThm4.4 rational positive common-denominator sign tests/pseudodimension proof; finite tau and fixed k restriction. FullscientificAppendicesA-C endp20; checklistbeginningp21."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read checklist theory/reproducibility/public code and data; primarily theoretical experiments noerrorbars explicitNo; hardware/ethics/impact declarations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Read remaining complete checklist/licenses/assets/human-subject declarations. All26pages including references and full scientificA-C proofs actually read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "CGFselectiontargets expectedtree performance on recurring IID ILP distributions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "locator": "Intro/statisticalformalization"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "One-row/multi-row coefficientstructure/evaluation and pdim;NNselection theory.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Alltheorems and completeproofs"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Theory study with explicit neural selector theorem, not implemented neural solver; experimental tuning grid/random enumeration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            21,
+            23
+          ],
+          "locator": "5.1/Section6/fullchecklist"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "PureILP integerA,b/universalrho/fixedone-rootcut/productscore/depthfirst/truncatedB/IID/fixedrows/validpositiveparameterdomains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Formalassumptions/Remark2.2/validity derivation"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "100train100test7distributions,121params;packingnotuniform;lastcolumntraininghindsightnotneuraltest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "FullTable1and protocol"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Statisticalnottraining/ERMcost guarantee,finite-taucondition vs unrestricted sampling,noerrorbars/modernsolverdefaultsoff.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            23
+          ],
+          "locator": "Allstatementconditions and checklist7"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "26fullpages/allrefs/proofs/checklist8visualpages/manualAPIs/complete4modules17notebookcellsread,noexecution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "locator": "Complete reading logs and cached sources"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/71008846945765893f43abe829090bf8-Abstract-Conference.html",
+      "locator": "Exact2authorsJHUbylinep1;NeurIPS37MainConferenceDOI10.52202/079017-1964. OfficialHTMLcitation_publication_date2024-12-16cached supports retained date."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/71008846945765893f43abe829090bf8-Abstract-Conference.html",
+      "locator": "ManualpublisheronlyPaper/BibtexnoSupplemental. Exact-title notes queriesAPIv1/v2both403cached openreview-check.json. AllscientificA-Cinformal26pPDFread. Officialrepo1422filesnoPDFZIP/video;fullREADME17notebookcells4Pythonmodulesread;noexplicitmissing scientificattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/71008846945765893f43abe829090bf8-Paper-Conference.pdf",
+      "locator": "Formal26pSHA9c7010777ce043aab98fcba4efbfbb28c959308957ce8f3559269dffeaa785d1 fullread. restart-main.jpgp7/8/9/10 andrestart-proofs.jpgp14/15/18/19 visuallyreadconstruction/theorem/proof/table."
+    },
+    {
+      "field": "scope,eligibility",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/71008846945765893f43abe829090bf8-Abstract-Conference.html",
+      "locator": "Parentauthorizedmigration specialist/learn-cgf.md to studies/learn-cgf.md stableID and record preserved. paper_type theory. Neural selector Theorem5.1directlyextendsCheng etal2024,soexplicitNCOtheoryretained;noNNempiricalclaim."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Hongyu-Cheng/LearnCGF",
+      "locator": "ExplicitformalSection6/p22linked;revision2233d07164172dfc258f4090db1182bd0f58d0df1422files. README/requirements/full17notebookcells/Run.py125/Cuts.py133/IP.py116/generateIP.py69 read. Treecap100000;knapsack/pk generators and param enumeration noNNfiles;not executed."
+    },
+    {
+      "field": "reference_identity",
+      "source_url": "https://arxiv.org/abs/2402.02328",
+      "locator": "ReferenceCheng/Khalife/Fiedorowicz/Basu2024 p12lists earlier title Data-drivenalgorithmdesignusingneuralnetworks... arXiv2402.02328. Primaryabsidentifiessame4authors/currenttitleSampleComplexityofAlgorithmSelection..., exactlyexisting neural-algorithm-selection-theory ID. Explicitmainpp2/3/9 cites."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learn-cgf",
+      "cited": "neural-algorithm-selection-theory",
+      "reference_label": "Cheng et al. (2024)",
+      "description": "Explicit neural instance-dependent algorithm-selection theorem extended to CGFs; exact arXiv identity verified despite title revision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            9,
+            12
+          ],
+          "locator": "BodySection5Theorem5.1and intro;fullCheng4authorrefp12 arXiv2402.02328"
+        }
+      ]
+    },
+    {
+      "citing": "learn-cgf",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Packing distribution and affine slack-cut conversion cited explicitly.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            13,
+            14
+          ],
+          "locator": "PackingdataSection6p10;LemmaA3p14;fullreferencep13"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "MovedstableIDnote specialist to studies/theory after complete evidence: noNNtrained/evaluated.",
+    "Separated IIDboundedroot-cutstatisticalguarantees from empiricalparametersearch/computationaltraining.",
+    "Correctedhindsighttrainingcolumn versusheldoutresults;packingnotuniformlybetter/noerrorbars.",
+    "Full26pA-C/checklist/8visualpages/completecodeandnotebookread;2exactexistingcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ffc4efe71d8213de4031c71bb798112036c60566b30ba0e4232480541e755059"
+}

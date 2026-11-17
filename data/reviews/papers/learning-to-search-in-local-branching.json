@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-search-in-local-branching",
+  "note_path": "generalist/learning-to-search-in-local-branching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "f9c7217a02b1852e2730c7722e057f9e3ca1f2e44ceb64a93f3397e1648525c5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/20294/20294-13-24307-1-2-20220628.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/20294/20294-13-24307-1-2-20220628.pdf",
+      "version": "AAAI2022published8p fullbody/38refs/all6tables/Fig1/Alg1–2read; noidentifieduniqueextrascientificappendix.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-4678e87639/formal.pdf",
+      "sha256": "9f043f8ec07b1382dd07d50765c6e2b696d12a17113c02cc9c0fc3a388194e78",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readbyline3authorPolyMontreal/Padova/JacobsCornellTechnion, introductionneighborhoodsizechoice/sc-misFig1, completeRelatedWorkbodycites,MILPpartitionbinaryrequired; twophasefirstkregressionanddynamiccontroller notvariablewiseLNS."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Readbinary/asymmetricHammingLBconstraints5/6/left-rightpartition, offlineapproxbestkcostalpha CPU/objective minmax;LPdistancekprime scalingphi0, bipartiteGCNNregressionEq16/Alg1, kprimeheuristicboundnotglobaloptimalneighborhoodtheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadpooledGNNfirstphi,4actionlinearREINFORCEcontroller(+/0/−/reset), rewardimprovement×remainingtime,SC/MIS/CA200split70/10/20/40larger+GISP35/MIPLIB29; explicitsinglemixedregression andSC-onlyRLtestedallnativefamilies ->generalistactualsharedmodel;twotypesincumbents/primalintegral/gap."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Readall6tablesfirst/rootPI/finalgapbaseandallvariants withnegativecasesMISrootcombinedgap.23>.20base, MIPLIBfirstPIhybrid11.655>10.891srm/rootgap6.22>5.22; explicitmixedGNNandSC-onlyRLcrossGISP/MIPLIB; full38refsallmatchedmanually."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "RadiusbalancesLBsolveeffortandimprovementwithincumbent/instancecontext.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/Fig1/neighborhoodcost"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "ScaledGNNregressorandlinearREINFORCEradiuscontrollercombinewithinSCIPLB.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Methodology/Alg1–2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "BinaryHamming/asymmetricLBincumbentconstraint,LPdistancescaling/gridlabels,4actionstatisticscontrollerrewardimprovement×remainingtime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs5–18/Datacollection"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "200perSCMISCA70/10/20,40larger35GISP29MIPLIB,2incumbentmodes; TablehybridwinsnotuniformespeciallyMISroot/MIPLIB.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Setup/Tables1–6"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "OneactualmixedGNNandSConlylinearRLpolicyreusedacrossSC/MIS/CA/GISP/MIPLIB, generalistimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "TrainingandEvaluation/BroaderGeneralization"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Requiresfeasibleincumbent/SCIPneighborhoodsolves/binaryscope/approxlabels; noall-purposeoptimalityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Preliminaries/labelsearch/MDP/discussion"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Fullformal8pallrefsread andpaperlinkofficialrepo; currentrepoextensionversionfactsdistinguishedfromconferenceexperiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            7,
+            8
+          ],
+          "locator": "Byline/codefootnote/tables/discussion/fullReferences"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://cdn.aaai.org/ojs/20294/20294-13-24307-1-2-20220628.pdf",
+      "locator": "FormalPDF1 exactthreeauthorbylinePolytechniqueMontreal/Padova/JacobsTechnionCornellInstituteCornellTechTechnion-IIT; cachedCrossrefsameauthors."
+    },
+    {
+      "field": "date, publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/20294",
+      "locator": "Publisher-depositedCrossrefpublished/publishedonline2022-06-28vol36no4pp3796–3803; noidentifiedarxivforactualconferencework. NotconferenceFebeventdate."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://cdn.aaai.org/ojs/20294/20294-13-24307-1-2-20220628.pdf#page=7",
+      "locator": "p6singlemixedSC/MIS/CAregressionandRLonlySC; p7BroaderGeneralizationexplicitreusesbothmodels acrossnativefamilies/GISP/MIPLIB. ImprovementradiuscontrolonincumbentnotNNconstructive. Currentevaluation_reinforce4lb.py27–38sharedcheckpointpathsanddatasetIDsindependentsupport."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/pandat8/ML4LB/tree/5600ca019e7833312dcbb2a0b3a9b0599426fc7d",
+      "locator": "Formal8pallscience/refsread,noexplicitseparateappendix. ManualpublisherHTML520/institution403/OpenReviewAPI403cached. OfficialZIP1508members1407filesnoscientificPDF/TeX/video/archive;twoecoleexampleipynbmarkdownmanuallyreadidentitygenericvendorbranching/configurationtutorialsnotarticleextras. READMEextendedpaperreferencesnoadditionalPDF; >31GBdatasetscontactonlynotmissingtheoreticalappendix."
+    },
+    {
+      "field": "code and version boundary",
+      "source_url": "https://github.com/pandat8/ML4LB/commit/5600ca019e7833312dcbb2a0b3a9b0599426fc7d",
+      "locator": "PrimarycommittedDate2026-11-11T23:05:20-05:00cached; SHA/inventorysaved. README1–188fullread; currenttitleRevisitinglocalbranchingwithamachinelearninglens andextendedsections/tpolicy/SCIPintegration. Evaluationscript1–109andmodels_rl1–115read;769pthnamesonly/nounpickle. Currentbudget/hardware/forkversionsnotassignedhistoricalAAAIwithoutsource."
+    },
+    {
+      "field": "visual checks",
+      "source_url": "https://cdn.aaai.org/ojs/20294/20294-13-24307-1-2-20220628.pdf#page=7",
+      "locator": "Actuallyviewformal2/4/5/7all6tables/Fig1/Alg1–2/formulas; cleanoriginalFig1plotcrop49,46,299,211. ExplicitnegativeMISrootgap.23vsbase.20, MIPLIBhybridfirstPI11.655vssrm10.891androotgap6.22vs5.22 retained."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Adopts bipartite variable/constraint features and related GNN representation for the radius regressor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            8
+          ],
+          "locator": "BodyRelatedWorkp2/FeatureDesignp4; exactGasseExactCombinatorialOptimizationGCNNbibp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Related learned decision making inside MILP solvers, specifically cut selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; completeTangICML2020title/pages9367–9376bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020)",
+      "description": "Contrasts instance-level neighborhood-size control with decomposition-based learned LNS over variable subsets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2Songdecompositionparagraph; exactGeneralLargeNeighborhoodSearchFrameworkarxiv2004.00422bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2019)",
+      "description": "Cites problem-specific learned vehicle-routing LNS as related neural optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; exacttitle/authors/arxiv1911.09539bibp8, noextensiontitleinference"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Related reinforcement learning for vehicle-routing optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; exactNazariVRParxiv1802.04240bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Cites attention-based routing as related learned optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; exactAMtitle/arxiv1803.08475bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Related graph-based neural combinatorial optimization; bibliography uses Dai-first arXiv identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; exactLearningCOAlgorithmsOverGraphsarxiv1704.01665bibp8 sameNeurIPSwork"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-search-in-local-branching",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Related policy-gradient neural combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "RelatedWorkp2; exactBelloNeuralCOwithRLarxiv1611.09940bibp8"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithfullformal8pagereview/allrefs/keyvisuals.",
+    "Migratedtogeneralist/improvementbyexplicitsinglemixedregressionandSC-onlyRLcrossnativeevidence.",
+    "Qualifiedhybridnegativecases,incumbent/classicalsolverdependency,offlinegridcostandincompleteconferencebudgetdescription.",
+    "Separatedlatest2026extendedreposettingsfrom2022science; eightliteralbody+bibinternalcitations."
+  ],
+  "reviewed_note_sha256": "6ef6d07c3cbc3b4b24584c67e2b3e73c0f2f8f3cff8ecced4c6d41f30b71b73f"
+}

@@ -1,0 +1,502 @@
+{
+  "version": 1,
+  "paper_id": "adversarial-nco-generalization",
+  "note_path": "studies/adversarial-nco-generalization.md",
+  "baseline_note_sha256": "57e66706aa1d684b87559011200b90b0294bf4230acdf77db0adbe52c6a62228",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2110.10942",
+      "version": "arXiv:2110.10942v2,21March2022,21pageswithintegratedscientificAppendicesA-K; positivelyidentifiedbyheader/history",
+      "retrieval_url": "https://arxiv.org/pdf/2110.10942",
+      "local_path": "research/import-272/nco-be1701945f.pdf",
+      "sha256": "038ba5f6e3f37041e9e0da3f740f35b508d8e48f4a25505416ab6181401d9d9b",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://raw.githubusercontent.com/johannaSommer/generalization-neural-co-solvers/main/ICLR22_poster.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/johannaSommer/generalization-neural-co-solvers/main/ICLR22_poster.pdf",
+      "version": "officialauthorrepositoryICLR2022scientificconferenceposter,onepage,matchingtitle/fiveauthorsandconferencefooter; readfully",
+      "local_path": "research/full-text-review/adversarial-nco-generalization/ICLR22_poster.pdf",
+      "sha256": "f9a6d5cbaed685b9dbc393d7ec1bfbe6d0cfe44854eebedaf56da63dee629163",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 16,
+      "notes": "Freshreadmainall9pages,repro/ethics,wholebibliographypp10-12andfullproofsA-C,PGD/SATdetailsD-Epp13-16. Actualarxivv2Mar21,2022identified. KeyProp2NOTexistsglyphcheckedvisuallytoavoidwrongOCRexists; soundnessconditionalonknownoptimalbaseandvalidsequentialinsertions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 21,
+      "notes": "ReadcompleteSAT/TSPpseudocodeandcomplexity, attackstep/projectionhyperparams, model-specificattacktransfer, inference/attack/Concordetiming, allsingle-stepandqualitativeSAT/TSPappendices. Complete21pagesincludingA-Kread. ProjectURLredirecttogrouphomechecked;nofalsecodeavailabilityclaim."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Readentirescientificconferenceposterfoundinpublicauthorrepository; samefiveauthors/title/ICLR2022, repeatsSAT/TSPattacksummaryandplots. Fine-grainedclaimsinnoteusecompletepaper, notposterabbreviations."
+    }
+  ],
+  "claims": [
+    {
+      "id": "soundframework",
+      "category": "contribution",
+      "statement": "DefinesefficienttargetupdatemapsforsoundSAT/TSPperturbations,startingfromlabelledinstances; doesnotfreeoriginalsupervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Eq1andcompleteSAT/TSPdefinitions/propositions"
+        }
+      ]
+    },
+    {
+      "id": "sat",
+      "category": "method",
+      "statement": "SATeditsretainknownwitnessliteralperclause;UNSATDELstrengthensnonemptyclauses; implementedADCappendsclausesandretainsoriginalUNSATformula.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Proposition1/fullproof andAppendixE EquationsE.1-E.3/AlgorithmsE.1-E.2"
+        }
+      ]
+    },
+    {
+      "id": "tsp",
+      "category": "method",
+      "statement": "Requiresknownoptimalbasetour andstrictminimuminsertionincrementamongeligiblepairs; sequentialnewpointsrecheckconstraint,invalidpointsexcluded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            14,
+            17,
+            18
+          ],
+          "locator": "Proposition2NOTexistsglyphvisuallyconfirmed,fullproof/Corollaries andAlgorithmF.1"
+        }
+      ]
+    },
+    {
+      "id": "existence",
+      "category": "method",
+      "statement": "Noaccuracyrobustnesstradeoffdiscussion assumesdeterministictargets/soundnessandsufficientexpressiveness/realizability,notpolynomiallearningofrestrictedmodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Section3andcompleteAppendixAargument"
+        }
+      ]
+    },
+    {
+      "id": "sat-results",
+      "category": "experiment",
+      "statement": "OnegradientstepreducesSATaccuracy79to26percent;adversarialfinetuningmodestlyimproves50-100accuracy/robustnessbutSATLIBdecreases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            19,
+            20
+          ],
+          "locator": "Figure3/Table1/AppendixIandactualbudget/trainingdetails"
+        }
+      ]
+    },
+    {
+      "id": "tsp-results",
+      "category": "experiment",
+      "statement": "DecisionTSPandgreedydecodedConvTSPdegradeunderupto5validinsertions;ConvTSP20gapexceeds2percentinreportedsetting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            17,
+            18,
+            21
+          ],
+          "locator": "Figures6-9/K.1-K.2 andexactmodel/attackprotocol"
+        }
+      ]
+    },
+    {
+      "id": "reference-assumption",
+      "category": "limitation",
+      "statement": "PaperexperimentaltextcallsConcordereferencenear-optimalbutProposition2requiresoptimal; notetheoryretainsstrongerconditionwithoutcertifyingallbaseinstances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8,
+            14,
+            18
+          ],
+          "locator": "Proposition2/fullproof vsSection6.2/AppendixFreferencewording"
+        }
+      ]
+    },
+    {
+      "id": "conventional",
+      "category": "experiment",
+      "statement": "PerturbedUNSATexamplesoftenfasterforGlucose/MiniSAT; difficultiesaremodel-specific ratherthan universalhardness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19
+          ],
+          "locator": "AppendixGTableG.1complete100sampletimingcomparison"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "AnalysisofseparateneuralSAT/decisionTSP/routepredictorswithlimitedfine-tuning,notonejointgeneralistsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            15,
+            17
+          ],
+          "locator": "Contributions,modelsandactualtraining/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Gradientattacksheuristic,requiremodelaccess andspecificsoundperturbationconstraints;fragilitydoesnotuniquelyprovearchitectureexpressivenessfailure.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            8,
+            9,
+            15,
+            18
+          ],
+          "locator": "Requirements/interpretation,adversarialtrainingexception,PGDlimitationsandTSPconstraintdetails"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://iclr.cc/virtual/2022/poster/7081",
+      "locator": "ExactposterlocatedviaofficialICLRDownloads2022, fetchedHTTP200andreadtitle/fiveauthors/posterstatus. PublisherPDFp1TUM/CISPAaffiliationschecked. RemovedunsupportedSimonmiddleMarkus to matchformalSimonGeisler; official2022yearretained."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://arxiv.org/abs/2110.10942",
+      "locator": "Primaryarxivhistorymanuallyopened: v1Oct21,2021 andv2Mar21,2022. Cached21pagePDFheaderpositivelyidentifies2110.10942v2Mar21,2022andformalICLR2022header; allpagesreadinclA-K. Noformalbyteidentityrequirement."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=vJZ7dPIjip3",
+      "locator": "Forumtool429 andbothlegacy/api2notes?forumattachmentAPIsHTTP403ChallengeRequiredError; savedownchecks. EveryexplicitAppendixA-Kscienceisintegratedinfullyread21pagearxivv2. Publicauthorrepoadditional1pagescientificICLRposterdownloaded,registeredandfullyread/visuallyinspected. Noidentifiedmissingseparatescientificappendix. Main/appendixproofs,algorithms,resultsandpostercheckedvisually."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/johannaSommer/generalization-neural-co-solvers",
+      "locator": "Manuallyopenedpublicrepositoryself-identifyingofficialICLR2022paperimplementationwithmatchingauthors;READMEprovidesSAT/TSPdata/train/attacks/configs andPyTorch1.10/CUDA11.4/PyConcorde. PaperoldprojectURLrequests200redirectstogroupgeneralhomepage, documented. NewCircuitSATrepoextensionnotmisreportedaspublishedexperiment."
+    },
+    {
+      "field": "citation identity",
+      "source_url": "https://arxiv.org/abs/1909.11830",
+      "locator": "Kurin2019oldtitleandabs1909.11830inPDFbibliographyp11matchesprimaryarxividentitymanuallycheckedearlierthisbatch, laterNeurIPS2020Graph-Q-SATtitle; edgeusesexistinggraph-q-satwithoutconflatingdistinctSATworks."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2110.10942",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-10-21; title on abstract page: Generalization of Neural Combinatorial Solvers Through the Lens of Adversarial Robustness. This date is preprint history, not formal publication. Cached research/full-text-review/adversarial-nco-generalization/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "attention-model",
+      "reference_label": "Kool, van Hoof and Welling (2019)",
+      "description": "Citesneuralrouting/optimalitygapliterature.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp11: Kool, van Hoof and Welling (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi, Laurent and Bresson (2019), arXiv:1906.01227",
+      "description": "DirectlyattacksConvTSParchitecturefromthiswork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp6; exactfullbibliographyentryPDFp11: Joshi, Laurent and Bresson (2019), arXiv:1906.01227"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "CitesgraphreinforcementlearningCO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp11: Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "Citespolicy-gradientTSPheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp11: Deudon et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "CitesneuralRLNCO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp10: Bello et al. (2016), arXiv:1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021), arXiv:2106.04927",
+      "description": "Citesbi-levelgraphoptimizationframework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp12: Wang et al. (2021), arXiv:2106.04927"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh, Matusevych and Weimer (2019)",
+      "description": "RelatedneuralCircuitSATwork,notnewpublishedattackexperiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp10: Amizadeh, Matusevych and Weimer (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li, Chen and Koltun (2018)",
+      "description": "DiscussesMISattackextensioncomplexity,notanevaluatedMISbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp15; exactfullbibliographyentryPDFp11: Li, Chen and Koltun (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "DirectlyevaluatesNeuroSATmodelandupstreamtraininggenerator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp4; exactfullbibliographyentryPDFp12: Selsam et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Poczos (2019)",
+      "description": "CitesneuralSATlocalsearchrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp12: Yolcu and Poczos (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "graph-q-sat",
+      "reference_label": "Kurin et al. (2019), Improving SAT solver heuristics with graph networks and reinforcement learning, abs1909.11830",
+      "description": "CitesoldarxivtitleofsameGraph-Q-SATwork; primaryidentityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp9; exactfullbibliographyentryPDFp11: Kurin et al. (2019), Improving SAT solver heuristics with graph networks and reinforcement learning, abs1909.11830"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "reference_label": "Cameron et al. 2020",
+      "description": "Neural SAT related work explicitly cites exact AAAI2020 four-author satisfiability-prediction title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read complete body citation paragraphs: Cameron et al. 2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Cameron et al. 2020"
+        }
+      ]
+    },
+    {
+      "citing": "adversarial-nco-generalization",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "Prates et al. 2019",
+      "description": "Actual DTSP attacked/evaluated baseline and paired ?2percent query setup; full five-author AAAI2019 decision-TSP identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Actually read complete body citation paragraphs: Prates et al. 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Prates et al. 2019"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedwitness/UNSAT/TSPinsertionconditions andcheckedNOTexistsglyph, exacttargetupdatesandheuristicattacklimits.",
+    "Distinguishedoriginaloptimalityassumptionfromexperimentalnear-optimalreferencewording andplanarEuclideangeometryfromarbitrarymetrics.",
+    "AddedactualSAT/TSPprotocols,model-specificconventionalsolvertiming,modestfine-tuninggainsandSATLIBexception.",
+    "RecoveredverifiedofficialcodeURLandaddedscientificposterassource; oldprojectredirectdocumented.",
+    "Qualifiedno-tradeoffclaimtorealizableexpressivemodelsanddeterministictargets, notunrestrictedtrainingoruniversalarchitecturefailure.",
+    "Verified11existinginternalcitations,includingMISextensionversusactualbenchmarkandGraph-Q-SATtitleidentity. Study/analysisretained,no scope migration.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2b8ebe1eef9eec25888ddec5fb76346789cbe46815ac98fdbecf4f6941f47e8b"
+}

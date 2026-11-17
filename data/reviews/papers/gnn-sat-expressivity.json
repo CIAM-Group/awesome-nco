@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "paper_id": "gnn-sat-expressivity",
+  "note_path": "studies/gnn-sat-expressivity.md",
+  "baseline_note_sha256": "34bf8acaca3b523abb34c081b04d7cd1f4662d8170950d8f77299a8fbd0264f5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cd52ac59cd8ba77478d69304da1149e5-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cd52ac59cd8ba77478d69304da1149e5-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-bbb9fea893.pdf",
+      "sha256": "ef4ecb6584fe15c7cc3db810f32b5eae3e538e390cd7b71047839af9e2f9d649",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal2authorsETH/titleICLR2026, SAT/LCG/LCN withnegationlinks and MPNN/WL/kWLdefinitions/convention. Mainhierarchy language must useforallfixedk existSAT/UNSATpairs,sizeO(k), not onepairindistinguishableat everyunboundedk; checkformaltheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read losslessLCNvsLCGlossy representations, relatedSATapproaches/complexitydistinction, regular3SAT eachLITERAL3occurrences, theorem5.3quantifiednWLpairswithO(n)variables andpartialassignmentLemma5.4 floor(k/2)-1; parentfullhierarchywording notliteralallkfixedpair."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read partialassignmentCorollary, planar4WL versusSATcomplexity, exactrandomLIGgeneratorTheorem6.3 probability1-n^-1/7; empiricalnecessary-onlyequalcolorliteralconstraint test, fullTables1-2/results448SATcompetition/234passtest69families38fail,2020-2025under10MB. Not trainedGNNsolveaccuracy; allsourceformulasSAT,unsatmeansaugmentedconstraints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read reproducibilitystatement and bibliographyA-T (CFI/WL/planarityproofsources, G4SATBenchTMLR2024, NeuroSAT, SATformer/NeuroCore etc); distinguish peerreviewvenueeligibility from scientificcitation catalog. Complete officialZIP40members codeonly README/requirements read, noPDF."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read fullremainingbibliography andAppendixA concreteLCGisomorphismSAT/UNSATcounterexample, VCGsignflipinvarianceissue; AppendixB CFIgadgetconstruction/Dclauses/negationtwist/separatorcondition/orientationmapping. Allpages13-15read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read complete orientationparity lemmasB7-B10/fullCFITheorem5.3proof, Tseitin definition and pebblegamesB12/B13 proof. Partialassignmentresult labelsoriginalLCNwithtruthvalues, not fullCDCLsimplification/propagation; correspondenceexistence not allassignments. Keep precisehierarchyand sequentialscope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read fullGIcompleteness reduction, 3regularSATliteraldegree reduction/gadgetproof, randomLIGpositiveTheoremE1-E2/6.3 proof, expressivitynotNPhardness AppendixF, actuallarge3SATgenerator4.258to4.158 and AppendixG timeouts72additional1hour. Preserve evaluated448vsadditionaltimeouts distinction pending fulltables."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read everyrow fullTable3 competition andTable4 random: 448/234 totals,72additionaltimeouts; systematic59round entries noted for iterationcap check; PSomittedgenerationissues, captionsalloriginalSAT. Full24pages/A-G andbibliographycomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "lossless",
+      "category": "method",
+      "statement": "Typed literal-negation edges makeLCNlosslessuptoformula isomorphism; ordinary unlabeledLCGcanconflateSATandUNSAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13,
+            14
+          ],
+          "locator": "Observation3.1 and completeAppendixAcounterexample"
+        }
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "category": "contribution",
+      "statement": "For eachchosenWLorderk, CFI-derived3SATpairsO(k)size haveoppositesatisfiabilityandkWL-indistinguishableLCNs; not onefinitepairforallunboundedk.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Theorem5.3 andcompleteAppendixB construction/parity/expanders;exactquantifiers"
+        }
+      ]
+    },
+    {
+      "id": "assignments",
+      "category": "method",
+      "statement": "Anyassignmentofatmostfloor(k/2)-1variableshascorrespondingtruthlabeledLCNonotherformula remainingWLindistinguishable; scoped tolabels,notfullCDCLreasoning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            17,
+            18
+          ],
+          "locator": "Lemma5.4/B12/B13 and Corollary5.5"
+        }
+      ]
+    },
+    {
+      "id": "families",
+      "category": "contribution",
+      "statement": "Equal-size3literalregular3SATisNPcompleteand1WLindistinguishable; planar4WLidentification and specificuniformrandomLIGprobability1-n^-1/7 claims have separateconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            19,
+            20,
+            21
+          ],
+          "locator": "Theorem5.1/Observation5.2/Theorem6.1/6.3 andfullAppendicesD-F"
+        }
+      ]
+    },
+    {
+      "id": "diagnostic",
+      "category": "experiment",
+      "statement": "AllsourceformulasSAT; diagnosticadds equaltruthconstraintswithinliteralWLclasses and exactSATchecks. Passingisnecessarynot sufficient for learnedprediction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Section7 setup andalltablecaptions/fullresults"
+        }
+      ]
+    },
+    {
+      "id": "counts",
+      "category": "experiment",
+      "statement": "Articlecompetition2020-2025under10MB:234of448passdiagnostic,38of69familieshavefailures,72additionalevaluation1htimeouts; no GNNsolveaccuracy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            21,
+            22,
+            23
+          ],
+          "locator": "Exact counts andtimeoutsentenceAppendixG;complete extendedtable"
+        }
+      ]
+    },
+    {
+      "id": "iteration-cap",
+      "category": "limitation",
+      "statement": "Archivecode recordsconvergedseparatelybutcanreturnsatFalseatnonstableiterationcap; distinguishunresolvedcapfromstableWLassignmentobstruction; printed59rowsaloneinsufficient.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            21,
+            22,
+            23
+          ],
+          "locator": "Scientificstabilizationcriterion andtables;independentlyreadpublishercodeWL_test.py/main.py finitecap/convergedflags"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "RepresentationalSATtheoryandstructuraldiagnostics, notnewtrainedneuralSATsolver; randomIDs/additionalfeatures/actualCDCLoperations changetheWLsetting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            6,
+            8,
+            9,
+            10,
+            21
+          ],
+          "locator": "Specifiedarchitecture/features/partialassignmentlabels/necessary-onlytest andconclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cd52ac59cd8ba77478d69304da1149e5-Abstract-Conference.html",
+      "locator": "OfficialICLR2026proceedings exacttitle/twoauthors/formalyear manuallyopened; PDFp1bothETHZürich verified. ExactApr20publicationday unsupported here, replacedbyverified2026year."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cd52ac59cd8ba77478d69304da1149e5-Supplemental-Conference.zip",
+      "locator": "ManuallyfollowedpublisherSupplementalZIP;downloaded/inventoriedall40members,nonePDF/nestedscientificZIP. Code/exampleCNFs only. README/requirements/main.py/WL_test.py/formulas.pyreadinfull. All24publisherPDFpages/entirebibliography/fullA-G/everytable rowread;threevisualcontactsheetscovertheorems/gadgets/proofs/tables. Noidentifiedmissingscientificattachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/sakupeltonen/sat-expressivity",
+      "locator": "ExplicitPDFp10authorURL andlivepublicrepoREADME manuallyopened;identity/ICLR26andexperimentpurposeconfirmed. Officialarchivecode showsNetworkXtypedLCNhashing,CadicalaugmentedCNFtest,iterationcap/convergedflag,8round/1MBdefaults. No benchmarkrerun."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cd52ac59cd8ba77478d69304da1149e5-Paper-Conference.pdf",
+      "locator": "Publisher24pagePDF identity/versionchecked;formalbody includesSATcompetition2020-2025ratherthanabstractonly2024. Actualavailablefulltextused;no fabricatedpublicationday. Allscienceandreferencescomplete."
+    },
+    {
+      "field": "iteration cap reproduction",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/cd52ac59cd8ba77478d69304da1149e5-Supplemental-Conference.zip",
+      "locator": "WL_test.py iter_converged returns(n_iter-1,False)ifnotstable;find_critical_itercanstillreturncriticalNone/satFalse, butseparateconverged fieldpreserved. main.pyprintsnotconverged yetalsounsatsummary. Noteonlywarnsretainingflag;doesnotdeclarespecifictablecaseswrongwithoutperinstancedata."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cd52ac59cd8ba77478d69304da1149e5-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-20; cached evidence research/full-text-review/gnn-sat-expressivity/supplement-landing.html. Conference edition year 2026 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/cd52ac59cd8ba77478d69304da1149e5-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2026-04-20; primary cachedHTML research/full-text-review/gnn-sat-expressivity/supplement-landing.html; citation_title=['On the Expressive Power of GNNs for Boolean Satisfiability']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-sat-expressivity",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019),arXiv1802.03685",
+      "description": "UsesNeuroSATassinglebitsupervisionSATmodelandlosslessnegationedgeexample.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp4;exactbibliographyentryPDFp12:Selsam et al. (2019),arXiv1802.03685"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-sat-expressivity",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Póczos (2019)",
+      "description": "DiscussesGNNlearnedvariablechoiceforlocalsearchSAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13
+          ],
+          "locator": "ExplicitbodycitationPDFp4;exactbibliographyentryPDFp13:Yolcu and Póczos (2019)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded losslessencoding,actualforallfixedorderquantifiers,partialassignmentlabels andspecificpositive-familydomains.",
+    "ReplacedambiguousGNNsolvingcountswithnecessarydiagnostic234of448andseparate72timeouts;alloriginalSATandaugmentedunsatdirectionclear.",
+    "Checkedactualcodeandqualifiednonconvergediterationcaps/benchmarkdefaults;didnotinferparticular59rowerrors.",
+    "Formaldateyearonly/supplementcodeonly/full24pages/2internalcites verified;no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9a70b9c65ef08d5696c8192be24c1e7098bfa75ba9dc296fb5a64c7423fec3c8"
+}

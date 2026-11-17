@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "paper_id": "gnn-milp-expressivity",
+  "note_path": "studies/gnn-milp-expressivity.md",
+  "baseline_note_sha256": "5e592e5222de81a95aa5a73217f8fee062e7496121e4c17f85b76f56481f2832",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2210.10759",
+      "version": "arXiv:2210.10759v2,25May2023,31pageswithintegratedAppendicesA-D; five-authorversion,PDFinternaldate29May2023,identifiedbyheader/history",
+      "retrieval_url": "https://arxiv.org/pdf/2210.10759",
+      "local_path": "research/import-272/nco-0a10f32737.pdf",
+      "sha256": "36bcb1bb1558fa0ed88d3c14101839b75a5ffe717e6f2624b2e5103c4fcaf90d",
+      "pages": 31,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 20,
+      "notes": "Readmain1-13all46referencespp13-15andAppendixAthroughp20. Trackedrestrictedweighted-sumGNNclass/fixedm,n, unfoldingallvertexcolors, finite-datasetversusfinite-measureexceptional-setclaims, finiteboundsforsolutionexistence andauthor/versiondifference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 31,
+      "notes": "ReadallremainingAppendicesA/B/CproofsandAppendixD experiments, exactcanonicalsolutionmap/domain, randomfeatureindependenceandpermutationstatements, allgenerators/hyperparams/train-vs-testresultsandlastauthoraffiliations. Complete31pagesread. Identifiedfixed-targetrandomsolutionTheorem5.3symmetrygap, separatedfromrandomfeasibility/objectivecapacity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "counterexample",
+      "category": "contribution",
+      "statement": "Specifiedcontinuousweighted-summessagepassingGNNcannotdistinguishfeasiblebinarysix-cyclefrominfeasibletwotriangleswithidenticalfeatures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Architecturedefinition,WLclass/Theorem3.1andfullLemma3.2proof/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "unfoldable",
+      "category": "method",
+      "statement": "Unfoldabilityseparatesallverticeswithinbipartitions; finite-datasetcapacityandfinite-measureexceptional-setresultsareexistenceclaimswithfixedm,n.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "locator": "Definition4.1/A.1,Theorems4.2-4.4/A.2-A.4andcompleteproofs"
+        }
+      ]
+    },
+    {
+      "id": "selector",
+      "category": "method",
+      "statement": "Canonicalequivariantoptimal-solutionselectorrequiresfeasiblefiniteboundunfoldableinstances; finiteinfimumalonecanbeunattained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            26,
+            27,
+            28,
+            29
+          ],
+          "locator": "ExactdomainDsolu\\Dfoldable,irrationalexample,sortingmapandlexicographicselector/measurabilityproof"
+        }
+      ]
+    },
+    {
+      "id": "random-capacity",
+      "category": "contribution",
+      "statement": "IIDcontinuousIDsbreakinitialfeaturecollisions; randomfeasibility/objectivecapacityquantifiedoverfiniteD, whileexperimentsreuseonefixedIDvectorandfixedsize.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            11,
+            22,
+            23,
+            24
+          ],
+          "locator": "Theorems5.1-5.2 andfullAppendixBproofs;practicalIDdiscussion"
+        }
+      ]
+    },
+    {
+      "id": "fixed-target-gap",
+      "category": "limitation",
+      "statement": "Curatoranalysis:printedv2Theorem5.3fixedtargetindependentIDsdoesnotextendtosymmetrictwo-variablebinarysum1instance;exchangeabilityboundsfixedtargethitprobabilityby1/2atdelta1/4.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            22,
+            23,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Theorem5.3;AppendixBtargetdefinition/equivariance/A10(i)assertion;originalselectorlimiteddomain. Finitefactscheckedinowncache;probabilityargumentanalyticalandparentindependentlyreviewed."
+        }
+      ]
+    },
+    {
+      "id": "training-fit",
+      "category": "experiment",
+      "statement": "Mainfiguresaretrainingfiton1000unfoldable/1000foldableconstructed6constraint20variabledatasets,notheldoutMILPbenchmarksolving.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12,
+            29,
+            30
+          ],
+          "locator": "Section6explicittrainingonlysentence,Figures3-4andactualgenerators/MLPsettings"
+        }
+      ]
+    },
+    {
+      "id": "generalization",
+      "category": "experiment",
+      "statement": "AppendixDsamegenerator1000testset:feasibilityerror.289/.104/.022for10/100/1000training;1000sampleobjectiveMSE1.1e-6,solutionMSE.073.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            30,
+            31
+          ],
+          "locator": "CompleteAppendixD/Table1-3,dim8andfixedIDprotocol"
+        }
+      ]
+    },
+    {
+      "id": "uniform-cost-tie",
+      "category": "limitation",
+      "statement": "Curatorqualification:AppendixDuniformpositive.01costdoesnotremoveallsolutionties;binarysixcyclehas2alternatingassignmentsbothcost.03.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            30
+          ],
+          "locator": "Exactgeneratorandclaimedlabel-independencediscussion;enumerated64binaryassignmentswithFractioninowncache"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Representationtheorywithseparatelytrainedtargetpredictors;doesnotprovidepolynomial-timeMILPsolver,certifiedfeasibleoutputorcross-sizegeneralistcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            9,
+            10,
+            11,
+            12,
+            30,
+            31
+          ],
+          "locator": "Statedexistence/targetdefinitionsandcompleteexperiments"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Architecture/featureclassandmeasuretargetconditionslimitclaims;foldabilitynotsameasuniversalpredictionfailure;smallMSEnotexactfeasible/optimalcertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            16,
+            30,
+            31
+          ],
+          "locator": "RestrictedGNNdefinition,conditionaltheorems,real-valuedapproximationcriterionandactualsolutionMSE"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://iclr.cc/virtual/2023/poster/10797",
+      "locator": "OfficialICLRDownloads2023exactposterlink10797followedviarequestsHTTP200;formalposteraccept/title/fourauthorsZiangChen,JialinLiu,XinshangWang,WotaoYinread. Formalmetadatafourauthorsretained. Readscientificarxivv2andcurrentauthorrepohavefifthJianfengLu; notedexplicitversiondifference. PDFp31Duke/Alibabaaffiliationschecked;2023formalyearretained."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://arxiv.org/abs/2210.10759",
+      "locator": "Primaryarxivhistorymanuallyopened:v1Oct19,2022;v2May25,2023. Cached31pagePDFheaderpositivelyidentifies2210.10759v2May25,2023;internaldateMay29alsorecorded. All31pagesincl46referencesandAppendicesA-Dread. Noformalbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=4gc3MGZra1d",
+      "locator": "Forumverificationchallengeandbothlegacy/api2notes?forumattachmentAPIchecksreturned403ChallengeRequiredError,savedowncache. EveryexplicitscientificAppendixA-Dreferenceintegratedinthecomplete31pagev2,allproofs/generators/generalizationtablesread;noidentifiedmissingseparatescientificattachment. Threecontactsheetsvisuallycheckedcounterexample,theoremdomains,fixedtargetrandomproofandcanonicalselector,allnumericaltables."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/liujl11git/GNN-MILP",
+      "locator": "ExplicitPDFp11authorURLandpublicrepositorymanuallyopened. READMEseparatefea/obj/soldata/train/testscripts,cmds.txtreproductioninstructionsandTensorFlow2.4.1/PySCIPOpt4.2.0/CUDA10.1/V100environmentread. Currentrepobibhasfiveauthorsmatchingv2,formalposterfourauthorversiondifferencepreserved.Numericalexperimentsnotrerun."
+    },
+    {
+      "field": "independent curator checks",
+      "source_url": "https://arxiv.org/pdf/2210.10759v2",
+      "locator": "Reviewerresearch/full-text-review/gnn-milp-expressivity/curator-symmetric-solutions.pyexactlyenumerates2binarysum1optima,distance_squared2>4delta_squaredatdelta1/4,and2binarysixcycleoptimauniform.01cost.03. Fixed-targethittingprobability≤1/2derivedbyexchangeabilityofIIDIDs/jointequivariantGNN,notempiricalsimulation. Note limitscriticismtov2Theorem5.3/AppendixBtargetdefinitionanduniformcostuniquenessclaim;notrandomfeasibility/objectivetheory."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2210.10759",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-10-19; title on abstract page: On Representing Mixed-Integer Linear Programs by Graph Neural Networks. This date is preprint history, not formal publication. Cached research/full-text-review/gnn-milp-expressivity/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "gcnn-branching",
+      "reference_label": "[17] Gasse et al. (2019)",
+      "description": "UsesbipartiteMILPencodingandciteslearnedbranchingaspracticalmotivation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "ExplicitbodycitationPDFp2;exactfullbibliographyentryPDFp14: [17] Gasse et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "general-lns-ilp",
+      "reference_label": "[41] Song, Yue andDilkina (2020)",
+      "description": "Citeslearneddecomposition/large-neighborhoodsearchmotivation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            15
+          ],
+          "locator": "ExplicitbodycitationPDFp1;exactfullbibliographyentryPDFp15: [41] Song, Yue andDilkina (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "hybrid-branching",
+      "reference_label": "[20] Gupta et al. (2020)",
+      "description": "CitesGNN-basedstrongbranchingapproximation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "ExplicitbodycitationPDFp2;exactfullbibliographyentryPDFp14: [20] Gupta et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "tree-mdp-branching",
+      "reference_label": "[38] Scavuzzo et al. (2022), arXiv:2205.11107",
+      "description": "Citesreinforcementlearningbranchingstrategies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "ExplicitbodycitationPDFp2;exactfullbibliographyentryPDFp15: [38] Scavuzzo et al. (2022), arXiv:2205.11107"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "learning-to-cut",
+      "reference_label": "[42] Tang, Agrawal andFaenza (2020)",
+      "description": "Citeslearnedcutselectionstrategies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            15
+          ],
+          "locator": "ExplicitbodycitationPDFp1;exactfullbibliographyentryPDFp15: [42] Tang, Agrawal andFaenza (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-milp-expressivity",
+      "cited": "gnn-approximation-ratios",
+      "reference_label": "[36] Sato, Yamada andKashima (2019)",
+      "description": "RelatesrepresentationtheorytopriorgraphCOapproximationanalysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "ExplicitbodycitationPDFp2;exactfullbibliographyentryPDFp14: [36] Sato, Yamada andKashima (2019)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedrestrictedarchitecture/counterexample,unfoldability,finiteversusfinite-measurecapacityandcanonicalboundedsolutiondomain.",
+    "Separatedrandomfeasibility/objectiveclaimsfromprintedfixed-targetrandomsolutionTheorem5.3gapandindependentminimalexchangeabilitycounterexample;notwholesaletheoryrejection.",
+    "RecordedmaintrainingfitversusAppendixDheldouttesting,actualdatasets/errorsandfixedID/checkpointscope;MSEnotfeasibilitycertificate.",
+    "Qualifieduniformpositivecostclaimwithexactsixtcycledegeneracycheck;didnotdeclareuniquesolutiontargets.",
+    "Keptformal4authormetadataanddocumented5authorarxivv2/currentcodeversiondifference;identifiedarxivdateandinternaldateprecisely.",
+    "Readall31pages/46references/A-Dandregistered403supplementchecks;6exactinternalcitations,study/theoryretained,no migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9ec01c8069c72c2b1af9a916e1569cce89b835391c14d7898bcc26725907af4a"
+}

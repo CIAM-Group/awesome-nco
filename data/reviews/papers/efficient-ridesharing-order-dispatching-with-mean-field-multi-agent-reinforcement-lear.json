@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "paper_id": "efficient-ridesharing-order-dispatching-with-mean-field-multi-agent-reinforcement-lear",
+  "note_path": "specialist/efficient-ridesharing-order-dispatching-with-mean-field-multi-agent-reinforcement-lear.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "e782854e0e5db3f933d7a60e7709007485021a889d0a0a5f51feb9fb45891e69",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1145/3308558.3313433",
+      "retrieval_url": "https://tonyzqin.wordpress.com/wp-content/uploads/2020/09/li-www19.pdf",
+      "version": "Identifiedauthor-hosted12pageWWW2019layoutmanuscriptwithcorrecttitle/DOI/9authors;author/conferencebyline9versuspublisherdeposit8disclosed;allscienceandrefsread.",
+      "local_path": "research/full-text-review/efficient-ridesharing-order-dispatching-with-mean-field-multi-agent-reinforcement-lear/paper.pdf",
+      "sha256": "2c0bb8090c888a5affb54ad2fd49c570c5ab8814163e0b67886ab54f8e90b78b",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read nine-author WWW formal byline/UCLDiDi; IOD/COD variable action ranking and meanfield neighborhood population approximation, onlineconstructive driver-orderallocation not incumbentediting. Driver ownincome+destinationdemand-supplypotential and pick-updistance regularizers; no cancellationduringtrip. Need theoremassumptions next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Full IOD/COD Fig2Alg1equations5–16read. Candidatewiseactor rankingBoltzmannMforward passes; criticmeanfielddriver/orderneighbor ratio trainonly; asynchronous immediate rechoose aftercollision. Theorem2.2fullyobservableLINEARfixedfeatures/infvisitsboundedrewardGLIEstageequilibassumptions/RobbinsMonrofiniteX/smallK/(2T), not nonlinearPOMDPactorcritic guarantee. ProofODE conditional, no new counterexample claimed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fullyread grid3weeks7kdrivers136kdispatch events wording perstep retained asreported/notvalidated;10mingrid1.2kmnopickup/cancel,20episodes/bestTRAINperformance/5testseeds/50percentbootstraptrain32?notinvent. Networkscritic51225612864actor25612864/lr1e-4,1e-3/batch2048/gamma.95/replay500k/3kupdate/temp1to.01/alphaDP.01. COD100testADI+7.78vsRAN/OOR+5.35 notppinferred;REVbetterlatehours. Separate10percenttrainablationINDDP+2.97notpoolTable1. Coordinatefiveweekdays350k events9kdrivers/cancellations/futuredays/batch200/pickupalpha-.1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "All Table5/relatedwork/conclusion45refs read. Coordinate400ktrainiterations/3weekdaysfuturetest/CODADI+.32withoutcancel+.06with vsHOD but AAT+5.49percentWORSE;notuniversalbest. Nohardware/walltime orfault-injectioneval. Ref19explicit2018arxivfleetmanagement1802.06444;refs3841notcatalogue do notforce. Noappendixpromise."
+    }
+  ],
+  "claims": [
+    {
+      "id": "method",
+      "category": "contribution",
+      "statement": "IOD ranks varying ordercandidates;COD augments trainingcritic with neighborhoodmean response.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections2.2–2.3;Fig2Alg1"
+        }
+      ]
+    },
+    {
+      "id": "allocation",
+      "category": "classification",
+      "statement": "Sharedhomogeneous drivers solve one onlineallocation task, with no neural incumbent matchingediting;specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            8
+          ],
+          "locator": "MDP,asynchronousretry,parametersharing"
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "limitation",
+      "statement": "Theorem2.2assumes fullobservation/linearfeatures/infinitevisitationGLIEequilibrium/smallLipschitz, not neuralPOMDP convergenceguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "§2.4Theorem2.2/proof/nonlinearremark"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "GridCODADI+7.78%/response+5.35%normalizedtoRandom;coordinateADI+.32/.06%AAT+5.49%worsevsHungarian.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables1–5;separate protocols"
+        }
+      ]
+    },
+    {
+      "id": "execution",
+      "category": "method",
+      "statement": "Candidatewiseactor scores feed Boltzmannselector;meanfieldcritic istrainingonly with asynchronousretry afterinvalidassignment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations6?11;Algorithm1;?2.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions",
+      "source_url": "https://tonyzqin.wordpress.com/wp-content/uploads/2020/09/li-www19.pdf",
+      "locator": "p1actualauthor/conferencebyline9 includingZhichenGong;nocorrespond/equalmarkers. PublisherCrossref8omitsGong;ambiguityexplicitin summary/note."
+    },
+    {
+      "field": "authors conference corroboration",
+      "source_url": "https://archives.iw3c2.org/www2019/media/TheWebConf2019-Handbook.pdf",
+      "locator": "ActuallyinspectedcompleteentryPDFpp61–62bothlist9includingGong;SHA256=063565259fcae39ad6fa243263d2248fabd238440e7db14bff8345661aa9f418;onlymetadataentryread,notwholehandbook/scientificcoverage"
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3308558.3313433",
+      "locator": "published-online/print2019-05-13;pp983–994"
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/1901.11454",
+      "locator": "Primaryhistorysaved:solev1Jan31_2019;noarxivPDFreadingclaim"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://tonyzqin.wordpress.com/wp-content/uploads/2020/09/li-www19.pdf",
+      "locator": "All12manuscriptpages/45refschecked,noexplicitnecessaryappendixpointer;ACM403saved;author/publiccode/suppsearchesnoidentifiedspecificrelease. Fullmlii/mfrlREADMEread:separateICML2018Ising/battlenotthisCODcode."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://tonyzqin.wordpress.com/wp-content/uploads/2020/09/li-www19.pdf",
+      "locator": "OriginalFig2p4Rect50,45,560,267@4x;actualviewpubliccropandfullmethod/theorem/all5tables/keyplots"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "efficient-ridesharing-order-dispatching-with-mean-field-multi-agent-reinforcement-lear",
+      "cited": "efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning",
+      "reference_label": "[19]",
+      "description": "Explicitgrid-simulator source, actual2018arxiv1802.06444matchesformalKDDrepresentative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "§3.1.1Environment;References[19]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Disclosedauthor+conference9versuspublisherCrossref8bylineambiguity;noinaccessibleformalPDFclaim.",
+    "ResourceAllocation/constructive reflectsactualdriver-orderactions;theoremdoesnotguaranteefinite nonlinearactorcritic."
+  ],
+  "reviewed_note_sha256": "a5e50d8a661ff160a86d0ead1dddec2899b3658e2f94d22b10823ec147578f36"
+}

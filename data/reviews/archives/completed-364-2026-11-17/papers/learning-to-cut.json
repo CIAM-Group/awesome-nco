@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-cut",
+  "note_path": "generalist/learning-to-cut.md",
+  "baseline_note_sha256": "154934ca41b59c11eff8b4abf35ee6549d31bf6b430ded93a309bf7b5e2cf784",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v119/tang20a/tang20a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v119/tang20a/tang20a.pdf",
+      "local_path": "research/import-272/nco-4ec1bda4ee.pdf",
+      "sha256": "5066629352e55cbd1a38ee284707676f98d7ea5a7495f266167a307be36a69fb",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v119/tang20a/tang20a-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v119/tang20a/tang20a-supp.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/learning-to-cut/supplement.pdf",
+      "sha256": "96e5fd229471697b3ba974ff4416e244711bcd38a2b4b391e701b004c7fccd95",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exactIPpureintegerGomorycutsemantics, finiteconvergencerequiresappropriatecutselectionnotarbitraryneuralchoices, IGCoptimaloracleonlyevaluationnottraining, B&Cbackground andclaimedcrossproblemgeneralization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullMDPstate,candidateGomoryactionrewardLPboundincrease, attentiondotmeanrownetwork andLSTMvariablecountencoder, ESgaussiangradients, greedytestactions, numericalinvalidcutissue20percentandempiricalearlystopremedy; small/mediumdatasetsandT50/250IGCmetrics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read completeTables3–4 Figures3–6, explicitonepackingpolicy→largerMaxCutcrossclassreuse, simplifiedB&C10cuts/nodeand95percentgapnodebudgetmetrics, knapsackcutcriteriaressemblance notdiscoveryproof, runtimeandtrainingqualifications."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullremainingreferences; manualmatchKool2018AttentionSolvesYourTSPtoattention-modelandduplicateDai/Khalil2017entries tosamecatalogueID."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read exactslackprojectionalgebra, all4nativeIPformulations/generators andsizes, fixededgeMaxCut sampling andweights, packingcanonicalminnonnegativeobjectivewouldbetrivialsignspecificationissue, all4baselinecutrules."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allhyperparameters two-layer64attention LSTM10 onlygeneralizationvsfixedIGCnetwork, ESAdam0.01sigmas5planningtrajectories60vCPU, exactB&Cmostfractional/FIFO/residualgap1e4stop versus95percentplotmetric, H5eta.001numericalstop heuristic."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read everyliftedcovercriterion1–3 andloosenesses/non-equivalence, knapsacktraining100versusmain80discrepancy, allFigure7largeB&C25percentpackingversus95percentotherthresholds, anddistributedEScommunicationanalysis."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTable5largeB&CIGC andTable6absoluteCPUselectiontimings, conditionalthreshold-achievingTable7runtimeincludingMNVMaxCut95percentvsRL100, training64vCPUversus60specdiscrepancy, all18pagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cut",
+      "category": "contribution",
+      "statement": "RLpolicyselectsGomorycutswithLPbound-improvementreward andattention/LSTMparameterization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Evolutionstrategiesoptimizepolicyreturns; greedytestingplusnumericalearlystopdiffersfromtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.3–3.4"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Same smallpackingpolicytransfersto10XlargerMaxCutwithoutretraining; maintaskmodelsareseparatetraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Experiment3Figure4andsuppA4architecture distinction"
+        }
+      ]
+    },
+    {
+      "id": "metric",
+      "category": "experiment",
+      "statement": "IGCisdualgapclosureusingintegeroptimumreference; fixedcutsandB&Ctargetbudgetsareseparatefromruntime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            8
+          ],
+          "locator": "Equation2Tables1–4"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "category": "experiment",
+      "statement": "Reportedthreshold-runtimecomparisonconditionsonsuccess,andMNVMaxCut95percentbeatsRL100percent.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "AppendixGTable7"
+        }
+      ]
+    },
+    {
+      "id": "numerics",
+      "category": "limitation",
+      "statement": "H5eta.001teststoppingeliminatedobservedinvalidcutsbutdoesnotprovecertifiedcutvalidity.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "AppendixC"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v119/gh-pages/_posts/2020-11-21-tang20a.md",
+      "locator": "Officialfrontmatterdateandissueddateparts2020-11-21;ICML2020PMLR119pp9367–9376"
+    },
+    {
+      "field": "scope",
+      "source_url": "http://proceedings.mlr.press/v119/tang20a/tang20a.pdf",
+      "locator": "Experiment3pp7–8Figure4samepackingtrainedpolicyonlargerMaxCutwithoutretraining; distinctperfamilymodelselsewhere"
+    },
+    {
+      "field": "problems",
+      "source_url": "http://proceedings.mlr.press/v119/tang20a/tang20a-supp.pdf",
+      "locator": "A2packing/binarypacking/productionplanning/maxcut andD10itemknapsack"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v119/tang20a.html",
+      "locator": "ManuallycheckedHTMLSupplementaryPDFanchor andofficial8pageA–Gsourcefullyread"
+    },
+    {
+      "field": "code_availability",
+      "source_url": "https://proceedings.mlr.press/v119/tang20a.html",
+      "locator": "Noauthor-confirmedcodelinkfoundinpublicationrecordorfullyreadpaper/supplement; noofficialcodeclaimed"
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/abs/1611.09940",
+      "locator": "neural-combinatorial-optimization: Title Neural Combinatorial Optimization with Reinforcement Learning, same exact five authors, v3 January12,2017; target note primaryarxiv same ID. Source bibliography abbreviates title but full author tuple/year and neural policy TSP context identify same work; target workshop/reference inclusion is unchanged."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-cut",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.(2015)",
+      "description": "Directneuraloptimizationprecedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-cut",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.(2017)",
+      "description": "paper p9 Bello,Pham,Le,Norouzi,Bengio2017 Neural combinatorial optimization. Source bibliography abbreviates title but full author tuple/year and neural policy TSP context identify same work; target workshop/reference inclusion is unchanged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-cut",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al.(2017); Khalil et al.(2017)",
+      "description": "SamegraphRLpaperlistedtwiceunderpreprintandproceedingsauthororder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            9
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-cut",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.(2018)",
+      "description": "Graph-guidedcombinatorialsearchprecedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-cut",
+      "cited": "attention-model",
+      "reference_label": "Kool and Welling(2018)",
+      "description": "SamearXiv1803.08475underprevioustitleAttentionsolvesyourTSP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "MovedtogeneralistonlyforexplicitsharedpackingtoMaxCuttransfer; retainedIDandupdatedpath/hash.",
+    "Full10+8pageauditwithnumericalvaliditylimitsandnon-universalruntimecounterexamples.",
+    "SeparatedIGCboundmetric, cutbudget/B&Cnodebudget andcertificateclaims.",
+    "Recordedpackingobjectivesignandappendixcounts/hardwarespecificationdiscrepancies.",
+    "Retainedpublisher-issued2020-11-21fromofficialPMLRsource, distinctfromconferenceperiod."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f0dbef65c422599a1994bd8bd25e089b1418de1d374b504c61a203aacbd85050"
+}

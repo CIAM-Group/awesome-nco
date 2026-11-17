@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "paper_id": "gms-multigraph-routing",
+  "note_path": "specialist/gms-multigraph-routing.md",
+  "baseline_note_sha256": "1ec53229fd3cf9a28149d974fcf4180acbf6c405f9a87043ac4f182b90fbc563",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7e0c50ca569760d0b9da9149db6a727f-Paper-Conference.pdf",
+      "version": "Formal ICLR2026 34pages including complete References andAppendicesA–H all freshly read",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7e0c50ca569760d0b9da9149db6a727f-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-d8fd030a58.pdf",
+      "sha256": "56856a7e752eb82a3d0870096598fc2705b1361e74a9dea98a8dc211cfe02f4e",
+      "pages": 34,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh complete pp1–4: five authors/two institutions, motivation exact multigraph edge choice, Pareto/LS/TCH and Proposition1 additive MOTSP only, GREAT NB edge residuals, hypernetwork preference decoder, EB POMO O(MN4) claimed scaling; no generalist shared weights evidence yet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Freshfull5–8/Figs1–2/Algorithm1. DH independent edge per pair, frozen beforetour;shared encoder preference agnostic firstlayers, dualPOMO reward best K2;curriculum and separate configs. All biobjectives, FIX/FLEXwithdominated removal,200epochs100k,B64lr1e-4,K1train4/test1,K2N,8aug,200tests101prefs,48GBA40/8CPUparallel. LKH/HGS and some MBM stronger;notallbest orsamehardwaretime."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "ReadallTables1–3 plus11–12refs. TW is violated-window count +distance softobjective, nothardfeasibility, addactualtag. Table1MOTSPGMS EB XASY100 gap3.03/2.76vsLKH0 and DH4.87/3.85;MGCVRPHGSbest;FIX2-50MBMaug3.39betterDHaug3.96;GMS50DHfaster/scalable. Table2onlyTSP/MGTSP200100instances, noCVRP200. Fullbibrefs11–12 matched."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Read allremainingReferences13–14 plusAppendA andB1/B2. POCCO workshoppriorcitation samepaperlineage,notchangeformalvenue. Kool2018wrongsourceyear retainformal2019. Linegraph MN2nodes M2N3edges,virtualedgesgraph;singleobjectiveandotherconstraintsfuture. Confirmwhyedge-pair permutation matters,notimpossibilityforallTransformer extensions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Freshfull17–20 B3–Estart,decoderEq19–25 context/meanheads−scalarcost/hypernet,selection2extraGREATlayers. AppendixD supersedesblanket200:EB10020(100)+50(100)+100(10)=210epochs;DH100/50/50=200. DH5simpleXASYpretrain;selectionlossfrozenwrtencoder. Table4MBM2.38M+.266M/GMSDH2.06+1.08/EB1.98+.266,epochSG4.7/8.4/51m,MG4.7/24/102m. Traincostweaknessacknowledged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Freshall21–24 Fig6/distributions+E2–6/F/Gstart. Crucial MGCVRP isTWOconflictingtotaldistances notsimpleCVRPtotal+maxroute;TWsoftcountnoearlywaiting/no service,notordinaryhardTSPTW. RefHVfixedtask/size;FIXN,NversusFLEX30,30 etc. FIX/FLEX violate triangle/syntheticonly. TSP200 zeroshot refs120. MOEA1000vsMOGLS10000/p2-optbestmove/customchromosomes notfrontierEAguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "Fresh25–28 fullTables5–8. Simplepostencoderpruning almosttieslearnedforadditiveMG TSP,linearFLEXsimple2.65<learned2.74;notlearneduniversallybetter. Additionalneural13/16DHwinnot16/16,CNHbetterEUC50/100. 200testfullMOEA/heuristicprotocol. H4largeredge10 tests andH5triXASY100DHweak acknowledged. Table7MOEADEUC20runtimeprinted56hvsothersm notsilentlyfix."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 31,
+      "notes": "FreshfullTables9–12 everyrow. Include20/50/100/FLEX5FIX5. Extra20casesMBMaugbeatsbothGMSonMGCVRPFLEX2 .4.34vs4.36EB/4.94DH andFIX2 3.69vs3.71/3.87. TWimplicitLKHneglectsTWso NOTa competitivehardTWsolver comparison;mostlybestEBbutlearnedDHdoesbetterthanlinearDHsimpleonTW."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 32,
+      "last_page": 34,
+      "notes": "FreshallfinalTables13–17. 150/200andparallel5→10zeroshot butdifferenttrained5edgecheckpoint. EB FLE X5-2002.1h slowerLKH1.2h,10edgeEB23m>LKH15/16m;notalwaysfaster. Tri105/1035prefs uneven classical105;GMSDHTriXASY10013.81vsMBM9.67andOR9.96;CNH Euclidean generallystronger. All34main/completeReferences/A–H nowread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Parallel paths need explicit edge choices; simple node order does not specify paths in a multigraph.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            16,
+            17
+          ],
+          "locator": "Introduction/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "GREAT edge-based construction and learned-prune/node-construct dual head address multigraph routing with different resource trade-offs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            18
+          ],
+          "locator": "Figures1–2 andAlgorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Preference hypernetworks/ChebyshevPOMO and task-specific models; DH fixed independent pairwise pruning, best sampled route reward and routing-only shared encoder gradient.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            18,
+            19,
+            20,
+            22,
+            23
+          ],
+          "locator": "Method/AppendicesC–E"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Synthetic MOTSP/MOCVRP/multigraph versions/softwindowcounts;200test101preferences/100size-transfer and105or1035tri;all17tableswithLKH/HGS/CNH/MBMexceptions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "locator": "Full results/protocols/AppendicesD–H"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "DH context loss, EB resource expense, synthetic distributions and baseline limitations; neither universally faster nor better, nohardTWguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            10,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            31,
+            32,
+            33,
+            34
+          ],
+          "locator": "Stated limits and contrary result rows"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: separate task models/checkpoints and constructing partial tours; pruning precedes decoding rather than editing incumbents.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            19,
+            22,
+            23
+          ],
+          "locator": "Actual models/input/decoding"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7e0c50ca569760d0b9da9149db6a727f-Abstract-Conference.html",
+      "locator": "Formal five authors with BalázsKulcsár diacritics restored;Chalmers/Gothenburg affiliations; explicit publisher date2026-04-20 retained."
+    },
+    {
+      "field": "supplements and full scientific inventory",
+      "source_url": "https://iclr.cc/virtual/2026/poster/10011502",
+      "locator": "All34formalpages/main/refs/A–H/Algo1/sixfigures17tablesread/visuallychecked;whole2.278MBscientificposter3overlappingtilesread. Git348entriesuntruncated/ZIP349members792.12MB andHF144entries noadditionalPDF/notebook/archive;bothREADMEread."
+    },
+    {
+      "field": "actual formulations and classification",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7e0c50ca569760d0b9da9149db6a727f-Paper-Conference.pdf#page=23",
+      "locator": "SimpleCVRP totaldistance+longestroute vsMGCVRP two totaldistances;MGTSPTW softviolationcount/distance,no waiting/service;separate taskcheckpoints,constructive. AddedactualMG/TWproblem tags;nohardfeasibility/generalistclaim."
+    },
+    {
+      "field": "protocols and quantitative trade-offs",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7e0c50ca569760d0b9da9149db6a727f-Paper-Conference.pdf#page=9",
+      "locator": "All17tables includingnegativeMBM/CNH/LKH/HGS/TriXASY100cases,extra105vs1035preferences,200normal/100transferinstances,AppendD210EBepochs androuting-onlyencodergradient. RuntimeGPUvs8CPUprocessestotaltestbudgets retained."
+    },
+    {
+      "field": "current evaluation and generator verification",
+      "source_url": "https://github.com/filiprydin/GMS",
+      "locator": "ReadDHMGMOTSPTester returnsmeanobjectivesperpref,driverhvwfgonmeanfront vsformalmeanHV;exact2frontHV5vs4 example. ExecutedoriginalFLEXgeneratorpatchtorch.randwith3dominatedslotsreturns.1/.1/.2notfullyParetofiltered,sourceSHAandoutputsrecordedinboundary-checks.json. Doesnotrefutehistoricaltables. Current2objcode10Gitckpts/HF44ptinventoried,notreplayed."
+    },
+    {
+      "field": "original figures and explicit citations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7e0c50ca569760d0b9da9149db6a727f-Paper-Conference.pdf#page=5",
+      "locator": "Figures1–2 completecaptions croppedRect351,77,508,281 and331,418,508,695andvisuallyverified.23fullbibliographyentries matched;Koolsourceyear2018/workshopPOCCO2025notoverwriteformalvenues."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "emnh",
+      "reference_label": "Efficient Meta Neural Heuristic for Multi-Objective Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "learning-to-improve",
+      "reference_label": "A Learning-based Iterative Method for Solving Vehicle Routing Problems",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pareto-set-learning",
+      "reference_label": "Pareto Set Learning for Neural Multi-Objective Combinatorial Optimization",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pip",
+      "reference_label": "Learning to Handle Complex Constraints for Vehicle Routing Problems",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pocco",
+      "reference_label": "Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pointerformer",
+      "reference_label": "Pointerformer: Deep Reinforced Multi-Pointer Transformer for the Traveling Salesman Problem",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "gms-multigraph-routing",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Complete reference manually matched by title/authors. Source-year or workshop/precursor differences do not change target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References pp11–14, freshly read; full identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh34formalpages/completeA–H/refs/all6fig17tables andwholeofficialposterread.",
+    "Preserved specialist constructive and separated actual MGCVRP/TW formulation fromordinaryCVRP/hardTSPTW.",
+    "Restored author diacritics and added originaltwoarchitecturefigures.",
+    "Added exact resource/protocol/curriculum distinctions andstrongerbaselineexceptions.",
+    "Documented currentmean-frontHV versusstatedmeanHV andexecutedoriginalFLEXdominated-slotcounterexamplewithoutclaiminghistoricalbenchmarkreproduction.",
+    "RecordedcompleteGit/HFinventory/current2objectivecoverage and23explicitmanuallymatchedcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4cec66654d69d2dc6c8dc4ed0425da3390ec778456526b80f3ced005967191ba"
+}

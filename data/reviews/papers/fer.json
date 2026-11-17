@@ -1,0 +1,537 @@
+{
+  "version": 1,
+  "paper_id": "fer",
+  "note_path": "specialist/fer.md",
+  "baseline_note_sha256": "6fd95f9238b8a0b0e04eb27bda0d54b8d366c5fa985e1f6e952391c53e272059",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ymchee66.github.io/home/PDF/embeddingrefiner.pdf",
+      "retrieval_url": "https://ymchee66.github.io/home/PDF/embeddingrefiner.pdf",
+      "version": "Formal IEEE TNNLS volume35 no11 November2024 issue PDF, pages15279-15291, author-hosted copy; online2023-06-23",
+      "local_path": "research/full-text-review/fer/paper.pdf",
+      "sha256": "aa227ea9f9a43f7b0de40a25c5c67343c9d494b7d983166c33b05c730ed51586",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "FreshformalIEEEissuePDF13pagesauthorhost, titlefootnoteexactMay25acceptJune23online2023/Oct30currentversionNov2024 issue; sixinstitutions. CorrectactualFERpoolhistoryoutersearchvsoldnoteinnerdecodefeatures. MDPstateoriginalembeddings+pooledges/costs, actionycompleteconstructive trajectories fromscratch, bestsofar reward notlocaltour-edit. EncoderAM3/POMO6 width128,AGA GRUGNL."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FreshAGAedgepresence /costweights fusedFFT2-16-1softmax absentminusinf, successororiginalembeddings aggregate, GRUhistoryacrossouteriterations, GNLabsorb/reserveoriginalfixedembeddings gates, decodedfullsolutionsy, poolrandomreplace pluscurriculumincreasingrandomsolution AM/POMOdifferent. ExactEq6-21allread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FreshnstepA2Cencoderfrozenrefiner+decodertrainedcritictrain;100outertrainhorizon vs200/5000inference, batch20perepochAM512/POMO32, LRdecays, K6/6/8 chosen, sampleTvsS budgetPOMO*N*8 matching; 10ktestTITANXP vsCPU2GHzsinglecore, originalGitHubDemon0312renamedauthoraccountverifiedprimary. TablesI-IIimagependingvisual notassumereadrowvalues."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FreshmainTablesIII-Vimages andVI/VII pendingvisual; progressplotiterationvswalltime mustnotinferlatencyadvantage, FER-AMweakerPOMO/backbonedependencyexplicit, refinerprobabilitycomparison SAMEpartialroute atdifferentoutersearchsteps notperdecodeupdated, noadvancedsmallmodel universalboostguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Completed formal IEEE conclusion, all references and biographies; no appendix or pointer to missing scientific supplementary material. Figures 2-6 and all Tables I-VII visually inspected including individual TSPLIB/CVRPLIB rows; whole-test-set times and nonuniform wins qualified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "refiner",
+      "category": "contribution",
+      "statement": "FER inserts AGA/GRU/GNL history-conditioned refiner between pretrained encoder and decoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1/4 Figures2-3"
+        }
+      ]
+    },
+    {
+      "id": "outer",
+      "category": "method",
+      "statement": "Refinement occurs between full-solution generations, not partial-route decisions; original encoder features remain fixed inputs, diversified pool not bestK.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            11
+          ],
+          "locator": "Sections3/4 Equations1-21 Algorithm1 Figure5"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Encoder frozen; refiner and pretrained decoder trained by n-stepA2C, inference hidden-state updates not weight adaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Algorithm1 Section4E"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Matched backbone improvements with runtime overhead; all10000-instance times and candidate counts, benchmark average gains plus individual losses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "TablesI-VII Figures4-6 limitations"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive repeated complete autoregressive generation conditioned on pool; no incumbent-editing learned operator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            7
+          ],
+          "locator": "Sections2/3/4 and per-backbone/task models"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, acceptance, publication, year",
+      "source_url": "https://ymchee66.github.io/home/PDF/embeddingrefiner.pdf#page=1",
+      "locator": "Formal IEEE title page: seven authors/six affiliations, accepted2023-05-25, publication2023-06-23, version2024-10-30 and issueNovember2024. Corrected date2023-06-15 and year-only acceptance; kept issueyear2024."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://doi.org/10.1109/TNNLS.2023.3285077",
+      "locator": "IEEE landing manually attempted and blocked by robot verification. Complete formal13-page author-hosted issue PDF read; no appendix or explicit pointer to extra scientific material. Official recursive332-member master tree manually inspected, noPDF/ZIP scientific supplement. Inaccessible publisher attachments not claimed inspected."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/jingwenli0312/Feature-Embedding-Refiner",
+      "locator": "PDFpage7 footnote4 oldDemon0312 account resolves currentjingwenli0312 repository; exact title/DOI verified, full3READMEs read. Example batch/augmentation/path inconsistencies noted."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ymchee66.github.io/home/PDF/embeddingrefiner.pdf#page=4",
+      "locator": "OriginalFigure2 policy/pool chronology, cropRect(45,45,559,285)5x. All method equations, Figures1-6 and TablesI-VII visually checked."
+    },
+    {
+      "field": "paradigm, scope, summary",
+      "source_url": "https://ymchee66.github.io/home/PDF/embeddingrefiner.pdf#page=3",
+      "locator": "Statepool complete solutions, action ycompletefresh constructions, Sections2B/3/4 andfixedoriginalembeddings; corrected old per-inner-decode shrinking-feasible-set explanation; retainconstructive specialist."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "fer",
+      "cited": "step-wise-routing",
+      "reference_label": "5",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "pomo",
+      "reference_label": "10",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "13",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "rl-vrp",
+      "reference_label": "14",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "dact",
+      "reference_label": "15",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "attention-model",
+      "reference_label": "16citedICLR2018",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "pointer-networks",
+      "reference_label": "17",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "18ICMLworkshop2017",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "19",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "20arxiv2019",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "21citedAAAI2020",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "neurewriter",
+      "reference_label": "23",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "24ECAI2020",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "learning-to-improve",
+      "reference_label": "25",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "latent-search-space-routing",
+      "reference_label": "26",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fer",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "28",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited venue/year retained, including incorrect paper bibliographic dates without silently rewriting the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced incorrect partial-route shrinking-feasible-set description with actual history-conditioned refinement between full reconstructions.",
+    "Restored five missing institutions, exact formal acceptance/online publication dates and official renamed code repository.",
+    "Detailed AGA/GRU/GNL, frozen encoder/trainable decoder, diversified pool and n-stepA2C.",
+    "Qualified10000-instance runtimes/candidate budgets, backbone dependence, benchmark exceptions and heuristic references.",
+    "Added originalFigure2, checked scientific-material availability, and16explicit bibliography-backed existing-paper edges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7d0a15bb4c973ba3a4941246d892a74acb66c9d42d666818c8c120ef428cd00c"
+}

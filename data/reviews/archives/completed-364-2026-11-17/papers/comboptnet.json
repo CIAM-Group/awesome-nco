@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "paper_id": "comboptnet",
+  "note_path": "studies/comboptnet.md",
+  "baseline_note_sha256": "c5a1b1a1ed0fb5a4fd32977576e6445123ebbf9e35cbfcd1b987c6be8a8e2dd1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v139/paulus21a/paulus21a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v139/paulus21a/paulus21a.pdf",
+      "local_path": "research/import-272/nco-c0c949d892.pdf",
+      "sha256": "f5eaf37909ba3d41a958ecfb096d67cd5153cf8b33b75b287b4b0145195e6e90",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v139/paulus21a/paulus21a-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v139/paulus21a/paulus21a-supp.pdf",
+      "version": "publisher-linked Supplementary Material for CombOptNet, five pages",
+      "local_path": "research/full-text-review/comboptnet/supplement.pdf",
+      "sha256": "c06ce6f6bf86b84d21368856cdc43946bd91cbee23901748610ad3ff8f3ea989",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh full reading of introduction, all related work, bounded ILP setup, piecewise-constant difficulty and geometric mismatch/basis construction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Read parametrization and all four demonstration definitions, dimensions, datasets, comparison protocol and exact matching accuracy table."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read fixed-size four-model matching restriction, conclusion and complete two-page references."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read full scientific supplement identity, all hyperparameters, normalizations, fixed true knapsack capacity, exact solver/default settings, V100 total runtimes and restart ablations."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Read every qualitative feasibility plot, all constraint-count/basis/origin/temperature/loss tables, entire differentiable analogue and induction decomposition proofs. Key equations, framework, curves and Tables S1-S8 visually inspected."
+    }
+  ],
+  "claims": [
+    {
+      "id": "layer",
+      "category": "contribution",
+      "statement": "Provides a reusable ILP layer with learned constraints and costs, retaining a conventional unmodified solver in the forward pass.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Abstract; Sections 2-3; Module 1"
+        }
+      ]
+    },
+    {
+      "id": "surrogate",
+      "category": "method",
+      "statement": "Backward pass is a geometric surrogate recombining signed integer directions and hyperplane mismatch gradients, not an ordinary discrete argmin derivative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equations 3-9; Proposition 1"
+        }
+      ]
+    },
+    {
+      "id": "proof-assumptions",
+      "category": "method",
+      "statement": "Supplementary Proposition S1 assumes differentiable mapping and loss; it does not establish discrete global training convergence.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Supplement B Proposition S1 and decomposition induction"
+        }
+      ]
+    },
+    {
+      "id": "four-experiments",
+      "category": "experiment",
+      "statement": "Four separately trained demonstrations recover constraints or combine learned costs/constraints with features; matching p=4..7 uses separate fixed-size models and trails BB-GM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Section 4; Table 1; fixed-size architecture paragraph"
+        }
+      ]
+    },
+    {
+      "id": "capacity",
+      "category": "experiment",
+      "statement": "The text knapsack implementation fixes true capacity100 and predicts weights/prices within prescribed ranges; true feasibility can fail.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            3
+          ],
+          "locator": "Supplement A.1 knapsack; Figures S1-S2"
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "category": "reproducibility",
+      "statement": "Gurobi solves every forward problem; reported V100 totals cover training and evaluation, with ILP forward runtime dominant.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Supplement A.1-A.2 and Table S2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Reusable modeling layer and distinct fixed-dimension task models do not establish a shared generalist optimizer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8,
+            9
+          ],
+          "locator": "Scope of layer; different demonstrations; four separate matching architectures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.mlr.press/v139/paulus21a.html",
+      "locator": "Official PMLR139 record and BibTeX: ICML2021, July, pages8443-8453. PDF page1 gives diacritics/affiliations; unsupported July1 day replaced with month."
+    },
+    {
+      "field": "date and arxiv_url",
+      "source_url": "https://arxiv.org/abs/2105.02343",
+      "locator": "Manually checked v1 5May2021 and v2 11April2022 history. Added correct v1 date; reviewed versions remain the publisher paper and separate supplement, not downloaded arXiv v2."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/martius-lab/CombOptNet",
+      "locator": "Supplement page1 explicit link; manually opened matching public PyTorch repository, Gurobi/license/data setup in README."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/paulus21a.html",
+      "locator": "Manually inspected official PMLR Related Material: main PDF and separate Supplementary PDF. All11 main and5 supplementary pages read, including all referenced scientific contents."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v139/paulus21a.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-07-01; cached evidence research/full-text-review/comboptnet/supplement-landing.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2105.02343",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-05-05; title on abstract page: CombOptNet: Fit the Right NP-Hard Problem by Learning Integer Programming Constraints. This date is preprint history, not formal publication. Cached research/full-text-review/comboptnet/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "comboptnet",
+      "cited": "blackbox-backprop",
+      "reference_label": "Vlastelica et al. (2020a)",
+      "description": "Contrasts cost-only blackbox differentiation and uses it in the dedicated matching baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation on PDF page2; exact bibliography title/authors on PDF page11: Vlastelica et al. (2020a)"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Cites reinforcement learning for combinatorial optimization in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation on PDF page2; exact bibliography title/authors on PDF page10: Bello et al. (2016), arXiv:1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Cites graph reinforcement-learning approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation on PDF page2; exact bibliography title/authors on PDF page10: Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Cites neural reinforcement-learning vehicle routing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation on PDF page2; exact bibliography title/authors on PDF page11: Nazari et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018 as printed), Attention, learn to solve routing problems!",
+      "description": "Cites the attention-routing work; exact title/authors identify the existing ICLR2019 work despite the bibliography year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation on PDF page2; exact bibliography title/authors on PDF page11: Kool et al. (2018 as printed), Attention, learn to solve routing problems!"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Discusses the earlier keypoint-matching baseline surpassed by BB-GM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation on PDF page9; exact bibliography title/authors on PDF page10: Fey et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "comboptnet",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "Cites differentiable MAXSAT/SATNet layers as related discrete reasoning components.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation on PDF page1; exact bibliography title/authors on PDF page11: Wang et al. (2019)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded all six sections and added required separate five-page scientific supplement reading/evidence.",
+    "Corrected unsupported publication-day precision, added exact arXiv v1 date/URL, diacritics and verified official code URL.",
+    "Corrected broad knapsack learning description with supplement: capacity is fixed100; learned-formulation feasibility does not imply true feasibility.",
+    "Distinguished four separate matching models, surrogate proof assumptions and total training/evaluation runtime from generic algorithmic guarantees.",
+    "Documented conflicting WSC size labels without inventing a correction.",
+    "Recorded seven exact internal citations; no shared architecture or vague name match used.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5f4b71e801c2eee8ed48332a70934e496426d5128f2c2cbd05a310073d5060c4"
+}

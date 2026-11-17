@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "paper_id": "nsnet",
+  "note_path": "specialist/nsnet.md",
+  "baseline_note_sha256": "804230f5c506cab43f4f3e83e6bf685d73547e483b1365a7282a4f02330b1fb5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a40462acc6959034c6aa6dfb8e696415-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a40462acc6959034c6aa6dfb8e696415-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-809c05c965.pdf",
+      "sha256": "f200cfc1ba22daa6d3fdc692d3256008287d4e9401af2d1a003c4dc6d164ae30",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a40462acc6959034c6aa6dfb8e696415-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a40462acc6959034c6aa6dfb8e696415-Supplemental-Conference.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/nsnet/supplement.pdf",
+      "sha256": "a78955ec4d02b0ec797b88595e0e48301a785ddef2ee52513aa1d4f76202e3f5",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read uniformdistributionoversatisfyingCNFassignments, BPnormalization/Bethefreeenergy, neuralmarginalsrounding+SparrowSATpipeline andseparate#SATregression notcompleteUNSATsolver."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read edge-levelneuralBP, d1identityspecialcase andpermutation/negationsymmetries; exactALLSATmarginalsupervision, separatelogcountMSEmodel, marginalroundingnotalwayssatisfy evenperfect, satisfyingonlydatasets and100assignmentSparrow budget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allSAT/#SATresultsandrelatedwork/limits; marginal60.99/9.76, hybrid51.01vs24.83 at100flips; ApproxMC3muchmoreaccurate andGPUbatchvsCPUsequential speed; exactlabeltimeoutfilterandnocountguarantee/UNSATcertificate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read conclusion/funding/full48referencebibliography/checklist; explicitNeuroSAT/CircuitSAT/GraphQSAT/RLlocalSATidentities, attachmentclaimscheckednext."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read symmetryproofandconditionalexactmarginaldecimation alternative, alltrainingdetails, clausewidthcap4,200/1000epochs; solvedonlyflipaverages andApproxMC PACparameters/minwithwithoutMISpreprocess timingrule."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read log-relativeerrornotrawcountratio, SATLIBcaptiontypoandBMS2.45>F22.42negativecase, ApproxMCPACrelaxation23-123sec/33-35timeouts; noNSNetprobabilityguarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "nsnet-contribution",
+      "category": "contribution",
+      "statement": "LearnedBP-inspirededgeinference forSATmarginalsandseparateBethe-stylelogcountregression; onecallSparrowinitialization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-4/Propositions1-2"
+        }
+      ]
+    },
+    {
+      "id": "nsnet-method",
+      "category": "method",
+      "statement": "ExactALLSATmarginals/KL andDSharpcountMSE labels, independentroundingnotnecessarilyfeasible, countsnoguarantee/UNSATexcluded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Sections3-4/limitations"
+        }
+      ]
+    },
+    {
+      "id": "nsnet-experiment",
+      "category": "experiment",
+      "statement": "SAT60.99/9.76and100fliphybrid51.01vs24.83; BIRDRMSE.94vsApproxMC.03, GPUbatchvsCPUandtimeoutfilter qualifiers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1-4/Figure3/labelprovenance"
+        }
+      ]
+    },
+    {
+      "id": "nsnet-limit",
+      "category": "limitation",
+      "statement": "BMS2.45worseF22.42, logrelativeerrornotrawcounttolerance, solvedonlyflipaverages, bestwithwithoutMIS timingrule.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Tables5-7/AppendixB.3"
+        }
+      ]
+    },
+    {
+      "id": "nsnet-classification",
+      "category": "classification",
+      "statement": "SeparateSAT/#SATobjectives/models/datasetcheckpoints; mixedCNF/coloringbenchmarksnotdemonstratedunchangednativeoptimizationpolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Trainingtasks/datasets"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a40462acc6959034c6aa6dfb8e696415-Abstract-Conference.html",
+      "locator": "Officialtitle/twoauthors match13p mainand4psupplement, McGill/Mila/CIFARChairaffiliationschecked."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a40462acc6959034c6aa6dfb8e696415-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date2022-12-06; notinferredconferenceeventday."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a40462acc6959034c6aa6dfb8e696415-Abstract-Conference.html",
+      "locator": "ManualpublisheractionslistoneSupplementalPDF;4pagesprinted14-17allread/proofsandtablesrendered. FullauthorZIPinventoryhasnoadditionalscientificPDF; codeexternaldependenciesdocumented."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/zhaoyu-li/NSNet",
+      "locator": "Paperp1officiallink andREADME; inventoriedmainZIP, model/entropy/preprocessing/train/test and100flip/countingscriptsread; noexecutionclaim."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "nsnet",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[2]",
+      "description": "Explicit numbered body citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation [2] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "nsnet",
+      "cited": "neurosat",
+      "reference_label": "[35]",
+      "description": "Explicit numbered body citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            6,
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation [35] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "nsnet",
+      "cited": "graph-q-sat",
+      "reference_label": "[25]",
+      "description": "Explicit numbered body citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation [25] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "nsnet",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[45]",
+      "description": "Explicit numbered body citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation [45] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read13main+4supplementpages/fullproofs/bibliography/checklistandmanuallycheckedallscientificattachments.",
+    "SeparatedBPspecialcase/symmetriesfromguarantees, exactsupervisionandUNSATscope, marginalrounding/local-searchbudgetandcountingmodel training.",
+    "PreservedApproxMCaccuracygap/GPUbatchCPUtiming/timeoutlabelselection/logerror/BMSnegativecase; restored4exactcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "61b75007afd6e9826fc640718ef355f4d0a0dd86c6e396c69dc01ce4561c7d41"
+}

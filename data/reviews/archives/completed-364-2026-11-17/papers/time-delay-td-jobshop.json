@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "paper_id": "time-delay-td-jobshop",
+  "note_path": "specialist/time-delay-td-jobshop.md",
+  "baseline_note_sha256": "db9e95a53818f9a9e7a50dde713362d052fb95fcd158a48578c6c0d8c38d3883",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/4f16c818875d9fcb6867c7bdc89be7eb-Paper.pdf",
+      "version": "Official NIPS1995 volume8 PDF,7pages1024-1030; full visual reading required because embedded text mapping is unreadable",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/4f16c818875d9fcb6867c7bdc89be7eb-Paper.pdf",
+      "local_path": "research/import-272/nco-cd4e7e2d53.pdf",
+      "sha256": "c1972d1e268ace7ebedd3cd8cc29d57b83ad2c00c00386cf1fe754001551082d",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Actual fresh visual reading PDFpp1-2 because textfontmappingunreadable. WeiZhang/ThomasGDietterich OSU; NASA SSPP fixedlaunch partialorderedjobs/resourcetypes/pools; minimize duration plusfeasibility. Start criticalpathschedule ignoringresources then iterativeREASSIGNPOOL orMOVEearliestearlier/laterfeasibleposition reschedulesdependents. Learning raw featuresTDNN vs priorhandfeatures. Titlelambda corruptedinoldnote needsrestoration; paradigmshouldimprovement/repair notpureconstructive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh visualread pp3-4 notgarbledtext: reward-.001 perinfeasible schedule, terminalnegative resource-dilation ratioTRUI(s)/TRUI(s0), one-step lookahead allrepair actions usinglearnedvalue, onlineTDlambda. Blocks maximalinterval no task/resourceassignmentchange;12primitivefeatures perblock;5sharedkernels singlecurrentblock, pooledthirds laterpage. Learnedfeatures still supplied primitiveblockstats; goalgoodfeasible shortplans,notoptimalityguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh fullvisualreading pp5-6. TDNN5kernels12weights+15posbias,H1=75params;17pooled/globalinputs→40sigmoid→8GaussianoverlapRDFoutputs,total1123.100syntheticNASAproblems:50test20val3x10train;lambda.2/.7 sixtrained nets eachlast/best retained12;validationselectedsingle vsmeans,notensemblevote. Handengineerednetsfewersingle-runrepairs,allneuralbetterIR,95%CIs/ANOVAFtests. Bestofrepeated differentbudgets SA50 vs12netseachonce orbestnet10;TDendpointRDF1.196/21676repairs vsengineered1.202/19406. TDperactionCPUcosthigher;engineeredG12NbestCPUtradeoff,notuniversalTDspeedwin."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 7,
+      "notes": "Fresh fullvisualread p7 includingFigures4-5 logarithmicrepair/CPUseconds axes, conclusion,acknowledgments,all7references. No frozeninternalpaperidentities found; previousIJCAI1995 Zhang/Dietterich is distinct preceding handfeaturepaper notthisNIPSentry. Entire7pagesvisuallyread becausePDFtextmappinggarbled; no fulltextreading claimedfromgarbageextraction."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "NASA partial-order resource scheduling and priorhandengineered valuefeatures motivate learnedblockrepresentation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Visuallyread introduction/task/network"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "TDNNsharedkernels/pooling supportvariablelengthschedule valuelearning anditerativerepair.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Visuallyread sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Criticalpathinitial ignoresresources, one-steplookaheadREASSIGNPOOL/MOVE; reward-.001 ornegativeRDF.12primitiveblockfeatures,5kernels,thirdpooling,40hidden8output,1123params.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Visualtask/TDdefinition/architecture"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "100synthetic:50test20val3x10train,6netstrain(lambda.2/.7),last/best12;95%CIs,acceptedrepairmetric andunequalrepeatedrunconfigs. TDquality1.196 vsengineered1.202 butmoreCPU andrepairs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Visualsections4/Figures2-5"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "HigherTDperactionCPU, G12NbestCPUqualitytradeoff, fullproblem/trainingdetailsdeferred, nooptimality/actualoperationalcostsaving proof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Visualexperimentalqualifications"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Improvement/repair of existing criticalpathschedule; oldconstructive label inaccurate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Visualiterativerepair problemspace andoperators"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/4f16c818875d9fcb6867c7bdc89be7eb-Paper.pdf",
+      "locator": "VisualPDFp1lambda andThomasG.Dietterich/OSU; officialHTML independentlyconfirms."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/4f16c818875d9fcb6867c7bdc89be7eb-Abstract.html",
+      "locator": "OfficialNIPS1995volume8record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/4f16c818875d9fcb6867c7bdc89be7eb-Abstract.html",
+      "locator": "ManuallandingBibtex/Metadata/Paper only; visualfull7pages noappendix/attachedscience, earlierIJCAIpapercited separately."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/4f16c818875d9fcb6867c7bdc89be7eb-Paper.pdf",
+      "locator": "All7pagesrenderedandvisuallyread becausefontmappingbroken, includingFigures1-5/equations/networkcounts; no newasset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall7pagesvisually rather than treating unreadable extractedtextasreading.",
+    "Restored lambda title andThomasG.Dietterich.",
+    "Correctedconstructive toiterativerepair/improvement withnativeproblemspaceevidence.",
+    "Specifiedblockfeatures/pooling/1123params,rewardsandactual100problem split.",
+    "Qualifiedmeansof12netsvsensemble, acceptedrepairmetric, unequalbestofrunbudgets andTDCPUdisadvantage."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b6b91cc4443063ba448c18277c592855a5bff0a9fcabb7770c57bcfb19f99373"
+}

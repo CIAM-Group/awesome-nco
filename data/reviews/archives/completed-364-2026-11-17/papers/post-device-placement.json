@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "paper_id": "post-device-placement",
+  "note_path": "specialist/post-device-placement.md",
+  "baseline_note_sha256": "1932e89eb3342dd477f15013045dbf797e6e6f048745bde9f42330901b7afa6f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf",
+      "local_path": "research/import-272/nco-d8c95edfa4.pdf",
+      "sha256": "f3f3e70fa860e04e5e85f3a19d5f677bb1908d74b8e735c152388567465775f9",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement0",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Supplemental.zip",
+      "archive_member": "appendix.pdf",
+      "version": "publisher-linked ZIP scientific supplement PDF",
+      "local_path": "research/full-text-review/post-device-placement/supplement-0.pdf",
+      "sha256": "75bb3029841700771994245bd90f97ba5eeebd44e07379b47aab7a2012db0c8f",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read author/institution/formalNeurIPS2018 identity; runtime placement task; independent softmax representation and CE/PPO proposal; distinguish abstractoptimal-efficiencyclaim from actual finitebudgetplacementoptimization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read factorized softmax family, ideal conditional elite target, empirical CE/MLETheorem1 and KL-penalty PPO objective; identified scope as elite distribution projection rather than proof of optimal placement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Read Algorithm1,12workers,2400evaluations,11steps discardfirst,12samplePPO/60sampleCE budgets andTable1/learning/profiling figures. Read PGsameenvironmentreimplementationqualification,5singleGPUties,selected63.7percentrelativePG andInception40000steptrainingcomparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read concludingprofile interpretation andall23references, matching3exactcataloguepapers, no inventedotherNCOrelations."
+    },
+    {
+      "source_id": "supplement0",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read entire soleZIPappendix.pdf: Theorem1 frequency-MLEproof,parameterupdates/logsoftmaxboundary,additionalHEFT/random/hillclimb/genetic12machine2400evaluationcomparisons; visuallyinspectedmath."
+    }
+  ],
+  "claims": [
+    {
+      "id": "post-contribution",
+      "category": "contribution",
+      "statement": "Post combines per-operation softmax probability search, empirical elite-fitting CE updates and intervening KL-penalty PPO updates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.2–3.3,Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "post-method",
+      "category": "method",
+      "statement": "Theorem1 gives empirical elite marginal frequencies in a factorized categorical family; it does not certify globally optimal hardware placements.",
+      "evidence": [
+        {
+          "source_id": "supplement0",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "FullTheorem1proofandparameterupdate"
+        }
+      ]
+    },
+    {
+      "id": "post-experiment",
+      "category": "experiment",
+      "statement": "Largest63.7percent Table1 gain is relative to PG; ResNets andRNNLM tie singleGPU; deploymenttimes andsearchbudget are separate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Setup,Table1,end-to-end40000steps"
+        }
+      ]
+    },
+    {
+      "id": "post-scope",
+      "category": "classification",
+      "statement": "The method directly optimizes fixedgraph operation logits without a neural encoder or demonstrated shared cross-task trainedmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Per-operationparameters andseparatebenchmarkoptimization"
+        }
+      ]
+    },
+    {
+      "id": "root-neural-inclusion-boundary",
+      "category": "classification",
+      "statement": "Related RL placement optimizer using directly fitted independent categorical logits rather than a neural solver; retained as a topical reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Relatedwork explicitly replacesRNN bysoftmax; equations2-3 independentperoperation logits with directCE/PPOupdates."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper/2018/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html",
+      "locator": "FormalNeurIPS2018title/threeauthors verified againstPDFp1; allthreeinstitution affiliationscorrect"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Supplemental.zip",
+      "locator": "Manually followedpublisherSupplemental;ZIP200contains onlyappendix.pdf,2pages; title/authorsmatch; allproof/updates/additionalevaluationread; inventorycached"
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.neurips.cc/paper/2018/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html",
+      "locator": "NoauthorPostimplementationlink inpublisherorfullpaper; citedTensorFlowSlim/NMT areworkloadrepositories"
+    },
+    {
+      "field": "inclusion",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/92650b2e92217715fe312e6fa7b90d82-Paper.pdf",
+      "locator": "Root independently readPDFpp2-4; neuralnetworks areworkloads, optimizer directly fitsfactorizedcategorical distributions. Venueeligibilitydoesnotestablishneuralmethodeligibility."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "post-device-placement",
+      "cited": "rl-device-placement",
+      "reference_label": "[3] Mirhoseini et al. (2017)",
+      "description": "Explicit policy-gradient placement predecessor and same-environment method reimplementation baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            9
+          ],
+          "locator": "Explicit in-text citation [3] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "post-device-placement",
+      "cited": "hierarchical-device-placement",
+      "reference_label": "[4] Mirhoseini et al. (2018)",
+      "description": "Explicit learned-grouping placement predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            9
+          ],
+          "locator": "Explicit in-text citation [4] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "post-device-placement",
+      "cited": "spotlight-placement",
+      "reference_label": "[16] Gao et al. (2018)",
+      "description": "Explicit PPO-based Spotlight predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            10
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added missing publisher ZIP scientific supplement and fully reviewed both pages.",
+    "Corrected guarantee scope and non-neural representation; reported strongest-baseline ties,exact63.7percentreference,searchbudget anddeploymenttiming separately.",
+    "Three explicit internal citation relations verified.",
+    "Root independent scope check: retain Post as reference because its optimizer directly fits independent categorical distributions without a neural instance encoder/controller."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "780cd89967743cc5ff2fa46ac9eaeb33a523c927152f27100a41589c13443d42"
+}

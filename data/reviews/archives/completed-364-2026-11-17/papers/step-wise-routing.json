@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "paper_id": "step-wise-routing",
+  "note_path": "specialist/step-wise-routing.md",
+  "baseline_note_sha256": "2628f1700b9b6855a2ec1098a59e461a2bd9f3dc628bf0e2d9761bc5cb27d242",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1109/TII.2020.3031409",
+      "version": "User-provided finalIEEE TII17(7),4861-4871,11pages; allscience/references/biosfreshlyread; paper-specific2020datesrecorded",
+      "local_path": "research/full-text-review/step-wise-routing/paper.pdf",
+      "sha256": "74da7630970ae134ec38496b1c88628fa11d505d125d2417ca314a2f4b436a89",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshformal4861-4862 alltitle/4authors/NTUShandongNUS, receivedAug15/acceptedOct12/onlineOct15,2020. Corevisited-node-reencoding SWPtrSLTSP/SWTAMRLTSP+CVRP/toplayerASW; Bellmanstatementmotivationnotrepresentationnecessity, fullrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Full4863-4864taskconstraints/baselinePtr/TAMequations andSWPtrstate; retainsstartcity andprevnode, LSTMencoderrestarts eachresidualset/decoder1stepwithoutpersistenthistory; constructive notlocaledit. Keyequationswillvisuallycheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh4865-4866Algorithms1-2/Figs3-5, LSTMprefixreuse afterdeletednode, fullSW cubicn3attention/n2d2 andcapacityfeasiblekeymask. ASW cachesL-1lowerlayers,QKtopscorethenupdates topattention perstep; incomplete complexity continuationp7 stillunread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh4867-4868 exactincrementalexp-weight numerator/denominator updates yieldingASWn2d2, separate data1.6MTSP20labels/1MstepsSL and1280000perepoch100epochsRL, 10ktesttotal timing, trainingaccuracylabelambiguity; TableI textnotextractablewillreadrender. SWTSPgap.29=>.19/CVRP4.46=>4.15 and52/66minperepochvs6/9."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Freshformal4869-4871complete39? actual35refs/bios/histograms/allconclusions. Visually read allTableI-III rastervalues inclSWPtr1.28=>1.00%,3s=>14s, TableIITSP1004.35=>3.20/6s=>29s CVRP1007.07=>4.99/8s=>39s; all10TSPLIBselectedrows and38mean14.75=>12.20, size-specificBNstatistics, longertraining600/1000/800epochs noend-to-endtimeuniversalclaim."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Bellman-inspired residual-state encoding; static encoders not provedincapable ofoptimalpolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Introduction andarchitecturalargument"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "SW-PtrNet/SW-TAMandtoplayerASW, not periodicstridep model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/Algorithms1-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Residual LSTMprefixreuse/fullattentionmasking andASWincrementalweighted-sum formulation, neuralactionsconstruct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations14-28/algorithms"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "10ktesttotals, SWPtrTSP20 andSW20, ASW20/50/100 quality-runtime; TSPLIB38 withtargetsizeBNrecalibration; separate taskmodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "All3tables/Figures6-9"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "FullSWexpensive, approximateASWnotfullyremoveslowerlayerhistory; empiricalimprovementnotoptimalityproof andruntimeclassicalquoted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Costanalysis/designlimits/authoraim"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive SL/RL variants; no learnedincumbent editing andnotsharedcross-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            7,
+            9,
+            10
+          ],
+          "locator": "Actualactions/trainingvariants"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations, dates",
+      "source_url": "https://doi.org/10.1109/TII.2020.3031409",
+      "locator": "FinalPDFp1explicitacceptedOct12/onlineOct15,2020; issue2021Jul; NTUShandongNUS."
+    },
+    {
+      "field": "source provenance",
+      "source_url": "https://doi.org/10.1109/TII.2020.3031409",
+      "locator": "Userprovidedaddpapers/Xin finalIEEE11pagePDF copiedtopaper.pdf, SHA74da7630970ae134ec38496b1c88628fa11d505d125d2417ca314a2f4b436a89; originalpreserved andallpagesfreshread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/liangxinedu/stepwise",
+      "locator": "CodeZIP218membersinventoried noextraPDF/ipynb/nestedZIP/video; papercomplete35refs noAppendixreference, firstpageonlycolorfigureavailability. ExternalIEEEinventoryunavailable, no unidentifiedsupplementabsenceclaim."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/liangxinedu/stepwise/blob/master/ASWTAM/nets/graph_encoder.py",
+      "locator": "change()344-360 usesdensemaskedrenormalization/matmul(attn,V), notprintedEqs26-28incrementalsums; SW/ASWselectedmodelroutines/READMEchecked, noexperimentsrerun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://doi.org/10.1109/TII.2020.3031409#page=6",
+      "locator": "OriginalFigure5completecrop[303,54,558,232]at3x; renderedallkeymath3tablesandFigures3-9, checked35references."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "step-wise-routing",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[8]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "pointer-networks",
+      "reference_label": "[9]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            10
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[10]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            10
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "rl-vrp",
+      "reference_label": "[11]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            10
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "attention-model",
+      "reference_label": "[12]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "neurewriter",
+      "reference_label": "[18]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[19]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "learning-to-improve",
+      "reference_label": "[20]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[21]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "neurosat",
+      "reference_label": "[22]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[23]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    },
+    {
+      "citing": "step-wise-routing",
+      "cited": "satnet",
+      "reference_label": "[24]",
+      "description": "Explicitly cites this exact predecessor or related neural combinatorial method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography; TAM is Kool attention-model, not Hou2023 TAM."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Recovereduserprovidedformal11pagefulltextandfreshlyreadallpages/all35references.",
+    "Addedexactpaper-specificacceptanceandpublicationdates,officialcode, preservedcorrectnativeTSP/CVRP/3affiliations.",
+    "Removedunsupportedperiodic-every-pencodingandseparatedSL/RL/full/approxvariants.",
+    "Specified10ktestruntimebudgetsandquality/costtradeoffs, TSPLIBtargetsizeBNstatisticaladaptation.",
+    "QualifiedBellmanarchitecturalmotivation, heuristicCVRPgaps andcurrentcodeincrementalcomplexitydifference.",
+    "AddedcompleteoriginalFigure5and12exactcitations, avoidingTAMnamecollision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8adbac7019b93c5d33f362190eff2abd94ebc38d971e461ce960c2f6a06eced6"
+}

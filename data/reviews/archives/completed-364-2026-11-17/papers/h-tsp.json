@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "paper_id": "h-tsp",
+  "note_path": "specialist/h-tsp.md",
+  "baseline_note_sha256": "86f1d13842aedbbcddb8a9540869854e8cc2dc214d454f58810885e1669f22bd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2304.09395",
+      "retrieval_url": "https://arxiv.org/pdf/2304.09395",
+      "version": "arXiv2304.09395v1,19April2023,acceptedAAAI2023authorversion;all9pagesread.",
+      "local_path": "research/full-text-review/h-tsp/paper.pdf",
+      "sha256": "e48ea36aadf31e0cb6fa1fd7ea92dacb55afd75ba82fa3d3d1129d2b83ca6ba1",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh titlepage all7authors and missingUSTCaffiliation, relatedwork allcitations, EuclideanTSP/openpathfixedendpointdefinition, Algorithm1 andadaptivepartialtour insertion framework, PixelEncoder nodefeatures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh complete Pixel/CNN actioncontinuous2D, kNNBFS plusvisitedfragment openpath merge; endpointconsecutive trick lowerPOMO; PPO+GAE vs lowerREINFORCE baseline, warmup500/joint500-2000 epochs; completeTable1 andtestcounts128/16,hypers/hardware, trainingper-size and50ktransfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh allFigure1crosssizevalues/refqualitycaveat, Figure2upper/lowerablations, LKHlowerhybrid Table2 andshorter250epoch Table3, conclusion/allbibliography. Full9pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hierarchy",
+      "category": "contribution",
+      "statement": "Learnedadaptive decomposition plusfixedendpointpathconstruction scalesTSP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Algorithms1-2"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "category": "method",
+      "statement": "PixelCNNcontinuous2Dactorcritic PPO; lowerendpointconditionedPOMO REINFORCE; 500warmupandseparatejointsize-training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Upper/LowerModels Training hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "category": "experiment",
+      "statement": "128TSP1000/16otherinstances, V100perinstseconds; H-TSP10000gap7.32%3.32s vs AttGCN3.42%395.85s.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table1"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "50ktransferLKHreferencequalitycaveat; hybridLKHlowertradesmoretimeforbettercost; short250epochwarmupablation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Figures1-2 Tables2-3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive: selectedpartialtourfragmentsreorderedasnewcitiesinserted, nolearnedcompleteincumbentimprovementloop.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithms1-2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2304.09395v1",
+      "locator": "Titlepage7authors HUST/USTC/Microsoft; arxivTravelling vs formalTraveling."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v37i8.26120",
+      "locator": "Manual publisher-depositedCrossrefJSON published-online2023-06-26; fulltitle7authors/AAAI37(8)9345-9353,doi10.1609/aaai.v37i8.26120."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2304.09395",
+      "locator": "Manual arXiv history onlyv1 19April2023; acceptedAAAI2023 comment."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.microsoft.com/en-us/research/publication/h-tsp-hierarchically-solving-the-large-scale-traveling-salesman-problem/",
+      "locator": "AAAIlandingbotaccessdenied; manualauthorMicrosoftpublicationpage andofficialGitHubmain/lowerREADME show noadditional scientificattachment. All9pageaccepted arxivmain/refread; noappendix ormissing-supplementpointer. No claiminspectionofinaccessiblepublisherattachments."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Learning4Optimization-HUST/H-TSP",
+      "locator": "OfficialmainREADME andrl4cop/README read, structure/dependencies/checkpointanddata links confirmed."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2304.09395v1#page=7",
+      "locator": "OriginalFigure1crosssizeheatmap PDFp7Rect(90,50,270,210)6x, alllegend/labelsretained; Algorithms1-2/table1-3 visuallychecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2304.09395",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-04-19; title on abstract page: H-TSP: Hierarchically Solving the Large-Scale Travelling Salesman Problem. This date is preprint history, not formal publication. Cached research/full-text-review/h-tsp/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "h-tsp",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015a/b",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "h-tsp",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2017ICLRasprinted",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "h-tsp",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "h-tsp",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "h-tsp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "h-tsp",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicitauthor-yearcitation andmatchingbibliography. DuplicatePointerNetworks2015a/bconsolidated; actualprintedversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearin-textcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingbibliographyentry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredUSTCaffiliation, formalonlineJune26dateandremovedinferredacceptance.",
+    "ReplacedgenericdescriptionwithactualpixelCNN/PPO,endpointPOMOandpartialtourfragmentalgorithm.",
+    "Correctedabstractgapdirection,qualityvsspeedtradeoff,testcountsandheuristicreferences.",
+    "Addedseparatemodels/50ktransfercaveat,LKHlowerhybridand250epochablations.",
+    "Removedoverstrongirreversiblepartitionclaim, addedoriginalFigure1provenanceandtransparentarxivfallback."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "cec69969231e1b509bad09843a88e842f7b248325be85888047f813027a9d170"
+}

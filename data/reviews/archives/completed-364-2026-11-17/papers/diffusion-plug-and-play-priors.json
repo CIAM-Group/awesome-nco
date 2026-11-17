@@ -1,0 +1,282 @@
+{
+  "version": 1,
+  "paper_id": "diffusion-plug-and-play-priors",
+  "note_path": "specialist/diffusion-plug-and-play-priors.md",
+  "baseline_note_sha256": "5af464247482306cb081419b8f31a69791ccc34da0842811173e843445840334",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/diffusion-plug-and-play-priors/paper.pdf",
+      "sha256": "638e89c2964180b32c16ca079041a5a72774e1b37bb011dd8dc033011954a2fa",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Supplemental-Conference.zip",
+      "archive_member": "supplementary_material 2/suppl.pdf",
+      "version": "Publisher supplement ZIP scientific appendix PDF",
+      "local_path": "research/full-text-review/diffusion-plug-and-play-priors/supplement.pdf",
+      "sha256": "0f9f4f94d50f8cdd49f8f2e793aef7f483b3d62bac26bad9604b8411dc2ccd64",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read plugandplayposteriorpriorconstraint/freeenergyandDDPMnoiseoptimizationpointestimate, frozenprior/endtoendinputgradientdifferentfromstandardconditionalsampling; broadnonCOapplicationsseparatepriors."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read exactstochasticdenoisingfitnessinputgradientAlgorithm1/noDDPMparametertraining, timeannealing/latentf(y)Eq13;conditionalimagesseparatepriors andsemanticsegmentationwithclusteringweaklabels notTSPguidance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read segmentationformula/domaintransfernegativeIoUs and TSPf(A)visualprior/row-stochasticrelaxation/noexplicitlengthterm, solverlabeled~1.5mtours, greedy+2opt necessarynotrawfeasibleadjacency."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read mainTSPTable2/fullresults16/64/256steps, conventionalcomparisonsborrowednotcontrolled, explicitcostlimitation, completefirstbibliographypages; gap64steps2.60vs5.780inconsistencycheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read entire45referencesandchecklist, mainexperimentsonerun/noerrorbars; precisecatalogueAMcitationonly(otherTSPpreprint/CPworksabsent)."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read Gaussianvariationalextension andallMNIST/FFHQtraining/inference/noise/gradientbalancing, conflictingattributes/failurecases notallconstraintssatisfied."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Read FFHQfailureimages/captions, landcovertrain100k32batches/localGMM31patchMI/weaklabels andgeographylearnedbiases/allsegmentationvisualcaptions; renderfiguresnext."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Read allB3domainfinetuningsettings andB4TSP8epochs2daysK80, exactgreedyA/dedgeorder/uncrossings,200node64raster3.77vs3.81baseline/128raster2.59% saturation andallfigures."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dmpp-contribution",
+      "category": "contribution",
+      "statement": "Frozen-denoiser input-gradient prior inference, latentTSPadjacency raster andseparatedecoding/refinement, notexplicitTSPcostguidance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8,
+            9
+          ],
+          "locator": "Sections2-3/5 Algorithm1 Eq13 andTSPencoding"
+        }
+      ]
+    },
+    {
+      "id": "dmpp-method",
+      "category": "method",
+      "statement": "TSPusesrowstochasticSplusStranspose, solver-labeledprior andgreedy/2optfeasibility; approximateinputoptimizationnotoptimalitycertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "TSPencoding/training/extraction"
+        }
+      ]
+    },
+    {
+      "id": "dmpp-experiment",
+      "category": "experiment",
+      "statement": "1280testTSP50/100;Table2negativesagainststrongertransformer,nonmonotonebudgets;200nodesaturationandresolutionincrease.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Table2; supplementaryB4pp6-8 separatelyregistered"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "AppendixB.4 training/inference/larger200-node experiments"
+        }
+      ]
+    },
+    {
+      "id": "dmpp-limit",
+      "category": "limitation",
+      "statement": "Frozen64rasterdoesnotmakeendtoendgraphcostsublinear;samplingcost, rastercrowding andsingle-runresults qualifyperformance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Conclusion/checklist andcomplexityclaim"
+        }
+      ]
+    },
+    {
+      "id": "dmpp-classification",
+      "category": "classification",
+      "statement": "SingleNCOtaskTSPandneuralcontinuousrepresentationbeforefirstcompletefeasibletour implyspecialistconstructive;2optisclassicalpostprocessing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "TSPinference/extraction Figure7"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/5e6cec2a9520708381fe520246018e8b-Abstract-Conference.html",
+      "locator": "CurrentHTMLcitation_title/authors; PDFp1printsNikolayMalkin, currentHTML/READMEWhitammer; preservedcurrentofficialmetadataanddocumentedversiondifference."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/5e6cec2a9520708381fe520246018e8b-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2022-12-06; replacedgenericCFPnotificationcalendarwithactualissueddate."
+    },
+    {
+      "field": "arxiv",
+      "source_url": "https://arxiv.org/abs/2206.09012v1",
+      "locator": "Version1submissionhistory/citation_date2022-06-17; scientificreadingusespublishermain+ZIPnotnewestv4."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Supplemental-Conference.zip",
+      "locator": "ManualpublisherSupplementalaction; inventoried5293677byteZIP, scientificmember supplementary_material 2/suppl.pdf8pagesallread/registered; othermemberscode/notebooks/MACOSmetadata; currentauthorZIPnoadditionalPDF/ZIP/texscience."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/AlexGraikos/diffusion_priors",
+      "locator": "AuthorREADME/inventoryandTSPinference.pyallsections/tsp_utils.pyrefinement; implicitendpointdegreeguard andcurrentfull2opt/schedulerdifferencesnotassumedhistoricalbyteidentity."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Paper-Conference.pdf",
+      "locator": "Fresh full bibliography pages[11] plus actual body pages[8]: Body p8 explicit grouped [6,23,16,17,4]; bibliography [6] Deudon/Cournut/Lacoste/Adulyasak/Rousseau CPAIOR2018 exact title."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/5e6cec2a9520708381fe520246018e8b-Paper-Conference.pdf",
+      "locator": "Fresh full bibliography pages[12] plus actual body pages[8, 10]: Body p8 grouped citation and p10 GNN baseline [16]; bibliography Joshi/Laurent/Bresson arXiv1906.01227 matches primary target exactly."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2206.09012",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-06-17; title on abstract page: Diffusion models as plug-and-play priors. This date is preprint history, not formal publication. Cached research/full-text-review/diffusion-plug-and-play-priors/arxiv-v1.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "diffusion-plug-and-play-priors",
+      "cited": "attention-model",
+      "reference_label": "[23]",
+      "description": "ExplicitTSPcomparison/datasetreference andKool/vanHoof/WellingAttentionLearnSolveRouting bibliographyentry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation [23] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffusion-plug-and-play-priors",
+      "cited": "learning-heuristic",
+      "reference_label": "[6]",
+      "description": "Body p8 explicit grouped [6,23,16,17,4]; bibliography [6] Deudon/Cournut/Lacoste/Adulyasak/Rousseau CPAIOR2018 exact title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation [6] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffusion-plug-and-play-priors",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[16]",
+      "description": "Body p8 grouped citation and p10 GNN baseline [16]; bibliography Joshi/Laurent/Bresson arXiv1906.01227 matches primary target exactly.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall14main+8scientificsupplementpages, fullreferences/checklist andmanualpublisher/ZIP/repositoryinventory.",
+    "CorrectedunsupportedexplicitTSPcost/feasibilityguidance andalternatingdenoisingclaim; neuralconstructionbeforefirstfeasibletour.",
+    "Recordedexactpublicationdate/currentauthorversiondifference, qualifiedtiming/complexity/generalization/tablegapissue andnegativecomparisons, restoredoneexplicitrelation.",
+    "Follow-up complete bibliography audit restored explicit citation to learning-heuristic; identity checked, no inferred topic edge.",
+    "Follow-up complete bibliography audit restored explicit citation to efficient-graph-convnet-tsp; identity checked, no inferred topic edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "22f94ad49aa7cb07709553ea4b03ccee284f42fd02db3581eb2e8f347e9fd448"
+}

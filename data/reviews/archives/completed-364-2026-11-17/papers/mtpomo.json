@@ -1,0 +1,510 @@
+{
+  "version": 1,
+  "paper_id": "mtpomo",
+  "note_path": "generalist/mtpomo.md",
+  "baseline_note_sha256": "41dfa38d2bf425160c9bbfb563878a7988ff2422a6e601736163d784b9027c0e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2402.16891",
+      "retrieval_url": "https://arxiv.org/pdf/2402.16891",
+      "version": "arXiv2402.16891v2,12April2024,15pagesincludingAppendicesA-D; separatelyverifiedKDD2024DOIformalpublication; notclaimedbyte-identical",
+      "local_path": "research/full-text-review/mtpomo/paper.pdf",
+      "sha256": "0e127ebf38639bd2bb1c0bb1db28e524d814d7ff20fe2ec4ddf224fa9b16112c",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh arxiv2402.16891v2 Apr122024 pp1-2 fullabstractintrorelatedwork and attribute definitions TW/O/B/L. SixauthorsCityU/SUSTech/Huawei. SingleVRPmodel crosscombination zero-shot claimed; constraints stillhandcoded. Backhauls mixedinterleavablepickup/delivery, notpairedPDP. Mainfixedcapacitatedfamily."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Freshfullattribute-sharingAM/POMOencoderonceanddynamiccontextcapacity/time/duration/open, demandsencodebackhaul; explicitproblemflagsactivatehandcraftedmaskunion andattributeupdates. REINFORCEsharedbaseline/nstarts; paperprosegreedytrainingvsgradientneedscheck. CompleteFigure1/2text, AppendixAreferenced."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "Fresh fullsetup/5trainingand5unseentables/OVRPBLTWaggregate/Fig3-6/real64instances/52refs andAppendixA1-A4. 100Mtraininstances10.5daysvs495models, 5ktesttotal timings, HGSgap notopt. Single-taskcanwin individualtasks/unseenVRPBTW50; 4.59/7.03%unseen5means notall <5. CVRPLIBP15vsclaimedmin30, 700-1000gap13.8. AttributehandcodedTWdepotlookahead/durationmaskandopenobjective, backhaulstateundertoldneedscode. Full52refsscan."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 15,
+      "notes": "FreshcompleteAppendixB-D allfine-tuning/no-normalizationexperiments,OODOprotocolandTables6-10/Figs7-11. Table6rotatedrenderactuallyviewed fullrows; MTIN3.75 vsSTCVRP23.47%,training4.8d contradictmain10.5/10,000epoch. FT200*10k/5h tasktraining notzero-shot, n50CVRP.37 vsPOMO.11 meansnotallFTbest. OODcapacityprose7levels20-80 differsTable8eight30-200; durationtestalso changescapacity150 so confounded. All15pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "CompositionalsharedVRPattributesreduceper-tasktraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/motivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "TasksharedAMwithdeterministicattributeprocedures, five-taskPOMOtrainingandunseencomposition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figures1-2/Sections4-5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Encoderonce, dynamiccapacity/time/length/opencontext, signedbackhauldemand andmaskunion; constructiveonepolicyacrossvariants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            10
+          ],
+          "locator": "Architecture/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "5ktrialtotaltimes; seenaverage4.37/3.05/1.59, unseen4.59/7.03notall5%; optional200epochFTtargettraining, OODconfoundedcapacity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Tables1-10andAppendicesB-D"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Notuniversallybest; explicitfixedattributes andsigned-demandone-sidedloadrulequalifyphysicalbackhaulcoverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            10,
+            12,
+            14
+          ],
+          "locator": "Taskdefinitions/capacityEq11/individualnegativecomparisons"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructiveactualtasksharedcheckpoint; size50/100separatemodels; pairedPDPnotbenchmarked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            10
+          ],
+          "locator": "Nativevariants/checkpointandactions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal publication",
+      "source_url": "https://api.crossref.org/works/10.1145/3637528.3672040",
+      "locator": "Exacttitle/sixauthors/KDD2024formalDOI; published-online2024-08-24, print2024-08-25. Genericacceptancenotificationdateexcluded."
+    },
+    {
+      "field": "source provenance and first date",
+      "source_url": "https://arxiv.org/abs/2402.16891",
+      "locator": "arxivhistoryv1Feb23,v2Apr12,2024; local15pagev2SHA0e127ebf38639bd2bb1c0bb1db28e524d814d7ff20fe2ec4ddf224fa9b16112c; formalPDFunavailable, no byteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/FeiLiu36/MTNCO",
+      "locator": "AllAppendicesA-Dincludedandfreshread; officialcodeZIP376membersnosciPDF/ipynb/archive/video; externalACMattachmentinventoryinaccessible notassertedabsent."
+    },
+    {
+      "field": "code model and backhaul",
+      "source_url": "https://github.com/FeiLiu36/MTNCO/blob/main/MTPOMO/POMO/VRPEnv.py",
+      "locator": "Env291-305 signedloadupdate andone-sidedmask; Model71-85multinomialsamplingduringtrainingvsargmaxeval; readREADME/trainconfig/currentkeyroutines, noexperimentrerun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2402.16891v2#page=4",
+      "locator": "OriginalFigure2crop45,58,567,340at2x, completecaptionvisuallychecked; mainTables1-5androtatedTable6rendered/read."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2402.16891",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-02-23; title on abstract page: Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization. This date is preprint history, not formal publication. Cached research/full-text-review/mtpomo/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mtpomo",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[2]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "neurewriter",
+      "reference_label": "[6]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "select-and-optimize",
+      "reference_label": "[8]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[9]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "bq-nco",
+      "reference_label": "[11]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "att-gcn",
+      "reference_label": "[14]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "elg",
+      "reference_label": "[15]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "[16]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[20]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "routing-dro",
+      "reference_label": "[22]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[25]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "attention-model",
+      "reference_label": "[26]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "pomo",
+      "reference_label": "[27]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "pareto-set-learning",
+      "reference_label": "[31]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "rl-vrp",
+      "reference_label": "[33]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "h-tsp",
+      "reference_label": "[35]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "pointer-networks",
+      "reference_label": "[44]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    },
+    {
+      "citing": "mtpomo",
+      "cited": "omni-vrp",
+      "reference_label": "[51]",
+      "description": "Explicitly cites this exact related neural routing or generalization method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Related work/model baselines and exact-title numbered bibliography, including aliases for formal and preprint titles."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall15v2pages/AppendicesA-D/52refsandinspectedofficialcode.",
+    "Corrected3affiliations, removedunsupportedpairedPDP, addedTW/durationlimits andseparatedactualsignedbackhaulvariant.",
+    "Removedcalendar-derivedacceptancedate, verifiedformalpublicationindependentofarxivwatermark.",
+    "Separatedtasksharedcheckpoint/size-specificmodels/zero-shot/FT/searchbudgets andnegativeindividualresults.",
+    "Qualifiedphysicalbackhaulmaskcoverage, printedOODcapacitylistdifference andduration/capacityconfound.",
+    "OriginalcompleteFigure2and18exactinternalcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a420ca34e7c7f9802ecbeb72334826691aa054f6115659782354534fb3ab1f38"
+}

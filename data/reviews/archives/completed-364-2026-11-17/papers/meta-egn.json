@@ -1,0 +1,530 @@
+{
+  "version": 1,
+  "paper_id": "meta-egn",
+  "note_path": "specialist/meta-egn.md",
+  "baseline_note_sha256": "ab22aabdc6013b72af59a9c427c332e5604361dd76e3ef47778bcbc8c8bfd306",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2301.03116v2",
+      "version": "arXiv2301.03116v2,22January2023;all19pagesmainplusAppendicesA-Dfreshlyread;authorfallbackaccepted,separateformalICLR2023eligibility.",
+      "retrieval_url": "https://arxiv.org/pdf/2301.03116",
+      "local_path": "research/import-272/nco-4ecc1db14a.pdf",
+      "sha256": "68618008e92cacd0ba1fafd4febb8abd0e5e6a09bfdcc061764a063d21161c3a",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshread arxivv2Jan22_2023twoauthorsGeorgiaTech/Purdue;MAMLinstanceleveltraininginitializationnotavgobjective;3tasksMISmaxcliquevertexcover;RRG1000trainupto100kOODclaimsnotuniversalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullrelatedwork/definitions;entrywiseconcaveconditionalroundingguarantee requiresinstance loss<beta>maxcost;averageERMdoesnotensureperinstanceloss;MAMLlearnsinitializationnotworst-casequalitycertificate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fullMAMLAlgorithm1one-stepinner/querysameinstance,optionalone-stepparameteradaptationthenrounding;conditionalTheorem1entryconcavitylocalLsmoothandloss<beta+Delta;landscapeexplanationconjectural,meta-traininglessstable/slowerthanEGN;actual3taskobjectives."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallTables3-5andsettings8seedbestvs1/4/8,1stepfrozeninitialcheckpointadaptparams;Gurobi3000referenceincumbentnottrueoptimalifApR>1;tabletyposMVC .0131/.0103;MISgreedyDGA/RGAinputinitializationdistinctfromMC/MVCsingle-node,26threadsCPU/GPU."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadfullTable6captionRB2000vsproseRB500conflict;MISDGA/RGAfeasibleindicatorsasGNNinputauthorslearnimprovesets,inputnotonlyrandom;reportedextra1-30%overgreedy;optionalone-stepdoeslittleMIS;allconclusion/ackandfirstrefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read completebibliographyincludingactual2018NeuroSAT/Khalilbranching/graphCO/Matrix/POMO/GraphGLS/RUN-CSP/principledrelaxation,preprintyearsretainedandgeneralGNNrefsnotforcededges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "ReadallAppendixAproof/Theorem2;roundingconcavityargumentconditionalvalid,butdescentEq6onlyjustifiedinsideLsmoothballwhileauthorsalsohandleoutside-stepcase;avoidunconditionalcertificate;readB1runtimefigurecontext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "ReadallTables7-10andFigures6/7context:DGAimprovements.0032-.0084ApR,RGA.0871-.1292;degree3trainfailsgreedygeneralization;MetaEGN~1.8-10hMCand18.15hMIS;epochdefinitionsunequalEGNfullsweepvsmetasinglebatch;allactualdatasetcounts750/100/100Twitterconflict8:1:1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Readfull3taskrelaxationderivations/algs2/3andgreedyimplementationsPython3.8(suggestC++faster),MISauthorsspecificallymodifyDGA/RGAfullsets;limitationstrongerMonteCarloalgorithmsnotcomparedandsingle-nodeglobalissue."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 19,
+      "notes": "ReadfinalAppendixDcontinuationglobalassignment/strongerMonteCarloimprovementfuturework;entire19pagearxivv2A-Dcompleted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "meta",
+      "category": "contribution",
+      "statement": "Instance-as-taskMAMLpost-updateobjectivecontrastsaveragepreadaptationERM;qualityinitializationbenefitnotuniversalinstancecertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Eq3-5Algorithm1."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Task-specific4/6layerGINwithentrywiseconcaverelaxationandrounding;MC/MVCseedconstructionvsMISgreedysetrevision;optionalnetworkparameteradaptationdistinct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8,
+            9,
+            17,
+            18
+          ],
+          "locator": "Definition1,Table2,Section5.1/5.4andAlgorithms1-3."
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "category": "experiment",
+      "statement": "Qualifiedbest1/4/8seeds,5runs,unequalepochs,time-limitedIPreferences,classicalwins,MISdegree3failureandtableconflicts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15,
+            16
+          ],
+          "locator": "Tables3-10/Figures1-7."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistconstructive-improvement:MC/MVCconstructsets;MISexplicitlyneurallymodifiescompletegreedyfeasibleinput;parameteradaptationitselfnotclassificationreason.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            15,
+            18
+          ],
+          "locator": "Greedyfeatureinitialization,AppendixB.2/Dandtask-specificlosses."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://openreview.net/forum?id=-ENYHCE8zBp",
+      "locator": "Actualreadarxivv2title/twoauthorsGeorgiaTech/Purdue;firstJan8v1/latestJan22v2verifiedofficialarxiv;ICLR2023yearprecisionretained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=-ENYHCE8zBp",
+      "locator": "ManualOpenReviewlandingverificationpage;actualarxivv2full19pagescontainsA-Dread,noexplicitmissing-materialpointer. Officialrecursiveauthorrepositorytree156entriesnottruncated,noPDF/TeX;fourZIPsmanuallyopenedcentraldirectoriesonlyserializeddata.pt/TWITTER_SNAP.pdatasets,noextra scientific attachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Graph-COM/Meta_CO",
+      "locator": "FullREADMEandrepresentativeMCtrain/model/finetunelaunch/sourceinspected;MIScomingsoon;currentfinetune2Adamupdatesall8seedsnotpaper1bestseed;noexperimentrun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2301.03116v2#page=5",
+      "locator": "OriginalAlgorithm1Rect(105,78,510,268)5xfulltraining/testingflow;allscientificfigures/tables/proofs/objectivesvisuallyinspected."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2301.03116",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-01-08; title on abstract page: Unsupervised Learning for Combinatorial Optimization Needs Meta-Learning. This date is preprint history, not formal publication. Cached research/full-text-review/meta-egn/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "meta-egn",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias2020",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse2019",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson2021arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon2021",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "neurewriter",
+      "reference_label": "Chen2019",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang2022",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "selectr",
+      "reference_label": "Nandwani2021",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh2018asprinted",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "neurosat",
+      "reference_label": "Selsam2018arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    },
+    {
+      "citing": "meta-egn",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu2019",
+      "description": "Explicitauthor-yearcitationandmatchingactualbibliography;actualcitedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualbibliographymatchingtitle/authors."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh19pagearxivv2A-Dfullreading/allproofs/figures/tables;manualprimarylandingand156entrytree+fourZIPscientificinventory.",
+    "Clarifiedtask-specific4/6layerGIN,MC/MVCsingle-nodeconstructivebranchvsMISexplicitfullgreedysetrevision;retainedmixedforactualtaskbranchesnotparameteradaptation.",
+    "Scopedconditionalrounding/descentguaranteesandidentifiedlocalLsmoothoutside-stepbranchproofgapwithoutclaiminguniversalinstanceoptimality.",
+    "Detailed1/4/8seedsearch,one-stepadaptation,5runs,unequalepochs/datacounts,trainingtimesandclassicalquality/timewins.",
+    "QualifiedGurobi3000secondincumbentApR>1notbetterthantrueoptimum,degree3OODfailure,Table6RB2000vsRB500conflictandTable5ratioerrors.",
+    "PublicMIScodecomingsoonandcurrentMCfinetune2Adamupdatesall8seedsdifferfrompaperbudget;originalAlgorithm1cropand15explicitcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5cec76a764f705ce8631cb8aee4d954be28fd7031a6c63d79a2cca67d1311e30"
+}

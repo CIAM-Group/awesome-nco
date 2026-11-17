@@ -1,11 +1,11 @@
 ---
 id: efficient-graph-convnet-tsp
 short_title: GCN
-title: 'An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem'
+title: An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem
 authors:
-  - Chaitanya K. Joshi
-  - Thomas Laurent
-  - Xavier Bresson
+- Chaitanya K. Joshi
+- Thomas Laurent
+- Xavier Bresson
 year: 2019
 date: 2019-06-04
 venue: arXiv
@@ -13,20 +13,24 @@ paper_url: https://arxiv.org/abs/1906.01227
 arxiv_url: https://arxiv.org/abs/1906.01227
 code_url: https://github.com/chaitjo/graph-convnet-tsp
 institutions:
-  - Nanyang Technological University
-  - Loyola Marymount University
+- Nanyang Technological University
+- Loyola Marymount University
 scope: specialist
 paradigm: constructive
 problem_families:
-  - Routing
+- Routing
 problems:
-  - Traveling Salesman Problem
-summary: A supervised edge-aware graph convolutional network predicts a probabilistic TSP edge heatmap that is converted into a valid tour using beam search.
+- Traveling Salesman Problem
+summary: A supervised edge-aware graph convolutional network predicts a probabilistic TSP edge heatmap that is converted
+  into a valid tour using beam search.
 figure:
   path: paper-assets/efficient-graph-convnet-tsp/framework.png
   alt: Graph ConvNet pipeline from an input graph through an edge heatmap and beam search to a TSP tour.
   caption: 'Figure 1: Graph ConvNet edge-heatmap prediction and beam-search tour construction pipeline.'
-  source_url: https://arxiv.org/pdf/1906.01227
+  source_url: https://arxiv.org/pdf/1906.01227v2
+inclusion: reference
+inclusion_reason: Current record is arXiv-only; a qualifying formal publication has not been established in this
+  review round.
 ---
 
 # An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem
@@ -54,26 +58,29 @@ The approach also examines whether supervised learning from optimal Concorde sol
 
 1. **Problem representation.** Each TSP instance is represented as a graph whose nodes are two-dimensional city coordinates. The Euclidean distance between every pair of cities is used as an edge feature.
 
-2. **Node initialization.** Each two-dimensional coordinate is linearly projected into an \(h\)-dimensional node embedding.
+2. **Node initialization.** Each two-dimensional coordinate is linearly projected into an `h`-dimensional node embedding.
 
-3. **Edge initialization.** Each edge representation concatenates two components: a learned projection of its Euclidean distance and a learned embedding of a categorical edge tag. The tag distinguishes ordinary edges, \(k\)-nearest-neighbor edges, and self-connections.
+3. **Edge initialization.** Each edge representation concatenates two components: a learned projection of its Euclidean distance and a learned embedding of a categorical edge tag. The tag distinguishes ordinary edges, `k`-nearest-neighbor edges, and self-connections.
 
 4. **Edge-aware graph convolution.** The model stacks multiple graph convolutional layers. At every layer, each node combines its previous representation with messages from neighboring nodes. A normalized sigmoid gate derived from the current edge embedding determines the contribution of each neighboring node.
 
-5. **Edge update.** The representation of edge \((i,j)\) is updated from its previous edge representation and the current representations of its two endpoint nodes. Residual connections and batch normalization are used in both node and edge updates.
+5. **Edge update.** The representation of edge `(i,j)` is updated from its previous edge representation and the current representations of its two endpoint nodes. Residual connections and batch normalization are used in both node and edge updates.
 
-6. **Edge classification.** After the final graph convolutional layer, a shared multilayer perceptron maps every edge embedding to two class probabilities: whether the edge is absent from or present in the target TSP tour. Collecting the positive-class probabilities for all node pairs produces an \(n \times n\) edge heatmap.
+6. **Edge classification.** After the final graph convolutional layer, a shared multilayer perceptron maps every edge embedding to two class probabilities: whether the edge is absent from or present in the target TSP tour. Collecting the positive-class probabilities for all node pairs produces an `n \times n` edge heatmap.
 
-7. **Supervised training.** An optimal Concorde tour is converted into a binary adjacency matrix. The network minimizes a class-weighted binary cross-entropy loss between the predicted edge classes and this ground-truth adjacency matrix. Class weighting compensates for the fact that only \(2n\) directed edge entries are positive among \(n^2\) possible entries.
+7. **Supervised training.** An optimal Concorde tour is converted into a binary adjacency matrix. The network minimizes a class-weighted binary cross-entropy loss between the predicted edge classes and this ground-truth adjacency matrix. Class weighting compensates for the fact that only `2n` directed edge entries are positive among `n^2` possible entries.
 
 8. **Tour decoding.** Directly taking the highest-probability edge for each node may produce disconnected cycles or incorrect node degrees. The paper therefore applies a separate constrained decoder:
    - Greedy search repeatedly selects the highest-probability feasible next edge.
-   - Beam search maintains the \(b\) most probable partial tours.
-   - Beam search with the shortest-tour heuristic selects the minimum-length tour among the \(b\) complete beam candidates rather than the candidate with the highest predicted probability.
+   - Beam search maintains the `b` most probable partial tours.
+   - Beam search with the shortest-tour heuristic selects the minimum-length tour among the `b` complete beam candidates rather than the candidate with the highest predicted probability.
 
-9. **Main configuration.** The reported models use 30 graph convolutional layers, a hidden dimension of 300, a three-layer edge-classification MLP, \(k=20\) nearest-neighbor tags, and a beam width of 1,280.
+9. **Main configuration.** The reported models use 30 graph convolutional layers, a hidden dimension of 300, a three-layer edge-classification MLP, `k=20` nearest-neighbor tags, and a beam width of 1,280.
 
 ## Experiments
+
+**Training protocol.** Each epoch selects 10,000 examples from the fixed million-instance pool and uses 500 mini-batches of 20. Adam starts at `1e-3`; validation is checked every five epochs and the learning rate is divided by 1.01 when loss has not decreased by at least 1%. Data are reused across epochs, whereas the compared RL method generates fresh instances, so sample-efficiency curves count training exposures rather than equally costly unique labeled examples. TSP100 training uses four GTX 1080 Ti GPUs; Section 6 reports two GPUs for its test evaluation, with smaller sizes using one. [Sections 5-6 and Appendix C, PDF pp. 5-7, 12](https://arxiv.org/pdf/1906.01227v2#page=5).
+
 
 - **Problem:** Symmetric two-dimensional Euclidean Traveling Salesman Problem.
 - **Instance distributions:** City coordinates are sampled uniformly from the unit square.
@@ -89,6 +96,8 @@ The approach also examines whether supervised learning from optimal Concorde sol
 With standard beam search, the proposed GCN reports optimality gaps of 0.10% on TSP20, 0.26% on TSP50, and 2.11% on TSP100. Under the comparable 1,280-candidate setting, it improves over the sampled attention model on TSP50 and TSP100, while the attention model is slightly better on TSP20.
 
 When the shortest actual tour is selected from the 1,280 beam candidates, the reported gaps decrease to 0.01% on TSP20, 0.01% on TSP50, and 1.39% on TSP100. This improves solution quality but increases evaluation time because every complete beam candidate must be evaluated by its true tour length.
+
+**Timing and comparison scope.** Table 1 reports total time for 10,000 instances, with GPU batches sized to available memory. The CPU baselines use 32 parallel instances on two Xeon E5-2630 CPUs; most comparator values are imported from AM. At TSP100, greedy GCN has an 8.38% gap in six minutes, worse than AM greedy at 4.53% in six seconds. Beam search has 2.11% in ten minutes, and selecting the shortest beam member gives 1.39% in 40 minutes; Concorde gives the reference in three minutes. Thus the advantage depends on the search setting, and matched candidate counts do not establish matched effort or hardware. [Table 1, PDF p. 7](https://arxiv.org/pdf/1906.01227v2#page=7).
 
 The supervised model is more sample-efficient than the compared reinforcement-learning approach on the studied fixed-size distributions because training provides the complete optimal edge structure rather than only a scalar tour-length reward.
 
@@ -108,6 +117,10 @@ However, the cross-size experiments show severe degradation. For example, the TS
 
 ### Curator Notes
 
+- The network predicts a heatmap in one forward pass; the external beam decoder still expands partial tours sequentially. Non-autoregressive neural scoring is not constant-step whole-solver inference.
+- Appendix E labels several continuous-coordinate tours as shorter than the Concorde ground truth. These source examples do not establish that a learned model beats an exact solver on the same exact objective; the reviewed text does not resolve the numerical/modeling discrepancy. Figure 8(b) also shows a substantial failure, length 9.014 against 7.844.
+- The system is specialist constructive: separate TSP-size models provide fixed heatmaps to a feasible-tour decoder; it does not adapt one multi-problem checkpoint.
+
 - The edge-classification loss supervises individual edge decisions but does not directly enforce global TSP constraints such as degree two at every node, graph connectivity, or the absence of subtours. Feasibility is supplied by the external search decoder.
 - The neural network predicts edge scores independently of the partial tour. It therefore cannot dynamically revise the heatmap according to earlier decoding decisions in the way an autoregressive decoder can.
 - The final quality depends substantially on the beam width and on whether the highest-probability or shortest-length beam candidate is selected. Results should therefore be compared only under similar inference budgets.
@@ -117,6 +130,9 @@ However, the cross-size experiments show severe degradation. For example, the TS
 
 ## Reproducibility
 
+- **Eligibility:** The reviewed document calls itself a preprint/work in progress. The author repository describes an INFORMS Annual Meeting Session 2019 presentation. A qualifying archival top-conference or approved-journal publication is not established; this entry remains reference-only despite its technical influence.
+- **Reading version:** [arXiv:1906.01227v2](https://arxiv.org/pdf/1906.01227v2), dated 14 October 2019. All 17 pages, including Appendices A-E, bibliography and all qualitative figures, were freshly read. The arXiv history supports first submission on 4 June 2019. Integrated appendices supply the referenced scientific supplement; the author resource links a separate follow-up paper, not another attachment of this version.
+
 - **Official implementation:** [chaitjo/graph-convnet-tsp](https://github.com/chaitjo/graph-convnet-tsp)
 - **Repository status:** The official repository was archived in February 2024 and is read-only.
 - **Datasets:** Concorde-labeled TSP10, TSP20, TSP30, TSP50, and TSP100 datasets are linked from the official repository.
@@ -125,3 +141,5 @@ However, the cross-size experiments show severe degradation. For example, the TS
 - **Original software environment:** Ubuntu 16.04, Python 3.6.7, PyTorch 0.4.1, and CUDA 9.0.
 - **Compatibility note:** Reproducing the original environment may require legacy dependencies or code modifications for current PyTorch releases.
 - **Main paper references:** Sections 3-6 describe the data, model, training procedure, decoding methods, and main results. Appendix A reports dataset statistics, Appendix B expands the graph convolution equations, Appendix C studies architecture and beam-width choices, Appendix D discusses supervised versus reinforcement learning, and Appendix E provides qualitative solution visualizations.
+
+- **Review ledger:** [Claim locators, full-page coverage and explicit citations](https://github.com/CIAM-Group/awesome-nco/blob/main/data/reviews/papers/efficient-graph-convnet-tsp.json). Source/code availability was checked; experiments were not rerun.

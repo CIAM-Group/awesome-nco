@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "paper_id": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+  "note_path": "specialist/combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "4ced3d8b99bb672346ec7eb5299924d7722b601a148f4b0ee8094218f529d5a4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Combinatorial_Learning_of_Graph_Edit_Distance_via_Dynamic_Embedding_CVPR_2021_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Combinatorial_Learning_of_Graph_Edit_Distance_via_Dynamic_Embedding_CVPR_2021_paper.pdf",
+      "version": "Formal CVF CVPR2021 ten-page5241–5250 five-author PDF; all main/theorem/50references read, key visuals checked.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-87d34f29d8/publisher.pdf",
+      "sha256": "d18d3bf1dd482929ee14f0aa79a6a8d768fa5f069eb429f142b269e58f802b46",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Allmainpp1?3read5SJTU/ASUauthors;actualeditpathrecoverynotonlyGEDregression;A*partialsolutiong+learnedhNNheuristicexplicitlybreaksh?hoptadmissibility,approximateGEDnotcertifiedexact;classicalpartialeditpathextensionconstructiveratherthancompleteincumbentNNediting;degree/labelonehotfeatures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Allmainpp4?5read:3layerGCNordinary/Spline2D,cachelastfullgraphembeddingandmaskmatchednodesWITHOUTexactreconvolution;constantcachelookupnotwholeattention/NTNcost;mean/tanhkey/sigmoidattention?10NTN16predictssexpGED;h=?.5(n1prime+n2prime)logs;2stageMSEwholegraphlabelsandoptimal-pathpartialstates(supervisedA*labels),notselfsupervisednotonallsearchstates."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Readallmainpp6?8Theorem1proofonlycompletioncostalongoptimalpathnotglobalNNadmissibility;datasets?10nodesAIDS/LINUXWillow10knownkeypointssemantictraininglabelsnotoptimalGED;60/20/20split200finetunepairsCPUonly. Tables1?3negativeMSEGraphSim.787<.839AIDS/.058<.324LINUXandp10GraphSim.992>.962,LINUXGENN.527p10poor. Exactbaseline30.542/2.332/188.234secvs16.235/2.177/78.481approx;h.417ms>Hungarian.358;Fig6threeexplicitsuboptimaleditcosts. NoallSOTA/noexactcert."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All50mainreferencesread:DGMC18BBGM35PCA39CIE43GMN45actualfullidentity;NGMmultiplehypergraphpreprint40distinctfromconferencealias;non-neural/classical/regressiononlynotunrelatedcatalogueedges."
+    }
+  ],
+  "claims": [
+    {
+      "id": "genn-contrib",
+      "category": "contribution",
+      "statement": "Learned completion-cost heuristic and masked cached full-graph embeddings accelerate explicit edit-path search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.2/Figures3–4"
+        }
+      ]
+    },
+    {
+      "id": "genn-method",
+      "category": "method",
+      "statement": "Three-layer GCN/SplineCNN, attention and NTN predict normalized similarity converted to remaining cost; optimal-path partial states supervise fine-tuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs2–8/Algorithm2/Theorem1"
+        }
+      ]
+    },
+    {
+      "id": "genn-accuracy",
+      "category": "experiment",
+      "statement": "Similarity MSE .839/.324/.599 and exact-solution fractions76.8/95.8/58.3%; regression baselines and explicit nonoptimal paths qualify broad accuracy claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Table1/Figures6–7"
+        }
+      ]
+    },
+    {
+      "id": "genn-time",
+      "category": "experiment",
+      "statement": "Complete solve30.542/2.332/188.234→16.235/2.177/78.481sec; GENN heuristic.417ms slower than Hungarian.358ms.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Tables2–3"
+        }
+      ]
+    },
+    {
+      "id": "genn-boundary",
+      "category": "limitation",
+      "statement": "Learned heuristic explicitly breaks admissibility; Theorem1 only conditional optimal-path labeling, not network exactness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            8
+          ],
+          "locator": "Section3.1/Theorem1/Figure7"
+        }
+      ]
+    },
+    {
+      "id": "genn-class",
+      "category": "classification",
+      "statement": "Specialist constructive neural partial-path expansion controller; no neural complete-incumbent editing or shared cross-native checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Algorithms1–2/dataset-specific models"
+        }
+      ]
+    },
+    {
+      "id": "genn-repro",
+      "category": "reproducibility",
+      "statement": "All10formal pages/50refs read, key visuals viewed, full19member official repository and README checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "References/official source inventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR46437.2021.00520",
+      "locator": "Identity-matched cached Crossref exact title/5authors published-print2021-06 month precision; formal PDFp1 byline/SJTU+ASU and printed5241–5250."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2011.15039",
+      "locator": "Cached canonical primary history v1 2020-11-30,v2 2020-12-01; separate from June2021 formal metadata, actual reading CVF bytes."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/html/Wang_Combinatorial_Learning_of_Graph_Edit_Distance_via_Dynamic_Embedding_CVPR_2021_paper.html",
+      "locator": "Official CVF landing paper/arxiv only; all10formal pages include theorem proof and refs. Complete19member official archive3b3a6989a5616b07f8645a48e0f98b878029e6f2 inventory and full README checked, no science PDF/ZIP/ipynb attachment identified. README pretrained-model link describes checkpoints, not missing scientific appendix."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Combinatorial_Learning_of_Graph_Edit_Distance_via_Dynamic_Embedding_CVPR_2021_paper.pdf",
+      "locator": "Figure3 formal PDFp4/5244 Rect40,65,572,255 at2x whole diagram+entire caption physically saved/actually viewed; rendered pp3–8 math/algorithms/plots/tables inspected."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Thinklab-SJTU/GENN-Astar",
+      "locator": "Current src/astar_genn.py232–246 and375–467 confirm edit-path search and full-graph cached node masking. Entire README warns Willow surrogate printed metrics and describes commands/checkpoints; CPU description differs from formal paper and is kept separate."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Combinatorial_Learning_of_Graph_Edit_Distance_via_Dynamic_Embedding_CVPR_2021_paper.pdf",
+      "locator": "All50refs pp9–10 independently read; 5 exact catalogue identities. Ref40 differently titled journal-lineage NGM not merged; Generalizing graph matching beyond QAP not present in catalogue. Later README PPO-BiHyb mention not source bibliography."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "18",
+      "description": "Direct actual bibliography full-title/byline identity; not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[18]"
+        }
+      ]
+    },
+    {
+      "citing": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "35",
+      "description": "Direct actual bibliography full-title/byline identity; not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[35]"
+        }
+      ]
+    },
+    {
+      "citing": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "39",
+      "description": "Direct actual bibliography full-title/byline identity; not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[39]"
+        }
+      ]
+    },
+    {
+      "citing": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "cited": "cie-h",
+      "reference_label": "43",
+      "description": "Direct actual bibliography full-title/byline identity; not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[43]"
+        }
+      ]
+    },
+    {
+      "citing": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "45",
+      "description": "Direct actual bibliography full-title/byline identity; not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[45]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending draft after all10formal pages and all50references read.",
+    "Explicitly approximate GED search, not exact A*: learned admissibility sacrificed.",
+    "Distinguished full-solve times, heuristic times and search-state reductions, retaining negative baseline comparisons.",
+    "Separated conditional Theorem1 training-label fact from neural guarantees and preserved Willow surrogate-label caveat."
+  ],
+  "reviewed_note_sha256": "dbaa1983d077b967183b251730c86b50e40111f2cb741f5b1f3632e92efce1f2"
+}

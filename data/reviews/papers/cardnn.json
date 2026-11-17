@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "paper_id": "cardnn",
+  "note_path": "specialist/cardnn.md",
+  "baseline_note_sha256": "ec661434456b3ac11cfc962cb6ed8b5a158d1cc34003605514ba4cacc73fd533",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openreview.net/pdf/47ff06773ffd6757c65cd362fde9c7bfd3176168.pdf",
+      "version": "31-page ICLR2023 conference copy acquired via public mirror, title/six authors/publication header verified; full main plus AppendicesA-H freshly read; no formal byte-identity assertion.",
+      "retrieval_url": "https://lacuna.tiptreesystems.com/pdf/art_50865f706391e2e8ca1661722452f517",
+      "local_path": "research/import-272/nco-cde049cc15.pdf",
+      "sha256": "89d8459626e28d5378a0e758244be3e2b24f72dae7cd13d6f489361bc3915f99",
+      "pages": 31,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh31pageICLR2023title6authorsSJTU/JD,one-shotcardinalityOT/Sinkhorn/Gumbel,3methodparadigmsandendtoendselfsupervised,softcardinalityCVnotobjectiveoptimalityguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read entireCardNNpipelineactualFLP/MCP/predictiveportfolio scope,OT2xmtransportexactkselection,entropicmarginalsrelaxedx,Definition2.1CVexpecteddistancetofeasiblebinarymatrixnotonlycardinalitysum;convergedSinkhorngapdependentbound/tiebounddivergesnotactualnorminfinite."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fullGumbelnoise/propositions2.4corollary2.5/2.6withconvergence/highprobabilityepsilonconditions,homotopytauonlysigmafixedvariancesampletradeoff;FLP2D3layerSplineCNNandsmoothnearestfacilityobjective,MCPbipartitecoverdefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read completeFigures3/4protocolnotpureforward:inferencegradientoptprobabilities,100train/testeach,FLP4cities/MCP6Twitch,greedy/IP/EGNadaptation,timeouts,gapincumbentnotalwayscertified;portfolioSharpe/cardinality+longonlybudgetLSTM/inversecovmaskreluweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read completeportfolio494SPassets2018-2020train2021test/k20/120futureday/rf3%,Sharpe1.082to1.968MSE.153to1.382,returns24.1to40empiricalsingleyearnotinvestmentguarantee;completefirstbibliographyincludingDai2016islatentembeddingsnotKhalil2017."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allremainingrefsactualtitles/versions;Khalil2017distinctfromDai2016,Lu2019citedpreformal,specificmatching/blackbox/SAT/decisionfocusedrefsnotforcedbyacronym."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read entireAppendixArelatedwork/Bactual3limitationsobjectiveapproxopen/onlycardinality/coupledpredictorGurobiSharpe1.002;allCdefinitionsandLemmaC1logisticpairwiseGumbelorderingproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read fullProposition2.4proofEquations26-45,orderingpermutation/reciprocalgaptruncationAz>0andlogisticPDFupperbound;trackcutoffprobabilitynotunconditionalperrunboundorobjectiveguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Read everyintegral/boundEq46-74andprobabilitycutoffz(epsilon),authorsclaimhighprobabilityexpectationbound,identifiedrankeventfactorizationEq29equalitydoesnotfollowfromdependentpairwiseevents;cannotclaimindependentlycertifiedtheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read completeCorollary2.5sum/simplifiedbounds and2.6/C2unique-gapassumptions/all4limitscases/proofremarks;actualclaimnotobjectiveapproximationandtieissueboundonly;beginAppendixD."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "Read completeAlgorithms2/3trainingtheta vsinferenceprobssgradient,topkbestoverG andhomotopycycles;allTable4synthetic100case_stats,realcity/logviewerTwitchdefinitions,hyperparamsMCPG1000FLPG500portfolioG1000/hardware."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "Read fullTable5MCPgapincumbentGurobi24hOOT,stronggreedy.011@.024svsGS.002@28s;allTables6-10realFLPcasesandEGNtrainontesttimeomittedexception;CardNNnotuniformlyfaster/betterGurobi."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Read allTables11-17NY/Shanghai/SeoulManhattanandDE/ENGB/ES/FR_Twitchwithobjective/time rows;CardNNHGSoptimalbutoftenordersslowerthanSCIP/greedy,EGNtrainontestexplicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "Read completeTables18/19remainingTwitch/hyperparamfinite100Sinkhornitersgradientexplosiontradeoff;allTables20-22G800vs1000hasexceptionsdespiteproseallbetter;portfolioexplicitfuture-risk/returntrainingstepsstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "Read fullportfolioforward/train/test9stepschoosebest1000onpredictedSharpeTHENhardtopkandonlyevaluatefuturetruth;all6additionalportfoliofrontierfiguresandassetinventoryHstatements;nofinancialrecommendationorbacktestreturnguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 31,
+      "notes": "Read completefinalassetinventorylistandremainingAppendixHreproducibilitymaterial;all31pagesA-Hreadfresh."
+    }
+  ],
+  "claims": [
+    {
+      "id": "layer",
+      "category": "contribution",
+      "statement": "Cardinality encoded by two-destination entropic OT with Gumbel samples and temperature homotopy; theory about relaxation-distance not objective ratio.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            15,
+            19
+          ],
+          "locator": "Definition2.1 Propositions2.3-2.4 Corollaries2.5-2.6; Eq29 proof caveat explicitly qualified."
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "category": "method",
+      "statement": "Task-specific encoders initialize latent/probability gradient search, hard full-set candidates; no inference network-weight update.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            21
+          ],
+          "locator": "Algorithms2/3 and FLP/MCP encoders."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Reported quality/time exceptions and finite budgets, EGN real test training/time exclusion, Twitch exact classical faster, predictive portfolio scope qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "locator": "Tables3-22 and AppendixB/E/F/G."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive: separate task architectures/checkpoints; latent score search constructs full sets rather than learned incumbent combinatorial edit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            21,
+            29
+          ],
+          "locator": "SplineCNN/GraphSAGE/LSTM and inference variable distinction."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://openreview.net/forum?id=h21yJhdzbwz",
+      "locator": "31-page read conference copy title/header six authors SJTU/JD; actual publishedICLR2023 identified, year-only precision retained, code BibTeX omitted author not copied."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=h21yJhdzbwz",
+      "locator": "Manual scientific-material inventory: actual31-page conference copy contains main and all AppendicesA-H read; no explicit missing scientific attachment pointer. Primary OpenReview displays verification page; official author source archive72members has no extraPDF/ZIP/TEX. Honest mirror provenance retained, not claiming unavailable attachments read."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/NAR-CO-Solver",
+      "locator": "Original repo redirect to NAR-CO-Solver, full README and relevant code/configs inspected; later LinSAT extension distinct. Current portfolio branch returns soft masked weights without paper step8hardtopk; not claimed published-run identity."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openreview.net/pdf?id=h21yJhdzbwz#page=3",
+      "locator": "Original Figure1 full crop Rect(105,78,510,282) at5x; key formulas/algorithms/rank proof/result tables and portfolio panels visually checked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cardnn",
+      "cited": "cie-h",
+      "reference_label": "Yu2020",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey2020",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias2020",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu2019arxiv",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "neurewriter",
+      "reference_label": "Chen2019",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang2021a",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "satnet",
+      "reference_label": "Wang2019a",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic2019arxiv",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "comboptnet",
+      "reference_label": "Paulus2021",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "Mena2018",
+      "description": "Explicit author-year citation and matching actual bibliography; cited prepublication year/version retained where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Bibliography matching title/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al., 2019b",
+      "description": "One-shot relaxed CO-network discussion cites exact three-author ICCV2019 PCA article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Actual body citation Wang et al., 2019b on PDF pp[1]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. One-shot relaxed CO-network discussion cites exact three-author ICCV2019 PCA article."
+        }
+      ]
+    },
+    {
+      "citing": "cardnn",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir & Sminchisescu, 2018",
+      "description": "Soft differentiable graph-matching algorithms discussion cites exact two-author CVPR2018 GMN paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Actual body citation Zanfir & Sminchisescu, 2018 on PDF pp[2]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Soft differentiable graph-matching algorithms discussion cites exact two-author CVPR2018 GMN paper."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh full31-page conference-copy reading including all AppendicesA-H; original plots/tables/formulas inspected and manual author archive inventory completed.",
+    "Added actual facility-location and maximum-coverage tasks, separate task-specific models; nonautoregressive architecture is not single-pass measured search.",
+    "Distinguished soft-to-binary CV from deployed hard feasibility/objective approximation; identified Eq29 joint-ranking factorization counterexample without asserting final bound disproved.",
+    "Expanded exact search/sampling/training budgets, finite normalization assumptions, incumbent reference gaps and nonmonotone ablations.",
+    "Qualified real EGN train-on-test/timing exclusion, classical faster exact Twitch solves and portfolio predictor coupling/single historical test scope.",
+    "Updated actual author code redirect, noted later extension and paper/code portfolio hard-selection discrepancy, README seed sensitivity and squared-Euclidean clarification.",
+    "Retained correct six authors despite current code BibTeX omission; original Figure1 and13 explicitly supported citations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "799449a7a6f39321053ae2f3f5cbc1343ce4bd02f457398c23fbd3aadde44d97"
+}

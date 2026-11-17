@@ -1,0 +1,627 @@
+{
+  "version": 1,
+  "paper_id": "neuro-cross-exchange",
+  "note_path": "generalist/neuro-cross-exchange.md",
+  "baseline_note_sha256": "94318a91bc78618fdc11546796966ccd52360c3c8f10b914c98e8f2512451df3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2206.02771",
+      "version": "arXiv2206.02771v1,6June2022,oldrealistic-titlepreprint25pagesallread;formal29pagesregisteredseparately.",
+      "retrieval_url": "https://arxiv.org/pdf/2206.02771",
+      "local_path": "research/import-272/nco-6231266ca3.pdf",
+      "sha256": "f4677215d8f12af83caa5e492da4ac9d69359c5ba811505c4a0a5247b162f562",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "formal",
+      "url": "https://openreview.net/pdf?id=ZcnzsHC10Y",
+      "retrieval_url": "https://huggingface.co/datasets/Chelsea707/Conference_2020-2025/resolve/main/ICLR/2023/Learning%20to%20CROSS%20exchange%20to%20solve%20min-max%20vehicle%20routing%20problems.pdf",
+      "version": "ICLR2023camera-ready29pagecopyviaHFmirror;formalheader/title/3KAISTauthorsmatchinstitutionalrecord;allAppendicesA-Mread,notbytecomparisonwithblockedOR.",
+      "local_path": "research/full-text-review/neuro-cross-exchange/formal-mirror.pdf",
+      "sha256": "893178a6a728d1a65c69a87224bf01367d5f7dddf36310867efa5d25489dd4b4",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Fresh2022arxivv1oldtitle; 3KAISTauthors, FMDVRPminmaxplus3varianttransfer,singlemodelexplicit,fullAlgorithms1-2quartictofixedKquadraticcandidatepruning,5attentiveGNNlayers supervisedcostdecrement, heuristicintraelkai/perturbations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "Fresh2022version allTables1-5 FMDVRP/mTSPandordinaryminsumCVRPweakness, all34referencesandappendixTOC. FormalversionneededfortargetminmaxCVRPdistinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 25,
+      "notes": "Fresh complete2022versionAppendicesA-G MILPsandallconstraints, MDVRPfullTables6-7, everycandidate/intrasolver/tourselection/perturbationablation,47,856,986labelsfrom50kinstances5layerGNN/Huber3epochs, top10recall90.9%, fullsearchcomparison andeveryexamplesolutioncaption/plot. All25pagesread."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "FreshformalICLRtitle/authors/revisedminmaxscope, completeAlgorithms1-2/GNNformulas/positivecostdecrementsignissue, explicitoneFMDVRPmodelacrossvariants,50kdataand100tests,fullsmallFMDVRPTable1."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 7,
+      "last_page": 13,
+      "notes": "FreshformalTables2-5 newupto800customerFMDVRP, randommTSPandminmaxCVRP; explicitlyminsumCVRPretrainednewcostnotshared. Completeformalbibliographyallentries andAppendixA1MILP."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 14,
+      "last_page": 21,
+      "notes": "FreshA2-A3fullMILPs, B/CMDVRP/mTSPLIBand750scalealltables, DminmaxCVRPLIB11cases20repeatswithnegativecomparisonfailures, EseparatelyretrainedminsumCVRP100p20sample10=1.02%90.12s vsPOMO.43%.01s;F1-F4allablationsanddefaultK10/p5."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 22,
+      "last_page": 29,
+      "notes": "FreshcompleteG-M:exact47.86Mlabeltraininghyperparams/resources; topKrecall,CEcomparisons,mTSP/VRPcases;allrouteexamples;robotsterilization500grid25obstacle99contaminationwithservicecosts;Paretoand6distribution12settingsfullTableA16,printedreference/zero-gap anomaliesnoted. All29formalpagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "operator",
+      "category": "contribution",
+      "statement": "FixedKbeginningpairpredictionprunesendingpairofCROSSexchange; explicittruecostevaluationandincumbentimprovement.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithms1-2 Sections3.1-3.2"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "5attentiveGNlayerswidth64Mish4layerMLPs,47,856,986exhaustivelocal labels50kFMDVRP3epochsHuberAdamW.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            5,
+            6,
+            22
+          ],
+          "locator": "Section3.2 AppendixG"
+        }
+      ]
+    },
+    {
+      "id": "minmax",
+      "category": "experiment",
+      "statement": "SameunchangedminmaxFMDVRPpredictortoMDVRPmTSPminmaxCVRP; latterfeasibilityconstrainedendingsearch,100instancespersize.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Section4 Tables1-5"
+        }
+      ]
+    },
+    {
+      "id": "minsum",
+      "category": "experiment",
+      "statement": "FormalminsumCVRPseparatelyretrained,1.02%100node90.12s10samplesp20;POMOandLKHstronger/faster underreportedhardware.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            8,
+            9,
+            19
+          ],
+          "locator": "Section4.3 AppendixE TableA7"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "FullA-Mscienceincludes11minmaxCVRPLIBcasesnotallwins,robotmodeledplanningcaseand6distributionswithsourcegapinconsistenciesqualified.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            18,
+            27,
+            28,
+            29
+          ],
+          "locator": "AppendicesD/K-M"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistimprovement specificallysamepredictoracross4minmaxvariants; classicalinitializerandLSnotneuralconstructionstage, minsumweightsseparate.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            8,
+            19
+          ],
+          "locator": "Algorithm1 Section4 AppendixE"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://pure.kaist.ac.kr/en/publications/learning-to-cross-exchange-to-solve-min-max-vehicle-routing-probl/",
+      "locator": "ManualKAISTinstitutionalICLR2023formalrecordandformalPDFtitlepage3authorsKAIST;formalminmaxtitlevsarxivoldrealistictitle."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2206.02771",
+      "locator": "Manualhistoryuniquev1June6,2022;25actualPDFpagesincludingappendicesdespiteabstractcomment9."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/pdf?id=ZcnzsHC10Y",
+      "locator": "ManualORlanding/directPDFchallenge403. Recovered29pageformalcopycontainsallreferencedscientificAppendicesA-Mfullyread;25pagearxivA-Galsocompletelyread; authorhomepage/KAISTrecordshow noextra missingfile. Noinspectionclaimforunavailableattachments."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://junyoungpark.github.io/",
+      "locator": "FullmanuscriptsauthorhomepageandKAISTrecordinspected; noauthorNCErepositoryconfirmed. elkaiisonlythirdpartyintrasolver."
+    },
+    {
+      "field": "problems",
+      "source_url": "https://openreview.net/pdf?id=ZcnzsHC10Y#page=8",
+      "locator": "Explicitfourminmaxvariantssharemodel, minsumCVRPseparatelyretrainedunderchangedobjective;all5taskslistedwithscopequalification."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openreview.net/pdf?id=ZcnzsHC10Y#page=2",
+      "locator": "OriginalcompleteFigure1Rect(100,75,513,193)5x; sourceformulassign,allkeytables/examples/distribution/robotplotcheckedvisually."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2206.02771",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-06-06; title on abstract page: Neuro CROSS exchange: Learning to CROSS exchange to solve realistic vehicle routing problems. This date is preprint history, not formal publication. Cached research/full-text-review/neuro-cross-exchange/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "attention-model",
+      "reference_label": "Kool2018arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2021arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            19
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li2021",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu2019",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021a",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            19
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2019arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021b",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "routing-dro",
+      "reference_label": "Jiang2022arxiv",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            29
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li2018",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "neuro-cross-exchange",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2019/2021sameworkversions",
+      "description": "Explicitformaltext/tablecitationandmatchingbibliography; actualprintedolderpreprintidentityretained; Wuold/newduplicateconsolidated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicitauthor-yearcitationintextorbenchmarkrow."
+        },
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Recovered29pageformalversionandreadallA-Minaddition25pageoldarxivA-G;didnotmixoldCVRPtablewithformal.",
+    "Enumeratedfourminmaxproblemssharingpredictor;ordinaryminsumCVRPexplicitlyretrainedsoexcludedsharedcheckpointclaim.",
+    "Detailedsupervisedlocalexhaustivelabelcosts,classicalinitialization/elkai/perturbations, fixedKcomplexityandtop10recallnotguarantee.",
+    "Addedallbenchmarks/hardware/runtime/searchbudgetsandstrongerneural/classicalcounterexamples, elevenCVRPLIBnonuniformwins.",
+    "Addedrobotmodeledcaseanddistributionswhileexposingsourcesign/reference-gapinconsistencieswithoutinventingrepairs.",
+    "RestoredcompleteoriginalFigure1andtraceablemirrorprovenancewithKAISTformalidentitymatch."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "87458a1f9a726bef19b2d8eaec114c54972463bb6dc51f839ed888bf96d352e2"
+}

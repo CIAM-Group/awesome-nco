@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "paper_id": "hybrid-branching",
+  "note_path": "specialist/hybrid-branching.md",
+  "baseline_note_sha256": "2c9308a4850da8028645ece69aed853870b1e9c8bc2c9c0ba4fa4d7df98186b1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Paper.pdf",
+      "local_path": "research/import-272/nco-626799766f.pdf",
+      "sha256": "bf4ed9b0dfcdbb883399274ac35e261b011d1ef52bae83fe31583c2053be4c01",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/hybrid-branching/supplement.pdf",
+      "sha256": "600fcde03a570fe9dce72c42f474eeacd80b5bee818248c70780b8d726ff575e",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read CPU-onlymotivation anddecisioncostaccuracytradeoff, rootGNNplusMLPframework, fourtaskfamilies andclass-specificpolicyclaim, B&Bexacthostbackground andrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allhybridfunctionalforms, rootcache/treefeatures, CEpre/e2e KDauxdiversity equations, depthlossweights, 20x3evaluation45minuteCPUonlyrootcutsprotocol andoptimisticallyaggregatedCOMPbaseline."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read alltrainingprotocol/weightablations Tables2–3 and completeTables4–5, selectedFiLMKDrootmodel, MISmediumvalidationregularization, allCPU/GPUnegatives includingauctionbigslowerRPB andfewerMISsolves despitegeomean."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read fulllimitations plusbroaderimpactand39entrybibliography; identifiedGasseandZarpellonpotentialcataloguerelationsmanually."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read parallelMILPGPUutilizationargument andFigure1 measurednotuniversal, allG/Xfeaturetablesincluding92prosevs13+72tablecountambiguity, preliminarydecision-evaluation-onlytimingarchitectures andFigure2."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read attentionalternativeallmechanism andGPUrelativeplot, exactdataspec150k/30kstates, 3layer256MLP64GNN andLR/exceptions, KDtemperature2alpha0.9ATgrid, hardwareanddepthweightinstanceplot."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Read completearchitectureTable5, MISoverfit/regularized2000mediumobservations Tables6–7, HyperSVMregressions,2xBig7200snegativecasesTable9, everytrainingprotocolruntime andcompletereferences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hybrid",
+      "category": "contribution",
+      "statement": "Root-onlyGNNconditionedMLPbranchers tradeCPUinferencecostagainstdecisionaccuracy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4
+          ],
+          "locator": "Sections1,4.1Table1"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Imitationusespre/e2e/KD/ATanddepthlossweights; hostSCIPretainsbranchandbound.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3–5"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Modelsareproblem-specificfourMILPfamilies; MISusesmediumvalidationforregularizationandremainingtransferissizewithin-family.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7
+          ],
+          "locator": "Scope discussionandmodelselection"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "CPUgainsareconditional:bigauctionFiLM217.02sversusRPB210.95andMIS15vs21solves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Tables4–5"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "2xBig7200secondexperimentsincludeFiLMfewerfacilitysolvesthanGNNandworsesetcoverthanRPB.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Section10Table9"
+        }
+      ]
+    },
+    {
+      "id": "specification",
+      "category": "limitation",
+      "statement": "PrintedEDpositivesquareddistancepenaltyconflictswithclaimedseparationwhenminimized; MHEneedsselfpairexclusion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section4.2.3Equation4"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html",
+      "locator": "NeurIPS2020volume33title/authors; paperp1authornameM.PawanKumar"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Paper.pdf",
+      "locator": "p2class-specificbrancherdiscussion,Section5family-specifictrainingandp7MISregularization"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/d1e946f4e67db4b362ad23818a6fb78a-Paper.pdf",
+      "locator": "Section5fourfamilies:capacitatedfacilitylocation,setcover,combinatorialauction,MIS"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/d1e946f4e67db4b362ad23818a6fb78a-Abstract.html",
+      "locator": "ManuallycheckedSupplementallinkto8pagePDF; all11sectionsincludingnegative2xBigandfullmodeltablesread"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/pg2455/Hybrid-learn2branch",
+      "locator": "Mainp1authorlinkandREADMEofficialimplementation/submodule/reproductionscripts"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hybrid-branching",
+      "cited": "gcnn-branching",
+      "reference_label": "[17]",
+      "description": "DirectGNNbranchingpredecessor,representationandCPU/GPUbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation [17] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded11+8fullyreadpageswithallnegativecasesandtrainingprotocols.",
+    "Clarified45minuteCPUevaluationandCOMPoptimisticaggregation, countvsgeomeantradeoffs.",
+    "Recorded2000mediumMISvalidationand2xBignegativeextrapolation.",
+    "Flaggedprintedauxiliaryobjective/featurecountspecificationambiguitieswithoutassertingcodefailure."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "85e901de69ccb352881ca340afe8a2bc1f38e54d4f7dbf137e63b5c0cf01ee64"
+}

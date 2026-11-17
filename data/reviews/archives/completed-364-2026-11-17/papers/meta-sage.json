@@ -1,0 +1,785 @@
+{
+  "version": 1,
+  "paper_id": "meta-sage",
+  "note_path": "specialist/meta-sage.md",
+  "baseline_note_sha256": "e1d73fee571b46cd713fead7f405be69c4a4a42553bf0406975b98eaec1183c0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/son23a/son23a.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v202/son23a/son23a.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/meta-sage/paper.pdf",
+      "sha256": "652733e78ea3e63ff7794f143368c972f69ce1978b2fd80166d68aae01552e7e",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh titlepage4authorsKAIST, allintro/relatedcitations, fouractualtasksinclOP/PCTSP, encodercontext gphi+geta, frozenmainweights/testeta, distancebiasedlogits andconstructiveMDP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh Figure2-3, eta-onlyRL+selfimitationupdates, localityalpha/tempdecay, distillationbileveloptimization/zeroshotRLscheme, actualpretrain100+fourtasks, completeTable1 andmatchingtimevsAS200iter protocols/A100."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 11,
+      "notes": "Fresh completeCVRPLIBaggregateTable2, component/objective/scalematchingablations, limitationsnonEuclidean/distributions/optimality, acknowledgementandallreferenceentries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Fresh completeAppendixAalgorithmB1-B5decoder/equations, SML2layerMLPs and4000reportedinstances200/300/400, actualadaptationresidualonqstar notentireembedding, T/alphascheduletarget.3at200, K200vs100andKNArollouts,lambda.005, generatorsandheuristicgapcaveat."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Fresh completeAppendixCbaselineshyperparameters and D1-D3extraTSP/OPcurves, full100CVRPLIBXinstancesTable8(allbinsEASbetterbutLKHstronger), bothSMLobjectiveablations."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sml",
+      "category": "contribution",
+      "statement": "Frozen pretrainedbackbone plus SMLdistillationandzero-shotRL amortizesinstanceadaptationtargetembeddings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13
+          ],
+          "locator": "Sections3-4 AppendixB2"
+        }
+      ]
+    },
+    {
+      "id": "sage",
+      "category": "method",
+      "statement": "Eta-onlyresidualdecoderqueryadaptation withRL+selfimitation, decayingdistancebiasandtemperature;K200TSPCVRP/100PCTSPOP bestKNA candidates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13,
+            14
+          ],
+          "locator": "Figure2 AppendixB3-B4"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "experiment",
+      "statement": "FourtaskTSPCVRPPCTSPOP separatebackbones,size100to200/500/1000,1000/128/128heldout,A100datasettimes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Section5/Table1"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "CVRP1000POMO.683%20h,SymTSP100011.488%18h; strongimprovementoverEAS but SymCVRP200ASstronger andheuristicgapreferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table1"
+        }
+      ]
+    },
+    {
+      "id": "realworld",
+      "category": "experiment",
+      "statement": "100CVRPLIBXinstances allbinMetaSAGEimprovesEASbutLKHbetter; component/objectiveablations supportroles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            16,
+            17
+          ],
+          "locator": "Tables2-4/8 Figures6-9"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Task-specificcheckpointsandfreshconstructionafteretaadaptation support specialistconstructive, notneuralincumbentmoves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            12
+          ],
+          "locator": "Figure2 Algorithms1 Section5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.mlr.press/v202/son23a.html",
+      "locator": "ManualPMLRrecord4authors2023ICML20232194-32210 July23-29; PDFtitlepageKAIST. Noevidencedindividualacceptanceday."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2306.02688",
+      "locator": "Manualhistoryv1June5,2023/v2June7."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/son23a.html",
+      "locator": "ManualPMLRlanding onlyintegrated17pagePDFandOpenReview; AppendicesA-D3completeallread. LinkedORrecordDZvwV3Z4Z8andapi/api2challenge403, nomaintextpointertomissingscience. Noinspectionclaimforunavailableattachments."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/kaist-silab/meta-sage",
+      "locator": "FormalabstractdirectURL confirmedofficialfullREADME;3000perscaleREADMEvsAppendixB2L4000noted."
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.mlr.press/v202/son23a/son23a.pdf#page=5",
+      "locator": "Explicitfourtasks includingpreviouslyomittedPCTSPOP."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.mlr.press/v202/son23a/son23a.pdf#page=4",
+      "locator": "OriginalFigure2cropRect(55,73,285,192)6x; fullmodules/arrowsandcaptionscheckedwithFigure3/table1andschedule."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v202/son23a.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-07-03; cached evidence research/full-text-review/meta-sage/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2306.02688",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-06-05; title on abstract page: Meta-SAGE: Scale Meta-Learning Scheduled Adaptation with Guided Exploration for Mitigating Scale Shift on Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/meta-sage/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "meta-sage",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn2020",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2017asprinted",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li2018",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2019arxiv",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma2019",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2020preprint",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021a",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon2021",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022preprint",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "dimes",
+      "reference_label": "Qiu2022preprint",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021b",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li2021",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "att-gcn",
+      "reference_label": "Fu2020preprint",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2021arxiv",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2020asprinted",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2021arxiv",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022arxiv",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "routing-dro",
+      "reference_label": "Jiang2022",
+      "description": "Explicitauthor-yearin-textcitationandmatchingreference; printedolderpreprint/yearretained, notfutureformalversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingfullbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "meta-sage",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "ExplicitIntroductionKhaliletal2017pluscompletebibliographystraddlingPDFpages9-10;actualNeurIPS30pages6348-6358andd9896106primaryhashmatch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "IntroductionDRLrelatedworkexplicitKhaliletal2017."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Fullreferencebeginsbottomrightp9KhalilDaiZhangDilkinaSongandtitle;continuesupperleftp10NeurIPS302017pages6348-6358/primaryd9896106URL."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredOP/PCTSP andauthorofficialcodeURLdirectlyinabstract.",
+    "Replacedgenericmetatrainingclaimwithactualdistillation+zeroRL andresidualqueryeta-onlyadaptation; schedulehyperparametersnotlearned.",
+    "Addedall17pageappendices, task-specificmodels andoffline4000vsREADME3000perscale distinction.",
+    "QualifiedTSP1000largegap,CVRPheuristicreferencesandSymCVRP200ASexception,100CVRPLIBallLKHstronger.",
+    "ClarifiedKNArollouts,datasettime/hardware/matchingprotocolsandOPmaximizationgapconvention.",
+    "Removedinferredacceptance, addedmonthprecisionpublicationandoriginalFigure2crop.",
+    "Latercolumn-awarecandidateaudit:manuallyrereadcompletebibpages9-10andIntroductionp1,addedpreviouslymissedKhalil2017graphCOcitation;noinferrededges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5d07a6e069a83e3355565ba4ad6e41776217e03a9a27733568a88c29b0f43e50"
+}

@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "paper_id": "hopfield-computational-speed",
+  "note_path": "studies/hopfield-computational-speed.md",
+  "baseline_note_sha256": "c4003af3c8bc0cfe3c0c7cc2d4eebcaac203edb4d76367bd52902e078e0dd689",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/68a83eeb494a308fe5295da69428a507-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/68a83eeb494a308fe5295da69428a507-Paper.pdf",
+      "local_path": "research/import-272/nco-32ce0bc7c2.pdf",
+      "sha256": "eefc99040161171b9736c3b3e3eff177c3cf5eeaa40c4ccb252dabd5d37e9a01",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Read complete7pages incl all16references, discrete asynchronous model, all planar/PLS theorem statements, every proof sketch, embeddings/figures and disclosed omitted proofs. Tracked local versus global reduction proof distinction without assuming validity from publication."
+    }
+  ],
+  "claims": [
+    {
+      "id": "separation",
+      "category": "contribution",
+      "statement": "Separates following a network trajectory from computing any stable state; reports planar polynomial stable-state algorithm versus prior exponential dynamics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and Theorem3.1 complete short sketch"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "category": "method",
+      "statement": "Uses symmetric discrete threshold network and single-processor asynchronous updates; stable state is local, not necessarily global optimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Section2.1 and PLS background"
+        }
+      ]
+    },
+    {
+      "id": "embedding",
+      "category": "method",
+      "statement": "Pliability maps guest vertices to connected disjoint clusters and edges to interior-disjoint paths; Lemma4.1 uses strong negative penalties.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Full embedding definition and Lemma4.1 proof sketch visually checked"
+        }
+      ]
+    },
+    {
+      "id": "stated-hardness",
+      "category": "contribution",
+      "statement": "Paper states PLS-completeness for bounded degree and structured graph families, with some final proofs explicitly omitted; note distinguishes these from independently verified reductions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Theorems4.2-4.6 and introduction bipartite discussion"
+        }
+      ]
+    },
+    {
+      "id": "no-experiment",
+      "category": "experiment",
+      "statement": "No numerical evaluation, timing benchmark or training experiment in complete article; two figures illustrate graph constructions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Entire7-page article incl complete16references; Figures1-2 visually inspected"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "A computational-complexity study of stable-state search and dynamics rather than a trained neural combinatorial solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "locator": "Stated target/problem and conclusion"
+        }
+      ]
+    },
+    {
+      "id": "curator-gap",
+      "category": "limitation",
+      "statement": "Curator analysis: Lemma4.1 proves global cut correspondence but direct cluster decoding need not preserve local optima; 4vertex path weights[-2,+1,-2] gives strict host local maximum with improving decoded guest move.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Lemma4.1 exact proof and Figure1 cluster mechanism; integer move enumeration in owncache checks gains[-2,-1,-1,-2], guestgain+1. This is proof-gap analysis, not author claim or assertion alltheoremsfalse."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/68a83eeb494a308fe5295da69428a507-Abstract.html",
+      "locator": "Manually opened exact NIPS1996 official record; authors IanParberry/Hung-LiTseng and publisherPDFp1 UniversityofNorthTexas affiliation checked; officialyear1996 retained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/68a83eeb494a308fe5295da69428a507-Abstract.html",
+      "locator": "Official proceedings record manually inspected: article/Bibtex/metadata only, no separate scientific supplement/code attachment. All7publisherpages incl every proof sketch and16references read; no missing scientific appendix referenced. Some proofs explicitly omitted in article, accurately disclosed in note."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/68a83eeb494a308fe5295da69428a507-Abstract.html",
+      "locator": "No implementation release in completearticle or landing; authorhomepagefootnote is not codeURL. No unsupportedcodeURLadded."
+    },
+    {
+      "field": "independent curator check",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/68a83eeb494a308fe5295da69428a507-Paper.pdf",
+      "locator": "PDFp4 Lemma4.1 cost-preserving proof only mentions max-cost cuts, not local-optimum decoding. Reviewer integer script research/full-text-review/hopfield-computational-speed/curator-locality-check.py verifies host path allsame partition is strict localmax but twovertex decoded guest is not. Note explicitly restricts conclusion to missing reduction implication, not falsity of allgraphclassclaims."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded exact asynchronous threshold model and trajectory/search/global distinctions.",
+    "Reported printed graph-class hardness statements with explicit proof-sketch/omitted-proof limits instead of asserting universal nonplanar hardness.",
+    "Added independent minimal local-optimum decoding counterexample to the embedding sketch and separated curator inference from author conclusions.",
+    "Verified absence of numerical experiments from fullarticle and described actualgraphfigures; no internalcitation identitiesamongexisting364, no scope migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a4bc90df0a26b7ff78e5e26b031a402baca8e33171704e7dcb44de55f2107c1b"
+}

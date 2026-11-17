@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "paper_id": "l2s-jssp",
+  "note_path": "specialist/l2s-jssp.md",
+  "baseline_note_sha256": "f7379255dfd7cfc7284d638d3bda9f615fd3e2f2fc0b88459cc5831551f02928",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/c75abb33341363ee874a71f81dc45a3a-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2024 publisher21-page PDF, all integrated scientific AppendicesA-M and references; citation publication date2024-05-31",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/c75abb33341363ee874a71f81dc45a3a-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-2019a408e8.pdf",
+      "sha256": "0d5f7cb41a54f3ba6e8dd40ea372d113ce248ed044b4676cae5343b8e55ae74e",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullintro/related/JSSPdefinition/disjunctivegraph/N5beginning. UsesfullfeasiblescheduleDRLimprovement notconstructive. Completegraphrepresentationandcriticalblockneighborhood; mustreadexactO(JM)claimgraphpruning vsmessageiterationlongestpath costs. OnlynativeJSSP; relatedFFSP/incompatiblevariants notactualtasks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read N5exactfirst/lastcriticalblockrestriction/MDP/TPMGINCAMGAT/allEq1-8/fullarchitecture andscorematrix. Rewardusesbestincumbents* whileprintedstatecurrentonly; Markovformulationneedsincumbentinstate. Currentcanworsenincumbentkeptbest. Complexityclaimlineargraph_embedding notoverall denseSC h'h'T NxN O(N²q)/memory; AppendixAproofpending. N5canabsorbingonecriticalblocknotgloballocaloptcertificate. Eq8useslastTPMvspriorallsumdescriptionneedcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read entirepolicylinearTheorem4.1/MPTheorem4.2+Cor4.3/allTable1twohalves26settings/experiments. DenseNxNscore conflictsbroadlinearpolicyclaim pendingproofC. ReverseMP pU appearsnegative latestfinishnotstart: lastoperationbeforeT0 yields -Cmax vs -lst=-Cmax+pV needD2/code. 5native-sizecheckpointsclosestselection/500trainvs5000test;perinstanceunbatchedtimesreproducedRL-GNN/ScheduleNet. CPbestmanysmallcases, learned5000TAlargest3.0vsCP3.9;SWV20x10still17.8 vsCP.1. No implicitSOTArefmatching."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read completeacknowledgments/fullbibliographyall3pages. RASCLpreprintvsuncataloguedcurriculum mustnotmisassign; relatedsemiconductorpaperactualauthorTassel notnewMSmethod. Exactavailablecitationtargetsneedmatcher/manualproofappendixbody. RemainingAppendices13-21."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read finalrefs13/Algorithm1nstepreinforce/Bhardwarefive128kinstancesbatch64/10stepupdate500T100val/2070S+Ryzen3600, linearcomplexityC1-C2proof/Fig5/D1start. Proof15concludesselectionjustMLP andomitsexplicitNxNmatrixproductp6, qualifyTheorem4.1notoveralllinear. PrintedAlg1negativeREINFORCEloss+ascent signneedcode andt=0negativeindicespseudo; no empiricalfailureinference. TPM/CAMlinearsparsechainarc assumptionscorrect."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullD1-D4 backwardproof/Table2/Fig6/E restart/F Table3/G Fig7. PrintedD2 uses successor pU and sign inconsistency dbar recurrence whereas negative lateststart needs own pV; minimal oneoperationexample pendingcode. MP GPU singleinstance .058s vsCPM .009s so no singlegraph speedup;batch512 .453vs5.183 11.4x, H synchronous rounds. FI/BI memory100 restart notrandom;GD no restart. OnlineTaillard30x20mainmeanadvantage notall10cases(Table3 losesTai41/42/43/47/49)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read entireH-M allTables4-7/Fig8/Kdiscussion/extreme100instances each8000-40000operations/Mablations. Equal5000stepsours1.9%relativeworseaverageTSN5butfaster; equaltimeHtext90seconds vsTable5caption2min inconsistent, Taillard30x20andLA10x5TSbetterso notallwins. Ensemblefivepoliciesadditionalcompute. Transitionp20printsnewO3toO1oppositerequiredO1toO3; figurecorrect. Table7gapsCPincumbents1hnotoptima -24.31/-20.56/-15.99% at88.7s/3.4m/4.1m. No extra nativescope. Threeseedcurves10x10only, noallbenchmarkCI."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Complete disjunctive schedules support learned long-horizon move control without evaluating all N5 neighbors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "TPM/CAM operation-pair policy, nstep REINFORCE and GPU-batch evaluator; full classic/ensemble/extreme-size studies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            13,
+            16,
+            21
+          ],
+          "locator": "Method and all scientific appendices"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist JSSP improvement; five separately trained size checkpoints/ensemble; FFSP/semiconductor are related work only.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            14,
+            20,
+            21
+          ],
+          "locator": "Tasks, training and AppendixI/L"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "N5 swaps/current may worsen/incumbent reward, feature TPM/CAM dense NxN scores; readiness MP H rounds, correct released receiving-duration reverse update differs from printed successor index.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            15,
+            16,
+            17,
+            20
+          ],
+          "locator": "All equations/Th4.1-4.2/Cor4.3 and released full core code"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Reported seven-suite results include losses to learned/classical baselines, 1.9% disadvantage to TSN5 at5000steps, ambiguous90s/2min budget, batch-only MP speedup and finite-run extreme-size CP comparisons.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            16,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "All Tables1-7/Figures5-8"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Complete policy linear claim omits dense NxN score product; backward duration/update sign differ from released implementation; Markov observation misses incumbent/tabu history, release aggregation/width/test batching differ.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            13,
+            14,
+            15,
+            16,
+            19,
+            20
+          ],
+          "locator": "Curator analysis, original code and minimal arithmetic, not empirical refutation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full21pA-M/ref reading,16 visual pages/all figures/tables, publisher and both API attachments checked;1111file/36checkpoint pinned repo and complete selected core sources read;13 direct citation identities.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Reading logs/publisher HTML/repo tree/code/arithmetic cache"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c75abb33341363ee874a71f81dc45a3a-Abstract-Conference.html",
+      "locator": "Publisher citation_publication_date2024-05-31/title/fiveauthors/ICLR2024/proceedings45696-45716. PDF1 NTU,SMU,ShandongUniversityInstituteMarineScienceTechnology,EindhovenIndustrialEngineeringInnovationSciences."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c75abb33341363ee874a71f81dc45a3a-Abstract-Conference.html",
+      "locator": "ManualpublisherHTML Paper/Bibtex only;integrated21pAppendicesA-M fullyread;OpenReviewjsWCmrsHHs notesAPIv1/v2403. Officialtree1111files,noPDFZIP;ICLR-2024.pptx is talk deck, spreadsheets/rawresults not explicitly scientific paper attachments. No explicitly missing scientific document."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c75abb33341363ee874a71f81dc45a3a-Abstract-Conference.html",
+      "locator": "Completeformal21p SHA0d5f7cb41a54f3ba6e8dd40ea372d113ce248ed044b4676cae5343b8e55ae74e. Visualpages3/4/5/6/7/8/9/13/14/15/16/17/18/19/20/21 all8figures7tables;16p includescuratorcheckedD2proof."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/zcaicaros/L2S",
+      "locator": "Commit4deb8fcf344d0730049267ab66abc17bf469702d1111files36pth. FullREADME/actor.py/message_passing_evl.py/n-step_reinforce.py/parameters.py/test_learned.py/environment.py read. Densebmm/mask, receivingdurationlateststart, negative-lossAdamminimize confirmed. GINmean/current128policylayers/tabusize1/fixedtestcheckpoint/batchedtiming differ from printed sum/64/plainN5/closest-size/unbatched. RawresultXLSXinventoriednotallcellaudited; noNNrun."
+    },
+    {
+      "field": "theory,curator arithmetic",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c75abb33341363ee874a71f81dc45a3a-Abstract-Conference.html",
+      "locator": "Th4.1p7/Cp14-15omitsdenseSCp6;Cor4.3p7/D2p16successorpU vs receivingpV; scriptl2s-jssp/recompute_printed_backward.py oneoperationp5givesprinted-5correct/released0, score40002nodes1.60016billionentries. Storedrestart-method/results-proof/appendix/extra contact images andcroppedcorollary43/proofD2/dense-score. Algorithm1p13negative-lossascent vsAdamminimize; nofullsolverbiasinference."
+    },
+    {
+      "field": "statistics,scope,citations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/c75abb33341363ee874a71f81dc45a3a-Abstract-Conference.html",
+      "locator": "OnlynativeJSSP/fiveweights;all7benchmarkfamilies/all7tables;CIseeds10x10trainingcurvesonly. Htext90s/Table5caption2mininconsistent.13body+bibIDs; manuallyaddedWu2021LIHsingulartitleform vs catalogplural; noidentityguessesforRASCL/otheruncataloguedrefs."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "l2s-jssp",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 Kool et al. (2018); complete bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2022)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1 Hottung et al. (2022); complete bibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1 Zhang et al. (2020); complete bibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al. (2019)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2 Lu et al. (2019); complete bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3 Kwon et al. (2021); complete bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al. (2021a)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 Xin et al. (2021a); complete bibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "neuopt",
+      "reference_label": "Ma et al. (2023)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 Ma et al. (2023); complete bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian (2019)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2 Chen & Tian (2019); complete bibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021b)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 Xin et al. (2021b); complete bibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1 Zhou et al. (2023); complete bibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 Kwon et al. (2020); complete bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al. (2022)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "BodyPDF3 Choo et al. (2022); complete bibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "l2s-jssp",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit body citation and complete bibliography title/authors identity; printed year/title variants preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2 Wu et al. (2021); complete bibliographyPDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced generic neighbor-evaluation summary with actual N5 pair selection/schedule evaluation, specialist five-model boundary and all study budgets.",
+    "Bounded linear-complexity claim to sparse embedding; preserved dense action scoring, printed backward-duration/sign discrepancies versus correct release.",
+    "Recorded actual negative comparisons,90s/two-minute inconsistency, batch-throughput/timing scope and release differences.",
+    "Full21pages/A-M/allrefs16visualpages;13explicitedges and complete selected code checked; noNNbenchmark rerun."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b4622bab0b43a1efdad84fa80df5e9beb14419b0285249317ed8991d37337ee7"
+}

@@ -1,0 +1,467 @@
+{
+  "version": 1,
+  "paper_id": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+  "note_path": "specialist/distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "ffbfd711ace2912dc497dfd16aacbffaf27b03b6e0f94841212b35eac34b4a32",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2312.12469",
+      "retrieval_url": "https://arxiv.org/pdf/2312.12469",
+      "version": "Actualarxiv2312.12469v2Jan18_2024,11pagesallmaintext/equations/tables/conclusion/completebibliographyfullyread;formalidentityindependentlyverified.",
+      "local_path": "research/full-text-review/distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers/arxiv.pdf",
+      "sha256": "962e403ae82b5081b60633d90244a5af40f530cf223da933c9a3401b1d08f082",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "comments",
+      "url": "https://github.com/xybFight/GNARKD/blob/master/AAAI24_Comments.pdf",
+      "retrieval_url": "https://github.com/xybFight/GNARKD/blob/master/AAAI24_Comments.pdf",
+      "version": "ActualofficialGNARKDrepoAAAI24_Comments.pdf8pages,allreviewerreportsfullyread;notauthorcorrections/proofs.",
+      "local_path": "research/full-text-review/distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers/comments.pdf",
+      "sha256": "198cbd4c68354cf4c32ad401bbde76f1e34946d267214cb4b68f6547e998c200",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readactualarxiv2312.12469v2Jan18_2024sevenbylineJilin/NTU/SUSTech,noasteriskcorrespondenceprinted;frontv1Dec19_2023independent. GNARKDARteacher->NARstudentarchitecture+guidedKD, TSP/CVRPseparate, onlyconstructive. OfficialREADMEexplicitlongerarxivallcontent;formal520HTMLnotPDF."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadconfidenceTMvsGCNsingleTSP50visual/nongeneralcausalclaim,ARhistoryvsNARfixedpairmatrix;studentpreservesencoderarchitecturecopiesweights, Wnodequeries/(n+1)xnparallelpairscore;removePE/history/masks atNNlayerbutfeasibilitysearchstillsequential. FullFigure2methodnextcontinued."
+    },
+    {
+      "source_id": "comments",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "ActuallyreadofficialAAAI24_Commentsreviewers1-2first4p:reviewsnotauthorcorrections/proofs. R1supportsbutlowconfidence,formatlimitations/MAPFfuturequestion;R2teacherarch/startnode/greedyteachercomparisons/timingnormalization/largescalesquestions,reproducibilityNo. Noquotedreviewopiniontreatedasverifiedscience."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Readguidedteacherforcingstudentrow/distribution tempteacher.1/student1,printedEq6KLlogdifferenceversuscorrectratio notationkeycodecheck. NARNNunmaskedbutpostdecoderclassicalfeasibilitymask/remainingcapacity+depotreset essential. 1000batches100/epoch500size50 1000size100 Adam1e-5.3060Ti8GBi5,10kcomparisons eachlargestpossiblebatch vsseparatesinglelatency. TSPAM3.06 vsCVRPAM12.03greedy100loss—notuniform2-3%. SeparateAM/POMO/TMmodelsnotjointgeneralist."
+    },
+    {
+      "source_id": "comments",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "ReadrestR2+fullR3/R4reviews8pcomplete:calibration/capacity/greedydeterminism/boundarycase/approxsolversquestions;reviewsmentiontheoreticalsupp butneedactualappendixindependentlyread. Containsreviewsnoauthorrebuttal/corrections. Noacceptancedateinferredfromratings."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadfullTables2-4/Fig3/TSPLib20case51-159/ablationtemp;singlelatencyvs10kmaxbatch separate. CVRP100AMstudent7.51gap vs3.43teacher notnegligibleuniversal. TSP9000memoryfeasibilitynotqualityevaluation;POMOlimit850Fig3vs1000proseprotocolambiguous. Lowtemperatureconfidence notcalibrationproof. KDbeatsmatchedSL/RLTSP50, nooptimumguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Readfulltempgap/confidencefig4-5/conclusionlimits/ack/all31?manualcountrefsneeded. Noappendix/proof/supppointerinactualbody;READMEexplicitarxivallcontent. Reviewsmentiontheoreticalsuppgenericnotcurrentdocumentevidence;v1also11pagesheaderinventorynoproofnotclaimedfullreadv1. ExactBietalKDcataloguecouldmisscandidatecheck. MainbodyZhengetalCombiningRL-LKHnotNeuroLKHnotforcemap."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "ARteacher-to-NARstudentconversion/guidedKDandstaticfeasibleTSP/CVRPdecoding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1-4/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Copiedencoderinitialization/allstudentparametertraining;fixed(n+1)xnscorematrix/teacherprefixmask/KL. PrintedEq6logdifferenceversusactualcodeKLDivLosslogstudent/teacherprobabilities.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations3-11;publicPOMOTSPTraining.py"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Separate500/1000epochs1000x100batches/lr1e-5/3060Ti8GB;10ktestlargestpermodelbatchesvsinglelatency;Table1averagesnotCVRPuniformbound.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Tables1-2/protocol"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "CVRP100AMgreedyloss12.03%;beam7.51gapvs3.43;memory9000notquality;20TSPLIBsmallcases/noindividualrows/noapproxguarantee/complexconstraintsfuture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables1-4/Fig3-5/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructive/separatetaskteachercheckpoints;staticNARscoring+classicalgreedy/beamconstructscompletefeasibleroutes,noNNincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Architecture/algorithm/tasksettings"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All11arxivv2+8officialreviewerreportpagesread;manualrepo87entry/README/releasesinventory/noseparateexplicitproof;originalFigure2actualcropview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            10,
+            11
+          ],
+          "locator": "Actualversion/byline/refs/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/30008",
+      "locator": "OfficialAAAIpublisherDOI10.1609/aaai.v38i18.30008/20274-20283/published2024-03-24. Actualarxivp1sevenauthors/Jilin/NTU/SUSTech,noinventedcorrespondence."
+    },
+    {
+      "field": "arxiv/version",
+      "source_url": "https://arxiv.org/abs/2312.12469",
+      "locator": "Savedprimaryhistoryv1Dec19_2023 07:13:32UTC/v2Jan18_2024 03:28:25UTC. Actualread11pagev2,frontdatev1notformalpublication;formal520HTMLnotPDF."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/xybFight/GNARKD",
+      "locator": "Manualofficial87entrymasterSHA4cd60e77a6289c3adc627f5ac2a0bed38be26a53/fullREADMEexplicitArxivallcontent/releases[];noTeX/ZIP/independentscientificPDF. OnlyAAAI24_Comments.pdf8pagesreviewerreportsfullyread,nonauthorresponse/proof. Genericreviewersuppremarksnotexplicitcurrentbodyproofpointer;complete11pagev2hasnoappendix/theorem/suppclaim. Rootagreedversioncomplete."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/xybFight/GNARKD/tree/4cd60e77a6289c3adc627f5ac2a0bed38be26a53",
+      "locator": "ActualPOMO/TSPTraining.pyencoderload84/optimizerall85/KLDivLoss93/log_softmaxteacherprefix111-123. SeparateAM/POMO/TMtaskdirectories,nojointcheckpoint. Teacherweightsoriginalreposnotendtoendrun."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2312.12469v2#page=4",
+      "locator": "OriginalFigure2p4Rect50,49,563,345@4xatomicPNGactualviewfulltop/caption;Fig1/Fig4-5,Eq6andTables1-4visuallyviewed."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2312.12469v2#page=10",
+      "locator": "Allfullbibliographypp10-11andbodyexplicitcitationsread.15confirmedcatalogueidentities;Bi2022knowledge-distillation/Zheng2021RLLKH/Bresson2021TM/Xiao2023NAR4TSPnoactiveexactrecordfound,notforceontoothermethods. Joshi2022Constraintsindependentjournalnotmappedto2019conference."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Fu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Kool et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "cardnn",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Bodyp2;Referencesp11 Wang et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Bodyp3;Referencesp10 Hottung et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Joshi et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Bodyp1;Referencesp10 Hudson et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al. (2023)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Pan et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Bodyp2;Referencesp11 Wu et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Bodyp2;Referencesp11 Zhang et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "mapdp",
+      "reference_label": "Zong et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Bodyp2;Referencesp11 Zong et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Bodyp7;Referencesp11 Xin et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "pointerformer",
+      "reference_label": "Jin et al. (2023)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Jin et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Bodyp2;Referencesp10 Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "tam",
+      "reference_label": "Hou et al. (2023)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Bodyp1;Referencesp10 Hou et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "cited": "roco",
+      "reference_label": "Lu et al. (2023)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;identityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Bodyp1;Referencesp10 Lu et al. (2023)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceallpendingplaceholderswithsevenauthors/affiliations/formalpublication/v1date/actualv2version.",
+    "Specialistconstructive/separatecheckpointandparallelscoringversusclassicalfeasibilitysequentialdecoder.",
+    "Correctcopiedinitialweightsnotfrozenencoder;printedEq6logdifferencequalifiedagainstproperreleasedKLpath.",
+    "Separateindividualsinglelatencyand10kmaxbatchthroughput/eachsearchprotocol;CVRPloss12.03and7.51versus3.43notabstractaveragebound.",
+    "Memory9000notquality/20TSPLIBsmallselected/nooptimumguarantee/LKH3heuristicreference.",
+    "All11+8sourcepagesread/manualscienceinventory/actualoriginalFigure2view/15explicitinternalrelations."
+  ],
+  "reviewed_note_sha256": "50ead109a986873e743e177ec3da96e718f0a0c8d84decf69c16a411056e2806"
+}

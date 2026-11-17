@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "paper_id": "rl-device-placement",
+  "note_path": "specialist/rl-device-placement.md",
+  "baseline_note_sha256": "0700732f3e895f2d465a20aa0512f7c7e043979e5f0c9ad5df37b30353dd0b66",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v70/mirhoseini17a/mirhoseini17a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v70/mirhoseini17a/mirhoseini17a.pdf",
+      "local_path": "research/import-272/nco-55b7738cbe.pdf",
+      "sha256": "f6419127e8e53d9e0a04969d8dda84cf54f0adb66de3f0d6b26e7ccf81130c3e",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read pergraphruntimeplacementobjective,sqrt-timeREINFORCE+baseline andfailuresignalafter5000skip, attentiveLSTM type/outputshape/adjacencyinputarchitecture, initialgroupingneed andbaselineSCOTCHdistinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 8,
+      "notes": "Read all grouping and distributed search details; Tables1-2; 12-27hour controller search; per-step and downstream end-to-end timing; RNNLM and two-GPU Inception ties; 27.8percent NMT and19.7percent Inception selected end-to-end improvements; profiling figures8-9."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read acknowledgments and every bibliography entry; matched Bello2016 and PointerNetworks2015 as repository papers; no scientific appendix or supplemental link in official publisher related materials."
+    }
+  ],
+  "claims": [
+    {
+      "id": "placement-contribution",
+      "category": "contribution",
+      "statement": "Graph-specific recurrent placement search uses actual runtime and asynchronous controller workers, avoiding optimal labels and a separate runtime predictor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2–3,Equations1–3,Figure3"
+        }
+      ]
+    },
+    {
+      "id": "placement-method",
+      "category": "method",
+      "statement": "Policy minimizes expected square-root runtime; manual co-location reduces the operation search space, with failure penalties and successful-only updates after5000steps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.4;Table1"
+        }
+      ]
+    },
+    {
+      "id": "placement-results",
+      "category": "experiment",
+      "statement": "RNNLM and two-GPU Inception tie the fastest baseline; selected NMT and four-GPU Inception placements improve deployment speed, with12–27hour search cost separate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7
+          ],
+          "locator": "Section3.4;Table2;Section4.4;Figures6–7"
+        }
+      ]
+    },
+    {
+      "id": "placement-scope",
+      "category": "classification",
+      "statement": "All demonstrations optimize the same operation-to-device placement task with graph-specific searches; no unchanged policy across native combinatorial tasks is demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Graph-conditioned objective and separate benchmarkplacementsearch"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v70/mirhoseini17a.html",
+      "locator": "Publisher title, ten-author order, ICML2017, volume70,2430–2439; identical title/author block inPDFp1"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v70/gh-pages/_posts/2017-07-17-mirhoseini17a.md",
+      "locator": "Explicit date and issued date-parts2017-07-17; conferenceBibTeXmonth06–11Aug is the eventperiod"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v70/mirhoseini17a.html",
+      "locator": "Manually inspected publisher RelatedMaterial: onlyDownloadPDF; publisher raw source extras:[]; full10pPDFendswithbibliography,noappendix or separate scientific supplement identified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.mlr.press/v70/mirhoseini17a.html",
+      "locator": "Paper and publisher record contain no author-confirmed placement-controller repository link; do not infer implementation availability fromTensorFlow/Scotch"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl-device-placement",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit related-work predecessor for neural combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-device-placement",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Explicit policy-gradient neural combinatorial optimization predecessor, cited as arXiv2016.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced abstract-level note with full-source methods, grouping, objective, exact table and downstream metric definitions, search-cost caveat and negative/tied comparisons.",
+    "Verified issueddate rather than replacing it with conferenceperiod; completed manual scientificsupplement discovery and explicit citation scan."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3bf5f8148cb0356478cd2ad82a2bf1441656b64abfba27102a754aed0083d759"
+}

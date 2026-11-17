@@ -1,0 +1,1105 @@
+{
+  "version": 1,
+  "paper_id": "udc",
+  "note_path": "specialist/udc.md",
+  "baseline_note_sha256": "0a67209b2fa86584b06effc10cd60a35e54e5b167c0e7175a3640cca8776813b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b8e4c8468273ee3bafb288229c0acbc-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b8e4c8468273ee3bafb288229c0acbc-Paper-Conference.pdf",
+      "version": "NeurIPS2024 formalpublisher45pages main+AppendicesA-G+checklist",
+      "local_path": "research/full-text-review/udc/paper.pdf",
+      "sha256": "24f008e5c06f3443d19dd84868f02451be7cfa69be181904184bcb8ea15e6f9a",
+      "pages": 45,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "FreshformalNeurIPS45pages started: missingHuaweiNoahaffil, exactly10COtasks notjustTSPCVRP. GNNdivider+ARfixedlengthsolver, unifiedDCRtraining, claims heuristicfreecontextcheck. Specialistvsalgorithm general across tasks needexplicitindividualmodels. Mainreferencesallread first3."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "FreshDCRmethodcomplete: sparseAGNNconstructsfullinitialsolution, bothlearneddivider/conqueror core =>hybrid, explicittask-specificPOMO/ICAM/MISAGNNdifferentmodels specialist. Dividecontinuousfixednsegments, preserveendpoints normalize taskconstraints, improvingreplacementonly, reunionrolln/2 secondrepairforboundaryrewardglobal. REINFORCEbothpolicyrewardalpha/beta sample baselines; applicabilitydecomposable/maskable/nonuniquesubproblem excludesTSPTWdenseMIS/JSSP. Need10task namescontinued."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "FreshmainTables2-5 allresults,10tasks areTSP/CVRP/KP/MIS/ATSP/OP/PCTSP/SPCTSP/OVRP/minmaxmTSP(noSDVRP). OneUDCmodelpertask varying-size trained<=10daysV100S, initialalpha50route alpha1others, x2vs50/250rounds largebudgets fulltestsettimes. MainTSP500/1000ICAMbeats50, publicTSPLIBUDC2506/7.6 losesLEHD4.1/GLOP6.9, CVRPbestneuralstill13.2gapXXL. Needappendixprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh conclusion limits loss design/applicability and bibliography refs1-57 all read. Many cited preprint versions ICAM/DAR/DPN preserved actual not future formal; ref28 mislabeled AM in prose but Bello bibliography, do not force wrong edge."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Freshrefs58-80 andAppendixA1-A4 allread. Specificsubsolvers AGNNMIS/MatNetATSP/DPNminmaxmTSP proves taskadaptationnotonecheckpoint; referencesBello/AMmislabel inconsistent butactualrefsmanuallymatched. Authorscritiquesothertrainingnotadoptedasfactswithoutownedpaperreading."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "FreshBdefinitionsTSP500-1000step100 n100; CVRPcapacities100/200/300test train100-200, openendsresidualboundarycapacitypairednormalization/flags; OPaddsrandomunselectednodes+slackonefragment no coordinate norm; PCTSPprize>=originalfragment normalized, unselectedpenaltyobjective; SPCTSPexpectedfeaturesvsobservedstate, KP randomsubsets disableReunion, slackcapacityassignedonesubproblem. Importantproblem-specificprep contradictliteralno-specificdesigns."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "FreshOVRP/ATSP/MIS/minmaxmTSPdefs, minmaxadjacentfragmentupdatesforbiddentoalignglobalobjective. SparseK100allbutMIS, KPvalueweightneighborheuristic. DividerAGNN12width64SiLU/BNmean lr1e-4, TrevisitheatmapMLPrefresheveryN/T partialsteps trainT=N/n/testlargeT10. Conquerors5architectures taskdedicated ICAMTSPCVRPOVRPKP/POMOOPPCTSP/AGNNMIS/MatNetATSP/DPNmTSP. Testbeta1asym/2symmetric, trainingtwosides. Normalization coordinatesandprizes/taskmargins explicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "FreshAlgorithms1-2 andtwoMDPs, rewarddividerpostreunion(-f x2), conquer(-fsub) policygradientoffline. Noteargmaxminimizationnotation/betaATSP2algorithmvsasym1C5 inconsistencies donotreproducewrong. Complexityauthorassumesallalpha*N/nsubproblemssimultaneousGPUparallel so rn2 termnotsequentialworkbound; actualmemory batches matter, qualifylinearclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "FreshTable7allhyperparams:12layer64divider 5conquerarchitectures, epoch1000 train500TSP/PCTSP/OP,200CVRPOVRP/mTSP,120KP,1000MIS,300ATSP;DCRKPfalse. CVRPTable7traincap50-100 vsB100-200 conflict. OVRP2000x2508.71gap worseLKH;MIS42.88/44.87KaMIS95.56percent with21m runtimevsMCTS12m DIMESlessquality. ATSP50beatsbaselinesdifferenttime alpha20/10. KPtablearrowsminbutactualprofitmaximize,0.01percentneural residual notexact, classicalrealtime."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "FreshmTSPDPNwins2/3 nearopt, UDC50alpha1bad3.89-6.43 vsalpha50.13/.00/.23, one tinywin. Distributiontests128runtimeOmnirescalednotdirectlymeasured. MISallfiveOODKaMISbetterquality; sparseLastFM0.1svsUDC80s2.63gap, nootherlearningOOD reproduced. CRITICALlargeTSP learneddividerfails7.06/10.41gap; Table17REPLACESdividerwithrandominsertion, 100kbaselinesprobablydifferenttestset, notfullyneuralorcleanwin. LargeCVRP250bestbut2bad22-32gap."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "FreshE1timecurves matchedresource exceptDIFUSCOreported, alpha1fastshort alpha50betterlong; alpha50PCTSPtinyqualitygain huge40-70mvs1-3m, gapreferencechangesTable18 including strongerownvariant vsmaincannotmix. Initialrandom/nearestfailsmassive, learneddivider~randominsertion500-2k. Reunion/norm/prizeconstraintnormalizationablations improvedconvergence, noformalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 36,
+      "notes": "FreshE5DCRKPdisabledvsenabledsimilar tables20-21 tinygapsactual, conqueringPOMOvsICAMsame. F TSP/CVRPexamples numeric/captionsread figurespendingvisual, TSPconverges24.10->23.73vs23.45ref, CVRPSingleX1001 from27.1to5.4812percentgap notopt. Notallexamplesguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 37,
+      "last_page": 39,
+      "notes": "FreshFOPexampleandGbaselineprotocol/licensesallread. Allheatmapbaselinesfailedimplementationandcopiedreportedhardware; BQOPfailedfeasibleusesreported; routeaug8N<=1000none>1000, Sym200/100; Table17RIfromGLOP. Checklistclaims/limitationsbegin noothermaterial. Need40-45checklistcomplete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 40,
+      "last_page": 42,
+      "notes": "FreshchecklisttheoryNAexplicit noformaltheory; codeinitialTSPCVRPsuppnowfinalonline. StatsNo fixedseed1234 notabsenceofrandomsamplingnorreplicationuncertainty; runtimesV100S, broaderimpactNo. Need43-45."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 43,
+      "last_page": 45,
+      "notes": "Completedall45publisherpages inclA-G andchecklist;license/newassets/nonhumanIRB sectionsread. Noformaltheorems; scientificappendixcomplete. Pendingmanualpublisherattachmentinventory/code andvisualconfirmation beforeverified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dcr",
+      "category": "contribution",
+      "statement": "Jointneuralinitializer/localrepair training with shiftedReunionboundaryreward, KPReuniondisabled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            22,
+            23,
+            34
+          ],
+          "locator": "Section3 Algorithms1-2 AppendixE5"
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "category": "method",
+      "statement": "10tasksettings withspecializedconstraints/5architectures, independentmodels; addmissingKP/MIS/etcnotuniversalcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            25
+          ],
+          "locator": "AppendixB/C Table7"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "Alpha/r/localcandidatebudgets trainingdays andreference/runtime/testset/hardware qualifiers, noerrorbars.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            24,
+            25,
+            38,
+            41
+          ],
+          "locator": "Tables2-22 AppendicesC-G checklist"
+        }
+      ]
+    },
+    {
+      "id": "large",
+      "category": "experiment",
+      "statement": "LearnedTSPdividerfails, Table17randominsertionreplacement and100kpossiblydifferentdataset; minmax/MIS/publiclosses qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "Tables4/9-17"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive-improvement twolearnedcorestages, taskmodelsseparate; heuristicinitializerexperimentdistinct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            21,
+            30
+          ],
+          "locator": "Sections3/4 AppendixD5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0b8e4c8468273ee3bafb288229c0acbc-Abstract-Conference.html",
+      "locator": "Formalpage1 fiveauthors SUSTech/HuaweiNoah; arxivfirst2024-06-29 actualpublisher45pageread, publication2024year; removedgenericnotificationacceptance."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b8e4c8468273ee3bafb288229c0acbc-Supplemental-Conference.zip",
+      "locator": "ManualpublisherlandingPDF+ZIP; downloaded40,273,251bytes36members allnames inspected onlyTSP/CVRPcode/checkpoints/testdata noPDFZIPextras. AllintegratedA-G/checklist read45pages. Official105-memberdirectoryinventory older45pagearticlecopy notextraseparateappendix,formalcontrols."
+    },
+    {
+      "field": "code_url, SPCTSP correction, implementation",
+      "source_url": "https://github.com/CIAM-Group/NCO_code/blob/main/single_objective/UDC-Large-scale-CO-master/Readme.md",
+      "locator": "FullofficialReadme read:2025-01-27admitsnonstandardSPCTSPtruevalueaccess,2024-11-25CVRPcheckslowdownfix; denseO(N2)GNN, >7000CPUoffload, RTX3090maxbatch vsV100Spaper, batchaffectsrandomness. Thesequalificationsnotabstractinferences."
+    },
+    {
+      "field": "problems, paradigm, scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b8e4c8468273ee3bafb288229c0acbc-Paper-Conference.pdf#page=7",
+      "locator": "Exactly10tasksettingsexplicit; 1modelpertask,5conquermodelclasses, bothneuralinitializerandincumbentrepaircore; hybridretainedspecialist. SPCTSPtagqualifiednonstandardobservation."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/0b8e4c8468273ee3bafb288229c0acbc-Paper-Conference.pdf#page=4",
+      "locator": "OriginalFigure1 Rect(108,68,505,296)5x;DCR/boundaryconstraints/alltablesandappendixvisualizationchecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0b8e4c8468273ee3bafb288229c0acbc-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/udc/page-1.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/0b8e4c8468273ee3bafb288229c0acbc-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/udc/page-1.html; citation_title=['UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2407.00312",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-06-29; title on abstract page: UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems. This date is preprint history, not formal publication. Cached research/full-text-review/udc/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "udc",
+      "cited": "pomo",
+      "reference_label": "5",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "elg",
+      "reference_label": "6/80preprints2023/24",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "lehd",
+      "reference_label": "8",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "pointerformer",
+      "reference_label": "9arxiv2023",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "tam",
+      "reference_label": "12",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "glop",
+      "reference_label": "13",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "bq-nco",
+      "reference_label": "14",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "step-wise-routing",
+      "reference_label": "15cited2020",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "icam",
+      "reference_label": "16arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "dar",
+      "reference_label": "17arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "h-tsp",
+      "reference_label": "20",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "select-and-optimize",
+      "reference_label": "21",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "learning-to-delegate",
+      "reference_label": "22",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "rbg",
+      "reference_label": "23",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "24",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "28arxiv2016",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "sil",
+      "reference_label": "30arxiv2024",
+      "description": "Actualreferencecites6author2024SelfImprovedLearningarxiv2403.19561;stableIDsilformal2025Boosting7authorsiscuratoridentifiedcontinuationbasedonfull27+16pagereading:oldFig3p4/formalFig2p6uniquegeometryandloop,oldEq3-6p5/formalEq2-4p5sameendpointattention,oldEq16p15/formalEq7p15same10customerrouting/bitvectoranddistinctiveparagraph. Preserveactualcited2024version,notarxivretitling;settings/resultsdiffer. Detailsresearch/full-text-review/sil/precursor-identity-evidence.json.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "31arxiv2019",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "erdos-goes-neural",
+      "reference_label": "32",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "dimes",
+      "reference_label": "35",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "att-gcn",
+      "reference_label": "37",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "softdist",
+      "reference_label": "38arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "difusco",
+      "reference_label": "39",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "41",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "dpn",
+      "reference_label": "42arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "invit",
+      "reference_label": "43arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "45",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "attention-model",
+      "reference_label": "51arxiv2018",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "52",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "pointer-networks",
+      "reference_label": "56",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "dact",
+      "reference_label": "59",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "sym-nco",
+      "reference_label": "63arxiv2022",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "utsp",
+      "reference_label": "65",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "t2t",
+      "reference_label": "66",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "mtpomo",
+      "reference_label": "75older2023title",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "mvmoe",
+      "reference_label": "76arxiv2024",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "omni-vrp",
+      "reference_label": "79",
+      "description": "Explicit numbered in-text citation plus matching formalpublisherbibliography; citedpreprintversions retained, nofuturepublicationinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            28
+          ],
+          "locator": "Explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "udc",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "[36]",
+      "description": "Nonautoregressive heatmap/greedy-decoding discussion cites GNARKD; exact seven-author AAAI2024 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedold2tasknote toactual10 includingPacking/GraphOptimization, restoredHuaweiNoahaffiliation andformalmetadata.",
+    "DetailedDCRjointtraining/Trevisit/5taskarchitectures andboundaryconstraintnormalization, KPReunionexception, specialist/hybridevidence.",
+    "Prominentlyrecordedauthor2025SPCTSPnonstandardrealvalueleakcorrection, notstandardtaskbenchmarkclaim.",
+    "SeparatedfailedlearneddividerlargeTSPfromRIreplacement/100kprobablydifferenttestset.",
+    "Qualifiedlosses/budgets/crosshardware/denseimplementation/CVRPcapacityconflicts andseed-onlystatistics.",
+    "Manual36memberpublisherscienceZIPinventory,originalFigure1 and37explicitrelations.",
+    "SILreferenceidentityresolvedbyindependentfullprecursor/formalmanuscriptcomparison;actual2024sixauthorcitedversionretained,notfutureformal2025citationassumption.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f91ba488d9fd839f3584bb753bc3653b943e16e2cb072846389b527d8441bff4"
+}

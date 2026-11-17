@@ -1,0 +1,671 @@
+{
+  "version": 1,
+  "paper_id": "elg",
+  "note_path": "specialist/elg.md",
+  "baseline_note_sha256": "4fa33f57de8e156a68dbf5c4fa7a7d935f16a72e2f5bdacb8f1ef7f5a61f4453",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2024/0764.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2024/0764.pdf",
+      "version": "Official IJCAI2024 main-track PDF,9pages,6914-6922",
+      "local_path": "research/full-text-review/elg/paper.pdf",
+      "sha256": "29024a3de0347d42be503503401636234c47c9e9b6b2ca8d10a0bfdd8516ef08",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv-v3",
+      "url": "https://arxiv.org/pdf/2308.14104v3",
+      "retrieval_url": "https://arxiv.org/pdf/2308.14104v3",
+      "version": "arXiv2308.14104v3,5May2024; full12pages includingAppendicesA-D, explicitlyreferencedbypublisherp8",
+      "local_path": "research/full-text-review/elg/arxiv-v3.pdf",
+      "sha256": "50b37ea351eb5f57a08cb3bea1b5909edd11a079629b4af01e2348ad8940f58c",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh publisherPDF read: formalIJCAI24header, actualChengruiGao/HaopuShang/KeXueauthornames, Transferrabletitle; omni size/distributiongoal, POMOglobal+localensemble, TSP/CVRPbackground and constructionMDP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read full localMDP andstate/action/architecture: K nearestvalid, polar normalization/demandremainingcapacity, fixed-sizeoneMHA pluslearnedcontext/distancePE, ensembledistancepenaltyinside/outsideK; no hardremovalofnonlocalglobalactions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Full jointtraininggradient and pretraining, allPOMObased8augmentation settings, Tables1-3 allnumbers including strongHGS/BQ/LEHDcounterexamples and timingunits; Table1HGSlesstime total1.59% notbetween0.21/1.28% subsets flaggedfornote."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all remainingmainresults, ablation/conclusion and all45references; explicitp8arxivappendixpointer confirmed, finalsource separate12pagesregistered. FoundLKH/HGSstrongerheuristics, mixed-distributionretraininganduniformmetrics, sourceLu2019ICLRbibliographicdateerror preserved asprintedlabel."
+    },
+    {
+      "source_id": "arxiv-v3",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh second identifiedsource read: v3May5watermark andactualauthors, modifiedCVRPFigure1, same motivation/background and citations asformalversion; fulltwo-columntext read."
+    },
+    {
+      "source_id": "arxiv-v3",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh v3methodrereadandversioncomparison: sameKnearestvalidstate/polarandcapacitynormalization, lightlyrelaidFigure2, localquery/MHA/scoreformulasanddistancepenalty; local0outsideK,globalstillvalidremotenodes."
+    },
+    {
+      "source_id": "arxiv-v3",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh v3training/fullTables1-3 read, same results asofficial; confirmed tabletotal discrepancy persists; training/data/greedy8augandepochprocedure crosschecked."
+    },
+    {
+      "source_id": "arxiv-v3",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh fullv3remainingresults/conclusion/acknowledgment and45bibliographyentriesread; title andpagealignment differences distinguished, exactsamebaselinevalues andretainedreferenceLu2019date."
+    },
+    {
+      "source_id": "arxiv-v3",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allAppendicesA-D and Tables6-12: exactepochs/K/xi/heads/clipping, paddedstate+mask, advantage normalization, allablationcounterexamples inclw/oPEbetterCVRP, TAMtiming190.45vs24.03, mixedCVRPT1=40, onlylocal enlargedmodel,49/100/4testinstances,10k/1ksyntheticand4090/EPYC hardware."
+    }
+  ],
+  "claims": [
+    {
+      "id": "local",
+      "category": "contribution",
+      "statement": "Adds normalized K-neighbor policy to penalized globalPOMO with jointlytrainedactionscoreaddition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1-3.3"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "Polar/demand-normalized sortedneighborstate, sinusoidalPE, learnedquery, dimension32fourheadsingleMHA; globalremotenodesnotmasked solelybylocality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Sections3.1-3.3"
+        },
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "A-B.1"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Task-specificTSP30+5/CVRP20+5epoch, 1.2M/epoch, N100trainingandN200validation,8augmultistartgreedy; mixedCVRPpretrain40epochs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Training andinference"
+        },
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "A,B.2,C.4"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "category": "experiment",
+      "statement": "SetXgap6.03%,1.90s; TSPLIBgap3.08%,0.63s; BQ/LEHDbetterTSPLIB, HGSbetterSetX.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Tables1-2"
+        }
+      ]
+    },
+    {
+      "id": "large",
+      "category": "experiment",
+      "statement": "SetXXLneuralbest3/4; ELG15.24%/190.45s vsTAM20.44%/24.03s withspecificsubsets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table3"
+        },
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "C.3,Table10"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "W/oPEslightlybetterSetX, standalone-localdifferentlargernetwork andworseTSP100; CVRPmixturecounterexample toalwaysbetterAMDKD.",
+      "evidence": [
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Tables7,11,12 andlocal-onlynetwork"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "reproducibility",
+      "statement": "49TSPLIB/100SetX/4XXL,10k/1ksynthetic; RTX6000Adatraining4090neuraltestEPYCclassicaltest.",
+      "evidence": [
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "table-discrepancy",
+      "category": "limitation",
+      "statement": "HGSlesstime total1.59% exceedsbothpartitionmean0.21%/1.28%; cannotinterprettableasconsistentpartitionaverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table1 printedrowcheckedvisually"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "SeparateTSP/CVRPtrainedmodels/configswithinsharedarchitecture; constructive,separatecheckpointsspecialist ratherthancrossproblemmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Task-specific state andtraining"
+        },
+        {
+          "source_id": "arxiv-v3",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Table6 separateTSP/CVRPconfiguration"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0764.pdf",
+      "locator": "Publisherp1 corrects first3names/titleTransferrable andNanjing/Huaweiaffiliations."
+    },
+    {
+      "field": "venue, publication",
+      "source_url": "https://www.ijcai.org/proceedings/2024/764",
+      "locator": "IJCAI2024 MainTrack,6914-6922,DOI10.24963/ijcai.2024/764; no paperacceptanceday established."
+    },
+    {
+      "field": "date and arxiv version",
+      "source_url": "https://arxiv.org/abs/2308.14104",
+      "locator": "v1 27Aug2023,v3 5May2024; actualv3watermarkchecked."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2024/764",
+      "locator": "Manual officiallanding check onlyPDF/Bib/Cite; mainPDFp8explicitly links arxivversionwithAppendix. Readall12v3pages inclallA-D scientificappendices; no other scientific attachment identified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/lamda-bbo/ELG",
+      "locator": "Mainp5 Section4 directs officialrepo; README separates TSP/CVRPtrainingandtrainedmodeltests."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0764.pdf#page=4",
+      "locator": "Complete original Figure2 crop PDFpoints[54,45,558,225] at3x, including top edge/labels; visually crosschecked."
+    },
+    {
+      "field": "citation_identity:select-and-optimize",
+      "source_url": "https://proceedings.mlr.press/v206/cheng23a.html",
+      "locator": "Source formal p8 spells aolve rather than solve, but Cheng/Zheng/Cong/Jiang/Pu, the complete remaining title, AISTATS 2023 and pages1219-1231 match target formal p1. Source typo, not a distinct work."
+    },
+    {
+      "field": "citation_identity:bq-nco",
+      "source_url": "https://arxiv.org/abs/2301.03313",
+      "locator": "Source formal p8 uses Bisimulation quotienting for generalizable neural combinatorial optimization; target formal p1 uses BQ-NCO: ... Efficient .... Exact five authors Drakulic/Michel/Mai/Sors/Andreoli and NeurIPS36 2023 establish the referenced work."
+    },
+    {
+      "field": "citation_identity:t2t",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Source formal p9 omits the T2T prefix, but the full subtitle, four authors Yang Li/Jinpei Guo/Runzhong Wang/Junchi Yan and NeurIPS2023 match target formal p1. Not FastT2T."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2308.14104",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-08-27; title on abstract page: Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy. This date is preprint history, not formal publication. Cached research/full-text-review/elg/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "elg",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2017",
+      "description": "Uses objective-cost reinforcement learning as routing background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Bello et al.,2017"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.,2017",
+      "description": "Cites graph RL as sequential construction background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Khalil et al.,2017"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al.,2021",
+      "description": "Discusses small-model divide-and-conquer transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Fu et al.,2021"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng et al.,2023",
+      "description": "Discusses select-and-optimize large-instance decomposition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Cheng et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "tam",
+      "reference_label": "Hou et al.,2023",
+      "description": "Compares large-scale divide-and-conquer TAM, with aligned-subset results in AppendixC.3.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Hou et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023",
+      "description": "Compares BQ-transformer; printed subtitle says generalizable, with same authorlist/work identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Drakulic et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Discusses and compares heavy-decoder scale generalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Luo et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang,2023",
+      "description": "Compares graph-diffusion routing under stated decoding protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Sun and Yang,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "t2t",
+      "reference_label": "Li et al.,2023",
+      "description": "Compares training-distribution/testing-gradient-search solver T2TCO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Li et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al.,2022",
+      "description": "Discusses distributionally robust routing training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Jiang et al.,2022"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "pointerformer",
+      "reference_label": "Jin et al.,2023",
+      "description": "Compares multi-pointer transformer as scale-generalization baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Jin et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.,2019",
+      "description": "Cites supervised GCN routing as neural optimization background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Joshi et al.,2019"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.,2022",
+      "description": "Uses Sym-POMO as a retrained/early-stopped baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Kim et al.,2022"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2019",
+      "description": "Uses attention-model construction and RL/architecture background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Kool et al.,2019"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Builds the global branch, multistart/shared-baseline training and augmentation on POMO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Kwon et al.,2020"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al.,2019 (as printed)",
+      "description": "Cites iterative vehicle-routing improvement; printedyear differs from the samepaper ICLR2020 target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Lu et al.,2019 (as printed)"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.,2023",
+      "description": "Discusses flexible neural k-opt as improvement-solver background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Ma et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "meta-sage",
+      "reference_label": "Son et al.,2023",
+      "description": "Discusses scale adaptation and contrasts its distance bias with local normalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Son et al.,2023"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Cites pointer-network autoregressive routing construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Vinyals et al.,2015"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al.,2020",
+      "description": "Cites job-shop RL as background objective-driven neural optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Zhang et al.,2020"
+        }
+      ]
+    },
+    {
+      "citing": "elg",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.,2023",
+      "description": "Compares omni-generalization training using different distributions and sizes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            9
+          ],
+          "locator": "Explicit main discussion/comparison and bibliography entry Zhou et al.,2023"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected first3authornames, affiliations, literal title, earliestdate, andbrokenofficiallanding; removed unsupportedacceptanceday.",
+    "Freshlyread all9publisher+12arxivpages includingallA-Dappendices andfullbibliography.",
+    "Replacedgenericensembleprose withactualscoreaddition/localstate/feasibility/traininganddecodingbudgets.",
+    "Addedexactselecteddatasets/hardware/BKSmetricsandstrongerclassical/largescaleTSPcounterexamples.",
+    "Documented HGSrowinconsistency andablationexceptions ratherthanuniversalperformanceclaims.",
+    "AddedoriginalcompleteFigure2withsource/page; recorded21identitycheckedexplicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "62beb17c107d0b07c39cf94c7536be5cc404cd3b5ed71a9d63938778d48c2a1b"
+}

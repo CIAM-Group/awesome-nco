@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "paper_id": "rl-local-search-sat",
+  "note_path": "generalist/rl-local-search-sat.md",
+  "baseline_note_sha256": "5596c6e1b60794befe9827add97f88b7d5e99120a1661871217e88049301849e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Paper.pdf",
+      "local_path": "research/import-272/nco-9b5640d31b.pdf",
+      "sha256": "93c92942579aefc4a1f64e5e80b003f8e00dd6c4e8e45e9dce5e661faa0a710b",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Supplemental.zip",
+      "version": "publisher supplementary PDF inside official ZIP",
+      "local_path": "research/full-text-review/rl-local-search-sat/zip-1.pdf",
+      "sha256": "d2351579f7f23368f0e2a4f12276a6717323b24b64bf1e0846a1548668c6c169",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "Appendix.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full motivation/related work, specificdistribution heuristic goal, SLS pseudocode and random unsatisfied-clause exploration, exact variable/clause factor graph and GNN background; only positive witness finding not UNSAT certification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read every policy-message equation,2round architecture and minimal assignment features; five SAT-encoded problem classes each train a specialized policy, SATfiltering and terminalREINFORCE reward, half-probability random walk and entire curriculum selection protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read full Table2 protocols and adverse wallclock, task-specialist diagonal comparisons, curriculum and sharedSR10 zero-shot decision-transfer Table3, full search-behavior Table4."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Read alternative graph distributions Table5 incl dominating-set regression, SR10-to80 scaling budget plot, conclusion and complete48itembibliography; verified in-text reference candidates manually."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read complete AppendixA hyperparameters RMSprop schedules width32 gamma0.25 five trajectories batchnorm and negative ablations; AppendixBfullREINFORCEpseudocode excludes random-walk actions from gradient."
+    }
+  ],
+  "claims": [
+    {
+      "id": "search",
+      "category": "contribution",
+      "statement": "Hybrid neural and random-walk flips provide incomplete SAT-witness search, with minimal variable/clause features and two GNN rounds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Algorithm1 and Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Terminal REINFORCE reward and per-distribution curriculum train the main specialist policies; SAT filtering still uses MiniSAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Sections5–6"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A single SR10 policy transfers to four fixed graph-decision SAT encodings, distinct from separate Table2 task policies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section7.1, Table2 and Table3"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Table2 reduces flips on diagonal but explicitly increases wallclock; Table5 includes dominating-set regression.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9
+          ],
+          "locator": "Tables2,5 and runtime caveat"
+        }
+      ]
+    },
+    {
+      "id": "hyperparameters",
+      "category": "reproducibility",
+      "statement": "Gamma0.25, five trajectories, RMSprop, width32 and batchnorm specify the training implementation.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "AppendixA and Algorithm2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/12e59a33dea1bf0630f46edfe13d6ea2-Abstract.html",
+      "locator": "Publisher title/authors and Advances in Neural Information Processing Systems32(2019); paperp1"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Paper.pdf",
+      "locator": "Section7.1Table2 independent class curricula versus Table3 one shared SR10 policy across clique/cover/coloring/domset SAT encodings; decision-witness scope"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/12e59a33dea1bf0630f46edfe13d6ea2-Paper.pdf",
+      "locator": "Section6.1 and Tables2–3 list SAT and four bounded graph-decision encodings"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/12e59a33dea1bf0630f46edfe13d6ea2-Abstract.html",
+      "locator": "Manually checked publisher Supplemental link; official ZIP has exactly Appendix.pdf,1page, fully read A–B; archive inventory cached"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/emreyolcu/sat",
+      "locator": "Paperp7 author link; repository README explicitly accompanies NeurIPS2019paper and provides configurations/scripts"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[7]",
+      "description": "Introductory neural combinatorial optimization precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation [7] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[24]",
+      "description": "Graph reinforcement-learning optimization precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [24] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[32]",
+      "description": "Graph-convolutional guided search precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [32] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "attention-model",
+      "reference_label": "[27]",
+      "description": "Neural routing precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [27] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "neurosat",
+      "reference_label": "[42]",
+      "description": "Direct neural SAT solver comparison and SR training distribution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            12
+          ],
+          "locator": "Explicit in-text citation [42] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[1]",
+      "description": "Differentiable Circuit-SAT related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [1] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-local-search-sat",
+      "cited": "rl-qbf",
+      "reference_label": "[31]",
+      "description": "GNN RL reasoning-heuristic comparison; bibliography cites same arXiv1807.08058 under alternate title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [31] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded minimal note against12+1 fully read pages.",
+    "Corrected reward from vague search-progress reward to terminal satisfaction reward.",
+    "Classified generalist only for explicit Table3 shared SR10 cross-decision transfer; retained distinction from Table2 independent task models.",
+    "Added bounded graph decision tasks, exact budgets, restart-based success definitions, negative runtime and transfer results."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b5adfb022351003104e8538ce9a0ad375a877bf028735d960c6cf9c812d97180"
+}

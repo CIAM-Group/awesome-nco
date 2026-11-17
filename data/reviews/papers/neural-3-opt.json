@@ -1,0 +1,349 @@
+{
+  "version": 1,
+  "paper_id": "neural-3-opt",
+  "note_path": "specialist/neural-3-opt.md",
+  "baseline_note_sha256": "0d632a75eb4b4194f72260016238346d3b3f0f810392cc44c2c68a0dae47f26e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v157/sui21a/sui21a.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v157/sui21a/sui21a.pdf",
+      "version": "PMLR volume157 ACML2021 publisher PDF, complete16 pages",
+      "local_path": "research/full-text-review/neural-3-opt/paper.pdf",
+      "sha256": "4eee2f4792259ee42dd1eb565367948648cb450f2a47950908ae47cb6b77aaab",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/authors/affiliations, motivations and all introductory claims, initial related work and link/reconnection factorization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh 7 reconnections/3 equivalence categories, full improvement MDP with best-so-far nonnegative reward and current-tour state; sparse inverse-distance GCN plus biLSTM equations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh independent current/best encoders, ordered link mask and 3-way category representative selector with FiLM, critic and actor-critic/entropy equations and Algorithm1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh full baseline Table1, exact datasets and training hyperparameters, TSPLIB Table2 including negative instances, ablation Table3 and 2000-instance timing qualifier."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Fresh complete FiLM/K ablation Tables4-6, explicit 7-type versus 3-category selector comparison, negative size transfer and full Table7."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Fresh acknowledgments and full bibliography, preserving cited preprint dates; all key framework/equation/result figures visually checked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "factorization",
+      "category": "contribution",
+      "statement": "Learn link selection and conditional FiLM reconnection, default three equivalence representatives rather than all seven outputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            13,
+            14
+          ],
+          "locator": "4.3.2 and Table6"
+        }
+      ]
+    },
+    {
+      "id": "reward",
+      "category": "method",
+      "statement": "State includes current and best tours; reward is improvement to best-so-far and does not enforce monotone current moves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "4.2"
+        }
+      ]
+    },
+    {
+      "id": "encoder",
+      "category": "method",
+      "statement": "Two independent current/best encoders combine K8 inverse-distance sparse GCN and biLSTM; d128 and three layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10
+          ],
+          "locator": "4.3.1 and5.1"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "2000-step gaps .00/.08/.74% with32/48/80minutes per10000; atTSP200 size100 transfer is worse than L2OPT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Tables1,7"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "Table3 runtimes cover2000 instances; FiLM and K ablations are not uniformly quality improvements.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            13,
+            14
+          ],
+          "locator": "Tables3-6"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "TSP-specific size-trained policy improves a random complete tour; specialist improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            10
+          ],
+          "locator": "4.1 and5.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.mlr.press/v157/sui21a/sui21a.pdf",
+      "locator": "Publisher PDF page1 title block and institutional affiliations for all five authors."
+    },
+    {
+      "field": "publication, date",
+      "source_url": "https://proceedings.mlr.press/v157/sui21a.html",
+      "locator": "PMLR157 ACML2021, pages1301-1316; BibTeX month17-19Nov conference interval supports month precision2021-11, not a separately verified online day."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v157/sui21a.html",
+      "locator": "Manually inspected publisher Related Material: main PDF only. Read complete16-page article, no missing appendix or separate scientific attachment referenced; no author code linked."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.mlr.press/v157/sui21a/sui21a.pdf#page=5",
+      "locator": "Original complete Figure2 crop Rect(90,125,522,320) at4x; atomic replacement removes clipped caption fragment and retains full loop and selectors."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v157/sui21a.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-11-28; cached evidence research/full-text-review/neural-3-opt/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-3-opt",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.2016 arXiv",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al.2017 arXiv",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al.2018",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al.2020 arXiv2006.15212",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            15
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.2019 arXiv",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            16
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2018 arXiv1803.08475",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            16
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al.2019 as printed",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            16
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al.2019 arXiv1912",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            10,
+            16
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    },
+    {
+      "citing": "neural-3-opt",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.2015 arXiv1506.03134",
+      "description": "Explicit author-year citation; preserve the version/year printed in source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            16
+          ],
+          "locator": "In-text related-work/method/experiment citation and bibliography match"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Removed unsupported individual acceptance date and recorded publication month without fabricated online-day precision.",
+    "Clarified default three-category reconnection and non-monotonic current-tour MDP.",
+    "Added exact budgets and dataset totals, negative transfer, TSPLIB failures and distinct2000-instance ablation times.",
+    "Removed unsupported global code-unavailability claim and preserved observed preprint citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "dedb6cf8e1c4c1f6d98998be98faedcb1d94ad22566529c9426cbb10b3a181b9"
+}

@@ -1,0 +1,915 @@
+{
+  "version": 1,
+  "paper_id": "shield",
+  "note_path": "generalist/shield.md",
+  "baseline_note_sha256": "aecf1cbf9c41886fcf47394cfc4b5276f862697ea465d62cad7f303cafaa034a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/goh25a/goh25a.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/goh25a/goh25a.pdf",
+      "version": "Formal ICML2025 PMLR267 33pages; complete main/references and AppendicesA–S, including all rotated result tables, freshly read",
+      "local_path": "research/full-text-review/shield/paper.pdf",
+      "sha256": "1d341393c4bc9e4a1e99b2f69e6a818e1dd9a46a56e03924feb00b7280b8847e",
+      "pages": 33,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1–3formalpagesfullread:6authorsNUS/Grab/SMU/MIT/NTU; nativeMTMDVRP9maps16VRPvariants sampledsubsetsfixedmaplocations/EUCLIDEANmetric notrealroadsdataset. SharedconstructiveRL/POMO, customizedMixture-of-Depths sparse/deeperdecoder pluscontextclustering. Bexplicitmixedsignedline/backhaul/no precedence notpairedrequests. Generality2axesmap/task, notallcountries/tasksclaims. Bibliography/remainingmain+appendices pending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 33,
+      "notes": "Freshcomplete4-33manualfullread allmainmethod/results/refs9-12,completeAppendicesA-S,allTables1-22 inclfullrotated25-33 re-readinPDFblockorder,Figures1-6labels/captions/pseudoEMallread. Native6tasks x3maps;10unseentasks x6unseenmaps,20Mtraining50/100separate,all1k/country/task8aug; testtimewidth100instsubset separate. MoD routescontextquerytokens peragent, retainsallnodeKV notKNNprune;5centers/5passes,3decoderlayers10percent. VCtheoremauthorscaveatexpnotstrict, notCOguarantee. Params4.59M>4.46deeper/3.68MVMOE;106.72GFLOPsoneencoder+oneSTEPforwardbackward notwholeinference; runtime6.16/20.07slowerMVMOE3.72/11.21. Generalization200/SetXaggregatebest withindividualMoD/earliercheckpointnegativecases. SourceHGSforCVRP/TWprosevsTables14-22TWORtools;Eq16ratio-of-means vsseveral printedObjGapcellsdifferent qualification needed. Primarypub2025Oct6, codeunconfirmed;officialposter downloadedforvisual next."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Joint native-task and geographical-point-distribution generalization; Euclidean point samples not road-network travel data.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            16,
+            17,
+            18
+          ],
+          "locator": "MTMDVRP definition/mapsplit"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "MoEencoder plus query-level Mixture-of-Depths decoder and task-conditioned context clustering.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figures1–2/Eqs1–7"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "6MoElayers/top2of4experts,3MoDdecoderlayers/10percentqueries withallnodekeysvalues,5centers5pseudoEMpasses, POMOREINFORCE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14,
+            15
+          ],
+          "locator": "Section3/AppendicesB–D"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "20Mtraining separate50/100checkpoints,6trained/10unseenvariants,3train/6heldoutmaps; reportedqualitygainswithnegativecells andhigherfullmodelparams/runtimeagainstthinMVMOE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Tables1–13"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "VCtheoremexp caveat, Euclideanmap scope, referenceHGSvsORtoolsdiscrepancy andEq16aggregation unreproducedbydisplayedcell, noindependentreproduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            8,
+            9,
+            17,
+            18,
+            25,
+            26
+          ],
+          "locator": "Main/AppendixF/baselineprose/detailedtables"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One sharednative-six-taskconstructivepolicy; separate size/singletask/uniform-only checkpoints; nolearnedincumbentediting phase.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            22,
+            23
+          ],
+          "locator": "Training/testsplit/actionsemantics"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and dates",
+      "source_url": "https://proceedings.mlr.press/v267/goh25a.html",
+      "locator": "Formal sixauthors and NUS/GrabTaxi/Grab-NUS/SMU/MIT/NTU affiliations checked p1; publishercitation_publication_date2025/10/06, arxivv1Jun10,2025; genericMay1acceptance removed."
+    },
+    {
+      "field": "supplements and official materials",
+      "source_url": "https://icml.cc/virtual/2025/poster/46391",
+      "locator": "Complete33pageformal PDF includingA–S scientificappendices; no separate scientificsupplement onpublisher/event/authorpages. FullofficialposterPNG46391visuallyread, samearchitecture/mainTable1/ablations, notPDFpagecount. OpenReviewAPI403notmisrepresentedassuccess; noofficialcodeconfirmed."
+    },
+    {
+      "field": "figures and detailed tables",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/goh25a/goh25a.pdf",
+      "locator": "AllFigures1–6 main/maps/heatmap/widthrenderedandseen, allTables1–22textfullread, rotated25–33 additionallyreadinPDFblocks andp25visuallyrotatedforORtoolsVRPTWidentity. OriginalFig1cropfromp4. Capturedcomputational/negativecellandsourceaggregationqualification."
+    },
+    {
+      "field": "citation_identity:bq-nco",
+      "source_url": "https://arxiv.org/abs/2301.03313",
+      "locator": "Formal p10 source uses generalizabletitle, sameexactfiveauthors/NeurIPS2023 ascatalogEfficienttitle."
+    },
+    {
+      "field": "citation_identity:rrnco",
+      "source_url": "https://arxiv.org/abs/2503.16159",
+      "locator": "Formal p12 cites exactarxiv2503.16159 underoldtitleandsixauthors; currentprimaryarxivv2March14,2026sameidformalRRNCOtitleandsevenauthors. Version-awareformalrepresentativeedge."
+    },
+    {
+      "field": "citation_identity:routefinder",
+      "source_url": "https://arxiv.org/abs/2406.15007",
+      "locator": "Formalp10cites2024eightauthorpreprint, actualexperimentsadaptedMTMD16setting; notlaterformal48-variantprotocol."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2506.08424",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-06-10; title on abstract page: SHIELD: Multi-task Multi-distribution Vehicle Routing Solver with Sparsity and Hierarchy. This date is preprint history, not formal publication. Cached research/full-text-review/shield/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "shield",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "dact",
+      "reference_label": "Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Deep Policy Dynamic Programming for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "deepaco",
+      "reference_label": "DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "gfacs",
+      "reference_label": "Ant Colony Sampling with GFlowNets for Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "hncs",
+      "reference_label": "Hierarchical Neural Constructive Solver for Real-world TSP Scenarios",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "learning-to-delegate",
+      "reference_label": "Learning to Delegate for Large-Scale Vehicle Routing",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "learning-to-improve",
+      "reference_label": "A Learning-based Iterative Method for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "meta-sage",
+      "reference_label": "Meta-SAGE: Scale Meta-Learning Scheduled Adaptation with Guided Exploration for Mitigating Scale Shift on Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "neurolkh",
+      "reference_label": "NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "pip",
+      "reference_label": "Learning to Handle Complex Constraints for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "polynet",
+      "reference_label": "PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "poppy",
+      "reference_label": "Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "reld",
+      "reference_label": "Rethinking Light Decoder-based Solvers for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "routing-dro",
+      "reference_label": "Learning to Solve Routing Problems via Distributionally Robust Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Generalization of Neural Combinatorial Solvers Through the Lens of Adversarial Robustness",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "roco",
+      "reference_label": "ROCO: A General Framework for Evaluating Robustness of Combinatorial Optimization Solvers on Graphs",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "softdist",
+      "reference_label": "Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems",
+      "description": "Explicit formal bibliography entry; actual cited version may precede the catalogue formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal bibliography pp9–12, exact title and author identities manually checked; source AM year2018 and NeuOpt year2023 do not replace catalogue formal dates."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al., BQ-NCO: Bisimulation quotienting for generalizable neural combinatorial optimization",
+      "description": "Exact five authors Drakulic/Michel/Mai/Sors/Andreoli and NeurIPS2023 identify the BQ-NCO work despite generalizable versus Efficient title variant; target arxiv2301.03313.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Exact five authors Drakulic/Michel/Mai/Sors/Andreoli and NeurIPS2023 identify the BQ-NCO work despite generalizable versus Efficient title variant; target arxiv2301.03313."
+        }
+      ]
+    },
+    {
+      "citing": "shield",
+      "cited": "rrnco",
+      "reference_label": "Son et al., Neural combinatorial optimization for real-world routing, arXiv2503.16159",
+      "description": "Exact arxiv2503.16159 establishes older six-author preprint → later seven-author ICLR2026 RRNCO representative; do not attribute later-version results to this older citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Exact arxiv2503.16159 establishes older six-author preprint → later seven-author ICLR2026 RRNCO representative; do not attribute later-version results to this older citation."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced generic sparse-neighborhood description with actual contextual-query routing and all-nodeKV.",
+    "Readall33formalpages/A–S/completeposter and detailedrotatedtables.",
+    "Correctedpublication/institutions/taskcoverage andremovedgenericacceptance.",
+    "Separatedsharednative-six policy fromseparate-size/single-task/uniformablationcheckpoints.",
+    "Documentedquerysparsity/pseudoEM/20Mtraining/6vs10tasks/3vs6maps andtrueEuclidean scope.",
+    "QualifiedVCboundexpassumption, parameter/FLOP/runtimebaseline andnegativecells.",
+    "RecordedunresolvedsourceHGSvsORtoolsreference anddisplayedgapaggregation discrepancies withoutinventedcorrections.",
+    "Matchedexplicitbibliographyversions andrestoredoriginalformalFigure1."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1f20fa8d1e54139e0a349c19cd471af1aac8f09bb370bc74e9d896569d3d245a"
+}

@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "paper_id": "vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection",
+  "note_path": "studies/vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "2cd4ffddd37e512adca1741c126babe633315c71a1dacabee78f4bd168409ff7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2602.13880v2",
+      "retrieval_url": "https://arxiv.org/pdf/2602.13880v2",
+      "version": "arXiv2602.13880v2 dated2026-08-22,12pages with52references and complete scientific AppendicesA/B; formal WWW DOI identity independently matched",
+      "local_path": "research/full-text-review/vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection/reading-candidate.pdf",
+      "sha256": "f5e41eb5f976e7a3f263d87541a66df48a3440a62277fd6d10db2fea3cd4e395",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "All actual pp1-4 complete text read, including definitions/every rendering formula/WGAN reference refinement. Page3-4 output actualvisible complete despite subsequent web output truncation. Threecontact images all viewed. Binary graph-property classifier, no constructed Hamiltonian cycle or optimum objective; keep empirical analysis in studies, not invent a constructive solver."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "All actual pp5-8 complete text read: all losses/coordinated updates, datasets/splits/pretraining/100epochs/5runs/F1/Table2-4/everyfigure/futurework. Task-and-size trained configurations not joint universalcheckpoint. Full DenseGCN/Graphormer variants and ImageNetclassifier initialization. Table3 0.90 vs0.89 etc distinct from Table2variants, no mixed metrics. Timing/low-memory broadclaims checked againstAppendix later."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "All actual pp9-12 complete text read:52references, Appendix A exactlayoutalgorithms and B1-5 datasetgenerators/hyperparams/allTables5-10. Table8 exactplanarity/DFS faster than VSAL, Table9 small/mediumGraphormermemory lower; F1notcertifiedexactcorrectness. Synthetic nonham cyclebrokenpluschords andclawfreeedgeaddition do not themselves guarantee assignedlabels. Pinned59entry tree/README allread, two relevant full generator scripts actualread no certifyingpropertychecks. Fourbaseline notebooks inventoried as code with no scientificmarkdown, not claimed fullyread outputs. No separate scientific appendix identified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Adaptive visual layouts target statistical graph-property detection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Graph-conditioned layout generation, differentiable rendering and classification-guided adversarial learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Framework/training"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Graph/noise encoder to coordinates, RGB renderer and classifier, refined reference-layout adversarial pretraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            10
+          ],
+          "locator": "Equations1-6/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Output is binary graph property, no feasible cycle or discrete optimization objective; related empirical study/analysis, no shared multi-task checkpoint demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Problemdefinition/output/protocol"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Five-seed F1 comparisons use HouseofGraphs and syntheticgraphs, not exact correctness; several classical timing/memory baselines better.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            11,
+            12
+          ],
+          "locator": "Tables1-10"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Described synthetic Hamiltonian/claw generators do not certify all assigned labels; task-specific and exact-algorithm claims need qualification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10,
+            11,
+            12
+          ],
+          "locator": "Futurework/AppendixB2/Table8-9"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full12p v2 and complete scientific AppendicesA/B actuallyread; primary DOI and pinned source inventory crosschecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Resources/references/appendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and source date",
+      "source_url": "https://doi.org/10.1145/3774904.3792224",
+      "locator": "Exact DOI/two authors JiahaoXie/GuangmoTong, UniversityDelaware, WWW2026 pp798-809, onlineApr12. arXiv actualhistory v1Feb14/v2Aug22 independentlysaved; noformal-byteidentity claim."
+    },
+    {
+      "field": "supplements scientific coverage and source inventory",
+      "source_url": "https://arxiv.org/pdf/2602.13880v2",
+      "locator": "All12p actuallyread;52refs/AppendixA/B1-5 allcomplete,3contactimages/alltables/figuresviewed. Pinned59entrytree/readme/two completegenerator scripts read. Fourcode-notebooks inventoried, not claimedreadallstoredoutputs; no externallyrequiredscientific appendix."
+    },
+    {
+      "field": "classification results and original figure",
+      "source_url": "https://arxiv.org/pdf/2602.13880v2#page=3",
+      "locator": "Section3/Equation4 binarylabels, independentlyfitted taskconfigs notsolutionconstructor. Study/analysis. Table8 exactplanarity/DFS faster; Table9smallmedium memorynegative. Figure2 fullcaptioncrop315,48,563,197at4xviewed."
+    },
+    {
+      "field": "topic inclusion after full scientific review",
+      "source_url": "https://doi.org/10.1145/3774904.3792224",
+      "locator": "Binary graph-property detection with no constructed discrete solution, optimization certificate or tested feasible-tour decoder."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection",
+      "cited": "attention-model",
+      "reference_label": "[28]",
+      "description": "Exact ICLR2019 Kool/vanHoof/Welling title, cited as graph-learning performance context rather than a VSAL backbone.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Relatedwork/reference28"
+        }
+      ]
+    },
+    {
+      "citing": "vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "[19]",
+      "description": "Exact Graikos/Malkin/Jojic/Samaras NeurIPS2022 title, vision-based graph generation context.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Relatedwork/reference19"
+        }
+      ]
+    },
+    {
+      "citing": "vsal-a-vision-solver-with-adaptive-layouts-for-graph-property-detection",
+      "cited": "difusco",
+      "reference_label": "[42]",
+      "description": "Exact Sun/Yang NeurIPS2023 DIFUSCO title, future discussion of task-specific matrix solvers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Futurework/reference42"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read full v2 and scientific appendices; used actual arXiv and publisher dates.",
+    "Moved from draft specialist solver to empirical study, preserving binary-decision output boundary.",
+    "Retained exact-algorithm timing/memory negatives and uncertified synthetic-label construction qualifications.",
+    "Added original rendering Figure2 and three exact body/bibliography edges.",
+    "Final scope screen distinguishes direct NCO research resources from pure prediction/control or related boundary resources; publication validity and complete reading are retained."
+  ],
+  "reviewed_note_sha256": "824dbf678fa0b52e9c3206c7c2a8451106dd41d945af82df2e4c74e1922ce0b6"
+}

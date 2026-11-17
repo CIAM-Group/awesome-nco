@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "paper_id": "mis-tree-search-audit",
+  "note_path": "studies/mis-tree-search-audit.md",
+  "baseline_note_sha256": "e0d83708020ce530c8a91b814dfabfa15fd57065978076f21fa0801e81cc670d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2201.10494",
+      "version": "arXiv:2201.10494v1, submitted 2022-01-25; includes integrated Appendices A-E; ICLR2022 author reading copy",
+      "retrieval_url": "https://arxiv.org/pdf/2201.10494",
+      "local_path": "research/import-272/nco-5d7f831ccb.pdf",
+      "sha256": "dce631906ee52fdba1acf1918833d09efab84ee2f34b1609ea470762a652bcb9",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete title/authors/institutions, introduction, study contributions, exact MIS/MWIS definitions and all five solver descriptions. Actual source is arXiv 2201.10494v1 dated 2022-01-25 and carries ICLR2022 publication header."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all related work, hardware/data/training settings, configuration analysis and Figure1/Table1. Table statistics condition on graphs with any found solution; random/reduction controls and exact-optimum availability vary by dataset."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all remaining main experimental analysis/conclusion: learned versus random guidance, original-weight tests, conditional timing/quality, LwD positive control, million-node failure with missing-generation hyperparameter caveat, weighted graph/solver counterexamples."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read ethics/reproducibility statement and complete bibliography portion Ahn through Leskovec; explicit note that separate supplementary material includes solver patches/code, with all scientific appendix content in current PDF to verify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read all final bibliography entries and start of integrated Appendix A; catalogue matching uses actual source titles and preprint versions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 15,
+      "notes": "Read entire dense Table2 and caption using direct PyMuPDF plain extraction after CLI layout exceeded 24000 characters. All configuration rows/cells inspected; success-conditioned means and time-to-best rather than stopping runtime preserved."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read entire solver/random-LwD Table3, violin captions, million-node Table4 with three-hour cap and all OOM entries, weighted Table5 including invalid inf output, and AppendixB modifications. All quality/time means condition on successful runs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read entire pseudocode, independent per-thread queues, oldest-first queue pruning, weighted popping, random maps, original epoch/map-selection inconsistencies and Gurobi tuning protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Read complete tuning Table6, quadratic formulation and Table7, plus all dataset-generation details through PPI/Reddit. Distinguished identity-matrix quadratic expression and actual comparison results without generalizing formulation superiority."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Read all remaining real-world dataset definitions, exact source/preprocessing notes and Amazon MWIS counts; complete source all 25 pages including all appendix tables and references."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Hybrid solver performance needs attribution between learned guidance and conventional search components.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Introduction and study contributions"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "category": "contribution",
+      "statement": "A unified MIS/MWIS suite reimplements guided search and exposes random/model/algorithm controls.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            18,
+            19
+          ],
+          "locator": "Solver descriptions and Appendices B-C"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "method",
+      "statement": "Tree-search training uses 20 stated epochs and tests original weights; the original epoch counts are nonstandard.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            20
+          ],
+          "locator": "Section 3.1; original-weight discussion; Appendix C"
+        }
+      ]
+    },
+    {
+      "id": "conditioned-means",
+      "category": "limitation",
+      "statement": "Means condition on found instances and times measure discovery of the eventual best solution; coverage and runtime-limit interpretation matter.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            15
+          ],
+          "locator": "Table captions and Robustness paragraph"
+        }
+      ]
+    },
+    {
+      "id": "random-search",
+      "category": "experiment",
+      "statement": "Fully equipped DGL SATLIB quality with random guidance matches or slightly exceeds trained guidance under the tested protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            15
+          ],
+          "locator": "Random replacement discussion and Table 2"
+        }
+      ]
+    },
+    {
+      "id": "lwd-control",
+      "category": "experiment",
+      "statement": "Randomizing LwD lowers SATLIB average size from 423.48 to 144.85.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Table 3"
+        }
+      ]
+    },
+    {
+      "id": "large-caveat",
+      "category": "limitation",
+      "statement": "Missing original generation/hyperparameters prevents directly comparable verification of LwD large-graph scaling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            17
+          ],
+          "locator": "Section 3.3 footnote 11; Table 4"
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "category": "reproducibility",
+      "statement": "Experiments specify resource counts per configuration; full comparison tables use 8 threads sharing one GPU, with different classical/LwD threading.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            15,
+            16
+          ],
+          "locator": "Experimental setup and captions"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "This paper is a reproduction/benchmark analysis of MIS/MWIS solvers, not a shared trained generalist solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Contributions and conclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/abs/2201.10494v1",
+      "locator": "arXiv v1 page 1 title/authors and HPI/Potsdam/Tel Aviv-Yaffo affiliations."
+    },
+    {
+      "field": "venue, publication.year",
+      "source_url": "https://iclr.cc/virtual/2022/poster/6426",
+      "locator": "Official ICLR2022 event identified from official Downloads2022 entry; fetched HTTP200, matching title and OpenReview ID."
+    },
+    {
+      "field": "date and actual reading version",
+      "source_url": "https://arxiv.org/abs/2201.10494v1",
+      "locator": "arXiv history has only v1, submitted 2022-01-25, before cutoff; PDF header says Published as a conference paper at ICLR2022."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/MaxiBoether/mis-benchmark-framework",
+      "locator": "Main PDF pages 3 and 10 repository footnotes; matching official README and master tree contain Intel/LwD patches."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=mk0HzdqY7i1",
+      "locator": "Manual check 2026-11-16: forum/pdf/attachment and api.openreview.net/api2 /notes returned challenge or HTTP403. Main page10 describes the supplementary material as solver changes/code, not a separate scientific appendix. Matching official GitHub master README, full repository tree and Intel/LwD .patch file headers were inspected; no scientific PDF/ZIP in tree. All scientific Appendices A-E are integrated and read. Exact OpenReview-hosted code archive unavailable; not asserted byte-identical to current repository."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2201.10494",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-01-25; title on abstract page: What's Wrong with Deep Learning in Tree Search for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/mis-tree-search-audit/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mis-tree-search-audit",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al. (2020), ICML",
+      "description": "Explicitly discusses or evaluates the cited solver; study claims remain tied to its tested configurations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation Ahn and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-tree-search-audit",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017), NeurIPS",
+      "description": "Explicitly discusses or evaluates the cited solver; study claims remain tied to its tested configurations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            12
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-tree-search-audit",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019), ICLR",
+      "description": "Explicitly discusses or evaluates the cited solver; study claims remain tied to its tested configurations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-tree-search-audit",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018), NeurIPS",
+      "description": "Explicitly discusses or evaluates the cited solver; study claims remain tied to its tested configurations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            13,
+            18,
+            19,
+            20
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded all six sections from full 25-page reading, including all appendices and dense tables.",
+    "Added four explicit internal citations and official code; distinguished arXiv v1 reading provenance from formal ICLR qualification.",
+    "Qualified time-to-best, found-instance-conditioned means, training differences, counterexamples and LwD positive control.",
+    "Kept separate attachment discovery unresolved instead of claiming complete verification.",
+    "Supplementary scientific completeness resolved: page10 identifies the separate material as code/patches; matching author patches and README checked, while exact OpenReview-hosted archive remains a provenance limitation."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "24eaedb9cf7b062dff05798bb41eaa659f590708f3251bed22ba5eabbf1e3abb"
+}

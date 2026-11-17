@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "paper_id": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+  "note_path": "specialist/ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "815a0f8bb20ff4da1850e6063154c80f2b26b6c2ca7134b9adf39bd341118f18",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2511.10148v1",
+      "retrieval_url": "https://arxiv.org/pdf/2511.10148v1",
+      "version": "arxiv2511.10148v1 dated2025-11-13 complete17p authorcopy main/references andscientificAppendicesA-E; formalAAAI2026 identity independentlyverified, affiliationrevisiondisclosed",
+      "local_path": "research/full-text-review/ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza/reading-candidate.pdf",
+      "sha256": "8abfedaef831d660e4fe526af73a82b85e109816afec56b7d12f43166f597fc6",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Complete actual reading pp1-6 introduction/relatedwork/preliminaries, three conditional losses/Algorithm1 andTables1-4. Task-specific warmfine-tuning not a shared crossproblemcheckpoint. Bestfeasible vs infeasible margin stilllambda-dependent throughLagrangianratio, nohardfeasibilitytheorem. 100/500additionalepochs vs10000baseline, samplesN+8aug,10kvalidation,1080Ti/Xeon. Preserve warmPOMO100%failureTSPTW100Hard andcold.87%, TSPDLcostregressions/conditionalfeasiblemetrics. ReviewedactualrenderedFigure1fullcaption/croppedpublicasset."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Complete actual reading pp7-10 ablations/conclusion/fullreferences andscientificAppendixAproblemformulations. Universalnameis reusablelossnotcheckpointreuse. Tablesnegativecases/coldstartnotonepercentbudget. PrintedA1timecontinuityforallnodesincldepot conflictspositiveclosedtour via telescoping; A2residualflow/depotbalance similarly requiresreset/arrivaldepartureclarification; not claim historicalneuralenvironmentusedtheseMILPs. Fullbibliographychecked againstactualbody andactivecatalogue."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 14,
+      "notes": "Complete actual reading pp11-14 fullremainingA/B/C andD1/D2. BaselinegenericAM/POMO/PIP descriptions not source of originalUCPOcheckpointjointtraining. Nodegeneration/solver3runs10000LKHtrials, fleetceil demand/capacity onlylowerbound notuniversalfeasibility. D7/8negativeablation results retain. UCPO-T25.737vsdefault25.750bettercost/worsefeasibility; proseCbestallnot supportedbytable. FormalbylineaddsNUSforJinbiaoChen vsarxivallSYSU, independentpublisherprimaryrecord."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Complete actual reading pp15-17 allD3-5 andElicenseTable12, allfivecontactimages/all12tables/2figuresviewed. Preservehardfullpairs25.629lowernotproseworsevs25.750 withworse7.67%failure. RepositoryexactNov12,2025commit16ZIPmembers inventoried/noextraPDFscience/checkpoints/data. READMEfullread; Trainer725-748 actualuniformbestanchorloss/meanlogprob insteadthreeconditionalaverages/sumsequence, reward625-668 penaltyread; train1-165 configread, utilsget_env96-107 importsCVRPTW/limitedvehiclemodulesabsentfrominventory. No repoexecution/training/benchmarkreplication."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Handle complex routing constraints through preference-based adaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Feasibility-aware partial order and three activated training losses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure1/Equations1-4/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Fine-tune existing constructive policies;100/500extraepochs vs10000base;bestfeasible8aug inference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            11,
+            12
+          ],
+          "locator": "Warmstart/evaluation/AppendixB-C"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Task-specific finetuning lacks actual shared cross-native-problem checkpoint evidence; specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Setup/conclusion/futuremodulegeneralization"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Feasibility improvements coexist with hard100%failure, conditionalcost regressions and ablationtradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            14,
+            15,
+            16
+          ],
+          "locator": "Tables1-5/7-11"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Margin scaling stillLagrangiandependent; feasibilityempirical; printeddepotconstraints/fleetlowerboundneedqualification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            9,
+            10,
+            12
+          ],
+          "locator": "Equation2/AppendixA/C4"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full17p scientificappendices andexplicitassetlicense/source-releasepromise.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Versionheader/AppendicesB-E"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity formal publication history and affiliations",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/41017",
+      "locator": "Exactfive-author formalAAAI2026 DOI10.1609/aaai.v40i43.41017/pages36900-36908/date2026-03-14; formalJinbiaoChenNUS vsreadarxivallSYSU. Actualhistoryv1Nov13,2025; complete17p registeredSHA. Formaldownload520 notcountedread."
+    },
+    {
+      "field": "supplements scientific inventory and source release",
+      "source_url": "https://github.com/Birdie-Go/UCPO/tree/1dd7db24fa90b8c708d7c759d12e2959b8eb4b93",
+      "locator": "All17p scientificA-E/fullrefs actualread/all5contacts/12tables/2figuresviewed.16member45443bytecodeZIP datedNov12,2025 noPDFscience/data/checkpoint; READMEfullread, Trainerloss725-748/reward625-668/trainargs1-165/utils96-107actualchecked. No additional promised scientificproofmissing; no benchmarkexecution."
+    },
+    {
+      "field": "classification empirical and formula qualifications",
+      "source_url": "https://arxiv.org/pdf/2511.10148v1#page=6",
+      "locator": "Separatebackbonetaskfine-tuning so specialist; TSPTW100HardwarmPOMO100failure/cold.87; TSPDLcostregressions/conditionalfeasiblesubsets; Dfullpairs25.629lowercostthan25.750 despiteproseworse. Marginratioexplicitlambda, printedA1depotcycleconstraints andC4fleetceilnotgeneralfeasibility guarantee."
+    },
+    {
+      "field": "source code differences and original figure",
+      "source_url": "https://github.com/Birdie-Go/UCPO/blob/1dd7db24fa90b8c708d7c759d12e2959b8eb4b93/Trainer.py#L725-L748",
+      "locator": "Onebestanchor/allN-1normalization andperstepmeanlogprob differconditional3terms/sequenceloglikelihood; utilsunconditionallyimportsmissingCVRPmodules. OriginalFig1 crop48,50,565,3352.8x fullcaption actualviewed; printedresultsnotattributedto inspectedcommitwithoutproof."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.2015",
+      "description": "Constructive decoder background, exact three-author PointerNetworks bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2019",
+      "description": "Exact ICLR2019 title and three-author backbone reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al.2023",
+      "description": "Hierarchical TSP background, seven-author matching AAAI2023 reference split acrosspages8-9.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.2020",
+      "description": "Primary backbone/multistart protocol; exact six-author2020 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8,
+            11,
+            12
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.2022",
+      "description": "Symmetry-based routing background, exact title/threeauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al.2021",
+      "description": "Matrix-based CO background; exact title/sixauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "elg",
+      "reference_label": "Gao et al.2024",
+      "description": "Ensemble local-policy background, exact five-author IJCAI2024 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "polynet",
+      "reference_label": "Hottung et al.2024",
+      "description": "Diverse construction policies, exact three-author/title reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "lehd",
+      "reference_label": "Luo et al.2023",
+      "description": "Heavy decoder background, matching five-author2023 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "invit",
+      "reference_label": "Fang et al.2024",
+      "description": "Invariant nested-view transformer background, exact four-authorICML2024 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "goal",
+      "reference_label": "Drakulic et al.2025",
+      "description": "Generalist background, exact three-author GOAL title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al.2024",
+      "description": "Multitask zero-shot routing background, exact title/six-authorKDD2024 citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al.2024",
+      "description": "Multitask mixture-of-experts routing background, exact seven-authorICML2024 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "bopo",
+      "reference_label": "Liao et al.2025",
+      "description": "Direct best-anchor preference-training lineage, exact five-authorICML2025 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            8,
+            16
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "preference-optimization-co",
+      "reference_label": "Pan et al.2025",
+      "description": "POCO preference-training lineage, exact seven-author title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "dact",
+      "reference_label": "Ma et al.2021",
+      "description": "Iterative improvement context, matching seven-authorNeurIPS2021 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.2023",
+      "description": "Infeasible-region neural search context, exact three-author2023 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.2023",
+      "description": "Non-autoregressive ant-system context, exact five-author2023 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang2023",
+      "description": "Diffusion CO background, exact two-author2023 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "pip",
+      "reference_label": "Bi et al.2024",
+      "description": "Constraint-specialized backbone and lookahead mask, exact seven-authorNeurIPS2024 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8,
+            12
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini et al.2024",
+      "description": "Literal bibliography identifies Self-labeling the job shop scheduling problem; source calls routing baseline SLIM, not silently mapped to a different titled work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8,
+            15
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "ucpo-a-universal-constrained-combinatorial-optimization-method-via-preference-optimiza",
+      "cited": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+      "reference_label": "Xia and Zhang2024",
+      "description": "Neural column-generation constraint-handling context, exact two-author IJCAI2024 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Actual bodymention and fullmatching bibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Completed17p authorcopy/fullscientificA-E and actualsourceinventory.",
+    "Verifiedfiveauthors/datechain and formalNUS affiliationversiondifference.",
+    "Keptspecialist classification despiteUniversalname, because adaptation is task-specificfinetuning.",
+    "Retainedfeasibility/qualitynegativecases, budget/metricconditions, printedformulationqualifications andpubliccodeversiondifferences.",
+    "Added originalFig1 and22 actualinternalcitations withmatchingbibliography."
+  ],
+  "reviewed_note_sha256": "f73aa5ec5d3903b69abc992356f5f2d17d2741dfec5415ab3a47c5c80f235b3b"
+}

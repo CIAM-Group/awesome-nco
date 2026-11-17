@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "paper_id": "slim-job-shop",
+  "note_path": "specialist/slim-job-shop.md",
+  "baseline_note_sha256": "96cc69a40410b265bb037084590073f6d4ea568dd1dda7627f952d4171e079ae",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/be8987a75afeeadfa65007cf7ee25de0-Paper-Conference.pdf",
+      "version": "CompleteformalNeurIPS2024PDF24pages withscientificAppendicesA-G/references/checklist,December16,2024",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/be8987a75afeeadfa65007cf7ee25de0-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8ce91e3e69.pdf",
+      "sha256": "67fb837bbdb7a7af89af34beeb42011229e961a81499544f71223ce28de86851",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullintro/related/JSPdefinition/disjunctivegraph15features/appendreadyjoboperationconstruction. SLIMselfbestlabel method appliedseparateJSP/TSP notsharedtaskcheckpoint. Feasiblemachineappend/precedenceconstruction, multipathsduplicatesolutions affectsdistribution; claimsrobustness_empirical nottheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete11contextfeatures/GAT2layer143emb/MHA+classifier/randomfeasibledispatch/SLIMbest256crossentropy/crossentropymethodcomparison/data30000sixshapes/train20epochsAdam2e-4accum16/holdout600/checkpointbest/120h. Nooptimalitylabels doesnotmeanobjectivefree; noformalmonotonicimprovementtheorem anddegeneracyavoidanceclaimmustqualifyasheuristic. ExternalUBfilesstoredforreference notautomaticallytraininglabels."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read entiremainTable2all16shape rows/3trainingablations/Figs2-4 andcomparisonprotocols. TaillardavgGM1288.4 GM5127.8 vsCL12810.5 CP2.0/L2S5k7.4;Demirkol14.0/13.1 vsCL19.0 CP3.5/MIP14.6. GM128tieSBH13.5DMU20x20 notstrictall. Somelearnedbaselinesoriginalpaperothersrerun notuniformhardware. PPOstudyTaillardusedrepeatedvalidation100stepsnotindependentheldoutevaluation; explicitauthorsdonotclaimuniversalsuperiority/partialrewardexplanationhypothesis. Beta512samplingcost,trainlargerbetaoutmemory."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullTSP20trainAM/SLIMvsPOMO100kstepsbatch32TSPLIB<=100repeatedvalidation/methodlimitations/conclusionandfullrefs1-37. TSPseparatemodelsamealgorithm notsharedJSPweight. Selflabelsselectobjective butnouniversalimprovement/collapsetheorem; onlybestofbetausedsampleefficiency/memorylimitation. Citation27year2018AMsamework2019,35NazariVRPbackgroundusedTSPsectionnotimplyactualVRPexperiment. Ref19DeepLearningnotAdam despitetrainingcitation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read fullremainingrefs38-58/every15nodefeaturesTable4/additionalcomparisonTable5allrowsandAppendixA/B. GreedyGMsubsetmean14.5 betterDQN15.4butDQNwins15x15/20x15/30x15; CLwins20x20/50x20; notallGMbestinstances. hCPmeanscomparedauthorreportsnotidenticalreimpl. FJSPfeatureapplicabilityonlynotactualtask."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullLawrenceTable6/stdTable7/large80instanceTable8andalltimingFig6/extendedResultsxlsxexplicitlink. LawrenceGM5122.5 vsL2S5k1.8/CPMIP0, INSAbeatsgreedyGMonseveralsmallshapes. Stdacrossinstancesnotrepeatseeds. Large20per4shape80,CP1hvsGM31/64/164/343s;printedCP500x40 Cmax546064 conflictsGM53942.9/gapsum-26.14 likelytyponeedrawxlsx. TimingperinstanceGM5129.35s100x20vsL2D9.39 oneoutput; TotSumshapemeansnotfullbenchmarktotaltime. β1024 .4percentagepointgain1.9xruntime onlyreported."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read completechecklistclaims/limitations/theoryNA(noformaltheoreticalresults)/reproducibility/dataaccess/setting/statisticalsignificance. Claimsreadconfirmedempiricalnotformalproof. Fullchecklistremaining22-24pending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Completedall24formalpages/everyreference/AppendicesA-G/fullchecklist. Read resource/ethics/broaderimpact/assets/humanresearchstatements; theoreticalresults explicitlyNA. ScientificextendedResults.xlsx paperp18 linkedmustcheckactualreleasedfullworkbook notskip."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Best feasible sampled objective-ranked pseudo-labels avoid externally solved target trajectories for JSPtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "SLIM bestsampleCE with graphpointer scheduler, architecture/PPO/candidate ablations and separate TSP training demonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          "locator": "Method/Section6"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Constructive JSPsolver despite trainingnameImprovement; sameJSPweightsacrossshapes, separateTSPmodel; futureflexible/dynamicshops notactualsharednativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            10,
+            15,
+            20
+          ],
+          "locator": "Tasks/architecture/TSP/checklisttheoryNA"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "GATv2singleinstanceencoder/11dynamicfeatures/readyjobmask/feasibleappend; bestbetaCEonly, no formalmonotonic/anticollapse theorem.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            15,
+            20
+          ],
+          "locator": "Allformulas/features/completecorecode"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Actualmain/other/largebenchmarks/timings/negativeclassicalcomparisons, crossinstancestds, repeatedvalidation andTable8typo preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "All8tables6figures/fullappendices"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Onlybestcandidatelearning memory/samplecost; codeversions/defaultlr/beta/scheduler/validationcriterion andrawworkbookmissingMS/REF/table differences preventexactunqualifiedreproduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            10,
+            15,
+            16,
+            17,
+            18,
+            20
+          ],
+          "locator": "StaticZIP/currentdiffs andindependentallrowworkbookaudit"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All24p/A-G/58refs/checklist12visual;44MBcode/dataZIPnoPDF,manualAPIs;200rowworkbookallcells/formulasparsed4120validgapchecks;8identityedges/noNNrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Fullreadinglogs/publisherarchive/code/workbookevidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/be8987a75afeeadfa65007cf7ee25de0-Abstract-Conference.html",
+      "locator": "FormalPDF1 fourauthorsUniversityofModenaandReggioEmilia;publisherdateDec16,2024,DOI10.52202/079017-3349."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/be8987a75afeeadfa65007cf7ee25de0-Abstract-Conference.html",
+      "locator": "PublisherZIP44326481bytes SHA4fafaae38494b8e0b4147f4cf2d52bc71fe486f23e5589a86d448482ff9e0615;30806entries/30794nonMacfiles incl30760JSP,17py,11pth,4pt,README/requirements;noPDF/noXLS. FullintegratedA-Gread; allcoreZIP/currentcodecompared. OpenReviewbuqvMT3B4kAPIv1/v2notes403. Paper18linkedcurrentResultsxlsx complete structuredread below; no explicitly missing scientific document."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/be8987a75afeeadfa65007cf7ee25de0-Abstract-Conference.html",
+      "locator": "Formal24p SHA67fb837bbdb7a7af89af34beeb42011229e961a81499544f71223ce28de86851;visual3/4/5/7/8/9/10/15/16/17/18/20 all6figures8tables/centralformulaschecked. Fullchecklist/theoryNA."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/AndreaCorsini1/SelfLabelingJobShop",
+      "locator": "Commit2168f8543b13d2f5729ff44b11e1139bde05b9ad30839files/fourSLIM+elevenL2Dweights. FullREADME/requirements/train/test/PointerNet/sampling/inoutread; core3sourcesbyteidenticalZIP. AllZIP/currenttrain/testdiffread: ZIP2e-4/scheduler/beta32 versuscurrent2e-5constant/beta128;validationboth128/reference-gap vsprinted256/makespan. TSPcodeandlargebenchrawnotprovided. NoNNrerun."
+    },
+    {
+      "field": "scientific extended workbook",
+      "source_url": "https://github.com/AndreaCorsini1/SelfLabelingJobShop/blob/2168f8543b13d2f5729ff44b11e1139bde05b9ad/output/Results.xlsx",
+      "locator": "Paper18AppGexplicitlink;236266bytes SHAfb98559ab31d93401b7f0a92c7997317f8bcb92cd2b521c8473bcf750d2eef16. SpreadsheetsSKILL/main+quickstart/style/readonly/scientific/editworkflow read. ArtifactToolread-onlyimport+originalXMLall3sheets200instance rows/20053cells6357formulas parsed;4120numericalMS/GAP pairs recomputed withzero mismatch/rawcache-import numericaldiff. LawrenceAA4:AA43missingMSwithAB=-1treatedunavailable;TaillardBE86:BE10621REFerrors. CurrentCPmean1.5841vsprinted2.0;DMUgreedy19.9825vs20.3. Allper-shapeaggregates savedworkbook-audit.json; noedit/recalc/export, notvisualeverycell. NoTable8raw500x40data."
+    },
+    {
+      "field": "scope,statistics,citations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/be8987a75afeeadfa65007cf7ee25de0-Abstract-Conference.html",
+      "locator": "ActualJSP+separateTSP20training, noflexible/dynamic/tasksharing claims. Stdacrossinstancesnotindependenttrainseeds; PGoptimalorbestknownUB, perinstanceruntime vsTotSumofshapemeans.8actualbody+fullbibIDs; uncataloguedCL/TRL/DQN/hCPreferencesnotguessmapped."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "slim-job-shop",
+      "cited": "attention-model",
+      "reference_label": "[27]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "BodyPDF4 reference[27]; fulltitle/authors bibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "l2s-jssp",
+      "reference_label": "[55]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3 reference[55]; fulltitle/authors bibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[54]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1 reference[54]; fulltitle/authors bibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "BodyPDF5 reference[4]; fulltitle/authors bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "neurewriter",
+      "reference_label": "[12]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3 reference[12]; fulltitle/authors bibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "pointer-networks",
+      "reference_label": "[50]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "BodyPDF2 reference[50]; fulltitle/authors bibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "pomo",
+      "reference_label": "[30]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            12
+          ],
+          "locator": "BodyPDF10 reference[30]; fulltitle/authors bibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "slim-job-shop",
+      "cited": "rl-vrp",
+      "reference_label": "[35]",
+      "description": "Explicit numbered body/comparator citation; full bibliography identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            12
+          ],
+          "locator": "BodyPDF10 reference[35]; fulltitle/authors bibliographyPDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ClarifiedconstructiveinferencevstrainingnameImprovement/separateTSPmodel; noformalanticollapse/PPOsuperiority guarantee.",
+    "Replacedgenericresultswithallbenchmarks/negativeclassicalcases/actualruntimeandstatisticalscope,Table8inconsistencyretained.",
+    "ReadpublisherZIP/currentcoresourceandallversiondiffs pluscomplete3sheetworkbookstructure/formula-cache/allrowaudit;preservedmissing/errors/versiondifferences.",
+    "All24pages/A-G/checklist/fullrefs12visuals/8exactcitations;noNNbenchmarkrerun."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1fc4d49085c1f9ea832d29398f11361b425f0a3cbda807649a27ce1d487d1bbe"
+}

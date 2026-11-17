@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "paper_id": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+  "note_path": "specialist/multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "7d761d3ec5d0e1880eeebc6b186bd572199f42ebb5b7ca023984c0064d2af65d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2511.17435",
+      "retrieval_url": "https://arxiv.org/pdf/2511.17435",
+      "version": "Actualarxiv2511.17435v2 posted2025-12-17;15pages inclcompleteA-Jscientificappendices, allfreshread; formaleligibilityindependentpublishermetadata",
+      "local_path": "research/full-text-review/multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy/paper.pdf",
+      "sha256": "d52e30c7770a0faf7e4bc46634f07f5fcb24f6882e11eb8b8f85706e398d8e66",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresharxiv2511.17435v2Dec17_2025title4BeihangauthorsWangcorrespondingall4affillabs. CentralizedARjointpolicy notindependentdecentralmultiagent. Dynamicrequestappearance unknownuntiltime, stationfixedcompleteweightedtraveltime graph, vehiclecannotredirectenroute, requestvalue/volume/states, automaticpickupco-locatedfeasible vehicles stage tie assignmentlater. ObjectivewithinfinitehorizonnotclassicstaticPDPallmustserve. CoderepoBeihang-BIGSCity/MAPT."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh3-4currentfullobsnotfuturestochasticrequests. Decisionsassignunpickedrequestco-locatedvehicleorwaittau thenallidlevehiclesdestinations; autoregressivemaskcapacity preventsconflicts. Rewarddeltafinitehorizonprofitmintravel objectiveDtkwordbytimeambiguous actualcodedeliveryupdateslaterchecknotassumeovercount. Entityembeddings3types+global; scalarrelationbiasfor7typed/distanceTable1 toattention(QK+R)/sqrtd. Chainruleallrequestsfirstthenvehicles learnedpositionalencoding, orderagnosticfactorizationNOTpolicypermutationinvarianceguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh5-6completeARprocedure/PPOEq25-29/ALLTable2-3eightdatasets. Priorsspare/cap,waitbeta;delivery1,pickup.1meanDist/d,other0;printedproductsrequireprobnormalizationactualcodecheck. Priorsmayexcludeusefulprepositioning/wait nooptimalguarantee. synthI20/50/300 M110/550/550 K5/15/50 cap3 horizon58/128 cost0/.3 requestvalueorigdestdistance; XLdatasetcost0. RealDHRD36stationsTaipei800/20 Singapore700/15 Stockholm200/3 cap6,76days trainval14test. Staticstarfullfutureinfo unrealistic; adaptedMAPDP/PARCOdistanceinputs notfaithfuloriginalbaseline. Relationablationmarginalvspriorsbig. Nojointcheckpointcrossdatasetsstated yet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh7-8Table4actualperinstancefullhorizoninference sec MAPT1.42/1.416/8.3/7.888/27.434 vsMAPDP.794/.827/31.981/32.544/33.217; Smodelslower,Nearest.059-.148fastest. SA~16..614 OR400s,N/Abudgetunspecifiedneedappendix. Fourbeta0..0.3step.02realnonzerohelpsnotuniversalbest. Fullreferencesstartp8readincludesHyperOp2311.09375 distinctformalIDmatchinglater,PARCO2409.03811preprint actual2024 vsformalnotforcefuturedate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fresh9fullbiballrefscomplete, possibleinternalexplicitMAPDP/PARCO/HypOp/AM/Ptr/RLVRP/NCO othertravelpredictionnotforce. AppendixAexamplebothvehiclesdeferselect, BrollinghorizonvsMDPqualitative distinguisheswaitbatchnotproofnoRollingHorizoncanplanfrequent. Cdistanceinitialuniformintegers0..10/30/20thenshortestpath, couldzerodistance distinctstations modelpriorsdivisionneedsclampcode; T58/128. XL300stationsbut550requests andDHRD800max genuinecomplexityallentitiesnotjuststations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Fresh11-12ALLC-Iincludingcomplexity/models/Table5-6. DHRDrealorig/dest5chargeohash36areas, shortestarea-hopdist, T48 slots/day profit1nocost soqualitycompletionnotrealcash/cost; simulatedfleetnotdeployedtest. EntityquadraticO(L[(I+M+K)^2H+...])KVcachedecoder. Encoder6decoder2d128heads2,Adam25%warmuprestlinear, gamma/lambda.99clip.2critic1PPO1epochbeta.03bestval. Per-datasettrainingbudgets2k-16k rollouts64/256 minibatchsame LR1e-5..1e-4, exactunitsnextAlg1. Separateweightsperdatasetspecialist. Table7prioronlynextcriticalablation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh13-15fullALLscienceA-Jcomplete. Table7prioronly1858.9vsMAPT1875.1synthL tinyincrement. Table8XSgeneralizationS->XL2470.2belowprior2340.7? actualabove, XL->S109.8bad,dhrdSE->S117.4bad. Table9rollinghorizon20/60/40/30 replanning10/30/20/15 (perstepNNnotmatchedfreq). ORToolsCPsatunitvolumesassumed andprintedEq37pickupimpliesdeliveryateachfuturet incorrectdirection forprecedence; checkcodeactualmethodnotdenybasedprint. SA5000 T1000to1cool.99,GA10pop500gen,ORtimeoutnotgiven. Alg1KiterationsNrolloutthreadsTsteps distinctionTable6unitcodecheck. All15pagesreadnotallcheckpointtraininggeneralist."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Centralized sequential request assignment and destination construction with relation attention and manually guided PPO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1-3/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Current-state MDP, finitehorizon completedvalue-travelcost, AR feasibility and normalized probability priors; nofutureobservations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Definitions1-7/Equations1-29"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Eight simulator datasets/wholeinstance time, prior-only critical baseline and asymmetrictransfer; per-datasetbudgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Tables2-9/AppendicesC-J"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Quadratic attention, nonuniformpriorrestriction/datasettransfer; release arch/frames/extraTSPmask differ; printedEq37reverseimplicationcorrectedincode.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "AppendicesD/F/H-I/J/Equation37"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructive singleMVDPDPSRproblem; per-datasettrainedpolicies andscale/distributiontests, nonneuralfeasibilitychecknotNNimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            12,
+            13
+          ],
+          "locator": "Definitionsactions,Table6/8"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "OfficialMAPTauthorrepo and15pagearxivv2withfullA-J science; exactbyline/affils/sourceversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Codeanchor,fullscientificA-J"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/formaldate",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v40i19.38700",
+      "locator": "ActualpublisherCrossref200title/allfourauthors/published2026-03-14; formalOJSindexsamebyline. ReadPDFp1Beihang4schools/labs,JingyuanWangcorresponding. OJSdirect520notclaimedread."
+    },
+    {
+      "field": "arxivversion/date",
+      "source_url": "https://arxiv.org/abs/2511.17435",
+      "locator": "Savedarxiv-history.html actualv1Nov21_2025/v2Dec17_2025, readPDFv2p1versionstamp15pages; allmain/bib/A-Jpagescomplete."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/Beihang-BIGSCity/MAPT",
+      "locator": "Manualofficial35entryrecursivetree noextraPDF/ZIP; README/threeSVGillustrationsinspected, allnamedA-Jscienceincludedandreadarxivv2. OfficialOJSindexVideo/Slides→Underline141224APIAcceptvnd.api+json identifiesPPTXasset403; originaldownloadredirectslogin. Notregisterednorclaimedread; actualretrievalJSONsaved."
+    },
+    {
+      "field": "implementation",
+      "source_url": "https://github.com/Beihang-BIGSCity/MAPT",
+      "locator": "TreeSHAdf8b75d1a32d873f2486adeaed205eeac89db02e; inspectedPPO/budget/AR/priors/CPsat/envreward. Categoricalnormalizesproducts. ExtraTSPpermutationdeadline maskanddeliverydistance/loadprior beyondmain; 5enc3decdefaultvs6+2paper. runner numepisodes//threads, DHRD49frames200requestcap. CPsatcorrectdelivery→priorpickupvsprintedEq37. Noexperimentrerun."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://arxiv.org/pdf/2511.17435",
+      "locator": "PDFpp2-5 constructivejointactions currentstate thenadvance, notincumbentmoves. Per-datasetTable6/8weightsanddistribution/size transferonlysameproblem; specialist. Classicalenumeratedfeasibilitynotneuralimprovement."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2511.17435",
+      "locator": "FulloriginalFigure1p4Rect(48,48,561,211),4x atomicframeworkPNG. Keyp4/6/7/10/12/13/14visuallyinspected; threeofficialrepoSVGbaseillustrationsmatchpaper. Completebibpp8-9andbodymatched5internalIDs;PARCO/HypOpuncatalogin527noinventededge."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2018; arXiv1803.08475",
+      "description": "Explicitbodycitationandmatchingfullbibauthors/title. Preserveactualcitedpreprintyear/version; nofutureformalyearsubstitution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitintext Kool et al.,2018; arXiv1803.08475"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "CompletebibliographicentrymatchingstableID attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+      "cited": "mapdp",
+      "reference_label": "Zong et al.,2022",
+      "description": "Explicitbodycitationandmatchingfullbibauthors/title. Preserveactualcitedpreprintyear/version; nofutureformalyearsubstitution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitintext Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "CompletebibliographicentrymatchingstableID mapdp"
+        }
+      ]
+    },
+    {
+      "citing": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2016; arXiv1611.09940",
+      "description": "Explicitbodycitationandmatchingfullbibauthors/title. Preserveactualcitedpreprintyear/version; nofutureformalyearsubstitution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitintext Bello et al.,2016; arXiv1611.09940"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "CompletebibliographicentrymatchingstableID neural-combinatorial-optimization"
+        }
+      ]
+    },
+    {
+      "citing": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Explicitbodycitationandmatchingfullbibauthors/title. Preserveactualcitedpreprintyear/version; nofutureformalyearsubstitution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicitintext Vinyals et al.,2015"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "CompletebibliographicentrymatchingstableID pointer-networks"
+        }
+      ]
+    },
+    {
+      "citing": "multi-agent-pointer-transformer-seq-to-seq-reinforcement-learning-for-multi-vehicle-dy",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.,2018",
+      "description": "Explicitbodycitationandmatchingfullbibauthors/title. Preserveactualcitedpreprintyear/version; nofutureformalyearsubstitution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitintext Nazari et al.,2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "CompletebibliographicentrymatchingstableID rl-vrp"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceeverypendingplaceholderwith15pagecompletearxivv2/scientificA-Jreading andofficialbyline/date/codeevidence.",
+    "Keep specialistconstructive: dataset/size-transferoneproblemnotsharedcrossproblemcheckpoint; jointARconstructionplusclassicalfeasibilitynotmixed.",
+    "Separatefullyobservedpresentfromunknownfuture; currentrewardcodepaysnewdeliveriesonce and finitehorizonoptionalservice.",
+    "Full8datasetbudgets/metrics/prior-onlyandnegativecross-transfer; MAPTslowerthanMAPDPsmall/Nearestall, no unqualifiedfastest/SOTAoptimality.",
+    "PubliccodeextraTSPmask/prior/5+3arch/49framescap/numepisodesunits andcorrectCPsatprecedence vsprintedEq37qualified, nofalsebenchmarkreproduction.",
+    "Formal2026-03-14distinctarxivv1Nov21_2025/v2Dec17actual; loggedinaccessiblepresentationwithoutclaimingread. OriginalFigure1crop/5confirmedinternalrefs."
+  ],
+  "reviewed_note_sha256": "715c4b0b0efb2e88bc38803faec432809d5559b15b1ccdc1665e9c6dad12204b"
+}

@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "paper_id": "hrl-aug-branching",
+  "note_path": "specialist/hrl-aug-branching.md",
+  "baseline_note_sha256": "1a247fdcbea2f65a5a0e915dcb072a072a15b47b41f0178ea9cad91594efe6ed",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/850cc7c4e5619fdc2f30c4eaa5ce3c17-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/850cc7c4e5619fdc2f30c4eaa5ce3c17-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-2fa826c800.pdf",
+      "sha256": "ebc8587372a1180a360ba0df101330cc85b62f3cb66aabac40fef539fffdd631",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read authors/affiliations, exact MIP B&B branching task, hybrid online collector plus offline return filter, IL/RL contrasts and gamma1 return motivation; no neural exactness guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 9,
+      "notes": "Read online actorcritic2actions, gamma1dualboundreturn, firstiterationofflineupperenvelope/filter; Tables3-10per-tasktraining,40instances5seeds, costs, negativeeasySC/hardCFLcases and denominator inconsistencies. No formaloptimalityguarantees."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read entire bibliography, authors/year/title identities for Gasse,Gupta,Scavuzzo,Liu and unrelated generative papers; no relations by meretopic."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read online binary policy-selector actorcritic, dual-bound undiscounted return, offline fitted upper-envelope filter trained only first iteration, iterative GCNN retraining and actual perproblem training/validation/test designs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all A1-A6 feature/branching algorithms/KIDA differences/RL baselines and small-tree evidence; rendered Table5 denominators and Equation3 upper-envelope constraints. Table12 199/100 impossible count and broader aggregate claims qualified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hrl-contribution",
+      "category": "contribution",
+      "statement": "Hybridonlinepolicy-sourcecollectorandofflineempiricalreturnfilter augmentimitatedbranchingdemonstrations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1/3"
+        }
+      ]
+    },
+    {
+      "id": "hrl-method",
+      "category": "method",
+      "statement": "Gamma1dualboundreturn,twoactionsourcedecisions,upperenvelopefiltertrainedfirstiteration,onlineeveryfifth.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            13
+          ],
+          "locator": "Equations2-4/Algorithm1/A1-A2"
+        }
+      ]
+    },
+    {
+      "id": "hrl-experiment",
+      "category": "experiment",
+      "statement": "Separate40instance5seedpertasktests; easySCnegativeandhardCFLsolvedcountnegative; offlinecostmaterialandearlytrainingmoreexpensive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15
+          ],
+          "locator": "Tables4-13"
+        }
+      ]
+    },
+    {
+      "id": "hrl-classification",
+      "category": "classification",
+      "statement": "Pertaskcheckpointsandwithinapplicationlargersizes/backbone-retraining; classicalB&Bbranchcomponentconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9,
+            13,
+            15
+          ],
+          "locator": "Protocol/4.4/A2/A5"
+        }
+      ]
+    },
+    {
+      "id": "hrl-limitation",
+      "category": "limitation",
+      "statement": "ReportedWinSolveddenominatorsinTable5andTable12conflict200attemptprotocolincluding199/100; nolearnedoptimalityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            15
+          ],
+          "locator": "RenderedTable5/Table12"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/850cc7c4e5619fdc2f30c4eaa5ce3c17-Abstract-Conference.html",
+      "locator": "Title/eightauthors/p1LenovoResearchandSJTU;correctWenliOuyangcapitalization."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/850cc7c4e5619fdc2f30c4eaa5ce3c17-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2024-05-31/pages31373-31387."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/850cc7c4e5619fdc2f30c4eaa5ce3c17-Supplementary-Conference.zip",
+      "locator": "OfficialpublisherSupplementaryZIP34503855bytesfullyinventoried;HRLAugAppendixfourcode/evaluationdirectories,2READMEs/checkpoints,noextrascientificPDF/TeX/doc. Main15pagesallA1-A6read."
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/850cc7c4e5619fdc2f30c4eaa5ce3c17-Supplementary-Conference.zip",
+      "locator": "PublisherauthorcodeZIP,READMEs+ExperimentBinary/agents/dual_HRLAug.pyperproblemcheckpoints,environment/reward/MLSolverevaluationinspected; documentedcompleteaugmentationtrainpipelineunavailable."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hrl-aug-branching",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "ExplicitGCNNbaselineandbipartitepolicytitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            6,
+            7,
+            10,
+            15
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hrl-aug-branching",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "ExplicitILbranchingcitationandmatchingHybridModelstitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hrl-aug-branching",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "ExplicitTreeMDPmethod/baselinecitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hrl-aug-branching",
+      "cited": "l2p-mip",
+      "reference_label": "Liu et al. (2024)",
+      "description": "ExplicitfuturepresolvecombinationandL2P-MIPentry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall15pagesandA1-A6; foundofficialauthorcodeZIPandcorrectedno-codeclaim; detailedtrainingcost/metrics/negativecasesandprintedcountinconsistencies; preserved4exactrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "12b90cc558145842b2ebdc1ad29fa77ae19abc366d6d7548ea63333aba352d00"
+}

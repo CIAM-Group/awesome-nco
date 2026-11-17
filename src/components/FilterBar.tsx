@@ -47,7 +47,7 @@ export function FilterBar({
       {selects.map((select) => (
         <label className="select-field" key={select.key}>
           <span>{select.label}</span>
-          <select value={select.value} onChange={(event) => onChange(select.key, event.target.value)}>
+          <select aria-label={select.label} value={select.value} onChange={(event) => onChange(select.key, event.target.value)}>
             {select.options.map((option) => <option value={option.value} key={option.value}>{option.label}</option>)}
           </select>
         </label>

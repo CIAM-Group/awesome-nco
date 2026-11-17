@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "paper_id": "satnet",
+  "note_path": "specialist/satnet.md",
+  "baseline_note_sha256": "517195135f8480d2839923cc59c7fe7ded9c539b03f8e8ab42d2dedbbfeccaaa",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v97/wang19e/wang19e.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v97/wang19e/wang19e.pdf",
+      "local_path": "research/import-272/nco-0cdec80176.pdf",
+      "sha256": "45008286739149896e3da64cb16160a5f7a15e12abbae16a721cb532bd492e69",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v97/wang19e/wang19e-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v97/wang19e/wang19e-supp.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/satnet/supplement.pdf",
+      "sha256": "7459c5410779e583a0a69332293fb9e0053d9750a8b2aba3fa5f0d74d84218dc",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formalICML2019metadata, MAXSATSDP formulationS learnednotfixedclauses, rankcondition and coordinateupdate Eq3, forwardknown/unknownmask, approximation-versus-discreteoptimality distinction andrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read initializationrank/auxvariables, inputrelaxEq4–5, outputsrounding/testmulti-samples, implicitdifferentiationTheorem1pseudoinverse andbackwardcoordupdate, GPUimplementation18–30xrestrictedcomparison and paritydesignedchaintraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTable1boardaccuracytrain/test original/permuted/visual, singleSATNet600clause300aux Sudoku, baselines/losses, exact100epochtiming andLeNetvisualpipeline;74.7percentis0.992^36.2 recognitioncalculationnotuniversalceiling."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullbibliographyandmatchedexplicitinternalreferences manuallyincludingOptNet,NeuroSATanddecisionfocusedlearning; titlematchingnotexhaustive."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read completeAppendicesA–D totaldifferentials,projectors,pseudoinverselemma andbackwardcoordinateupdate plus4x4OptNetcomparison; trackednonzerogoandfixedpointrequirements ratherthandiscreteMAXSATguarantee."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read complete4x4baselineerrors and9x9original/permuted/visualconvergenceplots and captions, lossversusboardaccuracy distinction and specificMNISTtheoreticalbest qualifier."
+    }
+  ],
+  "claims": [
+    {
+      "id": "layer",
+      "category": "contribution",
+      "statement": "DifferentiablelowrankMAXSATrelaxation usesanalyticimplicitbackwardcoordinatealgorithm ratherthanunrolling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Section3Algorithms1–3Theorem1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Knowninputsremainfixed andoutputsuseSDPprobabilities/rounding; rankandgradientpropertiesdo notcertifydiscreteMAXSAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.3"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Parity/Sudoku/visualtasksuse separatelytrainedarchitectures andparameters, notonecrossnative-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections4.1–4.3"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Wholeboardtestaccuracy98.3percentoriginal/permutedand63.2percentvisual,74.7percentreferenceisspecificrecognitioncalculation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Table1andSection4.3"
+        }
+      ]
+    },
+    {
+      "id": "derivatives",
+      "category": "reproducibility",
+      "statement": "AppendicesA–Dderivefixedpointdifferentiation,pseudoinverseandtangentcoordinateupdates.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "AppendicesA–D"
+        }
+      ]
+    },
+    {
+      "id": "normalization",
+      "category": "limitation",
+      "statement": "Equation5needsorthogonalunitcomponentnormalizationtoensureunitvectorforfractionalinput.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Equation5andstatedunit-vectorrequirement"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "scope",
+      "source_url": "http://proceedings.mlr.press/v97/wang19e/wang19e.pdf",
+      "locator": "Sections4.1–4.3separateparity/Sudoku/visualmodeltraining; genericlayernotsharedweights"
+    },
+    {
+      "field": "problems",
+      "source_url": "http://proceedings.mlr.press/v97/wang19e/wang19e.pdf",
+      "locator": "Section3approximateMAXSATprimitive; Section4parity,Sudoku,visualSudoku"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v97/wang19e.html",
+      "locator": "ManuallycheckedRelatedMaterialSupplementaryPDFlinkand4pagesA–Ffullyread, includingbothderivationsandallplots"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/locuslab/SATNet",
+      "locator": "PublisherCodelinkandmainp6authorlink; repositoryREADMEexplicitICML2019implementation"
+    },
+    {
+      "field": "input_normalization",
+      "source_url": "https://github.com/locuslab/SATNet/blob/master/src/satnet_cpu.cpp",
+      "locator": "Currentmix_initnear89–100 usescos/sincomponents forknowninput; notedprintedEquation5unitprojectionclarificationwithoutclaimingcodefailure"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v97/gh-pages/_posts/2019-05-24-wang19e.md",
+      "locator": "OfficialPMLRfrontmatterdate2019-05-24andissueddateparts[2019,5,24]; conferenceJune9–15isnotthesamefield"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "satnet",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al.(2018)",
+      "description": "DirectneuralSATlogical-reasoningrelatedwork with matching1802.03685bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fullreview10paper+4supplementpages includingallmathandplots.",
+    "Separatedrelaxation/gradientpropertiesfromdiscreteoptimalityandUNSATcertification.",
+    "Addedparitytaskandarchitecturepriors,exactboardaccuracyandmodel-specificvisualreference.",
+    "Recordedinputnormalizationdetailandcodeinspectionwithoutassertingexperimentalrerun.",
+    "Restoredpublisher-issued2019-05-24fromofficialPMLRsourceafterdistinguishingconferenceperiodfromissueddate."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "bf304e47e6ec34df78136e65950ef4a80376e41270c30bf126a8f9891058c349"
+}

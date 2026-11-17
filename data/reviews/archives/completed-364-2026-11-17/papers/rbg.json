@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "paper_id": "rbg",
+  "note_path": "specialist/rbg.md",
+  "baseline_note_sha256": "6ae0a4a2015c917ce901e6585e6538667c0e794c3d9c74cd251af05ec76f1dad",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://fi.ee.tsinghua.edu.cn/public/publications/6910245c-644d-11ee-84fe-0242ac120002.pdf",
+      "retrieval_url": "https://fi.ee.tsinghua.edu.cn/public/publications/6910245c-644d-11ee-84fe-0242ac120002.pdf",
+      "version": "Author-hosted formal ACM KDD2022 article11pages pp4648-4658 inclAppendicesA1-A5",
+      "local_path": "research/full-text-review/rbg/paper.pdf",
+      "sha256": "e241f9fa946bbbd5fef6fe1ff04c811b1f04f374362332c81e2dbe0cef76af56",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshauthorhost actualformalACM11pages,KDD2022footerdoi titlematch5authors3institutions. CoreCVRP, hierarchicalrewritermergesregions/repartitions viafullregionalgenerator, needsactualtrainingclassificationlater; noinventedhighlevelregionconstructor. Relatedworksallread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh exactpipeline KmeansmixedEuclidean/polar, PCA route-levelpartition keepsroutecost, LSTMmeanregionfeatures andnearest5/8/9dotproductpartnerpolicy; merge regenerate replaceonlybetter. ExistingpluggableAM/LKH/HGSgenerator, newlytrainedrewriter, notbothnewneuralconstructor. Train50epochs100instances10rollout, test100;syntheticreal1000cases500/1000/2000, mainTablesbudgetHGSstrongest. Needapphardware."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FreshTables2-4 all numeric andCVRPTW/CVRPMDP capacities25/50 generatedvariantsnotinferredsamecheckpoint. RBGHGSnotuniformlybestRBG variant? mainbest. Clustereddistributionexception0.5%;Figure4prosecontradictiongrouporder flag. ActualdeploymentonlyRBGHGS2days500/700,otheralgorithmsreplayedoffline, noA/Btrial. Actual14/21sec vsHGS60/90smallcostgains."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Completeformal11pagesA1-A5scientificappendixread. SGD.001width100Kmeans10beta.09trainrotation50*10010steps,test100; validation20,2080Ti, appendixevaluated100instancesvsmain1000testcasesinconsistency. All37refs; noothermaterialpointer. Initializationweightablationmax.25%notguaranteeopt."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rewrite",
+      "category": "contribution",
+      "statement": "Learned region selection for incumbent merge/regenerate/repartition with existingAM/LKH/HGSgenerators.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Section4 Figure2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Kmeansinitializer/PCAwhole-routepartition/LSTMdotproductregionselection, acceptonlybetter, SGDREINFORCE immediatecostdifference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            10
+          ],
+          "locator": "Sections4.2-4.5 AppendixA1"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Maincosttimegeneratortradeoffs, variantlosses, syntheticdemands/historicalcoords,1000vs100averagecountdiscrepancy,Figure4labelconflict.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Tables1-4 Sections5/6 AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "online",
+      "category": "experiment",
+      "statement": "OnlyRBGHGSonline500/700two daily tasks; othersreplayedoffline, smallcostdifferences notABtest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Section6 Table4"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist improvement learnednewrewriter editscompleteincumbent; existingpluggableinitialsolvers notnewlearnedconstructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            8
+          ],
+          "locator": "Sections4-6 trainedsize-specificmodels"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://doi.org/10.1145/3534678.3539037",
+      "locator": "Formalpage1 fiveauthors threeinstitutions;ACM/Crossref published-online2022-08-14 vscreated2022-08-12. Correctedcreationdatedate, removedgenericscheduleacceptance."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://doi.org/10.1145/3534678.3539037",
+      "locator": "ACMmanual403; completeformal11pagesA1-A5 scientificappendixread, noexplicitmissingmaterialreference. Crossrefrecordlinksarticleonly; authorlablistingexactentrymanuallyparsedonlyPDF/noextras. InaccessibleACMattachmentnotclaimedinspected."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://fi.ee.tsinghua.edu.cn/publications/",
+      "locator": "ExactauthorlabRBGentryonlyPDF noCode, exacttitle/DOIrepo searchesnoofficialconfirmed; changed categoricalnotpublicstatementtoqualifiednotconfirmed."
+    },
+    {
+      "field": "problems, paradigm",
+      "source_url": "https://fi.ee.tsinghua.edu.cn/public/publications/6910245c-644d-11ee-84fe-0242ac120002.pdf#page=7",
+      "locator": "RestoredactualCVRP/CVRPTW/CVRPMDP tasks, incumbentrewritingnewneuralcorewithpluggableexistinggenerator; specialistimprovementretained."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://fi.ee.tsinghua.edu.cn/public/publications/6910245c-644d-11ee-84fe-0242ac120002.pdf#page=5",
+      "locator": "OriginalFigure2 cropRect(55,78,558,210)5x, alltables andFigures1-9 includingexceptionlabelvsprose inspected."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rbg",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "7",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "neurewriter",
+      "reference_label": "9",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "10",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "attention-model",
+      "reference_label": "20",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "learning-to-improve",
+      "reference_label": "25",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "rl-vrp",
+      "reference_label": "26",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "pointer-networks",
+      "reference_label": "34",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "rbg",
+      "cited": "learning-to-delegate",
+      "reference_label": "23",
+      "description": "Explicit numbered in-text citation and matching bibliography entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedgenericregionconstructionnote withactualincumbentPCA/LSTMselection/merge/regenerationacceptance.",
+    "CorrectedDOIcreationdateAug12topublicationAug14, removedgenericscheduleacceptance, expandedactualtestedVRPvariants.",
+    "SeparatedAMspeed-qualitytradeofffrombestRBGHGS, exact100-stepbudget/rewards/settings.",
+    "Qualifiedhistoricalsyntheticdemands/two-dayonlinevsreplay,1000vs100countsandFigure4legend-proseconflict.",
+    "AddedoriginalFigure2, scientificmaterialinventory,8explicitcitationedges; officialcodeavailabilityqualified."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "18555fe829b7b551a7c53ea79796da5cc7e1d326d2ec374e04f944990db79266"
+}

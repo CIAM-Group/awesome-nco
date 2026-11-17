@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "paper_id": "ufgm",
+  "note_path": "specialist/ufgm.md",
+  "baseline_note_sha256": "f605abedc7a88bfd17ee8b7d62f8e304776c660019404f75e48fcbf29b305a52",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhou24v/zhou24v.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhou24v/zhou24v.pdf",
+      "local_path": "research/import-272/nco-e2c644989e.pdf",
+      "sha256": "5eafb9a9ba867a01de86f4680fd20c4e6db5bb8348586acf1b5888a4b8c4148a",
+      "pages": 37,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Read federated GCN embedding/mapping objective, shared nonsingular-matrix masking, graphlet expansion/inverse-probability sampling, scalar-Hessian separate trust-region and all four theorem statements; bounds are conditional auxiliary claims, not matching optimality/privacy certificates."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 19,
+      "notes": "Read main evaluations/figures and references10-19; SNS Hits5>Hits10 inconsistent cumulative metric; loss and SNS/PPI prose swapped, central baselines outperform; curve rounds not wallclock, references SIGMA identities distinct."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 37,
+      "notes": "Read complete remaining bibliography and AppendixA.1-A.5 including all four proofs, further datasets/scalability, exact-Hessian tradeoff, pseudo-data ablation and implementation details. Appendix orthogonalizes maskingK, sampling O sweep conflicts, scalar-surrogate descent not full convergence; manually checked all bibliography identities."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ufgm-contribution",
+      "category": "contribution",
+      "statement": "Graphlet pseudo-pairs and server-evaluation/client trust-region updates train federated neural graph alignment with scalar curvature.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "ufgm-method",
+      "category": "method",
+      "statement": "GCN/map loss, orthogonalized shared embedding transform and nearest-distance ranking; auxiliary sampling/Taylor/scalar-model bounds not global correspondence/privacy guarantees.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            37
+          ],
+          "locator": "Equations1-22/AppendixA.2/A.5"
+        }
+      ]
+    },
+    {
+      "id": "ufgm-experiment",
+      "category": "experiment",
+      "statement": "Exact Hits1 and timing/quality tradeoffs, central baseline losses, inconsistent SNS Hits5/10 and sample-count settings retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            31,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "locator": "Tables1-8/Figures1-9"
+        }
+      ]
+    },
+    {
+      "id": "ufgm-classification",
+      "category": "classification",
+      "statement": "Own neural GCN alignment is confirmed; all datasets entity-correspondence with separate training and rank retrieval, no single model across unrelated native problems demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            36,
+            37
+          ],
+          "locator": "Sections2/4 andA.5"
+        }
+      ]
+    },
+    {
+      "id": "ufgm-limit",
+      "category": "limitation",
+      "statement": "Orthogonal masking preserves distances; privacy and true-label correctness are not established by graphlet/optimizer theorems; positive-only mapping collapse is an unresolved formulation safeguard.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            26,
+            27,
+            28,
+            30,
+            31,
+            37
+          ],
+          "locator": "Loss2/3,sharedK,proof assumptions,implementation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v235/zhou24v.html",
+      "locator": "Official title/fiveauthors/pages62257-62293 match37pagePDF; PDFp1 AuburnUniversity/SonyAI affiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v235/zhou24v.html",
+      "locator": "HTMLcitation_publication_date2024/07/08; linked officialgh-pages/_posts/2024-07-08-zhou24v.md date andissued[2024,7,8]; eventmonthJuly21-27 distinct."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/zhou24v.html",
+      "locator": "Manualpublisherrelatedmaterial+officialsourceextras=[]; all37pages integratedAppendixA.1-A.5 complete; normalOpenReviewrSfzchjIYu/API2 verification403; no additional scientific attachment identified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.mlr.press/v235/zhou24v.html",
+      "locator": "PDFp35promisesfuturecode; exacttitle/authorsearchandprimarypublisherpages noverifiedUFGMrepo; p37links arebaseline implementations, notowncode."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/abs/2205.13679",
+      "locator": "seedgnn: Exactsame title/pluralNetworks andYu/Xu/Lin; v1May26,2022/v3July9,2023. Exact arXivID plus authors identify SeedGNN2022 precursor of2023 formal entry; no substitution with Yu,Wang,Yan,Li matching papers."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ufgm",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            12,
+            25
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            25
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "Yu et al. (2021)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            25
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "sigma-matching",
+      "reference_label": "Liu et al. (2021)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            25
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "seedgnn",
+      "reference_label": "Yu et al. (2022)",
+      "description": "paper p20 Yu,L.,Xu,J.,Lin,X. SeedGNN: Graph neural networks for supervised seeded graph matching,CoRR2205.13679,2022. Exact arXivID plus authors identify SeedGNN2022 precursor of2023 formal entry; no substitution with Yu,Wang,Yan,Li matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            20,
+            36
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "gann",
+      "reference_label": "Wang et al. (2020d)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            25
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "idr-gm",
+      "reference_label": "Ren et al. (2021)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            25
+          ],
+          "locator": "Explicit in-text citation Ren and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ufgm",
+      "cited": "adversarial-graph-matching",
+      "reference_label": "Zhang et al. (2020b)",
+      "description": "Explicit in-text/appendix author-year citation and exact bibliography identity; SIGMA2021 differs from the2022 baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            21,
+            25
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all37publisher pages including allfourproofs/A.1-A.5 and fullbibliography, manuallycheckedscienceextras and renderedcriticalmath/results.",
+    "Restricted output to nearest-distance/Hits retrieval and theory to actual sampling/Taylor/scalar-surrogate assumptions; orthogonalmasking is notformalprivacy.",
+    "Corrected universal superiority/loss/timing claims, preserved nonmonotoneSNSHits and parameter-sweep discrepancies; restored8exactcataloguecitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2347a2332c1e0355873d17fb7af123cd4bf540bb69ecf22715f37f1217eda994"
+}

@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "paper_id": "reinforcement-learning-for-route-optimization-with-robustness-guarantees",
+  "note_path": "data/reviews/deferred/notes/reinforcement-learning-for-route-optimization-with-robustness-guarantees.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "4227de2c6af95dfb347232e7c72d68a3ee40f41cbc1cfdcbb503e0a1b526f905",
+  "status": "reading",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2021/0357.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2021/0357.pdf",
+      "version": "ActualformalIJCAI2021PDFdownloadedcentrallypendingread",
+      "local_path": "research/full-text-review/reinforcement-learning-for-route-optimization-with-robustness-guarantees/paper.pdf",
+      "sha256": "07bb32ddbf1c498f367c2a6aedf4e710e7c514f18a9fde2d1900f96d16af23e0",
+      "pages": 7,
+      "identity_checked": false,
+      "version_checked": false
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readfullintro3NECEuropeauthorsTobiasJacobsFrancescoAlesianiGulcinErmis(nocorrespondmarker)/actualformal7p. Robustguarantee=fixedsolutionexactworstcasecostunderU notouteroptimality. Constructionstepcompletionheuristicpotentialreward;CVRPandTSPscope/separatemodelcheck. Unknownuncertainfeasibilityleftopenobjectiveuncertaintyonly."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadfullMethodpotentialr=robustcompletebaseline(successor)-baseline(current),finitecompletionrequired;telescopesonlygamma1endpointfixednotarbitrarydiscountproof. DQNstructure2veck10graph(notrouteedgerestriction),feasibilitymasklargeCmustdominateQ/samegradientmask/helpertraining. Explicitlongversionneededvalidatingsparseclaim/allDQNtrainingdetails;searchmustlocate. uncertaintyuptoflooralphanedgesbeta multiplier,exactinnernotouteroptimal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 7,
+      "notes": "Entire7formalpagesreadnowwithuntruncatedreread5and6-7blocks. 1000train/testeach4sizeclassesalpha.3beta2CVRPdemandsU[0,1]^2/independenttasksizeagentsconstructnodescheapestinsertion. TSP200-300RL21.7worseGRD21.6/CVRPLibGoldenRLallworseGRD/MIPbeatsmost. Exactratiosmean1.09/1.03onlysubset15-20certifiedinstancesnotallguarantee. TSPmasknegativeexperimentplusbaselineimplementation/DQNdetails/sparserewardvalidationexplicitlongversionmissingordinarysearch;likelydeferafterprimaryattempts."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "method",
+      "statement": "Robustobjectiveinnerworstcaseexactforfixedsolution/outerDQNheuristic;completion-potentialrewardrequiresfinitebaselinecompletion. Actualroutingconstructsinsertionpartialroutesnotfullincumbenteditor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Method/actualrouteconstruction"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "experiment",
+      "statement": "SeparateCVRP/TSP4sizeclassagents1000train/testeachalpha.3beta2;smallsubset15-20meanratios1.09/1.03notuniformguarantee;TSP200-300RL21.7worseGRD21.6;MIP1hourbeatsmostsettings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Tables1-5/generalization"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "limitation",
+      "statement": "Formalfootnotesexplicitnecessarylongversionmissing;noverifiedcomplete-scienceclaim. Telescopingrewardundiscountedendpointidentitynotarbitrarygammaoptimalpolicyguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Footnotes2-5/Equations3-5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2021/0357.pdf",
+      "locator": "Actual7formalpagescomplete/noappendix;footnotes2-5explicitlongscientificversionmissing. OfficialpublisherHTML/PDFinspected;NECauthorHTMLpublicationentryplaintextnolink;CORDISresultssoleformalDOI. Ordinaryexacttitle+long/arxiv/author/codequeriesnoidentifiedlongPDF/repo;noarxivIDexistsinretrievedprimaryentrysoauthorsourcetarnotavailable. DoNOTmarkchecked/verified."
+    },
+    {
+      "field": "authors/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2021/357",
+      "locator": "FormalTobiasJacobsFrancescoAlesianiGulcinErmisNECLaboratoriesEurope/nostars;publisherBibTeX2021-08pages2592-2598."
+    },
+    {
+      "field": "visual inspection",
+      "source_url": "https://www.ijcai.org/proceedings/2021/0357.pdf",
+      "locator": "Actualp3-6render/viewall5tables/2figures/Algorithm1keyformulae. Nooriginalframeworkdiagramintheavailable7p/nofinalpublicfigurecreatedforpendingdeferreditem."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": false,
+  "figures_checked": true,
+  "supplements_checked": false,
+  "note_crosscheck_complete": false,
+  "issues": [
+    {
+      "type": "scientific_supplement_unavailable",
+      "detail": "All7officialIJCAI2021pages2592-2598read. Explicitfootnotep3#2longversioncontainsdense-versus-sparserewardexperiment;p4#3allDQNtrainingdetails;p5#4baselineimplementations;p6#5TSPnegativeaction-maskexperimentpromisedlongversion. Normalexacttitle/author/arxiv/code/long-versionsearchesfailedtoidentifylongmanuscriptorofficialcode. ActualNECauthorprimaryentryonlyplainpublicationmetadata;CORDISprimaryresultslinkssolelyformalDOI. Missingnecessaryscientifictraining/experimentalappendixunderuserstanding2026-11-17sourcerule;readyforrootdefer,notverified.",
+      "source_url": "https://www.ijcai.org/proceedings/2021/0357.pdf#page=3"
+    }
+  ],
+  "corrections": []
+}

@@ -1,0 +1,727 @@
+{
+  "version": 1,
+  "paper_id": "beyond-heatmap-mcts",
+  "note_path": "studies/beyond-heatmap-mcts.md",
+  "baseline_note_sha256": "7cbed69bc99676f3bcc9aec430e63ae155e7944ea4323df53c3f4f691abf89e1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e3bf2f0f10774c474de22a12cb060e2c-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e3bf2f0f10774c474de22a12cb060e2c-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-93351e4bc8.pdf",
+      "sha256": "0a14e2cfb18fa0e43b633aac46be8d6ebdd0733a74840e1971050c58ae769fe7",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh complete reading of published identity, introduction, MCTS equations, related work and tuning objectives. Discarded truncated prior range and reread page 4."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "Read complete setup, SHAP and tuning results, GT-Prior rank-frequency construction, main result/transfer tables, conclusion and reproducibility statement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 15,
+      "notes": "Read entire bibliography and Appendices A-B, including explicit citation contexts and all heatmap postprocessing definitions/results."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 21,
+      "notes": "Read full cost discussion, expanded table, SHAP/transfer appendix and TSPLIB protocol/summary; checked distinction between uniform tuning, defaults and instance-level TSPLIB selection."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read every row of the three detailed TSPLIB tables in individual page requests; none counted from refused oversized requests."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 29,
+      "notes": "Read full search space, SMAC3 procedure/costs, distribution figures, time/sample ablations, both configuration/result tables, complete raw prior vectors, limitations and LLM statement. Visually inspected key equations, Tables 1/8/12 and Figures 1-3/6-8."
+    }
+  ],
+  "claims": [
+    {
+      "id": "evaluation",
+      "category": "contribution",
+      "statement": "A component evaluation pairs each heatmap with independently tuned MCTS and introduces an empirical nearest-neighbor-rank control.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            8
+          ],
+          "locator": "Abstract; Sections 3 and 5, Equations 5-7"
+        }
+      ]
+    },
+    {
+      "id": "prior",
+      "category": "method",
+      "statement": "GT-Prior uses rank frequencies from solved instances; no neural weights or temperature are learned, but MCTS parameters are selected offline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            16,
+            28,
+            29
+          ],
+          "locator": "Section 5.1 Equations 5-7; Appendix C; Appendix L raw vectors"
+        }
+      ]
+    },
+    {
+      "id": "tuning",
+      "category": "method",
+      "statement": "Six search settings are explored using separate uniform tuning data; SHAP describes within-space associations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            25,
+            26
+          ],
+          "locator": "Sections 3.3-3.5 and 4.1; Table 12; Appendix I"
+        }
+      ]
+    },
+    {
+      "id": "main-results",
+      "category": "experiment",
+      "statement": "Table 1 GT-Prior gaps are 0.50%, 0.85%, 2.14%; other methods are better at smaller scales; MCTS times are per-instance equivalent sequential times.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Computational environment; Table 1 caption and rows"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "GT-Prior has strong synthetic transfer but the medium TSPLIB uniform-tuned gap is 10.08%, compared with 0.55% after instance-level selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            20,
+            21,
+            22,
+            24
+          ],
+          "locator": "Tables 2-3 and 8-11; Appendix G protocol"
+        }
+      ]
+    },
+    {
+      "id": "provenance",
+      "category": "reproducibility",
+      "statement": "Dagger heatmaps come through Xia et al.; original conventional results/timings may be borrowed; Fast-T2T-MCTS adaptation is reproduced here.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            15,
+            17
+          ],
+          "locator": "Tables 1/6 captions; Appendix B Fast-T2T note"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Euclidean TSP-specific actions, empirical and expensive tuning, and other search mechanisms limit the conclusions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            29
+          ],
+          "locator": "Appendix M complete limitations"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "This is an empirical study of neural heatmaps and non-neural search, not a learned neural-solver architecture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            8,
+            10,
+            29
+          ],
+          "locator": "Introduction/evaluation objectives; GT-Prior definition; conclusions and limitations"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, venue, publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/e3bf2f0f10774c474de22a12cb060e2c-Abstract-Conference.html",
+      "locator": "Manually opened official ICLR 2026 record and downloaded BibTeX: year 2026, pages 140561-140589; no individual publication day stated. Replaced unsupported 2026-04-20 with year precision."
+    },
+    {
+      "field": "institutions, identity and version",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e3bf2f0f10774c474de22a12cb060e2c-Paper-Conference.pdf",
+      "locator": "Publisher proceedings PDF page 1: all five authors and affiliations; 29 pages with Published as a conference paper at ICLR 2026 header."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/LOGO-CUHKSZ/beyond-heatmap-mcts-tsp",
+      "locator": "PDF page 10 reproducibility statement; manually opened matching public author repository and README."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/e3bf2f0f10774c474de22a12cb060e2c-Supplemental-Conference.zip",
+      "locator": "Manually inspected all publisher ZIP members and nested codes/testset/testdata.zip: Python/C++ code, two read READMEs, three TXT datasets, no PDF/scientific manuscript. Appendices A-N are integrated in registered paper pages 14-29, all read. OpenReview API for H6PLJnnK6e returned 403 ChallengeRequiredError; official proceedings attachment was accessible and inspected instead."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/e3bf2f0f10774c474de22a12cb060e2c-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-20; cached evidence research/full-text-review/beyond-heatmap-mcts/supplement-landing.html. Conference edition year 2026 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/e3bf2f0f10774c474de22a12cb060e2c-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2026-04-20; primary cachedHTML research/full-text-review/beyond-heatmap-mcts/supplement-landing.html; citation_title=['Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "asp",
+      "reference_label": "Wang et al. (2024), IEEE TPAMI",
+      "description": "Generalization discussion cites ASP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 13: Wang et al. (2024), IEEE TPAMI"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Describes the original heatmap-guided MCTS framework and reruns its heatmaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation on PDF page 3; matching full bibliography entry on PDF page 11: Fu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Discusses attention-based constructive routing and reports inherited AM rows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Kool et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Evaluates diffusion heatmaps, postprocessing and tuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit body citation on PDF page 3; matching full bibliography entry on PDF page 12: Sun and Yang (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Evaluates DIMES heatmaps and their postprocessing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit body citation on PDF page 3; matching full bibliography entry on PDF page 12: Qiu et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "dynamic-am",
+      "reference_label": "Peng et al. (2020), ISICA proceedings",
+      "description": "Cites dynamic-attention routing among constructive methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Peng et al. (2020), ISICA proceedings"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2021), arXiv:2106.05126",
+      "description": "Names the cited preprint in POMO plus active-search baseline provenance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            16
+          ],
+          "locator": "Explicit body citation on PDF page 16; matching full bibliography entry on PDF page 11: Hottung et al. (2021), arXiv:2106.05126"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019), arXiv:1906.01227",
+      "description": "Reports graph-convolutional constructive baselines and identifies the preprint edition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            16
+          ],
+          "locator": "Explicit body citation on PDF page 16; matching full bibliography entry on PDF page 11: Joshi et al. (2019), arXiv:1906.01227"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al. (2024), NeurIPS",
+      "description": "Evaluates a reproduced Fast-T2T heatmap-to-MCTS adapter.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit body citation on PDF page 5; matching full bibliography entry on PDF page 12: Li et al. (2024), NeurIPS"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "glop",
+      "reference_label": "Ye et al. (2024)",
+      "description": "Discusses global partition and local construction/improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 13: Ye et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2021), arXiv:2110.05291",
+      "description": "Discusses neural guided local search among improvement approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Hudson et al. (2021), arXiv:2110.05291"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma et al. (2019), arXiv:1911.04936",
+      "description": "Cites graph-pointer hierarchical reinforcement learning among constructive methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Ma et al. (2019), arXiv:1911.04936"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al. (2023)",
+      "description": "Discusses hierarchical decomposition into open-loop TSP subproblems.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Pan et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "invit",
+      "reference_label": "Fang et al. (2024), arXiv:2402.02317",
+      "description": "Uses the cited work for shifted-distribution instance generation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Explicit body citation on PDF page 5; matching full bibliography entry on PDF page 11: Fang et al. (2024), arXiv:2402.02317"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Cites graph reinforcement learning in constructive-method related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al. (2021)",
+      "description": "Discusses collaborative neural policies among improvement methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Kim et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018), CPAIOR",
+      "description": "Cites policy-gradient constructive TSP methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Deudon et al. (2018), CPAIOR"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021), TNNLS early-access year",
+      "description": "Cites learned routing improvement methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 13: Wu et al. (2021), TNNLS early-access year"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Cites matrix encoding networks in constructive-method history.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Kwon et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Cites the early neural RL construction paper using its preprint edition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Bello et al. (2016), arXiv:1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Cites local rewriting in improvement-method related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Chen and Tian (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Discusses generalization challenges across routing settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 13: Zhou et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Cites the autoregressive pointer construction origin.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Cites constructive routing and reports inherited POMO plus EAS baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al. (2022)",
+      "description": "Cites simulation-guided search in constructive-method related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Choo et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Cites symmetry-aware training improvements.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 11: Kim et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "utsp",
+      "reference_label": "Min et al. (2024), NeurIPS 36 bibliography year",
+      "description": "Evaluates unsupervised heatmaps and postprocessing; largest-scale heatmaps unavailable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit body citation on PDF page 3; matching full bibliography entry on PDF page 12: Min et al. (2024), NeurIPS 36 bibliography year"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al. (2024), KDD",
+      "description": "Discusses cross-problem multi-task neural routing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 12: Liu et al. (2024), KDD"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al. (2024), arXiv:2405.01029",
+      "description": "Discusses multi-task routing and identifies its preprint citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Explicit body citation on PDF page 14; matching full bibliography entry on PDF page 13: Zhou et al. (2024), arXiv:2405.01029"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-heatmap-mcts",
+      "cited": "softdist",
+      "reference_label": "Xia et al. (2024), ICML position paper",
+      "description": "Builds on simple heatmap controls and reuses supplied baseline heatmaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit body citation on PDF page 3; matching full bibliography entry on PDF page 13: Xia et al. (2024), ICML position paper"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced generic summary with complete six-section full-text note and exact main comparisons.",
+    "Explained reference-tour-derived rank statistics and separated the parameter-free heatmap from tuned MCTS; did not imply data-free or tuning-free solving.",
+    "Distinguished per-instance MCTS time, rounded heatmap time, inherited baseline provenance, reference-based gaps and offline costs.",
+    "Separated instance-level TSPLIB selection from transfer; documented the concrete medium-scale transfer degradation.",
+    "Retained study/analysis classification and reduced unsupported publication-day precision to publisher-supported year.",
+    "Checked all references and recorded 30 explicit internal citations; did not conflate differently titled distillation/bandit papers with existing entries.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b47e2a57e4366897fbb8ad67acc95f9b5fcf31f6c4df66bea14bfcc0f4738e41"
+}

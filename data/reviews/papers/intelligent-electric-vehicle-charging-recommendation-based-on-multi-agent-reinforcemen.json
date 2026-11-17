@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "paper_id": "intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen",
+  "note_path": "specialist/intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "c91a6360bf4ad3f97b81224589244e6412da90555d1af3e16635387af869a60a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1145/3442381.3449934",
+      "retrieval_url": "http://staff.ustc.edu.cn/~tongxu/Papers/Weijia_WWW21.pdf",
+      "version": "ActualUSTCauthorhostedHTTPformalWWW2021PDF12pages1856-1867fullmaintext49referencesAppendicesA-Cfullyread;canonicalDOIseparatefromactualretrievalURL.",
+      "local_path": "research/full-text-review/intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen/paper.pdf",
+      "sha256": "9fafdeb0defb95a6514b4967e2f9e3986babc906375e44af2647f9f77aabf302",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readactualauthorhosted12pageWWWformalbyline7authorsUSTCBaiduResearchBaiduIncRutgers/HaoLiuHuiXiongcorrespond/noequalmarkerWeijiainternfootnote. Tasksequentialchargingstationrecommendationlimitedspotresource/dynamicmultiobjectiveassignmentnotTSPpathconstruction. Stationagentsbids/globalattentivecritic/privilegedfuturetrainonlyCTDE;scopeclassificationaftercomplete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullformaldefinitionsCWT=travel+queue notchargingduration/CFRonlyacceptedrecommendations;stationactionscalarbidargmaxactivetopknearby. Localobsstationidtimecurrentsupplypredfuture-demandpowerETAfutureprice;centralcriticprivilegedfutureexactcapacitytrainonly/lazyrewardafterrequestoutcome/delayedtransitiontime-discount. Sharedcooperativereward2criticsfor3metrics. NoNNfullincumbentassignmentedit;onlineconstructiveallocationnotrouteTSP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadallmultiobjectiveEq10-15/Algorithm1: separatelypretrainedsingleobjectiveactorscriticsforgapweights/notcertifiedoptima/sharedparametersALLstationagents butonenativechargingtask. 28train3val14test45daysMay18Jul1_2019/596Beijing367Shanghai/15288987142requests. top50active60trainingiterationsP40Xeon5117batch32replay1kAdam5e-4tau.001gamma.99/d30mins/sigma.2. NeedAppendixA/Bsimulator/futuredemand/rewardnormalizationinventory."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallmetricsdenominatorsMCWTacceptedQa/MCPsuccessQs/TSFsuccessvolumeperday/CFRacceptedfails. Tables2-3MasterBeijing10.46min1.512162190.9percentShanghai11.801.497124971.5;GreedyP10price1.424/1.357betterMasterboth andShanghaiTSF15649>12497=>notallmetricbest. ComparedRealobservedactionsbutcounterfactualsimnotdeploymentcausalsavings. AblationsnoATT/noCP/noMC/topk20-allcosttradeoff. Needlasttwoappendices."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readfullconvergencecase9andrelatedwork/bibfirst26. Staticweight equivalencePropositionC1mustreadassumptions;attentioncorrelationnotcausalinterpretabilityproof. Explicitexistingnewridesharing/bike/fleet+oldcapsule?referencesnextpage. PapermentionsnoadditionalexternalappendixbeyondincludedA-C."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Readall49references/AppendicesA-Cfull. MLPpredictsfuture15mindemandsinevaluationnotactualfutureleak! Exactfuturecapacitycritictrainonly. SimulationarrivalrewardatSTARTcharging/lazyfinishrequestlabelnotendphysicalcharge,Gaussianblockdurationpowerdependent/45minfailure/-60-2.8/acceptprobelseactualstation. PropositionC1trueexpectedQadditivity/staticgradientidentitynotindependentapproxcritictrainingequivalenceorParetoproof. All12pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Sharedstationactorsbidforsequentialchargingallocation/attentioncritic+retrospectivecompetition+dynamicmultiobjectiveweights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Method/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Activekstationbidargmax/actorlocalfuture-demandforecastversuscriticexactretrospectivesupplytrainonly;2rewardcritics3metrics/finitelearnedreferencepoliciesnotcertifiedoptima.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            11
+          ],
+          "locator": "Definitions/CTDE/simulator"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "2city45day28/3/14split/top50/60iterationsP40/0.99;Beijing10.46min1.512162190.9/Shanghai11.801.497124971.5;differentdenominators/GreedyP10priceandsomeTSFbetter.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1-3/metrics/analysis"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "True-QadditivityformalstaticgradientidentitynotapproxcritictrajectoryorParetoproof;tracecounterfactualsimnotdeployedsaving/noseedorwalltime;currentdemandloadhindsightcountscontrastsAppendixAforecaster.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            11,
+            12
+          ],
+          "locator": "AppendicesA-C/sourceversions"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructiveonlineallocation:sharedstationparametersoneapplication/citymodelsnotnativegeneralist;noNNcompleteincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Actualaction/state/taskscope"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All12formalpages49refsA-Cread/official7authors2correspond/daggerinternship;5filerepoREADME/releases/inventory/sourcechecked;originalFigure3fullview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11,
+            12
+          ],
+          "locator": "Metadata/fullscientificcoverage"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "http://staff.ustc.edu.cn/~tongxu/Papers/Weijia_WWW21.pdf#page=1",
+      "locator": "Actualformal7bylineUSTCBaiduResearchBaiduIncRutgers/HaoLiuHuiXiongstarscorrespond/Weijiadaggerinternshipnotcofirst. Crossrefpublishedprint2021-04-19publishedonline2021-06-03;useexplicitonlinepublicationfieldnotconferenceeventday."
+    },
+    {
+      "field": "arxiv/history",
+      "source_url": "https://arxiv.org/abs/2102.07359",
+      "locator": "Savedprimarysubmissionhistoryonlyv1Mon15Feb2021 06:23:59UTC. Historyonlyforfrontdate;PDFnotregistered/readclaim. Actual12pformalobtainedauthorHTTPafterHTTPSprotocolfailure,formalDOIbylinepaginationidentified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/willzhang3/MASTER-electric_vehicle_charging_recommendation",
+      "locator": "All12formalpagesAppendixAsimulator/Bdataset/Cfullpropositionread,including49refs. AuthorVvrepURLresolveswillzhang3;gitHEAD e7bd09a87f55b954ce149178a87f5a67e645710e5filesfullREADME/noPDFTeXZIPnotebook/ordinaryreleasesempty. Noadditionalnecessaryscientifictextpointerunmet;missingprivateartifactsnotmisclassifiedmissingmain."
+    },
+    {
+      "field": "code/forecast distinction",
+      "source_url": "https://github.com/willzhang3/MASTER-electric_vehicle_charging_recommendation/tree/e7bd09a87f55b954ce149178a87f5a67e645710e",
+      "locator": "Actualenv.pydemand_load211-233future15minrequestcounts/reset323-335actorbase_statecontrastsprintedAppendixAMLPevalforecast/noforecastmoduleorartifactintree. train.py85-102missingexp_data/args.temp5reciprocalprinted.2;multi_agent.py264-276referenceQx1.2/scoredynamic+regularizer;codeversionnotclaimedoriginalexperimentalpath."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "http://staff.ustc.edu.cn/~tongxu/Papers/Weijia_WWW21.pdf#page=4",
+      "locator": "OriginalFig3Rect48,80,300,251@5xatomicPNGactualfullviewcaption/noheader. Figures1-10/Tables1-3/Algorithm1/AppendixCeq16-17allrenderedviewed."
+    },
+    {
+      "field": "citations",
+      "source_url": "http://staff.ustc.edu.cn/~tongxu/Papers/Weijia_WWW21.pdf#page=10",
+      "locator": "All49refsandbodychecked;[15]Li2019WWWmeanfieldridesharing/[17]LiZhengYang2018dynamicbike/[20]LinZhaoXuZhou2018fleetmanagementexactexistingprimaryIDs. Noedgesfromcoauthorormethodsimilarityalone."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen",
+      "cited": "efficient-ridesharing-order-dispatching-with-mean-field-multi-agent-reinforcement-lear",
+      "reference_label": "[15]",
+      "description": "Explicitbodycitationwithmatching49-entrybibliographyidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDFp1;ReferencesPDFp10 [15]"
+        }
+      ]
+    },
+    {
+      "citing": "intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen",
+      "cited": "dynamic-bike-reposition-a-spatio-temporal-reinforcement-learning-approach",
+      "reference_label": "[17]",
+      "description": "Explicitbodycitationwithmatching49-entrybibliographyidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp10 [17]"
+        }
+      ]
+    },
+    {
+      "citing": "intelligent-electric-vehicle-charging-recommendation-based-on-multi-agent-reinforcemen",
+      "cited": "efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning",
+      "reference_label": "[20]",
+      "description": "Explicitbodycitationwithmatching49-entrybibliographyidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "BodyPDFp10;ReferencesPDFp10 [20]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacepending7authors/affiliations/correspond/daggerinternship/electronicpublicationJune3/arxivFeb15.",
+    "ResourceAllocation/specialistconstructiveonlinechargingrecommendationnotTSProuteconstruction/generalistdespitesharedstationagents.",
+    "Keepforecastedlocaldemandversusprivilegedcriticfuturetrainingandcurrenthindsightcodepathdifference.",
+    "Counterfactualsimwith45minfailure/Gaussianoccupation/acceptancepopulationdenominators/notdeployedsavingsorallmetricdominance.",
+    "PropositiontrueQadditivityconditionalgradientidentitynotlearnedcritictrainingequivalence/Paretooptimum;pretrainingbudgetsandmissingdataartifactsdisclosed.",
+    "All12pagesA-C49refsread/manual5filerepo/originalFigure3fullview/3explicitbody+bibedges."
+  ],
+  "reviewed_note_sha256": "0f982f9b6a85813530a0e45838b517df2e65f6f267c122834c3259e18bb29f24"
+}

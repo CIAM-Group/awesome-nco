@@ -1,0 +1,262 @@
+{
+  "version": 1,
+  "paper_id": "graph-dac-moco",
+  "note_path": "generalist/graph-dac-moco.md",
+  "baseline_note_sha256": "f19f9f4bbd45c49b41a7611947e3c6add062d2a83f6281fccc30cec8e854afa4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/reijnen25a/reijnen25a.pdf",
+      "version": "Complete formal ICML2025 PMLR267:51405-51420,16pages with scientific Appendices A-G;publisherOctober6,2025",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/reijnen25a/reijnen25a.pdf",
+      "local_path": "research/import-272/nco-3ae03c2c53.pdf",
+      "sha256": "fe51235da68882fe19b6d8b3fee86c7776e08292b0dfec2d3270235d1c88bf42",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read4TU/eauthors/titleformalICML2025. GS-MODACgraphobjectivepopulationdynamicMOEAparametersnotdirectrouteconstructor. Claimsdomains/numobjectives generalization requireactualsharedcheckpoints reading. PrintedParetoDefinition3 reversesdominationxstar≺xprime vsDefinition2; do notadoptwrongsetformula."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read MDPpopulationgraph normalizedobjectivefeatures/frontcliques+budget,2GCNmeanpool64PPOcontinuouscross.6-1/mutation0-.1. RewardrecordHVincreases squarednormalizedimprovements denominatorHVideal-HVinit;idealestimatedextraEA2xbudget notglobaltarget. Separateconfigurationtraining100train100test each5j5m10j5m25j5m/CVRP100200500;SMACiraceexplicitlyusetestinstancesfortuning, notheldoutforbaselines. PPOSafe language notguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTables1-4/Fig2,RQ1-4. 100test10runs perinstance mean/best/std averaging;GSnotallwinTri5j5mirace/BiCVRP200MADAC. Penta25mean5.62e12vsirace5.18e12~8.5%roundedprinted8.2. TransferFJSP10toDAFJS-SDSTactualsamepolicy objectivecountfixed;CVRPscale/allsize sharing. ObjectiveA/B→C/Dsamecount notdifferentdimension count. Needactualnativeotherproblemgenerality noCVRP↔FJSPshown."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullallrefspp10-11,AppendixAobjectives/constraints+NSGAIIFJSPencoding. Flowtimedefinedcompletionminusfirststart notusualreleaseflowtime;CVRPprintedformulaindicesomitdepot butcode needed noformulaasfullguarantee. OnlyParetoSetLearningcandidateexistingID,needactualbodyifonlybibtargetnoinventedrelation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read allB/C/D/E/Table5allIGD IGD+NDSmean/min/std;IGDnotuniversalbetter andtruefrontreferenceunidentifiedmustqualify. MOPSO20/50/100separatethreeactiontuningphi1/phi21..3/inertia.6-.9nottransferNSGA2actionweights. Ablationbudget/GCN/Transformer/GATstart; case0.8/3.2/1.7costnormnottruePFcert."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read allE/F/G/11tables. Overhead.12+.18sec total15.09~2%fullrunnotpergeneration;notasymptoticcomplexityproof. PMOCO100size100438.06>GS366.63 oppositegeneralheadline;20/50transferandnormal.3sd.1+5%outlierssupportsconditions. Full16pA-Grefsread;no scientificsupp missing."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "DynamicMOEAparametersandmanualstatefeaturesmotivatenon-directpopulationcontroller.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/related"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "GS-MODACpopulationobjectivegraph+PPO+recordHVreward+NSGAII/MOPSOinstantiations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            13
+          ],
+          "locator": "Fig1/Sections3.1-3.3/AppB"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalist improvement on documented same-trained-controller FJSP10j5m→assemblyprecedence/sequence-dependentsetup DAFJS-SDST; distinct row from separatelytrainedvariant. NativeCVRP/FJSP,2/3/5objectivecount,andoptimizerconfigsstillseparate. No fine-tuningstage described.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8,
+            9,
+            13,
+            14
+          ],
+          "locator": "Tables2-4/6 andmodelconfigs"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Frontgraphobjectivefeatures2GCN64meanpoolbudget,PPO2or3actions,conditionalestimatedidealreward.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13
+          ],
+          "locator": "CompleteMDP/policy/formulas/ranges"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "100test10runsHVstatistics andSMAC/iraceusetesttuning;nonuniformwins/sizeandconstrainttransfer;PMOCOmatchedsizewinsandOODconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            14,
+            15,
+            16
+          ],
+          "locator": "AllTables1-11andprotocol"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "NoPareto/PPOnocollapseguarantee,objectiveinputdimsconfigured;idealpointoverhead/IGDreferenceunspecified/currentcodebatchmask/range/boundsdifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            14,
+            15,
+            16
+          ],
+          "locator": "Qualifiedcuratorstaticcodeinspectionwithauthorclaimsseparate"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All16formalpagesA-Grefsread8visual/763repofiles14models/noPDFZIP/allAPI403/noexecution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Fullcoverage/cache/sourceinspection"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v267/reijnen25a.html",
+      "locator": "Exact4TU/eauthorsformalICML2025PMLR26751405-51420;HTMLcitation_publication_date2025/10/06 verified notJulyconferencedates."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v267/reijnen25a.html",
+      "locator": "ManualpublisherPDF/OpenReview/Softwareonly,complete16pA-G/allrefsread. NotesAPI1/2forumKCDoaDlzUB403cached. Official763filetree noPDFZIP,fullREADME/requirementsread,noexplicitmissing scienceattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v267/reijnen25a.html",
+      "locator": "Formal16pSHAfe51235da68882fe19b6d8b3fee86c7776e08292b0dfec2d3270235d1c88bf42. Actualvisual4/5/7/8/9/13/14/15includingallframework/plot/table conditions."
+    },
+    {
+      "field": "code_url,scope",
+      "source_url": "https://github.com/RobbertReijnen/GS-MODAC",
+      "locator": "Commit0bbdb2132091253c14cea69ef90b6c632f59c85e763files14PT/PTHdistinctrouting/scheduling2/3/5obj. Fulltrain145/GNN80/helper80/readme/requirements;selectedrouting41-246/scheduling96-170. Staticbatchmaskusesobservations.graph_edges[0]allindex;bothboundsupdated;routingrange.5-.7/0-.2diffprinted. Noexp rerun."
+    },
+    {
+      "field": "experimental_conditions",
+      "source_url": "https://proceedings.mlr.press/v267/reijnen25a.html",
+      "locator": "Section4SMAC3explicitgeneratedtestinstancestuning10000NSGAIIruns;100test10repeats. Table2CVRPsizeonly;Table3FJSP10j5m→DAFJSSDSTactualsamepolicy;Table4same2objectivedimension changedsemantic;noCVRP-FJSPsharedweights. AppFfullrunprofilingnotpergeneration/asymptotic."
+    },
+    {
+      "field": "scope migration, shared-checkpoint evidence",
+      "source_url": "https://github.com/RobbertReijnen/GS-MODAC/blob/0bbdb2132091253c14cea69ef90b6c632f59c85e/scheduling/run_GS_MODAC.py",
+      "locator": "Parent-approved generalist/improvement scope. FormalPDFp8RQ3/p9Table3FJSP10j5mtrainedappliedunseenDAFJS-SDST vsseparatelytrainedDAFJS;newassemblyprecedence/setupconstraints notmeresize/OOD. Full98lineevaluationloadsmodel_path separatelyproblem_instance,optim=None,load_state_dict/eval/Collector,no adaptationupdate. Full142linej10m5trainconfigordinary100FJSPonly. helperlines1-110differentparser/fajsp_sdsts/;defaultJSONbasic5j5mnotclaimedexactTable3driver. No model/experimentrun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-dac-moco",
+      "cited": "pareto-set-learning",
+      "reference_label": "Lin, Yang and Zhang(2022)",
+      "description": "AppendixG explicit PMOCO comparison; exact bibliography arxiv2203.15386 matches existing ICLR2022 work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            16,
+            10
+          ],
+          "locator": "AppendixGbodyPDF15-16;completeLin2022title/byline/arxiv2203.15386PDF10."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ExpandednativeMOEAcontrol/graph/reward/actualcostandconditionalempiricalguarantees.",
+    "DistinguishedseparatenativemodelsfromrealFJSPconstraint/objectivesemantictransfer.",
+    "Capturedtest-instanceACtuning,nonuniformwins/PMOCOmatchedsizeadvantage,currentofficialcodebatchtopology/ranges/boundsdifferences.",
+    "All16formalpagesA-G/8visual/completeattachmentinventoryandactualcodecoverage.",
+    "Movedspecialist→generalist/improvement withparentcoordination: actualsameFJSPcontrollertransfertoassembly/setup-constrainedvariant qualifies; preserve native/domain/objective-count/optimizerseparatetraining boundaries."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "39d19c2b822714ec158a45570fc769840d7f8534a90271ae29633564d89e6464"
+}

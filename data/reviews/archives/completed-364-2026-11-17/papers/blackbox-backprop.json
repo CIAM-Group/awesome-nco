@@ -1,0 +1,359 @@
+{
+  "version": 1,
+  "paper_id": "blackbox-backprop",
+  "note_path": "studies/blackbox-backprop.md",
+  "baseline_note_sha256": "61f669109a49a6e7c6bc7a2a5f0902625b9b23b780f41c821002209b48ad779d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1912.02175",
+      "version": "arXiv:1912.02175v2,16February2020,19pageswithintegratedAppendicesA.1-A.4; positivelyidentifiedonfirstpage/history",
+      "retrieval_url": "https://arxiv.org/pdf/1912.02175",
+      "local_path": "research/import-272/nco-315ad659c3.pdf",
+      "sha256": "567889dd14fb4f54d68db2f62fa20a02d65528291fdeb27d4c1a99a22a8856b7",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 19,
+      "notes": "Fresh complete19page arxivv2Feb16,2020reading incl wholebibliography andAppendicesA.1-A.4. Readallinterpolationproofs, task-specifictraining/repellent/optimizerdetails, actualexactvsapproxsolverresults; tracked separatecheckpointscope and GTsolverreference not mathematicallyupperbound."
+    }
+  ],
+  "claims": [
+    {
+      "id": "backward",
+      "category": "contribution",
+      "statement": "Provides oneextrasolvercall backwardconstruction for fixedfinitefeasibleset linearobjectiveargminlayers, based onlocallylinearizedloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            13
+          ],
+          "locator": "Equations1-5, Algorithm1, Proposition1 and fullalgebraicproof"
+        }
+      ]
+    },
+    {
+      "id": "interpolation",
+      "category": "method",
+      "statement": "Difference of two minimum-valuefunctions givescontinuouspiecewiseaffineinterpolation; gradient=(y_lambda-y_hat)/lambda almosteverywhere underexactsolves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Theorem1, Observation1-5 andcompleteAppendixA.2proofsvisuallychecked; notordinarydiscretesolverderivative"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A differentiationlayer/framework withseparatetaskand sizetrainingexperiments, notonesharedgeneralistcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            17,
+            18,
+            19
+          ],
+          "locator": "Task-specific architectures,datasets andTables1-9"
+        }
+      ]
+    },
+    {
+      "id": "path",
+      "category": "experiment",
+      "statement": "Warcraftlearnedcost+Dijkstra achieves96.0±.3percentoptimalcostpaths atside12and94.0±.3atside30, over5restarts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            17
+          ],
+          "locator": "Table2 exactmetric andAppendixA.3.1 lambda20/50epochs"
+        }
+      ]
+    },
+    {
+      "id": "tsp",
+      "category": "experiment",
+      "statement": "GlobeTSP exactGurobitouraccuracy99.2±.1at5flagsand96.7±.4at40; trainingincludes repellentregularizerandmodifiedAdam.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            18,
+            19
+          ],
+          "locator": "Table3; AppendixA.3.3 exactrepellentepochs15-30, coefficients andTable7"
+        }
+      ]
+    },
+    {
+      "id": "matching",
+      "category": "experiment",
+      "statement": "MNISTmatching viaBlossomV test98.32±.24at4gridand92.06±7.97at24grid; largecaserestartvariationnotomitted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            18
+          ],
+          "locator": "Table4andTable6 exactmetrics/protocol"
+        }
+      ]
+    },
+    {
+      "id": "approximate",
+      "category": "experiment",
+      "statement": "OR-Tools40flaglearnedaccuracy15.1±.3versusGTlocationreference15.2; thisreferenceisnot a provenupperboundoverlearnedcosts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            19
+          ],
+          "locator": "Discussionbreaksofexactguarantees andAppendixA.4Table9"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Noordinaryderivative/globalneuraltrainingconvergence/runtimeguarantee; exactminimization andlinearlearnedcostscope matter; real-worldvalidationleftfuture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            18,
+            19
+          ],
+          "locator": "Methodassumptions, runtimeRemark2, discussion, TSPoptimizationsensitivity andapproximatesolverappendix"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://iclr.cc/virtual_2020/poster_BkevoJSYPB.html",
+      "locator": "ManuallyopenedofficialICLR2020listingconfirms exacttitle and5authors, includingformalMarinVlastelicaPogancicnamevariant. Arxivv2p1 listsMaxPlanck/Florence andformalconferenceheader. CorrectedVitMusil/MichalRolinekdiacritics; retainedcanonicalformalfirstauthorvariant. Monthprecisionnotindependentlysupportedbylisting, publicationdatekeptyear2020."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://arxiv.org/abs/1912.02175",
+      "locator": "Manuallyopenedprimaryarxivhistory: v1Dec4,2019; v2Feb16,2020. CachedPDFfirstpagepositivelyidentifies1912.02175v2Feb16,2020andall19pagesread; actualarxivversionacceptedwithoutformalbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=BkevoJSYPB",
+      "locator": "Manuallyopenedforumreturnsverificationchallenge. Bothlegacy/api2 /notes?forum=BkevoJSYPBrequestsreturned403ChallengeRequiredError, saved inownopenreview-attachment-check.json. EveryexplicitlyreferencedscientificAppendixA.1-A.4isintegratedinthefullyread19pagearxivv2, includingcompleteproofs/trainingandapproxsolverexperiment. Noexplicitmissingseparatescientificattachment. OfficialICLRlistinghaspaper/code/reviewslinks."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/martius-lab/blackbox-backprop",
+      "locator": "PDFp1explicitcodeURL andpublicauthorwrapperrepositorymanuallyopened. ItsREADMElinksblackbox-differentiation-combinatorial-solvers; thatpublicREADMEalsoreadandonlypromisesdatasetvisualization/Warcrafttrainingcode. Gurobidependency/licenseexplicit. Numericalresultsnotrerun."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1912.02175",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2019-12-04; title on abstract page: Differentiation of Blackbox Combinatorial Solvers. This date is preprint history, not formal publication. Cached research/full-text-review/blackbox-backprop/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "blackbox-backprop",
+      "cited": "attention-model",
+      "reference_label": "Kool, van Hoof and Welling (2019)",
+      "description": "Citesneuralattentionroutingaslearnedheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp11: Kool, van Hoof and Welling (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019), arXiv:1906.01629",
+      "description": "Citeslearnedbranch-and-boundheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp10: Gasse et al. (2019), arXiv:1906.01629"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "Citespolicy-gradientTSPheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp10: Deudon et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017), ICLRWorkshopTrack",
+      "description": "CitesneuralreinforcementlearningNCO, exactworkidentityretainedwithprintedworkshopvenue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp9: Bello et al. (2017), ICLRWorkshopTrack"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals, Fortunato and Jaitly (2015)",
+      "description": "Citesarchitecturealgorithmicstructuralpriors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "ExplicitbodycitationPDFp2; exactfullbibliographyentryPDFp13: Vinyals, Fortunato and Jaitly (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Citesreinforcementlearningroutingvariants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp11: Nazari et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019), arXiv:1905.12149",
+      "description": "CitesdifferentiatableSATbuildingblocks, distinctfromunrelatedSATneuralpapers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp13: Wang et al. (2019), arXiv:1905.12149"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li, Chen and Koltun (2018)",
+      "description": "Citesgraphconvolutionguidedsearchheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp11: Li, Chen and Koltun (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "blackbox-backprop",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "CitesneuralSATworkseparatelyfromUnsat-Coreguidancepaper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp12: Selsam et al. (2019)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedexactlinear-cost/fixedfinitefeasiblesetmethodandcorrectgradient sign/a.e.interpretation.",
+    "Separatedtask/sizecheckpoints, optimalcostversusfulltourmetrics andallactualresultvariation.",
+    "IncludedTSP-specificrepellentregularization, optimizerchanges andapproxOR-Toolsappendixinstead ofunqualifiedstandardtraining.",
+    "Qualifiedoneextracallversusidenticalruntime andGTlocationreferenceversusmathematicalupperbound.",
+    "Confirmedcompletearxivv2andformalICLRidentity, recorded403attachmentchecksandintegratedscientificappendices, correcteddiacritics/publicationprecision.",
+    "Verified9existinginternalcitations; layeranalysisremainsstudy, no scope migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0b34f8ab3dc0c13fc89d2fd232f8cfb75d74f38f6925d92196a2e882bbaf58ee"
+}

@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "paper_id": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+  "note_path": "specialist/sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "537769d8bb400ab9eb794e811f034f88d4b884dc8223b020afc1d4cce1b70e11",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2412.15534v2",
+      "retrieval_url": "https://arxiv.org/pdf/2412.15534v2",
+      "version": "Identified completearxiv2412.15534v2 dated2025-02-25, allninepagesmain/refsactualread; v1primaryhistory2024-12-20, formalAAAI2025-04-11separatelyeligible, notbyteidentityclaim.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-ac971ba870/arxiv.pdf",
+      "sha256": "57599608cebf2a0dacdc49f0aa4ad178f4ff7526bc128378669bc3ff2d359729",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read complete abstract/introduction/formulation and RL preliminaries: two-stage suboptimal demonstrations plus online self-imitation, CMU byline, tree-MDP motivation and complete Bellman preliminaries; empirical cross-MILP claims require later model-sharing check."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read all tree-MDP Definitions1/Propositions1-3, Eq4 random-walk Bellman, offline Q+BC Eq5-7 and PPO/SIL Eq8-11. Surrogate explicitly does not follow actual B&B; discount and stationary/absorbing leaf interpretation require checking proofs. Priority queue ranks small trees while SIL filters positive estimated advantages."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read all related-work citations, five benchmark train/validation/test definitions, same VHB0.05 datasets, five evaluation seeds/one-hour limits/shifted geometric means, and every entry of Tables1-3. SORREL best neural runtimes not best universal; RPB wins CA/MK, FSB-GCNN has fewer nodes four datasets. Transfer timeout handling/number-nodes comparability explicitly qualified."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full SIL ablation curves, varying VHB p 0.05/0.1/0.2/0.5, authors conservative-SIL long-training limitation, conclusion and all two-page bibliography entries. Complete nine-page v2 ends references; no appendix/proofs/extra experiments referenced or supplied. Rendered pp3/4/6/7 and visually inspected equations, diagrams, all tables, both training/suboptimality figures."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Weak VHB demonstrations and low online sampling efficiency motivate two-stage value-weighted learning.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            5
+          ],
+          "locator": "Introduction and ExperimentalSetup"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Offline value+BC, random-walk tree return, online PPO/SIL with per-instance best-tree queues.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            7
+          ],
+          "locator": "Definition1/Propositions1–3/Eqs4–11/ablation"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Surrogate local-sub-MILP model and discounted expected child return, not guaranteed runtime optimum or exact undiscounted leaf-bound difference.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Definition1, Bellman Eq4 and all three propositions"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Five family-specific benchmarks, 100 standard+20 larger test instances times five seeds, one-hour limit, shifted geomeans1/10; RPB and FSB-GCNN have explicit wins.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "ExperimentalSetup/Tables1–3/Figures3–4"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Authors acknowledge conservative SIL long-training plateau; transfer timeouts and classical/node-count boundaries restrict headline dominance.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "MainResults, table captions and Conclusion&Limitation"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Common MILP brancher design across five tasks is trained separately in official task-specific checkpoints; specialist exact-search construction.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            5
+          ],
+          "locator": "Neural branching problem/benchmark setup, crosschecked official five checkpoint directories"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete nine-page v2 and complete references read; official38file archive/500LP nested inventory and unaccessed Underline presentation separately documented.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            8,
+            9
+          ],
+          "locator": "Byline/scientificmethod/setup/completebibliography and official repository"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2412.15534v2",
+      "locator": "p1 complete CMU byline ShengyuFeng/YimingYang; formal indexed publisher authors and Crossref agree."
+    },
+    {
+      "field": "venue, formal publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/33219",
+      "locator": "Indexed formal publisher Published2025-04-11,39(11)11212–11220; saved Crossref published-online2025-04-11 and DOI10.1609/aaai.v39i11.33219. Live520/403challenge responses not PDFs and not registered."
+    },
+    {
+      "field": "arxiv_url, date, reading version",
+      "source_url": "https://arxiv.org/abs/2412.15534",
+      "locator": "Saved primaryhistory v1 Fri20Dec202403:48:53UTC, v2 Tue25Feb202523:42:25UTC; full9pagev2read. Actual firstdate2024-12-20 vs formal2025-04-11 separately retained."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://github.com/Shengyu-Feng/SORREL/tree/82d155ed700fd276f4d4c1d7ce972f075090d95b",
+      "locator": "Five distinct taskdirectories each own PPO+TD3BC weights and scripts per-task alpha/seed, no unchanged multi-native checkpoint; brancher in constructive exact search. Paperp5size-transfer withinfamily not crossproblemsharing."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://underline.io/lecture/111768-sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "locator": "Manual fullv2main/refs9pages; v1also9pages saved comparison onlyeditorialcorrections, no appendices/proofs/sciencecompanion named. Officialrepo53members38files enumerated, nestedinstances.zip511members500LP/noPDF/video/additionalarchive. Underline indexed Slides/transcriptdownload redirectlogin, livelecture404; notread/notcounted. PublisherHTML/PDFaccess520/403, noactualseparatesciencefileidentified; notclaimednonexistentattachments."
+    },
+    {
+      "field": "code availability and version",
+      "source_url": "https://github.com/Shengyu-Feng/SORREL/tree/82d155ed700fd276f4d4c1d7ce972f075090d95b",
+      "locator": "Complete29,298,614byteZIP SHA/memberinventory; commit2025-05-04. AllREADME/environment/trainscripts and coremodels1–475/env1–248/reward1–92/multiprocessing160–306/buffer1–138/evaluate1–148 actuallyinspected. Models notexecuted/weightsnotdeserialized. Realchildobservationsstoredthenbuild_graph(None)261–262; dummyconstructionbuffer104–115, codechildspecificvsprintedminreward andHuberLoss qualified."
+    },
+    {
+      "field": "visual, mathematical and empirical boundary checks",
+      "source_url": "https://arxiv.org/pdf/2412.15534v2#page=3",
+      "locator": "Rendered/viewedfullpp3/4/6/7, alltheory/figures/tables; originalFig1clip50,48,565,218actualviewfull. local-boundary-check.json contains isolatedactualsgm ASTexecution andgenericdiscountpath1+.9=1.9 vs2; nottrainednetworkorMILPcounterexample. Finalevaluate141–145 correctpaper1/10 shifts distinguishedhelperbugs; nohistoricalrerun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Uses the variable–constraint bipartite architecture as the common neural baseline and compares GCNN-VHB/GCNN-FSB.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            8
+          ],
+          "locator": "Body1/5, Tables1–3p6; completeNeurIPS2019referencep8"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Discusses root GNN and lighter later classifiers as related branching scalability work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            5,
+            8
+          ],
+          "locator": "Body1/5; fullNeurIPS2020referencep8"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Tree-MDP predecessor and TreeREINFORCE baseline; contrasts DFS-dependent formulation with local-subproblem surrogate.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            9
+          ],
+          "locator": "Body1–3/5; fullNeurIPS2022referencep9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al. (2021)",
+      "description": "Cites tree-aware imitation branching as related IL work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            5,
+            9
+          ],
+          "locator": "Body1/5; fullAAAI2021referencep9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023a)",
+      "description": "Related-work citation for contrastive learning of large neighborhoods, not an adopted SORREL component.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            5,
+            8
+          ],
+          "locator": "Body1/5; fullICML2023referencep8"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "hrl-aug-branching",
+      "reference_label": "Zhang et al. (2024)",
+      "description": "Contrasts concurrent hybrid-RL demonstration augmentation, still using FSB, with explicit weak-teacher/efficiency study.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            5,
+            9
+          ],
+          "locator": "Body1/5; exactICLR2024bibliographyp9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Literal diving/predict-and-search related work, not the branching policy used here.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Bodyrelatedworkp5; exactICLR2023bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "l2dive",
+      "reference_label": "Paulus and Krause (2023)",
+      "description": "Related-work neural diving citation; complete arxiv2301.09943 bib establishes catalogue identity.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Bodyp5; completeLearningToDiveInBranchAndBoundreferencep9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Cites hierarchical sequence cut selection as another neural MILP heuristic.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Bodycutselectionlistp5; exactICLR2023bibliographyp9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Related-work neural large-neighborhood policy citation, without borrowing its checkpoint.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "BodyLNSlistp5; exactNeurIPS2021referencep9"
+        }
+      ]
+    },
+    {
+      "citing": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang, Agrawal, and Faenza (2020)",
+      "description": "Related-work RL cutting-plane selection citation.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Bodycutselectionlistp5; completeICML2020referencep9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftwithallninepagesactualreadandcompletebib/officialartifactinventory.",
+    "Keptspecialisttask-specificfivecheckpoints, separatednode/runtimemetrics/classicalandFSB-GCNNwins.",
+    "Qualifiedsurrogatetheory/discounting andcurrentcodechilddummygraphs/reward/loss/config/shiftswithoutassertinghistoricalbenchmarkreplication.",
+    "AddedoriginalFig1and11explicitbody+bibmatchedinternalcitations; documentedunreadlogin-onlypresentationmaterials."
+  ],
+  "reviewed_note_sha256": "ed61a001abca741a8bc5345bde894e14ecf8051ee0e09124faa6467eaeb77179"
+}

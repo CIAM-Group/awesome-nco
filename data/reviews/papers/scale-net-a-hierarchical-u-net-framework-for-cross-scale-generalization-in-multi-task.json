@@ -1,0 +1,899 @@
+{
+  "version": 1,
+  "paper_id": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+  "note_path": "generalist/scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "e759bf84f7d62ea9b5775dab3d424c9a04771e41683697fb6a7572d056e8bbfe",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/lsyysl9711/Scale-Net/main/Paper/Scale_Net.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/lsyysl9711/Scale-Net/main/Paper/Scale_Net.pdf",
+      "version": "Actual21-pageofficialauthorrepositoryPDFfromScale-Net/main/Paper/Scale_Net.pdf; formalAAAI2026identityindependentlyconfirmed, allmain/scientificappendix/fullbibfreshread",
+      "local_path": "research/full-text-review/scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task/paper.pdf",
+      "sha256": "57e9b616799d4672231dcdad5f24f766e3f6191cc89fe8616f747536279f9773",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh1-2actualofficialrepo21pagePDFtitle4authorsNTU/SMU/HKUST/AstarNanYincorresponding, formalAAAI2026header. Claimedjointsinglebackbone16VRPsover50-5000, actualcheckpointtrainingmustverifyfull. U-Netsampledsubgraphhierarchytopologycontext vsdecomposition toursnotassumetask-specific; constructivelikelygeneralistoncejoint16supported. BroadSOTAclaimsneednegativerows/budgets later. Literaturefulltextcitationscaptured existing527potential30refs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh3-4fullmath1-10Figure1caption. Unify5staticnodefeaturesdepotcoord+dynamiccapacitytime/open/length, REINFORCEandMoEbalance. HierarchicalattentionBEFOREeachtop-kpool,learnlinearimportancezi butformalnoembeddingrescalingsoscoreheadgradientquestioncheckactualcode. Unpoolremovednodeszeros+skipconcat+attentionoriginalresolution, first/fullandfinaln² remainsconstantreductionNOTprovablesubquadratic. FusionEq10ConcatcurrentdynamicALLscaleH ambiguousmatrixvsfixedvectorneedsactualcode. 16jointmodelseparate50/100FTstages claimverifyexperiments; allhardware48CPU4A600048GB."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh5-6ALLTables1-2 all16tasks at1k2k3k objectives/gaps/times, first6trainedlast10OOD. NegativesOVRP3kScale1k38.653%vsPOMO13.262ReLD9.492;OVRPL3k38.963vs13.123/9.567,FT2k/3kstill20-ish,notallSOTA. OR25minreferenceNOToptimum negativegapbelowheuristicnotbetterthantrueoptimum. Alltimeslikely100testinstancesorperinstneedprotocolnext. pvalues.0156/.0104/.0249aggregatecomparisonnotperrowallstatisticallybetter. PreserveexactreportedaveragegapsdoNOTrecomputefrommeanobjectivesassumingratioequivalence."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh7-8joint6VRPsmall100pretrainthenSEQUENTIALFT1k->2k->3ksame6/tasks10zeroshot; pooling75/50/25small,500/250/125large. FTbaselines2k3kOOMnotperformancecomparisonwithsameupdatedbudget. Forgottingcrosssizesacknowledged, manualpoolsizefuturelearnable. Fullbodyclaimsall16at1k mustverifyphysicaltablebecauselayouttextrowinterleaved. Sensitivity3schedules std.114 andadaptivepoolgap23.45->21.41CVRPLIBnotprimaryTable8smallgapotherprotocol; appendixcheck. refs8completeactualRouteFinder2024workshop distinct7?sameversionidentityprimarylater; EAS2021printedICLR9 actual2022 preserved,NeuOpt2024NeurIPS38printedyearwrongactual2023 separatecitationlabel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fresh9fullrefscompleteformalSIL2025sevenauthorsunambiguous,H-TSPduplicateda/bsamework,NeuOptwrong2024printedpreserve. Appp10all16constraints O,B,L,TW combinations sixID tenOOD; coordsU[0,1],Q40/50smalldemands1..9backhaul20%duration3depotTW0..3service.2. Pretrain5000x20kinstances=100mpermodel50/100B128lr1e-4wd1e-6last500epochs /10,FT1k2k3k sequentiallr1e-5/1e-6/5e-7 mainvsappsmall50+100. Runtime5dayspretrain4daysFT(singleA6000)needperstageunclear. Eval1ktests small8aug;large128inst1k..3k16inst4k5k. AppOR200sec/instvs Tables25m inconsistent; capacitysayslinear500/1k...5k3000nonlineartypo;fiveNsixbatchsizes24/12/8/6/4/3 unresolved reportnotinvent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Fresh11-12fulltextincludingfewshot10epochs10kinstances100k/task vsbaseline, actualadditionalmodelsScaleMVMoE separatelytrained notsameweightsasScalePOMO. CVRPLIBgap5.82/4.58vsbaseline9.82/6.884;Solomon13.78/13.72vsMVMoEL17.84 meansnotuniversalhighprecision. Memoryroughattention-onlyFP32N5000heads8batch1 sixlayers762MBperlayer->4.6GB,Scale1.6GB65.2% notmeasuredpeakactivationsoptimizer/inferencewholemodel;firstfullgraphn²retained. SeparateCVRP/VRPTWspecialized1kcomparisontable11 later. Claimsall16small/first6MoE5/6OOD7/10 checkedfulltablelater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Fresh13-14complete16x5constrainttableandALLTable2hyperparams. 6trainCVRP/TW/O/L/B/OTW,10unseencombinations. FTactual500epochs*8000=4m1k,100*3000=.3m2k,100*1200=.12m3k sequential, batches24/12/3 LR1e-5/1e-6/5e-7. small5000*20k100mper50/100model, fewshot10*10k100k. d128ff512head8enc6clipping10, MoE4expertsroute2aux.001. Params1.25->2.01mPOMO and3.69->4.24mMoE; lowerattentiondoesnotfewermodelparams. Tableeval50/100B64. AlltasksC universalcapacity, OBLTWexactflags."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Fresh15-16ALLTable3-4small16tasks50/100 allrows andTable5CVRPLIB28instances101..251complete. ScalePOMO vsPOMOallimprovesclaimedbutVRPL50 apparent10.506vs10.513? physicalvisualneeded. MoEnegativeTW1004.986vs4.903,VRPBTW1007.258vs7.078,VRPLTW1001.641vs1.471,VRPBLTW1007.436vs7.332, notallimprove. Table5small100train avg5.82vsPOMO9.82 butMVMoEL5.16beatsScale5.82;ScaleMVMoE4.58bestavg, noteveryinstance. X-n209-k16obj31889/30656 implies4.02 notprinted5.81%, explicitrowgap/objectiveinconsistency inspectvisual thennote. Table5schedule75/50/25 noFT."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Fresh17-18ALLTable6Solomon28rowsR101-112 RC101-108/201-208, actualavgScale13.78/13.72 POMO21.38MVMoE20.317MVMoEL18.49 notprose17.84. Table7ALL32largeSetX502..1001 zero100modelScale23.45worseMVMoEL19.607 andPOMO16.769,FTScale1k9.85vsPOMO1k13.49 noteveryrowX-n9168.88vs8.69. Table8actuallyFOURschedules9.85/9.65/9.83/9.97 mean9.825std.114 forFTmodel, maintextmentions3. Table9adaptiveper-bin13.44/15.67/23.02/29.04/23.55/61.43 reportedavg21.41zero100UNFINETUNEDmodel vs23.45baseline; DO NOTmixFTTable8withzeroTable9."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Fresh19-20ALLTable10 16tasks4k5kobjectives/timesandTable11specialistbaselines16tasks1k. 1kFTfailscross-sizeCVRP5k159.211vsPOMO80.047;Scale2k77.311Scale3k73.773 clearlylaterFTneeded. VRPL5kScale1k256.028vsbaseline102.270 butScale3k94.204. SingleVRPTW-1kbetteronitsnative181.696vsScale182.960 andVRPLTW191.698vs193.042; averageall16Scale87.13gap.80vsCVRP111.71/20.69andVRPTW95.40/18.98. Differentbudgetweightsnotpurearchitectureisolation. Cross-checkTable11confirmsScale1kCVRP31.834,VRPL33.983,VRPB29.846; mustinspectphysicalTable1joinedtextassociations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 21,
+      "notes": "Freshfinal21complete10supprefs repeats actualMTL/MVMoE/ReLD/HGSclassical; all21registeredpagesmainrefs+allscienceappendixincluding11tablesfullyfreshread. Scientificappendixseparaterefnumbersrestartpreserved. No download/textmatch countedwithoutread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "U-Net pooledgraphhierarchy/skipreconstruction/multiscalequery enhances joint6-task constructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Methods/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Nodefeatures/dynamicconstraints,topkpool/unpool andREINFORCE; nativeO/B/L/TW6train10unseen.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            10,
+            13
+          ],
+          "locator": "Equations1-10/tasktable/configuration"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "100mpretrain andsequential4m/.3m/.12mFT;128/16largeinstances,smalltests1k; actualnegativecases anddifferentSetXprotocols.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            10,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Allmainandscientificappendixtables"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Quadraticfirst/finalattention androughmatrixmemorynotwholepeak; crossscaleFTforgetting/heuristicreference/typos/knownsourcecodegradientlimit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            10,
+            11,
+            12,
+            16,
+            18,
+            19
+          ],
+          "locator": "Memoryanalysis,limitations,tablecells"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "SamejointcheckpointtrainedsixnativeVRPs testedtenunseencombinations;constructive evenwithparameterFT andfeatureunpool.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            10,
+            13,
+            20
+          ],
+          "locator": "Sharedbackbone/sixmixture/16tasks, actualcodeTrain_ALL independentlyconfirmed"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actualofficialauthorrepo21pagePDFwithcompleteappendix,4-authorbyline andavailablecode/7checkpoints; nofullreproductionclaimed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            14,
+            21
+          ],
+          "locator": "Codeanchor/completeconfigs/suppbib"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/formaldate",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v40i17.38444",
+      "locator": "ActualprimaryCrossref4authors/title/published2026-03-14 cached nco-8c5c605323; readPDFp1exactbylineNTU/SMU/HKUST/Astar,NanYincorresponding. Noarxiv/acceptanceinferred."
+    },
+    {
+      "field": "supplements/version",
+      "source_url": "https://github.com/lsyysl9711/Scale-Net",
+      "locator": "Actualauthorrepo21pageScale_Net.pdfcompleteALLmain/fullbib/appendix11tables+configsread. Manual44entrytreeonePDF,archPNG,dataREADME7checkpoints noextraPDF/ZIP;Driveexplicitlytestdata. OfficialindexPDFonly,OJS520notclaimedread. Allsciencecoveredactualauthorreadingversion, notformalbyteidentity."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://github.com/lsyysl9711/Scale-Net",
+      "locator": "Trainer._train_one_batchsameinstantiatedmodel alternatesget_envTrain_ALLsixnativeenvs; testeronecheckpointloopsALL16, actualPDFpp7/10/13sixtrain10unseen. Sevencheckpoints2MoE+5MTLseparatehosts/scaleFT, generalistconstructivemigrationstableID."
+    },
+    {
+      "field": "implementation/gradient",
+      "source_url": "https://github.com/lsyysl9711/Scale-Net",
+      "locator": "ActualMTLModelgPoolprojectiononlytopkindices+gather. IsolatedactualmoduleCPUbackward:inputgradexists,projweight/biasNone savedpool-gradient-check.json. Nofulltrainingrerun. MTL2extra/MoE1fullrefinementlayers,MTLhardcoded350/125/50,scoreheadnottrainedordinarypath; otherweightsstilltrain."
+    },
+    {
+      "field": "protocol/inconsistencies",
+      "source_url": "https://raw.githubusercontent.com/lsyysl9711/Scale-Net/main/Paper/Scale_Net.pdf",
+      "locator": "Mainp5-6/19physicaltableschecked;OR25mvsappendixp10 200sinst,caplinearvs5k3000,fiveN/sixbatches. Table5p16X-n209obj31889/opt30656yet5.81% gap (~4.02%ratio), table6p17MVMoEL18.49vsprose17.84. Preservequotedauthorresultswithqualification,no silentrepairofclaims."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/lsyysl9711/Scale-Net/main/Paper/Scale_Net.pdf",
+      "locator": "OriginalfullFigure1PDFp4Rect(52,51,560,217)4xatomic. Actualvisualp4/5/6/15/16/17/18/19, all21textpagesread. ArchitecturePNGinspectedsamefigure. Scientifictablesallrowsread notjustcandidateextraction."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/abs/2406.15007v1",
+      "locator": "ActualsavedRouteFinderv1primaryHTMLmatches8authorsworkshop2024; currentformal9samearxivversionchain. SourceEAS2021/EMNH2024/NeuOpt2024editionerrorspreservedlabelsidentityexactauthors+titles. NewXiao2024primaryCrossref7authorsmatched; duplicateHTSPa/boneedge. Onlyexplicitbody+bib29edges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2019",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Kool et al.,2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Drakulic et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualexplicitintext Huang et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID cl-lns"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Chalumeau et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID compass"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Sun & Yang,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID difusco"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "Xiao et al.,2024",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata. TargetprimaryCrossrefexacttitle/sevenauthorsindependentlycheckedcache nco-a93df2100a/crossref.json; publisheridentityconfirmedwithoutguessingmissingbyline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Xiao et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "drhg",
+      "reference_label": "Li et al.,2025b",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Li et al.,2025b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID drhg"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.,2021 as printed",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata. Sourceprints2021/ICLR9, targetformalICLR2022; all3authors/exacttitleunique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Hottung et al.,2021 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID efficient-active-search"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "emnh",
+      "reference_label": "Chen et al.,2024 as printed",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata. Sixexactauthors/titleidentifyformalNeurIPS2023 despite sourceprinting2024; no2024differentworkinferred.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Chen et al.,2024 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID emnh"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "glop",
+      "reference_label": "Ye et al.,2024",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Ye et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID glop"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al.,2023a/2023b duplicate references",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Pan et al.,2023a/2023b duplicate references"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID h-tsp"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung/Bhandari/Tierney,2021",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualexplicitintext Hottung/Bhandari/Tierney,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID latent-search-space-routing"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Luo et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID lehd"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "neuopt",
+      "reference_label": "Ma/Cao/Chee,2024 as printed",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata. Sourceprints2024/NeurIPS38, but exactthreeauthors/titleidentifyformalNeurIPS2023 NeuOpt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Ma/Cao/Chee,2024 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID neuopt"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung & Tierney,2020 ECAI",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Hottung & Tierney,2020 ECAI"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID neural-large-neighborhood-search"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al.,2021",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Xin et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID neurolkh"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.,2023b",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Zhou et al.,2023b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID omni-vrp"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Vinyals et al.,2015"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID pointer-networks"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID pomo"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "rbg",
+      "reference_label": "Zong et al.,2022",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID rbg"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Cheng et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID select-and-optimize"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "sil",
+      "reference_label": "Luo et al.,2025 Boosting seven-author formal",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Luo et al.,2025 Boosting seven-author formal"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID sil"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "sym-nco",
+      "reference_label": "Kim/Park/Park,2022",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Kim/Park/Park,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID sym-nco"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "tam",
+      "reference_label": "Hou et al.,2023",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualexplicitintext Hou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID tam"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "cada",
+      "reference_label": "Li et al.,2025a",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Li et al.,2025a"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID cada"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al.,2024",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Liu et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID mtpomo"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al.,2024",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Zhou et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "FullbibmatchingstableID mvmoe"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "reld",
+      "reference_label": "Huang et al.,2025",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Huang et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID reld"
+        }
+      ]
+    },
+    {
+      "citing": "scale-net-a-hierarchical-u-net-framework-for-cross-scale-generalization-in-multi-task",
+      "cited": "routefinder",
+      "reference_label": "Berto et al.,2024 workshop/eight-author preprint",
+      "description": "Explicitbodycitationandfullmatchedbibtitle/authors; preservecitedyear/editionratherthanrewriteactualtargetmetadata. Actual2406.15007v1primaryHTMLhasexact8citedauthors/title; samearxivversionchainlinksformal9-authorrepresentative, notforcednewjournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualexplicitintext Berto et al.,2024 workshop/eight-author preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "FullbibmatchingstableID routefinder"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceallpendingfieldsaftercomplete21pagesandscience/fig/codeworkflow.",
+    "Migrate stableID specialist→generalist onactualjoint6-native-checkpointand16-tasktestevidence; constructiveparameterFTnotincumbentmoves.",
+    "Detailstatic/dynamicfeatures,U-Netmeancontext/reconstruction andtruequadraticfulllevels; isolatedpoolprojectionno-gradientrecordedwithoutinvalidatingreportedallresults.",
+    "Exact100mperpretrain/4m+.3m+.12mFT/fewshot100k/test128or16/batchstarts/4A6000 andconfigmemory/paramcountboundaries.",
+    "PreservebroadnegativecasesOVRP3k/earlyFTfails5k/MoEsomeregressions/specialistnativebetter; separatezero100/FT1k/adaptivescheduleprotocols.",
+    "Discloseper-instancegap/prose/table/hardware-timeconfiginconsistenciesandmissingSINGLEmodule/Testerhardcodes; nofalsefulltableexecutionclaim.",
+    "ActualoriginalFigure1/29supportedinternaledges,RouteFinder8authorprecursorchainandprintedyearerrorsprimaryidentityqualified; nofabricateddates."
+  ],
+  "reviewed_note_sha256": "9dba33bdb9ed97dff174b68816c29d9337bf920071401a61412c1ffda9555074"
+}

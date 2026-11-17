@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "paper_id": "autodidactic-iteration",
+  "note_path": "specialist/autodidactic-iteration.md",
+  "baseline_note_sha256": "9949f7c21ef18bf2c9404c6a44f1d47ecc66d899cd61e73bf4528eae8cfd8b28",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1805.07470",
+      "version": "arXiv:1805.07470v1, May 18 2018, Solving the Rubiks Cube Without Human Knowledge",
+      "retrieval_url": "https://arxiv.org/pdf/1805.07470",
+      "local_path": "research/import-272/nco-9c9781cc0d.pdf",
+      "sha256": "099be78605d3a2b06b9c2b1bf3b788c932f1e2f68d3eaeef7fecf6f6b33e80f5",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "conference",
+      "url": "https://research.cec.sc.edu/files/foresta/files/solving_the_rubik_s_cube_with.pdf",
+      "retrieval_url": "https://research.cec.sc.edu/files/foresta/files/solving_the_rubik_s_cube_with.pdf",
+      "version": "Author-hosted complete 13-page copy marked Published as a conference paper at ICLR 2019; PDF produced April 30 2019",
+      "local_path": "research/full-text-review/autodidactic-iteration/conference.pdf",
+      "sha256": "a782531869ad5639a61833e47d21f4e32ec874a745ac764296c0b20d6377e424",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read registeredactualarXiv1805.07470v1May18 2018, titleWithoutHumanKnowledge4UCIauthorsonlyRubik,20x24cubieencoding12quarterturnactions/reward1goalelse-1,ADIteacherbootstraptargets+MCTSnotgroundtruthdemonstrations;formalnotehasdifferenttitleand15puzzleclaimrequiresactualconferenceversion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read originalv1 allADIbootstrappeddepth1 childrewards/values MSE+CE,1/Dsamplingweight,asyncMCTS maxnotmeanbackups,virtual-loss andBFSshortestvisitedgraphnotglobalopt;44h3TitanXP2Miterations8billionstates,6401000stepscramblesallsolved1h median10min vsKociembasubsecond. Needformalupdated15puzzleversion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 11,
+      "notes": "Read allremainingoriginalv1 mainresults/kernelscomparison/74pctcloseoptimalitymetricmismatch/claimednodecount/qualitativehumanconjugation/discussion and39fullreferences; no15puzzleinthisv1. All11originalpagesactuallyread."
+    },
+    {
+      "source_id": "conference",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read author-hostedformalICLR2019header13pexacttitle and4authorsUCI, approximate/dualpolicyiteration framing, goal-scramble distribution/sparsegoal issue, full relatedwork notsame2018abstract."
+    },
+    {
+      "source_id": "conference",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullstateencoding/reversibleknownforwardbackwarddynamics;ADIdepth1Bellman1/Dweightedloss noformalguarantee authorsp6;RMSProp/MSECE/maxbackupPUCTvirtual-loss. Conferencegraphpostprocessingadditionalchildren beyondv1pendingp7."
+    },
+    {
+      "source_id": "conference",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullformalresultsnotoldv1:post-MCTSgraphexpandedchildren+BFSshortestvisitedgraph,640sample100pct1hmedian10min andKociembasubsec,55pctlengthmatch/beat,10015scramble74pctIDAmetriccaveat;formalnodes7823max24175vsold1136/3425;discussionnotglobalAPIguarantee/allrefsstart."
+    },
+    {
+      "source_id": "conference",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read allremainingformalrefs andAppendicesAknowledgeconjugationpattern/Btraining44h2Miterations3TitanXP32workers/Csolvercomparisontable40sconflictsmainmedian10min;13pcompleteNO15puzzleactualscientifictext (authorabstractwebmentions15 butnotthisPDF), seekOpenReviewversionbeforeclaiming."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Sparsegoalrewards motivate goal-scrambled training states and known reversible dynamics.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Fullintro/Section3-4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "One-stepbootstrappedpolicyvalueADIwithoutdemonstrations thenMCTS+visitedgraphBFS.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Algorithm1/fullsolver"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "SpecialistCubeonly inbothcompletePDFs;noactual15puzzleexperiment/sharedcheckpoint;removeunsupportedtag.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Complete13pconferencecopy and all11polder source"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "20x24encoding12QTMactions/1Dweights/RMSPropCE+MSE/maxbackup32workers;notgloballyoptimal/admissible.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            13
+          ],
+          "locator": "Allalgorithm/training/reversibilitydetails"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "6401000scrambles100pctwithin1h,55pctKociembalengthmatch,10015scrambles74pctmetriccaveat;7823nodesdifferentv1.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            7,
+            8,
+            12,
+            13
+          ],
+          "locator": "Section5/AppendicesA-C andversioncomparison"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Noformalnonlinearconvergence;restrictedgraphshortestnotglobal;timingreportinginconsistencytext10minvssecondsplot/Table40.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            13
+          ],
+          "locator": "Explicitauthorsno-guarantee/curatorconditions"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Authorconference13+arxiv11allread/8keyvisualpages,officialICLRacceptedverified,OpenReview403,successorcodeexcluded,noexecution.",
+      "evidence": [
+        {
+          "source_id": "conference",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Fullactualreadinglogs/metadata"
+        }
+      ]
+    },
+    {
+      "id": "early_version",
+      "category": "reproducibility",
+      "statement": "Originalarxivv1May18all11pagesincludingfullreferencesread;onlythisversion retains explicitBellocitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "locator": "Fulloriginalsource reading logs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://iclr.cc/Conferences/2019/AcceptedPapersInitial",
+      "locator": "Officialacceptedlist contains exacttitleandHyfn2jCcKm. Authorconference13pheaderICLR2019fourUCIauthorsAlexanderShmakov(noK);arxivabs1805.07470onlyv1May18 2018differentWithoutHumanKnowledgetitle. Preserveformal2019separatefrompreprintdate."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://research.cec.sc.edu/files/foresta/files/solving_the_rubik_s_cube_with.pdf",
+      "locator": "Manualauthorpublicationpage singleconferencePDF13pdownloaded registeredconference;completeA-Cpp12-13scienceallread. PDFcreation2019-04-30. OpenReview APIv1/v2notes+directPDFandpublicsearchuuidPDF403cached. Noexplicitmissingseparatescience;allregistered24PDFpagesactuallyread. Sourceauthorwebabstractmentions15puzzlebutbothcompletePDFsnoscientificexperiment,notassumedread."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://research.cec.sc.edu/files/foresta/files/solving_the_rubik_s_cube_with.pdf",
+      "locator": "ConferenceSHAa782531869ad5639a61833e47d21f4e32ec874a745ac764296c0b20d6377e42413pages. arxivv1SHA099be78605d3a2b06b9c2b1bf3b788c932f1e2f68d3eaeef7fecf6f6b33e80f511pages. Visualconference5/6/7/8/12/13 andv1p6/7 allviewed,fullnetwork4096/2048/512heads verified. NoexactlastOpenReviewversionbyteassertion."
+    },
+    {
+      "field": "experimental_consistency",
+      "source_url": "https://research.cec.sc.edu/files/foresta/files/solving_the_rubik_s_cube_with.pdf",
+      "locator": "Conferencep8nodes7823max24175 vsarxivp7 1136/3425. Conferencep7median10minvssamePDFp8histogramsecondsmedian~30s/TableAppCp1340s;unexplainedconfig/versionreportingdifferences. AppC7823nodes/40s=195.575persecnotprinted2100, andKorf122billion/40snot2million/s;dontassertunifiedthroughput. QTMvsHTMreference caveatprintedp8. Allfinite640/100casesnotglobalproof."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://deepcube.igb.uci.edu/",
+      "locator": "CurrentauthorprojectlinksLatestgithubforestagostinelli/DeepCubeA andOriginalCodeOcean5723040;bothrelatetoseparateNatureMachineIntelligencefollowup. FullDeepCubeA READMEread,explicitAVI+A*multiplepuzzlescitationfollowuptitle;notoriginalADI-MCTSimplementation/notaddcodeURL. CodeOcean403,noauthattempt. NoextPDFfromseparatefollowup registeredasthispaper."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://arxiv.org/abs/1805.07470v1",
+      "locator": "Allv1refs39pp9-11andconferenceallrefspp9-11read;onlyexactexistingBelloneural-combinatorial-optimizationinv1bodyp8/ref4p9. Conferencecopyremovedthiscitation;edgeversionexplicit. NoMCTSnetciteinarticle,nosimilarityedge. NoPointerNetwork/DeepCubeAautomaticassociation."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1805.07470",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-05-18; title on abstract page: Solving the Rubik's Cube Without Human Knowledge. This date is preprint history, not formal publication. Cached research/full-text-review/autodidactic-iteration/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "autodidactic-iteration",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4] Bello et al. (2016), arXiv v1",
+      "description": "Explicit 2018 manuscript discussion of policy-gradient TSP/knapsack; this reference is not retained in the author-hosted conference copy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "v1discussionBelloTSP/knapsackp8;fullref[4]p9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Addedandfullyread13pauthor-hostedICLRconferencemarkedcopybeside11parxivv1.",
+    "Removedunverified15puzzletask/middleinitialK;distinguishedmethodfromDeepCubeAAVI/A*successorcode.",
+    "Keptversion-specificnodes/results/timingconflictsandQTM-HTMlimits ratherthanspeed/optimalityguarantee.",
+    "Bothscientificcopies24pages/8visualpages/fullrefsread;oneversion-explicitcitation."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "61f66315da4f25edd3bf24e24ecebeb4cc2f18e6dd09a6e505f0c5e648ed55a3"
+}

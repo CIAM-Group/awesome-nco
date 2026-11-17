@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "paper_id": "adaptive-lagrangian-annealing",
+  "note_path": "specialist/adaptive-lagrangian-annealing.md",
+  "baseline_note_sha256": "114ebada29da57f4ed71aa00ed664f9a6a1950fcdd081a1a3d62a95a35841d5e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/99c5e07b4d5de9d18c350cdf64c5aa3d-Paper.pdf",
+      "version": "Official NIPS1991 volume4 scanned proceedings,8pages1025-1032",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/99c5e07b4d5de9d18c350cdf64c5aa3d-Paper.pdf",
+      "local_path": "research/import-272/nco-1ba1960d77.pdf",
+      "sha256": "ba9778cc839345608162573de27c5b2b70423cb33bd8dc1ddf9da4710da9829c",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh read pp1-4: Santa Fe plus Los Alamos affiliation; replacing hand-prescribed MFT temperature with entropy-constrained saddle dynamics; lambda barrier c log lambda and local-convergence citation, actual experiments omit barrier; numerical convergence does not prove global optimality. Scanned missing formulas will be visually inspected."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh read pp5-8 including 16 references. Elastic net entropy depends on lambda, not literal constrained multiplier; one epsilon tuning rate and citywise generalization. Table1 40 random TSP50 on SPARC1+, times260/49/82 and lengths5.95/5.92/5.92, statistically insignificant improvement; single TSP1007.746 vs7.783, remains above SA. Kinetic oscillation schematic, reported local-convergence arguments external technical report, no global-optimality proof."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Externally selected mean-field schedules and expensive standard Lagrangian machinery motivate entropy-constrained dynamics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and sections 2-3"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Global and citywise multiplier formulations merge state relaxation and adaptive annealing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections 4-5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "State descent and lambda ascent; logarithmic positive barrier omitted in experiments. Elastic-net entropy depends on lambda and retains an epsilon rate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations 5-8 and explicit qualifications"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "40 random TSP50 instances: 260/49/82 seconds and 5.95/5.92/5.92 lengths; quality differences not statistically significant. Single TSP1007.746 remains above mentioned SA tour.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table 1 and paragraph after it"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Local convergence and syntax claims deferred to technical report; plausible/empirical convergence is not global tour optimality, and Fig1b is schematic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Convergence wording and valley-ascent explanation"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Hand-designed elastic-net dynamics with only TSP experiments; specialist/neurodynamic, no shared trained multi-task solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6
+          ],
+          "locator": "Abstract and actual experiments"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/99c5e07b4d5de9d18c350cdf64c5aa3d-Paper.pdf",
+      "locator": "PDF p1 including Los Alamos footnote."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/hash/99c5e07b4d5de9d18c350cdf64c5aa3d-Abstract.html",
+      "locator": "Official NIPS1991 volume4 record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/hash/99c5e07b4d5de9d18c350cdf64c5aa3d-Abstract.html",
+      "locator": "Manual landing inspection Bibtex/Metadata/Paper only; all8 pages read, no attached appendix. Separate technical reports are explicitly cited prior/extended work, not registered scientific attachments."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/99c5e07b4d5de9d18c350cdf64c5aa3d-Paper.pdf",
+      "locator": "Visual check PDF pp2-7 equations/Table1/both Figure1 panels; no new figure asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read all8 pages/16references and inspected OCR-missing formulas/figures.",
+    "Added title-page Los Alamos affiliation.",
+    "Specified barrier omission, elastic-net lambda-dependent entropy and remaining epsilon tuning.",
+    "Replaced broad order-of-magnitude speed claim with actual Table1 means and separately tuned setup.",
+    "Qualified statistically insignificant quality gains, single-instance TSP100 comparison, deferred proofs and global-optimality limits."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "57a32cbcb02acc8483414726b109fcb04d35ca832303e31a29a101f5464e330b"
+}

@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "paper_id": "chain-of-context",
+  "note_path": "generalist/chain-of-context.md",
+  "baseline_note_sha256": "16d1aab4fc23b99bced5a98066f20ee18ea6e212727887a570aeaec3a43c27af",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1a7a22152cd21f0ca3c0f8139bb32905-Paper-Conference.pdf",
+      "version": "Formal ICLR2026 proceedings23pages, complete main/references/AppendicesA–C freshly read",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1a7a22152cd21f0ca3c0f8139bb32905-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-781169fc25.pdf",
+      "sha256": "d2145df7274c3ec20e95f3f5c8f7d48f1324f426d338ea0f5076c9c7407b3dbe",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshfullpages1-3read; formal4authors3institutions, constructive16native/32newMD/MB combinations. ExplicitstrictBbeforebackhaul vsMBinterleaved. Contextrelevanceandtrajectorysharednodereembedding dynamicpolicyrepresentation, theirmisalignmentclaimnotaproofenvironmentMDPnonMarkov. Fullremainingmethod/experiments/appendicespending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh4-6fullmethodread: sixencoderlayers,RGCRfourconstraintembeddingsrawdotproductnotsoftmaxgates; TSNRallnodesquery concatenatedpreviousnodes+NtrajectorycontextKV,distancebias/recurrentrefinement. PrintedEq10q/kdimensionandsubscriptinconsistencies;Eq12fullN+1by2N+1. ProbabilisticupdatePtr/Pts. N50/N100separate,L40S,validationCVRP128,batch256,HGS-PyVRPheuristicreference. Remainingbudgetandresultsnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "Fresh7-12fullreadallTable1-5/fig2-3/mainconclusionrefs11-12: baseCCL notalwaysallseenbestagainstCaDAdagger; daggerlowestneural all16butHGSbetter. Refpoints:CVRP1001.287vsCaDAdag1.070,dag1.058;OODTW100CCL31.159vsdag34.163. Size50300epoch100k/epoch30M Adam3e-4,Ptr.75/Pts1vs100.25/.5. Time19-27s/1000vsCaDA8-15s; real60Homberger600gap70.961 notnearoptcert. DotproductgatebestTWnotoverall(random1.092vs1.100). HGS-PyVRPheuristicnottrueopt. Allrefs11-12exacttitlesread,13pending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 19,
+      "notes": "Fresh13-19fullyreadrefs13-14/completeA/B/C1/C2 includingallTable5-9rows/Fig4. TSNRsourceEq10dimensionsmisprintedvsEq12correct,encoderdualglobal/sparse. Statstests1kpaired?sourcejustttestnotclaimedpaired,3testseedsnottrainrepeats. OODusesPts.15size50/.02size100 notmain1/.5. AllOOD32detailed rowsseen:MB50/100worsebaselines;MDVRPTW100CaDA34.783vsCCL39.557dag50.829;dagOODmeans24.102/34.788 vsCCL27.588/34.892. Gurobi/LKHtimeparallel32corelimit15minvsGPUbatched;donotderivelinearperinstancespeedupfromtotal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 23,
+      "notes": "Fresh20-23readallC3-C7/allremainingTables10-14/fig5-6: crossattentionweightssize(N+1)(2N+1)stillquadratic;nonTWmatchedtimemean1.802tiesCaDAHD, TW0.749vs1.256;FFSPseparatelyretrainedandgraphinputseparatelyretrainednotcrossnativezero-shot. CVRP27base4.707worseCaDA4.625,4-rateensemble4.261;VRPTW27mean27.114/24wins,Homberger60060mean70.96135winswithindividualstronglossesR2-6-8gap209.479. p22negativeR101Optreferencecannotbecertifiedglobaloptimum. All23formalpagescomplete; code/suppfiginventoryongoing."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Evolving constraint urgency motivates joint context/node representations; not a proof that all prior routing environments are non-Markov.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/MDP"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "RGCRconstraintrelevance, TSNRsharedtrajectorycontext-node recurrentupdates and16trained/32unseen routingvariants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Figure1/Eqs3–14"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Sixdualattentionencoderlayers,RGCRfourattributes, TSNR(N+1)x(2N+1)attentionwithprobabilisticupdate, POMOREINFORCEconstructivepolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            15,
+            16,
+            20
+          ],
+          "locator": "Architecture/complexity"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "CCLdagseen-neuralwins16, OOD24.102/34.788means withnegatives, CVRPbase4.707worseCaDA4.625butfour-rateensemble4.261, Homberger70.96135/60wins.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "AllTables1–14/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Longercompute/memory, heuristicreferences, differentPtrPtsbudgets/ensemble, separateFFSPretraining andreleasemethoddifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "Discussion/AppendixC2–C7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructive basedshared16nativeVRPvariants/32unseenviaunchangedpolicy; FFSPdemonstrationseparatelytrainednotroutingcheckpointtransfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            21,
+            22
+          ],
+          "locator": "Nativeconstraints/actionpipeline/AppendixC6"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and dates",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1a7a22152cd21f0ca3c0f8139bb32905-Abstract-Conference.html",
+      "locator": "Formal4authors/SMU/GuangdongLaboratory/SunYatsen p1; publishercitation_publication_date2026-04-20; primaryarxivv1March2,2026. Date corrected tofirstpublicarxiv withformalpublicationseparate."
+    },
+    {
+      "field": "supplements and scientific archive inventory",
+      "source_url": "https://github.com/gshuangchun/CCL-MTLVRP",
+      "locator": "Complete23formalpages A–C allread; publishernosupplement,api403. Fullposter10011011read.435-memberGitHubarchivecontains4notebooks/2byteidenticalpairs;unique34cells/full61115textcharactersand9visualsread,inheritedRFnotCCLnewresults. Drive293432825bytes752members582NPZ+5CKPT+165dirsnoPDF/ipynb/ZIP/video/pptx."
+    },
+    {
+      "field": "current implementation and protocols",
+      "source_url": "https://github.com/gshuangchun/CCL-MTLVRP",
+      "locator": "Fullcontextforward/state,decoder363–447andCrossTransformer248–260,policy103–250,lCLmodeltrainloss,encoder118–154,rFbase50settings/test1–115read. Sigmoid(sqrtD-scaleddot+train.1noise)*taskmask vsprintedrawdot; bias−logdistancevsprinted+Euclideandistance. Basecurrentlytest.15/.02;ReLD100Ptr.75ratherthanprinted.25. Notesqualifycurrentrelease, notreproductionfailure."
+    },
+    {
+      "field": "figures and numerical validation",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1a7a22152cd21f0ca3c0f8139bb32905-Paper-Conference.pdf",
+      "locator": "Originalall6figuresrendered/seenincludingnegativeplottedtrainingloss, allTables1–14fullrowsread. OriginalFig1cropped106,81,506,350andvisuallycheckedcompletecaption. Correctedallseenclaimbasevsdagger, ensembleunionvsonepolicy, realnegativecases andstillquadraticTSNR."
+    },
+    {
+      "field": "citation_identity:rrnco",
+      "source_url": "https://arxiv.org/abs/2503.16159",
+      "locator": "Formalreferencep14older sixauthortitle/exactarxivID linksupdatedMarch2026title/sevenauthoredformalRRNCO; preservecitedversionidentity."
+    },
+    {
+      "field": "citation_identity:unico",
+      "source_url": "https://arxiv.org/abs/2505.06290",
+      "locator": "Formalreferencep14exactarxiv2505.06290/sixauthors mapsUniCO; do notconfuseuncataloguedUNCOarxiv2408.12214orUSPR2505.05119withURS2509.23413."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2603.01667",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2026-03-02; title on abstract page: Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs. This date is preprint history, not formal publication. Cached research/full-text-review/chain-of-context/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "chain-of-context",
+      "cited": "agfn",
+      "reference_label": "Adversarial Generative Flow Network for Solving Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "efficient-active-search",
+      "reference_label": "Efficient Active Search for Combinatorial Optimization Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "elg",
+      "reference_label": "Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "emnh",
+      "reference_label": "Efficient Meta Neural Heuristic for Multi-Objective Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "gumbeldore",
+      "reference_label": "Self-Improvement for Neural Combinatorial Optimization: Sample without Replacement, but Improvement",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "learning-to-delegate",
+      "reference_label": "Learning to Delegate for Large-Scale Vehicle Routing",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "mapdp",
+      "reference_label": "MAPDP: Cooperative Multi-Agent Reinforcement Learning to Solve Pickup and Delivery Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "ncs",
+      "reference_label": "Efficient Neural Collaborative Search for Pickup and Delivery Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "neurolkh",
+      "reference_label": "NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "polynet",
+      "reference_label": "PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "poppy",
+      "reference_label": "Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "reld",
+      "reference_label": "Rethinking Light Decoder-based Solvers for Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "step-wise-routing",
+      "reference_label": "Step-Wise Deep Learning Models for Solving Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "cada",
+      "reference_label": "CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "mixed-curvature",
+      "reference_label": "A Mixed-Curvature based Pre-training Paradigm for Multi-Task Vehicle Routing Solver",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Generalization of Neural Combinatorial Solvers Through the Lens of Adversarial Robustness",
+      "description": "Exact explicit formal bibliography entry, manually checked against authors/title; duplicate RouteFinder preprint/formal entries yield one catalogue relation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References pp11–14; no relations inferred from abbreviation or related-topic mentions."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "unico",
+      "reference_label": "Zong et al., Unico: Towards a unified model for combinatorial optimization, arxiv2505.06290",
+      "description": "Formal p14 gives exact arxiv2505.06290 and sixauthors matching the later UniCO representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Formal p14 gives exact arxiv2505.06290 and sixauthors matching the later UniCO representative."
+        }
+      ]
+    },
+    {
+      "citing": "chain-of-context",
+      "cited": "rrnco",
+      "reference_label": "Son et al., Neural combinatorial optimization for real-world routing, arxiv2503.16159",
+      "description": "Formal p14 explicitly cites arxiv2503.16159 underolder six-author title; samearxivv2 updatedRRNCOformal title/sevenauthors, version-awarepreprint→formalrepresentativeedge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Formal p14 explicitly cites arxiv2503.16159 underolder six-author title; samearxivv2 updatedRRNCOformal title/sevenauthors, version-awarepreprint→formalrepresentativeedge."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall23formalpages/completeappendices/allresultrowsandwholeposter.",
+    "Readalluniqueinheritednotebookcells/text/9plotsandfullyinventoriedsource/data/checkpointarchives.",
+    "Correctedfirstpublicdateandaddedprimaryarxividentity.",
+    "Specified16native/32unseen sharedroutingpolicyandseparateFFSP/graphinputtraining.",
+    "ReplacedgenericdescriptionwithactualRGCR/TSNRrecurrence/quadraticattention/PtrPtsprotocols.",
+    "Separatedbase/dagger/four-rateensemble, originalCaDA/reimplementation,heuristicreferencesandnegativecases.",
+    "Recordedconcretecurrentreleasegating/bias/ratechangeswithoutclaimingexperimentalinvalidity.",
+    "AddedexactformalrelationsandoriginalformalFigure1."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "95412c353c496ec9a15a9272ab2022e0d3fb64baeb27e104e77a84dbd7b42319"
+}

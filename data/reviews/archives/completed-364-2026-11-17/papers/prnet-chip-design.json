@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "paper_id": "prnet-chip-design",
+  "note_path": "specialist/prnet-chip-design.md",
+  "baseline_note_sha256": "adb2b6fb15a7d35d611b944a337d10c8b27c828736f4066b121c9de6b49b8609",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a8b8c1ad51df1b93d9e3d1fca75debbf-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a8b8c1ad51df1b93d9e3d1fca75debbf-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-100b2904e7.pdf",
+      "sha256": "f8b6d5f672d1e0e5e441bc968498b4156c415c6355fd8159f8789fd83153193b",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a8b8c1ad51df1b93d9e3d1fca75debbf-Supplemental-Conference.zip",
+      "version": "Official publisher ZIP member PRNet_NIPS22_Supplementary.pdf",
+      "archive_member": "PRNet_NIPS22_Supplementary.pdf",
+      "local_path": "research/full-text-review/prnet-chip-design/supplement/PRNet_NIPS22_Supplementary.pdf",
+      "sha256": "ffaa5a9067956c4f082115d04154fb6aae507f48f1232822e879badff935f00f",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/six authors/two main institutions plus Shanghai AI Lab footnote; global routing only, detailed routing excluded. Read introduction/related work/placement formulation: size-aware footprint mask and fixed macros, PPO final wire/congestion/overlap reward; GCN+CNN and gradient standard-cell method. Pure-neural and end-to-end backprop claims require comparison with actual training/discrete outputs; multiple pipeline modules do not imply shared native-task checkpoint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all route-image representation, maze repair disclosure, size-adaptive ResNet cGAN, connectivity-label discriminator vs realness, focal/L2/HPWL regularization and EM-inspired alternating router/PPO pipeline/reward annealing. The explicit maze refinement contradicts blanket heuristic-free interpretation. Network prediction is constructive, classical cell placement/repair is not neural full-incumbent editing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read training/data split/model selection and full Tables1–4. Test sets select model, validity CrrtR includes connectivity+overflow and WLR covers only successful nets. Placement overlap reduced but nonzero all8, HPWL worse6/8. Allclassical routers faster sequential version; ibm02 NTHUshorter. Read concurrentbatch16 tradeoffs and CPPpostprocess disclosure."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read full sequential/concurrent Table5 and all45bibliography/checklist. Concurrent faster but OFpositive all6 includingtrivialibm05; classicalnumberscopiedfromoldhardware, caption2.8GHzP4/2GB vs paragraph1.4GHzP3 inconsistent. Macro-only pipelineTable3distinctfromcell-placementTable1; GRwithoutNOLcongestionworse5/8. Fullbibliographymanualcataloguecomparison: DeepPlace and CVAE-Opt explicit; other classical/DACtitles notforcedonto unrelated IDs."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullA1classicalrelatedwork/A2RLrouteradaptation/A3lossISAandcircuit-heldoutresults. Correctrouting EL=.735/1.018vsFL=.756/1.091; ISA12MvsNonISA15Mimprovesbut100epochsnotbest. Route-small-extension650ktrainfrom3circuits200ktestfourth distinctfromrandomsplit. LabyrinthrerunAMD4600H/2GB differsmain3970Xhardware; readseed/datasetexposurelimits."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all finalsupp results/placementfigures/complete29entryrefs. Labyrinth on4600H slower than ownconcurrentonibm02–06 exceptibm01, butdifferenthardware thanown3090/3970X. RLcomparison16grid:1.805vs11.528seconds gives6.3867x, notapprox10xtext; RLshorter4951vs5240butOF157vs0. Appendixnoformaltheorem. Complete scientificZIPall6pagesnowcovered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Size-aware macro placement, conditional generative single-net routing and learned net order are coupled through alternating router/PPO updates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections3.1–3.3/Figures2–3"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "Footprint mask/PPO construction, size-adaptive cGAN with connectivity and realness heads, focal/L2/HPWL loss and explicit maze repair.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "State/action/reward/Section3.2/Equations1–4"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Nonzero placement overlap, WLR conditional on successful nets,18.6/26.5% route failures, classical latency wins and batch16 overflow qualify empirical gains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Evaluationdefinitions/Tables1–5"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Classical teacher, repair dependence, test-set model selection, distinct macro-only pipeline and copied heterogeneous hardware restrict pure/endtoend/broadquality claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Maze repair/Section4.1/4.4/4.5/Conclusion"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialist constructive: shared placement/net-order feature policy exists inside one joint chip pipeline; no independent cross-nativecheckpoint evaluation, no neuralfullincumbent edit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            10
+          ],
+          "locator": "Section3sharedfeatures/Section4.5 macro-only protocol"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "category": "experiment",
+      "statement": "Science supplement adds size adaptation, loss controls, circuit-heldout650k/200k and adapted16gridRLroutercontrol whose tabulatedspeedupis6.39x.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "AppendixA/Tables1–5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8b8c1ad51df1b93d9e3d1fca75debbf-Abstract-Conference.html",
+      "locator": "PrimaryHTMLcitation_publication_date2022-12-06/volume35pp26350–26362/DOI10.52202/068431-1911; formalp1sixauthors/mainSJTU+HuaweiandfootnoteShanghaiAILab."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a8b8c1ad51df1b93d9e3d1fca75debbf-Abstract-Conference.html",
+      "locator": "PublisherSupplementalZIPdownloaded1037262bytes, completeinventorysolememberPRNet_NIPS22_Supplementary.pdf6pages, allreadandCRCcheckedbyzipread. Formal13pagesallread; event54263posterPNGviewed/noadditionalPDFslides; ORAPIuNYqDfPEDD8 403. Fullmonorepotree2727untruncatedSHA fd9d3a3df1cf53b6828528bab8925d35abdfa7c8scienceinventoryonlyREADMEs/vendorGeoSteinerTeX; neitherPRNetPDFnorcheckpointcodeidentified."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/EDA-AI/tree/fd9d3a3df1cf53b6828528bab8925d35abdfa7c8",
+      "locator": "RootREADMEexplicitPRNetcitation, currenttop-levelDeepPlace/DSBRouter/FlexPlanner/HubRouter/OAREST/PreRoutGNN, noPRNetfolder. DeepPlaceREADMEidentifies2021predecessorandtargetedgenerative/netordersearchdoesnotidentifyPRNetmodel. CodeURLretainedasauthorlink, availabilitynotrepresentedassuccessfulPRNetimplementationinspection."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a8b8c1ad51df1b93d9e3d1fca75debbf-Paper-Conference.pdf#page=6",
+      "locator": "OriginalFigure3completeimageandcaptioncropRect(102,64,510,258)4xvisuallychecked."
+    },
+    {
+      "field": "figure asset path correction",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a8b8c1ad51df1b93d9e3d1fca75debbf-Paper-Conference.pdf#page=6",
+      "locator": "Figure3 was initially rendered/viewed at repository-root paper-assets rather than the required public/paper-assets. Re-extracted from formalPDFp6Rect102,64,510,258 at4x to actual public/paper-assets/prnet-chip-design/framework.png,184611bytes, SHA256=1e7afdf1cd60458ed8256625bb11284589b2775beb68a6fa90dab479deb8698b; actual corrected file visually inspected with full diagram and caption."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "prnet-chip-design",
+      "cited": "deepplace-deeppr",
+      "reference_label": "[2]",
+      "description": "Cheng&Yan2021 exacttitle/authors; formalpaperintextandrefs plus supplementsamework[29].",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation [2] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "prnet-chip-design",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[19]",
+      "description": "Hottung/Bhandari/TierneyexactCVAE-Opttitle; sourceprintsICLR2020, targetformal2021; bibliographicyeardiscrepancyexplicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedplaceholderwithcomplete13+6pageformal/supplement/posterreviewand2actualcitations.",
+    "Correctedconstructiveparadigm, addedroutingfamilyandShanghaiAILab, clarifiedsharedpipelinefeatureswithoutcrossnativeclaim.",
+    "Recordedmazerepair/classicalteacher/testselection/conditionalWLR/nonzerooverlap/concurrentOF/classicalruntimeandhardware/versiondifferences.",
+    "InventoriedactualpubliccodeURLhonestlywithoutsubstitutinglaterHubRouterorearlierDeepPlaceimplementation; addedoriginalfullcaptionfigure.",
+    "Fixed figure deployment path from root paper-assets to public/paper-assets; re-extracted and viewed the actual public asset."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8b117d69dbe2c7c55007e3f2498adc060c97ea1b1e47dd3d50aa50517cfa0d56"
+}

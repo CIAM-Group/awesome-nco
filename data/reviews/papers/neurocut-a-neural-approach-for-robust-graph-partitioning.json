@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "paper_id": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+  "note_path": "specialist/neurocut-a-neural-approach-for-robust-graph-partitioning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "c093c859c62806954a667ed787894f3180c55b7f28eab64c3032886138eceef5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2310.11787",
+      "retrieval_url": "https://arxiv.org/pdf/2310.11787",
+      "version": "arXiv2310.11787v3 Jun21 2024,12p including completeA1-A10",
+      "local_path": "research/full-text-review/neurocut-a-neural-approach-for-robust-graph-partitioning/reading-candidate.pdf",
+      "sha256": "21ab12ba99b5bfd2c89f3c25a0cb547d3d5373975eaa3c517f3cdb5ef17f6b64",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "segmentation",
+      "url": "https://raw.githubusercontent.com/idea-iitd/NeuroCUT/f98aaad5b435bf0f7160ede0e4add0a79af7e749/image_segmentation.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/idea-iitd/NeuroCUT/f98aaad5b435bf0f7160ede0e4add0a79af7e749/image_segmentation.pdf",
+      "version": "Pinned official author repository two-page image-segmentation visual supplement",
+      "local_path": "research/full-text-review/neurocut-a-neural-approach-for-robust-graph-partitioning/image_segmentation.pdf",
+      "sha256": "066ea73075dbadc10fd87b1e9874babae21a2a4b10c6df58e6fb035e1253bc4b",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Actual all pp1-4 read: fiveauthor identity/relatedwork/allfour nativecut objectives/initialfullKmeanspartition/randomwalkpositionalfeatures/NeuroCUTdiagram. Objective-flexible framework not samecheckpoint transfer; initialcompletepartition→node reassignments supports improvement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Actual all pp5-8 read: heuristic NodeScore vsNN PartScore/GraphSAGEmean/softmax samplednode reassignments/relativechange REINFORCEreward/gamma.99/T2/complexityconditional/Tables2-7 all rows incl Cora/Actorbalanced and Harbinkmin negatives. k5,8→k10 transfer within same objective. Empty partition/nan situations not solved by a formal guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Actual all pp9-12 read: warmstart/nodeheuristic/clusterstrength analyses/full49reference bibliography/completeA1-A10/time complexity derivation/Tables8-17 allnumerics. All3maincontact sheets actuallyviewed. Code95file pinnedtree/README/makefile read and relevant main.py lines63,100,112-119,159 etc show cuttype-specific checkpoint path. Oldanonymous11p NeuroCut.pdf inventory not claimed fully read; complete v3 science includes laterA7-A10. No missing identified science."
+    },
+    {
+      "source_id": "segmentation",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Actual both pages read and contact3 physicallyviewed: horse image visual segmentation examples at k3/k4 and comparators k3/4/6. No quantitative tables/protocol/sharedcheckpoint crossobjective proof; not misrepresented as empirical generalist evidence."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Variable partition count and reward-driven discrete cut optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/formulation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Warmstart/heuristicnode/learnedpartition scoring plus fourobjective and ktransfer evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Method/results/appendix"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Full clustering incumbent updated through NN partition reassignments and REINFORCE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Figure1/Equations10-18"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Improvement on complete partitions; objective-specific training, only partition-counttransfer established.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "locator": "Method/Table7"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Strong normalizedcut with negative balanced/kmincells and inductive vs transductive tradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            11,
+            12
+          ],
+          "locator": "Tables3-7/9/12-17"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Subquadratic expression conditional on sparse graph and sublinear stepbudget; no allobjectivecheckpoint guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            9,
+            11,
+            12
+          ],
+          "locator": "Complexity/limitations/appendix"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full12p and A1-A10 read, pinned sourceinventory plus2p scientific visuals read.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11,
+            12
+          ],
+          "locator": "Identity/bibliography/appendix"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and version history",
+      "source_url": "https://doi.org/10.1145/3637528.3671815",
+      "locator": "Five authors/title/pp2584-2595; DOI Aug24 2024; actualarxiv history v1Oct18 2023/v3Jun21 2024."
+    },
+    {
+      "field": "supplements scientific source inventory",
+      "source_url": "https://arxiv.org/pdf/2310.11787v3",
+      "locator": "All12p completeA1-A10/full49refs;2p original segmentation visuals;4contact sheets actuallyviewed.95files officialrepo containsolderanonymous11p manuscript inventoried notfullyread and segmentationPDF fullyread;README/makefile and relevant main objective-checkpointlinesread."
+    },
+    {
+      "field": "classification and original figure",
+      "source_url": "https://arxiv.org/pdf/2310.11787v3#page=4",
+      "locator": "Completeinitialpartition→NN node reassignment improvement. Code main63/100/112-119 cuttype checkpointpath and Table7 onlyktransfer support specialist. Fig1crop50,70,564,3823x/fullcaption viewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "attention-model",
+      "reference_label": "[24]",
+      "description": "Kool et al. 2018 arxiv entry is the same Attention Model work; generic NCO related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "combhelper-a-neural-approach-to-reduce-search-space-for-graph-combinatorial-problems",
+      "reference_label": "[44]",
+      "description": "Generic neural graph-combinatorial related work, exact COMBHelper title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[16]",
+      "description": "Generic neural graph-combinatorial related work, exact Joshi et al. identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "gcnn-branching",
+      "reference_label": "[11]",
+      "description": "Generic neural graph-combinatorial related work, exact Gasse et al. identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "gcomb",
+      "reference_label": "[31]",
+      "description": "Generic neural graph-combinatorial related work, exact GCOMB title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[23]",
+      "description": "Explicit S2VDQN maxcut two-way limitation and exact Khalil et al. identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "cited": "limip-lifelong-learning-to-solve-mixed-integer-programs",
+      "reference_label": "[32]",
+      "description": "Generic neural graph-combinatorial related work, exact LIMIP title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Body related-work reference plus complete exact bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read full current scientific appendix and extra image-segmentation visual source.",
+    "Corrected paradigm to improvement and qualified objective-specific checkpoint scope.",
+    "Retained negative balanced/kmin comparisons and conditional runtime derivation.",
+    "Added seven direct exact body+bibliography edges with arxiv-year identity qualified."
+  ],
+  "reviewed_note_sha256": "d24f64b5d61ad48f09ed09eff543eabb18e25e0e5509a08bbeda7c0edf89b13a"
+}

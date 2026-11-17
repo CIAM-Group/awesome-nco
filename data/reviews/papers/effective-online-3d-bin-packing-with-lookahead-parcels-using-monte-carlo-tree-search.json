@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "paper_id": "effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search",
+  "note_path": "specialist/effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "d2f050d88e56efe09f01f2250043f3119a5baf387e217b8590e64ab5fff6c4e2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2601.02649",
+      "retrieval_url": "https://arxiv.org/pdf/2601.02649",
+      "version": "Actualarxiv2601.02649v1firstposted2026-01-06,13pagesfullyread including52references/AppendicesA–C. UnreplacedACMtemplateignoredformetadata; formalKDDDOI independentlyconfirmed.",
+      "local_path": "research/full-text-review/effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search/paper.pdf",
+      "sha256": "7ded103d967b4d5723616de96765327ff72af110d6ac3b22c811515f435c33bb",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallintro/formulation/theorydefinitions/tree+PUCT. Actualarxivv1Jan6_2026 hasunreplacedACM2018/Trovato/DOIplaceholder, notformalmetadata. Learnedofflinepolicy+critic guidesnewplacements, trialreplanningdoesnoteditphysicallycommittedpacking: constructive. Eq1terminalVinsideNterms vsnormalonce mustcheckalgorithm. TVupperboundonlynotmonotonicnecessity. gamma1finiteepisodesstated; proofAppendixAneedcheckdiscountassumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullSAPUCTfamiliarityproductindependencetype-discretization/w3, expansionaddsallvalidchildrencontrarycostavoidanceprose; backupsEq14/17terminalVonce correctsdifferentEq1print. WSPexampleEq15numericexpressionnegative−3.125percentbutprintspositive+3.125percent (orangeheightdimensionlabelinconsistent). FullTable1all10methods/RealisticVirtual+Shift andTable2allablations, figures5/6. MainrealisticPCT53.95→54.98=1.03pp/1.91percentrelativeoverall; Shift46→52.58=6.58pp/14.30percentrelative, notover15percentbothmetric. BFSbetterqualitybut100s vs10s, MPC-GOPT20s. Noequalruntimeclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readtrialn/runtime/completecase/endtoendsystemparallelbudget+subtreecache/7day4lineABtest+20arms3centersdeployment/relatedwork/conclusion andcomplete52bib. Reportedonline2.6percentutilization4.4percentcountnotboth4percent,unclarifiedrelativevsppfigmustview. ProductionpolicyisdistinctnotPCTsamecheckpoint. PracticalRepacksrelatedworksnotmethod. Bibliographicduplicates17/18,39/40andwrongbaselinecitationspreserve/explain ratherthanforce unrelatededges. Formalcopyrightplaceholdernotpublicationdate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "ReadAppendixAentireLemma1proofEq18–25 andTheorem2Eq26–31 plusgamma1paragraph. Printedproofusesdiscountcontraction1/(1−gamma)^2 thenclaimsfiniteepisodegamma1allotherdetailsunchanged; boundedTRmaxalonecannotrestoredivision/contraction,needfinitehorizonrecurrence, so noestablishedfiniteconstantforactualgamma1fromprintedargument. Eq18factor1vsproof2; Eq19/20bothDexpectationtypo andcorrecteddifferentDxEq21, Eq9mainwrongtriangulardifferencevsEq31. TVupperboundnotlowerboundorstrictshiftcausal. AppendixB12–14plots andC1all5652train/882lookahead/statistics andfirstheuristicbaselinesread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "ReadAppendixC2–C5fullbaselinefeaturesmetricsPCT/GOPTtrainingallhyperparams/testslidingwindows100stride1/horizontalrotations/stability/realisticgrasp-safetyoffset/hardware92coreXeon4090Dtrain32coretest/actualdeploymentvisionCuRobo1500perarm. EndReceived2007/revised2009/accepted2009unreplacedtemplate notrealacceptance. Trainingepoch/seed/runtime notreported. Full13pallrefs/scienceA–Cread. NoexplicitGitHub/repository/promisedexternalproof inPDF; codeinventorymustprimarysearch."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "LookaheadMPC treeconstructsnewplacements withmixedneural/uniformSAPUCT prior andheuristicwastepenalty plusofflinecritic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Introduction/Sections2–4/Figures1–4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Familiarityfrequencyproductw3/independence; modifiedbackupterminalVonceEq14/17vsEq1print, WSPnumericnegativeexpressionvspositiveprintedresult. Noactualpackingrepacking.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "locator": "Formulation/SAPUCT/wasteexample/recedinghorizon"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "5652offline/882lookaheadrecords, overlap100stride1, N4n100, 10–20secdecisions; gainsmetric-specificandbelowbroadpercentageprose; 7day4lineAB2.6/4.4percentreported.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            11,
+            12,
+            13
+          ],
+          "locator": "AllTables1–3/Figures5–17/setup/deployment"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "AppendixAdiscountcontractionbounddivides1−gamma thenclaimsunchangedfinitehorizongamma1; TRmaxboundedreturnsaloneinsufficient, finitehorizonrecurrence notderived. TVupperboundnotmonotoniclossguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "FullLemma1/Theorem2/gamma1paragraph"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Singleonline3DBPPtask/backboneseparatelytrained; offlineNNactor/criticguidesfutureplacementconstruction ratherthaneditcommittedincumbentpacking: specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            12
+          ],
+          "locator": "Actualactions/trials/backbones/AppendixCtraining"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All13arxivv1pages/refs/AppendicesA–Cread; formaldateindependenttemplateexcluded, primaryauthorsites/labpubliccodeinventory noofficialimplementationidentified; fulloriginalFigure2viewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Actualfullsource/canonicalpublication/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3770854.3783946",
+      "locator": "PrimarypublisherCrossref 5authorsPKU/HIT/JDLogistics, formalpp2184–2195 online2026-04-20print08-09. Actualarxivp1matches5byline/LeyeWangcorresponding; template2018/2007–2009notrealmetadata."
+    },
+    {
+      "field": "arxiv v1/date",
+      "source_url": "https://arxiv.org/abs/2601.02649v1",
+      "locator": "SavedprimaryhistoryTue6Jan2026 01:51:11UTC/v1only; actual13pagePDFstampv1same5authors/title; formal12pagesnotclaimedreadbyteidentity."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://fangjiangyi.github.io/",
+      "locator": "All13pagearxivmain/refs/AppendicesA–Cfullyread includingcompleteAproof. Noexternalscientificproofattachmentpromised. Actualauthorhomepaperlinkarxivonly; manuallyopened3DBPLab2repos(authorlinked)/owncatalogueentryonlyarxiv. NoofficialMPCimplementationidentified, titleacronymsearch0; authorreposAPI403ratelimitnotclaimedinventoried. Savedsource-inventory.json; noGOPTbaselineURLsubstituted."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://arxiv.org/pdf/2601.02649v1",
+      "locator": "Sections2/4newfutureplacementtree,recedinghorizoncommitsfirstaction,cachesfuturetree; noparticularlearnededitofcommittedpacking. PCT/GOPT/productionbackbones separate;singleonline3DBPPnativeproblem,specialistconstructive."
+    },
+    {
+      "field": "theory/formula boundary",
+      "source_url": "https://arxiv.org/pdf/2601.02649v1",
+      "locator": "Read+viewfullp10Lemma1/Theorem2 discount1/(1−gamma)^2andgamma1unchangedclaim; nofinitehorizonrecurrenceprovided. Eq18factorvs25/earliersubscripttranscription; Eq1terminalVrepeatedvs14/17once; Eq15expressioncomputesnegative3.125percentnotprintedpositive. Theoryqualificationnotempiricaloutcomerefutation."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2601.02649v1#page=3",
+      "locator": "CompleteoriginalFigure2p3Rect50,474,298,562@5xatomicPNGactualviewed; pages3/4/5/6/7/8/10/11/12/13rendered/viewedallkeymethod/theory/tables/plots/physicaldeployment/safety."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2601.02649v1",
+      "locator": "Threeexplicitbody/fullbibconfirmededges; newAAAI2021formalprimaryCrossref5authorsandDOIidentity. Otherpackingrefsnotcatalogue; no[49]journal→PCTconferenceforcededge; GAT[46]actuallyunrelatedradardetectionexcluded."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search",
+      "cited": "ar2l-bin-packing",
+      "reference_label": "[27]",
+      "description": "Explicitbodycitation plusfullbibliographyidentity; newAAAI2021targetprimaryDOI10.1609/aaai.v35i1.16155/title/all5authors independentlyconfirmed. DoNOTmapseparate2022practicaljournal[49]ontoPCTconference orradardetection[46]ontoGAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicitbody [27]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbib [27] exacttitle/authoridentity ar2l-bin-packing"
+        }
+      ]
+    },
+    {
+      "citing": "effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search",
+      "cited": "online-3d-bin-packing-with-constrained-deep-reinforcement-learning",
+      "reference_label": "[47]",
+      "description": "Explicitbodycitation plusfullbibliographyidentity; newAAAI2021targetprimaryDOI10.1609/aaai.v35i1.16155/title/all5authors independentlyconfirmed. DoNOTmapseparate2022practicaljournal[49]ontoPCTconference orradardetection[46]ontoGAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody [47]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbib [47] exacttitle/authoridentity online-3d-bin-packing-with-constrained-deep-reinforcement-learning"
+        }
+      ]
+    },
+    {
+      "citing": "effective-online-3d-bin-packing-with-lookahead-parcels-using-monte-carlo-tree-search",
+      "cited": "packing-configuration-tree",
+      "reference_label": "[48]",
+      "description": "Explicitbodycitation plusfullbibliographyidentity; newAAAI2021targetprimaryDOI10.1609/aaai.v35i1.16155/title/all5authors independentlyconfirmed. DoNOTmapseparate2022practicaljournal[49]ontoPCTconference orradardetection[46]ontoGAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody [48]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbib [48] exacttitle/authoridentity packing-configuration-tree"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceallpendingfieldswith5authors/formalKDDdate/PKU-HIT-JD andactualarxivv1date.",
+    "Specialistconstructive; futuretrialplanningnotrepackingincumbent; separatebackbonesnotjointcheckpoint.",
+    "Full13pagesinclallproof/scientificA–Cread, allkeyvisuals/originalFigure2actuallyviewed.",
+    "RetainTVgamma1proofgap/upperboundlimits, repeatedterminalVandnegativeWSPexampleexpression; notautomaticdenialofempiricalgains.",
+    "Accuratetablepercentagesandlatencytradeoff/overlapdataset/trainingbudgetlimits/online2.6vs4.4percentreportednot4both.",
+    "Primaryauthor/lab/manualpublicsourceinventorynoofficialcodeidentified; fakeACMtemplateacceptanceexcluded.",
+    "Threeexplicitinternalcitations includingnewAAAIprimary5authoridentity; avoidforcingunrelatedmislabeledreferences.",
+    "Final internal Markdown link audit: citation[46](actually radar detection) ? citation [46] (actually radar detection)"
+  ],
+  "reviewed_note_sha256": "264cf3798e08c02c1fde5c49c3d298f2c95a57279d46c6bc0e58c4a59bdaf8ec"
+}

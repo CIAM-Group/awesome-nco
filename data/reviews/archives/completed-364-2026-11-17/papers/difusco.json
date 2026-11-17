@@ -1,0 +1,911 @@
+{
+  "version": 1,
+  "paper_id": "difusco",
+  "note_path": "specialist/difusco.md",
+  "baseline_note_sha256": "9561c337cf4b2ec2e4c986f597b476dc511429263112b228ca3bbfa9bc1143ad",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0ba520d93c3df592c83a611961314c98-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0ba520d93c3df592c83a611961314c98-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/difusco/paper.pdf",
+      "sha256": "adacaf9adaad7069ad891aae5ba86eadb6e5cc06819d436176d2c31e3565e32b",
+      "pages": 26,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart: independently reread all introduction, graph optimization representation, related work and binary feasibility/objective definitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh restart: independently reread every diffusion equation, discrete versus Gaussian denoising, accelerated schedule, AGNN and both decoders."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh restart: independently reread every primary TSP/MIS table and scale-transfer figure; checked postprocessing budgets and adverse ER result."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh restart: reread conclusion and complete references through [43], including preprint versus formal versions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh restart: reread complete bibliography [44]-[93]; matched actual titles against catalogue and excluded Pointer Networks substring false positive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresh restart: reread final bibliography [94]-[122] and all FAQ text, including heuristic labels and negative-gap rounding."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Fresh restart: reread extended related work, all Tables 4-6 entries, timing decomposition and entire TSPLIB comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Fresh restart: reread all multiple-heatmap MCTS results, binary MIP discussion, hardware/training specification, decoding and fast transition appendices."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Fresh restart: reread final baseline appendix and all qualitative diffusion/schedule/scale/failure captions. Visually inspected contact sheets covering PDF 4,5,7,8,9,19,20,21,22,24,25,26."
+    }
+  ],
+  "claims": [
+    {
+      "id": "graph-diffusion",
+      "category": "contribution",
+      "statement": "DIFUSCO learns graph-conditioned diffusion over binary edge/node variables, comparing Bernoulli and Gaussian noise.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections 3.1-3.4"
+        }
+      ]
+    },
+    {
+      "id": "supervision",
+      "category": "method",
+      "statement": "Training uses Concorde, LKH3 or KaMIS reference solutions; larger-task labels need not be optimal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            9,
+            18
+          ],
+          "locator": "Datasets; FAQ A.1"
+        }
+      ]
+    },
+    {
+      "id": "decoding",
+      "category": "method",
+      "statement": "Raw diffusion does not guarantee feasibility; TSP uses greedy construction plus optional 2-opt or MCTS, and MIS uses conflict-free greedy insertion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            23,
+            26
+          ],
+          "locator": "Sections 3.5 and F; Figure 12"
+        }
+      ]
+    },
+    {
+      "id": "backbone",
+      "category": "method",
+      "statement": "Both tasks use a 12-layer width-256 AGNN, with different node/edge variables and separate trained models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            23
+          ],
+          "locator": "Section 3.4; task-specific training details"
+        }
+      ]
+    },
+    {
+      "id": "tsp-results",
+      "category": "experiment",
+      "statement": "Single-heatmap MCTS gaps are 0.46%, 1.17% and 2.58% on TSP500/1000/10000; the largest reference is heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Table 2"
+        }
+      ]
+    },
+    {
+      "id": "postprocessing",
+      "category": "experiment",
+      "statement": "TSP10000 greedy gap changes from 36.75% to 3.10% after 2-opt, so postprocessing materially affects the result.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Table 2 SL+G versus SL+G+2-OPT"
+        }
+      ]
+    },
+    {
+      "id": "mis-results",
+      "category": "experiment",
+      "statement": "SATLIB sampling gap is 0.21%, but ER sampling gap 8.36% is worse than DIMES 6.26%; ER uses continuous diffusion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Section 5 Table 3 and Model Settings"
+        }
+      ]
+    },
+    {
+      "id": "gap-caveats",
+      "category": "limitation",
+      "statement": "Negative gaps to the integer-coordinate Concorde reference are attributed to rounding by the authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "FAQ A.4"
+        }
+      ]
+    },
+    {
+      "id": "training-budget",
+      "category": "reproducibility",
+      "statement": "Training uses eight V100 GPUs and target-size curriculum checkpoints; inference statistics average five seeds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            22,
+            23
+          ],
+          "locator": "Appendix E"
+        }
+      ]
+    },
+    {
+      "id": "objective-terminology",
+      "category": "classification",
+      "statement": "Although some prose says maximal, minimizing the number of unselected nodes defines a maximum-cardinality independent-set objective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            9
+          ],
+          "locator": "Section 3.1 MIS objective; Section 3.4; Section 5"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A shared architecture across tasks is not evidence for a jointly trained generalist checkpoint; heatmap construction is the neural solver role.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            23
+          ],
+          "locator": "Sections 2.2 and 3.4; per-task training specifications"
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Diffusion targets multimodality while evaluating node or edge variables in parallel; feasibility remains the responsibility of a separate decoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6
+          ],
+          "locator": "Introduction; Sections 2 and 3.5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0ba520d93c3df592c83a611961314c98-Paper-Conference.pdf",
+      "locator": "Publisher PDF page 1, title block and NeurIPS 2023 conference footer"
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2302.08224",
+      "locator": "Submission history v1, 16 February 2023"
+    },
+    {
+      "field": "problems and classification",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/0ba520d93c3df592c83a611961314c98-Paper-Conference.pdf",
+      "locator": "Pages 3 and 9; MIS objective and experiments; page 23 separate task training specifications"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Edward-Sun/DIFUSCO",
+      "locator": "Publisher page 1 footnote; author repository contains code, data, MCTS and reproduction-script resources"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/0ba520d93c3df592c83a611961314c98-Abstract-Conference.html",
+      "locator": "Manual official publisher landing inspection on 2026-11-16: only Bibtex and Paper scientific links; no separate supplement link. Full publisher PDF contains Appendices A-H, all read through PDF page 26."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/0ba520d93c3df592c83a611961314c98-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/difusco/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2302.08224",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-02-16; title on abstract page: DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/difusco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "difusco",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[1] Ahn et al., ICML 2020",
+      "description": "Cites and compares Learning What to Defer on independent-set benchmarks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            19,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [1]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[6] Bello et al., arXiv:1611.09940 (2016)",
+      "description": "Discusses autoregressive RL construction and active search; the cited version is the preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            10,
+            19,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [6]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "[8] Bother et al., ICLR 2022",
+      "description": "Uses the tree-search audit to motivate disabling MIS reduction/local search and compares its solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            9,
+            10,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [8]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "neurewriter",
+      "reference_label": "[17] Chen and Tian, NeurIPS 2019",
+      "description": "Cites learned local rewriting among improvement approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [17]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[18] Choo et al., NeurIPS 2022",
+      "description": "Cites simulation-guided beam search in extended constructive-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [18]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-heuristic",
+      "reference_label": "[22] Deudon et al., CPAIOR 2018",
+      "description": "Cites the policy-gradient TSP heuristic in extended related work and the EAN baseline description.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            19,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [22]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "att-gcn",
+      "reference_label": "[27] Fu et al., AAAI 2021",
+      "description": "Adopts its large-TSP test setting and heatmap-guided MCTS; compares Att-GCN results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            8,
+            12,
+            23,
+            24,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [27]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "[28] Geisler et al., ICLR 2022",
+      "description": "Cites adversarial-robustness analysis among non-autoregressive approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Main/appendix text and bibliography reference [28]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "[32] Graikos et al., NeurIPS 2022",
+      "description": "Contrasts graph diffusion with image-based TSP diffusion and compares its outputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            12,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [32]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[47] Hottung and Tierney, arXiv:1911.09539 (2019)",
+      "description": "Cites neural large-neighborhood search in improvement related work; the bibliography cites the preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [47]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "efficient-active-search",
+      "reference_label": "[48] Hottung et al., arXiv:2106.05126 (2021)",
+      "description": "Compares POMO with efficient active search; cites its preprint rather than assigning a later venue to the source.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [48]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "graph-guided-local-search",
+      "reference_label": "[49] Hudson et al., ICLR 2022",
+      "description": "Discusses neural guided local search and compares small-TSPLIB transfer results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            20,
+            21,
+            22
+          ],
+          "locator": "Main/appendix text and bibliography reference [49]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[53] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Discusses GCN heatmap construction and compares greedy/beam-search results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            13,
+            21,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [53]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[55] Karalias and Loukas, NeurIPS 2020",
+      "description": "Cites unsupervised graph optimization in its non-autoregressive-solver discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Main/appendix text and bibliography reference [55]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[57] Khalil et al., NeurIPS 2017",
+      "description": "Cites learned graph optimization in multimodality and extended constructive-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            13,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [57]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[58] Kim and Park, NeurIPS 2021",
+      "description": "Cites collaborative routing policies in extended improvement-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [58]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "sym-nco",
+      "reference_label": "[59] Kim et al., NeurIPS 2022",
+      "description": "Cites symmetry-based training and compares Sym-NCO results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13,
+            19,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [59]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "attention-model",
+      "reference_label": "[64] Kool et al., ICLR 2019",
+      "description": "Uses AM benchmark settings, discusses probabilistic solution sampling and compares AM results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            14,
+            19,
+            21,
+            23,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [64]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "pomo",
+      "reference_label": "[67] Kwon et al., arXiv:2010.16011 (2020)",
+      "description": "Cites POMO training and compares its single-trajectory/augmentation and active-search variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            14,
+            19,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [67]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[68] Kwon et al., NeurIPS 2021",
+      "description": "Cites matrix encoding networks in extended constructive-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [68]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[70] Li et al., NeurIPS 2018",
+      "description": "Cites and compares graph-convolutional guided tree search on independent sets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [70]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-to-improve",
+      "reference_label": "[76] Lu et al., ICLR 2020",
+      "description": "Cites iterative routing improvement in extended related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [76]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "[78] Ma et al., arXiv:1911.04936 (2019)",
+      "description": "Cites graph-pointer hierarchical reinforcement learning in extended related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [78]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "dact",
+      "reference_label": "[79] Ma et al., NeurIPS 2021",
+      "description": "Cites DACT in the introduction and extended improvement discussion; the DPDP label pointing to this number is inconsistent and is not treated as a separate target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15,
+            20,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [79]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "rl-vrp",
+      "reference_label": "[83] Nazari et al., NeurIPS 2018",
+      "description": "Cites recurrent vehicle-routing RL in extended task coverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [83]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "dynamic-am",
+      "reference_label": "[90] Peng et al., ISICA 2019",
+      "description": "Cites dynamic attention in extended constructive-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [90]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "dimes",
+      "reference_label": "[92] Qiu et al., NeurIPS 2022",
+      "description": "Uses DIMES as a major TSP/MIS baseline and source of test settings; contrasts independent heatmaps with diffusion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            15,
+            19,
+            21,
+            24,
+            25
+          ],
+          "locator": "Main/appendix text and bibliography reference [92]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "ppo-bihyb",
+      "reference_label": "[110] Wang et al., arXiv:2106.04927 (2021)",
+      "description": "Cites a bi-level graph-optimization framework in extended improvement related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [110]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[113] Wu et al., TNNLS early-access citation (2021)",
+      "description": "Discusses learned improvement heuristics and their inference/training scaling costs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            17,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [113]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[114] Xin et al., AAAI 2021",
+      "description": "Cites multi-decoder routing training and compares MDAM results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            17,
+            19,
+            24
+          ],
+          "locator": "Main/appendix text and bibliography reference [114]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "neurolkh",
+      "reference_label": "[115] Xin et al., NeurIPS 2021",
+      "description": "Cites NeuroLKH in extended improvement-solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            20
+          ],
+          "locator": "Main/appendix text and bibliography reference [115]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[119] Yolcu and Poczos, NeurIPS 2019",
+      "description": "Cites learned SAT local search in its extended discussion of optimization tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [119]"
+        }
+      ]
+    },
+    {
+      "citing": "difusco",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[122] Zhang et al., arXiv:2010.12367 (2020)",
+      "description": "Cites job-shop dispatching RL as another optimization task; the bibliography uses its preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            19
+          ],
+          "locator": "Main/appendix text and bibliography reference [122]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added the omitted independent-set task and Graph Optimization family.",
+    "Explained maximum versus maximal terminology from the actual objective.",
+    "Separated synthetic target-size training from cross-size transfer and documented curriculum initialization.",
+    "Separated neural denoising, decoding, 2-opt and MCTS budgets; corrected interpretation of total runtime and heuristic-reference gaps.",
+    "Retained the ER counterexample and its continuous-diffusion setting instead of claiming universal discrete-diffusion superiority.",
+    "Documented negative-gap rounding caveat and inconsistent DPDP/[79] attribution; did not invent an unsupported DPDP citation.",
+    "Replaced inferred acceptance date with publisher-supported publication year.",
+    "Recorded 33 explicit internal citations; rejected Pointer Networks title-match false positive inside a different graph-pointer paper title.",
+    "Fresh restart independently reread all 26 pages and manually rechecked absence of a separate publisher supplement; qualified inconsistent TSPLIB prose using Table 6.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ac142f5f0a4039bd65c7dd6da7c641f17001ba3b311770c6a9e26a07ac98dc53"
+}

@@ -1,0 +1,524 @@
+{
+  "version": 1,
+  "paper_id": "cam-diffusion-co",
+  "note_path": "specialist/cam-diffusion-co.md",
+  "baseline_note_sha256": "cc1eaae7c679b59540b7cb0541428023c5a84aeb560a5bfe85931ceacf1e9096",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/feng26o/feng26o.pdf",
+      "version": "Complete formalICML2026PMLR306:30359-30378,20pages including all scientificproofs/AppendicesA-C;September29,2026",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/feng26o/feng26o.pdf",
+      "local_path": "research/import-272/nco-104649ddce.pdf",
+      "sha256": "c13faa97402994ca75524342154762ee884c4570d9a4a17eb85586fcb66d0297",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full title3authors/twoinstitutions/SOC formulation/PDF1-3. Unsupervised groundobjectivewithconsistentpenaltyorpostprocessor assumedEq2;fixedpositive lambda lowT cost transitioncount, unique closest globalmin assumption Prop3.1, exact adjoint cost-to-go differences Prop3.2 vs coming approximate CAM. Native benchmark4problems not automaticallysharedcheckpoint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read lean-adjoint approximationEq17-23 and defaultlambda0/noentropy ablation, finiteBernoullitimeapprox, exactQUBOEq32needdiagcheck, local-searchsurrogateEq33/BCE vsglobalgEq2, MIS/TSPallTable1/2 rows. CAMTSP500worseDIFUSCO/FMIP;TSP1000better;ERlargegapCAMselfbaseline notcertificate. All diffusionbaselines reimplementedfromscratch. Theoretical assumptionsnotpractical guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read standardizedterminalonlygreedy/2opt/bestrunsandsequentialtotalruntime, fullMaxCut/CVRPTables3/4 andallablations5/Figs1/2text. Gapsrelativeheuristics/CAMnotcertifiedzero;CVRP2.70vsDIFUSCO2.63 exception;local-searchteacherablation2.83/2.36/2.18;ADlowvarianceempiricalclaimnotformalvariancebound. Fullrelatedwork/conclusionackidealizationandproblemheuristics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all complete bibliography pp10-12; formal FMIPtitleMILP despite usingadaptedFMIPonrouting, GenSCO conferenceyear2026 printed, RLNNaliasrld-co bbJ0QCujU4. Fengetal2025arxiv2505.16952 possibleFrontierCOmetadataaliasneedexactIDcheck. Everypairedcitationidentitywillbechecked, notalgorithm-nameguess."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read everylineA1/A2/A3start proofs. Eq45 requiresuniqueclosestendpointdominates, Eq54neighborusesSAMEclosestwithoutchecking otherglobalmin nowcloser/tied; Prop3.1 mayneedneighborstability, notautomaticallyfromuniquenessonlyatx. ExactbackwardKolmogorovadjointProp3.2 validfiniteCTMC. Needminimalcounterexample +renderandrest beforeclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullA3remainder/A4boundarywarningEq81-88 andB1/B2setup. Authors explicitly assume local/globaldirectionconsistencyforEq22. SDDScomparatorisFORWARDKLonly, notoriginalstrongrKLPPO. NonDiffbaselinescopied, diffusionretrainedunifiedarchitecture/notimestepembedding, datasets4000/1000RB16284train128/16testER. LeanEq17 rate-sharing may failmultiminimawhileProp3.1rateformula stillholds; needconcretecounterexample, notinvalidatetheoremsblanket."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Finished all20formalpages/allrefs/A1-A4/B1-B2/C1-C2. Read exactGNN64andANGNN256/layers/separatetasks, RAdamvsAdamW/tauanneal, 128testsTSP,16samples10steps+1000twoopt,50epochs, train4trajectories10steps. MIS20runs50steps(or200ERlarge). Addedoptionalupdate-magnitudereg/segmentedCAMnotuniformdefault. Importantfeedbackcostretainslocal-searchtraining+inference."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Terminal structured feedback aims to avoid labels and unstable scalar/importance-weighted feedback.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Intro/question/motivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "CTMC cost-to-go exact adjoint plus approximate lean propagation and graph/routing training adaptations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Equations1-33/Propositions3.1-3.3/fullproofs"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate native/dataset-specific graph and routing checkpoints; only within-MIS ER-size transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            18,
+            19
+          ],
+          "locator": "All native benchmark/model protocols"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Ideal fixedpositive-lambda lowtemperature control versus practicallambda0/Bernoulli/terminalteacherBCE and localglobal consistency distinguished.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            17,
+            19,
+            20
+          ],
+          "locator": "Ideal equations/proofs/AppendixA4/practicalB/C/actualcode"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "CAMwinschosenunsupervisedcomparisons withSDDSforwardKLonly;notallSL/OR. MISbestreferencegaps/TSP500/CVRPexceptions,128/16testcounts and heuristic costs retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            18,
+            19
+          ],
+          "locator": "All5tables/2figures/AppendixBbaselineandprotocol"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "CuratorQUBOdiagterm andmultiminimumcounterfactualrateexamplelimit printedgeneralformula/leanassumption; do notrefuteexactadjoint/pointwiselimit/empiricalresults.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            9,
+            13,
+            14,
+            15,
+            16,
+            17,
+            20
+          ],
+          "locator": "Eq17/Eq32 and AppendixA4; executed recompute_scope.py, precise assumptions"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "20pagesallrefs/proofs/science8visual,manual publisher/API403/treecheck and codefullspecified files/launchdifferences/no neuralrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Complete reading log and selected actual implementation evidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v306/feng26o.html",
+      "locator": "Exact3authors;PDF1 LTI CarnegieMellon/UIUC;PMLR30630359-30378;HTMLcitation_publication_date2026/09/29. Formal eligibility separate fromarxiv."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/feng26o.html",
+      "locator": "Manual RelatedMaterial PDF/OpenReview/Software only, no separate scientificsupplement. Complete20pA1-A4/B/Cscientific material read. OpenReviewy6LGSCnNOzv1/v2notes403cached. Official55filetree noPDFZIP; onecam.pngmethodimage/data+checkpointsHuggingFace are implementation resources, no explicitly missing science document."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v306/feng26o.html",
+      "locator": "Complete formal20p SHAc13faa97402994ca75524342154762ee884c4570d9a4a17eb85586fcb66d0297. Allrefs/proofs/appendicesread. Visual3/4/5/14/6/8/17/19, keyEq17/Eq32/proofintermediates and mainresults confirmed."
+    },
+    {
+      "field": "code_url,implementation scope",
+      "source_url": "https://github.com/Shengyu-Feng/CAM",
+      "locator": "Commit1d3f4ae2806c742f3222af5f4e1d13454751b33d55files. FullREADMErequirements/CAM85/MISenv72/MCutenv36/MISloader104/TSPenv226/twoTSPMISlaunchscripts, sharedsolver268-389read. Separate b=-1 andnoselfloopsavoidgeneralQdiagissue. TSP500batch4/eighttrainingpaths/samples_per_epoch1024 differsprintedbatch8/fourpaths. No trainingrerun."
+    },
+    {
+      "field": "curator theoretical scope",
+      "source_url": "https://proceedings.mlr.press/v306/feng26o.html",
+      "locator": "PDF5Eq32 missingdiag(Q);Q=[-1]x0printed0vs-1true. PDF4preEq17rateequality notimpliedfromProp3.1: g000=g111=0others1,x100,i2,j3,lambda.1,t.3⇒rates0vs1/.7, bothnearestunique. Exact finite-stateSOC scriptrecompute_scope.pyexecuted. Additionalcounterfactualsameoptimumstability iscuratorcondition,notauthorconclusion. No global否定/empiricalinvalidity."
+    },
+    {
+      "field": "citation identity",
+      "source_url": "https://arxiv.org/abs/2505.16952",
+      "locator": "FormalPDF10 Fengetal2025 oldtitle AcomprehensiveevaluationofcontemporaryML-basedsolvers... exactarxiv2505.16952 matches FrontierCOcurrenttitle/authors(v3March9,2026),body1background; retaincorrectstablefrontiercoedge."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.(2019)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "BodyPDF5 explicitKool et al.(2019); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "coexpander",
+      "reference_label": "Ma et al.(2025a)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "BodyPDF8 explicitMa et al.(2025a); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al.(2024)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 explicitSanokowski et al.(2024); full reference PDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang(2023)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 explicitSun & Yang(2023); full reference PDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.(2022)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            11,
+            12
+          ],
+          "locator": "BodyPDF18 Qiu et al.(2022); complete DIMES reference beginsPDF11 and endsPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.(2019)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitJoshi et al.(2019); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al.(2024)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "BodyPDF9 explicitLi et al.(2024); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "fmip",
+      "reference_label": "Li et al.(2025)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "BodyPDF6 explicitLi et al.(2025); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "gensco",
+      "reference_label": "Li et al.(2026)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "BodyPDF9 explicitLi et al.(2026); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.(2020)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            11
+          ],
+          "locator": "BodyPDF18 explicitKwon et al.(2020); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "rld-co",
+      "reference_label": "Feng & Yang(2025)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1 explicitFeng & Yang(2025); full reference PDF10."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "sdds",
+      "reference_label": "Sanokowski et al.(2025)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 explicitSanokowski et al.(2025); full reference PDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.(2018)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            11
+          ],
+          "locator": "BodyPDF18 explicitLi et al.(2018); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Bother et al.(2022)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            10
+          ],
+          "locator": "BodyPDF18 explicitBother et al.(2022); full reference PDF10."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "ml4co-bench-101",
+      "reference_label": "Ma et al.(2025b)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "BodyPDF7 explicitMa et al.(2025b); full reference PDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cam-diffusion-co",
+      "cited": "frontierco",
+      "reference_label": "Feng et al.(2025)",
+      "description": "Explicit body/baseline/method reference; complete bibliography checked. FrontierCO rename verified by exactarXiv2505.16952.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1 explicitFeng et al.(2025); full reference PDF10."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedallnativeproblems/theoryconditions/practicalteacher/nativecheckpointscope.",
+    "LimitedSDDScomparator toforwardKL andgaps toactualheuristic/bestlistedreferences;retainedSL/ORexceptions/heuristiccosts.",
+    "AddedpreciseQUBOdiagonal/rate-sharingcuratorchecksandcode reconciliation withoutinvalidatingempiricalresults.",
+    "Complete20pallscience/8visual/supplementmetadata and16identitycheckededges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5f748076eebcd44aebae9ac917bbb12fbaebd85a82c6fcaeb72ba5065c5e5373"
+}

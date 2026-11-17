@@ -1,0 +1,667 @@
+{
+  "version": 1,
+  "paper_id": "less-is-more",
+  "note_path": "specialist/less-is-more.md",
+  "baseline_note_sha256": "465949035d5045324b737596e716423d06c52426ee86e0c2ef682f0c576c19d6",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2403.17159",
+      "retrieval_url": "https://arxiv.org/pdf/2403.17159",
+      "version": "arXiv:2403.17159v1,2024-03-25,14pages including scientific AppendicesA-E and author biographies; official institutional record still Preprint",
+      "local_path": "research/full-text-review/less-is-more/paper.pdf",
+      "sha256": "aa475fc8ab29936701ca8ea8c49b084cb7e658381033cbca230246288076826e",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh reread title, five authors/two affiliations including Volvo, motivation/contributions and graph-sparsification versus decoder distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read full related-work grouping, GCN/GAT equations, TSP definition, kNN disconnection and 1-tree alpha candidate rationale."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read full alpha-candidate algorithm, symmetrization, attention masks only encoder, separate-level ensemble concatenation/MLP, no theoretical optimal-edge retention guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read exact all-edge retention counts TableI and all GAT TableII cells; separate GNN/Transformer dataset and ensemble settings and report best-epoch evaluation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read all GCN/TableIV rows, Transformer data/epoch/runtime differences, conclusion, distributions and AppendixB including weighted GCN score normalization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read explicit unchanged complete-graph decoder, RL setting/code-release promise, augmentation/out-of-square note and entire timing/ensemble AppendicesC-E plus bibliography start."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read full remaining bibliography including actual cited preprint years and all five author biographies; no further scientific appendix afterE."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sparse",
+      "category": "contribution",
+      "statement": "kNN/1-tree sparse encoder graphs and multilevel representation ensembles improve selected constructive TSP validation results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "SectionIV Figures2-4"
+        }
+      ]
+    },
+    {
+      "id": "decoder",
+      "category": "method",
+      "statement": "Encoder-only mask, separate encoders concatenate/MLP; unchanged decoder can choose any unvisited node regardless of sparse candidate edges.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            10,
+            11
+          ],
+          "locator": "SectionIV.B and AppendixB explicit decoder statement"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Best-epoch validation, exact all-edge coverage counts, GAT/GCN/Transformer results and additional preprocessing/training costs qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            12
+          ],
+          "locator": "TablesI-VI and AppendixB-D"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive TSP only, no incumbent learned moves or cross-task weights demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10,
+            11
+          ],
+          "locator": "Experimental tasks and unchanged end-to-end autoregressive decoder"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date",
+      "source_url": "https://arxiv.org/abs/2403.17159",
+      "locator": "v1March25,2024 title page five authors; Chalmers and VolvoGroupTrucksTechnology affiliations; missing Volvo restored and author accents corrected."
+    },
+    {
+      "field": "inclusion, venue, publication",
+      "source_url": "https://research.chalmers.se/en/publication/540540",
+      "locator": "Official institutional publication540540 and current author publication list explicitly Preprint2024. No formal venue/DOI or qualifying acceptance established; reference-only inclusion retained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://arxiv.org/abs/2403.17159",
+      "locator": "Actual manuscript all14pages fully read: scientific A-E included, F biographies read. Manually checked arxiv history and institutional record; no separate scientific attachment or missing appendix pointer. Code promised on acceptance onp11, no official repository located."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2403.17159v1#page=6",
+      "locator": "Original Figure3 Rect(48,60,565,187),5x; depicts actual encoder preprocessing with unchanged constructive decoder; all tables and appendix figures inspected."
+    },
+    {
+      "field": "scope, paradigm, budgets",
+      "source_url": "https://arxiv.org/pdf/2403.17159v1#page=11",
+      "locator": "AppendixB all-edge decoder explicit; separate TSP50/100 training, no CVRP experiments. TablesIV/V additional preprocessing and900/1000epoch reused augmented pool differentiated from distinct data volume."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2403.17159",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-03-25; title on abstract page: Less Is More -- On the Importance of Sparsification for Transformers and Graph Neural Networks for TSP. This date is preprint history, not formal publication. Cached research/full-text-review/less-is-more/arxiv-landing.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "less-is-more",
+      "cited": "learning-heuristic",
+      "reference_label": "7",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "rl-vrp",
+      "reference_label": "8",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "attention-model",
+      "reference_label": "9",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "10cited2019",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "pomo",
+      "reference_label": "11",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "12",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "pointerformer",
+      "reference_label": "13",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "14arxiv2019",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "att-gcn",
+      "reference_label": "15",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "16",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "utsp",
+      "reference_label": "17arxiv2023",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "dimes",
+      "reference_label": "18",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "graph-guided-local-search",
+      "reference_label": "19",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "learning-to-improve",
+      "reference_label": "21",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "22cited2021",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "neurewriter",
+      "reference_label": "23",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "24",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "learning-to-delegate",
+      "reference_label": "25",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "rbg",
+      "reference_label": "26",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "select-and-optimize",
+      "reference_label": "27",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "neurolkh",
+      "reference_label": "28",
+      "description": "Explicit numbered in-text related-work/method/baseline citation and matching actual bibliography, retaining cited preprint versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "less-is-more",
+      "cited": "routing-dro",
+      "reference_label": "36numbering-inconsistency",
+      "description": "Explicit [36] and matching routingDRO bibliography; surrounding baseline prose appears to contain a numbering inconsistency, not attributed as a correct Pointerformer reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered in-text citation or inclusive reference range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fully read14pages including allscientific AppendicesA-E and biographies; retained reference-only because official Chalmers record still Preprint2024.",
+    "Restored Volvo paper affiliation and corrected author accents; no biography historical affiliations added.",
+    "Corrected sparse encoder versus full decoder distinction, representation ensemble versus solution selection, weightedGCN confound and RL construction.",
+    "Qualified best-validation-over1000epochs protocol, retained-all-optimal-edge case counts, gap rounding and unusually poor denseGAT reference.",
+    "Separated distinct16million augmented pool from90/100million sampled training examples, threeencoders and additional preprocessing runtime; no unsupported scalability/publicbenchmark claims.",
+    "Original Figure3,22 explicit citations with actual cited versions and[36]numbering inconsistency retained."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0f402938525e75c8f7281a161947894b59085c5e74fa1d78f6089a2e37684526"
+}

@@ -1,0 +1,450 @@
+{
+  "version": 1,
+  "paper_id": "birkhoff-extension",
+  "note_path": "studies/birkhoff-extension.md",
+  "baseline_note_sha256": "c0f8067efcc0d2997f49aac03c5a6adf59087ea4e5e070c07950a7f401799817",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9840235bd522f0f067f306ddfd6d1ca1-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9840235bd522f0f067f306ddfd6d1ca1-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-a95075c1ee.pdf",
+      "sha256": "afeb6c57d36d45871598bad96a25f0d8da4d3e823c6da345cd6d37c6c17575e8",
+      "pages": 40,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Fresh complete reading of main construction, all coefficient/score definitions, properties and optimization procedures; tracked exact full versus truncated guarantee scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 14,
+      "notes": "Read complete main experiments/conclusion, all references and table of contents; verified reference identities and source-benchmark distinctions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 18,
+      "notes": "Read every deferred proof of coefficient continuity, differentiability, gradient, minima, rounding and algorithm correctness. Independently identified support-domain loss in Property4-2 proof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 24,
+      "notes": "Read neural training/fine-tuning pilot, rotated full Table4, complete Figure1, tree construction/surjectivity proof, problem formulations, optimization curves and precise n/10-minute timing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 30,
+      "notes": "Read every ablation/scalability table, complete score-change lemma/proof, convex-closure comparison and constrained algorithms/properties."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 34,
+      "notes": "Read complete truncated-normalization definition/proofs, all added Lipschitz derivation, GPU-friendly matching algorithm/proof and beginning of checklist; independently checked small counterexamples to stronger printed claims."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 35,
+      "last_page": 40,
+      "notes": "Read full remaining checklist, including no-error-bars disclosure, code links and all declarations. Four contact sheets visually inspected for formulas, proofs, Table4 rotation, framework, curves and algorithm conventions."
+    }
+  ],
+  "claims": [
+    {
+      "id": "extension",
+      "category": "contribution",
+      "statement": "A fixed permutation order gives continuous a.e.-differentiable Birkhoff coefficients; an identifying score matrix permits matching-based evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            18
+          ],
+          "locator": "Definitions2.3/2.6/2.9; Theorems2.4-2.8 and complete proofs"
+        }
+      ]
+    },
+    {
+      "id": "basic-guarantee",
+      "category": "method",
+      "statement": "Full extension is a genuine convex combination; global minimum value and best-supported rounding inequality follow without global algorithmic convergence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            17
+          ],
+          "locator": "Property3 and Property4-1, complete convex-combination proofs"
+        }
+      ]
+    },
+    {
+      "id": "truncation",
+      "category": "method",
+      "statement": "Normalized first-K terms reduce matching cost; basic average rounding remains valid, but full argmin-hull location cannot generally transfer after discarding mass.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            31,
+            32
+          ],
+          "locator": "AppendixJ Equations21-23 and RemarkJ.3; note labels independent three-cyclic-permutation counterexample as curator analysis"
+        }
+      ]
+    },
+    {
+      "id": "neural",
+      "category": "classification",
+      "statement": "Main optimization is per-instance conventional optimization; AppendixB is a separately trained neural TSP pilot with test fine-tuning, not one cross-task checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            19,
+            20,
+            21
+          ],
+          "locator": "Section3; AppendixB complete pilot and Figure1"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "QAP benchmark favors the selected BE configuration; Gurobi is faster and better on tested TSP; large synthetic random-initialized BE is weaker than FAQ.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            25,
+            26,
+            27
+          ],
+          "locator": "Tables1-3/5-8 and exact datasets/budgets"
+        }
+      ]
+    },
+    {
+      "id": "pilot",
+      "category": "experiment",
+      "statement": "Neural TSP trains6000mixed-size20/30/40instances for100epochs and uses test fine-tuning; Table4 shows a quality/runtime tradeoff.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            20
+          ],
+          "locator": "AppendixB setup and complete rotated Table4"
+        }
+      ]
+    },
+    {
+      "id": "support-counterexample",
+      "category": "limitation",
+      "statement": "Curator analysis: Property4-2 is false at unsupported boundary inputs: n2,A=swap,S=I,f(I)=0,f(swap)=1 gives rounded1>0.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            17
+          ],
+          "locator": "Algorithm2 matching-support domain; Property4-2 assertion; proof before Equations11-14 silently maximizes over all permutations. Exact rational check in reviewer cache."
+        }
+      ]
+    },
+    {
+      "id": "greedy-counterexample",
+      "category": "limitation",
+      "statement": "Curator analysis: displayed Algorithm7 fixed-row greedy rule on complete weights[[10,9],[100,0]] gives10 versus optimum109, disproving its printed half-optimum guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            33
+          ],
+          "locator": "AppendixL Algorithm7 and TheoremL.2; complete2x2 independently evaluated, not an author claim"
+        }
+      ]
+    },
+    {
+      "id": "local-convention",
+      "category": "limitation",
+      "statement": "Local-escape statements cannot exclude global minima; equality branch is global. Displayed gradient argmax and minimization prose also differ.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            28,
+            31,
+            32
+          ],
+          "locator": "Theorem2.11, Algorithms3-4, AppendixG equality branch and TheoremJ.2"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "reproducibility",
+      "statement": "The paper discloses expensive matching and no error bars; code/data are linked in the checklist and official scientific appendices are integrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            24,
+            35,
+            36
+          ],
+          "locator": "Conclusion; hardware; checklist4/5/7"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9840235bd522f0f067f306ddfd6d1ca1-Abstract-Conference.html",
+      "locator": "Manually opened NeurIPS2025 official record with Robert(Riley)Nerem name form; PDFpage1 lists UCSD/NYU and formal conference footer. Year precision retained."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/luckyjackluo/BE-for-Combinatorial-Optimization",
+      "locator": "PDFpage35 explicit checklist link; manually opened matching public author repository."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9840235bd522f0f067f306ddfd6d1ca1-Supplemental-Conference.zip",
+      "locator": "Manually inspected1346-member official ZIP and extension inventory: code/data/checkpoints/logs/6notebooks/README, no scientificPDF. README read; all6notebooks text-cell inventory checked:no markdown scientific narrative. All scientificAppendicesA-L and complete checklist are integrated in the40-page registered publisherPDF, all read."
+    },
+    {
+      "field": "independent curator checks",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/9840235bd522f0f067f306ddfd6d1ca1-Paper-Conference.pdf",
+      "locator": "Exact-arithmetic reviewer script research/full-text-review/birkhoff-extension/curator-counterexamples.py verifies3 minimal counterexamples: Property4-2 support failure, AppendixL row-greedy ratio10/109, AppendixJ truncated-argmin hull failure. These are explicitly marked curator analysis in note, not presented as author corrections."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/9840235bd522f0f067f306ddfd6d1ca1-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/birkhoff-extension/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "birkhoff-extension",
+      "cited": "attention-model",
+      "reference_label": "[33] Kool et al. (2018), arXiv:1803.08475",
+      "description": "Cites neural attention-based routing in the learning-framework survey.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage12: [33] Kool et al. (2018), arXiv:1803.08475"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[2] Amizadeh et al. (2019)",
+      "description": "Cites unsupervised differentiable circuit-SAT as a related framework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage10: [2] Amizadeh et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[28] Karalias and Loukas (2020)",
+      "description": "Cites probabilistic unsupervised graph optimization and contrasts set-function extensions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage11: [28] Karalias and Loukas (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "gcnn-branching",
+      "reference_label": "[24] Gasse et al. (2019)",
+      "description": "Cites supervised learned graph-based exact combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage11: [24] Gasse et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[31] Khalil et al. (2017)",
+      "description": "Cites graph reinforcement-learning optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage12: [31] Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[6] Bello et al. (2017)",
+      "description": "Cites reinforcement-learning neural combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage10: [6] Bello et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "pointer-networks",
+      "reference_label": "[51] Vinyals, Fortunato and Jaitly (2015)",
+      "description": "Cites supervised permutation-valued neural approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage13: [51] Vinyals, Fortunato and Jaitly (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "ppo-bihyb",
+      "reference_label": "[55] Wang et al. (2021)",
+      "description": "Cites bi-level neural graph combinatorial optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit body citation on PDFpage3; exact bibliography entry on PDFpage13: [55] Wang et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "principled-co-relaxation",
+      "reference_label": "[54] Wang et al. (2022)",
+      "description": "Cites principled probabilistic objective relaxation for unsupervised learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13
+          ],
+          "locator": "Explicit body citation on PDFpage4; exact bibliography entry on PDFpage13: [54] Wang et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "ucom2",
+      "reference_label": "[9] Bu et al. (2024)",
+      "description": "Cites generalized unsupervised objective/constraint handling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "Explicit body citation on PDFpage4; exact bibliography entry on PDFpage10: [9] Bu et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "birkhoff-extension",
+      "cited": "neural-set-function-extensions",
+      "reference_label": "[29] Karalias et al. (2022)",
+      "description": "Explicitly takes convex-decomposition extension ideas as inspiration for permutation objectives; AppendixB compares neural setup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicit body citation on PDFpage4; exact bibliography entry on PDFpage12: [29] Karalias et al. (2022)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded allsix sections from40-page complete publisher reading, integrated appendices and code-only supplement inventory.",
+    "Kept valid full convex-combination globalvalue/rounding facts separate from unconditional warmstart, truncatedargmin, matchingapproximation and convergence claims.",
+    "Added explicit independently checkable curator counterexamples and precise published statement/proof locators; no inferred support repair is described as an author conclusion.",
+    "Separated conventional multibenchmark optimizer from neuralTSP pilot and its test-time fine-tuning; added true budgets, hardware, timing/quality tradeoffs and largeQAP limitations.",
+    "Added DFASPproblem metadata; retained theory/studyclassification and11exact internalcitations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "987c7cc2afa1d744eb7f803e70a2a435041f2d3df4596a9b6b71834a6dcd71f8"
+}

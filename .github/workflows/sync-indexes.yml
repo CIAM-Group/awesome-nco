@@ -4,8 +4,13 @@ on:
   push:
     branches: [main]
     paths:
+      - 'README.md'
       - 'specialist/*.md'
       - 'generalist/*.md'
+      - 'studies/*.md'
+      - 'data/reviews/**'
+      - 'data/inclusion-policy.json'
+      - 'docs/nco-publication-audit-2026-11-16.json'
       - 'scripts/**'
   workflow_dispatch:
 
@@ -22,14 +27,16 @@ jobs:
           node-version: 20.19.0
           cache: npm
       - run: npm ci
+      - run: npm run review:sync
       - run: npm run indexes
+      - run: npm run audit:sync
       - name: Commit generated indexes when needed
         run: |
-          if git diff --quiet -- specialist/README.md generalist/README.md; then
+          if git diff --quiet -- README.md data/relations.yml data/reviews/relation-dispositions.json data/reviews/supplement-inventory.json docs/FULL_TEXT_REVIEW.md docs/NCO_PAPER_CHECKLIST_2026-11.md docs/nco-publication-audit-2026-11-16.json; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add specialist/README.md generalist/README.md
+          git add README.md data/relations.yml data/reviews/relation-dispositions.json data/reviews/supplement-inventory.json docs/FULL_TEXT_REVIEW.md docs/NCO_PAPER_CHECKLIST_2026-11.md docs/nco-publication-audit-2026-11-16.json
           git commit -m "chore: sync paper indexes"
           git push

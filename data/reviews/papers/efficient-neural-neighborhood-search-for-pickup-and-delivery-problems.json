@@ -1,0 +1,457 @@
+{
+  "version": 1,
+  "paper_id": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+  "note_path": "specialist/efficient-neural-neighborhood-search-for-pickup-and-delivery-problems.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "4e40c6934d5f01b26b745308fc895b890f4b609800de91fc146c50db562c04f4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2022/0662.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2022/0662.pdf",
+      "version": "ActualformalIJCAI2022PDF9pages4776-4784fullyreadincludingallmainresultsandcompletebibliography.",
+      "local_path": "research/full-text-review/efficient-neural-neighborhood-search-for-pickup-and-delivery-problems/paper.pdf",
+      "sha256": "7e32b34d344b1f13810414fd2cdff17691ada30f927fe701cfd97097101d52ef",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2204.11399v3",
+      "retrieval_url": "https://arxiv.org/pdf/2204.11399v3",
+      "version": "Actual2204.11399v3Oct7_2022PDF11pagesfullyreadincludingallmaintextreferencesAppendicesA-Bandfull44benchmarkrows;explicittypo-correctedextendedversion.",
+      "local_path": "research/full-text-review/efficient-neural-neighborhood-search-for-pickup-and-delivery-problems/arxiv.pdf",
+      "sha256": "cf43c28716122ce33aff7bbb63b52f341c0520f498fc1f8b28ce4550d8e22e25",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readformal7authors/NUSSIMTechAstarShandongI2RAstarSCUT;MaLiequalCaocorrespond. Explicitfootnotearxiv2204.11399fulllargeTable7morediscussionmustread. N2SlearnedcompletePDPtourpairremove/reinsertimprovementnotNCSjournalhybrid. TwoPDTSP/LIFOnativetaskbranchchecksameweightsbeforegeneralist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadPDTSPsinglevehicleprecedence/PDTSP-LIFOstacknotcapacitatedmultiVRP. Currentcompletecycle+history+bestcostMDP rewardincumbentimprovement(notcurrentcostallpositive). Pairremove/reinsertprecedencemask. SynthAttMLPcombinestwoaspectmultiheadscores,auxcomputedonceacross3layers4heads128dim. CPEandtwoMLPdecoders. Separatepretrainedtaskscheckpointdirsseen=>specialistpendingexperiments."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadnstepPPO200epochs20batches600n5Ttrain250kappa3epsilon.1gamma.999actor8e-5critic2e-5decay.985/warmupe/rho. Randomsequentialinitialsolutionnotneuralconstructor. N2SAinvariantaugmentfractionhalfVcheckvisual/historyhalfV. Training1/3/7dayssizes21/51/1018RTX2080TiE52680;2000testtotaltimes16CPUparallelLKHvsall8GPUavailable. LKH10kgapreferenceheuristicnotexact."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 7,
+      "notes": "ReadallTables3-5. N2Splain1kPDTSP21.21gapworseDACT.20 and3k.05vs.03;PDTSP101N2SA2k-.01/80mvsLKH98m3k-.20/121m. LIFO1013k-1.47/161mvsLKH67m/notfaster;1k-.47worseHeterPOMO4k-.98. All2000totalbatchtimesnotlatency/negativefiniteheuristicrefnottrueoptimum. Synth128.76M340s2.40vsDAC1.25M400s2.43singleGPU51."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "ReadallremaininggeneralizationTables6-7/fullrefs. Benchmark10independentrunsavg/best;PDTSP2012.82avggap2.19bestvsopt,OODLIFOworseB2avg2.11best1.06notgeneralLKHsuperiority;fullrowsarxivrequired. AllbibidentitiesinclHeterAMdistinctTITSjournal/NCSdifferentfuturejournalnotmapped. Randominitial/separatetaskcheckpoints=>specialistimprovement."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshreadarxivv3Oct7_2022fullintro/bylinefootnoteexplicitfixestypos/extraresultsversusformal,notdifferentNCSjournal. Same7authors/equal/correspond;fullbodyrelatedworkexplicitciteidentities."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Freshreadv3allMDP+SynthAttCPEandbothdecoders. Correctedv3CPEperiodversusfrequency/index/headi,mconcatandreinsertionargumentordercomparedformalexplicitversionnotcollapse. Samecompleteincumbentpairmoveimprovement;auxscoresonce3layers."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Readv3fullPPOalgorithms/invariants/history/8002000200baselineepochs and200N2S/1,3,7days;randominitialsnotlearnedconstruction;all2000timings16CPUversus8GPU. NojointtrainingcrossPDTSP/LIFOclaim,separatetaskmodels."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Readallv3Tables3-7/completeexplanationssamefiniteLKHnegativegaps/all2000batchtimes/notuniformsuperiority. OODtext<=201versussummary<=101needsactualappendixfullrows;10independentruns/G2.82on201/B2mean2.11. Mainendsrefsnext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fullv3refsread/AppendixAall20PDTSPand24LIFOrows. ClosestsizecheckpointnormalizedcoordinatesandINCREASEdecoderCunspecifiedvalue. Table9only25,51,75,101not201despitebody<=201;PDTSP201actual. pr1002_101N2Savg62787worseHeter62569/someHeteravg<bestrowsprintednotrepair. Notallinstancesstrictlyimprove/nrwd151inconsistentavg-bestfields. NeedAppendixBnext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 11,
+      "notes": "FullyreadAppendixBcapacity4stepproposal(dummydepots/features/masks/augmentation)notexperimentandnotimplementedjointnativegeneralistclaim. All9formal+11v3scientificpagescomplete;v3explicittypo/extraappendicesdisclosed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Synthattentionpluslearnedrequest-pairremoval/jointreinsertionanddiversityaugmentationforPDTSP/LIFO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Overview/Method"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Completecurrenttourrandominitialized,neuralpairmovesfeasibilitymask/nonnegativebest-incumbentreward;3layer1284heads/PPO/halfVaugmentation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations1-19/Algorithms1-2"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "200epochs20batches600T250PPO5/1,3,7days8GPU;2000instancetotaltimes16CPUheuristicvs8GPUavailable;3kLIFO101-1.47in161mvsLKH67notuniversalruntimewin.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Setup/Tables2-7"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "All20PDTSP24LIFOrowsread/nearestcheckpoint+Cchangedunspecified;LIFOactual<=101/OODmeanB2+2.11;pr1002avgworse/somecomparatoravg-bestinconsistencies;capacityproposaluntested.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "AppendicesA-B"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistimprovement:separatetask/sizecheckpoints,randomcompleteinitialtourlearnedpairincumbenteditor;notNCSjournalcollaborativeconstructorframework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Actualinitialization/inference/experimentprotocol"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Formal9+v311allread/v3explicitcorrectstyposandextraresults;official7authors/2equal/Caocorrespond;main/refactorinventorynoextrascience;originalFigure1viewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8,
+            9
+          ],
+          "locator": "Byline/bibliography/registeredcoverage"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2022/662",
+      "locator": "Formalp1full7byline/MaLiequal/Caocorrespond/NUSSIMTechAstarShandongI2RAstarSCUT. OfficialpublisherBibTeXmonth7/Crossrefpublishedprint2022-07agree;noinventedday."
+    },
+    {
+      "field": "arxiv/version",
+      "source_url": "https://arxiv.org/abs/2204.11399",
+      "locator": "Savedprimaryhistoryv1Apr25_2022/v2Jun27/v3Oct7_2022. Actualv3footnotestatesfixestypos/addsdiscussionresults;fullyread11pagesincludingA-B. Formal9pallread. CPEperiod/index,headconcat,decoderargumentnotationdifferencesrecordednotbyte-equivalentclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/yining043/PDP-N2S",
+      "locator": "FormalexplicitfootnotearxivextendedfullTable7/morediscussionmetbyall11v3pagesA-Bfullread20+24rows. ManualdefaultHEAD53429a0312bb94b9189c140ff9136b5fe696ed9c26paths/refactor6aeea79398c42648ef50068b89e1b2e1280df0e126paths/noPDFTeXZIPnotebookadditionalscience;fullREADMEandrefactorREADMEchanges/emptyordinaryreleasesHTMLinspected. LinkedoldDACTnotebookimplementationguidealreadypriorroundreadnotN2Sextrascience."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/yining043/PDP-N2S/tree/53429a0312bb94b9189c140ff9136b5fe696ed9c",
+      "locator": "READMEseparatepdtsp/pdtspl20/50/100train/checkpoints/val_m50,100graphsize=101locations. agent/ppo.pyrolloutcoordinateaugment/randominitialproblem.get_initial_solutions/fixedactorloop/bestofcopies,history50. Conventionalcodeinventorynotfullrerun."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://www.ijcai.org/proceedings/2022/0662.pdf#page=2",
+      "locator": "OriginalFig1Rect48,49,565,241@4xatomicPNGviewedfull;allFigures1-5/Tables1-9/algorithms/formulasincludingfractiononehalfactualrenderchecked. Table9avg-bestanomaliesnotextractionartifact."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://www.ijcai.org/proceedings/2022/0662.pdf#page=9",
+      "locator": "Allformal/arxivbibandbody13primaryidentitiesconfirmed. AM2018andDPDP2021preprintversionpreserved;HeterAMTITSjournalnotcatalogued/notforced;NCS2024TPAMIisindependentextensionnotIDsynonym. YiMa2021hierarchicaldynamicPDPnotcataloguednotforced."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al., 2021",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Fu et al., 2021]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "attention-model",
+      "reference_label": "Kool et al., 2018",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Kool et al., 2018]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "dact",
+      "reference_label": "Ma et al., 2021b",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "BodyPDFp1;ReferencesPDFp9 [Ma et al., 2021b]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al., 2021",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Kool et al., 2021]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al., 2019",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Joshi et al., 2019]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung et al., 2021",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Hottung et al., 2021]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al., 2021",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Kim et al., 2021]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al., 2021",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Wu et al., 2021]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al., 2021c",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "BodyPDFp8;ReferencesPDFp9 [Li et al., 2021c]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney, 2020",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Hottung and Tierney, 2020]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian, 2019",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp8 [Chen and Tian, 2019]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "pomo",
+      "reference_label": "Kwon et al., 2020",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "BodyPDFp1;ReferencesPDFp9 [Kwon et al., 2020]"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al., 2018",
+      "description": "Explicitbodycitationwithmatchingbibliographyidentity;oldcitedversionyearpreservedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "BodyPDFp2;ReferencesPDFp9 [Nazari et al., 2018]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacepending7authors/affiliations/equal/correspond/Julypublication/April25v1metadata.",
+    "Correctspecialistimprovement:separatetaskcheckpointsandrandomcompleteinitialtour;capacityAppendixBproposalnotnewevaluatedtask.",
+    "Keepactual9formal+11v3versiondifferences/correctednotationandcompleteA-Bscientificcoverage.",
+    "Qualify2000totaltimes/8GPUvs16CPU/equalstepnotcomputeparity/negativeLKHreference/individualnegativecomparisons.",
+    "Recordclosestcheckpoint+increasedC/generalization<=101LIFOrows/avg-bestsourceanomaliesnotrepair.",
+    "OriginalFigure1fullview/manualmain+refactorrepoandallscienceinventory/13body+bibedges."
+  ],
+  "reviewed_note_sha256": "24b9b2e2e70fc2d2756cb43f86c30f4936f532ae815c22c03120681257a69abc"
+}

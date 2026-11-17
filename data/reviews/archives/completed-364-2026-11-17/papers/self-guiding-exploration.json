@@ -1,0 +1,363 @@
+{
+  "version": 1,
+  "paper_id": "self-guiding-exploration",
+  "note_path": "generalist/self-guiding-exploration.md",
+  "baseline_note_sha256": "89586e87254dec10270250ebee3ed24c2c766bdd98370f05be2650c96f4df33f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/eb9120be0dcaac0aec66d2e75deb69dd-Paper-Conference.pdf",
+      "version": "FormalNeurIPS2024full33pagePDFincludingallscientificappendices/tables/workedexample/checklist,freshlyread.",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/eb9120be0dcaac0aec66d2e75deb69dd-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-6b142beef7.pdf",
+      "sha256": "ec08eaf45f0485dfa3e2977639ab59a7fc120911cd70f7c047f671d2e3d2d551",
+      "pages": 33,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalNeurIPS2024SGE4authorsMBZUAI/KCL;generalLLMpromptingheuristictrajectoriesdecomposition/refinementmultipleCPnotcodegenerationclaim,27.84headlinependingmetriccheck,refsactualnumbered."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadTSPpromptformulationonlydegreeconstraintsomitsubtourelimination;SGEAlgorithm1exploreheuristictrajectories/decomposesubtasks/recursiveexecute/check/feedbackrefinement/integrate;N/KadaptiveLLMoutputs,Dinputnoexplicitdepthcounterinpseudocode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Full5phasepromptsand6CPtasksAP/KP/BPP/TSP/VRP/JSPn5/10/15/20/30100each,5LLMsnoCOtraining,relativeIOimprovementformula100(gIO-gmethod)/gIOminobjectiveandmaxKPorientationneedscheck;Table1SGEvsDecompmarginspercentagepointnotrelativebetteroptproof,SGEall6promptsadaptive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ActualSGEexampleNNconstructplus2optcandidateimprovementLLMpromptcaninvokePythonCodeInterpreterGPT4/Gemini,notpuresymbolictextonly. Sizeprotocolp7/fig3n5/8/12/15/20differsetup5/10/15/20/30;Table2Llama70Bonly5/8/12optgaps;fig3/4needvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadallTables3-4/analysis:67.63vs39.79IOrelativeimprovementdifference27.84percentagepointsnot27.84relativeoptimizationgain;58.32vs31.04calls87.89percentmore;SGE89.60vsDecomp86.43reasoningaccuracy3.17ppnotheadline2.46. ModeltoolavailabilityconfoundedGPT4/GeminiCIvsothersnone,costtokenslatencynotgiven."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Readbib1-27actualBello2016/Deudon2018/AM2018preprint/EOHduplicateref16/17sameauthors17arxiv2401.02051/LMEA2310.19046/DecimaSIGCOMM2019/rlvrp2018,nomapIEEEAccessonlybecauseoutoffrozen364."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Readcompletebib28-49FunSearchNatureyear2023printed/Decima/DeepWeave/ReEvoarxiv2402.01145/LLMasoptimizers2024differentLMEA,onlyfrozenIDsmanualmatches;duplicatedCoT/leasttomostrefsnotduplicateedges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "FullA.1/A.2all6definitions:assignmentpolynomial,knapsackMAXcontradictsoneunifiedmincostmetric;TSPdegreeconstraintsnosubtourVRPformulaomitscapacity/sumsK,proseallowsmultipletripsforoneoversizeddemand(splitdelivery)notautomaticallystandardCVRP;jobshopmachinesoperationsmakespan."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "FullA.3Tables5-11largerJSP50/100jobs10/20machinesVRP100/150/200;ORtoolsbetterSGEallJSPandVRP;LKHVRPbetter65.3/64.4/65.8vs59.6/60.1/59.8;costUSD.0961/.1676/.1964/.3515VRP5/8/12/20;Table9includes25/30contrary5sizesmain,Table11GPT3.5CIcaptionconflictsmaintoolnone."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadallTables12-13rawobjectives7sizes5/8/12/15/20/25/30GPT3.5/GPT4,knapsackmaximizeexplicit. Ratiosofaggregatecostmeansnotautomaticallymeanofperinstanceratios,sotablesnotrecomputedasheadline;rawBPPcostcanexceeditemcountand5nodeTSPmeanlargewrtstatedcoordinatesrequireclarificationnotcertifiedfeasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "ReadfullrawTables14-15Gemini/Llama7B7sizesallsixCPquantities,declaredBPP5itemsaveragebins>5manyrowsinconsistentnonemptyfeasiblepackingneedqualification,notverifiedbenchmarkreproduction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "FullTable16Llama70Ballraw7sizes;A.5VRPcompleteprompt4customersdemands41capacity50singlevehicleandheuristiclist/NNdecompositionignorescapacityinthisnonbindingexample;continuingworkednumericexample."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "ReadallworkedVRPnumericNNtour0-3-2-4-1-0claimed232.22,refinementchangesgiven1-2-3-4contexttoreturn1-3-2-4withoutcost/acceptancevalidation;mayworsennumericrouteverifydeterministically."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 29,
+      "notes": "Readchecklist1-7full,noformaltheory/nostatisticalerrorbarsmeansonly,reproducibilityyesauthorclaimnotcuratorcertification. Recomputedworked4customerp24-26:NN232.2164467071actuallyglobalopt4!24tours;refinement1-3-2-4=273.5182110251worsens17.785%,showsnocertifiedmonotonic/validation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 30,
+      "last_page": 31,
+      "notes": "Readchecklistresourcesethicsimpact/safeguards/licensesfull,resourcesclaimedbutnoallLLMtokenlatencybudgetinactualpaper;keepauditfactual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 32,
+      "last_page": 33,
+      "notes": "Readlastchecklistnewassets/humans/IRBcompleteall33formalpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "prompting",
+      "category": "contribution",
+      "statement": "FrozenLLM5phaseheuristicexploration/decomposition/execute/feedbackrefine/integratesixCOtaskssamepromptframeworknoCOweighttraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "AbstractAlgorithm1Section4."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "AdaptiveN/K/recursivecheckwithdepthbudgetunspecified,PythonCIforGPT4/Gemini;candidateNNtour2optrefinementbutnoexternalacceptance/feasibilityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            24,
+            25,
+            26
+          ],
+          "locator": "Algorithm1/Figure2/workedexample."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "27.84isdifference67.63-39.79IOrelativescorepercentagepoints;58.32vs31.04calls,largerVRP/JSPstrongclassicalmethodsbetter,workedexample273.518worse232.216,codeissuesqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            29
+          ],
+          "locator": "Tables1-16/workedexample/checklist."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "GeneralistmixedfrozenLLMreusedacrosstaskswithownconstructionandcandidateediting/refinement;toolconditionsqualified,noauthortraineduniversalCOcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4-5/Figure2neuralpromptedNN+2opt."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb9120be0dcaac0aec66d2e75deb69dd-Abstract-Conference.html",
+      "locator": "Formal33pages4authorsMBZUAI/KCLverified,2024formalyearprecisionreplacesunsupportedDec16;https://arxiv.org/abs/2405.17950actualv1May28_2024."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb9120be0dcaac0aec66d2e75deb69dd-Abstract-Conference.html",
+      "locator": "ManuallyinspectedformalpublisherHTMLonlycombinedPDF;all33pagesA.1-A.4/tables/workedprompts/checklistread. Full12entryauthortreenoPDFZIPTEXscience;notebookprompt/metriccellsinspected."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Zangir/LLM-for-CP",
+      "locator": "README/wholemethod.py/solver.py/selectedmodels.py/main.py/evaluationhelperandnotebookcellsmanuallyread;absmetricwrongdirection,duplicateparser,Assignmentrowvector2x2check,VRPnocapacity/PATH_CHEAPEST_ARCnotexact/JSPdurationsnotmakespan,KPrefweightsnotvalue;currentTSPcodegenerationdistinctpaper,publishedmetricseffectnotmeasured."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/eb9120be0dcaac0aec66d2e75deb69dd-Paper-Conference.pdf#page=4",
+      "locator": "OriginalcompleteFigure1Rect(105,70,510,202)5xframework;figures1-4/Algorithm1/formulations/rawtables/workedexamplevisual;worked4customerall24tourchecksaved."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb9120be0dcaac0aec66d2e75deb69dd-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/self-guiding-exploration/supplement-landing.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb9120be0dcaac0aec66d2e75deb69dd-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/self-guiding-exploration/supplement-landing.html; citation_title=['Self-Guiding Exploration for Combinatorial Problems']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "self-guiding-exploration",
+      "cited": "pointer-networks",
+      "reference_label": "35",
+      "description": "Actualnumberedintextcitationandmatchingbibliography;2016/2018preprintversionsretained,notfutureformalpublication;EOH/ReEvo/LLMevolution/DecimanotcatalogIDsnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitnumberedintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualmatchingnumberedbibliography."
+        }
+      ]
+    },
+    {
+      "citing": "self-guiding-exploration",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "3arxiv2016",
+      "description": "Actualnumberedintextcitationandmatchingbibliography;2016/2018preprintversionsretained,notfutureformalpublication;EOH/ReEvo/LLMevolution/DecimanotcatalogIDsnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitnumberedintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualmatchingnumberedbibliography."
+        }
+      ]
+    },
+    {
+      "citing": "self-guiding-exploration",
+      "cited": "attention-model",
+      "reference_label": "14arxiv2018",
+      "description": "Actualnumberedintextcitationandmatchingbibliography;2016/2018preprintversionsretained,notfutureformalpublication;EOH/ReEvo/LLMevolution/DecimanotcatalogIDsnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitnumberedintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualmatchingnumberedbibliography."
+        }
+      ]
+    },
+    {
+      "citing": "self-guiding-exploration",
+      "cited": "learning-heuristic",
+      "reference_label": "6",
+      "description": "Actualnumberedintextcitationandmatchingbibliography;2016/2018preprintversionsretained,notfutureformalpublication;EOH/ReEvo/LLMevolution/DecimanotcatalogIDsnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitnumberedintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualmatchingnumberedbibliography."
+        }
+      ]
+    },
+    {
+      "citing": "self-guiding-exploration",
+      "cited": "rl-vrp",
+      "reference_label": "25",
+      "description": "Actualnumberedintextcitationandmatchingbibliography;2016/2018preprintversionsretained,notfutureformalpublication;EOH/ReEvo/LLMevolution/DecimanotcatalogIDsnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitnumberedintextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualmatchingnumberedbibliography."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshfull33pageformalread/scientificappendices/alltables/workedexample/checklistandmanualpublisher/12entrycodetreeinventory.",
+    "Changedconstructivetoconstructive-improvement:owncandidateconstructionandexplicitNNtour2optrefinement;frozenLLMcrosstaskgeneralist/toolconditionsnotnewlearneduniversalcheckpoint.",
+    "Correctedheadline27.84topercentagepointdifferenceIOrelativescores,modelcalls87.89percentmoreandhistoricalUSDcosts,signedobjectiveorientationvsabsoluteimplementation.",
+    "Qualifiedsmalln/7actualsizesvsmain5sizesspec/LLMtoolconfound/nouncertainty;strongclassicalsolversbetterlargerJSPVRP/nooptimalitycertificationbycurrentroutinghelper.",
+    "DeterministicworkedexamplecheckNN232.2164opt24toursrefined273.5182worse;currentAssignmentcompute_costreturnsrowvector,parserduplicates,VRPnoCapacity,lastvehicleonly/JSPsumduration/KPweightreferenceandmethodlist.joinbug documented,nobenchmarkreproductionclaimed.",
+    "CorrectedfirstdateMay28_2024/formalyearprecision/fourauthorsaccent;current3trajectoryTSPcodegenerationdistinctoriginalrecursiveworkflow;originalFigure1and5actualcitationedges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "adf5debf24314528febb278482d3ae47a3dbe5dac38a0457de5478d9a94c5e7a"
+}

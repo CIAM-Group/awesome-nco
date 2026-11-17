@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "paper_id": "neat-weight-embedding",
+  "note_path": "specialist/neat-weight-embedding.md",
+  "baseline_note_sha256": "511114555ed66a013146b48b1e64d8ec69f6d5962d16f8d554eeddab7fa3686e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/78efbc5386c5a7c241e7fcc482d3c3dc-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2025 conference20page article with full scientific AppendicesA-I; publisherMay1,2025",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/78efbc5386c5a7c241e7fcc482d3c3dc-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-24fc1e692a.pdf",
+      "sha256": "803a28871a090a4bc4e7ada37755e2da6f29edf8eb55fb00b5072256dc66c8c9",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read7authorfullbyline5university+SYSUlabs,WEversusPMOCOweightagnosticencoder/CNHsizeattention. Single-model meansallweightsubproblemsofonenativetasknotTSP/CVRP/KPsharedcheckpoint. WSscalarizationandPOMOconstructionbaseline."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read detailedWEAddEq6 identicalweightaddtonodes;WECAFiLMgamma/beta+jointweighttokenMHAEq7-11/POMO6layer8heads128/IN. Training20Minstances200epochs64batchREINFORCEweightdecay1e-6;101bi105triweights;all200instancetableHVgapsrelativeWECAAug nottruePF. Unifiedmeansmixedsizeswithinproblem,notnative."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullTables1/2all12problemsizes+Fig2TSPLIB. WECAgapsrelativeownaug notoptimal;nonlearnedLKH oftenhigherHV,EMNHCVRP20/50andKP100/200exceptions. Mixedsize20..100 orKP50..200Uwithinproblem;OODTSP150/200andKroAB only. Unifiedavg0 fromrounding/positive-negativegaps notequaltruePF. Time200instances15minBiTSP100augvs6hLKH,Tri1.7h; no universalwin."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullTables3/4/5andconclusion/refsA-L. OODgaprelativeWECAAugtrained100distinct Table2WECAAug. ScalarizedLKHreferencecostnotexactoptimal .73/.89/.68 WECA. Sizeembeddingablation19hvs30hdata-specific,maximumpreallocated300claimnotfundamentalsinusoidlimitation. Authorcomplexconstraints/generalizationsamplingfuture acknowledged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadremainingrefsL-Zentire+A/B1/B2/Table6params. NativeTSP2Mcoordinates,CVRPtotal+longestroute/sizecapacitypiecewise30/40/50 normalizeddemand; distincttaskcontextsandmodels. ParamsWEAdd1.27M WECA1.47MvsPMOCO1.5M/CNH1.63M;multi133.37Mstores101models ratherthanone-sizeequivalentmodel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read allAlg1/B3/C-H/Table7-9/Fig3-5. Masktaskfeasibilitybutnooptimality. Uniformweightsperbatchandnrolloutsharedbaseline;parallel101subproblemsmemorylimit speednot101fold. HVnormalizedref/ideal Table8,8CVRP and8^M TSPaugmentationnotobjectivepermutationconfusion. KroAB100WECAfixedAug.6997>U.6990 (notalltransferbetter). Ablation2problemsvaluesreadneedvisualfig4/5."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read allTable10andFigs6-8/I1/I2. N105/1035/10011denserweightsqualitytime;WECA1035 .4531>.4497PMOCO10011 TriTSP50, WSnotuniversalTCHsuperiority/perfectPFclaim. All20pagesrefsA-Ifullyread. Needp20visualstandalone duegarbledFigs7/8."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Weightagnosticencoderandindependentparameterfamiliesmotivateweightinstanceconditioning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/related"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "WEAddprojectedweightadditionandWECAFiLM/jointtokenattention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Fig1/Eq6-11"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Sharingpreferences/mixedsizeswithin tasknotnativejointcheckpoint;separateinputcontexts/tasks/checkpoints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            15,
+            16
+          ],
+          "locator": "Methods/train/problemdetails andrepotree"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "POMO6layer8head128,multi-startbaseline20Mtraining,101/105preferences/parallelencoderbatches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            16,
+            17
+          ],
+          "locator": "Alg1/AppendixC-D/featuremasking"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "200percaseHVnormalized/referenceWECAAugnottruePF;neuralimprovement/exceptions,LKHbetterHV,mixedsize/OODTSPanddensityruntimeablation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "AllTables1-10/Figs2-8/readallrows"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "NoexactPF/ratio/convergenceguarantee;complexconstraintsmasksnotgeneric/weighted-sumunsupportedpoints/scaletransferempirical.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            10,
+            19,
+            20
+          ],
+          "locator": "Conclusion/WSscalarization and actualfiniteexperiments"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All20pagesA-I/refread10visual;208repo74PT28checkpoints,fullconfig/selectedmodel+trainer/notrun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Fullreadinglog/cache/sourceinspection"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/78efbc5386c5a7c241e7fcc482d3c3dc-Abstract-Conference.html",
+      "locator": "Publisherexact7authors/ICLR2025May1HTMLcitation_publication_date2025-05-01;PDFp1SYSU/SMU/TUE/NUS/SCUT plusSYSUlabs."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/78efbc5386c5a7c241e7fcc482d3c3dc-Abstract-Conference.html",
+      "locator": "ManualpublisherPaper/Bibtexonlynosupp;complete20pA-I/allrefsread. OpenReviewforumGM7cmQfk2FAPIv1/v2both403cached. Entireofficial208filetreenoPDFZIP,fullREADMEreadnospecificmissing scientificdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/78efbc5386c5a7c241e7fcc482d3c3dc-Abstract-Conference.html",
+      "locator": "Formal20pSHA803a28871a090a4bc4e7ada37755e2da6f29edf8eb55fb00b5072256dc66c8c9;visual4/5/7/8/9/10/17/18/19/20allfiguresandgarbledplotlegends."
+    },
+    {
+      "field": "scope,code_url",
+      "source_url": "https://github.com/bill-cjb/WE",
+      "locator": "Commit849f849da0abf950dd026446aa69b4b7a06d09af208files74PTincludingtestdata/28checkpointnames. FullREADME116linePOMOUtrainconfigread,trainer106-218actual20..100/Dirichlet/REINFORCEroutine;model1-275of355read. SeparateMOTSP/MOTSP3obj/MOCVRP/MOKPtaskweights. Noexp rerun."
+    },
+    {
+      "field": "metric conditions",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/78efbc5386c5a7c241e7fcc482d3c3dc-Abstract-Conference.html",
+      "locator": "HVgapsTables1-3/9-10relativeWECAAug,Table4LKHreferencecost,neitheroptimalcertificate. 200instanceruntimeexclude training;WSvsTCHempiricalonly;augmentation8CVRP8^MTSP. Unifiedsizevsnativecategorizationexplicit."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.(2019)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDF3explicitKool et al.(2019);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.(2023)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDF3explicitDrakulic et al.(2023);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.(2023)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDF3explicitChalumeau et al.(2023);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "emnh",
+      "reference_label": "Chen et al.(2023a)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDF3explicitChen et al.(2023a);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "lehd",
+      "reference_label": "Luo et al.(2023)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Section2bodyPDF3explicitLuo et al.(2023);fullbibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "nhde",
+      "reference_label": "Chen et al.(2023b)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDF3explicitChen et al.(2023b);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.(2023)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Section2bodyPDF3explicitZhou et al.(2023);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "pareto-set-learning",
+      "reference_label": "Lin et al.(2022a)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDF3explicitLin et al.(2022a);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.(2020)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDF3explicitKwon et al.(2020);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al.(2023)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDF3explicitGrinsztajn et al.(2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "neat-weight-embedding",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.(2022)",
+      "description": "Explicit native CO background, POMO base, or neural MOCO predecessor/comparator; exact bibliography identity checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDF3explicitKim et al.(2022);fullbibliographyPDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ExpandedWEAdd/CAformulas/POMOtraining/taskmasks/native-vsweight-size sharing.",
+    "CorrectedHVbaselineinterpretationandqualifiednonuniformwins/trainingcost/augmentation/densepreferences/OODscope.",
+    "All20formalpagesA-I/10visualandsourceattachmentcheckscomplete;28checkpointfilesnotall74PTfiles."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "228b89177930d859c23162350cf8ea286c4d8c75a26869a4d07f9cc85391a025"
+}

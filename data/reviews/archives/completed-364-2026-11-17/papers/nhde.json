@@ -1,0 +1,567 @@
+{
+  "version": 1,
+  "paper_id": "nhde",
+  "note_path": "specialist/nhde.md",
+  "baseline_note_sha256": "a74647a1b6f0ff850924fe435101f87a51542527591e7cf713cce95a9a52ab79",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Paper-Conference.pdf",
+      "version": "NeurIPS2023 publisher13page mainpaper",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-6c6ddd0109.pdf",
+      "sha256": "dc3ad134d2ca7b2e3d152e99ae029440975910c7507319b34d0669eaeb82891b",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Supplemental-Conference.pdf",
+      "version": "Publisherseparate9page AppendixA-M complete",
+      "local_path": "research/full-text-review/nhde/supplement.pdf",
+      "sha256": "19bd3ce4af8daf687bf2c01708f2765074d0816b890f17c58be858dad9b90306",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh7authors4coreinstitutionscorrect; prefconditionHGA currentfrontobjectivepointinputs notdirectsolutionencoder, topKscalarneighborfrontsubset +r, sequentialsubproblems; rewardweightedscalar+unionHV notpairdistancediversity; P hypernetwork/M finetunemeta separate variants; sixlayer128/8heads HGA3relations omitpointpoint Eqs1-8 read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 9,
+      "notes": "Fresh MPOtopKold/Jnew objective-nearfront partialcomparisons O((K+J)J)notglobalguarantee, PAlg1sequentialtrain20weights/randdiversity, 200epochs5k1Minstances, 40/210testweights shuffledwlineardown scheduleK20J200; allTables1-3 fullvalues/negativeNHDE-relativegapnotoptimality, WS-LKHBiTSP100 andTriTSP100Mbetter/DRLMOACVRP100beatsP, Mvariantrestoresquality;200tests3090CPU4216."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Fresh allablationFig4inclindicator/decomposition/HGArelation effects and fullMPO/augmentationtradeoffs; limitationsHVmanyobjective; complete58refs including mapped MOOcore variants and unmappedgeneralMOEA noforcededges."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh Aallreference/idealpoints inclmaxKP reverseinequality andnormalizedHV, Bhypernetwork2x256/M+2 andmeta50stepsperweight on sampledinstances notindividualtestadaptation, Ctaskfeatures/contextmasks,Daug64->32bi512->128tri, Eentiremeta/finealgorithm andF150meta20weightsM tasks100innersteps vsMDRL3000gradientmatched;Gtimeexcludesextrafinetuningcaveat andmatchedMDRLwinsCVRP50/100Tri100."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 7,
+      "notes": "Fresh fullM/Pgeneralizationtables/TSPLIBstrongerWSLKH, ablationdesignnoindicator removesfrontinputs, noMPOstillmultisamplebutkeepsbestscalar; runtimeTable10MPO82% HGA5%, fewweightsPMOCObetter; NHDEwithoutIplusMPOvsfull600weights; asymmetricobjective3scales biasedweights, NprimeKJtradeoff allread."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Fresh allasymmetricfront3dpanels/hyperplots J50/100/200/400/full, Mfactor sensitivity/10shuffle repeats/duplicates196vs225 andallvarianceTable13/ranksum1%. Text w1=1 claimsHV contradictrewardEquation andFig9lowHVat0,1; preservedefinitionnotpropagatedlabel. All22registeredpagescomplete A-M supplement."
+    }
+  ],
+  "claims": [
+    {
+      "id": "diversity",
+      "category": "contribution",
+      "statement": "Frontconditionedscalarization+HVreward,3relationHGA,MPO sampledarchive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4.1-4.3"
+        }
+      ]
+    },
+    {
+      "id": "variants",
+      "category": "method",
+      "statement": "P2x256hypernetwork vsMmeta/submodel50updates sampledinstances, notallfixednetworknorincumbentmoves.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "AppendixB/E/F"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "200testsets 3090CPU4216,200x5ktrain20weights,40/210infer,K20J200, partialaugmentation32/128.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Section5 Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "failures",
+      "category": "experiment",
+      "statement": "WSLKHbetterBiTSP100/150/200andMtri100,DRLMOACVRP100betterP,matchedMDRLsomebetter; HVGapreferenceNHDEnotoptimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "category": "experiment",
+      "statement": "MPO82%HGA5%,Jqualitytradeoff,fewpreferencesPMOCObetter, duplicate196vs225.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "AppendixJ-M Tables9-13"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive taskmodelsseparate, preferencegenerated/sampledfront filteringnotlearnedincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7
+          ],
+          "locator": "Section4/5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7b5ae891000049b91b3b62de596b1560-Abstract-Conference.html",
+      "locator": "Manualpublisher/titlepage7authors fouruniversities plusaffiliatedlabsnoted; publication2023yearprecision notunsupportedDec15."
+    },
+    {
+      "field": "date, arxiv_url",
+      "source_url": "https://arxiv.org/abs/2310.15195",
+      "locator": "Manualv1Oct22,2023history; actualpublisher13+9pagesread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Supplemental-Conference.pdf",
+      "locator": "ManualpublisherlandingseparateSupplementallink4 matching9pageAppendixA-M allread includingnormalization/metaalgorithms/budgets/alltables. GitHubmasterrecursiveinventorynootherPDFZIPscience."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/bill-cjb/NHDE",
+      "locator": "Officialmaster READMEtrain/testseparateP/M andfinetuneMODE2/perproblemcheckpoints, tree andupdate_PE6.py/testTSP50 configuration inspected."
+    },
+    {
+      "field": "paradigm, scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Paper-Conference.pdf#page=6",
+      "locator": "Preference/frontconditionedautoregressiveconstruction andarchivefiltering, nolearnedincumbentedit; task-specificcheckpoints specialist despitegenericMOCOframework."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7b5ae891000049b91b3b62de596b1560-Paper-Conference.pdf#page=2",
+      "locator": "OriginalFigure1 cropRect(100,65,515,170)5x; fullHGAequations/tables/referencepoints/front/ablationplotsvisualinspection."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7b5ae891000049b91b3b62de596b1560-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/nhde/supplement-landing.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7b5ae891000049b91b3b62de596b1560-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2023-12-15; primary cachedHTML research/full-text-review/nhde/supplement-landing.html; citation_title=['Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2310.15195",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-10-22; title on abstract page: Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement. This date is preprint history, not formal publication. Cached research/full-text-review/nhde/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "nhde",
+      "cited": "attention-model",
+      "reference_label": "27",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "dact",
+      "reference_label": "40",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "graph-moip",
+      "reference_label": "16",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "39issue2022",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "learning-to-improve",
+      "reference_label": "38",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "30",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "29",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "25citedICLR2017",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "neurewriter",
+      "reference_label": "37",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "omni-vrp",
+      "reference_label": "35",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "pareto-set-learning",
+      "reference_label": "14",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "pointer-networks",
+      "reference_label": "24",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "pomo",
+      "reference_label": "36",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "rl-vrp",
+      "reference_label": "26",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "nhde",
+      "cited": "sym-nco",
+      "reference_label": "31",
+      "description": "Explicit numbered text citation and matching reference; retains actual cited issue/preprint year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedreward/HGA/objectives/feasibleconstructivepolicy/MPOapproximationmethod.",
+    "SeparatedPfixedhypernetwork andM50step preferencefinetuning on sampledinstances, taskmodels specialist.",
+    "Addedfull22pagesincludingA-M, normalization/references, preference/augmentation/KJ/compute budgets.",
+    "QualifiedWSLKH/DRLMOA/matchedMDRL/fewweightPMOCObetterresults, HVrelativegapnotoptimality, MPO82%runtime.",
+    "PreservedMdiversityfactorreversedlabel andMDRLzeroNDSinconsistencywithoutinventingfix.",
+    "Restoredfirstarxivdate/codeversion/provenance/originalFigure1and15explicitcitations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f9fb5ef40188144e6c2240e8da5159b016a0102c7ac6e40c29478dc1bb0d76eb"
+}

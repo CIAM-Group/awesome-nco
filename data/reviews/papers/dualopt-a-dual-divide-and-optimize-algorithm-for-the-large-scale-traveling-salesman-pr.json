@@ -1,0 +1,485 @@
+{
+  "version": 1,
+  "paper_id": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+  "note_path": "specialist/dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "bc00a740a8b88a87b91d378bd06bc1e562d5ab060d158749660e22a5d1563c03",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2501.08565",
+      "retrieval_url": "https://arxiv.org/pdf/2501.08565",
+      "version": "Actualarxiv2501.08565v1,2025-01-15,8pagesfullmaintext/allreferencesread; formalAAAI2025identity/dateindependentlyverified, publisherPDFunavailableandnotclaimedread.",
+      "local_path": "research/full-text-review/dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr/arxiv.pdf",
+      "sha256": "68f28aa2ce6f7c0702f8e9bfbdb6c6113f47400bb626f0dfb2466c556cd93076",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read actualarxiv2501.08565v1Jan15_2025p1byline5HUST/SMU/ZhouDingequal/Jincorrespond. Fullintro/relatedwork/Alg1–2gridhierarchicLKHinitialconstruct+newNNpathrefinement. Neuralactionsrewriteincumbentsubpaths, globalinitialallclassical→proposedimprovementclassificationnotmixedsolelybecauseneuraldecoderautoregressive. PriorjournalyearcitationsDIFUSCO/DeepACO2024sourcepublicationvolumeerrorpreserveversion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadgridLKHedgefixedendpoints/Figure1/Alg3wholeNNreconstruction andbetter-onlyacceptance, reversebidirectionalREINFORCE/sharedgreedybaseline, normalizationtranslation+uniformscale notdistributionuniformization. Mainexperimentalprotocol3080/12core,1281K16others1at100K,10TSPLib>5K, different50/20/10neuralmodelstraining notonly50checkpoint. Iter25/10/5, Niter2–5scale-specific,LKHdefault/parallelgrid. Timingaverageperinstance vsdaggerliteratureresults/mismatchedbudget; −1.40gapvsLKHreference nottrueoptimum. Fullconclusion/initialbibread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FreshreadallTables2-4andcompletebibliography8p. Timingnotuniformdominance;100konlyoneinstance;negativeLKHgapnottrueoptimal;d18512printedgapsigninconsistentwithlengths. ExplicitbodyplusbibidentitiesmustpreservecitedSILoldpreprintandnotforceindependentjournalextension."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "DualclassicalgridLKHinitialization+learnedfixed-endpointincumbentsubpathrefinement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/Algorithms1-3/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "BidirectionalgreedyrolloutREINFORCE/sharedbaseline, range-normalizedsubpaths,better-onlyreplacement. Neuralautoregressionrewritesincumbentnotindependentglobalconstructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithms2-3/Equations1-3"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "1281k/16others/single100k;3080/12core; separate50/20/10models25/10/5iterations; selected104xspeedup100kvsLKHnotuniformruntimewin.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Setup/Tables1-4"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "LKHreferencegapsnottrueoptimal, noseedCI,single100k,heterogeneousbaselinebudgets;printed d18512 gap signinconsistent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Results/Tables2-4"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "SpecialistEuclideanTSP/improvement: initialcompleteglobaltourallclassicalLKH andneuraloperatoronlyreconstructsincumbentsubpaths.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Actualsolverpipeline"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All8arxivv1pagesandrefsread; publishedidentityseparatelyverified,111entryofficialrepomanualinventory/fullREADME/noextra science,originalfigureactualview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            8
+          ],
+          "locator": "Version/byline/refs/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/34926",
+      "locator": "Officialindexedpublisherbyline5authorsHUST/SMU; DOI10.1609/aaai.v39i25.34926/pages27178-27186/published2025-04-11. Actualarxivp1ZhouDingequal/Jincorrespond."
+    },
+    {
+      "field": "arxiv version/date",
+      "source_url": "https://arxiv.org/abs/2501.08565",
+      "locator": "Savedprimaryhistoryv1Wed15Jan2025; actual8pagePDFfullyread. Formal9pnotretrieved(BotStopper); noformalcontent/bytecomparisonclaimed. Userexplicitarxivfallbackauthorized."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/Learning4Optimization-HUST/DualOpt",
+      "locator": "Complete8pagearxivv1inclallrefs/Tables1-4read; noexternalnecessaryscientificsuppnamed. Officialrepo111pathsmanualinventorySHA6218a20cdfabe5813555ca415902d70338b13be6:oneREADME/noPDF,TeX,ZIP,notebook. FullREADMEread. OfficialformalPDFdenied, notclaimedread; secondaryAIextra-experimentassertionsnotadopted."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2501.08565v1#page=4",
+      "locator": "OriginalcompleteFigure1p4rect54,59,296,211@5xatomicPNGviewed; p3/4/5/7algorithms/formulas/completeTables2-4renderedviewed."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://arxiv.org/pdf/2501.08565v1#page=4",
+      "locator": "Algorithm2completeglobalinitialtourLKH;Algorithm3NNonlyfixedendpointrewritingofincumbentsubpaths.Specialist/improvement; nojointnativeproblemcheckpoint."
+    },
+    {
+      "field": "citation versions",
+      "source_url": "https://arxiv.org/pdf/2501.08565v1#page=8",
+      "locator": "Bodypp1/2/4/5 plusfullbibpp7-8manuallychecked. SIL2403.19561sixauthor2024precursor mappedtocurator-establishedformalrepresentative,notarxivretitle; independentConstraintsjournal/SSRNExtNCOunmatchednotforced."
+    },
+    {
+      "field": "final citation identity:sil",
+      "source_url": "https://arxiv.org/abs/2403.19561",
+      "locator": "Actual reference is six-author Self-Improved Learning, arXiv2403.19561(2024); DualOpt p5 explicitly names SIL. Retained as curator-supported precursor-to-formal-representative mapping, not an arXiv retitling claim. Existing independent complete27p formal+16p precursor comparison: oldp4Fig3/formalp6Fig2 distinctive layout; oldp5Eq3?6/formalp5Eq2?4 endpoint projections/aggregate-broadcast attention; bothp15 same10-customer route/depot bitvector and misalignment explanation. Budgets/byline/results remain version-specific."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2024), NeurIPS36 cited",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "pointerformer",
+      "reference_label": "Jin et al. (2023)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "deepaco",
+      "reference_label": "Ye et al. (2024a), NeurIPS36 cited",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "att-gcn",
+      "reference_label": "Fu, Qiu and Zha (2021)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al. (2023)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "glop",
+      "reference_label": "Ye et al. (2024b)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "udc",
+      "reference_label": "Zheng et al. (2024)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "softdist",
+      "reference_label": "Xia et al. (2024)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim, Park et al. (2021)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng et al. (2023)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "dimes",
+      "reference_label": "Qiu, Sun and Yang (2022)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "tam",
+      "reference_label": "Hou et al. (2023)",
+      "description": "Explicitbodydiscussion or baseline and matching full bibliography; actual cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Body/relatedwork/setup and matching complete Referencespp7-8"
+        }
+      ]
+    },
+    {
+      "citing": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "cited": "sil",
+      "reference_label": "Luo et al. (2024), arXiv2403.19561 precursor",
+      "description": "Actual reference is six-author Self-Improved Learning, arXiv2403.19561(2024); DualOpt p5 explicitly names SIL. Retained as curator-supported precursor-to-formal-representative mapping, not an arXiv retitling claim. Existing independent complete27p formal+16p precursor comparison: oldp4Fig3/formalp6Fig2 distinctive layout; oldp5Eq3?6/formalp5Eq2?4 endpoint projections/aggregate-broadcast attention; bothp15 same10-customer route/depot bitvector and misalignment explanation. Budgets/byline/results remain version-specific.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Reread explicit body citation context: Luo et al. (2024), arXiv2403.19561 precursor"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Reread complete reference including split continuation; Actual reference is six-author Self-Improved Learning, arXiv2403.19561(2024); DualOpt p5 explicitly names SIL. Retained as curator-supported precursor-to-formal-representative mapping, not an arXiv retitling claim. Existing independent complete27p formal+16p precursor comparison: oldp4Fig3/formalp6Fig2 distinctive layout; oldp5Eq3?6/formalp5Eq2?4 endpoint projections/aggregate-broadcast attention; bothp15 same10-customer route/depot bitvector and misalignment explanation. Budgets/byline/results remain version-specific."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceallpendingbyline/task/source/datefieldswithactualfullreadingandprimaryformalrecord.",
+    "Classifyimprovement: learnedmoduleeditsclassicallyinitializedincumbent; nothybridsolelybecauseARsubpathdecoder.",
+    "Accurateseparate50/20/10models,budgets/single100k andselected104xLKHcomparison;notuniformtimewin.",
+    "PreserveLKHreferencevstrueoptimum andprinted d18512 signinconsistency;nomissingformalexperimentinvented.",
+    "All8actualarxivv1pagesread, fullmanualsuppinventory/originalfigureview;17explicitconfirmedinternalcitationswithactualpreprintversions."
+  ],
+  "reviewed_note_sha256": "cc8c9d87d5178bb509cd68b2982463cbc5592dfae910b3575363c27b8385691a"
+}

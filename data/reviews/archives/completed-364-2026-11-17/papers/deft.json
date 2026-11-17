@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "paper_id": "deft",
+  "note_path": "specialist/deft.md",
+  "baseline_note_sha256": "381bb08e60d0204f2890b28db5a305d927154deedd37af24227d485a2c05753b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f82526e95f7effb92f6a24f282ace472-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f82526e95f7effb92f6a24f282ace472-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-01713732a0.pdf",
+      "sha256": "8a6d911f50f2a72f532469bbac4fdba333db9fd52c339d8c45104df1aa3b13ea",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://raw.githubusercontent.com/yashenCS/DEFT/3bd971f19b2ded03f912998f760ff6e92efbda23/ICLR_2026_poster_ya.pdf",
+      "version": "Author repository ICLR2026poster",
+      "retrieval_url": "https://raw.githubusercontent.com/yashenCS/DEFT/3bd971f19b2ded03f912998f760ff6e92efbda23/ICLR_2026_poster_ya.pdf",
+      "local_path": "research/full-text-review/deft/code/ICLR_2026_poster_ya.pdf",
+      "sha256": "a109050eb2a4aebf6200e8efae24eb5cfefe5b71052d801ea52140ace5421960",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallfrontmatter/intro/relatedwork/MDPstart;4Victoriaauthors, costawaredeadline workflow scheduling, specificMoE deadlineexperttraining notdifferentnative tasks; references MVMoE/SHIELD andscheduling/routing toverify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullMDPstate/VMassignment/newVMactions, undiscountedrental+latenesscostandallMoEdesign/gatingsteps; pretraindeadlineexpertsthenjointfine-tune, sparseTopKfeaturearchitecture vsactualcodepending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadcompleteEStraining/two-phase40population3000gens, mixeddeadlines/S-onlytrain/SML30x10test andallmainTables1/2; minimizedtotalcostnotuniversalSLAmin, M/LpenaltiesworseGATES/ESRL; noDRLnative-tasktransfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readallgating/MLP/latencyablations, fullconclusion/ethics/reproducibility/LLMstatement andrefspp11–12; effectmeanlatency.2218vs.2159GATES, knownfirstMoEclaimauthorclaimnotindependentexhaustive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readfinalbibliography and fullAworkflow/VM/rental/latencypenaltyequations, meanpooledGATandcrossattentiondefinitions; nohardcapacity/SLAfeasibility, taskexecutionsimplecost vsallactiveVMprose distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "ReadfullTopKrenormalization, ESgradientGaussianobjective andalltrainingalgorithms, VM6types/fullworkflowcountTable5; AppendixFexplicitallworkflows within eachinstance sharesamegamma, no testupdates/top1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Readalltraining/testingtable/convergence/boxplots pluscompletejoint8configurationexpertTopK/3gammachoiceablations; reduced5workflow10instanceablation vsmain10workflow30tests."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "Readall6VMexperttransparencyrows, mixtureillustrationprobabilitiesandfinalarchitecturediscussion; illustrativeTop1notuniversaloptimalityproof, row3/4nonidenticalchoices notwithstandingprose."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Readfullpostertextwithblocksandviewedrender, allmethod/cost/table/top1example; noindependentscientificresults beyondmain. GangAaronChenpostername variant mappedformalGangChen."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Deadlineexperts withgraphadaptivecrossattentionreplaceGATESprioritymap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/Section4"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "ESpretrains4fixedgammaexperts thenjointlyoptimizesSEM/gate/experts; ready-taskVMassignmentsoftlatenessobjective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            8,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "MDP/Algorithms1–2/AppendixF"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Lowesttotalmeans do not implylowestSLA; medium/largenegatives and latencycosts visible.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            20,
+            21
+          ],
+          "locator": "Tables1–3/7–8"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Simulation/unlimitedprovisioning/shared-per-instancegamma andfiniteoptimization restrictstrongguarantees.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10,
+            14,
+            18
+          ],
+          "locator": "Taskmodel/Conclusion/AppendixF"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialistconstructive onlineVMassignment; deadline/size/applicationDAGregimes remainonenativetask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            8,
+            18
+          ],
+          "locator": "Task/action/train-testidentity"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f82526e95f7effb92f6a24f282ace472-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2026-04-20; publisherbibtexpp152944–152966; formalp1all4authors/Victoria."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f82526e95f7effb92f6a24f282ace472-Abstract-Conference.html",
+      "locator": "All23formalpages includesA–J; officialevent10006550poster/noextraslides, ORAPI403. Own7fileSHA3bd971f19b2ded03f912998f760ff6e92efbda23repo includes1pageposterPDFregistered/read+PNG;3modules/READMEread. BaseGATES7381entrytreeSHA8654863bda80427c032af7ac5b44b6e501d98d6d inventoried, itsIJCAIposteridentifiedasolderseparatepaper."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deft",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Actualfullbibidentity",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deft",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Actualfullbibidentity",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deft",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Actualfullbibidentity",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Xin and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deft",
+      "cited": "goodrl",
+      "reference_label": "Yang et al. (2025)",
+      "description": "Actualfullbibidentity",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Yang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deft",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al. (2024b)",
+      "description": "Actualfullbibidentity",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation Zhou and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deft",
+      "cited": "shield",
+      "reference_label": "Goh et al. (2025)",
+      "description": "Actualtext+bib identity; SHIELD2025arxivprecursor mapsformalstableID",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Goh and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full23page+poster+allreleasedmoduleaudit corrected totalcostvsSLAclaims, same-per-instancegamma, nohardcapacity/deadlineguarantee, Top1illustrativevsoptimality andpartialcodeintegrationrequirements."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5fdfb22099436334590dced2f739bf5eb63ca184c1449282a6cafb30a748a436"
+}

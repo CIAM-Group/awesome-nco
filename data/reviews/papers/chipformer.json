@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "paper_id": "chipformer",
+  "note_path": "specialist/chipformer.md",
+  "baseline_note_sha256": "670bab2850e459612390f14d422b3c33f7513697d3a1dd276c506295d9d2750c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/lai23c/lai23c.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/lai23c/lai23c.pdf",
+      "local_path": "research/import-272/nco-3762ab9c82.pdf",
+      "sha256": "4d2b89b0569a6bbb796e7c74f0d4ee2bddbae544ae6ac273e528802e1100ccfd",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full title/authors5institutions, offlineexpert/multicircuit setup,32circuit scope and pretrainingvsadaptation clockclaims, formalmacroplacementobjective."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullVGAE/GPTlikelihood and noRTGconditioning, pinmasks/actions, returnweightedonlinefinetuning/entropy and classicalGP-LG-DP movablemacro workflow; exact dataset12circuits/500expertplacements and fourfoldsplit/evalbestrollout protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allmacro/mixedsizeindustrial tables, negatives at300rollouts/zeroshot/WNS C3, five-seed bestwithinbudget selection and dataset/token/replay/entropy ablations; firstbibliographypagechecked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete remainingbibliography and allpublic/privatecircuit statistics; exactsubsetNNmacros, fixedIOs and IBM256redefinition distinguished frompriorMaskPlaceprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all supplementaryruntime/overlap/congestion/tokendemonstration and IBMtables/VGAEtestmetrics, includingAriane3.27%overlap and exact256trainprefix/slidingwindow rule."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 19,
+      "notes": "Read all eight congestion-frontier plots/token examples/fullnetworkandhyperparameters, completefinalrelatedwork and VGAEcircuit-tokenAlgorithm1;19pagesfullycovered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Circuit-conditioned offline transformer reuses near-expert macro trajectories and supports return-prioritized adaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.4"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "VGAE/circuit token plus spatial mask/action sequence constructs macros; classical phase3can move all modules.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            17,
+            18,
+            19
+          ],
+          "locator": "Sections3/Table1/AppendixA.5/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Adapted quality improves10/12at300and12/12at2k, but zero-shot loses11/12, Arianeoverlap3.27%, and C3WNSworsehuman.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            12,
+            14,
+            15
+          ],
+          "locator": "Tables2–5/7–8"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "High-quality offline data, target adaptation, classical downstream tools and selectedmacro protocols limit unconditional transfer/feasibility/runtimeclaims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            12,
+            14,
+            18
+          ],
+          "locator": "Pipeline/protocol/qualityexceptions/Table11"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialistconstructive same-native macroplacement; onlineparameteradaptation and classical movablemacro refinement do not establish neural incumbent editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Neural action sequence and mixed-sizepipeline"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v202/lai23c.html",
+      "locator": "PublisherDate03Jul2023/PMLR202pp18346–18364; formalp1sixauthors/fiveinstitutions."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/lai23c.html",
+      "locator": "Publisherformal19pages includes allAppendixA; event25027posterPNGfullyviewed/noextrascientificslides; OpenReviewAPI403. Project/dataset/code links manuallyinventoried; complete47entryuntruncatedrepo treeSHA7906f3aa60202da1772992f1dc9da29436ac4051 has noextraPDFTeXnotebook; README/corecode read."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "chipformer",
+      "cited": "deepplace-deeppr",
+      "reference_label": "Cheng & Yan (2021)",
+      "description": "Formal2021DeepPRbaseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Explicit in-text citation Cheng and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "chipformer",
+      "cited": "prnet-chip-design",
+      "reference_label": "Cheng et al. (2022)",
+      "description": "PRNet2022formalbaseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Explicit in-text citation Cheng and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "chipformer",
+      "cited": "maskplace",
+      "reference_label": "Lai et al. (2022)",
+      "description": "MaskPlace2022offlineexpert and baseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation Lai and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full19page/poster/codeaudit clarified circuit-specific tasksubsets, zero-shot/rolloutbudgets, classicalmovablemacro pipeline, negativequality/overlap/industryresults and formal-releaseconfiguration differences."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6e9f740c354d3a2d40e1243984073c94ed0adbfa70afe6e1f93f0767a95a9580"
+}

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "paper_id": "gann",
+  "note_path": "specialist/gann.md",
+  "baseline_note_sha256": "156eebaa8fe82e1e7540de7b69eff17af01ceecddd4ae7347387b2a9bfba46ed",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e6384711491713d29bc63fc5eeb5ba4f-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e6384711491713d29bc63fc5eeb5ba4f-Paper.pdf",
+      "local_path": "research/import-272/nco-d4b58c3caf.pdf",
+      "sha256": "30ad610d41f280502d4e9625d24facfa876a82704f67045226d4150dc6e1a8cc",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e6384711491713d29bc63fc5eeb5ba4f-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e6384711491713d29bc63fc5eeb5ba4f-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/gann/supplement.pdf",
+      "sha256": "6ce5fd7e49f284c9c6f528888d323e5ad205831ca6a1b66a3b1adc982b146ccf",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "ReadNeurIPS2020threeauthors/SJTUidentity, classicalGA-MGM/GA-MGMCversuslearnedVGGGANN, KB-QAP/partialmatchingandcycledefinitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallannealedSinkhorn/Hungarian/alternatingspectralclusteralgorithms, Taylorupdatesanddiagram; notedrelativecoefficient/transpose inconsistencies andnoobjectiveoptimalitytheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readmainparams/training/splits/metrics/allcomparisoncolumns, Willowtransductiveprotocol,CUBheldoutpartialmatching,negativecarMGMCmatching/runtimesandmismatchedsupervisedtwo-graphscope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readentirebroaderimpact/funding/bibliography inclrereadp10 aftertruncation; exactaliases/scientificversionidentities checked."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfullprintedderivation,compactGPUupdate,initialization/projectoroptimization, edgekernel/hyperparameters/complexity; directconflictsmainparameter? andsupplementcoefficientnoted."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readallpreprocessing/datasetstats/additionalprecision-recallF1/detailedWillowtables/annealing/initializationplots; primarysupp older-tablevalues/timings conflictmain andWillowcountsum404vs304."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallPIA-GMnegativeablationandpose-basedclusterlimitations,?sensitivity andcompleteclustervisualization/caption; neuralfeaturepipelineisnotGNNetheuristicoptimizer."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gann-contribution",
+      "category": "contribution",
+      "statement": "ClassicalannealedMGM/MGMC pseudoassignments train VGG16+Sinkhorn feature/studentpipeline withoutcorrespondencelabel supervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7
+          ],
+          "locator": "Contributions/Section2.3"
+        }
+      ]
+    },
+    {
+      "id": "gann-method",
+      "category": "method",
+      "statement": "Taylorlinearization/Sinkhorn/Hungarian are heuristicjointQAP steps, notglobaloptimalitytheorem; strictcycleidentity needsfullbijection/shared-universe coverage interpretation forpartialmatches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Definition1/Algorithm1/Section2.1.3"
+        }
+      ]
+    },
+    {
+      "id": "gann-results",
+      "category": "experiment",
+      "statement": "Willowtrain/testsameimages, CUBheldout; mainnegativecarand130graphmatching/timing retained, separate publisher supplement differsinparameters/baselines/runtimes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1–3andprotocol; supplementtablescrosschecked"
+        }
+      ]
+    },
+    {
+      "id": "gann-specialist",
+      "category": "classification",
+      "statement": "Learnedfeatureextractorplusmatching/clustering for visualgraphcorrespondence, notdemonstratedsharedCOsolver acrossunrelatednativefamilies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7
+          ],
+          "locator": "Pipeline/taskdefinitions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e6384711491713d29bc63fc5eeb5ba4f-Abstract.html",
+      "locator": "FormalNeurIPS2020exacttitle, threeauthors/SJTU PDFp1match; primaryHTMLpublicationdateonly2020"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/e6384711491713d29bc63fc5eeb5ba4f-Abstract.html",
+      "locator": "Directcitation_publication_date=2020; retainyear-levelprecision"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e6384711491713d29bc63fc5eeb5ba4f-Supplemental.pdf",
+      "locator": "ManualpublisherSupplementalsole8p scientificPDFreadall; retainsdraftlinenumbers/olderEq/tablevalues withdocumentedmainparameter/runtime/baselineconflicts; authorrepo recursiveinventorynoextraPDF/ZIP"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Thinklab-SJTU/ThinkMatch/tree/master/models/GANN",
+      "locator": "Articlep1ThinkMatchrelease, officialmoduleREADMEconfirms2020paperandlaterTPAMI2023extension; VGGmodel/GAimplementation/config and Willow/CUBYAMLchecked,experimentQUAD_WEIGHT.5/.05"
+    },
+    {
+      "field": "citation_alias",
+      "source_url": "https://arxiv.org/abs/1803.08475",
+      "locator": "Mainref39AttentionSolvesYourTSP(2018) exactarxividentifiermatchesAttentionLearnToSolveRoutingProblems acceptedICLR2019; earlierauthor/titleversion preserved"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gann",
+      "cited": "cie-h",
+      "reference_label": "[36] Yu et al. (2020)",
+      "description": "Exact explicitbodycitation; attention-model citedas earlier titleAttentionSolvesYourTSP/arXiv1803.08475, exactsameidentifier independentlyverified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation [36] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gann",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[37] Fey et al. (2020)",
+      "description": "Exact explicitbodycitation; attention-model citedas earlier titleAttentionSolvesYourTSP/arXiv1803.08475, exactsameidentifier independentlyverified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation [37] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gann",
+      "cited": "attention-model",
+      "reference_label": "[39] Kool and Welling (2018)",
+      "description": "Exact explicitbodycitation; attention-model citedas earlier titleAttentionSolvesYourTSP/arXiv1803.08475, exactsameidentifier independentlyverified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [39] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall20scientificpagesincluding separateofficialsupplement andmanualcode/versioninventory.",
+    "Clarifiedlearnedfeatureversusclassicalteacher, partialcycleassumptions, noQAPoptimalityguarantee and transductive/heldoutprotocol.",
+    "Preservednegativebaselines/timingsanddocumentedmain-supplementderivative/parameter/datasetcount/table/runtimeconflicts; threeexactcitationsincludingattentionalias."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5152f1316c33488f5b42a92ce7a940014e84e9f6b403f7de8690a97145d5759a"
+}

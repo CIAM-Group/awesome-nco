@@ -1,0 +1,530 @@
+{
+  "version": 1,
+  "paper_id": "linsatnet",
+  "note_path": "specialist/linsatnet.md",
+  "baseline_note_sha256": "6cf35a89c61b2300a33fcd356b16671478d7cdba443a60042877579725ddc296",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/wang23at/wang23at.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/wang23at/wang23at.pdf",
+      "local_path": "research/import-272/nco-94e0730c2a.pdf",
+      "sha256": "a8760c6445da4c1b1512535a667325dc84567f9b48cf7a75beb1ce1c2fa1fce4",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readall6authors2affils/Table1/rawpositiveallentriesconstraints/nonparamlayer/exactautodiffthroughalgorithmnotBooleanSAT/discusswrappergradients. Primarymethodmodelinglayerwithseparatelytrainedtasknetworksnotmultitasksolver. ClassicGamma transportcoefficientnotusualmassmatrix;supportandfeasibilityconvergencepending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallAlgorithms1-2/Thm3.1/Thm3.2/Lemmas3.3-3.4/Cor3.5/Eq9-16 andpackingcoverequalityslack/TSPSEsetup. JointfeasibleZassumed,zerosuweighted0/0needsD. Potentialmulti-fullsupportcycleandetaKLweightchangependingfullB; noautocertifyjointconvergence."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTSPSE/PRI(20nodes10k,m5)relaxation/Transformer/BEAMpostprocess/Table2allbaselineproperMTZvsquadraticGurobi;partialGMphiGIVEN,LinSATthenHungariantopphi/Table3;portfolio494assets2018-20train2021test120/120tech50constraint/Table4Sharpe. Distincttasks/checkpoints,continuousportfolio notCOintegrality;nofinancialadvice."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readallbibliographypp10-12 completeincludingneuralGMseriesBBGM/PCA/NGMv2TPAMI/CombOptNet/blackboxSATNet/QuerySAT/one-shotcardinality. Matchactualexistingcataloglater;do notassumePOMO citedKwon2021MATNETnotPOMO."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadAppendixAfullnotationequivalence;BfullLemmas3.3/3.4proofEqs23-34/currentetaKL vsnexteta swapnotderived;C1Eq35Lagrangianbegins. Concretefullsupport2cycleparentnotified(jointZexists);don'tequatecurrentmarginalcertificatewithallresidualconvergence."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "ReadfullC1LagrangeEq37weightedperjexponentvsdiagclaim/C2Algorithm3/C3tauiterationbound/C4allTables5-6feasibleONLYmetrics:roundtau.1TSP1.19/1.52%vsbeam100%,smalltau1000iterstillnotallfeasible. Djointfeasibleassumption/dummyseparateperconstraint. E1training3layer2568heads100epoch256kepoch/beam2048;E2time2s20svsmain2s10sdiscrepancy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "ReadE2allheuristicformulas/standarddummyreduction/AMmodifieddecoding/hardwareE3allTable7ablation/Fig2-3routecases/GtimeallTables8-11andFtestbed. TSPbeam87%runtime,GMlayer81.4,portfolio79.9%,continuousnotdiscretepostprocess. All21pagesincludingrefsA-Gread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Multiplepositivepacking/cover/equalityconstraintstargetedbeyondstandardSinkhorn.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "FullintroTable1/Eq1"
+        }
+      ]
+    },
+    {
+      "id": "layer",
+      "category": "contribution",
+      "statement": "Parameterfreecontinuousconstraintlayerwithdifferentiableiterations,notBooleanSAToronecrossapplicationcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Actualcontributions/applications"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Weightedmarginalnormalization/slacks/expWtau/compatibilityandjointfeasibleassumption;finiteiterations/autodiffnotexactfeasibility.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "AllAlgorithms1-3/proofs/constraints"
+        }
+      ]
+    },
+    {
+      "id": "decoding",
+      "category": "method",
+      "statement": "TSPTransformerbeam2048;GMgivenphi+Hungariantopphi;continuousportfolioseparatenets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Fullapplicationtraining/inferencedetails"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Table2routingquality/timesstandardvsquadraticbaselines,Table3givenphi61.2F1,Table4historicalSharpe2.27/2.42.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Fulltables/prespecifiedprotocol"
+        }
+      ]
+    },
+    {
+      "id": "feasibility-results",
+      "category": "experiment",
+      "statement": "Directroundtau.1TSP1.19/1.52%feasiblevsbeam100%;qualityfeasible-only;beam87%runtime;GM/portfolioLinSATdominatesruntime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            20,
+            21
+          ],
+          "locator": "AllTables5-6/8-11"
+        }
+      ]
+    },
+    {
+      "id": "general-coefficient-boundary",
+      "category": "limitation",
+      "statement": "Fullsupport2cyclewithcommonZinvalidatesunrestrictedjointconvergence/Eq11interpretation;notliteralcurrent-marginalTheorem3.2;Eq32fails.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14,
+            15,
+            16
+          ],
+          "locator": "Exactcuratormatrixinmetadata/recomputescript;rootindependentchecked"
+        }
+      ]
+    },
+    {
+      "id": "otherlimits",
+      "category": "limitation",
+      "statement": "Nonnegativecoefficients/finiteiterations/notintegrality/tau/numerics/noobjectiveopt/givenphi/Gurobitimelimitdiscrepancy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Exactconditionsandreportedtests"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full21pA-G/manualAPI/repo/code/visualchecked;minimaldenseungroupedv1v2testnotapplicationrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Actuallogs/metadata/scripts"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Modeling-layer method with specialized per-application solver networks; no cross-domain shared checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "All three independent networks and training protocols"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at.html",
+      "locator": "PMLR202:36605-36625exact6authors2affiliations;HTMLcitation_publication_date2023/07/03supportsretainedJuly3,notconferenceJuly23-29."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at.html",
+      "locator": "ManualpublisherRelatedMaterialPDF/OpenReviewonly,noseparatesupplement. Full21pageA-Gintegratedscienceallread. OpenReviewD2Oaj7v9YJnotesAPIv1/v2both403cached. Repo34filesnoPDFZIP;ThinkMatch/models/LinSATAPIonlyREADME(nohiddenPDF),READMEreadlinkactualNGMmodel;noexplicitmissingdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at/wang23at.pdf",
+      "locator": "Formal21pSHAa8760c6445da4c1b1512535a667325dc84567f9b48cf7a75beb1ce1c2fa1fce4full1-21read. Visualpp4/5/14/15theory,7/8/17/21results,existingframework.pngcheckedmatchesFig1architecture."
+    },
+    {
+      "field": "general_coefficient_counterexample",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at.html",
+      "locator": "Executable research/full-text-review/linsatnet/recompute_multiset_cycle.py implementsliteralAlgorithm2. Sones,u1(1,1),v1(1,1),u2(1,2),v2(1.8,1.2),Z[[.2,.8],[.8,.2]]feasiblefullsupport ->G.5everyentry<->columns(.6,.4). Eq32eta2LHS-.0405465108108165vsRHS0. root independently read Eq5/6/Alg2 and ran this paper-algorithm script, confirming cycle and Eq32 values. This does not attribute the separate kernel script to root. Doesnotrefutecurrent-marginal-onlyliteralThm3.2;restrictjointfeasible/Eq11interpretationnotallbinarycoefficientdemos."
+    },
+    {
+      "field": "code_url,kernel_recompute",
+      "source_url": "https://github.com/Thinklab-SJTU/LinSATNet",
+      "locator": "Commitbf4a44a6b0f5aa241dfb1a623426c573378e9aa2;README/appinstructions/fullconstraintinit/densev1v2kernels+helpersread. recompute_current_kernels.py ASTloadsONLYauditedfunctions,no__main__training;Torch2.4.1+cpu float32,2equalityinputE[[1,1],[1,2]],f[1,1.8],logits0,tau.1,groupedFalse,modesv1/v2,maxiters10/100/1000 -> x[.599999964,.599999964],residual[.199999928,0]. Originalfloat64attemptfailedemptyconstraintdtypefloat32,switchallfloat32thenpassedcomputation. Grouped/sparseandapplicationexperimentsnotrun."
+    },
+    {
+      "field": "task_scope",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at.html",
+      "locator": "TSP20n10k3layer256Transformer100epochs256k/epoch,beam2048;GMPascalVOCgivenphiandHungarian;portfolio494assets120/120dayhistoricalsplit+50%technologyconstraint. CurrentThinkMatchREADMEwarnsinliercountknowncomparability. Nojointcheckpoint/BooleanSAT/continuous-implies-integerclaim."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://proceedings.mlr.press/v202/wang23at.html",
+      "locator": "Allbibliographypp10-12andbodyread. 13exactexistingIDsmanualmatches;automatictoolonly2becauseformats. Kwon2021isMatNetnotPOMO;NGM/PCA/BBGMnottitlesincurrentcatalognotinvented. Currentlayergradientarithmeticdistinguishedfromotherestimatedargminwrappers."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "linsatnet",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbodyp2;fullrefp12: Yu et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbodyp1;fullrefp11: Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "cardnn",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbodyp2;fullrefp11: Wang et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "rgm",
+      "reference_label": "Liu et al. (2023)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbodyp1;fullrefp11: Liu et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "comboptnet",
+      "reference_label": "Paulus et al. (2021)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbodyp2;fullrefp11: Paulus et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic et al. (2019)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbodyp1;fullrefp11: Pogancic et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019a)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicitbodyp3;fullrefp11: Wang et al. (2019a)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicitbodyp3;fullrefp11: Selsam et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "Explicitbodyp7;fullrefp10: Kool et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "Explicitbodyp6;fullrefp11: Kwon et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicitbodyp1;fullrefp10: Karalias and Loukas (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            10
+          ],
+          "locator": "Explicitbodyp17;fullrefp10: Joshi et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "linsatnet",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021a)",
+      "description": "Explicitconstraintlayer/SAT/routing/graphmethodorbaseprinciplerelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbodyp1;fullrefp11: Wang et al. (2021a)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Identifiedparameterfreemodelinglayerandseparatetrainedtasknets,beam/Hungarianpostprocess/givenphi/continuousportfolio.",
+    "Replacedunqualifiedjointconvergencewithauthorscurrent-marginalclaimandstrictpositive2cycle/Eq32curatorqualification.",
+    "Retainedminimalpaperalgorithm/denseungroupedv1v2kernelrecomputes,notfullapplicationrerun.",
+    "Full21pA-G8visualpages/framework/API/repo/fullrefchecks13exactcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "78df0b03fda3e3c3532e83f2f0eeae01c7d0d74d79d82d27d0439be01a1731c6"
+}

@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "paper_id": "saycanpay-heuristic-planning-with-large-language-models-using-learnable-domain-knowled",
+  "note_path": "specialist/saycanpay-heuristic-planning-with-large-language-models-using-learnable-domain-knowled.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "f5f1b5cea368a007fd7b875bf91e36fbb3570595599bf524d9012b4fa1c96351",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2308.12682v2",
+      "retrieval_url": "https://arxiv.org/pdf/2308.12682v2",
+      "version": "arXiv2308.12682v2 January1 2024,12pages; complete manuscript with full references",
+      "local_path": "research/full-text-review/saycanpay-heuristic-planning-with-large-language-models-using-learnable-domain-knowled/reading-candidate.pdf",
+      "sha256": "909290cf22fcfa0676f4e4477bf90b162a9b64336d720f9068c1428e12f85e39",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Actually read complete pp1-4 identity/related work/POMDP formulation/probability decomposition/heuristic-search distinction and action-vs-token Figure2. No visual input despite illustrative grid. Domain-specific Can/Pay training prevents universal-checkpoint classification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Actually read complete pp5-8 all score definitions/beam updates/InfoNCE negatives and discounted-MSE Pay/BERT details/Tables2-5 all rows/train-test splits. Expert-length match is not certified optimality. FlanBabyAI beam30 vs greedy36 and OOD Ravens collapse contradict uniform rankings. Separate test-success/test-optimal samples and 20 VirtualHome OOD."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Actually read complete pp9-12 all results/ablations/timing/limitations/Table6-7 and full bibliography. All3 contact sheets viewed including every graph/table/key formula. SevenV100/20epochs/50batch paper vs README30Can/20Pay/60batch examples distinguished.705-entry pinned repo has no scientific PDF/TeX/notebook/archive, full README actually read; no separate scientific supplement identified. Candidate scan and full bibliography reveal no established current-catalogue target identity. No benchmark/model load."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Ground LLM action plans and reduce unnecessary steps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Action search with Say/Can/Pay plus multi-environment evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Sections4-7"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Domain-specific contrastive BERT Can and discounted regression Pay guide partial-plan action beam search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections5-7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate domain-trained feasibility/payoff models; specialist constructive despite shared frozenLLM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            8
+          ],
+          "locator": "Domain-specific training/beam action extension"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Success and reference-length matching on separate subsets; negative FlanBabyAI and Ravens OOD examples qualify gains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables3-7"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "No admissibility/optimality guarantee; expert/vocabulary/domain dependence, manual VirtualHome validation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Evaluation/limitations"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Entire12p version read and identified source inventory checked without running models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11,
+            12
+          ],
+          "locator": "Identity/limitations/complete bibliography"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and version history",
+      "source_url": "https://doi.org/10.1609/aaai.v38i18.29991",
+      "locator": "Three authors, AAAI2024 pp20123-20133; primary arxiv history v1 Aug24 2023/v2 Jan1 2024."
+    },
+    {
+      "field": "supplements and source inventory",
+      "source_url": "https://arxiv.org/pdf/2308.12682v2",
+      "locator": "Full12p/all scientific sections and complete refs read,3 contact sheets viewed;705-entry pinned official tree/full README read, no additional scientific PDF/TeX/notebook/archive identified."
+    },
+    {
+      "field": "classification and figure",
+      "source_url": "https://arxiv.org/pdf/2308.12682v2#page=2",
+      "locator": "Domain-specific Can/Pay training; action-level partial-plan construction. OriginalFig1 p2 full caption crop70,45,544,278at3x. Full bibliography/body scan no exact current target identity."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read full arxiv version and complete scientific content; no PDF-download-as-reading claim.",
+    "Classified specialist using domain-trained auxiliary models.",
+    "Qualified success and expert-length metrics with separate test subsets, negative OOD and decoding cases.",
+    "Documented pinned code and actual example-setting differences.",
+    "Final visual inspection confirmed complete original figure/caption after crop adjustment; asset coordinates and prose synchronized."
+  ],
+  "reviewed_note_sha256": "bb576197c1adaa3ac00c788f6dd5bce4c62b0e5884d9c9bb3f72927e6ebb3ed7"
+}

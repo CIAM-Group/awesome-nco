@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "paper_id": "hierarchical-reinforcement-learning-for-cooperative-air-ground-delivery-in-urban-syste",
+  "note_path": "specialist/hierarchical-reinforcement-learning-for-cooperative-air-ground-delivery-in-urban-syste.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "0a242086a17e06bf09e59f3437200eac2855e85ff69ccbba9689faad36c7c7e1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2602.12913",
+      "retrieval_url": "https://arxiv.org/pdf/2602.12913",
+      "version": "Actualarxiv2602.12913v2dated2026-08-04,12pagesfullyread incl46referencesandcompleteAppendixA;v1firstpost2026-02-13andformalKDDonline2026-08-08verifiedseparately.",
+      "local_path": "research/full-text-review/hierarchical-reinforcement-learning-for-cooperative-air-ground-delivery-in-urban-syste/paper.pdf",
+      "sha256": "ddbef69e89d8c5a8abcb2ece7f51e0935bdf04fba4fe460f9d4b5702b36959e5",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readactualarxivv2Aug4_2026KDD12p byline10/institutionsHKUSTGZ/CMU/BIGAI/BIT/HKUST2corresponds; fullintro/Poptbinarymatching/energyEq2/frameworkactiveprunegreedyscoreexecution. ConstructiveNNdispatchscores plusclassicalroutingnoincumbentedit. Popttextensuresone-to-onebutprintedonlyperordercapacity, Eq2schematicenergy omitslistedfullpickupdeliveryloop; detailedAppendixneeded. Nojointnativeproblemcheckpointestablishedbyheterogeneousfleet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallArchitectureFigure3,state/action encoders/managerbinaryorsoftgoal/workertanhscore/hybridintrinsicreward/trajectorydenseEq9/DDPG4networks andallsetup/data/splits/baselines/metrics/hardware. Actualprinted[0,1]workeractionvstanh[-1,1]; noformalpolicyinvarianceclaimforheuristicreward. Five randomseedruns withvariance. Shanghai70/20/10byday30days20,664 vsChengdu6days96376 days1–4/5/6; singleA4000torch2.1.3,B32lr.005hidden256,50timestep/epoch,30–50fleet1:1,realworlddatausedsimnotphysicaldeployment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadfullTable2all5seedPN/DN/ETall6datasetfleetsettings,ablationFigure4/modeFigure5/platform6/relatedwork/limitations/conclusion/GenAI. Claimed26percent tableShanghai30DN30vsnext22=36.36percent actuallybeyondbroad18–28range;Chengdu30vsHGR59→76=28.81percent. ETper50stepinferenceepochnotperorderresponse;comparisonfastestbaselinefactor~7.9–68.9notuniform80,slowestmuchhigher. Five±entriescalledvariancecannotreinterpretstd. PlatformsimulatornotliveUAVdeploy. Authorlimits energy/detournotobjective/extrememodeimbalance/weatherfuture; noindependentfairness/airspaceguarantees."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readfull46referencebibliography acrosspp10–11 andcompleteAppendixA1–A4/fig7–8simulationconfig/monitor/agenttelemetry/comparativecharts. Noexternalprooftheoryscientificattachmentnamed. RepoCodeexplicitprimary. Methodologicaltour/2021CORsurveypossibleuncataloguenotforced. Ref30DDPGactuallyVNF2019notcanonicalalgorithm;permutation-invariance[21,22,41]actualtimeseries/mobilitypapersnotgenerictransformerproof,avoidcitationedgesunsupportedtitle/bodyidentity. JournalextensionsseparatefromconferenceIDs."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Hierarchicalmanagerair-groundselection/modeworkersscorefeasiblepairs +greedyconstructivedispatch, rewarddesignandsimulatorplatform.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Introduction/framework/Figures2–3/method"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Explicitdeadline/energypruninganddifferentmobility; neuralboundedscoregreedymatchingnotincumbentedit. Manuscripttransformer/consistencyrewardvsactualMLP/cosineprefixsnapshotdifference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3–4/Equations1–11 plusactualcode"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Two citydatasets/splits,30–50fleet/50stepETsingleA4000B32lr.005hidden256,5randomseedmeans/variance. TableDNrelativegains24–36percent/24–29percent andspeedupsselectednotuniform80x.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–2/Figures4–6/setup"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Throughputobjectiveomitsenergy/detourpenalties; demand-dependentmodeimbalance/weatheruncertaintyfuture; simulationplatformnotphysicalfleetdeployment or safetycertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Limitations/conclusion/completeAppendixA"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "One heterogeneouscooperativedispatchnativeproblem, newgreedymatchingfromNNscores; noNNincumbentrewriting/nojointcrossproblemcheckpoint: specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Actualtask/actions/execution"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actual12pagearxivv2all46refs/AppendixAread; formaldatevsv1separate,62membersofficialZIP/noextrascience/actualkeycode/completeoriginalFigure3viewed; nointernalcitationidentityconfirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Fullregisteredsource/manualarchive/canonicalprimary"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3770855.3818964",
+      "locator": "PrimarypublisherCrossref10authors/pp11295–11306 online2026-08-08print08-09; actualPDFp1identical10bylineHKUSTGZ/CMU/BIGAI/BIT/HKUST,HKSAR;SijieRuan/YuxuanLiangcorrespond."
+    },
+    {
+      "field": "arxiv v1/date/read version",
+      "source_url": "https://arxiv.org/abs/2602.12913",
+      "locator": "Savedprimaryhistoryv1Fri13Feb2026 13:19:59UTC/v2Tue4Aug2026 03:39:03UTC; actualfullreadPDFv2stamp12pagesformalformatted."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/thunderlrr/Cooperative-Air-Ground-Delivery",
+      "locator": "Completepaper12pallAppendixA1–A4and46refsread; noexplicitexternalproof/suppnamed. gitlsremote1mainSHA5228fdf; actualcodeloadZIP68869282bytes/62membersmanuallyinventoried8Python+data/noREADME/PDF/TeX/notebook/ZIPscience. Actualpaperandfirstauthorhomelinkthisrepo. APImeta/tree/releases403ratelimitnotclaimedsuccess."
+    },
+    {
+      "field": "code version/classification",
+      "source_url": "https://github.com/thunderlrr/Cooperative-Air-Ground-Delivery/tree/5228fdf11ba424a8d2392a3cbc917e57239e6adc",
+      "locator": "Actualmanager/UAV/carrierMLPactors flattenedstate/LayerNorm/(tanh+1)/2 notthreeTransformers; intrinsiccosineprefixstatedifference/goal notmode-matchconsistency. Separate6actorcriticnetworksplus targets. Actionscoregreedynewdispatch, noincumbentedit; heterofleet singleproblem specialistconstructive."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2602.12913v2#page=4",
+      "locator": "FulloriginalFigure3p4Rect54,80,295,196@5xatomicPNGactualviewed; pages3/4/5/7/8/11/12allkeyformulas/tables/framework/ablation/transport/platformrenderedandviewed."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2602.12913v2",
+      "locator": "Full46bibpp10–11+explicitbodychecked againstactivecatalogue; exacttitlecandidates0, noindependentlyconfirmedinternalidentity. No forcedsame-topic/journalextension/surveyedge; citation_scan_complete with0edges isintentional."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacepending10author/institution/task/datefieldswithfullsourceandformalprimaryevidence; v1datevsactualv2readclearlyseparate.",
+    "Specialistconstructivedispatchwithheterogeneousfleet,norepackingorcrossproblemjointcheckpoint.",
+    "Readall12pagesinclcomplete46refs/AppendixA/scienceandallkeyvisuals/originalFigure3.",
+    "AccurateDNcounts/relativegainsandETepochunits; selected80xnotuniform acrosscities/comparators.",
+    "Distinguishsimulatorplatformfromfielddeployment, incompletebudget/energyobjective/imbalancelimitations.",
+    "PreserveactualreleaseMLP/cosinerewardvsmanuscripttransformer/consistencyrule; onlykeysourceclaimschecked,nofulltrainingreproduction.",
+    "62membersourceZIPinventory noextra science;0confirmedinternalreferencesratherthanforcingnear-topicidentities."
+  ],
+  "reviewed_note_sha256": "9171603ae29854c87410fb110deacb1cd359d27d3fca56d3fccc1ec18e70fec5"
+}

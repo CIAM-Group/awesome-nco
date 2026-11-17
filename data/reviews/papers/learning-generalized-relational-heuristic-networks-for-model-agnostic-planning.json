@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "paper_id": "learning-generalized-relational-heuristic-networks-for-model-agnostic-planning",
+  "note_path": "specialist/learning-generalized-relational-heuristic-networks-for-model-agnostic-planning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "7c8d015e0c60903ac98736836ba5b0711bc9a3e2bbd9914cf4029dcf22a0694a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2007.06702",
+      "retrieval_url": "https://arxiv.org/pdf/2007.06702",
+      "version": "arXiv2007.06702v2 Oct20 2020,9p authorversion",
+      "local_path": "research/full-text-review/learning-generalized-relational-heuristic-networks-for-model-agnostic-planning/reading-candidate.pdf",
+      "sha256": "4cae4a5d17b97c48b3762bd503f121a3fdc43f2004f0029e7251b5ad52a9928c",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "formal",
+      "url": "https://cdn.aaai.org/ojs/16983/16983-13-20477-1-2-20210518.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/16983/16983-13-20477-1-2-20210518.pdf",
+      "version": "AAAI2021 formal10p May18 2021",
+      "local_path": "research/full-text-review/learning-generalized-relational-heuristic-networks-for-model-agnostic-planning/formal.pdf",
+      "sha256": "3a4367dc849831efec9b098551bdea76f447be1c5027e87a31c3160f269e8c6f",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "source-appendices",
+      "url": "https://arxiv.org/src/2007.06702v1",
+      "retrieval_url": "https://arxiv.org/src/2007.06702v1",
+      "version": "Local review rendering of author arXivv1 July10 2020 source supplemental/results.tex + ablation.tex;7p; not publisherPDF",
+      "local_path": "research/full-text-review/learning-generalized-relational-heuristic-networks-for-model-agnostic-planning/appendices-source-rendered.pdf",
+      "sha256": "156aff26e55af24f104c8d7277f341da86ddf08f67ec55dbff8d84a5f0ff72ae",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "supplemental/results.tex + supplemental/ablation.tex"
+    },
+    {
+      "id": "source-details",
+      "url": "https://arxiv.org/src/2007.06702v1",
+      "retrieval_url": "https://arxiv.org/src/2007.06702v1",
+      "version": "Local review rendering of all11 nested author arXivv1 supplemental/*/results.tex tables/plots;24p including sectiontitlepages; not publisherPDF",
+      "local_path": "research/full-text-review/learning-generalized-relational-heuristic-networks-for-model-agnostic-planning/appendices-source-details-rendered.pdf",
+      "sha256": "8fccf8061bf2b001fe132b3d338e1a394f4942993b5238c001f0f5382263f55b",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "supplemental/*/results.tex"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 9,
+      "notes": "Actual all9 arxivv2 pages read including formalframework/canonical3valuedabstraction/unarybinaryrestriction/fullarchitecture/hybridheuristic/soundcompletetheorem/13domainexperiments/leapfrogging/limitations/completebibliography. All9pages contacts actuallyviewed. Earlier Pyperplan*/Competition* evaluation separated from laterformal500testconfiguration; no universalwalltime/optimality claim."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Actual all10 formalAAAIpages read including completebib/allkeymath/Table1/Figs1-3 and allcontacts actuallyviewed. Canonicalroles andcountvectors domainpredicateactiondependent, separateperdomainGHNs. Finite-state soundnesscompleteness notoptimality; actionsuccessorsimulatorstillrequired. Formal500testinstances/domain separate400 binnedleapanalysis/600sec; hff6better6equal1worse vsFD1better9equal3worse, compiledwalltimelimits andLogisticsnegative. Full originalFig1/caption viewed."
+    },
+    {
+      "source_id": "source-appendices",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Actual all7 locallyrenderedauthor-v1-source appendixpages read andcontactsviewed. All11domaintrainingconfigs,Logisticsaliasing/Sokobanbinaryconversion,sharedinputFerryablation/neighborhoodplanlengthheatmaps read. AuthorrawTeX present in v1tar but omittedcompiledPDF; localpreface/provenance/logs retained, unresolvedmaincrossrefs disclosed. Earlier5000nodecap/configs not substituted for laterformal600sec/no-nodecapresults."
+    },
+    {
+      "source_id": "source-details",
+      "first_page": 1,
+      "last_page": 24,
+      "notes": "Actual all24 locallyrendered author-v1-source detailedresultpages read (landscape--orderblocks used for correcttableordering) andallcontactsviewed, includingblanksectiontitlepages. ElevennestedresultTeX include12fulltables/boxplots(BW/Childsnack/Ferry/Goldminer/Grid/Grippers/Logistics/Miconic/Sokoban/Sokoban2/Spanner/Visitall). Checkedtotalcoverage/nodes/planlength/time andnegativeLogistics,notallwins. Theseolderresults not formalversionappendix numericalidentity claim. Pinnedaaai21codebranch README/tree inspected; vendorPDFs inventoried not read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Learn planningguidance without suppliedsymbolicactionformulas while retaining simulatorandatomaccess.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/representation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Roleabstraction/hybridpriority/leapfrogging evaluated13domains.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections2-5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Binnedvsabsolutecounts/action-roleprobability/artificialpathcost/planlength; finite-state completeness notoptimality.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Definitions2.1/2.2/Eqs1-6/Theorem4.1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Domain-specificnetworks/within-domainobjecttransfer, not sharedcheckpointacrossdistinctnativetasks.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Trainingdomain-specificGHNs/experimentalsetup"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Formal500mainvs400binned/600sec; baselinecoverageandwalltimemixed withLogisticsnegative.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Figures2/3/Sections5.1-5.2"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Aliasing/goalhintlimitations/compiledwalltime/nooptimalcostguarantee.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            4,
+            7,
+            8,
+            9
+          ],
+          "locator": "Theorem/negativecases/discussion"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Recoveredv1sourceconfigs/ablations earlier5000nodecap notnumericalidentitywithformal.",
+      "evidence": [
+        {
+          "source_id": "source-appendices",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Fullauthor-sourceappendix/localrendering"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and history",
+      "source_url": "https://doi.org/10.1609/aaai.v35i9.16983",
+      "locator": "Formalbyline2ASUauthors/pp8064-8073/primarypublishedMay18 2021; arxivv1July10v2Oct20 2020."
+    },
+    {
+      "field": "supplements scientificcoverage and versionboundary",
+      "source_url": "https://arxiv.org/src/2007.06702v1",
+      "locator": "Authorv1tar source rescued scientificappendices omittedcompiledPDF; 7+24 locallyrenderedallread/viewed includingall11nestedresultTeX/12tables. Source hashes/provenance/logs saved. Older5000nodecap/configs separated fromformal500test/600s. No publisherPDF/lateversionidentity claim."
+    },
+    {
+      "field": "classification figure and code",
+      "source_url": "https://arxiv.org/pdf/2007.06702v2",
+      "locator": "PerdomainGHNs within-domaincounts; originalformalFig1p3crop50,50,565,258/fullcaptionviewed. Officialaaai21 branche4f7311f3ecd0e2dcec9d2cdeff041d59a188a93 README/treechecked; reference scan no exactcurrentinternaltarget."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced placeholder authors/date/classification with fullscientificevidence.",
+    "Rescued omittedscientificappendices from publicv1source and disclosed localrendering/versionlimits.",
+    "Separated formalbaseline/sizebinsettings fromolderauthorresults; retained negativecases andnooptimalityguarantee."
+  ],
+  "reviewed_note_sha256": "55dc46e91c2fe6f6d04e5802f18500c61db1960919e878d0fd4c12706eb7cc6e"
+}

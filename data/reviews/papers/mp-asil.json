@@ -1,0 +1,896 @@
+{
+  "version": 1,
+  "paper_id": "mp-asil",
+  "note_path": "generalist/mp-asil.md",
+  "baseline_note_sha256": "b1b7bfed4f35e03157630ea2729cda4f139ca3c2212bc09af054e415223b1cd6",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2330c4be5e12c504705ba1db8a507966-Paper-Conference.pdf",
+      "version": "Complete formal NeurIPS2025 publisher48-page PDF including86references/checklist/scientificAppendicesA-I;publisherdate2026-04-23",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2330c4be5e12c504705ba1db8a507966-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-dc368f5f65.pdf",
+      "sha256": "db86178580bd482042d93530cb790d8eeb4c405ad76d4e1dddc88b9ac99b5148",
+      "pages": 48,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfullabstract/intro/relatedandstaticpositive-timechainprelims. Multipolicycommonobjective/singlenetworkwithinproblemnotautomatic6taskcheckpoint. Native6schedtypesplusCOPexperimentspendingappend. Selflabeldoesnoteliminateenvironment/masks/objective,onlyrewardshaping. Allbodycatalogcitationidentitiesneedrefsafterfullread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullEq1-4/Fig1-2/Alg1/allsetup. Latentpolicieswithinbackbone,explicitper-taskbackbonesp6=>specialist. Bestofktrajectorylatentwinneronlylikelihoodupdate,weightabs(best-mean)/populationstd,zero-varianceundefinedmustinspectappend/codeepsilon. NotunbiasedgradientofexpectedminEq3automatically;sampledlabelandadvantagereweightingstopgrad. Terminalobjectiveevaluationsstillneedednorewardshapingnotnoobjective/environment. Hardwarei9-14900KS/4090,p6warnsoriginal-paperasterisktimesincomparable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTables1-5/Fig3-4/results/ablation/ksweep/diversity. SMSPUPMSPFFSPgapsanchorownMPASILk16notcertifiedoptimum;PFSPJSSPbestknownbenchmark. JSSPaverage7.4vsSLIM7.8but15x15ours6.8>worse6.5 and30x20ours12.8>worse12.7;CP2.0avgbetter. TSP/CVRPexplicitrealexperimentsmustaddtasksbutseparatebackbonecheckpoints. Fig3tenrunsnotnecessarilyindependenttrainingseeds. Figure4uniquetrajectoriesnotguaranteedbeneficialglobaldiversity. MainTablesoriginalasterisktimeshardwareincomparable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadfullspecializationFig5/actualTSPCVRP100POMObackbone8xn800candidates/Conclusion/ack/fullrefs1-35. MainTSPgapLKH3notcertifiedoptimum. AppendixEexplicitcrossproblemgeneralizationmustcheckifdifferentnativeconstraints/tasksactualcheckpointcouldgeneralistdespitesixschedseparatemodels. 16policywinningcountsnotlatentcontinuouscoverageguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readcompletebibliography36-86. Refsall1-86read. Candidateyear/arxivvariantsmustmatchIDs. BQheavydecoder/invit/omni/POMOmulti-taskroutingappearappendixE. Additional86INFOCOMnetworkchainnotautoownproblemwithoutactualexperiment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readallchecklist1-7incltheoryNAexplicitnoformalresults;codeNAjustpublicbenchmarksdoesnotestablishcoderelease;statisticalNAmeanmainly(noidentifiedsignificance). MustverifyactualsuppZIPandlatercitationarchlinksnotassumeofficialimplementation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Readcompletechecklist8-16throughquestion16. Codefuturepublicpromise p21 notpublishedartifactconfirmation;AppendHethicsclaimsnotgenericmethodguarantee. Noformaltheoryperp17 explicitly."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Readchecklist16answer/TOCfull/AppendA1/A2first/allFig6-7. Corestatic6sched alpha-beta-gamma formalism, genericillustrationsnotseparateexperimentproof. Need48pagesallappendicesA-I."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "ReadallA2/A3objective/AppendB1-3/Eq5-8/Fig8-11. HELDlatentconcatqkv beforeattention/LEHDconcatembeddingbeforeMLP;latentoncerolloutconstantacrossnodes. DefaultzU(-1,1)^4+onehot12,d16;UPMSPU^2+onehot6,d8. SharedsingleNNwithinlatentpoliciesnotnative6problemNN. All3priorsablationnotformalrobustnessproof. Noformaltheorems."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "ReadallC1-6/taskdefinitions/instances/models/test/train/D1start. Explicitdifferentbackbonesp28. SMSPweightedTardinessBQ;UPMSPreleaseeligibilityseqsetupTardiness25x3;PFSPMatNetseparatemachinecounts;FFSP3stages4machinesseparate3sizesfine-tuneMatNet;JSSPSLIMall6sizetrain30k;FJSPDANIEL10x5train4-6ops/jobtransferssizes. Dappendthreetrialinferencesampledpoliciesnotindependentlytrainedseedclaim. SixschedseparatenativeNN;AppendE3mayactualroutingMTL."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "ReadallFig12/Table6-8+75UPMSPconfigrows20insteach. Epochimprovement1.3-250notwallclockequalrolloutcompute. MPbetteraveragebut50x3T.2R.2classical37.35<ours54.76;T.6R.8Cho560.29<ours579.01 =>notuniformallconfigdominance. Statedthreeinference-trialsnottrainseedCI. JSSPalltimesourssameasSLIMreportedbutasteriskdifferenthardware caution."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 36,
+      "notes": "ReadallD4-7/Table9-13. PFSPgamma1,2separatetrain20x5;100x5NEH117.24<ours117.37notuniformbest. LAavg2.3tieTBGATvsSLIM2.5but10x5ours1.3>1.1. FJSPdetDANIEL10x5fixedtraintransfersactualsizes;publicbenchresults7.32/7.24/.50/4.66gaps. StochasticseparateSPM-DANlatentmodeltrainedVaR testalsoexpectedmakespanwithoutretrain =>objective-sharedcheckpointbutproblemstillstochasticFJSP;needremainingtablesandroutingMTLnativeconstraints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 37,
+      "last_page": 39,
+      "notes": "ReadallstochasticTables14-15/Fig13all24ablations/Fig14/D9-10CMA. StochasticVaR95andexpectedobjectivesbutsameNNnotretrain;gapsrelativeSPMDANnotoptimal. D8proseJSSP30x30typoactualFig13is30x20. Mainbestablation22/24notall. CMA3components1600attempts/sameSAMattemptscomparisonPFSP1.63vs2.04/JSSP6.37vs6.98;notupdateNNweights. 2Dheatmapseparatemodelnot16Drealnetworklandscape."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 40,
+      "last_page": 42,
+      "notes": "ReadallE1-3/Table17-19/Fig15/constraintdefinitions andsharedPOMOMTLsetup. Explicitmulti-taskVRPstraining5/zero-shot5 =>generalistconstructionmigrationneeded,not6schedshared. MPASILlargeTSPBQnotbest100/200/1000;fixed0.02tie100,500.41vs.43/.46. FourTSPdistsGurobireference. E3constraintsTW/open/backhaul/durationnewfeasibletasksactualsharedcheckpoint;unseenOVRPLworse4.90vs4.57. Parentnotifiedmigrationbeforewrites."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 43,
+      "last_page": 45,
+      "notes": "ReadallTable20/FhyperparamsTables21-24. Generalistshared5nativeVRP+5unseenactualprintedtableunseenOVRPLTW/OVRPBTWnotOVRPBLTW(inp42prosemismatch). AvgobjectivePOMO-MTLtrained16.27notarithmeticmean16.08ishneedscheck,don'trepeataggregateObjuncritically. Gapmean3.05vs2.68valid. Detailedscheduletraining1000epochsPFSP100k/FFSPfinetune1e-5/sizespecific. ZIPdownloadcompleted101971069/32418members/noPDF/6READMEfullread;inspectcodeassetsnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 46,
+      "last_page": 48,
+      "notes": "ReadallTables25-28/Glimitations/Himpact/Ilicenses/finalpage. JSSP20epochs30k4days;FJSP40epochs1605h;TSP2000epochs100k12days/CVRP800010k4days;GPU4090notnegligibleofflinecost. Fixedlatentprior/kscalesmemory/labelsqualityfuture/dynamicmultiobjectiveuntested. PublishedApril23,2026formalNeurIPS2025volume38/pages24569-24616DOI. All48pagesfullA-I+checklist+refscomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Singlepolicymodecollapse/rewardshaping/decoderparamgrowthmotivateconditionalmultipolicyselflabels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/related/Section4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "WinneronlylatentconditionedadvantageweightedSIL/6schedulingplusstochasticrouting/jointVRPs/CMAablation empiricalnotformaltheory.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            17,
+            36,
+            37,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "locator": "FullpaperA-I"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "GeneralistconstructiveduetoactualPOMOMTLshared5task+5unseenconstraintcombinationsE3;separatesixschedulingbackbones/TSPCVRPmaintaskmodelsnotshared.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            28,
+            29,
+            30,
+            41,
+            42,
+            43
+          ],
+          "locator": "Explicitper-taskbackbonesvsjointnativeconstraintcheckpoint"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "kpriorssample/costbestwinner/normalizedcostadvantageSIL;HELDqkv/LEHDMLPwith4continuous12onehot;UPMSP2+6;surrogatenoconvergence/unbiasedEq3gradientclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            25,
+            26,
+            27,
+            39,
+            44,
+            45,
+            46,
+            47
+          ],
+          "locator": "Eq1-9/Algorithm1/B/F/D10"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "All15fig28tableswithmatchedanchor/cost/negativeexamples/JSSP7.4vs7.8butCP2.0;jointVRP2.68vs3.05trained6.78vs7.03unseen/OVRPLworse;12dayTSPofflinebudgetnotjustepochgain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            27,
+            31,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "locator": "Allresultsscope/anchor/timing/uncertainty"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "ZIPcurrentSMSPaffinelatentcancelssoftmax(originaldecodercheck),JSSPequalcostNaN/Eq4zerostdunspecified;genericnonlinearMLPandothermodelsnotoverruled;Table20naming/arithmeticmismatchbounded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            26,
+            37,
+            38,
+            42,
+            43,
+            47
+          ],
+          "locator": "Curatorboundedreleasescriptandprintingissues"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full48pA-I/86refs/checklist28visualall15fig28tables;publisherZIP32418members39py6README5weights/noPDF/noFJSPorVRPcode/API40327citedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "locator": "Fullsource/supplement/code/visual/identityaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2330c4be5e12c504705ba1db8a507966-Abstract-Conference.html",
+      "locator": "PublisherApril23,2026/title4authors/volume38DOI10.52202/085713-0828/pages24569-24616;PDF1KAIST. Venueyear2025retained,actualpublicationdate2026-04-23."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2330c4be5e12c504705ba1db8a507966-Supplemental-Conference.zip",
+      "locator": "ManualpublisherSupplemental101971069bytesSHA469d063733657b9f2473a2288858198b905d459396038dd4a00532b6cc61c929;recursive32418members/32287files0PDF/nestedZIP/presentation. AllscienceAppendA-Iintegrated48p. 39Python6README5weights/dataonly. OpenReviewnotesVPm6afl0ScAPIsv1/v2403cached,nomissingexplicitdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2330c4be5e12c504705ba1db8a507966-Abstract-Conference.html",
+      "locator": "Formal48pSHA db86178580bd482042d93530cb790d8eeb4c405ad76d4e1dddc88b9ac99b5148.28visualpages4/5/6/7/8/9/10/24/25/26/27/31/33/34/35/36/37/38/39/40/41/42/43/44/45/46/47/48/all15figures28tables/centralformulasandAlg1."
+    },
+    {
+      "field": "scope,problem_families,problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2330c4be5e12c504705ba1db8a507966-Abstract-Conference.html",
+      "locator": "E3PDF41-43POMOMTLjointCVRP/VRPTW/OVRP/VRPB/VRPLthenunseenVRPBL/OVRPL/VRPBTW/OVRPLTW/OVRPBTW=>generalist. Rootapprovedflatgeneralist/mp-asil.mdstableid. Other6schedexplicitdifferentmodels/trainingC28-30,TSPCVRPseparatePOMO;stochasticSPMDANmodeldifferentandVaR→meanwithoutretrain."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/2330c4be5e12c504705ba1db8a507966-Supplemental-Conference.zip",
+      "locator": "ActualformalcodeZIPpartial5sched:SMSP/UPMSP/PFSP/FFSP/JSSP. 5weights1SMSP1UPMSP2PFSP1JSSP,FFSPGoogleDriveoutside. NoFJSP/stochastic/TSPCVRP/jointVRPimplementation. All6README/full244JSSPTrain/full72UPMSPtrain_module/SMSP203modelandTrainer1-143/PFSPmodel1-100/206-280/trainer109-174/FFSPmodel271-340/trainer99-146read. OriginalSMSPminimaldecoderexecutedonly,nofulltraining/bench."
+    },
+    {
+      "field": "curator-math,statistics,printed-consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2330c4be5e12c504705ba1db8a507966-Abstract-Conference.html",
+      "locator": "SMSPZIPSMTWTModel104-120linearlatentcommonalljobssoftmaxcancelsz;recompute_smsplatent.pyoriginal5layersprobmaxdiff0.0/commonshift-.04174785874783993,sourceSHAd8d8fb12054293192b40bf536998d7fcb5855b504c659d511c70edbd18c6f1f7. Genericp26Eq8nonlinearMLP/otherbackbonesnotinvalidated. Eq4zero-std0/0,JSSPTrain125-132noeps equalmakespansNaN,other4trainerseps. PrintedTable20POMOMTLobjectiveavg16.27vsarithmetic16.08;tasknamep42all4typoactualtabletwo3-attributecombos. Fig13p38JSSP30x20vsprose30x30. Mainmeans/noindependentseedCIs;Dthreepolicytrials,Fig3tenrunsnotdefinedtrainseeds."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mp-asil",
+      "cited": "agfn",
+      "reference_label": "[50]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[50];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "attention-model",
+      "reference_label": "[9]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1[9];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "bq-nco",
+      "reference_label": "[72]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25,
+            15
+          ],
+          "locator": "BodyPDF25[72];completebibliographyPDF15."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "compass",
+      "reference_label": "[55]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "BodyPDF3[55];completebibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "deepaco",
+      "reference_label": "[27]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2[27];completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "efficient-active-search",
+      "reference_label": "[52]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[52];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "elg",
+      "reference_label": "[83]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            41,
+            15
+          ],
+          "locator": "BodyPDF41[83];completebibliographyPDF15."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "gfacs",
+      "reference_label": "[16]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2[16];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "gflownet-combopt",
+      "reference_label": "[48]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[48];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "gumbeldore",
+      "reference_label": "[45]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[45];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "invit",
+      "reference_label": "[81]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            41,
+            15
+          ],
+          "locator": "BodyPDF41[81];completebibliographyPDF15."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "l2s-jssp",
+      "reference_label": "[25]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2[25];completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[46]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[46];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[11]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1[11];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "lehd",
+      "reference_label": "[71]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25,
+            14
+          ],
+          "locator": "BodyPDF25[71];completebibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[12]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1[12];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[15]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2[15];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "omni-vrp",
+      "reference_label": "[82]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            41,
+            15
+          ],
+          "locator": "BodyPDF41[82];completebibliographyPDF15."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "pointer-networks",
+      "reference_label": "[7]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1[7];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "pointerformer",
+      "reference_label": "[18]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2[18];completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "polynet",
+      "reference_label": "[56]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "BodyPDF3[56];completebibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "pomo",
+      "reference_label": "[10]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1[10];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "poppy",
+      "reference_label": "[54]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "BodyPDF3[54];completebibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[51]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3[51];completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "slim-job-shop",
+      "reference_label": "[20]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "BodyPDF3[20];completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "sym-nco",
+      "reference_label": "[17]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2[17];completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "mtpomo",
+      "reference_label": "[84]",
+      "description": "Explicit numbered body citation with matching full bibliography title/authors; years/preprints manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            41,
+            15
+          ],
+          "locator": "BodyPDF41[84];completebibliographyPDF15."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "[3] Mao et al. (2019)",
+      "description": "Cites cluster scheduling as a practical scheduling application.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read citation body context: Introdatacenters[3]; completeDecimaSIGCOMM2019fiveauthorspp270–288entryp11."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [3] Mao et al. (2019); Learning Scheduling Algorithms for Data Processing Clusters. Introdatacenters[3]; completeDecimaSIGCOMM2019fiveauthorspp270–288entryp11."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "reference_label": "[42] Li et al. (2024)",
+      "description": "Discusses supervised scheduling and includes graph-based imitation learning as a comparator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Actually read citation body context: Bodyp2SL[42]andtablep7IL; fullAAAI3820185–20193sixauthorPFSPentryp13."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [42] Li et al. (2024); Learning to Optimize Permutation Flow Shop Scheduling via Graph-Based Imitation Learning. Bodyp2SL[42]andtablep7IL; fullAAAI3820185–20193sixauthorPFSPentryp13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "on-the-study-of-curriculum-learning-for-inferring-dispatching-policies-on-the-job-shop",
+      "reference_label": "[36] Iklassov et al. (2023)",
+      "description": "Lists curriculum-trained dispatching among constructive scheduling methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actually read citation body context: Bodyp2actorcritic[34–37]/p8RASCLrow; fullIJCAI2023fourauthorcurriculumtitleentryp13."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [36] Iklassov et al. (2023); On the Study of Curriculum Learning for Inferring Dispatching Policies on the Job Shop Scheduling. Bodyp2actorcritic[34–37]/p8RASCLrow; fullIJCAI2023fourauthorcurriculumtitleentryp13."
+        }
+      ]
+    },
+    {
+      "citing": "mp-asil",
+      "cited": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "reference_label": "[79] Smit et al. (2025)",
+      "description": "Applies MP-ASIL to the SPM-DAN stochastic FJSSP backbone in an appendix experiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            36
+          ],
+          "locator": "Actually read citation body context: AppendstochasticFJSSPp36explicitSPM-DAN[79]; fullAAAI3926678–26687fiveauthorentryp15."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [79] Smit et al. (2025); Neural Combinatorial Optimization for Stochastic Flexible Job Shop Scheduling Problems. AppendstochasticFJSSPp36explicitSPM-DAN[79]; fullAAAI3926678–26687fiveauthorentryp15."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "MovedstableIDfromspecialisttogeneralistusingactualAppendE3jointnativeVRPcheckpoint;separateschedmodelsremainexplicit.",
+    "AddedstochasticFJSP/TSP/actual10VRPtasks/date2026-04-23/partialofficialZIPcodeentry.",
+    "Readall48pA-I/86refs/28visuals/all15fig28tables andpartialimplementation,recordedanchor/budget/negativecomparisonsand27realrelations.",
+    "BoundedSMSPreleaselatentcancellation/JSSPzero-std/printedtablemismatcheswithminimaloriginaldecoderrecompute,notblanketpaperinvalidity.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "342e5dce60906d54c452af75c80bcbc5d3de162c7ee8377ccba8bdfd5ef962d0"
+}

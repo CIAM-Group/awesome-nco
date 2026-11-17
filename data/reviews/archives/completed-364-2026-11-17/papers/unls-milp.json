@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "paper_id": "unls-milp",
+  "note_path": "specialist/unls-milp.md",
+  "baseline_note_sha256": "aa0c76defd327ceb11e4b12eb7177a553da704ecb2d35bfb8b939da40829f588",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26j/huang26j.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26j/huang26j.pdf",
+      "local_path": "research/import-272/nco-5a7bd3af3f.pdf",
+      "sha256": "2a28e44fffae2185c3bc9e1707044a9f71a56023402ce0a08796b518136404ab",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullidentitythreeCMUauthors/introrelatedandenergy/Langevin/Bendersprimaldual; exactLPconditionalnotwholeMILP guarantee, finiteTsamplerdoesnotexactBoltzmann orguaranteefeasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fulldecompositionLPvalue/envelopesubgradient−A^Tu, infeasiblephaseIslackLP, finite1000000energyoffset, REINFORCE/JensenErdos/surrogateouterproductcurvature andsampler; theorem2needscheckglobalconvexitywfinitefeasibilityjump."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullTables1-3allraw/ND/PS/Apolloobjectivesandtimes. RawErdosLBNaN(0feas) contradictsblanket100%, rawIPhugegapsandallbaselineIPfeas, supervisedCFLPqualitybetter. Binaryonlyactualscope, phaseLPoraclecallsincludednotpostprocessingfree."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read completebibliographyandAppendixAtheoremproof(maxaffineextendedLPvalue Jensen validonfinitefeasibledomainbutnotfiniteinfeasibleoffsetactualenergy), fulltraining10step8A6000 andCFLP/IPformulations start. Runtimeempiricalnottheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read entirefinalIP/LBformulations, explicitIPGumbelconstrainttechnique, all3typenodeGNN/6vs5features/continuousbroadcast; allwarmstartTable4and50epoch/8GPUs costsTable5. All15formalpagescovered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "unls-contribution",
+      "category": "contribution",
+      "statement": "Learned binary-assignment transitions use exact continuous LP completion and unsupervised value/subgradient feedback.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4.1-4.4"
+        }
+      ]
+    },
+    {
+      "id": "unls-method",
+      "category": "method",
+      "statement": "LPdual?A^Tu andphaseIviolation supplyfeedback; REINFORCE/meanErdossurrogate/Gumbel have distinct guarantees andvariance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Theorems4.1-4.2/Bformulations/architecture"
+        }
+      ]
+    },
+    {
+      "id": "unls-experiment",
+      "category": "experiment",
+      "statement": "RawErdosLBfailsfeasibility andIPrawgapslarge; supervisedCFLPbetterquality; downstreamnegativegapsreference-time-limited notoptcert.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15
+          ],
+          "locator": "Tables1-5"
+        }
+      ]
+    },
+    {
+      "id": "unls-classification",
+      "category": "classification",
+      "statement": "Specialist improvement directly edits completebinarycandidates withLPcompletion andbesttracking; chaincanbeinfeasible, nofeasibilitypreserving guarantee/sharedtaskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            9,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "SamplingFigure2/B/C plusreleaseevaluate_single725-775/inference776-828; rootapproved"
+        }
+      ]
+    },
+    {
+      "id": "unls-jensen",
+      "category": "limitation",
+      "statement": "JensenforconvexextendedLPvalue doesnotcoveractualfiniteC+phaseI energygenerally; binary0feasible/1infeasiblecounterexample H(.5)>meanH.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "Section4.3/Theorem4.2/AppendixA; restrictedcuratorcounterexample notextendedfunctionrefutation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/huang26j.html",
+      "locator": "Title3authors/CMU p1;PMLR306 pp46553-46567."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/huang26j.html",
+      "locator": "HTMLcitation_publication_date2026/09/29."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/huang26j.html",
+      "locator": "ManualpublisherPDF/ORonly;ordinaryR3za7ajCwoAPI403;all15integratedpagesA-Cread. Author203387byteZIPnoPDF/TeX/ipynb; ICML2026event64087scientificposter2325419bytesfullyread/viewed."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/CindyH1103/UNLS4MILP",
+      "locator": "README/env/task-specificscripts, solvers.py725-828fullcandidateflips/besttracking andIPonehot, problems/cflp.py151-220subgrad, utils/milp_solvers phaseI1e6branch, correctedErdossurrogate anddownstreamroutes; hardcodedCUDA5/6."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "unls-milp",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al. (2024)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Sanokowski and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023a/2023b)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "fmip",
+      "reference_label": "Li et al. (2026)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            11,
+            13,
+            14,
+            15
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "learn-remove-cuts",
+      "reference_label": "Puigdemont et al. (2024)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Puigdemont and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "unls-milp",
+      "cited": "rld-co",
+      "reference_label": "Feng and Yang (2025)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;duplicateDIFUSCOlabelsresolveoneID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            10
+          ],
+          "locator": "Explicit in-text citation Feng and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall15formalpages/A-C+officialscientificposter andcode; retainedrootapproveddirectcandidateimprovement, binaryonlyspecialist; localizedfinitepenaltyJensenfailure, correctedblanketfeasibility/rawqualityclaims andreference/timing;10explicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4dc318b30ce484a4db27da87d361e447a55086634373c692a83a7d7fb696fe2c"
+}

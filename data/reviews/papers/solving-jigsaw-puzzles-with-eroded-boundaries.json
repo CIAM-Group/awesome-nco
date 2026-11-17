@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "paper_id": "solving-jigsaw-puzzles-with-eroded-boundaries",
+  "note_path": "specialist/solving-jigsaw-puzzles-with-eroded-boundaries.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "568ada1de37762092cdba336c01f06e2a88bb09b9ee64cfcbaad7e3eb6cc37b3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Bridger_Solving_Jigsaw_Puzzles_With_Eroded_Boundaries_CVPR_2020_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Bridger_Solving_Jigsaw_Puzzles_With_Eroded_Boundaries_CVPR_2020_paper.pdf",
+      "version": "FormalCVFCVPR2020ten-page3526–3535three-authorPDF;allmain/40refs/keyvisualsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-3e724b5c7b/publisher.pdf",
+      "sha256": "3865211f9cf7a40319e9662c2a70df3a05493051acb1d3aaf6864db7dfe1c2ce",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Allpp1?3read3Technion/TelAvivauthors;squareequalpiece+knownmaxerosion+unknownrotationoptional,neuralGANgapinpaintthenreuseDweightsneighborclassification,allpairdissimilaritythenclassicgreedyplacerpartialconstruction?notNNfullincumbentedit/notimagecompletionalone. FormalNPcompleteprose?impossibleaccurate?tooabsolute,do notadopt."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Allpp4?5read custom6layerUNet knownpixelcopy/Markov3layerDcenterhalfcrop6x6patchmean;GANBCE+lambda100gapL1,45kexamples157DIV2K48epochs batch1G.0002/D.0001;thenreuseDweightspositivegeneratedneighborlabelswitch0->1 balancedrealnonneighbor task,frozenG;positiveoutput87.9vs83.7/75.9 notclassificationaccuracy orcalibratedprobabilityclaim;publishedEq2omitsDnotationbutintentclear."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Allpp6?8readDfine40epochs127disjointDIV2Kimages;dissim?logD(G(pair))fourdirectionsclassicalgreedy. Three20imagedatasets64x64tiles70/88/150;7%neighbor84.6/76.9/76.3direct86/70.7/66.7perfect4/7/2outof20,14%neighbor57.1/51.1/51.3perfect1/0/0. Allpairruntime62/98/286sGTX1080Ti inclaffinity;no universalperfectreconstruction,sky/bushesfailureFig8. Unknownorientationoptionalclaimnotseparateevaluatedmetricprotocolshown;noheldoutarcheologyrealerosion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All40formalreferencesread:Image reassembly combining deep learning and shortest path28 actualcatalogue?candidatecomparison;restclassicalpuzzle/GAN/CNNinpaintingnotunrelatedneuralCOedges;noindependentappendixidentifiedinfull10formalpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "eroded-contrib",
+      "category": "contribution",
+      "statement": "GapinpaintingthenreuseGANdiscriminatorforneighborclassificationandclassicalgreedyplacement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Figure2/Model"
+        }
+      ]
+    },
+    {
+      "id": "eroded-method",
+      "category": "method",
+      "statement": "CustomUNet+centerpatchD,twostagetraining,-logD(G(pair))directionaldissimilarity,classicalpartialplacement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3–5/Eqs1–3"
+        }
+      ]
+    },
+    {
+      "id": "eroded-results",
+      "category": "experiment",
+      "statement": "7%neighbor84.6/76.9/76.3andperfect4/7/2of20;14%neighbor57.1/51.1/51.3perfect1/0/0;62/98/286secondsincludespairscoring.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–3/Figures5–8"
+        }
+      ]
+    },
+    {
+      "id": "eroded-limit",
+      "category": "limitation",
+      "statement": "Controlledsquaredamage/knownwidth;textureambiguityandheavyerosionfailures;nocalibrationorexactnessguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Assumptions/discriminatoroutputs/failureFigure8"
+        }
+      ]
+    },
+    {
+      "id": "eroded-class",
+      "category": "classification",
+      "statement": "Specialistconstructivelearnedpairwisecompatibility+classicgreedyplacer;continuousinpaintingnotNNeditingdiscreteincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6
+          ],
+          "locator": "Inferencepipeline"
+        }
+      ]
+    },
+    {
+      "id": "eroded-repro",
+      "category": "reproducibility",
+      "statement": "All10formalpages/40refsandkeyvisualsread;authorprimary/CVF/arxiv checked,noidentifiedextraofficialscience/code.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "References/primarypublicationlisting"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR42600.2020.00358",
+      "locator": "Cachedexact3author/titleCrossrefpublished-print2020-06;formalbylineTechnion/TelAviv. CVF3526–3535vsdeposited3523–3532recorded."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/1912.00755",
+      "locator": "Cachedprimarycanonicalv1history2019-12-02;comment8pagesearlierversion,actualscienceformal10pageCVF."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://webee.technion.ac.il/~ayellet/papers.html",
+      "locator": "Cachedprimaryauthorpublication entry DovBridger/DovDanon/AyelletTalCVPR2020 abstract+CVFPDFonly,noextra/code link. CVFmain/arxivonly;fullformal10pnoexplicitmissingscience;exacttitlesupp/code searches noidentifiedofficialrepositoryorappendix. No unreadcodearchiveclaimedcovered."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Bridger_Solving_Jigsaw_Puzzles_With_Eroded_Boundaries_CVPR_2020_paper.pdf",
+      "locator": "OriginalFig2wholecaptionformalPDFp3/3528Rect40,65,572,340at2xpublicphysicalasset/actualview;pp3–8architecture/loss/histogram/all3tables/qual/failuresrenderedinspected."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Bridger_Solving_Jigsaw_Puzzles_With_Eroded_Boundaries_CVPR_2020_paper.pdf",
+      "locator": "Full40refsp9–10readandcomparedcurrentcatalogue;0actualinternaltargets. EarlierPaumard2018reassembly/classicalplacer/GANfoundationsnotunrelatedinternaledges."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafterall10formalpages/40refsread.",
+    "DistinguishedneuralinpaintingscorefromclassicdiscreteplacementandofflineGANtraining.",
+    "Retainedabsoluteperfectcountfailures/heavierosion/texturefailure/runtimeincludingallpairs.",
+    "Noofficialcodeorindependentscienceappendixidentified;fullformalcoverageandprovenanceexplicit."
+  ],
+  "reviewed_note_sha256": "528b7590142d91f991c02ab5453c1b66d4f020cd72d54f846f26c704fa8d34e7"
+}

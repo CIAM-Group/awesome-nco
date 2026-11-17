@@ -1,0 +1,570 @@
+{
+  "version": 1,
+  "paper_id": "dact",
+  "note_path": "specialist/dact.md",
+  "baseline_note_sha256": "0ba7d3ab39ca24bbc7c4148877cefded55ce1f8f65b2c0a1088be1767fd7cead",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/5c53292c032b6cb8510041c54274e65f-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/5c53292c032b6cb8510041c54274e65f-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/dact/paper.pdf",
+      "sha256": "6fd1c747de4af531dbbdfc55bc9fd7e487ad84cbe9e7a91bde7cc2385815e802",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "full-version",
+      "url": "https://arxiv.org/pdf/2110.02544v3",
+      "retrieval_url": "https://arxiv.org/pdf/2110.02544",
+      "version": "arXiv v3,1December2022, author corrections to CVRP masks/results and CPE equation, includes AppendicesA-E",
+      "local_path": "research/full-text-review/dact/full-arxiv.pdf",
+      "sha256": "ced5494e603a3046eceab874d4ab2216efa072d8e35ab05291b4b745aaa03bd3",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/authors/affiliations, dual-aspect and cyclic encoding motivation, all PE equations and related work."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh exact improvement MDP with accepted worsening moves, original2021CPE equation, two64dim streams, three DAC layers, four heads and cross-aspect attentions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh decoder proposals, n-step PPO curriculum, complete original2021result Tables1-3 with small512 vs10000time distinction, CVRP50 counterexample and benchmark gaps."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh original2021generalization/CL plots and conclusion, all43references; explicit source typo Bello ICMLWorkshop preserved as source label only."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh actual v3 header/date, identical title identity, motivation and related-work equations, independent check of corrected full reading version."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh v3 full MDP adds no-improvement incumbent reset, corrected CPE formula and cyclic Gray code, full architecture formulas; distinguished from publisher2021."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh corrected v3 complete Table1 and budgets: all10000, single2080Ti versus4/8GPUs; updatedCVRP gaps and Table2 average/best sampling; DPDP stronger."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh v3 correctedFigure6 and CL discussion, conclusion and full43entry bibliography independently checked."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh appendicesA-D mixed-correlation analysis, CPE best-of-two transfer-frequency strategies, complete clippedPPO/value loss, curriculum formula, actual CVRPdummy-depot counts/features."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresh all exact hyperparameters/training budgets and every row of29TSPLIB/22CVRPLIB Tables4-5, ten-run average/best distinction, counterexamples and asset licenses."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dual",
+      "category": "contribution",
+      "statement": "Separate64dim node/position streams share reference attentions;3layers4heads; cyclic encoding does not prove complete-policy group invariance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "4.1-4.3"
+        }
+      ]
+    },
+    {
+      "id": "mdp",
+      "category": "method",
+      "statement": "Always accepts feasible next current tour including worsening moves; reward improves best incumbent, stochastic inference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Section3"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "PPO with curriculum, problem-specific masks and depot copies; v3 includes full training details and reset rule.",
+      "evidence": [
+        {
+          "source_id": "full-version",
+          "pdf_pages": [
+            4,
+            14,
+            15,
+            16
+          ],
+          "locator": "AppendicesC-E"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "category": "experiment",
+      "statement": "Publisher2021CVRP100 gap1.12% at10k or.19% x6; braces512 oneGPU versus parentheses10000multiGPU.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Table1 and5.1"
+        }
+      ]
+    },
+    {
+      "id": "correction",
+      "category": "experiment",
+      "statement": "v3CVRP100 gap1.51% at10k or.57%x6; timings revised to10000perrow with one or4/8GPUs.",
+      "evidence": [
+        {
+          "source_id": "full-version",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "RevisedTable1 and5.1"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "category": "experiment",
+      "statement": "v3augmented mean TSPLIB/CVRPLIB1.90/3.85 differs best10run1.01/2.97; not best everyinstance.",
+      "evidence": [
+        {
+          "source_id": "full-version",
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "locator": "Tables4-5 allrows"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate task/size models improve incumbents with prescribed moves; specialist improvement.",
+      "evidence": [
+        {
+          "source_id": "full-version",
+          "pdf_pages": [
+            7,
+            15,
+            16
+          ],
+          "locator": "Section5 andAppendicesD-E"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/5c53292c032b6cb8510041c54274e65f-Paper.pdf",
+      "locator": "Publisher page1 lists all7authors and6department affiliations across NUS,A*STAR,Shandong,UESTC,HKUST."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/5c53292c032b6cb8510041c54274e65f-Abstract.html",
+      "locator": "Official NeurIPS2021 volume34 article; no individual acceptance date inferred."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2110.02544",
+      "locator": "v1 6October2021; readv3 1December2022, explicitly corrected CVRP masks/performance,CPE equation and comparison analysis. Kept distinct from2021publisher original."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/yining043/VRP-DACT/tree/new_version",
+      "locator": "Manually read main warning and complete new_version README; identifies changed feasibility masks and supplied updated models."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/5c53292c032b6cb8510041c54274e65f-Abstract.html",
+      "locator": "Manually inspected official publisher landing: noSupplemental link. Main explicitly referencesAppendicesA-E; complete18page author arXivv3 obtained and allAppendicesA-E read. Author full version includes all scientific materials without assuming byte identity with original2021PDF."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/5c53292c032b6cb8510041c54274e65f-Paper.pdf#page=4",
+      "locator": "Original complete Figure3 crop Rect(105,70,510,223)at4x frompublisherPDFp4, atomic replacement restores clipped bottom encoder/decoderinputs and actionmatrix; visually checked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/5c53292c032b6cb8510041c54274e65f-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/dact/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2110.02544",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-10-06; title on abstract page: Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer. This date is preprint history, not formal publication. Cached research/full-text-review/dact/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dact",
+      "cited": "neurewriter",
+      "reference_label": "[4]Chen2019",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            8,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "attention-model",
+      "reference_label": "[5]Kool2018 as printed",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            8,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[6]Joshi2019 arXiv",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            8,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[7]Xin2021",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "pomo",
+      "reference_label": "[8]Kwon2020",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8,
+            9,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "step-wise-routing",
+      "reference_label": "[9]XinTII2020 as printed",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[10]Zhang2020",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[11]WuTNNLS2021",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "learning-to-improve",
+      "reference_label": "[12]Lu2019 as printed",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[13]Hottung2021",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8,
+            9,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "pointer-networks",
+      "reference_label": "[20]Vinyals2015",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[21]Bello2017 labeled ICMLWorkshop in source",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "rl-vrp",
+      "reference_label": "[22]Nazari2018",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[24]Dai2017",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "att-gcn",
+      "reference_label": "[25]FuAAAI2021",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[26]Kool2021 arXiv2102.11756",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8,
+            9,
+            12
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    },
+    {
+      "citing": "dact",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[27]Hottung2020",
+      "description": "Explicit numbered citation with matching reference; source label/year retained, including printed bibliographic inaccuracies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            12
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry; introductory range4-14 explicit"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Separated2021publisher from2022corrected author version; discovered/read previously missingAppendicesA-E.",
+    "Corrected current-tour acceptance and stochastic-inference detail; added exact task-specific training/move/mask budgets.",
+    "Distinguished512vs10000original times and corrected oneGPU/multiGPUdataset times.",
+    "Qualified group symmetry, best-frequency transfer choice, ten-run benchmarkstats and negativeinstances.",
+    "Removed unsupported acceptance date and restored complete original framework figure.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "798fd3e2b477d88ba100506d666afecfb2c61b41c85743d16c65f7eb04330630"
+}

@@ -1,0 +1,549 @@
+{
+  "version": 1,
+  "paper_id": "ncs",
+  "note_path": "specialist/ncs.md",
+  "baseline_note_sha256": "d590986f828b1d05e86db3e5dd51814d7431ce056efec9d9aaafef48f5930975",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1109/TPAMI.2024.3450850",
+      "version": "User-provided finalIEEE TPAMI46(12),2024,11019-11034,16pagesallfreshlyread",
+      "local_path": "research/full-text-review/ncs/paper.pdf",
+      "sha256": "a379e66543df5104788325bfafd142ffee1a1bb675ec88f49c72d394f1f3cc0e",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "appendix",
+      "url": "https://doi.org/10.1109/TPAMI.2024.3450850",
+      "version": "User-provided4pageauthorappendixA-F, draftheader2023/pagination16-19; matchedNCSalgorithms/referenceIDs/benchmarksummary, allread; notclaimedpublisher-byteidentity",
+      "local_path": "research/full-text-review/ncs/appendix.pdf",
+      "sha256": "10611828ae00dc5fce8e2f6be8d81a50c14b35b695f8b6c593118e8bef658e46",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Freshformalmain11019-24 allintro/relatedwork/PDTSP+PDTSP-LIFOdefinitions/MDPsandSynthAttencoder. TrueNCSlearnedm-AMconstruction+N2Spairruinrepair collaborativelytrained; frameworkgenericbutrespectivemodels differentvariants. p1accept2024-08-18/publication09-03/currentversion11-05; 5authorsNankai/NUS/SMU/CUHKShenzhen. MainexplicitAppendicesA-B, N2SexpandedIJCAI2022 distinctworknotautomerged. SynthMLPscoresNF+cyclicposition scores, auxcomputedonce across3layers,4heads128, decoderpending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "Freshformalmain11025-30 pairremovalhistorydecoding/jointreinsertionmaskeddistribution/mAMpairfeatures construction andNstepPPOsharedcritic/CL/IL/diversityaugmentation. MainEq20probabilitynotlogneedsappendix/codecheck. 200epochs20*600,250steps,n5,3PPOupdates,clip.1,gamma.999. RandomN2S vslearnedNCSinitialization, augmentfloor(V/2) andhistoryV/2at test. AlltableII-Xembeddedimages nottextread pendingvisual; training/inferencecostprotocol2ktest totals andheuristicLKHgapread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Freshformalmain11031-34completecomparisonsablationsgeneralizationdiscussion/all42refs/allbios. MainimagesII-Xrenderedandread; NCSA1013kPDTSP9m+121m vsLKH98m, LIFO9+161vs67m, qualitynotuniversalruntimewin. TableXactuallyLIFO<=101 vsprose<=201; best/mean10runsdistinct. Synth128.76M/340s vsDAC1.25M/400s. Exactformalreceived/revised/acceptedpubdates noted, old2023dateunsupported. TSP/CVRP/dynamic/CPDPfuture notevaluated."
+    },
+    {
+      "source_id": "appendix",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Freshall4userappendixpagesprinted16-19, actuallyA-FnotjustA-D: DACToperators;3commodityPDTSP/LIFOformulation; fourinvarianttransforms/Table11, CLtemperaturedecay->multisample128/256/512->25extraimproveat101, ILqualitygate/epochiterations, PPOlosses; pairedtestpvalues; full20PDTSP+24LIFOcases withclosestsizecheckpoint/C10logits; capacityonlyproposedFnoexperiment. Oldheader2023/arabicTable11-15 matchesformalNCSalgorithms/42refs/summarynumbers butnotclaimedbyteidenticalpublisherfile. Table15nrw1379/51 Heteravg6369<best6517 andd15112/101272784<273693 inconsistent, record source caveat."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Combine rapid construction and stronger improvement under pickup/LIFO constraints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "JointlearnedmAM+N2S sharedcritic/CL/IL, pair removal/reinsertionandSynthAtt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Figures1,3-6/Algorithms1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Completeincumbentpairruinrepair plus autoregressive learned constructor, not improvementpolicyportfolio; random standaloneN2S distinct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "MDPs/actionsemantics/training"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "2ktesttotals eightGPUvs16CPUcores; NCSA1013k gaps-.22/-1.68 with130/170minutes vs98/67LKH; independent size/taskmodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "TablesII-Xandprotocol"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Finitebudgetheuristicgapsnotoptimalitycertificates, costlyaugments andOODweaker, CPDP/TW/dynamicnotestablished.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Empiricalprotocolanddiscussion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive-improvementNCS; ownsubstantivelearnedconstructorandimprover, separatevarianttraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8,
+            10,
+            12,
+            15
+          ],
+          "locator": "Actualnewstages/authorrespective-modelstatement"
+        }
+      ]
+    },
+    {
+      "id": "appendix",
+      "category": "reproducibility",
+      "statement": "AllAppendicesA-Fread; CLtemperature/multisample/extrasteps, qualitygatedIL, exactPPOdetailsandclosestsize/C10generalization; capacityonlyproposed.",
+      "evidence": [
+        {
+          "source_id": "appendix",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "AppendicesA-F/Algorithms3-6/Tables11-15; draftheader2023provenanceseparatefromformal2024main"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal metadata",
+      "source_url": "https://doi.org/10.1109/TPAMI.2024.3450850",
+      "locator": "FinalPDF1directbylineaffiliationsandreceived2023-04-17/revised2024-07-13/accepted2024-08-18/published2024-09-03/currentversion2024-11-05."
+    },
+    {
+      "field": "source provenance",
+      "source_url": "https://doi.org/10.1109/TPAMI.2024.3450850",
+      "locator": "Userprovided16pagefinalissue11019-11034SHAa379e66543df5104788325bfafd142ffee1a1bb675ec88f49c72d394f1f3cc0e; allpagesfreshread/originalpreserved."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://doi.org/10.1109/TPAMI.2024.3450850",
+      "locator": "Userprovided4pageAppendix_Efficient...pdfSHA10611828ae00dc5fce8e2f6be8d81a50c14b35b695f8b6c593118e8bef658e46, actualA-Fallread; draft2023header/pagination16-19 recorded; exactNCSAlgorithms3-6andmainTableXsummarycorrespondencechecked, notclaimedbyteidenticalpublisherattachment."
+    },
+    {
+      "field": "code inventory and imitation",
+      "source_url": "https://github.com/dtkon/PDP-NCS/blob/master/agent/ppo.py",
+      "locator": "Officialmaster24memberZIPnoadditionalPDF/ipynb/archive/video; README/constructorandimitationsectionschecked: Actor_Construct271sumlogp, PPO1097-1102qualitygatednegative loglikelihood vsprintedEq20probability."
+    },
+    {
+      "field": "figure and table checks",
+      "source_url": "https://doi.org/10.1109/TPAMI.2024.3450850#page=2",
+      "locator": "OriginalFigure1crop39,53,560,238at2.5xfullcaptionseen; mainTablesI-X/methodfigures/appendix4pagesrenderedandchecked. MainTableX LIFO<=101 vsprose<=201 qualified."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ncs",
+      "cited": "dact",
+      "reference_label": "[5]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "pomo",
+      "reference_label": "[6]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            12,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "attention-model",
+      "reference_label": "[7]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[8]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "rl-vrp",
+      "reference_label": "[13]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[14]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[15]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "att-gcn",
+      "reference_label": "[16]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "nhde",
+      "reference_label": "[17]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "tam",
+      "reference_label": "[18]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "neurewriter",
+      "reference_label": "[19]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[20]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[21]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[22]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "neuopt",
+      "reference_label": "[23]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "difusco",
+      "reference_label": "[24]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[34]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            16
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "efficient-active-search",
+      "reference_label": "[36]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            16
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    },
+    {
+      "citing": "ncs",
+      "cited": "learning-to-delegate",
+      "reference_label": "[37]",
+      "description": "Explicitly cites this exact neural routing predecessor, related solver or training technique.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15,
+            16
+          ],
+          "locator": "Numbered in-text reference and exact-title bibliography on finalPDF15-16; printed erroneous citation years do not change identity."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read16formal+4supplementpagesincludingactualAppendicesA-F; no missingappendixblock remains.",
+    "Correctedoldfictionalportfolioexplanation to learnedconstructor/improverandsharedcriticCLIL.",
+    "Changedimprovement toconstructive-improvement andremovedunsupportedtimewindows; identifiedPDTSP/LIFOactualtasks.",
+    "Fixedformalfirstpublic/acceptancedates and4actualaffiliations, addedofficialmastercode.",
+    "SeparatedN2S/NCS/augmentedbudgets andnegativequality-runtime/OODconditions; criticnotoptimumcertificate.",
+    "QualifiedEq20probabilityvsreleasedloglikelihood andLIFOsizeprose/tableinconsistency.",
+    "AddedoriginalcompleteFig1and19exactcitations; separateIJCAI2022precursornotselfedge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8b8394811a73c958558a96dd9f7504ebaecc32c66b29a300de696448393dde09"
+}

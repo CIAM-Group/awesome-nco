@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "paper_id": "sat4cryptobench",
+  "note_path": "studies/sat4cryptobench.md",
+  "baseline_note_sha256": "5541fe430869495a23924feaa144571ecb3209aa7643811160c2fa0d01160005",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "local_path": "research/import-272/nco-bbebf889cb.pdf",
+      "sha256": "264fa173663ba4dc199bf56abea589c49eab4cd099f25e58b9754dc5f06a1943",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read6authors2affiliations/frontmatter/abstract/allintro3levels/relatedwork/ANF-LCG-VCGFig1. DistinguishclassifiersversusactualCDCLguidancevsblackboxhyperparams,BASINclaiminputbitstringnotkeyrecoveryyet. 8models6datasets/10heuristics11datasets/3classicalsettings needtables."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadgraphformalismsallEq1-5/3levels/genericupdates/BASINANFneuralinitbitwiseenumerationkeyrecoverynotpurestandaloneclassifier;hyperparam3elements. MustlaterreadAppendixC/BASINalgorithm."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTables1-3eachentry/CIs/pairclassification/5datasetfamilies/heuristic10configs11variants/hyperparams3solvers2tuners10train200test. ANFsuperioritytaskonly;BMMbenefitsmixed,NeuroBackhugeoverhead. CipherKissat974.35→521.42=46.48% notprose62.5. ConfidentialCipher identityconstraint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadTable4allbest-per-format10/11/12rounds:BASIN19.94/37.30/29.67 vsANF.08/23.60/364.96;BASINonly12roundbestnotallhigherround. ProseMapleMD4 88% vs1.435→.276=80.77 or.42570.38 not88. Allrefs1-43readcompletely,exactinternaltargetsmanualpending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readrefs44-47allbibliographycomplete/checklist1-5;HEBOref45differenttitlegenericBO not originalHEBOcitation;sourcecheckmetadata."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readchecklist5-12allanswers/guidelines,No statisticalsignificancecontrastsTables2/3CIcaption;followactualAprotocolnotblanketnoCIs. Viewedpp3/5/8/10graphs/equations/fullruntimeTable2/representationTable4."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Readchecklistremaining+AppA1-A3/allTable5stats. Ascend910B neural,aarch64 192physicalCPUcores/NUMAnode taskalloc. General1000/200/200pairssplits vsHO10/200separate. Simonlabelsword/block/key inconsistent acrossA2/prosep8/Table5 needB2code."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "ReadA4-A6allprotocol/Table6all45tunedtuples/Table7allCNF/ANF/BASINruntimecells/B1startEq6. A4externalclaimsretrainingvsmainpretrained;recordnotresolve. A4cap5000butTable2GlucoseBMM SHA256mean5764.04>cap,unreconcilednotinventuncappedprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "ReadallB1Eq7-14/B2Eq15-21/CdirectvsauxXOR/Fig3complete/D/E. Simondefinition2nblocknseedkeytoyparam. Eq8carryliteral+i insteadxiyi andi0c-1;CNFadditionbulletempty;Ctext2^(k-1)-1vsFig2^(k-1),notreliablecompleteencoder. BASINonlybriefp6noalgorithm/proof,AppendixDnonewarchitecturecontradproposedBASIN. Full28pcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "CryptoSATstructures/encoding/MLintegrationdifferences motivateunifiedbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Fullintro/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "BenchmarkstudyincludesadditionalBASINspecializedmethod; classification/actualsolver/tuning distinct, noonecrossfamilysolver/fullstandardbreak.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7,
+            10,
+            21,
+            26,
+            27
+          ],
+          "locator": "Actualroles/reducedrounddatasets/limitedconclusions"
+        }
+      ]
+    },
+    {
+      "id": "representations",
+      "category": "contribution",
+      "statement": "MatchedSimonANF/CNFgraphs+plaintextcipherdata acrossfivefamilies andthreeMLroles; confidentialitylimitsCipherregeneration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            25,
+            26
+          ],
+          "locator": "Allgraphs/Eq1-21 and dataset definitions"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "method",
+      "statement": "Standalonegeneral1000/200/200pairs,HO10train200test,heuristicSAT-onlycap5000,Ascend910B/aarch64NUMAallocation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            21,
+            22,
+            23
+          ],
+          "locator": "FullAppendixAandHOsetup"
+        }
+      ]
+    },
+    {
+      "id": "basin",
+      "category": "method",
+      "statement": "ANFCryptoANFNetpredict32bitinitthenbitstring+simon_anfsearch;changedalgorithmnotpureinputformatablation; timingdocumentation/codecontradict.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10,
+            24
+          ],
+          "locator": "Actualp6architecture/table7,completepubliccompute_time/prediction in metadata"
+        }
+      ]
+    },
+    {
+      "id": "classification-results",
+      "category": "experiment",
+      "statement": "Table1ANF100/99.5/99.5three-roundand70/69/67.3six-roundvsCNF50-59, classificationnotcertifiedsolving.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "AllTable1entries"
+        }
+      ]
+    },
+    {
+      "id": "solver-results",
+      "category": "experiment",
+      "statement": "BMMwinsandlosses/externaloverhead;HOper-tablepercent46.5/80.8;BASINbest12roundonlyvsANF10/11round.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            23,
+            24
+          ],
+          "locator": "AllTables2-4/6-7 read and visuallychecked"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Reducedround/secretCipher/limitedgeneralization/overhead/uncleartimingcap/externaltraining/CIdefinition; printedencoderarithmeticincomplete notcopiedasproven.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            16,
+            21,
+            22,
+            25,
+            26,
+            27
+          ],
+          "locator": "Specificsource/statistical/encodingconditions"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "28pageformalPDF/allA-E/reference/formulas plus8archive/manualAPIs/codeinspectioncomplete, nofullreproduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Actualreadcoverage andmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "OfficialNeurIPS38DatasetsBenchmarks2025DOI10.52202/085713-2450; exactsixauthors/twoinstitutionsPDFp1matched,confirmed2025retained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "ManualpublisherpageonlyBibtex/Paper,noSupplemental. Full28pageformalPDFreferences/checklist/A-Eallread. OpenReviewnotesv1/v2forumBmwbEWRkyE403cached. Officialrepo8solverZIPsdownloaded/recurse5040members,noscientificPDF/video,eachhashinventoryresearch/full-text-review/sat4cryptobench/*-inventory.json;noexplicitmissingarticleattachment. Notclaimallsourcecodedatafilesindividuallyread."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "locator": "Actualformal28pageversionSHA264fa173663ba4dc199bf56abea589c49eab4cd099f25e58b9754dc5f06a1943beforecutoff. All1-28read.12visualpages3/5/7/8/9/10/21/23/24/25/26/27 inspectgraphs,messageupdates/allresultstatistics/bitoperationformulas/paritydiagram;Eq8literalcarry+i andCNFadditionmissingconfirmed."
+    },
+    {
+      "field": "code_url,basin_timing",
+      "source_url": "https://github.com/void-zxh/SAT4CryptoBench",
+      "locator": "Recursiverepocommite0ed8e34dcb4b7e230cfc3fe39b8500796a8b5193212files;rootREADME/BASINREADMEandcompleteBASINcompute_time.py/prediction.py/heuristictest_solver.pyread. CurrentBASIN(sum(total_times)+init_time)/len(total_times)INCLUDESinitializationdespiteREADME/printedexcludinglabel;failedfilesare skipped so cannotassumesamefulltestdenominator. predictionANFgraphCryptoANFNetfirst32bits/CUDAassert;actualbinarysimon_anfnotrun. MainAscendvsCUDAcurrentpublicconfigdistinguished."
+    },
+    {
+      "field": "dataset_and_result_limits",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "KnownplaintextcipherreducedroundSimonB2 2nblock/nseedkeyvsmaininconsistentblocklabels;READMEhashreductionsMD4-20/SHA1-21/SHA256-18. Table3actual974.35to521.42=46.485% and1.435to.276=80.767%,notprose62.5/88. Table2runtime5764.04contrad5000cap;95CIcaptionswithoutconstructiondetails. Noassumptionfullcryptoattackorallformulationssemaniticsexperimentisolated."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "All47refspp11-13andbodyread;5automaticmatchesplusmanualT2Tref5exactauthors/titleexistingID despiteomittedprefixand2024citationversus2023publication. OtherSATbenchmarks/generators/architecturepapersnotcurrentlycatalogentries,noinventededges."
+    },
+    {
+      "field": "archive_nonpdf_documents",
+      "source_url": "https://github.com/void-zxh/SAT4CryptoBench",
+      "locator": "Follow-up compressed/nonPDFinventory: nested m4ri-20140914.tar.gz96members contains noPDF/TeX/video/nestedarchive. Eight unique historical CryptoMiniSat solver-description TeX documents (2014/2015/2016/2018/2019WalkSAT/2019YalSAT/2020WalkSAT/2020CCAnr) actually read in full as source text, cached/hashdeduplicated in upstream-tex-docs.json. These are upstream bundled solver documentation, not a missing SAT4CryptoBench scientific appendix; no fakePDFpages or extra current-papercitationedges assigned."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/sat4cryptobench/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sat4cryptobench",
+      "cited": "cryptoanfnet",
+      "reference_label": "[2]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp1;fullreferencePDFp11, [2]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "nsnet",
+      "reference_label": "[12]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp2;fullreferencePDFp11, [12]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[20]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp3;fullreferencePDFp11, [20]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "graph-q-sat",
+      "reference_label": "[10]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp2;fullreferencePDFp11, [10]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "neurosat",
+      "reference_label": "[18]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp3;fullreferencePDFp11, [18]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "t2t",
+      "reference_label": "[5]",
+      "description": "Explicitrelatedmethod/baselinecitation;classificationandheuristicrolesremainseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "ExplicitbodyPDFp1;fullreferencePDFp11, [5]"
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "reference_label": "[19]",
+      "description": "End-to-end SAT related work includes reference19 in satisfiability prediction list18-22; full Cameron/Chen/Hartford/Leyton-Brown AAAI2020 entry inspected. Numeric label is19 within the combined bibliography block, not its first label1.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "sat4cryptobench",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "[26]",
+      "description": "SAT data-scarcity discussion explicitly includes HardSATGEN among instance generators24-26; exact KDD2023 title/nine-author entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Separatedclassification/heuristic/tuningandBASINANF-init+bitwisesearch,retainedbenchmarkstudy.",
+    "Usedactualruntime/accuracytablesandtable-derivedpercentages,qualifiedBASIN12roundwinandnonisolatedinputcomparison.",
+    "RecordedBASINREADME/labelversuscurrenttimingsumcontradictionwithoutassumingtableboundary,timeout/pretrained/retrained/CI/encoderprintinglimits.",
+    "Full28pages/A-E/47refs/12visualpages/all8ZIP5040entries/dualAPI/codecheckscomplete;6exactedges,nometadataeligibilitychange.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge.",
+    "Final prose inspection repaired citation-count wording after catalogue expansion; no scientific quantities or source-reading coverage changed."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "031a3add5d510d3fbd47fdf359cfb280c1e8903a0ab9e86fa2ae6851d87a5aee"
+}

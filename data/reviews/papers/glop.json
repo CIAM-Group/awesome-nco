@@ -1,0 +1,1090 @@
+{
+  "version": 1,
+  "paper_id": "glop",
+  "note_path": "specialist/glop.md",
+  "baseline_note_sha256": "f838f6154670a965e1a0f3bbf4d4ad89486a5ff5a9e12c635491bb42357b7877",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2312.08224",
+      "retrieval_url": "https://arxiv.org/pdf/2312.08224",
+      "version": "arXiv:2312.08224v2, 21 July 2024; post-AAAI ATSP bug-fix update; all Appendices A-G included",
+      "local_path": "research/full-text-review/glop/paper.pdf",
+      "sha256": "40fcb9e0a2dcbf6e7fa25b16b308e7eb78a9f7a187cdda68b48ff312565e1b51",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Freshactualarxivv2July2024postpublicationATSPbugfixversion;6authors3institutionsinclmissingTsinghua; allrelatedwork, completeRI->incumbentSHPPfixedendpointreviseracceptonlybetterTSPbranch andtrainedtaskglobalpartitionNARGNNclustering/subsetting; Table1-6allbudgets/TSP100ksingleinstance/LKHheuristicref/ATSPnewMatNet50reusewithdifferentarchitecture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "FreshallBelgium8CVRPLIBrowsinclLeuven2/Brussels1losses,PCTSP128table8 budgets, limitations,allbibliographycomplete, A1-A6fullpseudocode curriculum100/200+300epochs1.28M/1Mper, task-specificglobalGNNfeatures/sparsity/5.12k, exactinferenceW/revisionsTables9-10, B/Cparadigmrelatedrefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Fresh complete E1-E5/F/G: MCTS eventually wins, Tables11-16 local/global curriculum and stability all ablations, fixed-size O(N) work versus empirical GPU flattening, generator/checkpoint baseline differences, POPMUSIC relationship. All16pages inclA-G complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hierarchy",
+      "category": "contribution",
+      "statement": "SHPP revisers plus separately trained sparse GNN constrained-task partitioners.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            11
+          ],
+          "locator": "Sections4-5 AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "incumbent",
+      "category": "method",
+      "statement": "RI complete tour, fixed endpoints, accept only shorter reconstructions, shift boundaries; bidirectional six-layer local AM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            12
+          ],
+          "locator": "Sections4/A1-A3 Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "curriculum",
+      "category": "method",
+      "statement": "100/200 epochs 1.28M each then300 epochs1M each; task-specific global training5.12k; frozen test weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "AppendixA3-A6"
+        }
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "category": "experiment",
+      "statement": "TSP whole dataset vs CVRP per-instance times; one TSP100k restricted LKH reference, CVRPLIB failures, PCTSP128.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            15
+          ],
+          "locator": "Tables1-8 AppendixF"
+        }
+      ]
+    },
+    {
+      "id": "version",
+      "category": "experiment",
+      "statement": "ATSP Table4 July2024 postpublication bug-fix results distinguished from earlier README numbers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Table4 footnote July2024 update"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive-improvement: TSP incumbent revision and constrained-task neural construction plus revision; separate global policies/ATSP backbone.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            11
+          ],
+          "locator": "Sections4-6 AppendixA"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2312.08224v2",
+      "locator": "Title page six authors; Soochow/SMU/Tsinghua, restored missing Tsinghua."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v38i18.30009",
+      "locator": "Manual Crossref publisher-deposited published2024-03-24, DOI10.1609/aaai.v38i18.30009; removed generic notification acceptance."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2312.08224",
+      "locator": "History v1Dec13,2023/v2Jul21,2024 manually checked, actualcachedv2 titlepage and Table4 postpublication update."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/30009",
+      "locator": "Manual AAAI landing/PDF/other link31773 access/server error (saved520 HTML); accepted full actualarxivv2 all16pages/A-G. Official GitHub recursive tree/manual allfive READMEs no PDF/ZIP extra science. No unavailable-byte comparison claimed."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/henry-yeh/GLOP",
+      "locator": "Official master README plus local_construction/CVRP/PCTSP/ATSP docs fully read; PR3 mergedJul21,2024 bugfix and no-retrain results verified."
+    },
+    {
+      "field": "paradigm, scope",
+      "source_url": "https://arxiv.org/pdf/2312.08224v2#page=3",
+      "locator": "Substantive complete incumbent SHPP improvement plus task-specific neural global construction; separate learned global policies mean specialist. Parent agrees hybrid."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2312.08224v2#page=3",
+      "locator": "Original Figure1 crop Rect(60,48,555,348),5x; visual checked Figure1/Eqs1-3/Tables1-16/Algorithm1 and stability/complexity plots."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2312.08224",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-12-13; title on abstract page: GLOP: Learning Global Partition and Local Construction for Solving Large-scale Routing Problems in Real-time. This date is preprint history, not formal publication. Cached research/full-text-review/glop/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "glop",
+      "cited": "asp",
+      "reference_label": "Wang2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "h-tsp",
+      "reference_label": "Pan2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng2023",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "rbg",
+      "reference_label": "Zong2022a",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "tam",
+      "reference_label": "Hou2023",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "dimes",
+      "reference_label": "Qiu2022arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "pointerformer",
+      "reference_label": "Jin2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "deepaco",
+      "reference_label": "Ye2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "dact",
+      "reference_label": "Ma2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "routing-dro",
+      "reference_label": "Jiang2022",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021a",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn2022arxiv2210.03475oldtitle",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2019arxiv1911.09539",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu2020",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma2019arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "utsp",
+      "reference_label": "Min2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "difusco",
+      "reference_label": "SunYang2023arxiv",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li2018",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson2022",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021b",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2021b",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "neural-3-opt",
+      "reference_label": "Sui2021",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu2021a",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou2023",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "mapdp",
+      "reference_label": "Zong2022b",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "Bibliography Zong2022b starts at PDFp10 and full MAPDP title/AAAI2022pages9980-9988 continues atp11."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "neuopt",
+      "reference_label": "Ma2023",
+      "description": "Explicit author-year text/table citation and matching bibliography; preserves actual cited preprint title/year/version where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Explicit in-text/table author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matching complete reference entry."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al., 2023",
+      "description": "Neural routing related work cites same-title RL4CO nine-author early preprint with explicit arxiv2306.17100, the canonical preprint lineage of the later KDD benchmark; not the differently titled workshop library.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actual body citation Berto et al., 2023 on PDF pp[2]; full bibliography entry on pp[8]. Title and author identity matched to the target reading record, independently of topic similarity. Neural routing related work cites same-title RL4CO nine-author early preprint with explicit arxiv2306.17100, the canonical preprint lineage of the later KDD benchmark; not the differently titled workshop library."
+        }
+      ]
+    },
+    {
+      "citing": "glop",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al., 2022b",
+      "description": "Cross-distribution baseline AM+HAC and discussion explicitly cite exact four-author AAAI2022 hardness-adaptive curriculum paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10
+          ],
+          "locator": "Actual body citation Zhang et al., 2022b on PDF pp[6]; full bibliography entry on pp[10]. Title and author identity matched to the target reading record, independently of topic similarity. Cross-distribution baseline AM+HAC and discussion explicitly cite exact four-author AAAI2022 hardness-adaptive curriculum paper."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected constructive to constructive-improvement from complete incumbent reconstruction plus neural constrained-task construction.",
+    "Restored Tsinghua institution and actual publication date; removed generic acceptance day.",
+    "Replaced template with full method/curriculum/masks/data/hardware/search budgets and limitations.",
+    "Qualified single TSP100k/LKH reference, CVRPLIB losses, default quality tradeoff and empirical versus asymptotic complexity.",
+    "Separated postpublication July2024 ATSP bugfix and official command budgets from original formal results.",
+    "Replaced figure with original Figure1 and rebuilt39 explicit citation edges with actual cited versions.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "165c294bc49466790990a2fde36f95e72816dd3298deb2aec31edb2673d300d4"
+}

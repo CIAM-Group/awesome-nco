@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "paper_id": "structured-rl",
+  "note_path": "specialist/structured-rl.md",
+  "baseline_note_sha256": "d37335d8d0d775aae61e8fdab22f82b1df04ff326d804fc08718838566c124d1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/fe100e5e7bca984803f0e4c6e94a6a88-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/fe100e5e7bca984803f0e4c6e94a6a88-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-da26173b3b.pdf",
+      "sha256": "d8a9601ad6029bac292444f7261667f3fc376438d2439b42179c2408cb3cf504",
+      "pages": 36,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title/authors/institutions, combinatorial MDP definitions, endogenous/exogenous noise, full related work/citations and claimed contributions/actor-critic pipeline."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all CO actor/Fenchel-Young equations and convexity qualifications, three distinct perturbations, sampled soft targets/double-critic details and static-only geometric setup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full finite-action simplex/regularization/primal-dual Proposition2, fixed-critic/static restrictions and six separate environments, ten-seed protocol, dynamic metrics and computational solver-call costs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all dynamic result plots/time-variance table and conclusions, first two bibliography pages with explicit true target identities and earlier cited versions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read final bibliography and all COAML motivation/Warcraft example, full regularization definitions and explicitly extended infinite-coordinate boundary mappings."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read complete Proposition2 proof including duplicate sample weighting/infinite-support extension and exact FY minimization, full hardware/tuning/checkpoint/ten-run measurement and SIL protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read full PPO/SAC adaptation restrictions, Warcraft image shortest path and single-machine scheduling formulations, exact/blackbox critics and all hyperparameters."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read full stochastic/dynamic scheduling tasks, sample-average versus learned critics, anticipative experts and per-environment hyperparameters/formulations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read complete endogenous assortment/gridworld models, actual myopic expert definitions, distinct DAPcritic architectures/PPOonlyfirstcritic and all hyperparameters; static critics are directcost/SAA not learned neuralcritics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Read every static plot and numerical result/time/stability table, full baseline expert gaps and initial checklist claims/limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "Read complete theory/reproducibility/open-code/hyperparameter/statistical-significance/compute/checklist claims and caveats including outlier suppression and ten-run summaries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 36,
+      "notes": "Read all remaining checklist/asset/code/impact/licensing/LLM declarations and completed full36page scientific/checklist coverage."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Structured actor scores plus CO layers/FY targets train from experience; geometry is idealized.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            15,
+            16
+          ],
+          "locator": "Section2/Proposition2/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "Three perturbations and sampled critic-weighted targets are instantiated by distinct neural/linear actors and classical solvers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Algorithm1 and full AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Six task-specific ten-initialization evaluations show strong GSPP/DAP gains with SILwins and higher solver-call training cost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            17,
+            18,
+            28,
+            29
+          ],
+          "locator": "Tables1/9–11/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Static fixed-critic interpretation is not learned nonlinear actor-critic convergence; endogenous expert is myopic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            15,
+            16,
+            25,
+            27
+          ],
+          "locator": "Geometric assumptions and explicit expert definitions"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialist constructive: separate environment-specific actors/optimizers build actions rather than editing complete incumbents.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            20,
+            21,
+            23,
+            24,
+            25,
+            27
+          ],
+          "locator": "Separate model/task configurations"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/fe100e5e7bca984803f0e4c6e94a6a88-Abstract-Conference.html",
+      "locator": "HTML issued2026-04-23; volume38/173726–173761/DOI5780; formalp1 names/institutions"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/fe100e5e7bca984803f0e4c6e94a6a88-Supplemental-Conference.zip",
+      "locator": "Publisher-linked ZIP137030bytes/142members manually inventoried; all7non-resourceforkREADMEfiles read, onlycode/noextraPDFTeXnotebook; full36page integratedappendices+official118965poster inspected; current56entryrepotree/READMEchecked; OpenReviewGS9o7u5njS403."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "structured-rl",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. [2019]",
+      "description": "Routing predecessor",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "structured-rl",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. [2017]",
+      "description": "Neural CO predecessor",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "structured-rl",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. [2017]",
+      "description": "Explicit2017workshopversion",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "structured-rl",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. [2018]",
+      "description": "Routing RL predecessor",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "structured-rl",
+      "cited": "blackbox-backprop",
+      "reference_label": "Vlastelica et al. [2020]",
+      "description": "Differentiable solver and Warcraft benchmark",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Vlastelica and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full36page+frozenZIP scientific audit; restored issueddate/native tasks, separated static geometry from convergence, myopic experts, selectedseeds and detailed implementation/protocol limits.",
+    "Final literal Markdown href audit moved page locators/version qualifiers outside link targets; true stable-note destinations retained."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "37b856830cc78fae1016387b679c83a7f2e5eab7e5fab0dda666f9aeb162eda5"
+}

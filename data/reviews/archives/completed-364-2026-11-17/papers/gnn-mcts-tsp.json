@@ -1,0 +1,322 @@
+{
+  "version": 1,
+  "paper_id": "gnn-mcts-tsp",
+  "note_path": "specialist/gnn-mcts-tsp.md",
+  "baseline_note_sha256": "ef660fd3266b7ef19ed95a8112e004df6f77a5e81716487aed93fc6a5c9b9f4b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.cs.sjtu.edu.cn/~tushikui/publications/2020-xzh-IEEE-ACCESS.pdf",
+      "retrieval_url": "https://www.cs.sjtu.edu.cn/~tushikui/publications/2020-xzh-IEEE-ACCESS.pdf",
+      "version": "IEEE Access publisher-formatted version of record, author-hosted copy; current version 22 June 2020",
+      "local_path": "research/full-text-review/gnn-mcts-tsp/paper.pdf",
+      "sha256": "33a351ceba28d946c2861621a463ac22a00a65ee3125c5d4801781adef5f5585",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh title, exact receipt/acceptance/publication dates, affiliations, method motivation, related work and distinctions from AlphaGo/GEN-MCTS."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh overview and SE-GNN equations: visited/current/start-node features, static distances, layer-specific MLP aggregation and supervised next-vertex cross entropy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh beam-search leaf evaluation, sibling normalized best Q, PUCT, max backup, tree reuse; full generation/training/testing and rollout budgets."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh generalization, 32-instance parallel timing and hardware, convergence caveats and component ablations; image-only tables queued for direct visual reading."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fresh beam width tradeoff and all architecture ablations, 3-layer/128-dimension choice, full appendix adapting MIS tree search, first 11 references."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 11,
+      "notes": "Fresh remaining references 12-53 and author biographies; all image-only Tables 1-7 visually read at rendered full-page resolution."
+    }
+  ],
+  "claims": [
+    {
+      "id": "node-policy",
+      "category": "contribution",
+      "statement": "SE-GNN is a supervised next-vertex policy, not a one-shot edge heatmap model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "III-A, Equations 3-5 and IV-A3"
+        }
+      ]
+    },
+    {
+      "id": "mcts",
+      "category": "method",
+      "statement": "PUCT uses sibling-normalized best-value backups and neural beam-completion leaf evaluation, not a learned critic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "III-B Algorithm 1"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "method",
+      "statement": "800/800/1200 rollouts, beam one, cpuct 1.3 for 20/50/100.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "IV-A3"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Random gaps 0.01/0.20/1.04%; TSP100-to-500 gap 4.37%; TSP500-to-1000 gap 4.48%.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables 1,3 (rendered image tables)"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "category": "experiment",
+      "statement": "Per-instance reported time reaches 292 minutes for 1000 vertices; host has eight 2080 Ti GPUs and 32 concurrent instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "IV-D Table 4 (rendered)"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "TSP-only supervised size-specific models construct tours with search; specialist constructive classification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "III and IV"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institution, acceptance, publication",
+      "source_url": "https://www.cs.sjtu.edu.cn/~tushikui/publications/2020-xzh-IEEE-ACCESS.pdf#page=1",
+      "locator": "Publisher-formatted title block and exact dates, DOI and IEEE Access pagination, Shanghai Jiao Tong University."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://www.cs.sjtu.edu.cn/~tushikui/full_publication.html",
+      "locator": "Author university publication list entry 33 links the exact paper to CMACH508/2020-GNN-MCTS-TSP; inspected README and duplicate 3-page README.pdf."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ieeexplore.ieee.org/document/9109309",
+      "locator": "Xplore attempted: JavaScript/robot check. Complete author-hosted publisher-formatted article includes Appendix on page 10. Author university paper entry and linked official repository manually inspected; no additional scientific supplement referenced, README.pdf duplicates procedural README and all 3 pages read. No claim of inaccessible attachment inspection."
+    },
+    {
+      "field": "figures",
+      "source_url": "https://www.cs.sjtu.edu.cn/~tushikui/publications/2020-xzh-IEEE-ACCESS.pdf",
+      "locator": "Visually inspected framework, GNN formulas, Algorithm 1 and all image-only Tables 1-7 using rendered PDF pages 3-5,7-10; existing framework asset complete and retained."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "pointer-networks",
+      "reference_label": "[9] Vinyals 2015",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            10
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[10] Bello ICLR 2017 as printed",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            10
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "attention-model",
+      "reference_label": "[11] Kool ICLR 2019",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            6,
+            7,
+            10
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[12] Dai et al. NeurIPS 2017 as printed",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[15] Li NeurIPS 2018",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            10,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "gcnn-branching",
+      "reference_label": "[16] Gasse NeurIPS 2019",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-mcts-tsp",
+      "cited": "learning-heuristic",
+      "reference_label": "[17] Deudon 2018",
+      "description": "Explicitly cited related combinatorial optimization method; source reference label retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Numbered in-text citation and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected edge-probability characterization to supervised next-vertex prior with static edge features.",
+    "Replaced invented January date with exact printed publication and acceptance dates.",
+    "Located and added official author-linked implementation.",
+    "Removed unsupported TSPLIB claim; added synthetic protocols, exact large-search minute units and restricted transfer claims."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "49a93bd17c7aed804337127fa47808548d47e46dac1604a9ce287f658d6756f0"
+}

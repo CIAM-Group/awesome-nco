@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "paper_id": "pregm",
+  "note_path": "specialist/pregm.md",
+  "baseline_note_sha256": "e650c59250d6eef72b012909c37de67a565272c4bc36613c87e5bb2757eb52d2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/6cd3ac24cdb789beeaa9f7145670fcae-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/6cd3ac24cdb789beeaa9f7145670fcae-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-354f0290a0.pdf",
+      "sha256": "06d7d5e78ddf433ad9e9f895480b7f041f2a165fc665640b1b664c40669dab81",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "ReadformalvisualkeypointQAPscope,VGG16_bn/positionencoderfusion/SplineCNN/LPMPpipeline andallrelatedwork; samepairednconstraintintro doesnotimplyglobalexactness; publicationabstractthreevsPDFfourdatasetsmustdistinguish."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read positional pretraining contrastive and triangle-distance/area reconstruction objectives, two-stage graph matching architecture and exact limits of affine-invariance claims; no optimal QAP or exact invariance guarantee established."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 13,
+      "notes": "Read all experiments, exact tables, ablations, conclusion and complete bibliography. Frozen Pascal-trained positional encoder with separately trained dataset matchers; table/prose conflicts in Pascal category count, Willow PT/WT and SPair mean; no timing or public implementation in PDF."
+    }
+  ],
+  "claims": [
+    {
+      "id": "pregm-contribution",
+      "category": "contribution",
+      "statement": "Learn contrastive positional embeddings with triangle reconstruction and fuse frozen encoder features into supervised visual graph matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/PR-EnDec pipeline"
+        }
+      ]
+    },
+    {
+      "id": "pregm-method",
+      "category": "method",
+      "statement": "Coordinate contrastive/triangle reconstruction pretraining is frozen before separately supervised LPMP matching; augmentation does not prove exact affine invariance or QAP optimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections3-5.3/Equations6-14"
+        }
+      ]
+    },
+    {
+      "id": "pregm-results",
+      "category": "experiment",
+      "statement": "Table results Pascal84.1, Willow98.2/99.3, SPair82.4, IMC90.7; table/prose conflicts retained; Pascal11 category wins not17.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables1-6 andSection5.4 prose"
+        }
+      ]
+    },
+    {
+      "id": "pregm-scope",
+      "category": "classification",
+      "statement": "Same positional encoder is transferred but matching models trained separately per dataset, all semantic keypoint correspondence native family.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Section4.3/5.1/5.3"
+        }
+      ]
+    },
+    {
+      "id": "pregm-reproduction",
+      "category": "reproducibility",
+      "statement": "Paper promises future code, provides one GPU and partial optimization settings but no explicit training epoch count or standardized timing comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "Sections5.3/5.5/6"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6cd3ac24cdb789beeaa9f7145670fcae-Abstract-Conference.html",
+      "locator": "Publisher title/six-author list matches PDF aside from Quan/Guan spelling; follow official Quan. PDF p1 printed Nanjing University of Technology retained without inferring a replacement from email domain."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6cd3ac24cdb789beeaa9f7145670fcae-Abstract-Conference.html",
+      "locator": "Official HTML citation_publication_date=2023-12-15, volume36 pages34557-34569 DOI10.52202/075280-1501; PDF publisher proceedings version all13pages."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6cd3ac24cdb789beeaa9f7145670fcae-Abstract-Conference.html",
+      "locator": "Manually checked landing related links/Bibtex/Paper, full13page manuscript references and available primary author listing; no separately linked science supplement/integrated appendix identified. OpenReview28RTu9MOT6 normalforum returns verification page and API2 returns403; no challenge bypass."
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6cd3ac24cdb789beeaa9f7145670fcae-Abstract-Conference.html",
+      "locator": "PDFp8 says codes available in future; exact title/author searches and primary pages did not verify an official repository."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "pregm",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[9]",
+      "description": "Explicit baseline DGMC and matching title/authors ICLR2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation [9] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "pregm",
+      "cited": "blackbox-backprop",
+      "reference_label": "[25]",
+      "description": "Explicit differentiable solver citation; cited ICLR2019 author version maps to same formally published blackbox differentiation work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation [25] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "pregm",
+      "cited": "cie-h",
+      "reference_label": "[43]",
+      "description": "CIE baseline and exact title/authors; bibliography gives2019 author version, formal ICLR2020 record retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13
+          ],
+          "locator": "Explicit in-text citation [43] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all13publisher pages and all references; manually checked official supplemental/code links and inspected rendered architecture/math/results.",
+    "Corrected exact affine invariance/optimality overclaims and separated dataset training from encoder transfer.",
+    "Recorded conflicting SPair mean, Willow PT/WT flags, Pascal category count, publisher dataset count and author spelling; preserved table evidence and lack of timing/code verification."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "fe9fd1866de5c8b6dfc7fee67f50edd8f9b5bbcce83cb6f3ba4bcecab3cb0252"
+}

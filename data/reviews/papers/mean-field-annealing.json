@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "paper_id": "mean-field-annealing",
+  "note_path": "specialist/mean-field-annealing.md",
+  "baseline_note_sha256": "2871324c342d536b6ae5f3af9e8161166a3a462b24c87726cb6f2994d9f89a79",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/ec5decca5ed3d6b8079e2e7e7bacc9f2-Paper.pdf",
+      "version": "OfficialNIPS1988volume1scannedproceedings,8pages91-98",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/ec5decca5ed3d6b8079e2e7e7bacc9f2-Paper.pdf",
+      "local_path": "research/import-272/nco-8f1d969c27.pdf",
+      "sha256": "65d6f7d7c8ff42dac2ce12adf61e904b0e92660d1db0b91e4ae7fb3c0582d275",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh firsthalfread: all6authors/NCSU-ORNLaffiliations, naiveMFA vs stochasticMarkovannealing, exactIsing0/1notation andapproxmeanfield, randomcoordinatefixedpointrelaxation/Tschedule, parallelHopfieldlimit, balancedgraphbipartitionsoftrepulsion notmaxcut."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Read fullTable1threegraphs100trials energyanditerationratios .762/1.078/1.030 and .187/.063/.019; fouridealizedclusterassumptions/Tc=VaverageDegree/2, freezingandcriticalslowdown, two-stagequench experiment/I5-90, parallelimplementationclaimswithoutdetailedtimingtables,all7references."
+    }
+  ],
+  "claims": [
+    {
+      "id": "mfa",
+      "category": "contribution",
+      "statement": "Naivemean-fieldrelaxationtracksaveragesduringcooling;fixedTHopfieldrelationisgiven.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "MFAandHopfieldsection/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "fixedpoint",
+      "category": "method",
+      "statement": "0/1spinmeanfields andsigmoidcoordinates, noexactjointGibbsdistribution orlearnedpolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Equations1-3andalgorithm"
+        }
+      ]
+    },
+    {
+      "id": "partition",
+      "category": "experiment",
+      "statement": "Softbalancedgraphbipartition;3graphs100trialseach andexactTable1ratiosnotoptimalitygaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "BipartitionformulationandTable1"
+        }
+      ]
+    },
+    {
+      "id": "critical",
+      "category": "method",
+      "statement": "Tc formula relieson4clusterapproximations; freezingthreshold/criticalslowdown areconditional.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Fourassumptions/Equation4/Tc,Tfdiscussion"
+        }
+      ]
+    },
+    {
+      "id": "quench",
+      "category": "limitation",
+      "statement": "LowinitialTandfewrelaxationsleadpoorlocalminima;40/90nearTcbetteronshowngraph, no globalguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Two-stagequench/ Figure3"
+        }
+      ]
+    },
+    {
+      "id": "parallel",
+      "category": "reproducibility",
+      "statement": "Additionalapplications/parallelplatformspeedupsreportedwithoutdetailedcomparativetablesinarticle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Conclusions"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Hand-setgraphHamiltonian plusannealeddynamics; specialistneurodynamicandsoftbalancing,notMaxCut/sharedtrainedmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Algorithm/graphobjective"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/ec5decca5ed3d6b8079e2e7e7bacc9f2-Paper.pdf",
+      "locator": "Scannedp1 all6authors andNCSU/ORNL;middleinitialsrestoredfromofficialrecord."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/hash/ec5decca5ed3d6b8079e2e7e7bacc9f2-Abstract.html",
+      "locator": "OfficialNIPS1988volume1entry."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/hash/ec5decca5ed3d6b8079e2e7e7bacc9f2-Abstract.html",
+      "locator": "ManualofficiallandingBibtex/Metadata/Paperonly;all8pagesread,no appendix/extrascientificattachmentreferences."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/ec5decca5ed3d6b8079e2e7e7bacc9f2-Paper.pdf#page=3",
+      "locator": "CompleteoriginalFigure1algorithmcrop[95,71,555,249]PDFpointsat3x;visuallycrosschecked."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshlyreadall8scannedpages,7references andkeymath/figuresvisually.",
+    "Restoredauthormiddleinitials;specifiedactual0/1MFAupdatesandfixedTHopfieldrelationship.",
+    "SeparatedsoftbalancedbipartitionfromMaxCut/exactbalanceandglobaloptimality.",
+    "RecordedallTable1quality/iterationratiosratherthanunqualified10-100xwallclockclaim.",
+    "MadecriticalTassumptionsandlowTlocalminimumcounterexampleexplicit; qualifiedparallelclaims.",
+    "AddedoriginalFigure1withpage/crop andkeptzeroidentitymatchedoutgoingcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6d6742fb92f863ffff087692df3642e061bea8acc44815eae6da6a9e181d469d"
+}

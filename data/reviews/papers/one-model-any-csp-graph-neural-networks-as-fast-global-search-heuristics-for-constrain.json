@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "paper_id": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+  "note_path": "generalist/one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "a7cfbd26288d4f2a2b15b170c343d337f72e9ecf7c20e5334c5a4527fa2da8e4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2023/0476.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2023/0476.pdf",
+      "version": "FormalIJCAI2023publisherPDF9p/4280–4288allreadincludingfullreferences,actualprimarymetadataAugust2023.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-1cce1f239f/publisher.pdf",
+      "sha256": "955008780120b46a69636df45f92827e441e2edc995fdf66832925a7e6755cca",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2208.10227",
+      "retrieval_url": "https://arxiv.org/pdf/2208.10227",
+      "version": "Identifiedarxiv2208.10227v1dated2022-08-22,all23pages/fullreferences/A1–A6/B1–B6/Cread; appendixfallbackaccepted,formalmainnumericpriority.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-1cce1f239f/arxiv.pdf",
+      "sha256": "54136abc0810b29dd080f8c0da0ef023c52d9c13e80e6ed3aed8933bad050662",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read complete4authorRWTHbyline/formalIJCAI2023identity, abstract/contributions/relatedallneuralCOrefs, constraintvalueFig1example3vars/oneflipedge labels, genericarchitecture/globalcompleteassignmentvslocal flip search; CSPdefinitionfinitearbitrarydomains/relations/distinctscopevariables. Architectureanyinputnotyetsharedcheckpointexperiment; formalincludesgeneralRBmodelbeyondoldarxivabstract."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read CSP/MAXCSPfraction/Q definition, arbitrarydomainsoftassignmentindependentdraw, graphtripartiteconstraint/value/variableedges binarycurrentassignment+onevariablerepairlabels, partialrelationencodingvsfulltableAppendA5explicit. Fourpasses/GRUvaluestates/maxvsmeanaggr andper-domainsoftmax. Globalresampleallvariables, bestsofarrewardpositivepart/telescoperewardundiscounted; discountedEq4lambdameansnotliteralbestqualityequivalencewithoutqualification, recurrentstatesfootnoteMDP. AllFig2processread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read vanillaREINFORCEnobaseline/criticone trajectory, d128500kAdamstepsbatch25Ttrain40/12.5Mdata/200val/24–48hA6000vsXeonCPU. FullRB50 42vsCoSoCo34/20minsingle50instances; COL50+40/50matchesHybridEA 50+40,train50verts3–10colors→73colorstest, MAXCUTunweightedGset800–10k20parallelruns180svsSDP3hup1k/notSOTAallclassical; Table2deviationnotpercentallrows, SATLIB100eachTable3allmethods/5sizes, crossmodelB6explicitflagged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read completeSATLIBstepbudget10runs10ksteps/PDPone deterministicandCDCLstructuredSATlimitation, MAXkSAT100trainmixed3/4→10ktest3/4/5vars75/150/300kclauses50each20min,Table4unsatcounts1537.46/1126.44/1105.62allclassicalbaselinevalues,Fig4globalvslocal/fewerstepsnotwalltime1000xspeedup. FullConclusionweighted/partialfutureandall38?bibliographicentriespp8–9actualread; formalcomplete9p. ExplicitA/B/Cscienceappendixneedednext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Actuallyreadv1allfirst2pages4authorRWTHbyline/abstract/introduction/relatedallrefs/completeCSPdefinition/sampling/tripartitegraphstart. v1watermark22Aug2022, samepaperolderthanformal; generalRBmentionedintroduction despiteabstractomits, notassumeabsence. Scientificversiondifferenceskeptformalpriority."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allv1Fig1binarylabelgraphexample,completegraph/GNN4passes/GRU/value/domainsoftmax andglobalcompleteassignmentnewdraw, bestsofarrewardpositiveparttelescopesundiscounted anddiscountedtrainingEq4/MDPrecurrentfootnote; samecoreformalscience. ExplicitA/Cappendixforthcoming."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read v1fullimplementation/12.5Msamples/sameRB42of50/COL90of100/MaxCutGsetTable1/2/3allrowsandbaselines. v1matchesformalcorebudget; includesRB30train/50test. RLSATrewardincompatiblesomeunsattrainexplainedv1. Explicitremainingappendicesneedfullread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read completev1MAXSATTable4allcounts andglobal-localsteps/Conclusioncontinuousdomainfuture; allv1bibliographyentriespp8–9 throughZhou. Importantv1MAX5SAT1103.14vsformal1105.62, preserveformalscore. v1bibextraAbboud/Sato/GAT/Hagbergforappendix, formaladdsGasse/NLocalSAT. Bothfullversionsnotbyteidentical andformalpriority."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read completeAppendA1formalcomponentsEq5–14/LayerNorm/GRUinitialsharedh/residual/nohiddenconstraintstate, Fig5fivephase messageexample; A2trainingfutureGtEq15/discobjective16/printedPG17–18eps1e-5 noexactunbiasedclaim, defaultlambda.75 andnobaseline. A3validation200largerthantrain/Tval200/hypers100kthenbest500k, aggrmaxdecisionmeanmaximization/d128/lr5e-6→5e-7/batch25; A4GPUbottleneckstart. Drive320MB2090membersinventorynosciPDF/archive, dataonlynotreadastextarticle."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Read fullTable5aggrRB/COL/SATMAX,MAXSATMEAN,MAXCUTSUM; memoryO(Ckl+Xld+Cd)messagepassing notalltupleinput/universalpolytime; COOvsCSR/GATmemoryconstraint. A5alllabelrecomputeEqs19–21allowed/disallowedtupletricks,SAToneforbiddentuple, explicitextensiontablevsimplicitlinear/all-differentimplementedtypes. A6randomassignmentfeedbackbreaksdeterministic1WLsymmetries notnewuniversaltheorem, G48/49optimalcuts andexistingrandomGNNevidence."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Read all37linesforwardAlg1inclinitialquality/best update/fullsoftmax/relabel/reward and12linestrainAlg2discountedfuturegradient/no baseline/batchascent; Fig6grid12x122coloring9steps0–8example scientificvisualpendingrender, noextratheorem. Pseudocodeminorreturntheta vssoftoutputsnotusedasexecutableclaim."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read allB1RBcriticaldistribution/data/domain22vsmain23internalinconsistency, B2allCOLmixparams/greedyminus1clipcolors/valn200/fullbaselineprotocol; B3positive-edgeunweightedMaxCut2coloring,train100val500,baselinetrain200/500andER500singlecheckpointnoteachGsetgroup; B4SATunsattrainingPDPsame/RLSATseparatecurriculum5→100; B5mixed3/4no5val/MaxWalkSATnoise1e-3; B6crosscomparisonopeningexplicitneedednext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "Read entireB6crosscomparisonTable6all25entries: SAME RBcheckpoint42RB/50COL/98SL250, COL15RB/50COL/96SAT; MaxCutmodel0otherdecisiontasks/highunsatnontransfer, per-taskspecialistmainbenchmarksnotonesupermodel. Crossscores use v1MAX5SAT1103.14 notformal1105.62. Full35graphTable7allnodes/edges/6methodsdeviationsread, ECORDwinsseveralindividualG2/3/5/45 vsANYaveragebetter, zerosG48/49/50retained."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "Read all100structuredcolorgraphinstance rowsTables8/9inclsize/edges/chromatic/success/runtime7/6methods, failuresqueen11..16 etc le45015dANYfailsHybridEAyes, someHybridEAtimes>1200 printedwithoutquietfix; zeroini3chromatic3typo vs30othersnotunverifiednewclaim. All16softwareversionURLsTable10read. Broadsuccessdoesnottime-dominateeachbaseline. Table20lowCOLmanyCPU.01vsANY.5sretained."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "Read fullCglobal-localablationEqs23–25globalsoftmaxsinglevalue/currentqualitybaselineEq26; Tables11/12/13allnumericcells, graphcolorlocal86vsglobal90/quality62, Maxcutbothablationsworse,MAX5global1103.14vslocal1498.46/qual1471,Fig7convergencequalplateau/localsteadyinterpretation. All23pv1/fullA1–A6/B1–B6/C1scienceandrefsnowactualread. v1vsformalMax5scoreversiondifferencekept."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "GenericCSPrepresentation/globalassignmentchangesaddressproblem-specificencodingsandcostlylocalGNNmoves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/RelatedWork/Method"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Tripartitegraph/recurrentpolicy/REINFORCEbestimprovementrewardand5CSPexperiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/completeMethod/Experiments"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Binaryassignment/oneflipconstraintlabels,4passesGRUvaluestates/perdomainsoftmax/globaldraw;undiscountedrecordrewardtelescopesbutdiscountedtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1–4.3/Eq1–4"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "12.5Mtrain/40steps/A6000; RB42/50,COL90/100tiesHybridEA,MAXCUT20runs180s,SAT10x10ksteps,formalMax5unsat1105.62.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "FullTables1–4/Setup/Results"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SameRB/COLtrainedcheckpointsactuallycrossRB/coloring/SAT inB6,main5modelsseparate;globalcompleteassignmentimprovement.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "locator": "AppendixB6Table6all25values andtransferfailureanalysis"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Crossproblemtransferdependsaggregation;MaxCutpolicyfailsotherdecisions, memory/constraintrepresentationcost/structuredCDCLboundary.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12,
+            13,
+            18
+          ],
+          "locator": "A4–A6/B6"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "Localandqualityrewardablationare retrained;86/62vs90coloringsolves,MaxCut/MaxSATspecificimprovementnotuniversalguarantee.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            22,
+            23
+          ],
+          "locator": "FullAppendixC/Tab11–13/Fig7"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Allformal9+arxiv23p/allscientificappendicesread;formalarxivMax5numbersdiffer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            8,
+            9
+          ],
+          "locator": "Formalidentity/results/fullbib"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://ijcai.org/proceedings/2023/0476.pdf",
+      "locator": "p1JanTönshoff/BerkeKisin/JakobLindner/MartinGroheRWTHAachen; formalprimary/BibTeX/arxivmatchidentity."
+    },
+    {
+      "field": "venue, formal publication date",
+      "source_url": "https://ijcai.org/proceedings/2023/476",
+      "locator": "ActualpublisherBibTeXyear2023month8,IJCAIMain4280–4288DOI10.24963/ijcai.2023/476. No inventedday/eventdate."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2208.10227",
+      "locator": "Savedprimaryonlyv1Mon22Aug202212:09:19UTC, actualPDFwatermark23pagesallread. Topdate2022-08-22 independentformal2023-08. v1MAX5SAT1103.14 vsformal1105.62; keepformalmainresult/v1appendixprovenance."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2208.10227#page=18",
+      "locator": "B6Table6sameRBcheckpoint42RB/50COL/98SAT250,andCOL15/50/96withoutretraining;mainoneperproblem5modelsnotcommonheadline. MaxCut0otherdecisionsnegative. Globalwholecandidateassignmentchangesnotconstructivepartialsolution; generalistimprovementboundeddecisionCSPtransfer."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/toenshoff/ANYCSP",
+      "locator": "ManualformalfootnoteCodeandAppendix pointsrepo; currentZIP53members40filesnoPDF/sciencearchive/checkpoint. Completeidentifiedarxiv23pA1–A6/B1–B6/Callread inclfull100coloring/35Gsetrows/allrefs. OfficialREADMElinkedDrivepublicconfirmationdownloadactualdata.zip320823765bytes2090memberinventory1150cnf/750xml/100col/35mtx,noPDF/TeX/video/nestedarchive; inventorynotbenchmarkexecution. Noexplicitmissingscienceattachment."
+    },
+    {
+      "field": "code version and task-specific configurations",
+      "source_url": "https://github.com/toenshoff/ANYCSP/tree/d57a72b506014fc4f1b69b2a52eebffc9a8bbd07",
+      "locator": "SavedprimarycurrentOid d57a72...committedDate2023-12-07T17:47:37+01:00,READMEfullread/configsRB..5tasks/scripts. src/model/model.py56–152globalassignmentupdate/bestqualitytracking; loss.pyall48linesrecordimprovement/discountsurrogate; noexecution/nohistoricalweightfilespresent."
+    },
+    {
+      "field": "figures, algorithms, theory conditions",
+      "source_url": "https://arxiv.org/pdf/2208.10227#page=18",
+      "locator": "Actualformalpp2–7/arxiv10–15/18–23rendercontactsviewed: all7fig13tables/keyEqs/Alg1–2. A5labelalgebraexplicitrelationtuples, A4messagepassingmemorynotfullrelationtablebound, A6randomGNNsymmetrydiscussionnotnewoptimalitytheorem. OriginalformalFig2crop54,50,558,133alllabelsviewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Related attention-based neural routing work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicitbodyp2andfulltitle/authorsbibp8 identifyICLR2019despite2018printedlabel"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al. (2020)",
+      "description": "ECO-DQN local-search comparison and conceptual best-improvement reward background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            6,
+            8
+          ],
+          "locator": "Bodyrelated/reward/MaxCutandexactAAAI2020bibliographyp8"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Cites neural components embedded in traditional combinatorial solvers as a distinct line of work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Literalbodyp2andcompleteNeurIPS2019bibliographyp8"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Discusses S2V-DQN constructive graph optimization and explains its omission from later Max-Cut comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "locator": "Explicitintro/related/MaxCutbody andfullNeurIPS2017referencep8"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Related policy-gradient pointer-network combinatorial solver background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicitbodyp2andfullarxiv1611.09940bibp8"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Pointer-network architecture in early neural combinatorial optimization related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyp2andcompleteNeurIPS2015referencep9"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021)",
+      "description": "Related bilevel edge-modification approach, distinguished from global assignment resampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "ExplicitBiHybbodyp2 andfullNeurIPS2021title/authors/pagesp9"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018)",
+      "description": "Neural SAT solver background in the introductory motivation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicitintrobodyp1andfullarxiv1802.03685bibliographyp9 identifiesICLR2019target"
+        }
+      ]
+    },
+    {
+      "citing": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Póczos (2019)",
+      "description": "RLSAT local-search baseline and source of SATLIB ten-attempt step-budget protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            9
+          ],
+          "locator": "Explicitrelated/SATbodyandfullNeurIPS2019bibliographyp9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithformal9+arxiv23completepages/fullA/B/C/refandtables.",
+    "MigratedgeneralistimprovementbasedexplicitB6samecheckpointnotarchitecture/name; retainedMaxCuttransferfailures/separatemainmodels.",
+    "Qualifiedbudgets/CPUvsGPU/iterationsnot1000xtime/knownbestdeviations/noUNSATcertificate/structuredCDCLlimitation.",
+    "Separatedformal1105.62fromoldv11103.14, actualcode/data/suppinventories/noexecution; originalformalFig2and9body+bibedges."
+  ],
+  "reviewed_note_sha256": "25ca9f35e9fe5b82ac08f9abb9712e762e8b34935a33f293573c6bf670b0a405"
+}

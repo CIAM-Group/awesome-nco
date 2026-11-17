@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "paper_id": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+  "note_path": "specialist/graph-context-attention-networks-for-size-varied-deep-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "3aa909a56015c771010010ed045f552343f0eb33f7cd5da04502f1fb8843bd19",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Jiang_Graph-Context_Attention_Networks_for_Size-Varied_Deep_Graph_Matching_CVPR_2022_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Jiang_Graph-Context_Attention_Networks_for_Size-Varied_Deep_Graph_Matching_CVPR_2022_paper.pdf",
+      "version": "OfficialCVF10pageCVPR2022final2343–2352fiveLancasterauthors/all31refsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-78aa800860/publisher.pdf",
+      "sha256": "1b88e3cfbfc1db6676bb86de8e3708f663b9a737c9a09f0046c69d865563a0f3",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Jiang_Graph-Context_Attention_Networks_CVPR_2022_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Jiang_Graph-Context_Attention_Networks_CVPR_2022_supplemental.pdf",
+      "version": "OfficialCVF5psciencesuppsame5authors/protocols/9refs/qualitativeplotsallreadandviewed.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-78aa800860/supplement.pdf",
+      "sha256": "bf2914053bdb8c9dc85f7912ad15863c76280a58ce4adde11aef86b14c6bdcac",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readmainpp1?3:5Lancasterauthors;GCANkeypoint/graphlevelpipelines;sizevariedpartialmatchingILP,supervisednodevsgraphlevelpairwiseloss;B-splinepositionalmessageandcross/selfattention;differenttrainingtasksnotautomaticallygeneralist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Readallmainpp4?5Eqs3?16:crossattentionchannelweights,selfmultih ead/residual,graphaggregator;ILPnegative-loglinearassignmentrealnodesexactone/dummymany,branchandboundexactlinearobjectiveNOTQAPguarantee;max(predhard,GT)BCEmask;graphlabelscontrastiveEuclideanmar ginloss,separateregime."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Readmainpp6?8fullAlg1/protocoltables/graphlevelresults:3modulesAdam2e-5VGG2e-3others;intersectionPascal82.3,sizedvariedF164.6vsBBGM61.4withclassnegativesbike66.7<70.9horse62.5<63.4motor63.5<69;20kpairs82%outliers29%samesize;graphlevelsimilaritysupervisionnotlabel-free/AUCnotdiscretematchingaccuracy;Bosphoros50train50heldoutsubjects;nodeGTabsentregimeseparate;largergraphcomplexitylimit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readall31mainreferences;PCA,CIE,BBGM,QCDGM,LCSactualfulltitles;NGMjournal14/IPCAjournal26differenttitleextensionsnotmergeearlierconference;nodegrapharchitecturerefsnotautomaticsolveredges."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readsupppp1?3fulltables/reference9entries/qualcaption;Willow98.6/SPair81.3intersectionaccuracy,classnegativesboat77.5<80.5,cat73.2<74.6;lossILP82.3butnotallcategories;DGMCtablenamedbutnofullbibidentityentryso nointernalcitationedge;Bosphorosnonodegroundtruthquantitativescope."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Readsupppp4?5allcaptionsforoutlierkeypointsandunsupervisedPascal/Bosphoroscorrespondences;lowconfidencevesselmatchesomittedandnogroundtruthaccuracyavailable,visualinspectionnextnotinferredfromextraction."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gcan-contribution",
+      "category": "contribution",
+      "statement": "Graphcontextattentionanddummylinearassignmentforpartialsizevariedmatching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1–3/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "gcan-method",
+      "category": "method",
+      "statement": "B-splinepositioncross/selfattention;negative-logdummyILPexactlinearobjectiveonly;ILPmaskBCEandseparategraphpairloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs1–16/Alg1"
+        }
+      ]
+    },
+    {
+      "id": "gcan-results",
+      "category": "experiment",
+      "statement": "82.3Pascalfilteredaccuracy64.6unfilteredF1;SPair81.3Willow98.6withclassnegativesandpairclassification/nodeaccuracydistinction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–4/Figs4–7"
+        }
+      ]
+    },
+    {
+      "id": "gcan-limits",
+      "category": "limitation",
+      "statement": "Graphpairlabelsremainrequired;BosphorosnocorrespondenceGTandlowconfidenceexamplesomitted;notexactQAP/semanticcertificate.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            5
+          ],
+          "locator": "SupplementgraphlevelprotocolandFig4caption"
+        }
+      ]
+    },
+    {
+      "id": "gcan-class",
+      "category": "classification",
+      "statement": "Specialistconstructiveneuralscores+classicalpartialassignment;nos haredcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Learning/implementation/Alg1"
+        }
+      ]
+    },
+    {
+      "id": "gcan-repro",
+      "category": "reproducibility",
+      "statement": "All15sciencePDFpagesreadandrendered;official148memberrepoREADMEandnecessaryGurobisolverchecked.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Allsciencesupplement"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52688.2022.00238",
+      "locator": "CachedexactDOItitle/fiveauthorCrossrefpublished2022-06month;formalCVF2343–2352bylineLancaster."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Jiang_Graph-Context_Attention_Networks_CVPR_2022_supplemental.pdf",
+      "locator": "OfficialCVF5psciencesuppallrefs/tables/panelsread;148memberofficialsourcearchive4785cc2e58a646893626f8a76abeb8c5c48e54b8noPDFZIPipynb;wholeREADMEcheckedincludingunreleasedunsupervisedtraining."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Jiang_Graph-Context_Attention_Networks_for_Size-Varied_Deep_Graph_Matching_CVPR_2022_paper.pdf",
+      "locator": "OriginalFigure1wholecaptionformalPDFp3/2345Rect40,40,572,307at3xphysicalpublicassetactualview;main3–8andsupp1–5allkeymath/table/ROC/qualitativepanelsrendered."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/ZhehengJiang/GCAN",
+      "locator": "GCAN_model.py139–160ILPdummyroute;completeILP.py87–153Gurobibinarynegative-loglinearobjectiveandrealrow/colconstraints;noNNincumbentediting. Noexperimentrerun."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Jiang_Graph-Context_Attention_Networks_for_Size-Varied_Deep_Graph_Matching_CVPR_2022_paper.pdf",
+      "locator": "All31main+9supprefsread6directcatalogueidentities. SupplementtableDGMCbarelabelnotbibentry,noedge. DistinctTPAMI14/26excludedfromdifferentconferenceIDs."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[1]",
+      "description": "Directfullbibliographyidentity[1];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [1]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "[6]",
+      "description": "Directfullbibliographyidentity[6];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [6]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "cie-h",
+      "reference_label": "[7]",
+      "description": "Directfullbibliographyidentity[7];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [7]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[8]",
+      "description": "Directfullbibliographyidentity[8];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [8]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "[9]",
+      "description": "Directfullbibliographyidentity[9];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [9]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "[23]",
+      "description": "Directfullbibliographyidentity[23];samepaperpreprintcontinuityonly,nodifferenttitleextensionmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [23]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafter15sciencepagesread.",
+    "SeparatedlinearILPoptimalityfromQAP/semanticcorrectness;supervisionregimesandmetricsdistinct.",
+    "RetainedclassnegativesandBosphorosmissingnodeGT;publicunsupervisedcodeunreleasedstatus.",
+    "Only6fullbibidentities,notbaretableDGMCnorjournalextensionlineage."
+  ],
+  "reviewed_note_sha256": "0d3edda527221c4301500c5c5ffe4b0b2dc10a2f4ab65f3b69ea1525bb84b047"
+}

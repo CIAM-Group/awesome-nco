@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "paper_id": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+  "note_path": "specialist/the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "d858dc4b4e6f5265941beae4b30926083d6be9fc5937d9652d2fd6c0b90b992a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shahar_The_Missing_GAP_From_Solving_Square_Jigsaw_Puzzles_to_Handling_CVPR_2026_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2026/papers/Shahar_The_Missing_GAP_From_Solving_Square_Jigsaw_Puzzles_to_Handling_CVPR_2026_paper.pdf",
+      "version": "CVFopenaccessacceptedCVPR2026version,11pagespp3186–3196includingall66references;title/threeauthorbyline/institutionchecked;PDFwatermarkstatesacceptedversionidentityexceptwatermark.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-f8206fc262/publisher.pdf",
+      "sha256": "32d5f297e69f10988be928bada1e62ef09e4e5ad8cb5d46e01529e7667b4372a",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Shahar_The_Missing_GAP_CVPR_2026_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Shahar_The_Missing_GAP_CVPR_2026_supplemental.pdf",
+      "version": "OfficialCVFlinked8pagescientificSupplementaryMaterial,completeSections7–11/Figures6–9/Tables4–7;allpagesreadandkeyvisualsrendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-f8206fc262/supplement.pdf",
+      "sha256": "1a6b8d39e8e56ab4a13c0a55f3944c2dbde43f6ae769148d4cdd6161c2b62253",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete formalPDF pp1–3 title/byline/institution, archaeology motivation/relatedwork, all named prior jigsaw/square/continuous approaches, GAP20kpergrid synthetic artwork+masks pipeline and originalgrid topology. Realfragment VAE shapes do not equal evaluated reconstruction of real archaeological objects; shape complexity and discrete permutation task must stay distinct."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete pp4–6 dataset table, shapeVAE details/morphology/distribution caveats, grid14k/3k/3k splits, permutation formulation Eq1–5, ViT RGBA adaptation/conditionalTransformer,20step inferencegreedy fullassignment, protocolPA/AA/SRA and baseline choices. Eq2 independent perpiece mixing can duplicatepositions although π0/π1 arepermutations; inference greedy enforces bijection but no monotone quality guarantee. Primary neural process edits complete discrete permutations; provisional improvement pendingcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full pp7–9 Table2 GAP3/5 scores and adaptedRGBbaselineprotocol, Table3 ablations including alpha slicing performed aftertraining (not independently retrainedcontrolledalphaexperiment), statedgeneralization/conclusions/ethics/acknowledgment and mainbib1–26. PuzzleFlow PA28.5/.3 means mostpuzzlesunsolved; AA62.9/29.1 and SRA55.7/19.8 separate. BaselinesRGB vs modelRGBA inputaccess differs; no universalSOTAoractualarchaeologyclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read all remaining formalreferences27–66, manually matched sixexactcatalogue titles; reference12 is PuzLM preprint2511.06315 under Seq2seqModelsReconstructVisualJigsawPuzzlesWithoutSeeingThem, toverify formalidentity. References4/29/44/49/52/55 exactconfirm ErodedBoundaries/JPDVT/DiffAssemble/SD2RL/ERLMPP/RePAIR. Noextensionlineage automaticedges."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full supplementarypp1–3 VAEarchitecture/training/RePAIR958mask80/10/10, METcollection/sourceimage disjointsplit, geometricfeature definitions (bbox normalization, circularitycompactnessdependence), all958vs958 Table4 rows, boxplots/PCA descriptions. Maintextshapemeans and relative differences disagree partlywithsuppTable4; will reporttable-specific values, notclaimproofdistributionmatch/nocollapse fromPCAonly."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete supplementarypp4–6 shapecoverage prose, architectureTable5/trainingTable6 and lossEq7, baselineadaptations and greeding/GAoperators/runtime, evaluation20steps and JPwLEGseparatetraining§10. Recorded main discreteEq2 vs supplement real-valuedlinearstate wording, mainpositionlookup/time192/output2layer vs supplementarytablepositionMLP/time768/output3layer differences for codecrosscheck; no unsupported guarantees. JPwLEGexplicitnotSOTA, separate retrainingnotzeroshot."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read complete supplementarypp7–8 Table7 squarebenchmarknegativecomparisons (JPwLEG3 72.6AA/43.7PA;JPwLEG5 29AA/0PA, behindSD2RL/ERLMPP/PuzLM), fullqualitative/ethical/codeavailability and Fig9success/failurecaption. Actualrenderedmain5–8 checked Eq2/Eq4/Eq5/inference and mainTables2–3; supp3/5/8 checked Table4/architectureTable6 and fullqualitativepanel. All19PDFpagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gap-contribution",
+      "category": "contribution",
+      "statement": "GAP masks are learned from real silhouettes but evaluated on synthetic artwork pieces in known3x3/5x5grids; PuzzleFlow predicts their discreteplacement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1/3/4"
+        }
+      ]
+    },
+    {
+      "id": "gap-method",
+      "category": "method",
+      "statement": "Independentperpiece stochastic training state and20step greedy bijective inference are distinct; eachinference neuralpassconditionsonandrewritescompletepermutation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Equations2–5;Section4.5"
+        }
+      ]
+    },
+    {
+      "id": "gap-experiment",
+      "category": "experiment",
+      "statement": "FormalGAP3PA/AA/SRA28.5/62.9/55.7;GAP5 .3/29.1/19.8; mostcompletepuzzlesunsolved despitebestprintedrows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables2–3 and ablationinterpretation"
+        }
+      ]
+    },
+    {
+      "id": "gap-square-results",
+      "category": "experiment",
+      "statement": "Separatelytrained JPwLEGresults72.6AA/43.7PA and29AA/0PA are behindseveralpublishedsolvers; nozeroshottransfer inferred.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "SupplementSection10/Table7"
+        }
+      ]
+    },
+    {
+      "id": "gap-classification",
+      "category": "classification",
+      "statement": "Specialistimprovement: NNrepeatedlyeditscompletefeasiblegridpermutations; size-dependentvocab/outputandseparatecheckpointsdo not showsharedcrossnativepolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Sections4.1/4.5"
+        }
+      ]
+    },
+    {
+      "id": "gap-boundary",
+      "category": "limitation",
+      "statement": "Equation2independentmixing mayduplicatepositions; simple9piece swap/identityexamplelimitspermutationflowclaim,whileinferencegreedyremainsbijective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "RenderedEquation2 andSection4.5; curatorboundary-check.json"
+        }
+      ]
+    },
+    {
+      "id": "gap-repro",
+      "category": "reproducibility",
+      "statement": "Officialscientificsupplementdetailsarchitecture,training,baselinesandsquarebenchmark; supplementaryTable5conflictswithmainarchitectureandcurrentauthorcorrection.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "SupplementSections9–11 andTables5–7"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions/formal identity/publication.date",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shahar_The_Missing_GAP_From_Solving_Square_Jigsaw_Puzzles_to_Handling_CVPR_2026_paper.html",
+      "locator": "CachedprimaryCVFHTML exacttitle/byline/citation_publication_date2026,pp3186–3196 and readPDFp1 institution; noexactpublicationdayinidentifiedrecord."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2605.12077",
+      "locator": "Cachedprimaryarxiv.html exacttitle/threeauthors/history: v1Tue12May2026;firstpostingseparatefromformalpublicationyear."
+    },
+    {
+      "field": "supplements inventory",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Shahar_The_Missing_GAP_From_Solving_Square_Jigsaw_Puzzles_to_Handling_CVPR_2026_paper.html",
+      "locator": "OfficialcachedCVFHTMLmanuallyinspectedalllinks:onePDFscientificsupplement8pages,allread. Fullauthorrepotree32021bb58331459872049ed47aeb14d9ff83ec47 hasnoextraPDF/ZIP; allscienceREADMEcardsread, linkedHFtreeinventoried."
+    },
+    {
+      "field": "code_url/classification/implementation",
+      "source_url": "https://github.com/OfirShahar/puzzle-flow-matching/blob/32021bb58331459872049ed47aeb14d9ff83ec47/puzzleflow/src/models/vit_flow.py",
+      "locator": "Cachedactualcode lines241–282greedyunusedpositions,307–320randomcompletepermutationrevisedatallsteps;128positionlookup,131time192,151–156outputhead matchmain. flow_matcher.py69–106independentBernoulliperpiece;train170/predict85importsrc.dataabsentfromcompleteactualtree."
+    },
+    {
+      "field": "author architecture correction",
+      "source_url": "https://github.com/OfirShahar/puzzle-flow-matching/blob/32021bb58331459872049ed47aeb14d9ff83ec47/puzzleflow/README.md",
+      "locator": "ReadexplicitnoteSupplementaryTable5position/time/outputentriesdiscardedearlyexperiment;currentmain§4.3/codecorrect. Distinctfromcuratorinference."
+    },
+    {
+      "field": "author postpublication corrections/results/checkpoints",
+      "source_url": "https://huggingface.co/datasets/Ofirish/GAP/blob/184118071402c75a883f93c34dc82c4a887e658b/README.md",
+      "locator": "ReadfullcachedHFREADME:formalGAGAP5copyerrorcorrected4.0AA/3.4SRA;later3runsandoriginalsinglerunlabeled. PrimaryHFmetadata sha184118071402c75a883f93c34dc82c4a887e658b lastModified2026-09-28. APItreeconfirmsdatasets/generator/twoseparatecheckpoints/configs;notdownloadedorrun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/supplemental/Shahar_The_Missing_GAP_CVPR_2026_supplemental.pdf",
+      "locator": "OriginalsuppFig8+completecaption p5cropRect36,70,576,178 at4x;public/paper-assets/the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic/framework.png134391bytesexistsandactualview_imageinspected."
+    },
+    {
+      "field": "citation identity PuzLM",
+      "source_url": "https://arxiv.org/abs/2511.06315",
+      "locator": "Reference12oldtitleSeq2seqModelsReconstructVisualJigsawPuzzlesWithoutSeeingThem+3authors+2511.06315 matchesprimarycurrentPuzLMtitle/history(v1Nov9,2025,v2Mar12,2026),andSpringerDOI10.1007/978-3-032-37281-9_4samethreeauthors/fullcurrenttitle; samepaperpreprintcontinuity,notextension."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "solving-jigsaw-puzzles-with-eroded-boundaries",
+      "reference_label": "[4]",
+      "description": "Bridger/Danon/Tal CVPR2020 eroded-boundaries solver",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Relatedworkp2;bib[4]p9"
+        }
+      ]
+    },
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+      "reference_label": "[12]",
+      "description": "PuzLM is cited via its sameauthor arxiv2511.06315 earlier title, used as GAPbaseline; verifiedsamepaperformalcontinuity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            9
+          ],
+          "locator": "Relatedworkp3/baselinepp6–7;bib[12]p9"
+        }
+      ]
+    },
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers",
+      "reference_label": "[29]",
+      "description": "Liu etal CVPR2024 JPDVT exacttitle/byline cited and retrainedasbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            10
+          ],
+          "locator": "Relatedwork/baselines;bib[29]p10"
+        }
+      ]
+    },
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "diffassemble-a-unified-graph-diffusion-model-for-2d-and-3d-reassembly",
+      "reference_label": "[44]",
+      "description": "Scarpellini etal CVPR2024 DiffAssemble citedbyfulltitle andcomparedasbaseline; Moreirobibtypoisnotsubstantiveidentitychange.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            10
+          ],
+          "locator": "Relatedwork/baselines;bib[44]p10"
+        }
+      ]
+    },
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "siamese-discriminant-deep-reinforcement-learning-for-solving-jigsaw-puzzles-with-large",
+      "reference_label": "[49]",
+      "description": "Song etal AAAI2023 SD2RL exacttitle usedforJPwLEGdatasetsandpublishedsquarebenchmarkcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            10
+          ],
+          "locator": "JPwLEG/discussion;bib[49]p10"
+        }
+      ]
+    },
+    {
+      "citing": "the-missing-gap-from-solving-square-jigsaw-puzzles-to-handling-real-world-archaeologic",
+      "cited": "repair-benchmark",
+      "reference_label": "[55]",
+      "description": "Tsesmelis etal NeurIPS2024 RePAIR exacttitle providesrealarchaeologicalfragmentmasks/datasetcontext.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            11
+          ],
+          "locator": "Sections1/3;bib[55]p11"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replace allpendingbyline/task/date fields usingactualfullsources.",
+    "UseimprovementbecauseNNrevisescompletebijectiveinferencepermutations;donotcalltraininginterpolationalwaysfeasible.",
+    "RetainformalTable2andlaterauthorcorrections/multirunsasdistinctversions;notclaimuniversalSOTA.",
+    "ExplicitlyrecordauthorcorrectionofsuppTable5andcurrentlymissingsrc.dataimportmodule,withoutdeclaringformalexperimentsinvalid.",
+    "User-authorized target deferral: source-supported incoming evidence preserved in conference163 deferral record; internal graph edge omitted while target is outside active catalogue."
+  ],
+  "reviewed_note_sha256": "f3172903840dc5eb6fa3d4ae4e31014b81f5742056784812a3b04dcfb3f6f00f"
+}

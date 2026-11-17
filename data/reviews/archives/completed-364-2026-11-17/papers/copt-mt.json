@@ -1,0 +1,490 @@
+{
+  "version": 1,
+  "paper_id": "copt-mt",
+  "note_path": "generalist/copt-mt.md",
+  "baseline_note_sha256": "bf5d3eff66f76b5fbacb3a6712bc5392c1a7a48b538763cb51e0193339f92df8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/canturk26a/canturk26a.pdf",
+      "version": "FormalPMLR306ICML2026,20pagesincludingbibliographyandAppendicesA-D, allfreshlyread",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/canturk26a/canturk26a.pdf",
+      "local_path": "research/import-272/nco-933d2858eb.pdf",
+      "sha256": "4617fc1e818890dd388f7e95167721353159dc0e27d8022a5d568270d5805ea3",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 9,
+      "notes": "FreshformalPMLR306ICML2026main1-9fullread:actual5authors4institutions, GCONdegree/clustering/trianglescomplexwaveletmultiscaleattention, sigmoidbinaryvs10-colorheads; ruledecodingkseednoprimaledit. Actualshared3/5taskencoderwithtask-specificheads+losses, transfersrequirehead/fullFT notzeroshot. PairMVC/MIS topologykeepingvsCliquecomplementdistribution; Table3frozenbelowbaseline, fullFTMIS18.00<18.12baseline whileMVC211.56<211.69good. PairClique16.82vs16.63matchedfeaturesbut16.92G-only, globalGTvariance/loses. LOO MDS36.15>35.57bad; Table7FTcolor17.29violationsvsfull3.52 notvalidcompletecoloringguarantee; pretrain200+FT20 vsbaseline20/200 nottotalbudgetequal. 3/5runsstd, actual200epochmultiheadgeneralistsharednative3tasks, headFTnewothers. Fullrefsappendixnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 20,
+      "notes": "Freshallrefs10-13+AppendicesA-D14-20fullread:exacttaskenergies/decoderp15 distinguishesMISclique seedgreedy, MDS/MVCdropinitialseedranksuntildominated/covered, MaxCutthreshold andcolorviolationsnotstrictguarantee. 6000dataset200-300/800-1200RB/BA,16layers64width39.2kbackbonefilters/AdamW/batch256/128;200pretrain20FT3/5runs; appendixMDSreductioncontrolblowupanddirectionwordinginconsistentnotmathematicallyunconditionalNNtransfer. Actualcoloringextrapolation71.26/63.52%worse, BA-largeclique4.31<4.32baseline. L40S inferenceTable13notclearlyperinstance, RB500V100explicittotals. All37DIMACSrowsincludinghamming8tie andMANNa81300vsbest1100, nopromoteSOTA. BibliographyUniCOZong2505.06290notPanalreadyreviewed. All20formalpagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Complexityreductionsnotlearnedtransferguarantee; original-graphsharedrepresentationinvestigated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/reductiondiscussion"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "GCONsharedencoder/taskheads/energytrainingandpairwise/multitaskpretrainingstudies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            14,
+            15
+          ],
+          "locator": "Architecture/tasklosses/actualsharing"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Degree/clustering/trianglemultifilterGNN16layers64, paralleltask-specificconstructivedecoders; colorviolationmeasure.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            8,
+            14,
+            15
+          ],
+          "locator": "Methods/AppendixA-B"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "200pretrain+20targetFT, actual3/5runs andnegativeMDS/clique/colortransfercells; notuniformadvantage/equaltotalcompute.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            8,
+            9,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Tables2-15/allactualprotocols"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Noarbitrarynewtask/zero-shotguarantee, frozennegativecases, coloringinfeasible, reductioncontroldirectionandcostqualifications.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Discussion/AppendicesC-D"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistactualjoint3/5taskencoderswithmultipleactiveheads, newtargethead/fullFTdistinct; constructive scores+greedy/thresholdnotincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            7,
+            8,
+            9,
+            15
+          ],
+          "locator": "Figure1/multitaskprotocol/actualdecoder"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication and authors",
+      "source_url": "https://proceedings.mlr.press/v306/canturk26a.html",
+      "locator": "Primarypublishercitation_publication_date2026/09/29explicitverifiedinHTML; July6-11meetingdistinct. FormalPDF1byline5authors4institutions; WenkelworkwhileaffiliatedMontréal/Milaqualification."
+    },
+    {
+      "field": "first public date",
+      "source_url": "https://arxiv.org/abs/2603.02462",
+      "locator": "Primaryhistoryv1March2,202623:03UTC/v2August11,2026; correctedolddatethatduplicatedpublication."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/canturk26a.html",
+      "locator": "Entire20formalpagesincl4bibliographypagesandAppendicesA-Dread. PublisherDownloadPDF/OpenReview/Softwarelinksnoextrascientificsupplement; officialmainZIP296membersnoPDF/ipynb/ZIP/video. MainREADMEallactualmultitaskcommandsread; README_LHTistemplateframeworkdocumentationnotpaper-science."
+    },
+    {
+      "field": "current code",
+      "source_url": "https://github.com/semihcanturk/COPT-MT",
+      "locator": "ReadcurrentmetricMaxCutthreshold/colorargmax/MDSsequential+parallelcoverage/fallback, lossMaxClique/MaxCut/colorandmultitaskmoduleactualweights/tasks, inspectednetworkModuleDicttaskheads/sharedoutputs. Notall233sourcefilesclaimedread andnoexperimentsrerun."
+    },
+    {
+      "field": "figure and negative results",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/canturk26a/canturk26a.pdf#page=3",
+      "locator": "OriginalFigure1crop53,59,546,280completecaptionvisuallychecked; bothfigs/Table2-15criticalnegativecellsrendered. Colorviolationsnonzero, noall-taskstrictfeasibilityclaim."
+    },
+    {
+      "field": "citation disambiguation",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/canturk26a/canturk26a.pdf#page=13",
+      "locator": "UniCOZong2505.06290distinctPanyEwakMNIex; GFlowNetoldMalkin/arxiv2305.17010exactidentitydespiteupdatedpublisherauthor; uncataloguedCSP/survey/representationworksnotinventededges."
+    },
+    {
+      "field": "citation_identity:gflownet-combopt",
+      "source_url": "https://arxiv.org/abs/2305.17010",
+      "locator": "Source formal p13 explicitly cites arXiv:2305.17010. Target PDF p1 and primary arXiv history identify the same work, including the earlier title containing Optimization and the later HTML title/author update. Do not replace the actually read PDF by the later metadata version."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2603.02462",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2026-03-02; title on abstract page: Can Computational Reducibility Lead to Transferable Models for Graph Combinatorial Optimization?. This date is preprint history, not formal publication. Cached research/full-text-review/copt-mt/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "copt-mt",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al. (2019)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "routefinder",
+      "reference_label": "Berto et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "goal",
+      "reference_label": "Drakulic et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "frontierco",
+      "reference_label": "Feng et al. (2026), arXiv:2505.16952",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "cross-problem-learning",
+      "reference_label": "Lin et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "hybrid-scattering-clique",
+      "reference_label": "Min et al. (2022)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "utsp",
+      "reference_label": "Min et al. (2023)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Poczos (2019)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al. (2023), arXiv:2305.17010",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    },
+    {
+      "citing": "copt-mt",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al. (2024)",
+      "description": "Explicit exact-work reference checked against author/title or exact preprint identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References; two-column bibliography manually checked and distinct UniCO identities not merged."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readentire20formalpages/bibliography/AppendicesA-D andofficialrepositoryscienceinventory.",
+    "CorrectedfirstpublicdateMarch2andaddedarxiv; verifiedactualSept29publication.",
+    "ReplacedskeletalnotewithactualGCON/taskspecificdecoder/objectives/multiheadsharing/FTconditions.",
+    "Keptgeneralistconstructivebasedactualjointtraining, notclaimunchangedall6taskhead.",
+    "Addednegativefrozen/MDS/clique/colorcells, sizeFTandtiming/computequalifications.",
+    "Qualifiedreductioncontroldirection/gadgetmappingambiguityandnonzero-colorviolations.",
+    "AddedoriginalFig1and18exactcitations, avoidedfalseUniCOedge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "73b01f41f4af694243919149b842d94865f3cd70334606f1083a1b4684a1e707"
+}

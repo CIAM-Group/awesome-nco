@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "paper_id": "diffassemble-a-unified-graph-diffusion-model-for-2d-and-3d-reassembly",
+  "note_path": "specialist/diffassemble-a-unified-graph-diffusion-model-for-2d-and-3d-reassembly.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "4ef56263feb1c7f4e6afdc9a753162f3bfa2e9ec76ae8a86f1e498733c5ba894",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Scarpellini_DiffAssemble_A_Unified_Graph-Diffusion_Model_for_2D_and_3D_Reassembly_CVPR_2024_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Scarpellini_DiffAssemble_A_Unified_Graph-Diffusion_Model_for_2D_and_3D_Reassembly_CVPR_2024_paper.pdf",
+      "version": "Official CVF CVPR2024 Open Access accepted version,11pages28098–28108, exact title/five-authorIITbyline;allmain/referencespagesread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-a43f599488/publisher.pdf",
+      "sha256": "5e64fcb92183e0b950a7d3c9106c9e79e0f3cb504899f3ae8c4f7f228f2a7870",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Scarpellini_DiffAssemble_A_Unified_CVPR_2024_supplemental.zip",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Scarpellini_DiffAssemble_A_Unified_CVPR_2024_supplemental.zip",
+      "version": "OfficialCVFZIP member3975_supp.pdf,4pages complete scientific SupplementA–E/Tables5–7, independentlyread;sameZIPqualitativevideo sampledinspection documented.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-a43f599488/supp-docs/3975_supp.pdf",
+      "sha256": "238e3ddbf89e1b6dcac190d4254f17e3064d65958474fc4398c1dfa30de5d404",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "3975_supp.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exact formal five-author byline/IIT affiliation, complete intro/relatedwork/continuous3D vs permutation2D, Graph diffusion overview and Fig2 caption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full method Eqs1?2/translation and rotation losses, graph and equivariant features, UniMP/Exphormer, full 3D setup/result/ablation Tables1?2. 3D continuous pose not assignment optimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full 2D setup nearest-cell/quarter-turn snapping, all result/missing-piece Tables3?4 and sparsity/time Figures5?6; WikiArt and CelebA8 negative comparisons; conclusion limits and refs1?23."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read all remaining refs24?50; exact internal identity matching to follow; continuum geometric works not conflated with discrete assignment."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read complete supplement A?D, hardware/Adagrad/early stopping, SO3 diffusion geodesic IGSO formulas and all missing3D/2D ablation tables; main/supp 8x8 CelebA mismatch87.66vs84.94 and prose10?20vs caption8?20."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read entire supplement D1/E, all dataset split/sizes and qualitative Fig7?8 plus all sparse/dropout table7 rows at20/60/80 degree; attached video explicitly qualitative, obtaining full video separately."
+    }
+  ],
+  "claims": [
+    {
+      "id": "diffassemble-contribution",
+      "category": "contribution",
+      "statement": "Graph-conditioned pose diffusion handles2D puzzle generation and3D continuous fragment reassembly with modality-specific features.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections1–3/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "diffassemble-method",
+      "category": "method",
+      "statement": "2D continuous positions/angles are discretized; current greedy distance matching deletes used rows/columns;3D remains pose estimation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections3–4.2; actual code spatial_diffusion.py180–216/931–955"
+        }
+      ]
+    },
+    {
+      "id": "diffassemble-results",
+      "category": "experiment",
+      "statement": "Table3CelebA8x8 87.66 loses toHuroyan97.45;WikiArt all listed sizes below two classical baselines;3DPA27.5 is not full reconstruction rate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–4/Figures5–6"
+        }
+      ]
+    },
+    {
+      "id": "diffassemble-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: continuous candidate denoising then discrete2D decoder; separate encoders/training models, no demonstrated shared2D/3D checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7
+          ],
+          "locator": "Modality-specific model instantiations; official independent job scripts"
+        }
+      ]
+    },
+    {
+      "id": "diffassemble-limits",
+      "category": "limitation",
+      "statement": "No feasibility/optimality guarantee for denoising; sparse runtime measured empirically. Printed table/prose differences retained, including8x8base84.94vs87.66.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "SupplementTables5–7 and D/E"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8
+          ],
+          "locator": "Posegeneration/discrete2Ddecoder and empirically measured scaling; no optimization guarantee."
+        }
+      ]
+    },
+    {
+      "id": "diffassemble-repro",
+      "category": "reproducibility",
+      "statement": "Supplement specifies Adagrad/hardware/splits; code currentAdafactor and test-loader checkpoint selection differ and are qualified.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            3
+          ],
+          "locator": "SupplementA/E plus actual current code"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52733.2024.02654",
+      "locator": "Cached crossref-query.json exact first result/title/five authors/IIT bylines; IEEE published-print/issued2024-06-16. Formal PDF11p28098–28108 byline equal-first-three footnote. Not an inferred date from meeting schedule."
+    },
+    {
+      "field": "date/arxiv history",
+      "source_url": "https://arxiv.org/abs/2402.19302",
+      "locator": "Cached arxiv.html Submission history v1Thu29Feb2024 16:09:12UTC; CVF primary page links same arxivID."
+    },
+    {
+      "field": "supplements/ZIP/video inventory",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Scarpellini_DiffAssemble_A_Unified_CVPR_2024_supplemental.zip",
+      "locator": "ActualZIP7071935bytes; exactly3975_supp.pdf379537bytes/all4pages read and3975_suppl_video.mp46948890bytes. video-review.json SHA/streams/60.48s/noaudio; all60sampled1sframes viewed covering fullclip, qualitativeslides/examples only. Not every encoded frame claim. Complete repositorytree256df64d4e5465e690b5b84e6024c60e21c3f3c8 no additionalPDF/ZIP;README+usage.mdread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Scarpellini_DiffAssemble_A_Unified_Graph-Diffusion_Model_for_2D_and_3D_Reassembly_CVPR_2024_paper.pdf",
+      "locator": "OriginalFig2+completecaption formalp3 cropRect40,60,572,3873x;public/paper-assets/diffassemble-a-unified-graph-diffusion-model-for-2d-and-3d-reassembly/framework.png353786bytes exists and actual view_image checked. Rendered main3/4/6/7/8 and all4supp pages."
+    },
+    {
+      "field": "code/decoding/scope",
+      "source_url": "https://github.com/IIT-PAVIS/DiffAssemble",
+      "locator": "CurrentSHA256df64d4e5465e690b5b84e6024c60e21c3f3c8;greedy_cost_assignmentspatial_diffusion.py180–216 deletes bothrow/column;test940/rotation951–955. Train_script imports sdspatial_diffusion24/construct162;Adafactor701–705;dl_testasvalidation237 and monitoroverall_acc210–211. SeparateCelebA/WikiArtrotjob scripts andtrain_3d.py84/144–153;sharedarchitecture notsharedcheckpoint."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Scarpellini_DiffAssemble_A_Unified_Graph-Diffusion_Model_for_2D_and_3D_Reassembly_CVPR_2024_paper.pdf",
+      "locator": "All50bibliography entries formalpp9–11 read and identitychecked against527 catalogue;reference-candidates returnsnone. No topical/uncited edges."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending import with formal byline and distinct arXiv/publication dates.",
+    "Separated continuous3D pose evaluation from discrete2D assignment and neural representation from classical greedy decoder.",
+    "Retained explicit negative results, main/supp inconsistencies, and actual current software/training-selection limitations.",
+    "Read all15scientificPDFpages and inspected full-duration sampled qualitativevideo;originalfigure exists/viewed."
+  ],
+  "reviewed_note_sha256": "fed9be381ddd88d51164984229ffad92ac45926ef5ab672ee5f22f42ec3528d4"
+}

@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "paper_id": "efficient-trial-error",
+  "note_path": "specialist/efficient-trial-error.md",
+  "baseline_note_sha256": "dfc7f12ea097b353a93e069f509a821a7eac00817788d16f5ec0640992342d85",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c1a2da8d493d37e9e65ebfb23018e234-Paper-Conference.pdf",
+      "version": "Formal NeurIPS2025 proceedings33pages including complete references/checklist/AppendicesA–G freshlyread",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c1a2da8d493d37e9e65ebfb23018e234-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-347b9c0817.pdf",
+      "sha256": "caf7b822bc66c7d2162874848f5ff54007f5bdd9926339fdad7368e5da790e7b",
+      "pages": 33,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://neurips.cc/media/neurips-2025/Slides/118478_UDeFOZj.pdf",
+      "retrieval_url": "https://neurips.cc/media/neurips-2025/Slides/118478_UDeFOZj.pdf",
+      "version": "Official scientific11-slide presentation; author-hosted copy byte-identical",
+      "local_path": "research/full-text-review/efficient-trial-error/official-slides.pdf",
+      "sha256": "353ca58f15822cc9962093265a9845e4060a4f0ce3ec67375db194ec5359bbde",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "author-poster",
+      "url": "https://yorgospantis.com/files/tttscptetae_poster.pdf",
+      "retrieval_url": "https://yorgospantis.com/files/tttscptetae_poster.pdf",
+      "version": "Author-hosted one-page scientificposter, full text and overlapping visualtiles read",
+      "local_path": "research/full-text-review/efficient-trial-error/author-poster.pdf",
+      "sha256": "997cb0bf98ef1baf3afbd8e3618ec27ce9b5a6742262f3f361e9798bc232352b",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1–3alltextTable1Figure1read. 3authorsNTUA/NKUA/ArchimedesAthena, vanillaGPT2Sudokuspecialist;genericNP/SAT/TSPmotivationNOTactualnativeeval. Needtestverifierexternalvslearnedontrace andparadigm partialDFS≠completeincumbentedit. Board99headlineFig198.9IL99.8beyondimitation;readfullvaliditybuddgets. GeneralLLM0boardonBsamplelimitednotuniversalcannotSudoku."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "4–6fulltextFig2transcriptcaption/33methodread. NEWACTUAL1in3SATexperiment99%AppendG—notonlySudoku asoldnote;addSATfamily/problem,verifyseparateweights beforecross-taskclaim. Multi-labelsumCE −sum_Slogp differsuniformnormalizedCEby|S|weight, codecheck. 42MGPT2eightlayers8heads576FF3456,oneactiontoken(r,c,v)vs3. Fullsolutionuniformthenrandomremoveifunique NOTuniformoverminimalpuzzles. Onelevelnonadaptiveguesses restrictions expectedtime/minsum conditionalbackdoor mass~99.8 notgeneralNPpoly. Testverifierdecodingvsdatagenneednext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "7–9completeDFSalgorithm/testlastassignedvalue/Table2/100Ktest4datasets/Figs3–5read. Modelpredictsguesslevel/deadend/backtrackthenlastassignmentcell, notNNeditingcompleteincumbent; likelyconstructive. Table2ours98.90/98.90/99.50/99.40;RRNtrainRRN98.90 vsours99.40 butRecurrent99.50slightlyhigher. Random-testbaseline67.16/74.97 areAPPROXfromKaggle notmeasured; MDMonRRNnotcodeavailable. GeneratorcurveagreementdoesNOTproveuniformminimalpuzzles orall3milliontested(main100K). Depth1nonadaptiveeachfullrestart conditionalpositivebackdoormass; L1=1/Psuccess vslogL1trained stable; expectations acrossinstance objective differJensen needproofE later."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read Figure6 oracle bounds/median guesses, depth-one nonadaptive limitations, acknowledgments and references pages11-12 in full."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Read every remaining bibliography entry including Sudoku/SATNet/RRN/transformer/CausalLM and reasoning references; distinguish actual cited identities."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Read checklist claims/limitations/proofs/reproducibility/resources and statistical sample-size rationale, with all guidance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Read remaining checklist, all related work and frontier baseline protocol:1000 general-model puzzles but only10 reasoning-model samples, formats and uncompleted reasoning outputs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read all three literal prompts, six baseline tables, AppendixC reproduction and A10G/3Msteps/168h/batch32/AdamW/warmup5 setup; prompts explicitly forbid simulated backtracking unlike proposed method."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Read 81-token full-attention scratchpad, exact nonadaptive iid MinSumSetCover model, all E1/E2 statements and complete harmonic/Cauchy-Schwarz proof, contextual nonconvex limitation and multi-level outlook. The theorem concerns raw expected reciprocal success mass, not expected log loss."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "Read F generator libraries and complete G 1-in-3SAT definition/planted generation/three propagation rules/example and 99.10% at N25M15; no empirical TSP/clique evaluation. Full33page formal source read."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 11,
+      "notes": "Read all11 official slides text, including separate99.1SAT, depth1/backdoor assumption and raw reciprocal formula; author-site slide PDF SHAidentical official copy. Visual-only diagrams checked separately."
+    },
+    {
+      "source_id": "author-poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read full scientific poster text and all three overlapping visual tiles; all diagrams, reported accuracies and harmonic theorem checked; officialPNG also inventoried."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Rule imitation alone misses puzzles requiring guesses; transcript supervision teaches deductions and search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "locator": "Introduction and DFS motivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Compact multi-target search transcripts, depth-one backdoor success-mass objective, MinSumSetCover analysis and two actual native tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9,
+            28,
+            29,
+            30,
+            32,
+            33
+          ],
+          "locator": "Main method and AppendicesD–G"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "42M GPT2-style separate DFS models; partial-assignment backtracking; second variant adds81-token local full-attention scratchpad and trains negative log success mass.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            9,
+            27,
+            28
+          ],
+          "locator": "Sections2–4 and AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Sudoku four test sets98.90/98.90/99.50/99.40, generated-depth1 claim99.8 and planted25-variable15-clause1in3SAT99.10; limited frontier baseline samples.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            24,
+            25,
+            26,
+            27,
+            32,
+            33
+          ],
+          "locator": "All eight tables/figures and full protocols"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Harmonic bound concerns raw reciprocal iid hidden-set objective, not globally optimal contextual Transformer or polynomial NP solution; depth1 and finite budgets limit guarantees.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            28,
+            29,
+            30,
+            31
+          ],
+          "locator": "Complete AppendixE proof and stated limitations"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: Sudoku/SAT are distinct trained models; DFS revises partial assignments rather than complete incumbents.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            32,
+            33
+          ],
+          "locator": "Generation and separate actual tasks"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c1a2da8d493d37e9e65ebfb23018e234-Abstract-Conference.html",
+      "locator": "Full formal33pages;Giannoulis/Pantis/Tzamos alphabetical equal contribution;NTUA/NKUA/ArchimedesAthena;publishercitationdate2026-04-23,venue2025."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://neurips.cc/virtual/2025/poster/118478",
+      "locator": "33formalmain/refs/checklist/A–G read;11officialslides+1authorposter PDF registered/read,slidesauthorSHAidenticalofficial,wholeofficialPNG+3posterPDFtiles visually read.77mainZIP+33generatorZIPmembers and bothREADMEs/three2,2,5cellnotebooks+onecellgenerator example inventoried/read;noextra scientificPDF. Binarydata notclaimedreadasprose."
+    },
+    {
+      "field": "paradigm and actual problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c1a2da8d493d37e9e65ebfb23018e234-Paper-Conference.pdf#page=33",
+      "locator": "Add actual1in3SAT99.10 N25M15. Separate pipelines/vocab/models no sharedcheckpoint. Changeimprovement→constructive: guesses revise partialassignment,notincumbent complete-solution NNmove. DFS evalautonomousargmax,teacherCcallnotinlivegeneration."
+    },
+    {
+      "field": "model and theory qualifications",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c1a2da8d493d37e9e65ebfb23018e234-Paper-Conference.pdf#page=28",
+      "locator": "Scratchpad81fullattention differs purecausal imitation model. Full E1/E2 proof checked;rawE1/PvsimplementedE−logP distinguished with exact .9/.1 two-choice objective-check.json,1.6vs2expectedtrials. Notclaimtheoremfalse or trainednetworkrefuted."
+    },
+    {
+      "field": "quantitative and source-code boundaries",
+      "source_url": "https://github.com/gpt-reasoning/ReasoningCombinatorials",
+      "locator": "Alltrainingcells+DFS Sudoku/SAT eval+onelevelmodel/data/eval read. Multi-targetselected-logprobmean;trainingrequiresguess;histhelperusesinversePclamped. Fouraccuracysets/Table2approxfootnote;RRN99.40<99.50. Main100Ksamplevsall3Mprosekeptexplicit;noinferencebenchmarkrerun."
+    },
+    {
+      "field": "original figure and visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/c1a2da8d493d37e9e65ebfb23018e234-Paper-Conference.pdf#page=6",
+      "locator": "All8figures/all8tables visuallychecked,includingfullattentionFig7 andgeneratorFig8. OriginalFig2wholecaptioncrop65,65,550,255 visuallychecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "efficient-trial-error",
+      "cited": "causal-lm-logic-puzzles",
+      "reference_label": "[SDWP24] Kulin Shah, Nishanth Dikkala, Xin Wang, Rina Panigrahy. Causal language modeling can elicit search and reasoning capabilities on logic puzzles.",
+      "description": "Explicit bibliography reference manually matched by complete title and authors; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Full bibliography entry, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "efficient-trial-error",
+      "cited": "recurrent-transformer-csp",
+      "reference_label": "[YIL23] Zhun Yang, Adam Ishay, Joohyung Lee. Learning to solve constraint satisfaction problems with recurrent transformer.",
+      "description": "Explicit bibliography reference manually matched by complete title and authors; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Full bibliography entry, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "efficient-trial-error",
+      "cited": "satnet",
+      "reference_label": "[WDWK19] Po-Wei Wang, Priya Donti, Bryan Wilder, Zico Kolter. SATNet: Bridging deep learning and logical reasoning using a differentiable satisfiability solver.",
+      "description": "Explicit bibliography reference manually matched by complete title and authors; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Full bibliography entry, manually read and matched."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all33formal pages/full A–G/proofs/references/checklist,11slides and completeposter;all8figures/tables visuallychecked.",
+    "Added omitted1-in-3SAT task and actual N25M15/99.10 scope.",
+    "Changed improvement to constructive based on partial-assignment DFS;retained specialist for distinct trainedmodels.",
+    "Qualified vanillacausal claim with secondvariant81-token fullattention scratchpad.",
+    "Replaced generic experiments with fourdatasets,training/compute,limitedfrontierprompts/samples and negativeRRNcomparison.",
+    "Distinguishedrawexpectedreciprocaltheoryfromimplementedlogloss with exact objective check;didnotinvalidate theorem or rerun network.",
+    "Recorded teacher vsinferenceverifier, releasehistproxy/inventory anduniformboard vsminimalpuzzle distinctions.",
+    "Added3manuallymatched truecitationedges andoriginalFigure2."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0a2f678bc1d7ca93026f80a740afec04f79d11d5e1e18dc192348985b2088421"
+}

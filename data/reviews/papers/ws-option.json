@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "paper_id": "ws-option",
+  "note_path": "specialist/ws-option.md",
+  "baseline_note_sha256": "85d9a12df83956e04c231f1c9b55597fcf060f80f082f473a88cfa5a16c133a7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/38b787fc530d0b31825827e2cc306656-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/38b787fc530d0b31825827e2cc306656-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-3f58737201.pdf",
+      "sha256": "e5807f8717025565363bad3226f0a4073fbfa7002e7613ff5d1d08e8633b1d2a",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal identity/HIERARCHICAL title, SSCO adaptive budget/node formulation, all related-work citations and claimed generic/convergence versus task-specific generalization scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full option/high-low MDP, stochastic transitions, simulator-estimated normalized marginal rewards and all pseudocode, epsilon-greedy/fixed-firsthalf warmup and MC/TD rationale."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read complete wake-sleep/MC-TD procedures and tabular-only conditional convergence statements, all main AIM/RP results and baseline protocol/significance claims."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all layerwise ablations, sameproblem size-transfer experiment and explicit newproblem embedding limitation; full firsttwo bibliography pages and formal-vs-HTML title spelling."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read final2bibliography pages/fullcontents, manually matching all named source identities including PI-GNN/Naturecommentary/possible title variants."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read all appendix contents and full bilevel/conditional-bestresponse intuition, lowerbinaryoption budget-independence claims and reward-design setup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read full normalized-reward rationale, both tabular convergence proofs, coupling claims, transition-storage pseudocode and graph/action-in architecture; identified absent stochastic-approximation/GLIE proof conditions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read all architecture/domain dynamics/feature/state definitions, route reward/softdistance penalties and exact hyperparameters/hardware plus t-test rationale."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read all budgetallocation curves/captions, RP size-transfer and realpower2500 results, sleepfraction ablation and exact simplified-option ablation, including copied figurelegend inconsistency."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Hierarchical budget/node SSCO policy uses wake-sleep and separate MC/TD layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections1–3"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "Separate S2V/attention architectures and simulator-based normalized rewards train task-specific models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Algorithms1–3/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Main rewards, largegraph transfer and ablations show empirical gains with some close baselines and limited variance/timing reporting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Tables1–10"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Tabular fixed-upper/exact-bestresponse assumptions do not prove finite neural global convergence; binarybudget information is restricted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Theorems1–2 and AppendixA proof/option claims"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Task-specific graph models construct subsets/routes; within-task graph-size generalization is not shared native-task weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10,
+            22,
+            23
+          ],
+          "locator": "Explicit newembedding limitation and separate architectures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/38b787fc530d0b31825827e2cc306656-Abstract-Conference.html",
+      "locator": "HTML citation2025-05-01/pages22563–22589; PDFp1Hierarchical versusHTMLHierarchal title variant, sameauthors/stableID"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/38b787fc530d0b31825827e2cc306656-Supplemental-Conference.zip",
+      "locator": "Manual publisherZIP16,634,125bytes43members inventory, onlycode/data/twoREADMEs/noPDFTeXnotebook, bothREADMEandcorecodechecked; all27integratedpages; event30618nolinkextraSlides/Poster; OpenReviewAloCXPpq54API403; currentofficial14entryrepotree/README/codechecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ws-option",
+      "cited": "rl-vrp",
+      "reference_label": "[39]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [39] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [4] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "attention-model",
+      "reference_label": "[26]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [26] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[24]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [24] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "neurewriter",
+      "reference_label": "[11]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [11] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "learning-heuristic",
+      "reference_label": "[14]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [14] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "learning-to-improve",
+      "reference_label": "[34]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [34] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "efficient-active-search",
+      "reference_label": "[20]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [20] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "att-gcn",
+      "reference_label": "[16]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "pomo",
+      "reference_label": "[28]",
+      "description": "Explicit related-method citation with full matching bibliography; cited source version retained",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [28] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ws-option",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "6",
+      "description": "RL-for-CO and lower-layer Q-learning discussions cite exact nine-author same-title arxiv2306.17100 early RL4CO benchmark preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            11
+          ],
+          "locator": "Actual body citation 6 on PDF pp[1, 7]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. RL-for-CO and lower-layer Q-learning discussions cite exact nine-author same-title arxiv2306.17100 early RL4CO benchmark preprint."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full27page+ZIP/currentcode audit; titlePDFvariant restored, exactspecialistscope, conditionaltheory/reward/budgetinformation, closebaselines and software discrepancies documented.",
+    "Final literal Markdown href audit moved page locators/version qualifiers outside link targets; true stable-note destinations retained.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c191676021de84768a2a2ccfc43cb65c7cb2611d95dbd52aff367dc27e29fd40"
+}

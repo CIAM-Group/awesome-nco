@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "paper_id": "gelato",
+  "note_path": "specialist/gelato.md",
+  "baseline_note_sha256": "f6550be83ee1c41449fa8fa03aaf2df9f3b739df57b6866113a724c6fbc54ce1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1943190d92efee1fccfc8d6579b0f8d9-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1943190d92efee1fccfc8d6579b0f8d9-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8f36f1edc8.pdf",
+      "sha256": "1d274c92bf20575a8acd9a5096a5a4f037c7bf82efd17373502d7b7ceb19d532",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullintro/relatedwork/formalGED/GEDFMmatchingcost andMPNN, authorsTillHendrikSchulzvsoldTillSchulz; generatorworksactualfeasiblepathsupperboundvsregression, noexactoptimalityclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read state recursion/surrogateorbitfailureexample, ORendpoint-neighborssaturated matchedpair reduction/Thm1, injective combinedgraphwithmatchflags, GINEresidualBN, randomoptimalpartialtraining and exactautomorphismpositiveorbitaugmentation definitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readgreedy-topk32initialorbitseeds/minsizecompletion, exactMIPF2labels/dedupacross60/20/20splits/GPUvsCPUmillisecondtiming100msbaseline, allmainTables1–3/Fig5OOD/negativeGRAILLINUXandIMDBtie, separate6datasettraining and ablationcomponentstrategynotuniformbenefit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadallTable4ablations/5limited supervisionCPUgenerationbudget/Fig6depthensemblenonuniformbenefits, conclusions/reprostatement and completebibliographyfirst2pages; noisy100msteachersnotoptimal. Continue fullbib/appendix."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainingfullbibandAppendixA/Blimitationsandextendedrelatedwork, DiffGEDcited2503arxivprecursorrelativeversioncodeunavailableasofpaper notcurrentrepoassumption; all24potentialcataloguecitationsmustactualpagesmatch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readallcostdefinitions/edge-sub<=del+ins-onlyassumption, exactautomorphismsvsWLproxy, Lemma1fullsmallersidecompletionandexistence-nottractability, Thm1fullcostdecomposition/reductionbijection; firstcasece0omitspossibleinsertionconstantbutdoesnotaloneinvalidateconstantcostconclusion. Neednodecostcompletioncondition."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "ReadallLemma2injectiveleftinverse/Lemma3exactautomorphismcostpreservationproof, datasetstats/isomorphismclasses/provided30noptimalmatchingdata/Gurobirefinewarmstarts, fullbaselinereimplementations/budgetsMATA*q-gpatch/GEDGNNHOT100/GRAIL43validationcorrectedcost/GraphedXrounding andstops."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Readfullimplementationreductiondeletesedgesnotnodes/BNtraininginfluence,30epochsAdam0wd/up2e5vsintro1e5/40substates,CPU4116H100infrastructure, allGFigures7–10widthdepthensemblerequiredvisualnoassumemonotonicglobal; EHR97k128ZINCvs91k32cost6.3vs4.2ms."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "Read every supplementaryTable7–16andFig11/LLMuse: GRAPHEDXalso scalar contraryallbutGREEDupperboundprose, nonunitcostmodelsdatasetfixed, actualzero-shot transferunlabeled/sharedfeaturepositive+differentfeaturelosses, CPUtiming11.5–61.2ms, trainingZINC9194>MATA8247negative. Full28formalpagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gelato-contribution",
+      "category": "contribution",
+      "statement": "AutoregressiveGEDFM/GINE/reducedpartialmatching learning provides feasibleGEDupperbounds and isomorphism-separated exact-reference datasets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections3–5"
+        }
+      ]
+    },
+    {
+      "id": "gelato-method",
+      "category": "method",
+      "statement": "GINEpairpredictionwithpartialmatchcrossedges, cost-offsetreduction, proxyWLsymmetry and top32initialbranchgreedyconstruction; oracleexistenceisnotlearnedoptimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            17,
+            18,
+            19,
+            22
+          ],
+          "locator": "Sections3/4/AppendicesD/F"
+        }
+      ]
+    },
+    {
+      "id": "gelato-experiment",
+      "category": "experiment",
+      "statement": "StrongGEDquality/sizeandfeature-compatibletransfer coexistwithGRAILsaturatednegativecases, degreeofsearchbudget,CPU/GPUtimingandMATAZINCtrainingnegative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Tables1–16/Figures5–11"
+        }
+      ]
+    },
+    {
+      "id": "gelato-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive nativeGED, preservingactualsamecheckpointcross-domaintransfer withoutclaimingmultiple-native-taskreuse.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            26,
+            27
+          ],
+          "locator": "Sections4.4/AppendixH/Tables12–14"
+        }
+      ]
+    },
+    {
+      "id": "gelato-limitation",
+      "category": "limitation",
+      "statement": "Lemma1fullcompletionrequiresnodecostconditionorstop; singlevertexsub3del1ins1counterexamplelimitsgenerality, notunitcostexperiments; codefinalbatchomitsk.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16,
+            17,
+            22
+          ],
+          "locator": "ExactrecursionvsLemma1/costDefinition3 andcurrentutils.py133–157"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://github.com/BorgwardtLab/Gelato",
+      "locator": "FormalPDFp1andfullauthorREADMEnameTillHendrikSchulz;publisher/event/BibTeXshortTillSchulzsameidentity;allMPIBiochemistry."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1943190d92efee1fccfc8d6579b0f8d9-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2026-04-20/BibTeXpp14972–14999."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1943190d92efee1fccfc8d6579b0f8d9-Abstract-Conference.html",
+      "locator": "Manualpublisherintegrated28PDFonly/allAppendicesA–Iread;event10011367noposterlink,OR6ZTcLNmgucAPI/attachment403nobypass;author6670764B23memberZIPnoPDFTeXnbimages/fullREADMEread. EightlinkedGoogleDriveZIPcentraldirectoriesordinaryHTTPRange206each3membersgraphs.txt/match.txt/splits.json,noextrascientificdocs;dataset-inventory-*.jsonsaved."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/BorgwardtLab/Gelato",
+      "locator": "src/model.py GINE/reduction/logit1e-3seedgroup;subproblem_dataset.py5roundhashedWL+closedwalkproxy;utils.pyfinalincompletebatchmisseskdefault1;test.pyonecheckpointfivepairsamplingseeds;train.pyweightedBCEAdamWzeroWD/30epochs/up2e5pairsREADME."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gelato",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Fu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al. (2023)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Drakulic and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2019)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14,
+            15
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2022)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Hottung and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Joshi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay & Grimm (2024)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Pirnay and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "l2s-jssp",
+      "reference_label": "Zhang et al. (2024)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14,
+            15
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2023)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Luo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11,
+            15
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14,
+            15
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "rgm",
+      "reference_label": "Liu et al. (2023a)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "graph-matching-benchmark-position",
+      "reference_label": "Roy et al. (2025)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Explicit in-text citation Roy and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gelato",
+      "cited": "diffged",
+      "reference_label": "Huang et al. (2025)",
+      "description": "Actual related-work/protocol text plus full bibliography; DiffGED cited arXiv2503.18245 precursor maps by six authors to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "All28formalpages/allscientificappendices/proofs/refs/tablesread;author23memberreleaseand8datasetZIPinventoriescomplete/noextrascientificdocuments;17actualcitationsincludingDiffGEDretitledprecursor, TillHendrikfullname, strongqualitywithnegativecases/exactreferenceandtiming/conditionalscope, finalbatchkandWLproxyreleasedifferencesrecorded."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d6c227456fdcadf424eed4655964f30ae63b23a8bd60e5399e0e2959f2155755"
+}

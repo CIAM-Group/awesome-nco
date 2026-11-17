@@ -1,0 +1,752 @@
+{
+  "version": 1,
+  "paper_id": "bopo",
+  "note_path": "specialist/bopo.md",
+  "baseline_note_sha256": "6fec59edfb60c44ed5afe029f656577d664ab4f79210be3045d36be584879f62",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/liao25a/liao25a.pdf",
+      "version": "Formal ICML2025/PMLR26720pages fullmain/references/AppendicesA–F freshlyread",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/liao25a/liao25a.pdf",
+      "local_path": "research/import-272/nco-505b1301db.pdf",
+      "sha256": "3e729984f097e34af3a1c77e42dba904673cfa4483d5a5cb7353f9e55af387d3",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfull1–3/Fig1/basicconstructive JSP/TSP/FJSP definitions. FiveauthorsSYSUSchoolCS Eng;LiaoChenequalcontrib. Trainingparadigmhybridrollout/bestanchor/objectivepairwise,notonecheckpointgeneralist. Noexternaloptimaldemonstrations,butselfsamplecompute."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullAlgo1/lossderivation/hybridB−1sample+1greedy/uniformsortedindices/bestK−1pairs;beta=positivecostratio notdifference. JSP30k6shapes20epochsB256K16D1 vsSLIMMGLbatch16qualification. AllTable1 rows;TSPPOMOvsINViTseparatetraining,actualDABL50negativeandTA20x20/LA10x5/DMU40x20negativecases."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTables2–6/Figs2–3text. ActualnoaugDABLbetter20.01vsBOPO.02,50.04vs.14,100.29vs.37;aug50DABL0vs.01,100BOPO.04vs.05. TSPLIB49selected6/21/16/6,largeBOPO22.44%notnearoptimal. FJSPe14.5worseRS13.2greedy. INViT4dist actual1k5k10k;Ablationfixedpaircount,BoPOB/Ksweepnotparameterfree."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadFig4allhyperparamcosttradeoffs/Conclusionlimitationmoderatehighrolloutcost,symmetryandheuristicfuture,ackimpactandallfirstbibliographypage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Readcompletebibliographyallremainingentries:explicitNCS,SLIM,SIL,Panpreferenceconcurrent,DACT/NeuOpt,dispatchJSP/HG,SymReplay,topologicalUAI,UDC/MVMoE/Collaboration. Matchactualauthors/versiontitles notonlyheuristics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 16,
+      "notes": "ReadallA1–3/B1–2withall15staticJSP/FJSPand11/5+5contextfeatures,disjunctive/JSPtwoedgeGAT/FJSP3edgetypes,LSTMquery/attentionequations. TSPtwo-dimensionalEuclideanuniform,task-specificarchitecturesnotsharedweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "ReadB3single15x15/B256MGLvsGATMHA262.19MBvs7110.69/1.396s;allC1lossforms/C2derivatives. PrintedcombinedBOPO/DPO/SimPOgradient swapsbracketandkeepsminusoppositetoindividualchainrule;needvisual/sourceautogradverify. beta ratio×sigmoidconfidence notalwaysmonotonegradient amplification;noformaltheoremclaimed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadallC2remainingconfidenceformulas,DTable12timesall8shapes,EhybridFig5andallFTable13smallB/POMO+negative. Greedyhighestjointlikelihoodclaimnotgenerallyguaranteedbygreedystepwise. Source TSP20datarule singlecase plots notseedCIs. Entire20formalpagesA–Fread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Own-solutionpreferences exploit inferior candidates ignored by selflabeling,without external optimal traininglabels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction andtrainingmotivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Hybridrollout,rank-spacedfiltering,bestanchorK−1pairs andobjective-ratio-scaledlogisticloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            8,
+            9
+          ],
+          "locator": "Algorithm1/pairconstruction/ablations"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "SeparateconstructiveMGLscheduling/POMOandINViTTSPmodels;lengthnormalizedpairwise preference objective,not learnedincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Architecture andexactEq4"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "JSP30K/FJSP25K/size-specificTSP,selected49TSPLIBandINViT1K–10K;all13tables and5figures withnegativeDABL/SLIM/RS/ORcomparisons retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            17,
+            19,
+            20
+          ],
+          "locator": "Fullprotocols/results/ablations"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Rolloutandmemorycosts;bestcandidatebound;printedcombinedC2gradientopposesEq4whereindividualcomponentsarecorrect;notuniversalgradientamplification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Gradientchainrule and statedrolloutlimitations"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive:task-specifictraining/models,maskedpartialsolutionconstruction,bestofsamplingnotneuralincumbentimprove.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7,
+            14,
+            15,
+            16
+          ],
+          "locator": "Actualtestedmodels andinference"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v267/liao25a.html",
+      "locator": "All20formalpages;ZijunLiao/JinbiaoChen equalcontrib,DebingWang/ZizhenZhang/JiahaiWang,SYSUSchoolCS Eng. Explicitcitationdate2025/10/06retained."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://icml.cc/virtual/2025/poster/45892",
+      "locator": "20formalmain/refs/A–F/Algo1,13tables5figsreadandvisualchecked;whole1.644MBposter3tilesread. PublishermainPDF/OR,eventposteronly.755treeuntruncated/756ZIP104.32MB;fourdataarchives500/25k/600/30kentriesnosciPDF.16p1995TSPLIBmanuallegacy onlyrelevantpages1–8read,notregisteredasBOPOscientificsupplement;bothREADMEfullread."
+    },
+    {
+      "field": "precise actual methods and scope",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/liao25a/liao25a.pdf#page=4",
+      "locator": "β=loser/winnerpositivecostratio,notunnormalizeddifference;rankspacingvsuniformsolutions;B−1sample+greedy,K−1bestanchors;MGLJSP2edge/FJSP3edgevsPOMOandINViTdifferentcheckpoints. Specialistconstructivekept."
+    },
+    {
+      "field": "reported quantities and countervailing results",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/liao25a/liao25a.pdf#page=7",
+      "locator": "Table1means12.9/6.7/20.0greedy,7.5/2.3/12.9B512;individualSLIMnegativecases. DABLall3noaugbetter,aug50better;FJSPLAeRS13.2vs14.5;CP/L2S5k quality/timetradeoffs.49TSPLIB selected10.41/22.44%largegaps;allfivefigs13tablesinspected."
+    },
+    {
+      "field": "gradient and current release boundaries",
+      "source_url": "https://github.com/L-Z-7/BOPO",
+      "locator": "All3pairloss/train branchesread;Eq4correctrelease versusoppositeC2combinedgradient,scalarautograd−.8026 vsprinted+.8026;confidenceproductnonmonotone. ExactoriginalTSPforwardself.trainingbypasshybridseed0probs.6/.4firstselects1. JSP2e−5vsformal2e−4/uninitializedgreedycounters;FJSPDEBUGB32K8E2;TSPdebug,100epochs2100vsselected700. FiveckptsnoINViT. NoNNbenchmarkreplay."
+    },
+    {
+      "field": "benchmark metric provenance and original figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/liao25a/liao25a.pdf#page=3",
+      "locator": "OriginalFig1fullcaptioncrop48,60,560,267visuallyseen. CodeTSPLIBonlyEUC2D<1000normalizescoords/officialoptbutrawsqrtlength;bundledFAQ/manualp6officialnintedgecost,soqualifyratherthanclaimstrictcertifiedmetricgaps.31explicitrefs manuallymatched."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "bopo",
+      "cited": "asp",
+      "reference_label": "ASP: Learn a Universal Neural Solver!",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "dact",
+      "reference_label": "Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "emnh",
+      "reference_label": "Efficient Meta Neural Heuristic for Multi-Objective Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "gimf",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization via Graph-Image Multimodal Fusion",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "hncs",
+      "reference_label": "Hierarchical Neural Constructive Solver for Real-world TSP Scenarios",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "l2s-jssp",
+      "reference_label": "Deep Reinforcement Learning Guided Improvement Heuristic for Job Shop Scheduling",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Learning to Dispatch for Job Shop Scheduling via Deep Reinforcement Learning",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "ncs",
+      "reference_label": "Efficient Neural Collaborative Search for Pickup and Delivery Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "neat-weight-embedding",
+      "reference_label": "Rethinking Neural Multi-Objective Combinatorial Optimization via Neat Weight Embedding",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "one-shot-dag-priorities",
+      "reference_label": "Neural DAG Scheduling via One-Shot Priority Sampling",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "pip",
+      "reference_label": "Learning to Handle Complex Constraints for Vehicle Routing Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "poppy",
+      "reference_label": "Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "preference-optimization-co",
+      "reference_label": "Preference Optimization for Combinatorial Optimization Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "slim-job-shop",
+      "reference_label": "Self-Labeling the Job Shop Scheduling Problem",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "symmetric-replay-training",
+      "reference_label": "Symmetric Replay Training: Enhancing Sample Efficiency in Deep Reinforcement Learning for Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit full bibliography entry manually matched by title/authors; precursor or source-year differences do not overwrite formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13, manually read/matched."
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "on-the-study-of-curriculum-learning-for-inferring-dispatching-policies-on-the-job-shop",
+      "reference_label": "Iklassov et al. 2023",
+      "description": "RL scheduling background and curriculum-learning CL baseline; exact four-author IJCAI2023 title/pages5350?5358.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5
+          ],
+          "locator": "Actually read complete body citation paragraphs: Iklassov et al. 2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Iklassov et al. 2023"
+        }
+      ]
+    },
+    {
+      "citing": "bopo",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "Xiao et al. 2024b",
+      "description": "POMO-inspired NCO related-work list explicitly cites seven-author AAAI2024 GNARKD distillation title/pages20274?20283, distinguished from unrelated Xiao2024a DPO survey.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Xiao et al. 2024b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Xiao et al. 2024b"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read20formalpages/allA–F/completebibliography/Algo1,13tables5figuresandwholeposter.",
+    "Retainedspecialistconstructive fordistinctmodels;expanded actualpositivecostratio/rankspacing/architecture/trainingbudgets.",
+    "ReplacedbroadSOTAwithprecisebenchmarks/negativecases/TSP49subset/INViTseparateexperiment.",
+    "DocumentedC2printedgradientsignvsEq4correctrelease andnonmonotoneconfidence-weightscaling.",
+    "ExecutedexactTSPforwardlimitedsyntheticcheckconfirminghybridbranchbypass;recordedJSP/FJSPdebug/defaultlimitationsandmissingINViTartifacts.",
+    "QualifiedTSPLIBrawfloatvsroundedofficialdistance/reference convention.",
+    "Added31explicitmanuallymatchedcitationedges andoriginalFigure1.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9b170604d5ee0aaa115d21205b3e260604be497af678dfe538134da17d1171e5"
+}

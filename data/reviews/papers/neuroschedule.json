@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "paper_id": "neuroschedule",
+  "note_path": "specialist/neuroschedule.md",
+  "baseline_note_sha256": "908142fbfba2c143daf0ec324c883438ece688cb4700c5f2232197898fe99d6f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/964b1c8dd5667fd647c09c8772829fd1-Paper-Conference.pdf",
+      "version": "FormalNeurIPS2022publisher13pagePDFallreferences/checklistread;5authorPDFblockchecked",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/964b1c8dd5667fd647c09c8772829fd1-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-4f7895457a.pdf",
+      "sha256": "aafad780d08821c7c90d2f2ba3052ee7a78891d9f2a78e2a25c7bceb2e569947",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/964b1c8dd5667fd647c09c8772829fd1-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/964b1c8dd5667fd647c09c8772829fd1-Supplemental-Conference.zip",
+      "archive_member": "NeuroSchedule_sup/NeuroSchedule_sup.pdf",
+      "version": "CompletepublisherZIPscientificNeuroSchedule_sup/NeuroSchedule_sup.pdf3imageonlypagesA1-A5allvisuallyread",
+      "local_path": "research/full-text-review/neuroschedule/archive-pdf-1.pdf",
+      "sha256": "491ca10ce445f6d76ccf8b5d2aa549aba500be9af50dc6a06b0c0cc4c198a8ca",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title/full5PDFauthors(notpublisher3):JunZeng/MingyangKou/HailongYao/Xu-ChengYin/HailiWang;3affils. Listprioritylearning HLSresourceconstrainedCDFGs/readydecode ensuresprecedence/capacitywithadmissibleunits. Motive6node4vs5cycletoyreadfull."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completeproblemDef2/resources/nonpipelineddurations/ASAP-ALAPunit Eq1/2/GIN+3layerReLUFFN/supervisedILPnormalizedstartlabels/ranklogisticlossEq5. Prioritiesrankingnotcertifiedoptimal;pairtiesci=cjcontributeconstantlog2. Resourcecountsnotnodefeatures=>pretrainadaptpending5.1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allAlg1/pretraincountsfeature+FT/allTable118cases/Fig6-7. SpecificresourcecountsnowfeaturesbutFTpernewsetting(notsharedzero-shotclaim). Main6.10%exclude5ties weighted78/1278 notall18(78/1699=4.59). FourILPN/A10ktimeout;88.89reportednotfullycertifiedall18;12of14knownmatch. Alg1ready/VUcontradictionandearlyVFmulti-cycleprintedneedsactualcodecrosscheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read allremainingconclusion/26refs/checklist. ExplicitNo codeinitialsubmissionpromiseaccept/Noerrorbars. AddscientificseparatePDFfromZIPbeforeverified;all13mainpagesread. CorpuscurriculumTSPref17explicitmain2GNNintro candidate identitylater."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read ALL3image-onlysupplementpagesVISUALLY fromrender (emptytextPDFnotreadviaextraction). A1Alg2sameVR/VUcontradiction; A2layeredDAGgeneratorT/M/N/I/U;A3actual11nodefeatures inclresourceconstrainedASAP/ALAP/list-schedulevsunconstrainedpositions/resourcecounts. A45GINlayers64/dropout.5/twodense64x64,64x1vsmain3FCinconsistent. A550k=49ktrain1keval/2500epochsLR.0002*.9every10;FT1000eachunit1/25epochs. Noextra scientificrefs."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "HLScycleminimizationcostlyILPversusheuristicpriority motivatesGINsupervisedpriority+listdecode.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "NativeHLSmotivation"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "GINranklossILPsupervision50kCDFGpretrain+fine-tune/syntheticrealHLSbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Fullmethodresults"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive priorityprediction+listdecoder;setting-specificFTnotcrossnativecheckpointsharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            9
+          ],
+          "locator": "Nativeproblem/5.1-6.3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Actual11featuresinclconventionallistresults/resourcecount;5GIN64drop.5dense64-64-1/split49k1k/pretrain2500FT25lr.0002*.9/10epochs.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "AllimageonlysupppagesA1-A5visuallyread"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "18cases1621vs1699cyclesall4.59%;6.10%positive13subset1200vs1278;4ILPunknown and12/14knownmatches;runtime0.952vsEDS.167censoredILP>50k;synthetic90/94separate/noerrorbars.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13
+          ],
+          "locator": "Allresulttables/curves/checklist"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "PrintedAlg1readyloopcannotreleaseVU chaina->bstalls;suppAlg2same,implementationunverified. OfflineILPcost/settingsfine-tune/chainingfuture/certaintyandsamplinglimits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10,
+            13
+          ],
+          "locator": "Boundedliteralpseudocodecuratornotexperimentalinvalidation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete13+3pages/imageonlyscientificappend/readme3pklinventory/noreleasedcodeverified/fullPDF5authorsvsHTML3/0supportedcatalogedges/noNNorILPrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Completeaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html",
+      "locator": "FormalPDF1full5authorsJunZeng/MingyangKou/HailongYao/Xu-ChengYin/HailiWang,Tsinghua/USTB/Hercules. HTMLindexonlyfirst3 conflict explicitlydocumented andPDFgovernsfullauthorlist. NeurIPS35/2022-12-06citationdate/DOI10.52202/068431-1728."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html",
+      "locator": "ManualpublisherSupplementalZIP6entries incldirectory/README/3pkl/scientificNeuroSchedule_sup.pdf. ZIP SHAeb44ae64479552fc79829628016c6687b792a0b94e96bf477711df7b4086b7a6. Separate3pageimageonlyPDFregisteredarchive_memberNeuroSchedule_sup/NeuroSchedule_sup.pdf SHA491ca10ce445f6d76ccf8b5d2aa549aba500be9af50dc6a06b0c0cc4c198a8caall3pagesactuallyvisuallyreadA1-5/integratedmain13fullread. NootherPDF/video/code. OpenReviewv1/v2exacttitle403cached."
+    },
+    {
+      "field": "version,figures,scientificappendix",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html",
+      "locator": "Mainactualformal13pSHAaafad780d08821c7c90d2f2ba3052ee7a78891d9f2a78e2a25c7bceb2e569947/fullrefs26/checklist. Visualmain1/3/4/5/6/7/8/9 plusall3imageonlysupp pages=11visualpages actual;all7figsTable1/Alg1-3/11featurestrainingfullread. Supemptytextnotmistakenasreadwithoutimages."
+    },
+    {
+      "field": "method,statistics,scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html",
+      "locator": "Main7addsunitcount+requiressettingFT;Sup2-3actual11features/5GIN64/drop.5/twodensevs main6says3FC unverifiedheadcount. Sup3pretrain50k49k/1k2500epochs/FT1k25epochs/lr.0002*.9/10epoch. Table1fourILPN/A12/14knownexactmatches reported88.89notallcert. 6.10%=78/1278positive13subsetexcluding5ties;all18=78/1699=4.59%;runtimeNE.952EDS.167sec. ChecklistNoerrorbars/nocode."
+    },
+    {
+      "field": "code_url,reproduction,curatorchecks",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html",
+      "locator": "Formal13codeNo promisefutureopensource;ZIPREADME/data/scienceonlyno.py/notebooks/binaries. Noofficialrepoverifiedfromprimarysources/search;do notinventcode_url. recompute_scope.py/jsonrawintegerrows+boundedliteralAlg1translationchaina->breadyempty/finisheda/unassignedbafterall4iterations. Pseudocode7andSup1loopVRfollowedbyVUconditiondisjoint;notauthorcodeexecution/noNNbenchmark/ILPrerun. 0catalogcitationmatchescomplete26refsreviewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neuroschedule",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "[17]",
+      "description": "GNN scheduling motivation explicitly cites hardness-adaptive TSP curriculum in the GNN reference list; exact four-author AAAI2022 pages9136?9144, without asserting use of its curriculum in NeuroSchedule.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: [17]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [17]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Addedmissingthreepageimageonlyscienceappendix/all16pagesfullread/actual11features/trainingdetails.",
+    "CorrectedauthorlistfromformalPDFto5whileHTMLindexconflictretained;0unfoundedcatalogedges.",
+    "Clarifiedpositive-case6.10%versusallcases4.59%/ILPtimeouts/certificatecount/pseudocodelimitationsandunreleasedimplementation.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d28ed2ce7276d6af1888e756c127bfbed8af3f9253e501d3d7030ce96d6096cf"
+}

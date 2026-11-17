@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "paper_id": "rl-vrp",
+  "note_path": "specialist/rl-vrp.md",
+  "baseline_note_sha256": "1caabc41344683a1e6a72563cfabcae77038e52e27412a81f61dc3eedfdd38d7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/9fb4651c05b2ed70fba5afe0b039a550-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/9fb4651c05b2ed70fba5afe0b039a550-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/rl-vrp/paper.pdf",
+      "sha256": "a683ed37a094795b021e48a4266b88383f7b3feed96c3607a814ddb0bda1f4fa",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/9fb4651c05b2ed70fba5afe0b039a550-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/9fb4651c05b2ed70fba5afe0b039a550-Supplemental.zip",
+      "version": "publisher scientific supplement inside ZIP",
+      "local_path": "research/full-text-review/rl-vrp/supp-vrp_neurips_2018_supplementary.pdf",
+      "sha256": "66c1d1225add0335a7f07d4a028a8312ffe2bfdc61780a6f567837fea7c351ff",
+      "pages": 10,
+      "archive_member": "vrp_neurips_2018_supplementary.pdf",
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh reread authororder/affiliation, problem scope, distribution-levelpolicy claim, related work and static/dynamicinputdefinitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh all model/attention/stateupdate equations andmask/trainingdescriptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh Figure3winrates, exactsmallgaps, timeaccounting and sizegeneralizationfailure, extensions andlimitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh all40bibliographyentries; threeinternalmatches before supplementalreading."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh TSPencoderablation, allclassicalbaseline algorithms, exactsmallproblem protocol."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Fresh implementation, splitdelivery relaxation andnegativegapmeaning, CPUtimeprotocol, nonoptimalexamples."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 6,
+      "notes": "Fresh completeTable2mean/std/perinstanceseconds andFigure8."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh attentionexperiment, stochasticarrival/abandonment setting, allsamplerouteTables3-4."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FreshTable5 andfullAlgorithms3-4, critictraining, event-time rewardnormalization andRMSProp."
+    }
+  ],
+  "claims": [
+    {
+      "id": "encoder",
+      "category": "contribution",
+      "statement": "Remove recurrent inputencoder; retain static/dynamic embeddings, LSTMdecoder and two-stage attention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.1-3.3 Equations4-6; Figure2"
+        }
+      ]
+    },
+    {
+      "id": "mask",
+      "category": "method",
+      "statement": "CVRP masks zero demand, emptyload and oversizeddemand; splitdelivery removes oversizeddemandmask without retraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section4 maskrules; supplementC.2"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "CVRP uses critic-baseline REINFORCE, Adam1e-4, batch128, 128stateLSTM, dropout.1 andclipping2.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            9
+          ],
+          "locator": "C.1; Algorithm3"
+        }
+      ]
+    },
+    {
+      "id": "stochastic",
+      "category": "method",
+      "statement": "Stochasticrouting retrainswithA3C, event-time demandreward, addedtime-in-systemfeature andRMSProp1e-5.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "C.6; D Algorithm4"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "CVRP100beam10 meanlength16.96 andmeanCPUperinstancetime.445seconds; ORTools17.16 and.231seconds.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "C.3 Table2; singlecoreIntel2.6GHz sentence"
+        }
+      ]
+    },
+    {
+      "id": "split-gap",
+      "category": "experiment",
+      "statement": "Negative splitdelivery gaps compare a relaxed feasible set against the nonsplit optimum.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5,
+            8
+          ],
+          "locator": "C.2 Figure7; Table4"
+        }
+      ]
+    },
+    {
+      "id": "generalization",
+      "category": "limitation",
+      "statement": "VRP50to100size/capacitytransfer performs worse thanORTools despite near-size90-110transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Figure5 andgeneralizationparagraph"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive policies trained for specified distributions; no jointmultitaskcheckpoint is established.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            9
+          ],
+          "locator": "distribution-leveltraining scope; extensionsfuturework"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/9fb4651c05b2ed70fba5afe0b039a550-Paper.pdf",
+      "locator": "PDFp1 titleblock; LehighUniversity. Lasttwoauthororder differs from official bibliographicrecord; note disclosesdifference."
+    },
+    {
+      "field": "venue, publication year, bibliographic author order",
+      "source_url": "https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html",
+      "locator": "OfficialNeurIPS2018 article record: Nazari,Oroojlooy,Snyder,Takac."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/1802.04240",
+      "locator": "arxivv1 firstsubmitted12February2018; v2revised21May2018."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/OptMLGroup/VRP-RL",
+      "locator": "SupplementC.1p4 links authorsTensorFlowrepo; README training/inference andmodel_dir instructions manuallyread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2018/hash/9fb4651c05b2ed70fba5afe0b039a550-Abstract.html",
+      "locator": "Manually inspected official SupplementalZIP2026-11-16. Solemember vrp_neurips_2018_supplementary.pdf,10pages, allreadincludingAppendicesA-D. Noadditionalscientificattachmentlinked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1802.04240",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-02-12; title on abstract page: Reinforcement Learning for Solving the Vehicle Routing Problem. This date is preprint history, not formal publication. Cached research/full-text-review/rl-vrp/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl-vrp",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4] Bello etal., arXiv1611.09940 (2016)",
+      "description": "Builds onpointer-policyRL andcomparesactiveseach; cites2016preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            8,
+            10
+          ],
+          "locator": "Explicitintextcitation and matchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-vrp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[11] Dai etal., NeurIPS2017",
+      "description": "Discusses structure2vec/DQN anditslimitationsfor depot revisits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicitintextcitation and matchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "rl-vrp",
+      "cited": "pointer-networks",
+      "reference_label": "[34] Vinyalsetal., NeurIPS2015",
+      "description": "Discusses recurrentencoder limitations, directlocalembeddings andpointeroutputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            6,
+            11
+          ],
+          "locator": "Explicitintextcitation and matchingbibliographyentry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Downloaded/registered andfullyread previouslyomitted10pagescientificZIPsupplement.",
+    "Removed unsupportedconference-notificationacceptancedate; documentedauthororderdiscrepancy andused officialbibliographicorder.",
+    "AddedauxiliaryTSP, splitdeliveryandstochasticrouting tasks; distinguishedA3Cretraining frommaskrelaxation.",
+    "Replacedsuperficialsummary withdetailedmethods, budgets, unfavorableoutcomes, correctperinstancetimes and3explicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "12f3c43e83bc9e5dcf3c3ca9f221ebcad663973ad205b89b4ef0282bfc85e90f"
+}

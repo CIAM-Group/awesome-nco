@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "paper_id": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+  "note_path": "generalist/parameterizing-branch-and-bound-search-trees-to-learn-branching-policies.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "2fa41c57c03a67e9bdf611e8ce9be8cfe82b0c90ca9ba551880dad7d3ddd42e3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf",
+      "version": "AAAI2021formal9p3931-3939completebody/refs.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-7d2785f663/formal.pdf",
+      "sha256": "396e1e0ef74b90ee0daa41c9a63a495775dcc4f920f3845f424e90e7763d403d",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2002.05120v4",
+      "retrieval_url": "https://arxiv.org/pdf/2002.05120v4",
+      "version": "arxiv2002.05120v4Jun2 202116pcompleteallbody/refs/scientificAppendA-E.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-7d2785f663/arxiv.pdf",
+      "sha256": "a93367aa254f6aad60095819725ae6777b7ad4c27c8497b3f9cda214ae99da79",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://raw.githubusercontent.com/ds4dm/branch-search-trees/b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/AAAI21-Poster-GZarpellon.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/ds4dm/branch-search-trees/b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/AAAI21-Poster-GZarpellon.pdf",
+      "version": "OfficialrepoAAAI21poster1pfullreadallcolumns/formulas/resultsactualview.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-7d2785f663/repo/branch-search-trees-b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/AAAI21-Poster-GZarpellon.pdf",
+      "sha256": "d35824c625c50a2930b99fda2e49952e4daf9ab352d3ec796ca5981f93ed8d45",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://raw.githubusercontent.com/ds4dm/branch-search-trees/b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/HO-SCIPWorkshop-GZarpellon.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/ds4dm/branch-search-trees/b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/HO-SCIPWorkshop-GZarpellon.pdf",
+      "version": "OfficialrepoSCIPWorkshopJune4 2020handout15pallbody/refsreadkeyfigures/formulas/resultsactualview.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-7d2785f663/repo/branch-search-trees-b0cec513c026b52a00b666f7471d6f4abaf6e1ce/graphics/HO-SCIPWorkshop-GZarpellon.pdf",
+      "sha256": "51a2f47206040b510460703bbc6c686640d183134c94246cb5c4e3e38a96deca",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallformalintro/byline/background andstrong/pseudocost/hybridbranching; proposed25candidatefeatures+61treestate/NoTreeglobalpool/TreeGatesigmoidmultilayergating; sharedheterogeneousMILPmotivation nojointtheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadFig1/2andallTables1/2,imitationrelpscostnotSB/CE,19train8test/85k14k28kpoints/randomseed+kaugmentation; knownoptcutoff/primalheuristicsoff1h; testaccuracyandALL135solverrunmodelselection, GCNNdifferentSBlabels/memorybatchreduction; nodecountsnotruntimeandSBeffectfairmetric."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTable3nodecells/timeoutstars+relatedwork/conclusion/ackandallfullbib8-9. TGtest2239vsNT3069/relpscostfair1277,heterogeneouscheckpoints; baselineundercontrollednotunrestrictedSCIPclaim. Allrefsprimaryidentityread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fullv4intro/byline/B&Bbackground/25candidate61treefeatures/NoTreeandTreeGategatingallread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fullv4CEexpertrelpscost,heterogeneousjoint27split,allsetup/aug/selection/caps/metrics/fullTables1/2readsameformal."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fullv4Table3andallrelatedwork/conclusion/ack/fullbibread; startsappendA/Bcurationandfeatures;noformalheterogeneousgeneralizationtheorem."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Readall27rowTable4,normformulas,specificSCIPcut/presolveonheuristicsoffSBsideeffectsdisabled/knownopt/1h;distinctCPU/GPUhardwareforIL/SCIP/GCNN;GCNNbatch4/16and10minlabels, BNnegativecaseall5seedsneos476283timeout;allAppendD/Etext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "ReadallTables6/7/8with27VSrows/hyperparameterselectedmodels/GCNN5seedsandall3learningcurvefigures; candidatebatchBNunstable,nonBNsolverallfinish."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 14,
+      "last_page": 16,
+      "notes": "Readall27Table9nodescells/timeoutstars andall86featureformulasinTable10continued15-16including25candidate+61tree, normalizationdefinitionsp10; actualviewcontacts10-16alltables/formulas/curves."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 8,
+      "notes": "Readallofficial2020workshopslides1-8includingbranchdisjunction/imagearchitecture,25/61featuresanddynamicgating; earlytalknotadditionalnewsolver."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 9,
+      "last_page": 15,
+      "notes": "Readallslides9-15dynamicTSNE/setup/knownopt/noheuristics/1h/resultsandfullminimalrefs; actualviewslides2/8/12keyformulas/diagram/results."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "ReadwholeofficialAAAI21posterallcolumns/math/architecture/TSNE/distribution/accuracy+nodesresults/refslinks andactualviewfullposter."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Search-statefeaturesaimatsharedheterogeneousMILPbranchingratherthanclass-specificformulationanalogues.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Searchparameterization"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "25candidate+61treefeatures,NoTreeandTreeGatecontextgating,relpscostbehavioralcloning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Inputfeatures/Architectures/Fig2/CE"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "VariablesharedMLP+sigmoidtreegating/solvervalidbranches;sharedjointmodelsoverheterogeneousMILPdataset.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "NoTreeTreeGate/IL/MILPsplit"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "27curated19train8test/fiveseeds,knownoptcutoff/noprimalheuristics/1h,14.9percentALLand27percentTESTnodesvsNoTree.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Setup/results/Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "TestaccuracyshortlistthenALL135solvernodeselectionincludesheldouttest;defaultrelpscostfairtest1276.76betterthanTreeGate2239.47;nodesnotseconds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Resultsselectionparagraph/Table3"
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "category": "limitation",
+      "statement": "BNcanoscillateortimeoutall5neos476283runsdespiteapparentlystableimitationaccuracy;GCNNdifferenthardware/labels/batchsettingsand24timeouts.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "AppendC/E/Tables8-9/Fig5"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructivebranchguidance:eachselectedjointcheckpointappliedheterogeneoustrain/testMILPs,notneuralincumbentedits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sharedpolicygeneralization/split/selectedmodels/evaluations"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "CompleteintegratedA-Ecoverscuration/86features/SCIPconfig/hardware/augmentation/learningcurves/allperinstancecells.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "AllsupplementA-E"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf",
+      "locator": "Formalp1Zarpellon/Jo/Lodi/Bengio;PolytechniqueMontreal/Mila/UniversiteMontreal, noextraaffiliationsinferred."
+    },
+    {
+      "field": "date and arxiv",
+      "source_url": "https://arxiv.org/abs/2002.05120",
+      "locator": "Savedprimarytitle/canonical/historyv1Feb12 202017:43:23UTC/v2Jun11 2020/v3Dec11 2020/v4Jun2 202120:11:03UTC; topdatev1. CrossrefpublishedMay18 2021cachednotFebruaryevent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/ds4dm/branch-search-trees/tree/b0cec513c026b52a00b666f7471d6f4abaf6e1ce",
+      "locator": "ManualREADMEexplicitSMinarxiv;identifiedv416fullpagesA-EreadincludingTable10continued;officialrepo320members303filesonly2sciencePDFsposter1/slides15bothfullyread. NootherPDF/TeX/video/archive/notebook. PublisherHTML520ORAPI403saved; ordinaryYouTubeworkshoptalknotclaimedviewed/notnecessaryunavailableproof."
+    },
+    {
+      "field": "scope and migration",
+      "source_url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf#page=5",
+      "locator": "OnejointNoTree/TreeGatepolicy19heterogeneousMILPs→8newtestMILPsTable1/4differentformulations,binary/integer/continuousmix; samecheckpointloadingevaluate_IL117-192andbranchers28-88observed. Movefromspecialistflatpath→generalistflatpathsameID. ConstructiveB&Bnotincumbentedit."
+    },
+    {
+      "field": "code and version",
+      "source_url": "https://github.com/ds4dm/branch-search-trees/commit/b0cec513c026b52a00b666f7471d6f4abaf6e1ce",
+      "locator": "Primarycommitted2021-07-19T10:38:59-04:00; ZIP5236980bytesSHA6150236be7c75098a4722f30e4ab7a08317d8e1bb7cc43cb0c810380d789022c320members303files. READMEall189linesrenderedbodyread;models/feedforward1-141/modules1-93/srcbranchers28-88/evaluate_IL117-192readnecessarygating/deterministicmax/commoncheckpoint/knowncutoffCPU. Noexecute/loadweights/pickle."
+    },
+    {
+      "field": "metrics and empirical scope",
+      "source_url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf#page=6",
+      "locator": "SelectedbytestaccuracythenALL135runsincludesTEST; nodecountswithshift100notruntime; knownoptcutoff/allprimalheuristicsoff1h,GCNNfullSBvsrelpscostexperts/differenthardware/reducedbatch. 83.70-64.02=19.68percentagepointsnot19percentrelative; defaultfairTEST1276.76better2239.47."
+    },
+    {
+      "field": "visual checks",
+      "source_url": "https://cdn.aaai.org/ojs/16512/16512-13-20006-1-2-20210518.pdf#page=4",
+      "locator": "Actuallyviewedmain3/4/5/7allFig1/2Table1-3andappend10-16allnormformulas/Table4-10/curves,posterwhole/slides2/8/12. CleanoriginalFig2crop52,246,295,432actualviewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Primary learned branching comparison; GCNN uses full strong-branching labels while TreeGate imitates reliability hybrid branching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            7,
+            8
+          ],
+          "locator": "Explicitintro/benchmark/RelatedWorkbodypp1/6/7; fullExactCombinatorialOptimizationwithGCNNNeurIPS32bibliographyp8"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithformal9/arxiv16/poster1/slides15completecoverage41pages.",
+    "MigratedstableIDtogeneralistconstructivebasedonactualjointheterogeneousMILPcheckpoint—notmeresharedarchitecture.",
+    "Recordedtest-involvedmodelselection/knownoptcutoff/disabledheuristics/nodesvsruntime/baselineandBNnegativeconditions.",
+    "AddedcleanoriginalFig2andactualGCNNbody+bibedgewithfullexpert/protocolqualifiers."
+  ],
+  "reviewed_note_sha256": "cb84482fad2b9c6d301adb4ec2abf08394df7a78759c12270858c0ed3c20e314"
+}

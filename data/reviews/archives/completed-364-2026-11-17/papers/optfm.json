@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "paper_id": "optfm",
+  "note_path": "generalist/optfm.md",
+  "baseline_note_sha256": "27fc6e0ae39f705b16b746ebe85ae7cc39300c03f280d25286fecf8ee8e514cc",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/54801e196796134a2b0ae5e8adef502f-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/54801e196796134a2b0ae5e8adef502f-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-3c2502ede6.pdf",
+      "sha256": "2dbdadf0cf1649b078f5c1e52cdea4f086fbd4affcd6dc71644a8474acd9a405",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full5Lenovoauthors/introrelatedpretrainingclaimandMILPformalization. Distinguish fixed pretrainedencoder fromseparatelytraineddownstreamneuralheads; O(N)attentionnotwholematerialization/trainingcost claimneedsfullmethod."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read exactFrobeniusnormsoftmax-freeattention/residual+sparseadjacencycost, sequentialtwocrossdirections, randombalancedpartitiongsize/edgemaskedpairreconstruction and2virtualglobalnodes, graphlevelProxyAnchormulti-partitionlabels/decoupledencoderfrozen."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read pretrain1065MIPLIB5perturbs80/20 keepingoriginalD0test(transductivestructure), downstreamfrozenembeddings+trainedGBDT/RLMLP/KNN tasks, 3seedaverage, allTables1-4inclCLSCgap.92<ours.93/Gurobibettermostsmalls andMIPLIBgap1.98<2.92; active-searchscope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allsolverconfigurationTable5, correctedfullO(N+E)attentioncost, trainingmemory/latencyanalysis andMILPonlylimitations; completebibfirst2pages actualidentitiesandknownreferenceformaltitles."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read entirebibliography74refs. Distinguishrefs68 mislabeledBranching actuallySonneratLNS, Ref59RouteFinder2024workshop predecessor, AnyCSPauthor2023. Noinferredtargetmissingcurrentcatalogue."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read checklistclaims/limitations/explicitnoformaltheory, reproducibilityandexactscientificZIPcode/dataavailabilitystatement, 3seedstdAppendixA7 ratherthannoinfo."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read remainingcheckliststats/compute/limitations/codeandpretrainassets policies; scientificZIP43.7MBinventorycontainscode+data/docs, report.txtpureTFupgradelogfullyreadnotadditionalscience."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "Read checklist completion and Appendix A.1 static bipartite features and A.2 adaptive variable/constraint partition algorithm."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Read perturbation generator and solution-prediction setup: shared frozen encoder, task-specific small-instance GBDT labels, SCIP repair/30-percent neighborhood; LNS state definition."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 28,
+      "notes": "Read LNS RL action/transition, exact gap and signed PI definitions, reconstruction diagnostics, partition/epoch ablations and full three-seed standard-deviation table."
+    }
+  ],
+  "claims": [
+    {
+      "id": "optfm-architecture",
+      "category": "method",
+      "statement": "Bipartite softmax-free self/cross attention with sparse edges and partitioning; all-pair adjacency decoder must be distinguished from O(N+E) attention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            10,
+            23
+          ],
+          "locator": "Eq2–4/Algorithms1–3/Section5.5"
+        }
+      ]
+    },
+    {
+      "id": "optfm-pretraining",
+      "category": "contribution",
+      "statement": "Shared frozen self-supervised node encoder followed by partition-view instance contrastive encoder; no solver-solution labels in representation learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Section4.2–4.3"
+        }
+      ]
+    },
+    {
+      "id": "optfm-classification",
+      "category": "classification",
+      "statement": "Generalist constructive-improvement: unchanged node encoder across native tasks, separately trained GBDT and RL-MLP heads; incumbent LNS is actual neural improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            9,
+            25,
+            26
+          ],
+          "locator": "Frozen/shared representation and explicit TaskI/II training; code shared epoch0 checkpoint paths separately documented"
+        }
+      ]
+    },
+    {
+      "id": "optfm-results",
+      "category": "experiment",
+      "statement": "Budgeted downstream averages improve many baselines but CL-LNS small-SC gap and Gurobi numerous means outperform; MIPLIB2.92 versus1.98 and overlap with pretraining collection qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            25,
+            26,
+            28
+          ],
+          "locator": "Tables1–5/9/A.4.1–A.7"
+        }
+      ]
+    },
+    {
+      "id": "optfm-limits",
+      "category": "limitation",
+      "statement": "No optimization theorem; original MIPLIB base identities overlap augmented pretraining, separately trained task heads and quadratic pair decoder limit zero-shot/end-to-end-linear claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10,
+            17,
+            23,
+            24,
+            25,
+            26
+          ],
+          "locator": "Dataset split, decoder and checklist theory declaration"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/54801e196796134a2b0ae5e8adef502f-Abstract-Conference.html",
+      "locator": "Formal PDFp1 title/fiveauthors/Lenovo Research; current official HTML same identity."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/54801e196796134a2b0ae5e8adef502f-Abstract-Conference.html",
+      "locator": "HTML meta citation_publication_date2026-04-23, distinct venueyear2025."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/54801e196796134a2b0ae5e8adef502f-Supplemental-Conference.zip",
+      "locator": "node_pretrain/main_mip.py global model before graph loop; sol_predict/train_solpre.py57–61 and lns/utilities.py22–37 load identical ../node_pretrain/Models_SCIP/model_params_epoch_0.pth; lns/test_lns.py526 loads separate args.problem RL checkpoint; generalist shared component only. Root independently read formalpp2/6/25–26 and approved classification."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/54801e196796134a2b0ae5e8adef502f-Abstract-Conference.html",
+      "locator": "Publisher supplemental ZIP43745560bytes/694members manually checked noPDF/TeX/ipynb/images. Full README/TF-upgrade report/MILPTune README+overview read and core code inspected. All28integratedPDFpages/A.1–A.7/checklist read. Officialevent120176 poster4012751bytes read with white composite; ordinary OpenReview API403 recorded."
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/54801e196796134a2b0ae5e8adef502f-Supplemental-Conference.zip",
+      "locator": "Official ZIP README explicitly sample code/data with full release promised; inspect hierarchical pair loops622–630, dense labels main_mip.py, task-specific GBDT/RL heads, shared node checkpoint and KNN interface; sample gsize1000 versus formal20000."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/abs/2406.15007v1",
+      "locator": "OPTFM ref59 p14 eightauthor2024 ICMLworkshop hCiaiZ6e4G; arXivv1 exacttitle/eightauthors and linked v4, officialai4co/routefinder README July2024workshop→September2025TMLR. Stable-ID lineage only."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "optfm",
+      "cited": "apollo-milp",
+      "reference_label": "[53]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            14
+          ],
+          "locator": "Explicit in-text citation [53] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "btbs-lns",
+      "reference_label": "[48]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            14
+          ],
+          "locator": "Explicit in-text citation [48] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "cl-lns",
+      "reference_label": "[15]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            8,
+            9,
+            12,
+            25
+          ],
+          "locator": "Explicit in-text citation [15] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "fast-t2t",
+      "reference_label": "[69]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            15
+          ],
+          "locator": "Explicit in-text citation [69] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "gcnn-branching",
+      "reference_label": "[12]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            7,
+            11,
+            23
+          ],
+          "locator": "Explicit in-text citation [12] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "gnn-gbdt-ip",
+      "reference_label": "[17]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            12,
+            24,
+            25
+          ],
+          "locator": "Explicit in-text citation [17] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "hem-cut-selection",
+      "reference_label": "[51]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            14
+          ],
+          "locator": "Explicit in-text citation [51] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "hrl-aug-branching",
+      "reference_label": "[50]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            14
+          ],
+          "locator": "Explicit in-text citation [50] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "learn-lns-ip",
+      "reference_label": "[14]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            8,
+            9,
+            11,
+            25,
+            26
+          ],
+          "locator": "Explicit in-text citation [14] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "predict-and-search",
+      "reference_label": "[52]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            14,
+            24
+          ],
+          "locator": "Explicit in-text citation [52] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "tree-mdp-branching",
+      "reference_label": "[49]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            14
+          ],
+          "locator": "Explicit in-text citation [49] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "goal",
+      "reference_label": "[56]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            14,
+            25
+          ],
+          "locator": "Explicit in-text citation [56] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "learning-to-cut",
+      "reference_label": "[19]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "mvmoe",
+      "reference_label": "[58]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicit in-text citation [58] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "routefinder",
+      "reference_label": "[59]",
+      "description": "Explicit in-text reference and full matching bibliography; RouteFinder is the identified 2024 workshop precursor, not later expanded experimental claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicit in-text citation [59] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "optfm",
+      "cited": "unico",
+      "reference_label": "[60]",
+      "description": "Explicit in-text citation and matching full bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicit in-text citation [60] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all28formalpages/appendix/checklist plus scientific officialposter and inventoried43745560bytepublishercodeZIP; corrected exactpublicationdate; movedgeneralist sharedNNrepresentation and constructive-improvement onactualLNS; preservedseparateheadtraining/pretrainoverlap/pairdecoder/baselineexceptions;16explicitrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "73c6917d48b06ce6be94fb4240f727cae12a6b8c3eb396ee22459985fd979639"
+}

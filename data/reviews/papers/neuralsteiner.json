@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "paper_id": "neuralsteiner",
+  "note_path": "specialist/neuralsteiner.md",
+  "baseline_note_sha256": "cd6f60efe86d1303fc205d778d4d94a1f03948af2855a616be5236a7136e8664",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e6617714485265b9380a5315bf3ba98f-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/e6617714485265b9380a5315bf3ba98f-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c04d534a02.pdf",
+      "sha256": "5b473aea9f2dfe0e4e9231728d7a04c54c66fc8f928ddfefef6f54b8cb4124c8",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://neurips.cc/media/neurips-2024/Slides/93636.pdf",
+      "version": "Official NeurIPS2024 slides",
+      "local_path": "research/full-text-review/neuralsteiner/slides.pdf",
+      "sha256": "e4d2e49956c8f10b63c9c28f934cca04733d3b3f0450f208fc571922dacaf602",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal identity, full motivation and contribution, routing/resource/overflow definitions, traditional and learning router scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read candidate definition, parallelnonoverlappingboundingboxes, expertdataset, ResNet/RCCA/losses, connectedNAG/greedypathmerge andclassicalreusepostprocess."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read full training/test split, small-net protocol and all ISPD98/ISPD07 numericaltablecells/overflowchart,includingclassicRouter0overflowandtime/wirelengthnegatives."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read detailed-routeintegration metrics/nonzeroviolations,NN/RCCA/overflow/NAG ablation tables,conclusion andfirstcompletebibliographypages."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Read finalcompletebibliography,TableS1alllargestpin/candidatestats,ResNet34/RCCAfullmathematics,100Kexperttrain4chipdesignsandvalidationstop/hardware/seedprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read fulltaskgrouping/NAG/greedyconnect/inferencealgorithms, statedsparsity-dependentO(pin^4logpin)andlimitedheuristic,allsmall-netandLtdtables/routefigures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Read checklist1–7,includingexplicitnotheorems,plannedGitHubreleaseandscopeofHubRoutererrorbars."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Read remainingchecklistandallauthoranswers,includingcomputescope and newassetsnotreleased;entire23pagesnowcovered."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 15,
+      "notes": "Read all15officialslidesandrenderedallincludingimage-onlymethod/results/fullposter;lastslideplannedcodeURLtested404API+web."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ns-contribution",
+      "category": "contribution",
+      "statement": "CongestionawareResNet/RCCApointpredictionplusconnectedNAG/greedyclassicalconstructionglobalrouterandnonoverlapbatching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.1–3.4"
+        }
+      ]
+    },
+    {
+      "id": "ns-method",
+      "category": "method",
+      "statement": "ExpertCUGR100Klabels,pointlossfocal+Dice+overflow;classicweightedpathmergeensuresconnectivitynotzerooverflow,NNdoesnoteditcompleteincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Eq3–8/Algorithms1–5"
+        }
+      ]
+    },
+    {
+      "id": "ns-experiment",
+      "category": "experiment",
+      "statement": "SubstantialHubRouterOFreductionswithnonzeroresidual,classicBoxrouterzeroOF,wirelengthibm06+2.07%/runtimeexceptions;tablemeanOF99.27notprose97.8andCUGRdownstreammetricsconditional.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            17
+          ],
+          "locator": "Tables1–5/S2/S3/Figures3–4"
+        }
+      ]
+    },
+    {
+      "id": "ns-classification",
+      "category": "classification",
+      "statement": "Specialistconstructivecandidatepredictionbeforeclassicalrouteconstruction;classicalpathreuse/expertRRRnotneuralimprovement,chipscalesamenativetask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16
+          ],
+          "locator": "Figure2/Algorithms3–5"
+        }
+      ]
+    },
+    {
+      "id": "ns-limit",
+      "category": "limitation",
+      "statement": "Heuristicpostprocesscost/sparsityassumption,noformaloptimality/capacityguarantee,announcedcoderepo404andnet-levelmanifest/binarizationdetailsnotindependentlyrecovered.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14,
+            15,
+            16,
+            19,
+            20,
+            23
+          ],
+          "locator": "Conclusion/AppendixB/checklistcode"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6617714485265b9380a5315bf3ba98f-Abstract-Conference.html",
+      "locator": "FormalPDFp1sixauthors/sixinstitutionschecked;slidesabbreviateaffiliationsbutformalrecordretained."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/e6617714485265b9380a5315bf3ba98f-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date2024-12-16/NeurIPS37pp127346–127368."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://neurips.cc/virtual/2024/poster/93636",
+      "locator": "Manualpublisher23pagesintegratedAppendicesA–C/checklistallread/noextrassupplink,conventionalZIP404;normalORoEKFPSOWppAPI403nobypass. Officialslides15pages1409629Bfullread/renderallandposter4910801Bfullvisual, noextrasciidentified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/liuruizhi96/NeuralSteiner",
+      "locator": "Formalp20/slides15announcedrelease;normalAPI404/web404,repositorysearch0/authorfullreposlistnomatch;keptnoverifiedcode_url."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neuralsteiner",
+      "cited": "prnet-chip-design",
+      "reference_label": "[4]",
+      "description": "Explicit numbered citation and full matching reference entry; software/router context alone not an internal edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            7,
+            10
+          ],
+          "locator": "Explicit in-text citation [4] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neuralsteiner",
+      "cited": "deepplace-deeppr",
+      "reference_label": "[5]",
+      "description": "Explicit numbered citation and full matching reference entry; software/router context alone not an internal edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [5] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neuralsteiner",
+      "cited": "hubrouter",
+      "reference_label": "[8]",
+      "description": "Explicit numbered citation and full matching reference entry; software/router context alone not an internal edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            17
+          ],
+          "locator": "Explicit in-text citation [8] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neuralsteiner",
+      "cited": "chipformer",
+      "reference_label": "[18]",
+      "description": "Explicit numbered citation and full matching reference entry; software/router context alone not an internal edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [18] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neuralsteiner",
+      "cited": "maskplace",
+      "reference_label": "[19]",
+      "description": "Explicit numbered citation and full matching reference entry; software/router context alone not an internal edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full23formalpages/allAppendicesA–C/checklist/refs/tablesand15officialslides+posterread/rendered;5actualedges. ChangedconstructivebecauseNNpointguidanceprecedesroute/Classicalreuseonly. Table/proseOFmeanandwithin1.8%inconsistencies,classicBoxrouterzeroOF/runtime negativesandplannedcode404retained."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9b348ed9cb661603ea7fb9f7c41912280762099d096f4975a70ddd2ce02a666c"
+}

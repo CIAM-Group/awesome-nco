@@ -1,0 +1,935 @@
+{
+  "version": 1,
+  "paper_id": "ml4co-bench-101",
+  "note_path": "studies/ml4co-bench-101.md",
+  "baseline_note_sha256": "ae1c86724aa474a706cb6051fa98c36e100f4f0a80a821678fdaf2444278a790",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/aa9340420e8d78021c35ae984e1bda85-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/aa9340420e8d78021c35ae984e1bda85-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "local_path": "research/import-272/nco-9925197739.pdf",
+      "sha256": "518f4303e4af47c9c5e8d15e38099f0a66b6e0277a6650db56dd68a13128478c",
+      "pages": 35,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full title/authors/affiliations/abstract/introduction/taxonomy; seven tasks, 65 headline datasets, GP/LC/AE plus OS/generative distinctions and evaluation-control concerns."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full Table1 category/task matrix; categories explicitly not new methods. All decoding/postprocessing details and exclusions, graph/distribution/cross-distribution datasets, reference solvers, batch1/single-thread protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full Tables2-8 including all comparative rows; speed/quality tradeoffs, MCl exception to more inference steps, node SL/UL/MAML differences and baseline-relative negative Drop not proof of beating optimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read Table9 cross-distribution failures, postprocess comparisons, final34vsabstract65 count mismatch, complete refs1-41 including duplicate surveys and renamedML4TSPBench/UniCO/COExpander."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remaining references42-78 and complete formal seven problem/energy definitions, beta penalty and routingopt formulas; node metrics unweighted versus routing weightedcost distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read full Kopt/MCTS parameters, RLSA pseudocode/entire per-datasetTable10, H800/CPU batch1 hardware, exceptions to shared training/backbones and all cross-distribution generation details incl SAT sizes54/102/200/507."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read alllimitations/impact plus entire65-rowTable11 with24trainingrows. Distinct per TYPE/MODEL checkpoints/crosssize distributions explicit. 65headline vs34conclusion/impact/README; Table11source of actual counts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "Read every row of full denseTSP/ATSPTables12/13 including all means/std/times and decoding/searchsettings. TSP200cataloghasnocompleteTable12block; mainTSP10kDrop1.450vsAppendix1.501sameobjective; TSP100LC-RLgreedytime main.767vsAppendix.098unreconciled."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "Read every row completeCVRP/MISTables14/15 including all means/std/times, missingN/Aentries, cross-sizeparameter changes, RLSAfinalresults notrawlearning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Read all MCl/MVC/MCutTables16-18 means/std/times and FT/multi-sampling/search variants, reference time budgets and negativeDrop notcertifiedoptimum. Some main/appendix/sign inconsistencies notsilentlymerged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 29,
+      "notes": "Read all49TSPLIB/70CVRPLIB instance rows plus mean columns and startchecklist. CVRPLIB5.469% uses per-instancebest of3size-trainedcheckpoints, notsinglecheckpointaverage7.59/8.878/7.73%. TSPLIBBESTcolumn notuniformminofdisplayed3 (berlin52)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 30,
+      "last_page": 32,
+      "notes": "Read checklisttheoryyesrefersalgorithmformulasnotnewperformancebound, reproducibility/codeURLlegacyaliasandstddefinition; hardwaretimeassertions. Noformalapproximationguaranteesordemonstrateduniformcausalordering."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 33,
+      "last_page": 35,
+      "notes": "Read full remainingchecklistincludinglicensing/newassets/humanresearch/LLMdeclarations; all35pages incl78references,A-Eintegratedcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Separate neural prediction from data/preprocessing/decoding/restarts/search confounds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Full introduction and Figure1"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "contribution",
+      "statement": "Seven tasks and GP/LC/AE with model/learning axes; explicitly categories not new joint method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Complete Table1 and explicit categories-not-methods text"
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "category": "contribution",
+      "statement": "Table11 explicitly 24 train and65 test rows, vs34 headline in conclusion/impact/currentREADME; separately task/size trained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            19,
+            20
+          ],
+          "locator": "Complete 65 rows and TYPE/MODEL column"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "category": "method",
+      "statement": "Greedy isolates selected algorithm comparisons; beam16/four parallel samples/size-specific MCTS and task-specificRLSA are distinct hybridsettings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "All decoding descriptions, Algorithm1/2, Table10 and model exceptions"
+        }
+      ]
+    },
+    {
+      "id": "quality-time",
+      "category": "experiment",
+      "statement": "Table2 TSP500 GP9.683%/.047s, LC8.825%/3.964s, AE3.466%/.231s; hybrid fourGreedy+2opt.257%/.695s.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9,
+            21
+          ],
+          "locator": "Full exactTables2/8/12 plus visual verification"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "ATSP SAT reduction fails markedly; knownzeroopt makes percentagegap unavailable; CVRPLIB5.469% is per-instance best of three separate sizecheckpoints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            18,
+            20,
+            28
+          ],
+          "locator": "Table9 full and Table20 all70rows/checkpointmeans"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Benchmark/study not one jointlytrained generalist; distinct architectures/backbones/tasksize checkpoints and hybridpipelines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            18,
+            20
+          ],
+          "locator": "Explicitcategories/reproductions/modelsettings and trainingdatasetmapping"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Excludes D&C/learnedimprovement/classicalsolverassistance/hypergraphs; only seven tasks; comparisons conditional not universal learningranking.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            18,
+            19
+          ],
+          "locator": "All statedscope/exceptions/limitation paragraphs"
+        }
+      ]
+    },
+    {
+      "id": "inconsistencies",
+      "category": "limitation",
+      "statement": "Printed TSP100LC-RL .767s main vs.098appendix;TSP10k Drop1.450vs1.501;TSP200catalog absentcomplete resultblock;TSPLIBBESTnotuniformminof3displayed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            20,
+            21,
+            27
+          ],
+          "locator": "Exact cross-table comparisons, curator observation not author erratum"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "H80080GB/batch1 with CPU references; appendix instanceDropstd not documentedindependenttrainingCI; authorREADME separates legacyenvironments andasksuser trainvalsplit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            17,
+            18,
+            20,
+            21,
+            31,
+            32
+          ],
+          "locator": "Full hardware/params/checklist plus completeprimaryREADME"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/aa9340420e8d78021c35ae984e1bda85-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "OfficialNeurIPS38/2025 DatasetsandBenchmarkstrack,DOI10.52202/085713-3921,4exactauthors andSJTU/ShanghaiInnovationInstitute checked againstPDFp1. Year precision preserved."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/aa9340420e8d78021c35ae984e1bda85-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "Manuallychecked publisherallPaper/Bibtexlinks,noSupplemental. BothOpenReviewv1/v2notes APIs forumye4ntB1Kzi returned403(cached). Full35pageformalPDF includingall78refs/AppendicesA-E/all20tables/checklistread. Completeauthorrepo395filetree noPDFZIPscientificattachments. Two4pagecontactsheetsp2/7/17/20/9/10/21/28 visuallyinspected. Noidentifiedmissing scientificattachment."
+    },
+    {
+      "field": "sourceversion",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/aa9340420e8d78021c35ae984e1bda85-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "locator": "ExactpublisherproceedingsPDF35pages/SHAretained;actualsourceidentity/versionfullychecked."
+    },
+    {
+      "field": "code_url,data,reproducibility",
+      "source_url": "https://github.com/Thinklab-SJTU/ML4CO-Bench-101",
+      "locator": "CompleteauthorREADMEread;395filetreecommit22d1d62466cd7430a08b6179b9e5b65f6fc34f77inventory, task-specifictrain/testscriptslisting, explicitPyTorch2.1.0/ML4CO-Kit.3.3;DIMESlegacyenvironments/DiffUCO-LwDoriginalrepos/userselectedtrainvalsplit. Cached/readml4co_dataset.jsonCroissantmanifest firstfields;notclaimedfull100GBdatasetverified."
+    },
+    {
+      "field": "benchmarkcounts andnumericalcrosschecks",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/aa9340420e8d78021c35ae984e1bda85-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "locator": "Table11actual65rows/24trainingrows;34conclusion/impact/READMEretainedasdiscrepancy. PreciseTable4vs12TSP100runtimeandTable8vs12TSP10kDropdifferences. Table20bestis3checkpointportfolio,notonecheckpoint;Table19berlin52BEST4.349vsGP4.348notuniformminofdisplayedcolumns. Noimputation or universal falsity inference."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/aa9340420e8d78021c35ae984e1bda85-Abstract-Datasets_and_Benchmarks_Track.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/ml4co-bench-101/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "attention-model",
+      "reference_label": "[10] Attention LearnToSolveRouting",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbody citation[10] PDFp1, exactfullreference PDFp11: Attention LearnToSolveRouting"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "difusco",
+      "reference_label": "[16] DIFUSCO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicitbody citation[16] PDFp3, exactfullreference PDFp11: DIFUSCO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "ml4tspbench",
+      "reference_label": "[17] UnifyML4TSP",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Explicitbody citation[17] PDFp5, exactfullreference PDFp11: UnifyML4TSP"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "dimes",
+      "reference_label": "[18] DIMES",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody citation[18] PDFp2, exactfullreference PDFp11: DIMES"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "diffuco",
+      "reference_label": "[19] DiffUCO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody citation[19] PDFp2, exactfullreference PDFp11: DiffUCO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "meta-egn",
+      "reference_label": "[20] MetaEGN",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody citation[20] PDFp2, exactfullreference PDFp11: MetaEGN"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "sdds",
+      "reference_label": "[21] ScalableDiscreteDiffusionSamplers",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbody citation[21] PDFp2, exactfullreference PDFp11: ScalableDiscreteDiffusionSamplers"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[22] LearningCOAlgorithmsOverGraphs",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[22] PDFp2, exactfullreference PDFp12: LearningCOAlgorithmsOverGraphs"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "neural-set-function-extensions",
+      "reference_label": "[24] NeuralSetFunctionExtensions",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[24] PDFp2, exactfullreference PDFp12: NeuralSetFunctionExtensions"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "gflownet-combopt",
+      "reference_label": "[25] LetTheFlowsTell",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[25] PDFp2, exactfullreference PDFp12: LetTheFlowsTell"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "vag-co",
+      "reference_label": "[26] VariationalAnnealingOnGraphs",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicitbody citation[26] PDFp4, exactfullreference PDFp12: VariationalAnnealingOnGraphs"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "utsp",
+      "reference_label": "[28] UnsupervisedLearningTSP",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[28] PDFp2, exactfullreference PDFp12: UnsupervisedLearningTSP"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "att-gcn",
+      "reference_label": "[29] GeneralizeSmallPretrained",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[29] PDFp2, exactfullreference PDFp12: GeneralizeSmallPretrained"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "pomo",
+      "reference_label": "[30] POMO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[30] PDFp2, exactfullreference PDFp12: POMO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[31] MatrixEncodingNetworks",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody citation[31] PDFp3, exactfullreference PDFp12: MatrixEncodingNetworks"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "goal",
+      "reference_label": "[32] GOAL",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[32] PDFp2, exactfullreference PDFp12: GOAL"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "unico",
+      "reference_label": "[33] UniCO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbody citation[33] PDFp2, exactfullreference PDFp12: UniCO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "coexpander",
+      "reference_label": "[37] COExpander",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody citation[37] PDFp3, exactfullreference PDFp12: COExpander"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[38] GraphConvGuidedTreeSearch",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody citation[38] PDFp3, exactfullreference PDFp12: GraphConvGuidedTreeSearch"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[39] EfficientGraphConvTSP",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody citation[39] PDFp3, exactfullreference PDFp12: EfficientGraphConvTSP"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "fast-t2t",
+      "reference_label": "[40] FastT2T",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitbody citation[40] PDFp3, exactfullreference PDFp12: FastT2T"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "sym-nco",
+      "reference_label": "[42] SymNCO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicitbody citation[42] PDFp3, exactfullreference PDFp13: SymNCO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[43] LearningWhatToDefer",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicitbody citation[43] PDFp3, exactfullreference PDFp13: LearningWhatToDefer"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "graph-guided-local-search",
+      "reference_label": "[44] GNNGuidedLocalSearch",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13
+          ],
+          "locator": "Explicitbody citation[44] PDFp4, exactfullreference PDFp13: GNNGuidedLocalSearch"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "bq-nco",
+      "reference_label": "[46] BQNCO",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13
+          ],
+          "locator": "Explicitbody citation[46] PDFp4, exactfullreference PDFp13: BQNCO"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "gensco",
+      "reference_label": "[50] GenerationAsSearchOperator",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicitbody citation[50] PDFp3, exactfullreference PDFp13: GenerationAsSearchOperator"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "rld-co",
+      "reference_label": "[53] RegularizedLangevinDynamics",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[53] PDFp5, exactfullreference PDFp13: RegularizedLangevinDynamics"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "[55] WhatsWrongWithDeepLearningTreeSearch",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[55] PDFp5, exactfullreference PDFp13: WhatsWrongWithDeepLearningTreeSearch"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "glop",
+      "reference_label": "[56] GLOP",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[56] PDFp5, exactfullreference PDFp13: GLOP"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "udc",
+      "reference_label": "[57] UDC",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[57] PDFp5, exactfullreference PDFp13: UDC"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "learning-to-delegate",
+      "reference_label": "[58] LearningToDelegate",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[58] PDFp5, exactfullreference PDFp13: LearningToDelegate"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "neurewriter",
+      "reference_label": "[59] LearningLocalRewriting",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[59] PDFp5, exactfullreference PDFp13: LearningLocalRewriting"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "learning-to-improve",
+      "reference_label": "[60] LearningBasedIterativeVRP",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[60] PDFp5, exactfullreference PDFp13: LearningBasedIterativeVRP"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[61] LearningImprovementHeuristics",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicitbody citation[61] PDFp5, exactfullreference PDFp13: LearningImprovementHeuristics"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "neuopt",
+      "reference_label": "[63] FlexibleNeuralkOpt",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Explicitbody citation[63] PDFp5, exactfullreference PDFp14: FlexibleNeuralkOpt"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "neurolkh",
+      "reference_label": "[65] NeuroLKH",
+      "description": "Explicitly discussed or evaluated related method; exact body citation and full bibliography identity verified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Explicitbody citation[65] PDFp5, exactfullreference PDFp14: NeuroLKH"
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "11",
+      "description": "Introduction ML4CO related-work citation explicitly includes nine-author KDD2023 HardSATGEN with exact title/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Actual body citation 11 on PDF pp[1]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Introduction ML4CO related-work citation explicitly includes nine-author KDD2023 HardSATGEN with exact title/pages."
+        }
+      ]
+    },
+    {
+      "citing": "ml4co-bench-101",
+      "cited": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "reference_label": "34",
+      "description": "Instance normalization/Adaptive Expansion discussion explicitly cites exact five-author AAAI2025 DualOpt article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12
+          ],
+          "locator": "Actual body citation 34 on PDF pp[2, 3]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Instance normalization/Adaptive Expansion discussion explicitly cites exact five-author AAAI2025 DualOpt article."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded actualtaxonomy/65test24traininventory and task-specificcheckpointscope.",
+    "Separated greedy neuralcomparisons from hybridsearch, conditionalmodel/learningquality-time tradeoffs andknownzerooptATSPfailure.",
+    "QualifiedCVRPLIBbestof3checkpointportfolio/instanceDropstd/referenceheuristicgap and exactprintedcross-table inconsistencies.",
+    "Full35pages/all78refs/all20tables/A-E/checklist/publisherandrepo/APIinventory complete;36explicitinternalcitationedges;scopeunchanged.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "203560644c96c63c1525a29b125bb53c1400ca773796865f2a5febb57cea97bb"
+}

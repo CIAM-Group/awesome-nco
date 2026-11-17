@@ -1,0 +1,564 @@
+{
+  "version": 1,
+  "paper_id": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+  "note_path": "specialist/an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "bf6dbe7e6d041c22a20861b9b78c37973e441c8470ecc53416a432b4d12eb2ac",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2501.13767",
+      "retrieval_url": "https://arxiv.org/pdf/2501.13767",
+      "version": "Actualarxiv2501.13767v1dated2025-01-23,12pagesallreadincluding58references/completeAppendicesA-E;formalKDD2025identity/publicationseparatelyverified.",
+      "local_path": "research/full-text-review/an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem/arxiv.pdf",
+      "sha256": "21c762185955d0e9fe0fd51ef86b1a8955cdcafc60eb2a8337d06cbba7cb4c1c",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshreadactualarxiv2501.13767v1Jan23_2025tenauthorsJilin/SMU/HeriotWatt/NTU;YouZhou,YuanJiang,HuiYangcorrespond. IntroDEITSPonestepdiffusion/dualmodality/iterativenoise+denoise/schedules;NN-basedsolutionsnooptimalitycertificate. RelatedPointers/Bello/Nazari/AMetcactualrefsawait."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadcompleteAR/NAR/diffusionrelatedwork,EuclideanTSP/Alg1/discretenoisebeta1e-4->.02/selfconsistencytwoCE+L2k20 anddualmodalityrationale. Onestepperdenoisecallnotnecessarilywholefinalsolver. Noformaloptimizationcertificatefromsupervisedtrainingloss."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadDMLnode/edgeindependentmix/time/eq4-11,Alg2allheatmapiteroutputsaggregatedgreedybest. Re-noisepreviousheatmappredictionnotexplicitNNtour-editincumbent;Mcallsvssinglecalldistinguish. Inverseschedulef1/x,.25-1.5/lownoisebias. Synthetic20/50/100train/upto1ktransfer/country100subsamples. AppendixAgreedydecode/Bschedulesmustread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadcompleteTables1-2+settings6DMLh2568headsT1000/Xeon6254RTX3090/samebatchNNbutcopiedstar/reused50dagger. MainG+2opt/M1-4-16 fullbudgetnotonecalldominance. 128transfer100train:1kAttGCN3.22gap/12.47m betterthanDEI16 3.68/41.83m. Country100sample/26TSPLib51-200AppendixCmustread;TSP50/100qualtradeoff."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadcompleteTables3-4/conclusionand58refsbibpp9-10. USA/JA100subsamplesnotfullcountrytours/26TSPLib51-200. BurmaELG1.55betterthanDEI16 2.30;TSPLib.78bestbutnotuniformcountries. Large1kAttGCNbothquality/runtimebetter. PrintedmainMDAM[25]/LCP[56]swappedagainstexactbibliotitles. BQ-NCO[?]missingbibliography=>doNOTforceedge. NAR42308.00560citedpreprintidentitycheck separatejournalextension."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "ReadcompleteAppendicesA-E:greedyedge(symheatmap)/distance+defaultclassical2opt,schedule/noise/inferencevisuals andall26TSPLIBrowsbothTables5-6. MainTable3aggregategap.78vsAppendixmeanper-case.832notinterchangeable;costnonmonotonicsingleruns16v4(eil51etc),nomonotonicguarantee. Allscienceends12noexternalsuppnamed;rootcode23tree+2README/releaseemptyassets/3CKPTfolderinventorychecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Onestepcleanadjacencyprediction/dualmodalTransformer/retainediterativeheatmaps/inverseschedule.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1-2/Sections3.2-3.4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "SupervisedtwoCE+consistencyk20paper vsreleasedsingleCEtrain;6DMLh256heads8,T1000;greedy(symheatmap)/distance+classical2optdefault.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            11
+          ],
+          "locator": "Equations2-12/AppendixA and actualofficialcode"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Separate20/50/100train/128largeX3/country100subsamples/26TSPLIB51-200/Xeon6254RTX3090. Main1-4-16budgets/1kAttGCNbetterbothqualitytime/BurmaELGbetter.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Setup/Tables1-6"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Nooptimumguarantee/labelscale/onlyEuclideanTSP,classicpostprocess/seedbudgetunclear/snapshotlossdifference/individualstepsnotmonotonic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            9,
+            11,
+            12
+          ],
+          "locator": "Conclusion/AppendicesA-E/actualconfig"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructive: NNdenoisesnoisyheatmaps,greedynewtourconstruction/classical2opt;noNNeditingfeasibleincumbentcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            11
+          ],
+          "locator": "Algorithm2/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All12actualv1pages58refs/A-Efullread;official23entrytree+2README/release/3CKPTmanualinventory;originalFigure2viewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Primaryidentity/fullreading/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3690624.3709343",
+      "locator": "PublisherdepositedCrossref10matchingauthors/affiliations/pages1469-1480/online2025-07-20;actualPDFp1correspondZhou/Jiang/Yang,Jilin/SMU/HeriotWatt/NTU."
+    },
+    {
+      "field": "arxiv version/date",
+      "source_url": "https://arxiv.org/abs/2501.13767",
+      "locator": "Savedprimaryhistoryonlyv1Thu23Jan202515:47:04UTC;actual12pSHA21c762185955d0e9fe0fd51ef86b1a8955cdcafc60eb2a8337d06cbba7cb4c1c allread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/DEITSP/DEITSP",
+      "locator": "Actual12pcompleteAppendicesA-E/58refs/allTables5-6read. Master23entrytreeSHAd6f128b6d94835f6da8eec2a4d55a540af32aeb2manualinventory2READMEbothread/noPDF/TeX/ZIP/notebook;v1.0.0releaseassets[];authorDrivefoldermanualHTMLnames3CKPT58.3MBeachnotextrascience. Noindependentproof/supppromised."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/DEITSP/DEITSP/tree/d6f128b6d94835f6da8eec2a4d55a540af32aeb2",
+      "locator": "ActualTSPModel.training_stepone t/one noisy xt/oneCrossEntropy, missingpaperEq3twoCE+L2consistency. Evaluatorgreedymerge+batchedtwoopt;samplekeepsallpredictions. NonfeasiblelatentheatmaprefinementnotNNincumbentedit =>constructive, sameTSPdifferentmodels specialist."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2501.13767v1#page=5",
+      "locator": "FulloriginalFigure2p5Rect329,74,562,356@5xatomicPNGactualviewed;5/7/9/11/12allmethod/mainandappendixfigures/tablesrenderedactualview."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2501.13767v1#page=10",
+      "locator": "58fullrefs/bodymanuallychecked;MDAM[25]/LCP[56]labelsinterchangedvsbib25LCP/bib56MDAM, edgespreservefulltitleactualidentity. BQunresolved[?]andabsentmatchingbib=>noedge. IndependentNAR4TSP/journalextensionsunmatchednotforced. T2TCO[31]titleFromdistributionlearning...sameknownprimaryworkstablet2t."
+    },
+    {
+      "field": "final citation identity:t2t",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "att-gcn",
+      "reference_label": "[11]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "attention-model",
+      "reference_label": "[28]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "dact",
+      "reference_label": "[35]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "[15]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            10,
+            11
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "difusco",
+      "reference_label": "[44]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "[53]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[23]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "elg",
+      "reference_label": "[12], arXiv2308.14104 (2023)",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "hncs",
+      "reference_label": "[14], HierTSP (2024)",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            9
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[25], bibliography LCP; body MDAM label transposed",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "learning-heuristic",
+      "reference_label": "[10]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[56], bibliography MDAM; body LCP label transposed",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[6], ICLR2017Workshop cited",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "pointer-networks",
+      "reference_label": "[47]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "pointerformer",
+      "reference_label": "[21]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "pomo",
+      "reference_label": "[29]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "rl-vrp",
+      "reference_label": "[36]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "sym-nco",
+      "reference_label": "[26]",
+      "description": "Explicitbody/tablecitation andmatchingfullbibliography;actualversion/printedlabelqualificationpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "Body/method/Tables1-3 and Referencespp9-10"
+        }
+      ]
+    },
+    {
+      "citing": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "cited": "t2t",
+      "reference_label": "[31], NeurIPS36 cited2024",
+      "description": "Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Reread explicit body citation context: [31], NeurIPS36 cited2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reread complete reference including split continuation; Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingtenauthor/institution/task/datewithformalmetadata+actualarxivfullreading.",
+    "Specialistconstructive,heatmapiterationsnotNNfeasibletouredit;defaultclassic2optandallMcallbudgetsclarified.",
+    "Precise1kAttGCNquality/runtimeandBurmaELGexceptions;country100subsamplesnotfullmaptours,aggregatevspercasegapdistinct.",
+    "RecordactualreleaseoneCEmissingpaperconsistencyterms;nofulltrainingreproductionclaim.",
+    "All12pages/58refs/A-E/full26TSPLIBrows/scienceinventory+originalFigure2actualview.",
+    "19explicitbody+bibedges,MDAM/LCPprintedreference-labelswapqualified;BQunresolvedmissingbibnotforced."
+  ],
+  "reviewed_note_sha256": "06043521bae744f5dba66bc962a76824cfb2dfb7002076f6a7bd64be00e0ae43"
+}

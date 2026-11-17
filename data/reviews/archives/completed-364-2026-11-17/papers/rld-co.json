@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "paper_id": "rld-co",
+  "note_path": "specialist/rld-co.md",
+  "baseline_note_sha256": "0522350619026e9467565612761aad0bcaebbe7ce77cfd329096af97dd812e2b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/feng25r/feng25r.pdf",
+      "version": "Complete formalICML2025PMLR267:16977-16992,16pages with scientificAppendicesA-C and allreferences;October6,2025",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/feng25r/feng25r.pdf",
+      "local_path": "research/import-272/nco-18250f003a.pdf",
+      "sha256": "88af8df5699f5dae76a256ba6cb184d38e8bff6d0c731d00b56eb207c7631a3f",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullabstract/twoauthorsCMU/intro/relatedwork and exactEBMpenaltysufficientbeta assumption,continuousLDtodiscreteBernoulliflipandRLDexpectedHammingconstraint. RLSAnon-neuralvsRLNNneuralmustdistinguishcosts;thepaperRLNNnameconfusablewithRL. Allreferencesnotyetread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullRLSAalgorithm/Eq9-26andRLNNloss, allthreeenergy/gradientformulas. Expected-d threshold isapproximate; orderstat ties andpositiveepsilon lowtau caveat;hardconstraintvssoftpenalty andnoMHaccept notexacttargetsampler. RLNN usesanalyticconditionalenergy/EGN notoracle-only REINFORCE forreportedexperiments, tau1/noanneal. Separatetasktraining1000/100/500 or128/16ERtransfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Tables1-3allrows/Figs1/2text/runtimeprotocol. RLSA non-neural strongest,RLNNlargeRB MIS38.46<DiffUCO38.87 andMCutlarge2907.18<DiffUCO2947.53, regularizerhurtsMCut730.20→729.00. Reportedpriorresultsnotallrerun; iSCOrerunfairtotalruntime; RLNNtrainingtwoGPUservers/hardwareconfounds. Authorsexplicitonlyintuitive/noformaltheory/globalconstraintsfuture. Uncertainty absenttables;primalgapsbestknownnotcertification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all bibliography entriespp10-12inclSorrelexactFengYangAAAI2025 andFrontierCOoldtitle/arxiv2505.16952 aliasverifiedsameasCAM. Li2018a/bduplicatefullidentityoneedge;Needlastbibpage13/noautomaticcandidateonlyedges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Finished all16formalpages/everyref andA1-A3/B/Cincludingline-by-lineprintedRLSAcode. Hyperparam/randomsearch/nativebudgets200RLSA vs20RLNN,FP16inferFP32training/multiGPUtrainingdistinct;greedylocaldescentpostprocess partfunctiontiming? A3outsideRLSAfunction versus timeA C exactfunctionexcludesgreedyneedqualify. Authorsepsilonoptional,codeepsilon0tiescanexpectedN/2 notd; degree ties demonstrateapproxconstraint only. GNNnormalized5layer128/50epochs80MCl/hardware noted. Yau2024titlealiaspotentialcurrentgnn-approx-ratiosneedscheck."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Discrete localoptima can have nonzero outward smooth gradients; expected-distance regularization motivates exploration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "locator": "Intro/Sections3/4.1/4.4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Separate analytical RLSA and learned RLNN; no general convergence/approximation theorem claimed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            9
+          ],
+          "locator": "Algorithms1/2 and conclusion explicit theory missing"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Task-specific RLNN iterative assignment improvement, separate from non-neural reusable RLSA; MISsize transfer only.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            14
+          ],
+          "locator": "Native models/benchmarks/separate checkpoint training"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Order-statistic approximate Hammingconstraint;softRLNNone-stepconditionalenergy/GCN/lambda; reported analyticEGN notoracle-onlyREINFORCE; noMH correction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            14,
+            15,
+            16
+          ],
+          "locator": "Equations9-26/Algorithms/A-C; tieexamplecurator distinction"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "8datasetconfigurations3nativeproblems, actualtraining/inferenceGPUbudgets; RLSA strongest whileRLNN exceptions andMCutregularizernegative; tenfoldruntime andtimingaggregation qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            14,
+            15
+          ],
+          "locator": "All7tables/2figures/exactprotocol"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "No guaranteedlocalescape/exactexpected-d/exacttargetsampling/blackboxcoverage/optimality; currentdecoder/timing/codeoptions differ fromprinted protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            9,
+            14,
+            15,
+            16
+          ],
+          "locator": "Authorsexplicitlimitations +curator10equalDelta example and selected implementation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "16pagescompleteA-C/allrefs8visual;manualpublisher/API403/tree;specifiedcodefullandselectedscope inspected/no experimentsrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Full logs/manualscientificattachments/code evidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v267/feng25r.html",
+      "locator": "ExactShengyuFeng/YimingYang;PDF1CMULanguageTechnologiesInstitute;PMLR26716977-16992;HTMLcitation_publication_date2025/10/06."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v267/feng25r.html",
+      "locator": "Manual RelatedMaterial completePaper/OpenReview/Software only/no external scientificsupplement. All16pA-Cincludingprintedcode/refsread. OpenReview bbJ0QCujU4v1/v2notes403cached. Official32files noPDFZIP or separate scientificdocument;weights/dataHuggingFace linked as implementation assets."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v267/feng25r.html",
+      "locator": "Complete formal16p SHA88af8df5699f5dae76a256ba6cb184d38e8bff6d0c731d00b56eb207c7631a3f. Allrefs/A-Cand8visualpages4/5/7/8/9/14/15/16 read, includesallkeyequations/tables/2figures/printedcode."
+    },
+    {
+      "field": "code_url,release protocol",
+      "source_url": "https://github.com/Shengyu-Feng/RLD4CO",
+      "locator": "Commit7c3e5e7a161322d4dd4339fb760e1a869184766632files. FullREADME/models122/MIS75/eval22/train19;solver123-339read. CurrentMISdecoderconstructivegreedyvsprintedA3singleflip;wrapperincludesdecode/logsmean. trainbatch64vs32/num_kusedratherthannum_kp/LOGDIRredirectundefinedalthoughSAVEDIRset. No external code modified;noneuralrerun."
+    },
+    {
+      "field": "assumptions and inference scope",
+      "source_url": "https://proceedings.mlr.press/v267/feng25r.html",
+      "locator": "PDF4kernelmaynotremainlocallybalanced;thresholdapproxnotexactsigmoidsum;10equalDelta,d2,eps0→each.5expected5. PDF5Eq24softdistanceconstraintandreportedanalyticalconditionalenergy;READMEblackboxREINFORCEunreported. PDF9explicitnoformaltheory; no universallocalescape/convergence claim."
+    },
+    {
+      "field": "citation identity",
+      "source_url": "https://arxiv.org/abs/2505.16952",
+      "locator": "Feng2025b body2/fullbib10 old Acomprehensiveevaluation... identicalarxiv2505.16952/authors matchescatalogFrontierCO; retainedge. T2T explicitLi2023body1/fullbib11 confirmed despitematcherhyphenation omission."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rld-co",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.(2019)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitKool et al.(2019); fullrefPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al.(2024)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2 explicitSanokowski et al.(2024); fullrefPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang(2023)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 explicitSun & Yang(2023); fullrefPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.(2022)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1 explicitQiu et al.(2022); fullrefPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas(2020)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitKaralias & Loukas(2020); fullrefPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al.(2024)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitLi et al.(2024); fullrefPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al.(2019)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2 explicitGasse et al.(2019); fullrefPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.(2023)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "BodyPDF2 explicitZhang et al.(2023); fullrefPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.(2017)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitKhalil et al.(2017); fullrefPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al.(2020)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10
+          ],
+          "locator": "BodyPDF6 explicitAhn et al.(2020); fullrefPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "mean-field-annealing",
+      "reference_label": "Bilbro et al.(1988)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "BodyPDF7 explicitBilbro et al.(1988); fullrefPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "meta-egn",
+      "reference_label": "Wang & Li(2023)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1 explicitWang & Li(2023); fullrefPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang et al.(2022)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1 explicitWang et al.(2022); fullrefPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.(2018a/b)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11,
+            12
+          ],
+          "locator": "BodyPDF6 explicitLi et al.(2018a/b); fullrefPDF11-12."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Bother et al.(2022)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10
+          ],
+          "locator": "BodyPDF6 explicitBother et al.(2022); fullrefPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "t2t",
+      "reference_label": "Li et al.(2023)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicitLi et al.(2023); fullrefPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "rld-co",
+      "cited": "frontierco",
+      "reference_label": "Feng et al.(2025b)",
+      "description": "Explicit background/method/comparator citation; complete identity checked. DuplicateLi2018 entries consolidated; FrontierCOexactarxivrename confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2 explicitFeng et al.(2025b); fullrefPDF10."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "SeparatednonneuralRLSA speed claims from actualRLNNperformance/training/energyaccess.",
+    "Correctednativeproblemcoverage andpreservedneuralnegativeexceptions/approxexpected-d/noformalguarantees.",
+    "Recordeddecoder/timing/config/logvariable differences fromcurrentrelease; noexp rerun.",
+    "Full16pallscience/8visual/17identitycheckedcitations includingmanualFrontierCOandT2T."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e66a4aa6296450dd862b6a5ff6d18fdc3ca2e17011cee15e39e90c8da4b6d990"
+}

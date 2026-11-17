@@ -1,0 +1,208 @@
+{
+  "version": 1,
+  "paper_id": "learning-network-dismantling-without-handcrafted-inputs",
+  "note_path": "specialist/learning-network-dismantling-without-handcrafted-inputs.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "4dc962847ddfd122780091e1cd132ea9b7ded320540542fc26274399770200cf",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2508.00706v2",
+      "retrieval_url": "https://arxiv.org/pdf/2508.00706v2",
+      "version": "arxiv2508.00706v2 2025-12-30 complete15p extendedauthorversion including fullmain/references andscientificAppendicesA-G; formaleligibility independentlyconfirmed",
+      "local_path": "research/full-text-review/learning-network-dismantling-without-handcrafted-inputs/reading-candidate.pdf",
+      "sha256": "d06d08e15074316db3a6fc9a641293eecd46df5b368fa95c2af5691b90f4aef5",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 15,
+      "notes": "Read complete15p arxivv2 including9p main/refs and fullscientificAppendicesA-G/5tables/6figs; all4contactimages visuallyviewed, Figure1fullcaptionpubliccropactualviewed; notebookonecellallcode+9PNGoutputscontactallviewed. Initialones, sigmoid unnormalized neighborattention,cross-headweights, layerprofile96+omninode, SACtwinQ/discreteexpectation.10ktrain100-200rewired networks,App8msteps90h/RTX5000Ada notmain8mepisodes; gamma.99/terminateLCC.1 differsfullundiscountedobjective. RealTable4range128-1402673; Table5negativeEI23.4/15.5roads, GDMdouban95.7 andFinder95.0vsMIND100. TheoryA fixedlinearizationdominantdirectionnotgeneralunscaledconvergence; BnonzeroFiedlerprojectionneednotexistconstantregulargraphs, printedTcoeffsdifferEqA6. Core9codefileschecked, GraphNorm+192decoder vsTable196, currentdefaults12.8mtransitions/12800targetfreq not8m/8000. graph_poolSimpsonrawrelativeLCCsum andtrainingreward-relativeLCC differsEqextra1/N, pergraphrelativeAUCscale cancels. Full10120entryrepo untruncated, onecheckpoint/native task acrossgraphs, oneSVGsameFig1, noextraPDFscienceappendix/archive."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Avoid manuallycomputed inputfeatures in learnednetworkdismantling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/featurelessinitialization"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Sigmoidattention,iterationprofiles,omninode anddiversifiedrewiringtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "locator": "MIND-AM/MP/training/ablations"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "DiscreteSACnodeordering plusAppendixD discount/truncation andstepbasedtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            11,
+            12
+          ],
+          "locator": "Equations/Algorithm1/Table3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Singlecheckpointacrossgraphswithinone dismantlingtask is specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13
+          ],
+          "locator": "Data/transfer/limitations"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Large-graphtransferwithaggregatewinsandTable5explicitnegatives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            13,
+            14,
+            15
+          ],
+          "locator": "Figures2-6/Table4-5"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Fixedlinearizedspectralassumptions andconstantregulargraphFiedlerprojectionlimits; largediameterweakness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            11,
+            13,
+            15
+          ],
+          "locator": "AppendixA/B/G/Table5"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "FullscientificA-Gdetails andpaper-specificimplementationlink.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Codefootnote/AppendixC-G"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and arxiv history",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v40i31.39790",
+      "locator": "Publisherdeposit exactfiveauthors/page25905-25913 published-online2026-03-14. PDFRobertShorten vsformalRobertNoelShorten disambiguated,Imperial/RMIT. Actualarxivhistoryv1Aug1,2025/v2Dec30,2025,title/5authorsmatch, latest15pSHAregistered."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://github.com/HaozheTian/MIND-ND/tree/80d5b3ce0fc1408b678b3684b1c753d3cbbdaf26",
+      "locator": "Full15pA-Gincludingallproofs/hyperparams/networkstats/results actualread/all4PDFcontactimagesviewed. Full10120entryuntruncatedrepotree dated2026-03-31,onecheckpoint/oneSVGsameFig1/onevisualize.ipynb noPDFzipadditionalscienceappendix. Readfullnotebookcell andviewall9storedPNGoutputscontact. Core9code/configfilesandREADMEinspected; weights/datanotdeserialized/trainingnotrerun."
+    },
+    {
+      "field": "printed theory scope and code versions",
+      "source_url": "https://arxiv.org/pdf/2508.00706v2#page=9",
+      "locator": "AppA fixedlinearoperatorleadingdirection factorc11(lambda1mu1)^knotfiniteunscaledconvergence;Bconstantregulargraph haszeroFiedlerprojection/notuniversal. ActualcodeGraphNorm/192decoder vsTable196, default12.8mtransitions12800targetfreq vsApp8m/8000; env-relativeLCCreward/rawSimpsontruncatedsum vsEq2extra1/N; within-graphnormalizationcancels."
+    },
+    {
+      "field": "negative comparisons budget and original figure",
+      "source_url": "https://arxiv.org/pdf/2508.00706v2#page=15",
+      "locator": "Table5roadsEI23.4/15.5vsMIND100, doubanFINDER95/GDM95.7; main8mepisodesvsApp8msteps90h. Fig1crop310,205,562,5503.5x publicfileactualviewed/fullcaption; all5tableschecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-network-dismantling-without-handcrafted-inputs",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.2017",
+      "description": "Explicit featureless graph-CO/RL background; exact five-author NeurIPS2017 bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Relatedwork/networkdismantlingdiscussion andmatchingfullreference"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readfull15pidentifiedextendedpaper/allAppendicesA-G andstorednotebookscienceimages.",
+    "Separatedsame-problemgraphtransferfromgeneralistclaim and setaccuratefiveauthors/datechain.",
+    "Retainedaggregateimprovements pluslarge-diameter/pergraphnegativecases, actualstepbudget andtrainingtime.",
+    "Qualifiedspectralcapacity/complexityclaims andpaper-releaseversions; originalFig1 andoneactualinternalcitation.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged."
+  ],
+  "reviewed_note_sha256": "63daba97ba56b98b9a1595d579b62780a4eef44cde7632a1570aaa91b91029e0"
+}

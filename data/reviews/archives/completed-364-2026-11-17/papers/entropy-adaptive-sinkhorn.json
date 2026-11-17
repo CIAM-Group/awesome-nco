@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "paper_id": "entropy-adaptive-sinkhorn",
+  "note_path": "specialist/entropy-adaptive-sinkhorn.md",
+  "baseline_note_sha256": "aea1f94243625707d55fa7182d5cda750158f08770d0e1054036a3a27a14fcb1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf",
+      "version": "Formal ICML2026/PMLR21pages main/references/AppendicesA–Q freshly read",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf",
+      "local_path": "research/import-272/nco-9a9c9a0119.pdf",
+      "sha256": "f218bd0b222cfe70b7abb833d00a298b1ed33e082f104ddf2bbb8d73dfa140fe",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://icml.cc/media/icml-2026/Slides/65061.pdf",
+      "local_path": "research/full-text-review/entropy-adaptive-sinkhorn/official-slides.pdf",
+      "version": "Official ICML2026 slides19PDFbuildframes/eightlogicalslides all freshly read",
+      "sha256": "49096bffa71cfee3ef03a6c814de6781182976daeb516033de7f6abba41f5e75",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1–3allintrorelatedwork/Fig1. TwoauthorsBarIlanEngineering. ActualunsupTSPnotvaguerouting,sorting/jigsaw;frameworktask-specificnotsharedgeneralist. Localrow/colinversebetavsactualweightedentropy distinction promisedlocalrescaledcostsnotchangedconstraints;stopgradfield."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh4–6fullAlg1/Eqs1–5/Prop1. StopgradQlognormalizedrowcolentropy/beta0div(1+b)Eqformula versusAlg1extractionmultiplicationneedimage. Rowcolaveragefieldlocalcostrescale notweightedentropy. δ<<Δ implies wideglobalbeta feasibility interval notincompatible;awaitAppendAexactquantifiers. Sorting10ktrain100test/conv/Hungarian/monoReLU squared,translated10–11 ambiguitynotintrinsicdifference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh7–9allTables1–4/completeconclusionlimits. 3seeds meanstd notclaimnoseeds. TA0–1n300tau.69<trainfreeNS.73,10–11n300.15stillpoor. CelebAanchors1/25,6/36,12/49 essentialw/oallfail;rawtaunotcrosssizescomparable. TSPgaps30.14–67.65% no posthocsolver,degreeviolationcontrollernotpureentropy. Table4caption7x7vsprose6x6inconsistency. Task-specificcontrolledbaselines notallSOTA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh10–12fullimpact/complete20refs/AppendAlemma1/2. Lemma1claimsnecessarybetalog(n1−1)/eps butprovesonlysufficient;exactequalblocka=1/(1+(n1−1)e^-betaDelta) necessaryhas(1−eps)/eps. Lemma2derivationcorrectzero-crossmass. Forn1=n2=2eps=eta=.25 anyDelta>delta givesnonempty[ln3/Delta,ln3/delta],potentialPropuniversalcounterafterp13."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh13–15fullAproofStep3/B/B1/C/D/E/F/G1–4. Prop1choiceofmarginsnotalwayspossible, equal2blocks eps=eta.25 gives intervalalwaysnonemptyforDelta>delta. LocalrescalecostKLconvexproofcorrectforfixedbetanottrainingglobaloptimal. DegreeexpectedfrominducedE/UIabsd−2;TSP8GumbelsvsUTSP1budget! no posthoc/hungarianalltest. Normcoordsneedreferenceconsistent. TSP300/500epochs8or128batch/50Sinkhorn,sorting/jigsaw10finiteiterationsnotexactDSguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresh16–18H–Ostartwhole. Sorting150epochs/b256/5gumbels;CelebA178^2 grids4–7/0–12anchors500–600epochs5gumbels;extraSinkhorn10–15%trainingoverhead nohardware. Fig3captiontourlengthbutcolorbarKendalltauwrong;AppendLfundamentalNSfailureassertnotprovedbyexperiments,trainfreeNS0–1n300.73>TA.69. Finite10/50Sinkhornnotexactfeasibility. AppendixOreadnext."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 8,
+      "notes": "Freshofficialslides1–8allbuildframes,3logicalslides;actual19PDFpagesnot8,setup/structure/supervised labelsnotneeded,temperaturecontrols;imagesneedvisualfull."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Fresh19–21allOProp2/P/Q/Q1 end. OT4PusesrowargmaxnotHungariancontraryF universaldecode;notgeneralnegative. FiniteSinkhornapproxDS notexactBirkhoff. TAcomboAppendQavgTEMPERATURE vsmainavgINVERSE notsame;codecheck. Full21formalreadincludingA–Q/all20refs andproofs."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 9,
+      "last_page": 19,
+      "notes": "Freshall9–19repeatedbuildframesall19read/8logicalslides. Tablesrepeatmain10–11sortingandanchoredjigsaw/UTSPgaps;noextrascientificclaimsorlinks exceptpaperQRCode needvisual. No8pagesmiscount."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Heterogeneous assignment uncertainty motivates local rather than a single global temperature.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Detached entropy row/column controller, local cost scaling and task-specific structural objectives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13,
+            19
+          ],
+          "locator": "Algorithm1/Eqs2–7"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Task-specific Conv/GNN score matrices, entropy or degree-violation temperature adaptation, structural loss and deterministic assignment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            13,
+            15,
+            16
+          ],
+          "locator": "Algorithm1/AppendB/E–I"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Sorting5–300,anchoredCelebA4–7,TSP100–1000;three-seedstd/budgets/posthocabsence/largerfailuresretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            14,
+            15,
+            16,
+            17,
+            20
+          ],
+          "locator": "Allten tables/fourfigures"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "AppendAnecessary/sufficientthreshold and universal margin-choice gap; anchored supervision, weak objective/finite normalization/release coverage qualifications.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8,
+            9,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Prop1proof/AppendD–Q"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: separate per-task architecture/model/loss, no shared generalist checkpoint or own neural incumbent improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            15,
+            16
+          ],
+          "locator": "Per-task protocols"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v306/eisenberg26a.html",
+      "locator": "TwoauthorsRanEisenberg/OfirLindenbaum,FacultyEngineeringBarIlanformal/slides/poster. Explicitpublishercitation_publication_date2026/09/29andPMLR30627720–27740retained."
+    },
+    {
+      "field": "supplements complete scientific inventory",
+      "source_url": "https://icml.cc/virtual/2026/poster/65061",
+      "locator": "All21formalpages/fullrefs/A–Q/readproofs,all4figures10tablesvisuallychecked14paperpages. Official19PDFslides/eightlogicalslidesallread,sixcompletekeyframesviewed;whole1.871MBposterall3overlaptilesread. Untruncated13tree/ZIP14members140968B/noPDFnotebooknestedarchive/data/weights;READMEread."
+    },
+    {
+      "field": "actual scope methodology and resources",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf#page=16",
+      "locator": "Actualsorting/CelebAanchored/TSPreplacesRoutinggeneric;separatemodelsspecialistconstructive. Exactseed3std,150/500–600/300–500epochs,batchbudgets,5sorting-jigsaw/8GS-TSPvs1UTSPsampling,Hungarian/no posthocsearch,10–15%reportedoverheadrecorded."
+    },
+    {
+      "field": "reported negative cases and partial supervision",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf#page=7",
+      "locator": "LongsortingTA10–11n300tau.15±.14 and0–1n300.69<trainfreeNS.73. Jigsaw12/49anchors/noanchorlargefails,mask-onlytau.189,rawacrosssizecomparisoninvalid. DirectTSP30.14–67.65%gapsnotsearchSOTA. Fig3colorbarwrongKendalllabel/Table4prose6vs7resolvedcaption/poster7."
+    },
+    {
+      "field": "printed theory exact restricted checks",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf#page=12",
+      "locator": "Lemma1suffconditionmisusedasnecessary,exactisolateddiagonalformula;Prop1equal2blocks eps=eta.25 alwaysnonempty[ln3/Delta,ln3/delta]forDelta>delta. Finite4x4Delta1delta.01M100beta2 satisfiesboth .8808/.505;boundary-checks.json. Prop2convergedfixedfieldKLvalidnotfullNNconvergence."
+    },
+    {
+      "field": "current release and combination distinction",
+      "source_url": "https://github.com/LindenbaumLab/Learning-Permutation-from-Structure-Without-Supervision",
+      "locator": "Sortingonlyrelease. Formal/posteravgINVERSEvsAppendQ/codeavgTEMPERATURE,arithmetic.954545vs.952381recorded. BenchmarkdefaultentropySinkhornanddetachconfirmed/optionalrawsource. Conv/logSinkhorn/gumbelHungarian/loss/eval/coredefaultsread;paperclipcallabsentinspectedloop,currentoptionalmonitoringnotprovenhistoricalusage. No NNbenchmarkreplay."
+    },
+    {
+      "field": "figure and precise citations",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/eisenberg26a/eisenberg26a.pdf#page=3",
+      "locator": "OriginalFig1crop54,64,559,295fullcaptionviewed;twoexplicitcatalogueentriesMenaGS/MinBaiGomesUTSP distinguisheddifferentGSworkshop/preprint."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "entropy-adaptive-sinkhorn",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography entry manually identified by authors/title: Mena et al2018 or Min/Bai/Gomes2023; no edge to a distinct similarly named permutation-TSP workshop/preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography freshly read; precise UTSP entry distinguishes Min/Gomes2023workshop and2025Structure as Search."
+        }
+      ]
+    },
+    {
+      "citing": "entropy-adaptive-sinkhorn",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "Learning Latent Permutations with Gumbel-Sinkhorn Networks",
+      "description": "Explicit complete bibliography entry manually identified by authors/title: Mena et al2018 or Min/Bai/Gomes2023; no edge to a distinct similarly named permutation-TSP workshop/preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography freshly read; precise UTSP entry distinguishes Min/Gomes2023workshop and2025Structure as Search."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall21formalpages/A–Q/fullbibliography/Algo1/bothproofs/fourfigures10tablesplus19officialslidepages/wholeposter.",
+    "ExpandedfacultyandactualTSPproblemclassification;keptspecialistconstructive.",
+    "Addedexplicitthree-seedresourceprotocols/unequalGumbelbudgets/no-searchTSPandanchoredsupervisionboundaries.",
+    "Recordednegativecases/longsortingfailure/poorTSPgaps/reportingcaptionandcolorbarissues.",
+    "CheckedProp1proofwithexactblockformula/finitecase;limitedProp2toconvergedfixedfield.",
+    "Inspectedsorting-onlyrelease,documentedtemperature-mean/gradient-clippingandcoveragequalificationswithoutbenchmarkreplay.",
+    "AddedoriginalFig1andtwoexplicitbibliographiccitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a84214dfe4a1dacfc6dab694f17ffaedf179894b9d8203f7dc6493716e269305"
+}

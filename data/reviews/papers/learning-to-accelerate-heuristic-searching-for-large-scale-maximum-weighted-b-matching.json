@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+  "note_path": "specialist/learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "5e3cec9a39444837ac3113591b515d8d8e670749df2e488811763033b2dbb057",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2020/0475.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2020/0475.pdf",
+      "version": "Official IJCAI2020seven-page3437–3443 ten-author PDF, complete main/proof sketch/algorithm/results/25refs read.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-6ed632f824/publisher.pdf",
+      "sha256": "ad198edc03975de25061951bc06fb98a34c35b67a25bc28fc8e42a94703d651f",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "All pp1–3 read ten-author/byline institutions, positive-weight bipartite cardinality constraints, repeated same-distribution instances; learn advertiser threshold avoiding full sort then classical parallel heap search; no neural complete-incumbent editing. Claims same approximate baseline solution not true global optimum; need rest proof/supp."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "All pp4–5 read multichannel soft assignment+sum/concat K2/16channels/MSE learned b-suitor pivots; Algo1 classical overfill recall/underfill pour; proof sketch inherits b-suitor order-independent greedy result, not optimum. CPU128GB seven day Alibaba4/1/2, public weight-noise training, 97.65–99.05% publicoptimum versus unavailable AlibabaGurobi; all four same edge set."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "All pp6–7 read Table3 CPUtime15.141/35.059/14.212/199.423/201.094 versus b-suitor35.889/78.588/34.627/410.270/426.359;10averagerounds;adv6 iterations15vs68/358;multichannel19%totalcostless despite slowerinference. All25refs read actualNeurewriter/Khalil/GCNtree/Pointer/DGMatch;Ding2019 exactidentity check not inferdifferentpaper."
+    }
+  ],
+  "claims": [
+    {
+      "id": "neus-contrib",
+      "category": "contribution",
+      "statement": "Learn thresholds from solved b-suitor instances to accelerate parallel maximum-weight bipartite b-matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Section4/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "neus-method",
+      "category": "method",
+      "statement": "Multichannel soft assignment+sum/concat MSE predictor followed by classical heap correction Algorithm1; equivalence argument to greedy not global optimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations4–7/Section4.2/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "neus-results",
+      "category": "experiment",
+      "statement": "Same four approximate edge sets;public99.05/98.45/97.65%optimal,industrialoptimumOOM;199.423/201.094sec versus410.270/426.359.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Tables1–3"
+        }
+      ]
+    },
+    {
+      "id": "neus-limit",
+      "category": "limitation",
+      "statement": "Same-distribution assumption;publicweight-noise same topology;privateindustrialtwoheldoutdays and noexactobjectivegap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6
+          ],
+          "locator": "Section2/5.1–5.3"
+        }
+      ]
+    },
+    {
+      "id": "neus-class",
+      "category": "classification",
+      "statement": "Specialist constructive NNpivot+classical matching/correction;NN not recurrent incumbent editor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure2/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "neus-repro",
+      "category": "reproducibility",
+      "statement": "Full7page main/25refs read;primary IJCAI/arxiv/author entry checked noidentified extra science or official code.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Complete References/primary inventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.24963/ijcai.2020/475",
+      "locator": "Cached exact ten-author/title DOI Crossref published-print2020-07; primaryIJCAI citationyear2020 formalbylinepp1/pages3437–3443. Authorhomepage shortenedbyline/strayICMLlabel not adopted."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2005.04355",
+      "locator": "Cached canonical history v1 9May2020 andv2 12May2020; actualscience formal7pages."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2020/475",
+      "locator": "Cached officialpage visiblemainPDFonly; canonicalarxiv+primary https://tjuhaoxiaotian.github.io/ entry links arxivPDF withoutcode/supp. ExacttitleNeuSearcher code/supp search noidentified official extra;formalnoexplicitmissing science appendices. No nonexistent archive claimed read."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://www.ijcai.org/proceedings/2020/0475.pdf",
+      "locator": "OriginalFig2completecaptionp3Rect315,530,561,652at3x physicallysaved/viewed. Formalpp3–6 algorithm/math/tables/allplots rendered viewed."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://www.ijcai.org/proceedings/2020/0475.pdf",
+      "locator": "All25bibentriesp7 actual5cataloguetargets;Ding2019/He2014 not silently mapped to unrelated MIP titles."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian,2019",
+      "description": "Actual explicit bibliography identity on formalp7.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Chen and Tian,2019"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.,2017",
+      "description": "Actual explicit bibliography identity on formalp7.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Khalil et al.,2017"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.,2018",
+      "description": "Actual explicit bibliography identity on formalp7.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Li et al.,2018"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Actual explicit bibliography identity on formalp7.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Vinyals et al.,2015"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-accelerate-heuristic-searching-for-large-scale-maximum-weighted-b-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanﬁr and Sminchisescu,2018",
+      "description": "Actual explicit bibliography identity on formalp7.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Zanﬁr and Sminchisescu,2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending draft after full7page formal main/25references read.",
+    "Separated learned pivot from classical repair,greedy equivalence from exactoptimality,and within-topology perturbed public tests from unseen topology.",
+    "Retained unknown industrialgap,CPUonline timing scope,private data/noidentifiedcode and exactauthor/date provenance."
+  ],
+  "reviewed_note_sha256": "e45edc34446bd521a386414534e78fffc80405e4c8e0bf08d3126986e27fec84"
+}

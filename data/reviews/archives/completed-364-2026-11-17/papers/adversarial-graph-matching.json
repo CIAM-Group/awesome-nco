@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "paper_id": "adversarial-graph-matching",
+  "note_path": "studies/adversarial-graph-matching.md",
+  "baseline_note_sha256": "4588fc6442c0a80f5b4c13fba3e0d3fb0a6a4ecc1ff9200361f99b0232560bb7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/ef126722e64e98d1c33933783e52eafc-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/ef126722e64e98d1c33933783e52eafc-Paper.pdf",
+      "local_path": "research/import-272/nco-ecd87d0dcd.pdf",
+      "sha256": "48c0c932a5501556a1ecf056880389701e27180ca11614d4add1bb630ff32cc4",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/ef126722e64e98d1c33933783e52eafc-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/ef126722e64e98d1c33933783e52eafc-Supplemental.pdf",
+      "version": "Publisher-linked9page scientific supplement, Appendices A1-A7, printed pp19-27; read in full",
+      "local_path": "research/full-text-review/adversarial-graph-matching/supplement.pdf",
+      "sha256": "0abdc5e91d049c624d0c0ef29927beb5b6f461a07ef8a07ab41ee7ae93e4a9cf",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh reading: title/authors/affiliations, matching supervision and one-to-one objective; KDE adjacency-row attack rationale and high-dimensional bandwidth derivative. Not a neural solver."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read KDE Gaussian assumption, bandwidth shrinkage Alg1, attack loss9, projected binary edge-budget process10 and MLPGD Algs2-4/Gaussian REINFORCE13. Flag printed ReLU/Softsign binary-output assertion for visual check; method optimizes attack starting policies, not matching solver."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all main experiments/Tables1-2/Figs3-6, 10percent supervised matches, modified attack baselines, 5percent edge-change results, budget2-3 recommendation and stated quadratic complexity. Related work and conclusion read; empirical imperceptibility and complexity claims require finite-budget qualification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Broader impact/privacy and bibliography1-39 read; exact DGMC22, graph adversary14 identified, only catalog-matching citations eligible."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Entire bibliography40-88 read including Gromov-Wasserstein84; excludes architecture-only relations and external papers absent364 catalog."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "All remaining bibliography89-127 read; paper ends at references, all appendix science is in separately registered supplement."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read supplementary A1-A4 transfer objectives15-16 with retrained/adapted attacks; accuracy Table4 includes CoraGCN exception, defensesTable5, parameter/convergenceFigs7-8 and Gaussian fit test. Nonrejection at .05 is not proof rawbinary rows Gaussian."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read exact environment/MLP512/sweep/actualepsilon1plusglobalbudget and KDE assumptions/proofs1-4. Proof explicitly assumes iid continuous samples and bandwidth limit; flagged Eq21/23 reciprocal variance vs Eq26 numerator and treating asymptotic normal draw as fixed under bandwidth differentiation."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read theorem5/Slutsky limit, Gaussian parametric correction41-49 and all supplementary references including template leftovers. Assumptions not graph attack optimality proof; all scientific pages27 total complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "density-attack",
+      "category": "contribution",
+      "statement": "GMA combines matching-distance and KDE-density objectives with meta-learned attack initialization to perturb both graph topologies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections 2-4, Eq9 and Algorithms1-4"
+        }
+      ]
+    },
+    {
+      "id": "discrete-meta",
+      "category": "method",
+      "statement": "Two MLPs generate batch-adaptable initializations; Gaussian smoothing and Monte Carlo parameter-perturbation gradients optimize the discrete projected attack.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Eq10-14 and Algorithms2-4"
+        }
+      ]
+    },
+    {
+      "id": "actual-budget",
+      "category": "method",
+      "statement": "Appendix A4 uses epsilon1 with repeated node selection and a graph-wide edge-change cap, separately from main-text recommendation epsilon2-3.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "A4 Implementation, exact final budget paragraph"
+        }
+      ]
+    },
+    {
+      "id": "matching-results",
+      "category": "experiment",
+      "statement": "At 5percent edge changes DGMC mismatching rises34.7to54.9 AS,41.6to55.7 SNS,63.2to80.7 DBLP; train uses10percent known pairs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Tables1-2 and explicit split/metric protocol"
+        }
+      ]
+    },
+    {
+      "id": "auxiliary",
+      "category": "experiment",
+      "statement": "Task-adapted auxiliary attacks beat most baselines but not CoraGCN CW-PGD72.2 versus GMA72.4; defenses reduce but do not remove matching damage.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "A2-A4, Tables3-5 and Figs7-8"
+        }
+      ]
+    },
+    {
+      "id": "statistical-domain",
+      "category": "limitation",
+      "statement": "KDE proofs assume iid samples, kernel moments and smooth-density/bandwidth asymptotics; this is not an imperceptibility certificate for dependent binary graph rows.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Assumption1 and Theorems1-5/derivations17-49; Gaussian model assumption"
+        }
+      ]
+    },
+    {
+      "id": "binary-init",
+      "category": "limitation",
+      "statement": "Curator qualification: ordinary ReLU and Softsign composition at input1 yields1/2, so printed assertion that they ensure binary initialization requires additional discretization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Paragraph after Algorithm4 explicitly claims binary outputs; visual check confirmed; elementary exact function evaluation"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Adversarial evaluation of learned alignment, not a matching solver or a single checkpoint covering matching/classification/embedding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Stated attack objective, separate target methods and experimental scope"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/ef126722e64e98d1c33933783e52eafc-Abstract.html",
+      "locator": "Manually opened official NeurIPS33/2020 proceedings: exact title, six authors, main and supplementary links. Main PDFp1 independently confirms all affiliations. Formal year retained; no unsupported exact date."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/ef126722e64e98d1c33933783e52eafc-Abstract.html",
+      "locator": "Manually inspected all publisher links. Scientific Supplemental link followed directly to the registered9page PDF; A1-A7 and all supplementary references read. Full18page paper/127 references also read. No other scientific attachment listed; AuthorFeedback/Review/MetaReview are peer review rather than missing scientific appendices. Two visual contact sheets cover algorithms, Eq21/23/26, main and auxiliary tables/figures. Visual Eq21 has R(K)f in numerator: extraction-only reciprocal suspicion was rejected."
+    },
+    {
+      "field": "source versions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/ef126722e64e98d1c33933783e52eafc-Abstract.html",
+      "locator": "Both sources are publisher-linked proceedings PDFs; identities checked by exact main title/authors and appendix numbering19-27 referring to main equations. All27pages read; source raw-byte SHA checks retained."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/ef126722e64e98d1c33933783e52eafc-Abstract.html",
+      "locator": "Publication link inventory and complete main/supplement reviewed. Supplement A4 lists third-party target/baseline repositories but no GMA repository. No own implementation URL verified or fabricated."
+    },
+    {
+      "field": "implementation qualification",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/ef126722e64e98d1c33933783e52eafc-Paper.pdf",
+      "locator": "PDFp6 visual inspection confirms ReLU/Softsign binary-output assertion. Curator example x=1 gives1/2 under either usual composition. Limited to printed implementation description; does not negate measured attacks or all KDE theory."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "adversarial-graph-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[22] Fey et al. (2020)",
+      "description": "Attacks DGMC as a supervised matching target; also discusses it as prior structure/attribute matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9,
+            11
+          ],
+          "locator": "Explicit main body [22] on PDFp7 andp9; exact title/authors/ICLR2020 bibliography [22] PDFp11"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded all six sections from complete27page scientific reading.",
+    "Separated actual epsilon1/global5percent implementation from main suggested epsilon2-3; preserved attack direction and exact results.",
+    "Qualified density imperceptibility, iid Gaussian theory, task-adapted transfer, binary initialization description and suppressed complexity constants.",
+    "Manually checked separate publisher supplement, figures and exact DGMC internal citation; no scope migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e83e12ed2512768b3a0d93a034781194fd6c4d61510a0fbbeb2f1bfea777ed52"
+}

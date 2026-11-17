@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "paper_id": "pomo",
+  "note_path": "specialist/pomo.md",
+  "baseline_note_sha256": "54c60d25c10f58d3396546b495d4072c37a9fd667cf7dbde8855d5eb3e8cf28f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/pomo/paper.pdf",
+      "sha256": "31c2098883e4bc444e10c2dad43ed5cd52b4ed5ed510cfa35c1ef17a1595a228",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Supplemental.pdf",
+      "version": "publisher supplementary PDF",
+      "local_path": "research/full-text-review/pomo/supplement.pdf",
+      "sha256": "9b10694308240e8017b35347b1e37b36e849e51fd398b323e98befe1e35c687a",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart reread: abstract, motivation, related work, symmetry and diverse start actions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh reread algorithms1-2, shared baseline definition, multi-greedy/augmentation, training and inference budgets."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all TSP/CVRP/KP comparison text and tables; verified total testset timing, heuristic CVRP reference, absolute KP gaps."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh impact, acknowledgments and all33 references; checked12 internal matches with their actual cited versions."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh all scientific supplement: augmentation-only controls; six-layer architecture; CVRP padding; KP masks anddummyitems; changed AM baseline protocol and final reference."
+    }
+  ],
+  "claims": [
+    {
+      "id": "symmetry",
+      "category": "motivation",
+      "statement": "Cyclic shifts can represent the same physical tour; this is not a claim of distinct physical optima.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section 3 Figure 1"
+        }
+      ]
+    },
+    {
+      "id": "group-baseline",
+      "category": "contribution",
+      "statement": "Prescribed starts and mean-return advantages train parallel conditional rollouts without a separate critic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Section4 Equations2-4; Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "inference",
+      "category": "method",
+      "statement": "Inference selects the best greedy trajectory across starts and eight square symmetries for routing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Sections 4.3 and 5; Algorithm 2; Table 1"
+        }
+      ]
+    },
+    {
+      "id": "six-layers",
+      "category": "method",
+      "statement": "The evaluated attention encoder has six layers, dimension 128, eight heads and feed-forward dimension 512.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Supplement B.3"
+        }
+      ]
+    },
+    {
+      "id": "task-masks",
+      "category": "method",
+      "statement": "CVRP fixes the depot and forces the first customer; knapsack masks non-fitting items and pads with zero items.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Supplement C.2 and D.2"
+        }
+      ]
+    },
+    {
+      "id": "tsp-results",
+      "category": "experiment",
+      "statement": "TSP100 POMO no-augmentation gap is 0.46%; eight-augmentation gap is 0.14% on 10000 instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section 5 inference protocol; Table 2"
+        }
+      ]
+    },
+    {
+      "id": "cvrp-results",
+      "category": "experiment",
+      "statement": "CVRP100 eight-augmentation objective is 15.73 and gap 0.32% relative to LKH3 value 15.68.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Section 5.2 Table 3"
+        }
+      ]
+    },
+    {
+      "id": "knapsack-results",
+      "category": "experiment",
+      "statement": "KP200 POMO objective 57.597 is 0.008 below optimal 57.605 in absolute value units.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Section 5.3 Table 4"
+        }
+      ]
+    },
+    {
+      "id": "am-controls",
+      "category": "reproducibility",
+      "statement": "The comparison AM has altered baseline replacement, depth, batch size and training duration/decay.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Supplement E"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "The architecture is adapted and models are provided for each problem; no single joint task checkpoint is demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            9
+          ],
+          "locator": "Problem setup and training; code statement; Section 5.3"
+        }
+      ]
+    },
+    {
+      "id": "start-limits",
+      "category": "limitation",
+      "statement": "Not every CVRP first customer or knapsack first item can begin an optimal solution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Sections 5.2-5.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+      "locator": "Publisher PDF page 1 title block and NeurIPS 2020 conference footer"
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2010.16011",
+      "locator": "Submission history v1, 30 October 2020"
+    },
+    {
+      "field": "code_url and implementation versions",
+      "source_url": "https://github.com/yd-kwon/POMO",
+      "locator": "Publisher paper page 7 footnote 2; author README distinguishes 2020 notebooks and 2021 Python restructuring"
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+      "locator": "PDF page 4 Figure 2; complete crop includes panel labels"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2020/hash/f231f2107df69eab0a3862d50018a9b2-Abstract.html",
+      "locator": "Manually inspected all official article links on2026-11-16; one Supplemental PDF attachment, all4 pages read, no ZIP or additional scientific attachment linked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2010.16011",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-10-30; title on abstract page: POMO: Policy Optimization with Multiple Optima for Reinforcement Learning. This date is preprint history, not formal publication. Cached research/full-text-review/pomo/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "pomo",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[7] Bello et al., ICLR Workshop 2017",
+      "description": "Discusses the pointer-policy RL predecessor and active search; bibliography explicitly identifies the workshop track.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [7]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[8] Khalil et al., NeurIPS 2017",
+      "description": "Discusses structure2vec-based deep Q-learning and constructive graph optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [8]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[9] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Cites the graph-convolutional TSP approach and compares its beam-search result.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [9]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "attention-model",
+      "reference_label": "[10] Kool et al., ICLR 2019; supplement [1]",
+      "description": "Uses the Attention Model as its policy architecture and compares greedy, sampling and rollout-baseline training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [10]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[11] Wu et al., arXiv:1912.05784v2 (2019)",
+      "description": "Discusses and compares learned improvement heuristics; the cited version is the 2019 preprint of the later journal entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [11]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "neurewriter",
+      "reference_label": "[13] Chen and Tian, NeurIPS 2019",
+      "description": "Discusses local rewriting as an improvement approach and includes CVRP comparison results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            10
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [13]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[14] Hottung and Tierney, arXiv:1911.09539 (2019)",
+      "description": "Discusses learned large-neighborhood improvement and CVRP results; the bibliography cites its preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [14]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "learning-to-improve",
+      "reference_label": "[15] Lu et al., ICLR 2020",
+      "description": "Discusses and compares the iterative CVRP solver, including the distinction between improvement and construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            9,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [15]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "pointer-networks",
+      "reference_label": "[16] Vinyals et al., NeurIPS 2015",
+      "description": "Describes the recurrent pointer architecture and its learned start-token convention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [16]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "rl-vrp",
+      "reference_label": "[19] Nazari et al., NeurIPS 2018",
+      "description": "Cites the recurrent-policy vehicle-routing approach in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [19]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "dynamic-am",
+      "reference_label": "[22] Peng et al., arXiv:2002.03282 (2020)",
+      "description": "Discusses dynamic attention and postprocessing; the source explicitly cites the 2020 preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [22]"
+        }
+      ]
+    },
+    {
+      "citing": "pomo",
+      "cited": "learning-heuristic",
+      "reference_label": "[25] Deudon et al., CPAIOR 2018",
+      "description": "Cites classical local-search postprocessing of learned constructive tours.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Sections 1-2/5 as applicable; bibliography [25]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh restart reread confirmed the detailed note, all15 publisher pages and12 directed citations. Corrected review-ledger equation range from2-5 to2-4."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a4111e5904fbe49d31646fdeed5a0ffd717256b3e4a378e161970bc3fc19c8d3"
+}

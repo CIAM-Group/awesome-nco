@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "paper_id": "self-supervised-bidirectional-learning-for-graph-matching",
+  "note_path": "specialist/self-supervised-bidirectional-learning-for-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "9859ed1f371b9d2d6c144551af902f2a50101b608f75cc377dd0e1bf8e7e7e24",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/25943/25715",
+      "retrieval_url": "https://media.lacuna.tiptreesystems.com/pdfs/72/3d/723dc3c2eca25f6b9e3a1123a9d71ae44c8ee55c6113c589b18565d12ea537e7.pdf",
+      "version": "IdentifiedformalAAAI2023accepted9p7784–7792actualpublicmirror;matchingall4authors/title/byline/affiliation/copyright/pageidentity;primarybytesnotavailable.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-6eee1c03de/paper.pdf",
+      "sha256": "723dc3c2eca25f6b9e3a1123a9d71ae44c8ee55c6113c589b18565d12ea537e7",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://raw.githubusercontent.com/CMACH508/IA-SSGM/83ef28a796650009845da4e4e0c709bed9a384f3/Supplementary_material.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/CMACH508/IA-SSGM/83ef28a796650009845da4e4e0c709bed9a384f3/Supplementary_material.pdf",
+      "version": "OfficialauthorrepoSupplementary_material.pdf3pA–G;allalgorithm/proof/statistics/results/qualitativepanelsfullyread andrendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-6eee1c03de/Supplementary_material.pdf",
+      "sha256": "64b2724c997f87eef66d3fb358b976579f1856cb741bc0177d9a9ad7911706b9",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all title/byline/affiliation,introduction,relatedwork,task injective constraints,encoder and row-softmax affinity,Figure1 and pseudo-label construction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all matching/consistency/contrastive objectives,Propositions1–2 and proof,annealed jointtraining,all protocols and mainTables1–2 including negative comparisons."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all Fig2 panels/Table3 ablations,IMC/Willow/CMU details,conclusion/acknowledgments and complete references acrosspp8–9."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete Algorithm1,all extra proofs and implicitisomorphismassumptions/outdatednumbering,datasetstatisticsTables4–7,supervisedcomparison footnotes,and all16qualitativepanels/correctincorrectcounts."
+    }
+  ],
+  "claims": [
+    {
+      "id": "iassgm-contribution",
+      "category": "contribution",
+      "statement": "Joint Hungarianpseudo-label affinitylearning,feature recyclingconsistency andgraphcontrastive learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Contributions/Eqs2–13/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "iassgm-method",
+      "category": "method",
+      "statement": "Row-softmax affinities feed Hungarian injection; recyclefeatures with fixedownadjacency; jointweights tanh(m/5) printed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Method/Eqs2–13"
+        }
+      ]
+    },
+    {
+      "id": "iassgm-results",
+      "category": "experiment",
+      "statement": "Mainaccuracy65.2/62.8Pascal,98.2Willow,86.5/85.6CUB,100CMU,86.3/69IMC; pretrain71.5IMCoutlier andclass-levelnegativecases retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Tables1–3/Fig2"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Tables5–7 individualnegatives/supervisedoutlierprotocolfootnote."
+        }
+      ]
+    },
+    {
+      "id": "iassgm-theory",
+      "category": "limitation",
+      "statement": "Zeroequivariantencoder gives uniformP/P-hat andJ0 at wrongtiedassignment; no conversecorrectnesscertificate. Supplementproof assumesexactsquareisomorphism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Proposition2/proofandfollowingprose; officialsup1"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "ExactisomorphismderivationEq15–22/oldPropositionnumbering."
+        }
+      ]
+    },
+    {
+      "id": "iassgm-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive;trainingrecyclingnotinferenceNNincumbentediting;dataset-specificencoders and no demonstratedcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7
+          ],
+          "locator": "Fig1/dataset-specificSplineCNN-GIN architectures"
+        }
+      ]
+    },
+    {
+      "id": "iassgm-repro",
+      "category": "reproducibility",
+      "statement": "Full official3psuppread,scientificinventorycomplete;supervisedcomparatorsdifferentoutlierprotocol;currentcodeannealing/CE differsfromprint.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "SupplementA–G/completeTables4–7/Fig2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v37i6.25943",
+      "locator": "CachedCrossrefexacttitle/4authors/DOI/publishedandissued2023-06-26;actualformal9p7784–7792all4SJTUauthorbyline. ConferenceFebruarynotpublicationJune."
+    },
+    {
+      "field": "source/retrieval provenance",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25943/25715",
+      "locator": "Publisher403;fullformal9p actualmirrorhttps://media.lacuna.tiptreesystems.com/pdfs/72/3d/723dc3c2eca25f6b9e3a1123a9d71ae44c8ee55c6113c589b18565d12ea537e7.pdf SHA723dc3c2eca25f6b9e3a1123a9d71ae44c8ee55c6113c589b18565d12ea537e7;title/byline/affiliation/AAAIheader/pagination checked. No unsupportedbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/CMACH508/IA-SSGM",
+      "locator": "Primaryauthorhomepageexactpaper->repo. Completeuntruncatedtree83ef28a796650009845da4e4e0c709bed9a384f3 162entries;onlySupplementary_material.pdf3p andREADME, nootherPDF/ZIP/ipynb. All3sciencepages/fullREADMEread;Underlinepresentationleadnotretrieved/noclaimread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25943/25715",
+      "locator": "OriginalFig1+entirecaptionformalPDFp3/7786Rect40,45,300,4803x;public/paper-assets/self-supervised-bidirectional-learning-for-graph-matching/framework.png139125bytes actuallyexistsandview_image;main3/4/6/7andallsupppagesrendered."
+    },
+    {
+      "field": "classification/implementation differences",
+      "source_url": "https://github.com/CMACH508/IA-SSGM",
+      "locator": "joint_matchingfeatureexchangeandHungarian;train_joint96tanh(epoch/100)vsprinted/5;83fixednumepochs and163epochtest;313nn.CrossEntropyLoss receivesprobabilities117vsprintedCEwithoutre-softmax. Noexperimentrerun."
+    },
+    {
+      "field": "theory boundary",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25943/25715",
+      "locator": "Mainp4Prop2onlysufficientJ0correctassignment;constantzeroequivariantencoderalsoJ0wrongties. Ownboundary-checks.json stores2-nodeX=(1,2),Xt=(2,1),GTswap,predI. Notclaimfulltrainingobjectivezero. Supplementp1 exactsquareisomorphismandEq15Xt/Attypo/numberingdifferences."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25943/25715",
+      "locator": "Allmainbibliographypp8–9read/524activecataloguecomparison:9directidentitiesconfirmed;different-title4author2021TPAMIsubmissionGANNandjournalNGMnotolderconferencealias."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "glsearch",
+      "reference_label": "[Bai etal.,2021]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "MainReferences [Bai etal.,2021]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[Fey etal.,2020]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "MainReferences [Fey etal.,2020]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[Rolinek etal.,2020]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Rolinek etal.,2020]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "[Wang,Yan andYang,2019]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Wang,Yan andYang,2019]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "cie-h",
+      "reference_label": "[Yu etal.,2019]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Yu etal.,2019]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "[Yu etal.,2021]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Yu etal.,2021]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[Zanfir andSminchisescu,2018]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Zanfir andSminchisescu,2018]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "deep-graphical-feature-learning-for-the-feature-matching-problem",
+      "reference_label": "[Zhang andLee,2019]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Zhang andLee,2019]"
+        }
+      ]
+    },
+    {
+      "citing": "self-supervised-bidirectional-learning-for-graph-matching",
+      "cited": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "reference_label": "[Zhao,Tu andXu,2021]",
+      "description": "Direct named bibliography identity; preprintyear variants only where same complete title/byline maps to formal representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [Zhao,Tu andXu,2021]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced all pending fields after12sourcePDFpages fullyread.",
+    "Separated nonlinearQAPmotivationfromlearnedlinearHungariandecoder;specialistconstructive classification.",
+    "Retained class/ablation/pretrainnegatives andcross-paperoutlierprotocol differences.",
+    "Scopedconsistencytheorytoactualassumptions;explicitcuratornonuniquenesscounterexample/currentcodescheduleandCE differences.",
+    "Nineactualbibedges;excludedsubstantivejournalextensions."
+  ],
+  "reviewed_note_sha256": "3ad10bb5d2c1dc523c029665348e6d8f147d0f255b513c3ba423d565edf68083"
+}

@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "paper_id": "splitnet-a-reinforcement-learning-based-sequence-splitting-method-for-the-minmax-multi",
+  "note_path": "data/reviews/deferred/notes/splitnet-a-reinforcement-learning-based-sequence-splitting-method-for-the-minmax-multi.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "86a919091fd6103a2063b8d213e03db7920f3c2c82d1f8a9adab08e9d2414778",
+  "status": "reading",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/26049/25821",
+      "retrieval_url": "https://media.lacuna.tiptreesystems.com/pdfs/96/bd/96bdf39e28a088a772325327a41e7e566df81bb23d6d983d197234cdf9234c57.pdf",
+      "version": "ActualformalAAAI2023PDF8pages8720-8727/publiclinkedcopy",
+      "local_path": "research/full-text-review/splitnet-a-reinforcement-learning-based-sequence-splitting-method-for-the-minmax-multi/paper.pdf",
+      "sha256": "96bdf39e28a088a772325327a41e7e566df81bb23d6d983d197234cdf9234c57",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readformal8p7authorsTianjin/HuaweiLiangMa equal/Hao corresponding;AAAI2023publisherJun26authorpagewrong2022notadopt. MinmaxmTSPNincludesdepot/mvehicles;3stepsclassicalsingleTSPGenerate/neuralSplit/reformtobedetermined. Reportedoverlap63-74empiricalnotguarantee;constructsmTSPfromsingleproblemroutewithoutownNNincumbenteditingyet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadclassicalLKHgeneratekfirstcityanchorsnearestdepot/NNm-1monotoneedgecutswithpossibleemptydepotroute/staticlength+depotdist/featuresdynamicavailable/steps/maxpriorroute,AMencoder+PE/MLPdynamic/attentiondecoder. Rewardnormalizedrolloutqualitygap sparse terminal. DecisionregionheuristicidealratiobyS0/avgdepotdist/coreedge/indexneighborhoodnotguaranteedoptimalcut;pseudopolynomialDPpossiblebutauthorsbruteenumerationcomplexitynotgeneralproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadLKH3classicalreformeachsubtournotNNimprovement,training30720instancesN30-100x25singleTsps/vehicles3-15/80epochs1920stepsB400/A100Xeon2.2GHz/validation320x25. Inferencek30TSPsequencesx64splitsampleeach;timingall3stepsnoIO. MainexplicitcompleteexperimentresultsappendixincludingexhaustiveCVRPnotlearnedcrossnativeproof;notinmainneedfind. QualitynearLKHbutmanylossesvsL2D,benchcopiedORTools/DAN/ScheduleNetvsrerunother,CPLEXUBnottrueopt."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadfullallTables2-7/conc/allmainbib8. LargeN400-1000m3SplitbetterL2D,butm10worseall4(2.59>2.52/2.82>2.75/3.07>2.93/3.32>3.18),LKHbettermost. Timingallsteps55.1sN1000m10vsL2D131.5/LKH920,smallORToolsfaster .3vs.4,.4vs.6. MainTable4only3datasets(omitseil76mentionedfour). k40notmonotonic vs30N50m10/100m10. Completebibread. Explicitp5appendixscientificresultsabsent8p/noarxividentified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "method",
+      "statement": "ClassicalLKHsingleTSPsequences->NNsequentialedgecutsconstructminmaxmTSPpartition->classicalLKHreform,decisionregionheuristicratio/nooptimalguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Method/Figures2-4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "experiment",
+      "statement": "TrainN30-100/generalize1000;100testinstances/scale;k30singleTSPx64splitsamples/allstepruntimenoIO;largeM10SplitNetworseL2Dall4,mostlyworseLKH.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1-7"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "limitation",
+      "statement": "Explicitmissingcompleteexperimentappendix/CVRPextraresultsblocksfullscientificverificationdespite8/8mainread.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Appendixpromisep5/finalreferencesp8"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/publication/identity",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/26049",
+      "locator": "PrimarypublisherindexedDOI10.1609/aaai.v37i7.26049/published2023-06-26/8720-8727/sevenbylineactualp1Tianjin/Huawei;HebinLiangYiMaequal/JianyeHaocorrespond. FeiNihomepage2022labelconflictswithformal2023notadopt."
+    },
+    {
+      "field": "acquisition",
+      "source_url": "https://media.lacuna.tiptreesystems.com/pdfs/96/bd/96bdf39e28a088a772325327a41e7e566df81bb23d6d983d197234cdf9234c57.pdf",
+      "locator": "NormalLacunaspecifictitlepageactualPDFhref/pdf/art_ec37e3fe3d04e61ff9615c82108c0aebnormalredirectraw538784bytes8pageformalPDF/title/byline/AAAIpageidentitymatched. Official520HTMLpreserved;noAIsummaryreading/nohashguess."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26049/25821#page=5",
+      "locator": "ExplicitCompleteexperimentalresultsareprovidedinappendixafterCVRPextraexperiment. Actual8pformalendsrefs/noappendix;normaltitle+arxiv+appendix+codequeriesnoidentifiedfullversion/repo. PrimaryFeiNihttps://fei-ni.github.io/entrylinksONLYhttp://rlchina.org/topic/631talk;ordinaryHTTPSattempttimedout. NoextraPDFregistered/nosuppcoverageclaim. Standinguserdeferapplies."
+    },
+    {
+      "field": "main findings/visual",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26049/25821#page=7",
+      "locator": "Actualrender/viewpp3-5/7allkeyFigures2-4/formulas/allTables1-7. MethodLKHGeneratek30NNmonotoneedgeSplitm-1andsample64/classicalLKHReform,constructivemTSPpartitionnotlearnededitor. Train30720x25N30-100/m3-15/80epochs1920stepsB400/A100Xeon2.2GHz;largeM10allfourlosetoL2Ddespitebroadprose,smallORToolsfaster/qualitynotuniform. Table4omitseil76mentioned4;CPLEXUBnottrueoptimum;Table5k40notmonotonic. Noindependentreproduction."
+    },
+    {
+      "field": "citation inventory pending appendix",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26049/25821#page=8",
+      "locator": "Allmainbody+bibread;Hu2020KBSextensionnotforcedconference;ScheduleNet2021oldpreprintvs2023formalnotautomaticallyidentical;genericVidalclassicalnotNN. Activeedgesnotcreatedpendingunreadscientificappendix."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": false,
+  "figures_checked": true,
+  "supplements_checked": false,
+  "note_crosscheck_complete": false,
+  "issues": [
+    {
+      "type": "scientific_supplement_unavailable",
+      "detail": "Formal p5 explicitly promises complete experimental results in an appendix, including the immediately preceding additional small-scale CVRP exhaustive-splitting experiment. The obtained formal8page8720-8727PDF ends with references and has no appendix. Ordinary publisher access520; normal complete-title/arxiv/appendix/code searches found no identifiable long version/official scientific supplement. Fei Ni author entry only links an RLChina talk; ordinary HTTPS retrieval timed out, no attachment obtained. All8mainpages read and key formulas/figures/tables viewed; required scientific appendix remains unread. Defer per user standing authorization2026-11-17, not verified.",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/26049/25821#page=5"
+    }
+  ],
+  "corrections": []
+}

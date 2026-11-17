@@ -1,0 +1,531 @@
+{
+  "version": 1,
+  "paper_id": "gflownet-combopt",
+  "note_path": "specialist/gflownet-combopt.md",
+  "baseline_note_sha256": "45fb937886ba2780119bc81e9a33a0c3ba8d4bd1caac87ecbdee477aaf9c47f3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/27571b74d6cd650b8eb6cf1837953ae8-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/27571b74d6cd650b8eb6cf1837953ae8-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-fb2394d23c.pdf",
+      "sha256": "fd661046915fa7448ee68a6e7a6579db057547400e00c0fe38753809c180d638",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read truefinaltitle/authors(includesNikolayMalkin), graphconditionedGFlowNets fourtaskMDPs, idealzeroD/TBlossalltransitions samplingproportionalpositiveBoltzmannreward notoptimumcertificate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read4nativeunitweighttasksMIS/MC/MDS/MaxCut, conditionalacrossgraphsnotacrosstasks; idealT→0optimalsampling/fullsupport; MISterminalonlymaximalnotallindependentsets; transitionreplaymotivationlongtrajectories/40GB."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read forward-lookingpartialenergyloss, transitionbatchfirstpriorartnotnovelfirst, allMIS/MC/MDS/MCut tables bestreferenceKAMIS/Gurobinotcertifiedopt, largeMaxCutErdosbetter andslowerMDS/cuttiming; aggregateGAP=1-oracle/algorithm distinctstandard."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read conclusionandfullbibliographyparts1-3; officialHTMLshortertitle/Whitammer vsPDFOptimization/Malkin retained asversionmetadata difference notsilentoverride."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read fullremainingbibliography/notation, maximalcliqueMDP andMDSstartsallverticesremoves preservingdomination; graphconditionednotsharedtaskweights, exactreferencelistforcitationmatching."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read allMDPs/MDS/MaxCut transitions, idealBoltzmannlimitproofsign typoargmaxEvsmin, full20samplebudget/GIN5x256(or10SATLIB)/20epoch/V100/5seeds, 11kERprotocolmismatches/disabledSLreduction+2opt."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gfn-contribution",
+      "category": "contribution",
+      "statement": "Fourtask-specificgraphconditionedMDPs withtransitionDB/forwardlookingpartialenergiesandbestof20sampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            15,
+            16,
+            17
+          ],
+          "locator": "Sections2-3/AppendicesB-C"
+        }
+      ]
+    },
+    {
+      "id": "gfn-method",
+      "category": "method",
+      "statement": "Idealzeroall-supportbalance givesBoltzmannterminalsampling, TzeroargminnotargmaxE, MISmaximalonly; notfiniteSGDoptimalitycertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            16
+          ],
+          "locator": "Proposition1/AppendixC/MDPspace"
+        }
+      ]
+    },
+    {
+      "id": "gfn-experiment",
+      "category": "experiment",
+      "statement": "Aggregatetesttimes andnonstandardMDSGAP;traditionalstronger,largeMCutlosesErdos,SLreductionsdisabled andERprotocolmismatches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            17,
+            18
+          ],
+          "locator": "Tables1-4/AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "gfn-limit",
+      "category": "limitation",
+      "statement": "Sequentialtimeandtaskrewarddesignlimits; statedMaxCutlocalmaximumonlyaddition-stable,starcounterexample separatesclaimfromempiricalquality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            16
+          ],
+          "locator": "Section5/AppendixB.3transition"
+        }
+      ]
+    },
+    {
+      "id": "gfn-classification",
+      "category": "classification",
+      "statement": "Conditionedacrossgraphswithper-taskMDPs/rewards/configuredtraining, noactualsharedcross-native-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            15,
+            16,
+            17
+          ],
+          "locator": "ConditionalGFlowNets/taskMDPs/experimentconfiguration"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/27571b74d6cd650b8eb6cf1837953ae8-Abstract-Conference.html",
+      "locator": "CurrentpublisherHTMLshorttitleandWhitammer matchedcatalogue/authorREADME; PDFlongtitleincludesOptimizationandprintsNikolayMalkin, explicitlypreservedasversiondifference; Mila/DeepMindaffiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/27571b74d6cd650b8eb6cf1837953ae8-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date2023-12-15, notconferenceeventday."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/27571b74d6cd650b8eb6cf1837953ae8-Abstract-Conference.html",
+      "locator": "ManualpublisheractionlinksnoSupplemental; integrated18pageA-Dallread, fullauthorZIPnoadditionalPDF/ZIP/texscience; keyplots/results/MDPsrendered."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/zdhNarsil/GFlowNet-CombOpt",
+      "locator": "Officialpaperlink/currentREADME; inventoryfourMDPutil.py, balance/replayalgorithm.py/config/main20repeat eval checked; MaxCutstarboundary/MDSinitialisolatesqualified."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/27571b74d6cd650b8eb6cf1837953ae8-Paper-Conference.pdf",
+      "locator": "Fresh full bibliography pages[10] plus actual body pages[8]: Body p8 explicitly names mean-field annealing baseline Bilbro1988; six-author title matches target NIPS1988 record."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/27571b74d6cd650b8eb6cf1837953ae8-Paper-Conference.pdf",
+      "locator": "Fresh full bibliography pages[11] plus actual body pages[2]: Body p2 Deudon2018 among constructive/refining RL approaches; five-author bibliography exact CPAIOR2018 title."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gflownet-combopt",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            12
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Kwon and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al. (2020)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10,
+            17
+          ],
+          "locator": "Explicit in-text citation Ahn and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13,
+            17,
+            18
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Poczos (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "Explicit in-text citation Yolcu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang et al. (2022)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "gflownet-scheduling",
+      "reference_label": "Zhang et al. (2023a)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            17
+          ],
+          "locator": "Explicit in-text citation Qiu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Bother et al. (2022)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity; cited-version year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10,
+            18
+          ],
+          "locator": "Explicit in-text citation Bother and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "mean-field-annealing",
+      "reference_label": "Bilbro et al. (1988)",
+      "description": "Body p8 explicitly names mean-field annealing baseline Bilbro1988; six-author title matches target NIPS1988 record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation Bilbro and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-combopt",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "Body p2 Deudon2018 among constructive/refining RL approaches; five-author bibliography exact CPAIOR2018 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Deudon and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall18pages/fullreferences/AppendicesA-D/theory/MDPsandmanuallycheckedpublisher/authorattachments.",
+    "Preservedofficialcurrentauthor/titlemetadatawhileexplicitlyrecordingPDFdifference; replacedvagueGraphCOwithfouractualtasks.",
+    "QualifiedidealBoltzmannlimits/reachablesupport/MaxCutlocalmaximumclaim, negativequality/timing/baselineprotocolsandMDScodeedgecase; restoredexplicitcitations.",
+    "Follow-up complete bibliography audit restored explicit citation to mean-field-annealing; identity checked, no inferred topic edge.",
+    "Follow-up complete bibliography audit restored explicit citation to learning-heuristic; identity checked, no inferred topic edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "21c92003bffac7382c834047de3dcca03588f9e07753cdcae24282c37044cc37"
+}

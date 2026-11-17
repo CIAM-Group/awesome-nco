@@ -1,0 +1,326 @@
+{
+  "version": 1,
+  "paper_id": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+  "note_path": "specialist/puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "3bf1dac0428ec637be41d52a1348ba969c60a3965e214ab69302fe5416c6c430",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/abs/2511.06315v2",
+      "retrieval_url": "https://arxiv.org/abs/2511.06315v2",
+      "version": "arXiv2511.06315v2,12March2026,18pagesincluding55referencebibliography;currentPuzLMtitleandthreeauthoridentitymatchformalECCV2026chapter,notassertedformalbyteidentity.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-c06d2b0804/arxiv-v2.pdf",
+      "sha256": "716e682ee1ae914d619b1662acca035316fb9e4364c02a7ebce23161c03ec554",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://static-content.springer.com/esm/chp:10.1007%2F978-3-032-37281-9_4/MediaObjects/700400_1_En_4_MOESM1_ESM.pdf",
+      "retrieval_url": "https://static-content.springer.com/esm/chp:10.1007%2F978-3-032-37281-9_4/MediaObjects/700400_1_En_4_MOESM1_ESM.pdf",
+      "version": "OfficialSpringerchapterlink13pagePuzLMSupplementaryMaterial,title/threeauthors/BGUmatch;allA–Fand15referencesread,includinglateradditionalexperiments.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-c06d2b0804/supplement.pdf",
+      "sha256": "a7236a6cd2c2e4d9d55eac6bd90b8fb6eb47f7bf0f1a7063e8cc8bf226d9829d",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readcomplete arxivv2pp1–3 exacttitle/threeauthorsBGUaffiliation, abstract/intro/contributionandrelatedwork; symbolicinputsderivefromvisualquantization, notvisioninformationabsent. Explicitgoal puzzlepermutation notmerelyrepresentationpretext. OfficialSpringerpage showsseparate5.48MBscientificsupplementwhichmustread; formalPDFrequestreturnedHTMLnotPDF."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readcomplete pp4–6 formaldiscreteassignmenttask and pipelinef=s(q(P)); PCA+kmeanslearnedontrainpatches thenfreeze, clockwiseboundarytokens,lexicographicinput+SEP. Tokenvectorsarevisual-derivedevenifnomorerawimageaccess; learnedembeddingnotnecessarilypreservingvisualgeometrydoesnotproveinformationindependence. Needdecoderpermutationenforcement/evaluationfullreadnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allpp7–9 symbolicdomainarguments, encoderdecoderarchitecturecomparisonTable1, autoregressivepredictionwithoutspecialconstraints, CEtraining andargmaxinference, metricsAA/PA and corpusstatisticsintro. Supportfixedvocabularydoesnotimplymatchedjointtestdistribution; organiclackduplicatesnotformalbijectionguarantee. Perf<=AbsdoesnotprovemonotonicimprovementofbothfromCE. Noencoderdecoderuniversaladvantagetheorem assumed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readcomplete pp10–12 entropy/Zipf/HeapsdiagnosticandallmainbenchmarkTables2–4 plusqualitativeexamples/tokenizersweepintro. MainJPwLEG3 Table4PuzLM91.9AA/84.5PA vs prose87.9PA(sourceFCViT87.9), willreporttableandflagtypo. Missingpieceprotocolmaskstokensandonlyscoresnonmaskedpieces;nodeclaredmissingimagegeneration. Datasettrainedseparately notsharednativegenerality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readcomplete pp13–15 tokenizerTable5/VQVAE/TiTokcomparisons anddesigndropoffs,BART/T5/Pegasus/LSTM/GRUbackbonesFigure6discussion, conclusionsandfirst17references. Mainnotation d=2^10 andk=2^12 requiresrendercheck(extractionshows210/212); EqPerf<=Abs noformalCEjointaccuracyguarantee. BroadSOTAqualifiedbyFCViTJPwLEG3superiority."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readallremainingmainreferences18–55, checkedexactJPDVT23,DiffAssemble35,SD2RL42,ERLMPP44,RePAIR47 againstcatalogue; noother527targetconfirmedfromotherpretext/visual/NLPrefs. Maincomplete18pagescoverage; bibliographyformalSpringerhas56vsarxiv55 impliesversionlimitedidentitywithoutbyteequivalence."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "ReadallofficialSpringersupppp1–3 byline/affiliation/overview, training-onlycodebookPCA+kmeansAlgorithms1–2, clockwiseboundaryordering+lexsort+SEP, frozeninferencequantizerandcompressiondiscussion. NonneuralquantizerdoesnotexcludelearnedSeq2Seqsolver; scientificsuppisofficial13pPDF distinctfromarxivmain."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readcompletepp4–6 tokenizationcompression/timeTable1 anddeepquantizercomparison,fullFigure1ablations/explanation,allSeq2SeqarchitectureTable2entries, AdamW1e-4/64maxepochs/valCEcheckpoint/batch32(noAMP)protocolandhardware. MainBARTPCAparametersrequireactualrender; timings3/6/21hrounded6runs, <100msperpuzzle notuniformexactcost. Noimplicitvisionlanguagepretrainingunderstandingclaim."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readfullpp7–9 software/hardware/availabilitystatement(codepromiseduponacceptance),discretevsprojecteddiagram, largerImageNet4–8Table3withPA85down15, jointlytrained3/4/5samepuzzlefamily92/90.6/88.2AA positivefact, ImageNettoJPwLEGzero-shot88.6/78.5and71.1/33.4withmatchedpiecesizing, structuredMNIST/Fashion/CelebAsetupandfutureworkintro. Preservepositivecrossdataset/multisizecheckpointtransferwithoutoverclaimingcrossnativetaskgenerality."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Readallremainingofficialsupppp10–13 structuredimageTable4,allfutureworkD1–4(untrainedunknownrotation/irregularshapes/permutationmaskfuture/generation), FCViTcrossoverhypothesisnotcontrolledproof, ethics+fullqualitativeFigure3+all15supprefs. PermutationvaliditycannotbeinferredfornonsolvedcasesfromPAalone; fixedfinitecodebookdoesnotestablishdistributionalignmentorinvertibility. All31registeredpagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "puzlm-contribution",
+      "category": "contribution",
+      "statement": "PCA/kmeanstrainpiecequantizationandstandardSeq2Seqsolverformdiscretejigsawassignmentpipeline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Contributions/Section3"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-method",
+      "category": "method",
+      "statement": "Decoderautoregressivelyargmaxpredictspositionswithoutspecialpermutationconstraints;constructivelearnedassignmentnotguaranteedbijection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Sections3.4/3.5"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-main-results",
+      "category": "experiment",
+      "statement": "Table4PuzLMJPwLEG3AA91.9/PA84.5belowFCViT96.9/87.9;JPwLEG5AA72.1/PA32.5strongestlisted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Table4andconflictingp12prose"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-supp-results",
+      "category": "experiment",
+      "statement": "Positivejoint3/4/5samefamilytrainingandImageNet→JPwLEGtransfercoexistwithlarge8x8PA15%.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "SupplementC.1–C.3/Table3"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-classification",
+      "category": "classification",
+      "statement": "SpecialistconstructiveNNconstructspositionsfromtokens;multisizeanddatasettransferiswithinonegridjigsawfamily,notcrossnativegenerality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            8,
+            9
+          ],
+          "locator": "ProblemFormulation/SequenceSolver;SupplementC.2reconciled"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-limits",
+      "category": "limitation",
+      "statement": "Inputsymbolsderivefrompixels;fixedvocabularydoesnotguaranteedistributionalignmentandPAdoesnotprovevalidityofallremainingoutputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections3.3–3.5;curatorboundary"
+        }
+      ]
+    },
+    {
+      "id": "puzlm-repro",
+      "category": "reproducibility",
+      "statement": "Officialsuppprovidesfulltokenizer/traininghardwareprotocolbutpromisescodeuponacceptancewithoutidentifiedimplementationURL.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "locator": "Algorithms1–2/SectionsB.2/B.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal identity/authors/institutions/publication.date",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-032-37281-9_4",
+      "locator": "Cachedpublisher-primary.htmltitle/threeauthorsaffiliation/pp58–75/LNCS17046,FirstOnline12September2026;cachedCrossrefpublished-online/assertionfirst_onlineagrees. Notconference-onlydate."
+    },
+    {
+      "field": "date/arxiv identity/version",
+      "source_url": "https://arxiv.org/abs/2511.06315",
+      "locator": "Cachedarxiv.htmlandversion1HTML: v1Nov9,2025oldSeq2Seqtitle,v2Mar12,2026currentPuzLMtitle,samethreeauthors;readv2PDF18pages,notassertedformalbyteidentity."
+    },
+    {
+      "field": "supplements/code inventory",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-032-37281-9_4",
+      "locator": "ManuallyinspectedfullprimarychapterHTML:exactlyoneelectronicSupplementaryMaterialpdf5480KB,downloaded13pagesidentitymatchedallread;PDFURIinventoryonlyarxiv+ORCIDs,noofficialcode. SupplementB.3promisesreleaseuponacceptance;primaryauthorURL404/searchnoidentifiedofficialPuzLMrepo. Nounknownscienceclaimedread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/abs/2511.06315v2",
+      "locator": "OriginalFig1completecaptionp1cropRect132,506,490,669at4x;actualpublic/paper-assets/puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models/framework.png684892bytesexistsandview_imagechecked."
+    },
+    {
+      "field": "table/hyperparameter interpretation",
+      "source_url": "https://arxiv.org/abs/2511.06315v2",
+      "locator": "Actualrenderedpp9/11/13: d2^10,k2^12;PuzLMJPwLEG3PA84.5Table4vs87.9inprosep12;tokenizer<1MparamnotBARTmodel. Renderedsupppp2/6/8/10/12andcompleteall31pagesread."
+    },
+    {
+      "field": "citations/version numbering",
+      "source_url": "https://arxiv.org/abs/2511.06315v2",
+      "locator": "Complete55mainrefspp15–18+15supprefs p13read;exactcataloguetitlesmanualidentitychecks5targets. Formalchapterhas56refs,soevidencelocatorsrefertoreadv2numberingnotmisstatedformalnumbers."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+      "cited": "solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers",
+      "reference_label": "[23]",
+      "description": "JPDVT exactLiuetalCVPR2024title/byline iscomparedonregular/missing-piecejigsaws.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            12,
+            16
+          ],
+          "locator": "Relatedwork/mainTables2–4;v2bib23p16"
+        }
+      ]
+    },
+    {
+      "citing": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+      "cited": "diffassemble-a-unified-graph-diffusion-model-for-2d-and-3d-reassembly",
+      "reference_label": "[35]",
+      "description": "ScarpellinietalCVPR2024DiffAssemble exacttitleusedinrelatedworkandJPwLEGcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            17
+          ],
+          "locator": "Relatedwork/Table4;v2bib35p17"
+        }
+      ]
+    },
+    {
+      "citing": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+      "cited": "siamese-discriminant-deep-reinforcement-learning-for-solving-jigsaw-puzzles-with-large",
+      "reference_label": "[42]",
+      "description": "Song/Jin/Yao/Wang/Ren/BaiAAAI2023SD2RL citedforJPwLEGandbenchmarkcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            12,
+            17
+          ],
+          "locator": "Relatedwork/JPwLEG;v2bib42p17"
+        }
+      ]
+    },
+    {
+      "citing": "puzlm-solving-jigsaw-puzzles-with-sequence-to-sequence-language-models",
+      "cited": "repair-benchmark",
+      "reference_label": "[47]",
+      "description": "TsesmelisetalNeurIPS2024RePAIR exacttitle/byline referencedforreal-worldreassemblymotivation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            17
+          ],
+          "locator": "Introductionp1;v2bib47p17"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replace pendingdraftwithcompleteversion-limitedfullreview.",
+    "CorrectsuperscriptedPCA/vocabularynumbersandreportTable4PA84.5ratherthanconflicting87.9prose.",
+    "Preservepositivejointmultisizeandcrossdatasettransferwithpreciselimits;donotcallsharedcrossnativegeneralist.",
+    "Distinguishsymbolicinterfacefromabsenceofvisualinformation;decoderdoesnotenforcevalidpermutations.",
+    "Do notmislabelPuzzleFloworunrelatedsearchsnippetrepoasPuzLMcode.",
+    "User-authorized target deferral: source-supported incoming evidence preserved in conference163 deferral record; internal graph edge omitted while target is outside active catalogue."
+  ],
+  "reviewed_note_sha256": "df2d6dd8773482070e404772d316a9f314d26c9884656eef46fd6aee6c21f240"
+}

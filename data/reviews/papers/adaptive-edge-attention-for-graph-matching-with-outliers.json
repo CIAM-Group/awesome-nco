@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "paper_id": "adaptive-edge-attention-for-graph-matching-with-outliers",
+  "note_path": "specialist/adaptive-edge-attention-for-graph-matching-with-outliers.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "6279b9611d3dd21a19254694147c8abdf5dfd5b18eaedd73d4e59b273c86cbe6",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2021/0134.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2021/0134.pdf",
+      "version": "FormalIJCAI2021seven-page966–972five-authorPDF;complete main/all28refsread,keyvisualsinspected.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-977ac6c61c/publisher.pdf",
+      "sha256": "7b7d0886b28786ae410ca3d6bf1ad9eaff395551610c08ab2068d2a5dcad84f3",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Allpp1?3formalread5Peking/StonyBrookauthors;actualprinted966?968(correctsourceversiontypoatfinalize);assignmentgraphnode+edgebinaryclassification;attentionseparatenetworkthenweightednodeconvolution;edgefeaturesaggregateCNNalongedgepixelsratherthanendpointsonly. QAPmotivation1to1notyetdecoderproof;needactualdecode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Allpp4?5read Bresenhamedgepixels CNNmaxpoolL2,geometricMLP+semanticfusion;attention3layer+classification10layer weighted exp(?theta)non-normalizedmessage;node/edge BCEplusone-to-one lossweights.1/.1(softloss nothardcertificate). VGGImageNet,Adam.001decay2%/2000GTX1080Tiapprox25pairs/sec timingboundaryunclear;Pascal70.5mean sourcecomparatorsquotednotcommonrerun;classnegativeCIE bird70.1>64.6etc."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Allformalpp6?7readWillow96.5withDuck89.7<PCA93.5andmotor99.3<LCS99.4;Pascaloutliers0?5only2ndimageinferenceaccuracy70.5->38.4 vsLCS36.6,notuniversaloutlierrobust;CMUtrain300krandom111samevideoframes noheldoutvideo/evalnearly97.3scope;all28refscompleteactualPCA/LCS/survey/CIE/GMN;noindependentscienceappendixmentioned."
+    }
+  ],
+  "claims": [
+    {
+      "id": "eagm-contrib",
+      "category": "contribution",
+      "statement": "Pixel-pathsemanticdescriptorsandlearnededgeattentiononassignmentgraph.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Figure1–2/Sections4.1–4.3"
+        }
+      ]
+    },
+    {
+      "id": "eagm-method",
+      "category": "method",
+      "statement": "VGG+geometryfusion,3attention/10classificationlayers,exp(-theta)weightededgeaggregationandnode/edge/constraintloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Eqs2–12/implementation"
+        }
+      ]
+    },
+    {
+      "id": "eagm-results",
+      "category": "experiment",
+      "statement": "Pascal70.5/Willow96.5withclassnegatives;5one-sidedoutliersreducePascalto38.4;CMU97.3authorreportedwithinsequence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Tables1–3/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "eagm-limit",
+      "category": "limitation",
+      "statement": "Formal1to1QAP/trainingpenaltynot hardfeasibilitycertificate;actualreleaseddecoderonlysourcegroupexclusion,limitedoutlierprotocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6
+          ],
+          "locator": "QAP/loss/evaluation;codeindependentlyidentified"
+        }
+      ]
+    },
+    {
+      "id": "eagm-class",
+      "category": "classification",
+      "statement": "Specialistconstructiveneuralcorrespondenceclassificationandhardgroupdecode;noneuralcompleteincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Architecture/Eqs7–12"
+        }
+      ]
+    },
+    {
+      "id": "eagm-repro",
+      "category": "reproducibility",
+      "statement": "All7formalpages/28refsread;60memberofficialarchive/twonesteddatasetZIPs/genericGraphNetsnotebooksidentified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References/officialsourceinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.24963/ijcai.2021/134",
+      "locator": "Cached exact5author/title Crossrefpublished-print2021-08;officialIJCAIBibTeXmonth8;formalbylinePeking/StonyBrook,printed966–972. Corrected initialregisterversionpagetypo976–982;actualpagesunchanged."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2021/134",
+      "locator": "Publisherprimarypage+HaibinLingauthorpublicationlisting paper/codeonly;exacttitlesupp/arxivsearch noidentifiedappendix. Complete60memberarchivec7818bf29325cb619402f2f4b6667037d858cdaf:2nesteddataZIP inventories113/616membersnosciPDFTXTMDipynbZIP;4notebooksownheadersGraphNets2018genericdemos,notEAGMscience. Inventorysaved attachment-inventory.json."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ijcai.org/proceedings/2021/0134.pdf",
+      "locator": "OriginalFig1wholecaptionPDFp3/968Rect40,47,572,251at2xphysicalpublicasset/actualview;pp3–6keymath/alltables/curves/architectureinspected."
+    },
+    {
+      "field": "code/decoder",
+      "source_url": "https://github.com/bestwei/EAGM",
+      "locator": "EAGM_Test.py8importsGM_Core_featured;85–89callsactualgreedy. GM_Core_featured.py306–325 excludesonlygroup_indices_1,compute_accuracy342same;PascalVOC128–129andWillow105–106mappinggroup1source/group2target. No targetexclusion orHungarian hence nottwo-sidedfeasibility. This iscurrentreleasefactnotexperimentalinvalidity."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://ijcai.org/proceedings/2021/0134.pdf",
+      "locator": "All28bibentriesp7read;PCA/LCS/survey/CIE/GMN actualtitle/bylineidentities,5edges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al., 2019",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Wang et al., 2019"
+        }
+      ]
+    },
+    {
+      "citing": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "Wang et al., 2020",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Wang et al., 2020"
+        }
+      ]
+    },
+    {
+      "citing": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "Yan et al., 2020",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Yan et al., 2020"
+        }
+      ]
+    },
+    {
+      "citing": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "cited": "cie-h",
+      "reference_label": "Yu et al., 2020a",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Yu et al., 2020a"
+        }
+      ]
+    },
+    {
+      "citing": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir and Sminchisescu, 2018",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "References Zanfir and Sminchisescu, 2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafterall7formalpages/28refsread.",
+    "Documentedactualone-sidedgreedydecoderwithoutinventingHungarianorintegerfeasibilityguarantee.",
+    "Retainedoutlierdegradation/classnegativecases/quotedpeerprotocolandwithinsequenceCMUscope.",
+    "ManuallyinventorynesteddataZIPsandvendoredGraphNetsnotebookidentities;noextraEAGMscientificappendixidentified.",
+    "Updated direct survey citation note link after supported studies migration; identity unchanged."
+  ],
+  "reviewed_note_sha256": "c850cc94f0828447ce99c42f03e00be043e5eba8e0491c851bd037a230fd2f37"
+}

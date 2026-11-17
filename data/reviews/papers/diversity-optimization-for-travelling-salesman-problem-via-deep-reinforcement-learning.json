@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "paper_id": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+  "note_path": "specialist/diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "bf932a4990e85383150b2938d65cc511ae3d7322149b1fb15e27a9500a732b71",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2501.00884",
+      "retrieval_url": "https://arxiv.org/pdf/2501.00884",
+      "version": "Actualarxiv2501.00884v1dated2025-01-01,13pagesallreadincluding44references/completeAppendicesA-C;formalKDD2025identity/publicationseparatelyverified.",
+      "local_path": "research/full-text-review/diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning/arxiv.pdf",
+      "sha256": "0f2545bb0a775a897c36f2ab45c1dda59183697980669edf365598fa03f5ea69",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readactualarxiv2501.00884v1Jan1_2025fivebylineSCUT/SMU/MIT/TUe,Gongcorrespond(abs4indexnotfullbyline). MultiSolutionTSPdistinctfrommultiobjective;RF+multiattentiveadaptiveactivesearchparameteradaptationnotincumbenttourNNedit. Relatedallactualcitationslaterfullrefs. CodeREADMEfutureimprovementnotcurrent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Readdefinitionsfiltersdelta1costrelativebestfound/delta2edgesim,DIneedsoptimalset,MSQIharmonicOpt+Diffandharmonicacrossset(singleton0). RFsortyx/centeringpolarmaxradiusangleanchor/mirror2; concernsEuclideansimilaritynotarbitraryaffineshear. FiveARdecoders/shared3encoderblocks;activesearchupdatesparamsnotedittour."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Readfulltraining/AASAlg1switchsharedbestdecoder->respectivebaselines/allparamAdamtestadaptation/stopalpha.005beta.0025.100epochs10kinstancesB64,RTX3090i9,max2kTSPLIB/CVRP,EAS5xcountfor5decoders,LEHDRRC50,NGA/NMA10runsneuraloncetrain. Table1fullMSTSPLIB25categories9-66;NMAstrongerDI/MSQIselectedgroups;30minvs40NMA notallneuralfaster."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadfullTables2-5andRF/ASablation. TSPLIB8casesincl400/783buttime6.6mfirst6onlyvsNMA1.7h;berlin52NMA.466>RF.428. RFaffine=translation/rotation100xuniformscale/mirror notshear. alpha.005.560/6.6m ->.05.267/13s qualitytrade. RFaloneMSQIreducesDIincreases,incrementalablationnotisolated. CVRPtable27casesRF8.1hvsEAS9.1h,LEHD3.5m/POMO3s;LEHDhigherMSQImanysmallcases,notallneuraldominated."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadCVRPcontinued/singleTable6/9cities60POIrealdataTable7/conclusionlimitations/ack/all44bib. Singletour200AAS.6dayvsLEHDRRC5001.4h/NeuOpt2.1h,noefficiencyuniversal;rounded.00notcertificate. CityORtoolsreferencebestnotknownoptimum. FullrefsPopulRLPOPPY2022preprint2210.03475 targetidentity;Stepwisejournalactualnotconference. Noextrasciencepromisebeyondappendixnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "ReadcompleteAppendicesAdecoderEq9-16/BrationaleU+MSTSPLIB25details/CFurtherStudyTable9-12/Fig6-8. Table12RF20test10runsMSQI.7856sd.0027DIFF.8636sd.0028time24.55mSD2.1761 unlike10trainseeds. Table9alpha.0025->.01DIFF.751->.856OPTI.900->.823time127->24min contradictstextlargealpha delays;actualcodethresholdlossratio notgradientnorm. Fullscienceall13endsC."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "RFcoordinatecanonicalization+fiveARdecoders+adaptivefullparamtestsearch/MSQIqualitydiversitymetrics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Framework/Definitions/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Filtersdelta1bestfoundrelative/delta2edgeoverlap;MSQIharmonicmeans;RFtranslationrotationuniformscale/mirror2 notgeneralaffineshear. Shared->respectivemeanbaselineadaptation notNNincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            11
+          ],
+          "locator": "Definitions3-8/decoderA"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "100epochs10kB64/3090i9/fullparamlr1e-5max2k/5xEAS/LEHDRRC50. 25MSTSPLIB,8TSPLIB,27CVRP,9city60POI. Selected1.3-15speedupsnotuniversal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1-7/setup"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "MSQIreference/thresholdsensitive;RFalonecanreduceMSQI;TSPsingle0.6day/roundedzero. Actualscalarlossratioandstopcomparevsprintedgradient/Alg1,Appendixalpha-text/tablecontradiction;inference10runsnottrainseeds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8,
+            9,
+            12,
+            13
+          ],
+          "locator": "AAS/tables4/6/9-12 and actualcode"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructive:TSP/CVRPseparateapplications,nojointcheckpoint;NNconstructsnewrouteswithadaptedparams, nolearnedtoureditoperator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Actualactions/training/extension"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All13actualv1pages44refs/A-Cread;73entrytree/fullREADME/manualsuppinventory/originalFigure2viewed;formalidentityindependentlyverified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Byline/version/fullreading/manualinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3690624.3709181",
+      "locator": "PrimaryCrossref/MITinstitutionalmetadata5authors/pp683-694/online2025-07-20;actualp1GongcorrespondSCUT/SMU/MIT/TUe. Arxivabs4countnotactualbyline."
+    },
+    {
+      "field": "arxiv version/date",
+      "source_url": "https://arxiv.org/abs/2501.00884",
+      "locator": "Savedprimaryhistoryonlyv1Wed1Jan202516:08:40UTC/actual13pfullyread. MITformalPDF/depositZIP429notregisteredorclaimedread;authorizedarxivfallbackidentified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/LiQisResearch/KDD--RF-MA3S",
+      "locator": "Complete13pv1AppendicesA-C/all44refs/Tables8-12actualread. Actual73entryofficialtree0f1c5f7e74cb3dbf7683fb0194b893e3d86c3997manuallyinventoried oneREADME/source/figPNG/dataTSPsolutions/noPDF,TeX,ZIP,notebook;releases[]. FullREADMErawHTMLtableconvertedforcompletevisibletextread. Noindependentnecessaryproofpromise. MITdepositZIP429notclaimedinventory."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/LiQisResearch/KDD--RF-MA3S/tree/0f1c5f7e74cb3dbf7683fb0194b893e3d86c3997",
+      "locator": "RelevantTSPInference.pyallparametersAdam/newrouteconstruction;sharedbestdecoder->individualbaselines,trans_prob=-loss_mean/score_mean notscalargradientnorm;stoptemp_break>rand vsprintedopposite. TSPsource/notverifiedCVRPimplementation/fullrun;noNNincumbenttourrewrite=>constructive,nojointTSPCVRPcheckpoint=>specialist."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2501.00884v1#page=3",
+      "locator": "FulloriginalFigure2p3Rect45,78,566,313@4xatomicPNGactualviewed;3/4/5/8/11/12/13method/RF/formulas/ablation/completeappendixallrenderedviewed."
+    },
+    {
+      "field": "citation versions",
+      "source_url": "https://arxiv.org/pdf/2501.00884v1#page=10",
+      "locator": "All44refs/fullbodychecked. [12]3author2022PopulationBasedRL2210.03475mappedtoPoppyviaexistingprimaryv1->v2samearxivchain;preserveactualpreprintversion. Allother15totaledgesexplicitbody+bibexact;journalStepWiseactualstablearticle notindependentconferenceextension."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "attention-model",
+      "reference_label": "[22]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10,
+            11
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "efficient-active-search",
+      "reference_label": "[14]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[18], arXiv1906.01227",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[19]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "lehd",
+      "reference_label": "[27]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            9,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[37]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            6,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "neuopt",
+      "reference_label": "[28]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            9,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[5], 2017/arXiv1611.09940 cited",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "pointer-networks",
+      "reference_label": "[35]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "pomo",
+      "reference_label": "[23]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "rbg",
+      "reference_label": "[44]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[7]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "step-wise-routing",
+      "reference_label": "[36], TII2020online/17(7) article",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "sym-nco",
+      "reference_label": "[20]",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            6,
+            7,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    },
+    {
+      "citing": "diversity-optimization-for-travelling-salesman-problem-via-deep-reinforcement-learning",
+      "cited": "poppy",
+      "reference_label": "[12], Population-Based RL (2022), arXiv2210.03475",
+      "description": "Explicitbodycitationandmatchingcompletebibliographicidentity;actualcitedversionpreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Introduction/relatedwork/method/experiments and complete Referencesp10"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingfiveauthor/affiliations/nativeproblem/dateswithformalprimaryandactualv1fullreading.",
+    "Specialistconstructive;testparameteradaptationnotincumbenttourrewrite,nojointcrossproblemcheckpoint.",
+    "AccurateDI/MSQI/bestfoundreference/filterthresholds;Euclideansimilarityvsarbitraryaffine,RFreflectionlimits.",
+    "Selected1.3-15speedups/first6TSPLIBtimes/CVRP8.1h/single0.6dayqualified;neuralinference10repeatsnottrainingseeds.",
+    "Preserveprintedgradient/stoppingconventionsvsactualscalarlossratio/compare,andAppendixalpha-table/textdirectionconflict.",
+    "All13pages/44refs/A-C/scienceinventory/fullREADME/completeoriginalFigure2actualview;15body+bibedgesPoppyprimaryversionchainqualified."
+  ],
+  "reviewed_note_sha256": "64d09d76865d75669ca627668fa5dededf54174d4a3d0daad523148e97850803"
+}

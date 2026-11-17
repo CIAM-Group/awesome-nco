@@ -1,0 +1,966 @@
+{
+  "version": 1,
+  "paper_id": "neuopt",
+  "note_path": "specialist/neuopt.md",
+  "baseline_note_sha256": "598fe5b72e962e26c54237f37f771b7c91caa53551e0deefe9af6f6f7cf724fb",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9bae70d354793a95fa18751888cea07d-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9bae70d354793a95fa18751888cea07d-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/neuopt/paper.pdf",
+      "sha256": "faf9fef006fa5249fef20280738d6f17da62e0d753b068f96bacfde367cbd8ba",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshpublisher titlepageactualNUS/SMUaffilsnotNTU; threeauthors, fullintro/citations/L2C/L2S/L2Preview,kflexiblefactorizationGIREandD2Aclaims; EuclideanTSP/CVRP/LKsequentialcriterion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh completeFigure1, S/I/Esequentialrankconditions, maxKnullpadding/forcedclosure, twoGRUdualstreams vs recurrentacrossmovecomponents, bestsofarreward, dynamicaugmentationstagnation, GIREcapacityonlynotallfeasibilityrelaxed,9ESfeaturesandhypernetdecoderweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "FreshGIREentropyregulation/epsilonbonusactualshaping, fullTable1allsettings/hardware/gap/importedissues; Tables2-8componentablations4/8runs,bestsolvergapsdifferentreference,TSPLIB/CVRPLIBaveragesvsbest/direct200training,limitationsandrefs1-38."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 18,
+      "notes": "Freshremainingrefs39-63, AppendixAfactorizationallvisualcaptionandB3Synthencoders/rawTSP2CVRP6GIRE8features, policydoesnotseebestsofar; completePPO+nstepcurriculumalgorithm, triplecriticshapedadvantages andcompleteD2AAlg3 preservesrouteswhilecoordschange, criticarchitectures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 24,
+      "notes": "FreshcompleteDrewardstability/epsilonrule/defaults, E1alltrainhypers/offline4-8daysmultiGPU/dummydepots,baselineversion/importedcodeissues, E2all20TSPLIB/21CVRPLIBperinsttablesand10runavg/bestfailures, directlytrained200Table12, GPUscaling13, explorationFigures12-13andassetTable14. All24pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rds",
+      "category": "contribution",
+      "statement": "SequentialS/I/EfactorizationwithdualGRUdecoder supportflexibleexchangewithpresetK4,structuralrankmasksremain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15
+          ],
+          "locator": "Section4 Figure1 AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "gire",
+      "category": "method",
+      "statement": "CVRPcapacityrelaxation addsVI/ES9featureshypernetandentropyregulation+epsilonbonus with3critics,notplainpenaltynorallconstraintmaskremoval.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            16,
+            18,
+            19
+          ],
+          "locator": "Section5 AppendixC-D"
+        }
+      ]
+    },
+    {
+      "id": "d2a",
+      "category": "method",
+      "statement": "Tenstagnationsteps changecoordinateaugmentationwhileincumbentretained; multiparallelsearchandbestfeasibletracked, frozenneuralweights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            17,
+            18
+          ],
+          "locator": "Section4.3 Algorithms2-3"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "10kheldoutper20/50/100;2080Tidatasettime;CVRP100.10%HGS3.8daysatD2A5/40k, TSP100.00rounded7hat5/5k.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            20
+          ],
+          "locator": "Table1 AppendixE1"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "20TSPLIB21CVRPLIBtenrunavg/best,notallwins;directtrained200separatefromtransfer;4-8daymultiGPUofflinecosts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20,
+            22,
+            23
+          ],
+          "locator": "AppendixE1-E4 Tables10-13"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SeparateTSP/CVRPsizecheckpoints,sameframeworknotsharedweights;learnedcompleteincumbentmoves=randominitializer =>specialistimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            20,
+            22,
+            23
+          ],
+          "locator": "Sections4-6 AppendixE"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9bae70d354793a95fa18751888cea07d-Paper-Conference.pdf",
+      "locator": "Titlepage3authors NUS/SMU notNTU; formalNeurIPS2023."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2310.18264",
+      "locator": "Manualarxivuniquev1October27,2023; genericnotificationnotindividualacceptanceevidence."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9bae70d354793a95fa18751888cea07d-Abstract-Conference.html",
+      "locator": "ManualofficialNeurIPSlandingpaperlinkonly,noseparatescienceattachment;24pagePDFcontainscompleteAppendicesA-E6allread."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/yining043/NeuOpt",
+      "locator": "FormalabstractandfootnoteURL;fullofficialREADMEreadmodels20/50/100/200,K4D2AandmultiGPUcommands."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/9bae70d354793a95fa18751888cea07d-Paper-Conference.pdf#page=4",
+      "locator": "CompleteFigure1originalcropRect(106,68,506,202)5x;loweredgeupdatepanelsincluded;allkeytables/formulas/appendixA,D,Eplotsvisualchecked."
+    },
+    {
+      "field": "citation version identity",
+      "source_url": "https://doi.org/10.1016/j.artint.2022.103786",
+      "locator": "Ref8PDFp11/intextp1,3 actualAI2022journalexpandedtitleandarticle103786. Crossrefconfirmstwoauthors butnoassertedsame-arxivversionchain. DeliberatelyunmappedtoECAI2020stableIDunderstrictsameworkrule."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9bae70d354793a95fa18751888cea07d-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/neuopt/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2310.18264",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-10-27; title on abstract page: Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt. This date is preprint history, not formal publication. Cached research/full-text-review/neuopt/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neuopt",
+      "cited": "att-gcn",
+      "reference_label": "6",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[6]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[6]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "attention-model",
+      "reference_label": "3",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[3]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[3]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "dact",
+      "reference_label": "9",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[9]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[9]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "42",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[42]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[42]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "difusco",
+      "reference_label": "15",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[15]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[15]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "dimes",
+      "reference_label": "7",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[7]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[7]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "efficient-active-search",
+      "reference_label": "5",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[5]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[5]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "14",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[14]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[14]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "graph-guided-local-search",
+      "reference_label": "40",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[40]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[40]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "latent-search-space-routing",
+      "reference_label": "43",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[43]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[43]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "25",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[25]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[25]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "33",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[33]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[33]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "39",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[39]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[39]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "learning-to-delegate",
+      "reference_label": "60",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicitreference[60]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matchingbibliography[60]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "learning-to-improve",
+      "reference_label": "36",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[36]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[36]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "28",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[28]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[28]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "neural-3-opt",
+      "reference_label": "17",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[17]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[17]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "23",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[23]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[23]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "neurewriter",
+      "reference_label": "35",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[35]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[35]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "omni-vrp",
+      "reference_label": "63",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicitreference[63]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matchingbibliography[63]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "pareto-set-learning",
+      "reference_label": "10",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[10]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[10]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "pointer-networks",
+      "reference_label": "22",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[22]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[22]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "pointerformer",
+      "reference_label": "32",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[32]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[32]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "pomo",
+      "reference_label": "4",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitreference[4]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[4]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "rl-vrp",
+      "reference_label": "24",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[24]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[24]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "select-and-optimize",
+      "reference_label": "58",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicitreference[58]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[58]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "34",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[34]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[34]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "step-wise-routing",
+      "reference_label": "27",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[27]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[27]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "sym-nco",
+      "reference_label": "13",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitreference[13]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matchingbibliography[13]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "tam",
+      "reference_label": "57",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicitreference[57]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matchingbibliography[57]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "37",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitreference[37]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliography[37]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "h-tsp",
+      "reference_label": "59",
+      "description": "Explicitnumberedintextcitationandmatchingref;actualcitedversionretained(AM2018asprinted,DIFUSCO2023preprint,BelloICMLworkshop2017).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Explicitreference[59]inthetext/range."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matchingbibliography[59]."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "reference_label": "[12] Ma et al. (2022)",
+      "description": "Cites the neural neighborhood-search pickup-and-delivery method in neural-solver background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read citation body context: Introp1[5,12]; fullIJCAI2022sevenauthorpp4776–4784entryp11."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [12] Ma et al. (2022); Efficient Neural Neighborhood Search for Pickup and Delivery Problems. Introp1[5,12]; fullIJCAI2022sevenauthorpp4776–4784entryp11."
+        }
+      ]
+    },
+    {
+      "citing": "neuopt",
+      "cited": "online-3d-bin-packing-with-constrained-deep-reinforcement-learning",
+      "reference_label": "[46] Zhao et al. (2021)",
+      "description": "Discusses mask-prediction supervision as constraint awareness in another optimization domain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read citation body context: Bodyp3constraintmask[45,46]; fullAAAI2021Online3DBinPackingfiveauthorpp741–749entryp13."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [46] Zhao et al. (2021); Online 3D Bin Packing with Constrained Deep Reinforcement Learning. Bodyp3constraintmask[45,46]; fullAAAI2021Online3DBinPackingfiveauthorpp741–749entryp13."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "CorrectedNTUinstitutiontoNUSandSMU, removedunsupportednotificationacceptance.",
+    "DetailedsequentialrestrictedkoptSIE/RDSdualGRU K4andwithinexchangehistory,inferenceincumbentnotfreshconstruction.",
+    "GIRErelaxescapacityonly,VI/EShypernets+3rewardcriticsnotgenericconstraintpenalty;bestfeasibleoutputandstructuralmasksremain.",
+    "Addedexact10kdatasetbudgets/sampling/hardware/gapdenominators andlong3.8dayCVRPqualitytradeoff,roundingnotoptimalityguarantee.",
+    "Distinguishedrealbenchmark20/21instance10runavg/best andnonuniformfailures fromseparatelytrained200;addedoffline4-8dayGPUcost.",
+    "PreservedauthorbaselineversiondiagnosisasattributedclaimandcompleteoriginalFigure1.",
+    "Reference8 explicitlyseparateAI2022 Neural large neighborhood search for routing problems103786; notforcedtoECAI2020NLNSstableID basedonlysameauthors/code. Parentagreesexpandedjournalneedsseparatereviewoutsidefrozen364.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8d64c084a0478610be6f634e60bd3b964f70f0db6e6083e423a3819d625c5cdc"
+}

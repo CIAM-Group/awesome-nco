@@ -1,0 +1,390 @@
+{
+  "version": 1,
+  "paper_id": "graph-matching-with-bi-level-noisy-correspondence",
+  "note_path": "specialist/graph-matching-with-bi-level-noisy-correspondence.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "2431ed61c9b88b3ad756aed7d24b8f9edb6431c1b4c6ee4d8fc7154cc97ef9d4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lin_Graph_Matching_with_Bi-level_Noisy_Correspondence_ICCV_2023_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lin_Graph_Matching_with_Bi-level_Noisy_Correspondence_ICCV_2023_paper.pdf",
+      "version": "OfficialCVFICCV2023accepted10p23362–23371exact6authorbyline/3institutions,full60referencesread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-3837e76fd7/publisher.pdf",
+      "sha256": "085e73e4d2113c19213ad0ddaed17ad43832d466361c3c8591cdba92588405f8",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/supplemental/Lin_Graph_Matching_with_ICCV_2023_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/ICCV2023/supplemental/Lin_Graph_Matching_with_ICCV_2023_supplemental.pdf",
+      "version": "OfficialCVF3psciencesuppTheorem1completeproof/architecture/overhead/19refs/qualitativeFigs5–6,allreadandrendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-3837e76fd7/supplement.pdf",
+      "sha256": "7ee78c19e7a94cc1d8199ee70edafc3c7473dbe60c3b508b8dfe29bfec97d6ce",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfulltitle6authors/3institutions,introBNCnodeandedge-noisechallenge,relatedwork/problem-QAP definitionandmethodsetup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallInfoNCErelaxationTheorem1,quadraticwithin/crosslosses,momentumteacherweightedlossesandtrainingparameters/Table1/Hungariandecoder."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallTables2–6/noisecurves/histograms,SPairviewpoint split,ablation/alphasensitivity,qualitativeannotationfailuresandconclusion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readall60ReferencesincludingSIGMA/EAGM/ASAR/SCGM/PCAconferencevsIPCAandNGMjournalidentities."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "ReadcompleteTheorem1row-independentrelaxationproof,allarchitecturewidths/normalization,1.4xtrainingoverhead/baseonlyinference,19suppreferencesandallqualitativematchingpanelsFig5/6."
+    }
+  ],
+  "claims": [
+    {
+      "id": "common-contribution",
+      "category": "contribution",
+      "statement": "Bi-levelannotationnoise,quadraticcontrastiveconsistencyandmomentumdistillationtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1–3/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "common-method",
+      "category": "method",
+      "statement": "VGG/SplineCNN/projectionfeatures withtrainingonlyEMAteacher;testbaseencoder+Hungarian;notexactQAPsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs2–14/Section4.1"
+        }
+      ]
+    },
+    {
+      "id": "common-results",
+      "category": "experiment",
+      "statement": "82.7/84.5/99.1accuracymeans;classnegatives/controllednoiseandpointestimateboundariesretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–6/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "common-theory",
+      "category": "limitation",
+      "statement": "Theorem1relatesrow-relaxedlogsumexpstructuredlosstoInfoNCE,notcolumn-constrained/QAPoptimizationcertificate.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "SupplementTheorem1/proof"
+        }
+      ]
+    },
+    {
+      "id": "common-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive;noNNcompleteincumbentediting,momentumtrainingnotimprovementpolicy,sharedhyperparamsnotsharedcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Figure2/Section4.1Hungariandecoder"
+        }
+      ]
+    },
+    {
+      "id": "common-repro",
+      "category": "reproducibility",
+      "statement": "Allscience13p/full79bibentriesincludingduplicatesread;1.4xtrainingoverheadandbaseonlytest;officialcompletearchiveinventory.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Supplementallarchitecture/proof/cost/qualitativefigures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/ICCV51070.2023.02135",
+      "locator": "CachedCrossrefexactDOI/title6authoridentitypublished2023-10-01;officialCVF10p23362–23371matchingbyline/3institutions."
+    },
+    {
+      "field": "date/arxiv",
+      "source_url": "https://arxiv.org/abs/2212.04085",
+      "locator": "Cachedprimaryarxiv-v1/currentHTMLtitleandall6authorsmatchformal;v1Thu8Dec202205:42:00UTC,v3Aug5,2023. Noextendedjournalpaperbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2023/supplemental/Lin_Graph_Matching_with_ICCV_2023_supplemental.pdf",
+      "locator": "OfficialCVFexplicit3psciencesuppfullproof/architectures/19refs/Figs5–6read. Full76memberofficialsourcearchivecommit9db3bbeda7a14f60f2f27e19d18365239a3d36f7 noPDF/ZIP/ipynb;entireREADMEread. Knownlaterdifferent-titleCOMMON+extensionnotrequiredsupplementto2023paper."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lin_Graph_Matching_with_Bi-level_Noisy_Correspondence_ICCV_2023_paper.pdf",
+      "locator": "OriginalFig2+entirecaptionformalPDFp4/23365Rect40,60,572,3203x;public/paper-assets/graph-matching-with-bi-level-noisy-correspondence/framework.png366372bytesexistsandactualview_image;main3–8andsupp1–3math/plots/tables/panelsrendered."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/XLearning-SCU/2023-ICCV-COMMON",
+      "locator": "Officialarchive9db3bbeda7a14f60f2f27e19d18365239a3d36f7 models/COMMON/model.py146–147Hungarian,178–184trainingonlyEMAteacher,220–223momentumupdate;READMEseparatedatasetconfigs/noverifiedcrossnativesharedcheckpoint. Noextraneousimplementationdefectscan orbenchmarkrerun."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2023/papers/Lin_Graph_Matching_with_Bi-level_Noisy_Correspondence_ICCV_2023_paper.pdf",
+      "locator": "All60mainrefspp9–10and19supprefs2read;12distinctactualcatalogueidentities. PCAconference47explicit,IPCAjournal48/NGMjournal49notdifferentconferencealias;CIEpreprint2019same4authors/fulltitle."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[11]",
+      "description": "Direct actual bibliography identity [11]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [11]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "[13]",
+      "description": "Direct actual bibliography identity [13]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [13]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "self-supervised-learning-of-visual-graph-matching",
+      "reference_label": "[30]",
+      "description": "Direct actual bibliography identity [30]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [30]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "sigma-matching",
+      "reference_label": "[33]",
+      "description": "Direct actual bibliography identity [33]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [33]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "reference_label": "[37]",
+      "description": "Direct actual bibliography identity [37]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [37]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "reference_label": "[39]",
+      "description": "Direct actual bibliography identity [39]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [39]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[40]",
+      "description": "Direct actual bibliography identity [40]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [40]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "[47]",
+      "description": "Direct actual bibliography identity [47]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [47]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "[51]",
+      "description": "Direct actual bibliography identity [51]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [51]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "cie-h",
+      "reference_label": "[58]",
+      "description": "Direct actual bibliography identity [58]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [58]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "[59]",
+      "description": "Direct actual bibliography identity [59]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [59]"
+        }
+      ]
+    },
+    {
+      "citing": "graph-matching-with-bi-level-noisy-correspondence",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[60]",
+      "description": "Direct actual bibliography identity [60]; matchingcomplete title/byline andcitedversion;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [60]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingmetadataandcontentafter13sciencePDFpagesfullyread.",
+    "SeparatedtrainingEMAandquadraticregularizersfromtestHungarianconstructiveprocedure.",
+    "RestrictedTheorem1torow-relaxedsmoothedloss;retainedclassnegatives,costandfilteredprotocolscope.",
+    "12actualbibidentitiesandcompleteofficialsupp/repoinventory,originalfigurephysicallyverified."
+  ],
+  "reviewed_note_sha256": "41a9a65ec44ff99171f255b503f40c5377cd7fd4f0b6fac5add8553fafeadd5a"
+}

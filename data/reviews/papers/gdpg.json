@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "paper_id": "gdpg",
+  "note_path": "specialist/gdpg.md",
+  "baseline_note_sha256": "5a9bb66749d8090dc0c097d83fa427a5a9f93815aff920280bdff013e9647c21",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openreview.net/pdf/375cd8060d66d3802592086cf8d856f477c86f39.pdf",
+      "version": "ICLR 2023 conference paper, 21 pages including Appendices A-I; actual mirror reading copy",
+      "retrieval_url": "https://lacuna.tiptreesystems.com/pdf/art_d16599c08544feb6b8540fd1907783c6",
+      "local_path": "research/import-272/nco-00dda83820.pdf",
+      "sha256": "57b3403bcbbe9140c109930d6077d62e41763feff0c7c6430108f0a5c3febac9",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-convergence_sampling",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/convergence_sampling.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/convergence_sampling.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/convergence_sampling.pdf",
+      "sha256": "1297fb4dcfad3e456d4710c18b1d24640889b745e20a57beab2adcb17d2dc6e4",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-delay_oriented_q_avg_qr_by_load",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_q_avg_qr_by_load.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_q_avg_qr_by_load.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/delay_oriented_q_avg_qr_by_load.pdf",
+      "sha256": "b629fd7706955a425cf99a0081de025423feab7cf53f66ef80afdd5ad1cf1830",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-delay_oriented_q_med_qr_by_load",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_q_med_qr_by_load.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_q_med_qr_by_load.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/delay_oriented_q_med_qr_by_load.pdf",
+      "sha256": "dc5bfcb9c342fead5d10437aa7e1e2a405827c1b047b766c05bacab7174dc165",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-delay_oriented_qr_by_topology",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_qr_by_topology.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/delay_oriented_qr_by_topology.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/delay_oriented_qr_by_topology.pdf",
+      "sha256": "199f5c6c1d69913435d8405839035934e25baa68754af8a49fad74c36c9ccfe8",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-mwcds_ap_to_cgreedy_grp",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwcds_ap_to_cgreedy_grp.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwcds_ap_to_cgreedy_grp.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/mwcds_ap_to_cgreedy_grp.pdf",
+      "sha256": "36ead8bcba4982d15e4b1d44e4f68c26fa599d889314e523095a93af2770b484",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-mwds_ap_to_greedy",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwds_ap_to_greedy.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwds_ap_to_greedy.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/mwds_ap_to_greedy.pdf",
+      "sha256": "7520930ff85ed821827bbc2680bbb3c99de40be5f296668b7b0a4b5c99feb363",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-mwis_ap_to_optimal_twin",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwis_ap_to_optimal_twin.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwis_ap_to_optimal_twin.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/mwis_ap_to_optimal_twin.pdf",
+      "sha256": "a6255787464608e65ddd3cf85fb8943e2a499ba383d42a1e2232295d2f56efb8",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-mwis_local_complexity",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwis_local_complexity.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/mwis_local_complexity.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/mwis_local_complexity.pdf",
+      "sha256": "7f1487411a556aa7e689bf39da05725b31db356645e68f6b91bcf4c81010c310",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "output-nwst_ap_to_greedy",
+      "url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/nwst_ap_to_greedy.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/XzrTGMu/twin-nphard/main/output/nwst_ap_to_greedy.pdf",
+      "version": "Official repository one-page scientific output plot, inspected 2026-11-16",
+      "local_path": "research/full-text-review/gdpg/nwst_ap_to_greedy.pdf",
+      "sha256": "0d31e634d3cd0e1947d9a4c0e0254e59bee31f0e10e45b805830fbf39bc63c90",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh restart read title, affiliations, independent versus MDP repetitive graph problems, classical constraints and related work."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read contributions and full independent and graph-MDP mathematical formulations, hard constraints delegated to heuristic."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read twin-vector critic, independent static/dynamic policies, random sampling, MDP actor and bootstrap critic, four explicit graph tasks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all four independent task experiments, exact versus heuristic references, per-task trained models, synthetic datasets and timing exclusions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read graph MDP experiments, sampling-efficiency versus runtime distinction, authors limitations and first bibliography page."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read complete remaining bibliography, matched actual cited works rather than future publications."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read wireless formulations and complete independent/M DP critic-gradient derivations, including bootstrap approximation distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read Algorithms1/2 entire pseudocode and rates, independent versus MDP training budgets, local GCN equations and graph-size schedules."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Read full task/application appendices and all graph-generation details; distinguish theoretical example applications from experimentally solved tasks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read all task pipelines, constructive heuristic procedures, per-task GCN architectures/training times and distributed timing caveats."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 21,
+      "notes": "Read full final runtime figure page; estimates omit communications and are not actual distributed end-to-end latency."
+    },
+    {
+      "source_id": "output-convergence_sampling",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-delay_oriented_q_avg_qr_by_load",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-delay_oriented_q_med_qr_by_load",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-delay_oriented_qr_by_topology",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-mwcds_ap_to_cgreedy_grp",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-mwds_ap_to_greedy",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-mwis_ap_to_optimal_twin",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-mwis_local_complexity",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    },
+    {
+      "source_id": "output-nwst_ap_to_greedy",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Visually read all axes, legend, curves/boxplots and values in official source-plots-contact.jpg; compared with main plots and qualified topology/load heterogeneity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "twin",
+      "category": "contribution",
+      "statement": "A node-wise differentiable twin yields approximate deterministic gradients for fixed feasible graph heuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Sections 1.3/3; Equations 5-12"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "category": "method",
+      "statement": "Separate independent and graph-MDP formulations, random policy sampling, task-specific constructive greedy heuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            19,
+            20
+          ],
+          "locator": "Algorithms 1/2 and Appendix H"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Four graph-task results, exact versus heuristic reference distinction, sampling budgets and reuse/communication timing limits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            20,
+            21
+          ],
+          "locator": "Figures 1-11; Appendix I"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive: separate per-task pipelines and learned cost transformations, no learned incumbent combinatorial edits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            19,
+            20
+          ],
+          "locator": "Section 4.1 four similar pipelines; Appendix H constructive heuristic procedures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://openreview.net/forum?id=yHIIM9BgOo",
+      "locator": "PDF page 1 identifies ICLR 2023, three authors and Rice University/DEVCOM Army Research Laboratory; publication year precision retained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/XzrTGMu/twin-nphard",
+      "locator": "Manually attempted OpenReview forum/API (verification/403); read all 21 pages including A-I. Official 7199-member tree manually inventoried: nine output PDF plots, all separately registered and visually read; no other PDF/ZIP scientific appendix. Author presentation links distinguished from formal scientific appendix."
+    },
+    {
+      "field": "paradigm, scope, problems",
+      "source_url": "https://openreview.net/pdf?id=yHIIM9BgOo#page=19",
+      "locator": "Appendix H constructs MWIS/MWDS/NWST/MWCDS via separately configured actor/twin and fixed greedy heuristics; no incumbent-edit stage. Replaced generic task and incorrect hybrid classification."
+    },
+    {
+      "field": "code_url, version",
+      "source_url": "https://github.com/XzrTGMu/twin-nphard",
+      "locator": "Paper page 1 direct repository link and full current README read; task-specific model paths and Jan/Mar2024 later changes retained as version qualifications."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openreview.net/pdf?id=yHIIM9BgOo#page=15",
+      "locator": "Original Algorithm 1 crop Rect(105,266,505,600), 5x; paper has no overall architecture schematic, so algorithm is explicitly labeled rather than inventing one."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gdpg",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse2019",
+      "description": "Explicit related-work in-text citation and matching bibliography entry in the actual ICLR 2023 reading version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section 1.1 explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "gdpg",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicit related-work in-text citation and matching bibliography entry in the actual ICLR 2023 reading version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section 1.1 explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "gdpg",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson2022",
+      "description": "Explicit related-work in-text citation and matching bibliography entry in the actual ICLR 2023 reading version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section 1.1 explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "gdpg",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit related-work in-text citation and matching bibliography entry in the actual ICLR 2023 reading version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section 1.1 explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "gdpg",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li2018",
+      "description": "Explicit related-work in-text citation and matching bibliography entry in the actual ICLR 2023 reading version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section 1.1 explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "gdpg",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al. 2021",
+      "description": "Existing centralized CO approaches explicitly cite learned branching; exact four-author AAAI35 pages3931?3939 target, without claiming GDPG uses its branching architecture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zarpellon et al. 2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zarpellon et al. 2021"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced generic summary with full independent/MDP actor-twin mechanisms and complete task-specific training/test budgets.",
+    "Corrected constructive-improvement to constructive: learned continuous heuristic parameters are not incumbent solution moves; retained specialist because task pipelines are separately trained.",
+    "Replaced generic Repetitive Graph CO task with four direct graph tasks and delay-oriented scheduling; application discussions not counted as direct experiments.",
+    "Qualified exact versus heuristic references, sampling-count versus wall-time claims, reuse assumptions and unmeasured distributed communications.",
+    "Read and registered nine official one-page scientific output PDFs, including heterogeneous load/topology results.",
+    "Original Algorithm1 method illustration, actual code-version changes, appendix printed ER probability issue and five explicit reference edges documented.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "124dd89e88526919d885a1270e4632ffc02edc50ebccfd020866b563eedcabe1"
+}

@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "paper_id": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+  "note_path": "specialist/deep-learning-of-partial-graph-matching-via-differentiable-top-k.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "92074e448736529b5ab7f556ab7c47741ff3ab0ead9b9fa1c85e7561802f0bbe",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Deep_Learning_of_Partial_Graph_Matching_via_Differentiable_Top-K_CVPR_2023_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Deep_Learning_of_Partial_Graph_Matching_via_Differentiable_Top-K_CVPR_2023_paper.pdf",
+      "version": "OfficialCVPR2023CVFaccepted10p6272–6281full5authorbyline/copyrightidentity;all53refsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-47827f5e2f/publisher.pdf",
+      "sha256": "1beba27737fbd14b8c44b5a2172aedad3fea8147090fe525039c8250b50f4abc",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Wang_Deep_Learning_of_CVPR_2023_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Wang_Deep_Learning_of_CVPR_2023_supplemental.pdf",
+      "version": "OfficialCVF2pSupplementA–C withIMCstatistics/SPairfullTable9/GreedyTopKAlgorithm2;allreadandrendered.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-47827f5e2f/supplement.pdf",
+      "sha256": "47ab7254f5e778b746e728945b27f7629ca5b1c93db09bc608de4db8937b2ddf",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfulltitle/byline/SJTUandShanghaiAIfootnote,intro/relatedwork,datasetTable1,overviewFigure2andOTsoftTopKformulation/Algorithm1/relaxation constraints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadallAFA-I/AFA-Uarchitectures/equations,supervisedkcount,MSE,three-stagetraining/GTkcontrastedtestprediction,sparseNGMmemoryTable3,Table2andIMCbenchmarkconstruction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadfullTable4/5/6allcomparison/ablationrows,Figure5kerror,allmetric/multi-graph-comparisonexclusions,budgets/splits/baselinesandconclusion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readall53bibliographyentriesp9–10 includingindependentjournalvsconferenceidentities andMCS/similarityreferences."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "ReadcompleteAppendixA–C:IMCanchorconstruction/visualization,fullTables7–9SPairperclass/metricrows,classcounts,allAlgorithm2GreedyTopKandexplanation."
+    }
+  ],
+  "claims": [
+    {
+      "id": "afat-contribution",
+      "category": "contribution",
+      "statement": "DifferentiableOTTopK,AFAcountprediction,newIMCSparseGMand sparseNGMimplementation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "locator": "Contributions/Algorithm1/Section4"
+        }
+      ]
+    },
+    {
+      "id": "afat-method",
+      "category": "method",
+      "statement": "SoftTopKnot1-to-1;Hungarian+greedysubsettestdecoder;GTcounttrainvslearnedcounttest in3stages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithm1/Sections3.1–3.3"
+        }
+      ]
+    },
+    {
+      "id": "afat-results",
+      "category": "experiment",
+      "statement": "PascalGCAN-U62.0,WillowGCAN-I83.7,IMC50I72.9/IMC100U71.5;95CI5restarts;classnegativesandoracleTable6retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables2–6/Fig5"
+        }
+      ]
+    },
+    {
+      "id": "afat-limit",
+      "category": "limitation",
+      "statement": "Oraclecardinalitytraining/softmassnotassignment;count-errorcurveempiricalnotworstcase;differentbackbone/datasetcheckpoints notuniversalsharedpolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Section3.1–3.3/5.1–5.3"
+        }
+      ]
+    },
+    {
+      "id": "afat-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive:freshpartialassignmentfromrelaxedconfidenceandharddecode;noNNeditingfullincumbent/crossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure2/Algorithm1/interfaceconstraints"
+        }
+      ]
+    },
+    {
+      "id": "afat-repro",
+      "category": "reproducibility",
+      "statement": "All10main+2scientificsupppagesread/visualized;fullofficialarchive+READMEinventory/codeharddecoderchecked.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "AllSupplementA–C/Tables7–9/Algorithm2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52729.2023.00607",
+      "locator": "CachedexactDOI/title/5authorCrossrefpublished2023-06monthonly;officialCVF10p6272–6281matchingbyline/SJTU/ShanghaiAIfootnote/equalfirst2. Noexactdayorunverifiedarxivinvented."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/supplemental/Wang_Deep_Learning_of_CVPR_2023_supplemental.pdf",
+      "locator": "OfficialCVFpageexplicit2psciencesuppA–C/Tables7–9/Fig6/Algorithm2allread/rendered. CompleteThinkMatchZIP293memberscommit9f669cb22916f3e06c214f058daa5ac349bd7e15,noPDF/ZIP/ipynb. FullgeneralREADME+AFATREADME+datasetREADMEread;datasetarchiveinventorycached."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Deep_Learning_of_Partial_Graph_Matching_via_Differentiable_Top-K_CVPR_2023_paper.pdf",
+      "locator": "OriginalFig2+wholecaptionformalPDFp2/6273Rect40,45,572,3003x;public/paper-assets/deep-learning-of-partial-graph-matching-via-differentiable-top-k/framework.png254702bytesexistsandactualview_image. Allmain2–8andsupp1–2keymath/tables/architecture/panelsrendered."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/Thinklab-SJTU/ThinkMatch",
+      "locator": "CompleteZIPsha82e661757cddfa97be46471e3ace1388fd14422f1032ce8dd71d0cc2693c0bc1commentcommit9f669cb22916f3e06c214f058daa5ac349bd7e15. NGM/model_v2_topk390–409GTtrain/Hungarian/sortedsubset;GCAN336–339same;AFAT/sinkhorn_topk55–84checksrowcolanddataset-specificfloorceil. READMEseparatecheckpointconfigs. Nohistoricalruninvalidationclaim."
+    },
+    {
+      "field": "citations/exclusions",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Wang_Deep_Learning_of_Partial_Graph_Matching_via_Differentiable_Top-K_CVPR_2023_paper.pdf",
+      "locator": "Full53bibentriesmain9–10readandcataloguecompared;12exactdirectidentities. References44–46different-titleTPAMIextensionsnotmappedtoolderconferenceIDs;codeREADMEcitationnotpaperedge."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "glsearch",
+      "reference_label": "[3]",
+      "description": "Direct complete bibliography title/byline identity [3]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [3]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[11]",
+      "description": "Direct complete bibliography title/byline identity [11]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [11]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "[13]",
+      "description": "Direct complete bibliography title/byline identity [13]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [13]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+      "reference_label": "[15]",
+      "description": "Direct complete bibliography title/byline identity [15]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [15]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "reference_label": "[17]",
+      "description": "Direct complete bibliography title/byline identity [17]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [17]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[21]",
+      "description": "Direct complete bibliography title/byline identity [21]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [21]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "adaptive-edge-attention-for-graph-matching-with-outliers",
+      "reference_label": "[28]",
+      "description": "Direct complete bibliography title/byline identity [28]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [28]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[29]",
+      "description": "Direct complete bibliography title/byline identity [29]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [29]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "reference_label": "[47]",
+      "description": "Direct complete bibliography title/byline identity [47]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [47]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "cie-h",
+      "reference_label": "[51]",
+      "description": "Direct complete bibliography title/byline identity [51]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [51]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[52]",
+      "description": "Direct complete bibliography title/byline identity [52]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [52]"
+        }
+      ]
+    },
+    {
+      "citing": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "cited": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "reference_label": "[53]",
+      "description": "Direct complete bibliography title/byline identity [53]; actual cited formal paper, not merely repository mention or later journal lineage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [53]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingfieldsafter12fullsciencePDFpagesread.",
+    "SpecifiedGTcounttrain/predictedcounttest,Hungarianharddecodeandspecialistconstructiveclassification.",
+    "Retained95CIdefinition,oracleablation/negativeclassrows andmemorynotruntimecomparison.",
+    "Fullauthorcodearchiveinventory/README andnecessarydecoderchecked;12actualcitations,nojournalextensionfalsealiases.",
+    "Correctedinternalrelativecitationlinktoactualcurrentcataloguespecialistpath."
+  ],
+  "reviewed_note_sha256": "ff1038c78add4b64a5226715255bef78051e3cc4379700bbc604629a694930a5"
+}

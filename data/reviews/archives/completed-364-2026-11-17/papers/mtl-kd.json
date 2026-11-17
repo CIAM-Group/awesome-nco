@@ -1,0 +1,677 @@
+{
+  "version": 1,
+  "paper_id": "mtl-kd",
+  "note_path": "generalist/mtl-kd.md",
+  "baseline_note_sha256": "b5ff914b820942014ae7f34e11dac4fec37cdb7e4cdf6c4a2d60f92c1c602373",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Paper-Conference.pdf",
+      "version": "Formal NeurIPS2025 proceedings25pages, entiremain/references/checklist/AppendicesA–Ffreshread",
+      "local_path": "research/full-text-review/mtl-kd/paper.pdf",
+      "sha256": "f0b91d4f51af13eb7e50fe38b5e04dd4bbbe884440e4266356da5e3ed4e4e328",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Supplemental-Conference.zip",
+      "version": "Official publisherZIP five-page older line-numberedscientificappendix A–E, all5pagesfreshread separately",
+      "local_path": "research/full-text-review/mtl-kd/publisher-supplement.pdf",
+      "sha256": "4cf7ce02efe50ee6263412897864c5c5322c93269570a50266591c06016eca84",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 25,
+      "notes": "Fresh full25formalpages manually read including55refs/checklist14-20/allA-F21-25/tables1-9/Figures1-5. Six separate POMO teachers4000x20k each480M plus sharedheavydecoderstudent850x24k20.4M,100train/96and128dims,6native10unseen100/200/500/1000(singletrajectoryvsR3C200vsbaselineN8). Own learned R3C segment reconstruction improvesincumbent so mixedparadigm, notpairedPDP. Backhaulmainexplicitnoorderrestriction vsMVMoEstrict mayrequireimplementationcheck. Negative100/unseen/realinstance cells retained; classicalheuristicgaps notoptcert; RL20vsKD100confounded;fixedseednotabsence randomness. Alltablesreadincludingrealmean4.025/15.786/6.655, currentcode+visuals pending."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh complete5scientificpages read extractedofficialZIP filenameAppendix_Formatting... notgenerictemplate:olderline-numberedA-Ewithdifferentrefnumbering/printed20-24, repeats3realbenchmarktables values4.025/15.786/6.655 andlicenses, lacksformalnewR3Csegmentlengthablation. Do notmapoldercitationnumbersintocurrentformal55refs. Entirebodyalltableentriesread separately, not assumed overlap."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Knowledge distillation avoids externalexpert solutionlabels forheavydecoder multi-tasktraining butrequiresseparateRLteachers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Motivation/teacherandstudenttraining"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "SixteacherpolicyKLdistillation, maskedheavydecoder andownR3Clearnedincumbentsegmentreplacement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Figures1–3/studentloss/model/R3C"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Oneencoder/sixdecoderlayers,96or128width, dynamicstate+padding/feasibilitymasks; sixtrainedandtenunseencombinations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            21,
+            22
+          ],
+          "locator": "Architecture/state/tasksharing"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "6x80Mteacherinstances plus20.4Mstudentinstances, size100training and100–1000tests, S.T.vsR3C200separate; realmeans4.025/15.786/6.655andnegativecells.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Tables1–8/teacherandstudentbudgets"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Heavydecodercompute, unmatchedRL20vsKD100/searchbudgets, fixedseednoerrorbars, signedinterleavedbackhaulsnotpairedPDP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            9,
+            10,
+            16,
+            21,
+            22
+          ],
+          "locator": "Explicitlimitations andcomparisonscope"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SharedstudenthandlesnativeVRPvariants; constructsinitialroute andlearnedlyreconstructs/replacesincumbentsegmentsviaownR3C, supportinggeneralistconstructive-improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Actualsharedweights/actions/R3CSection5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and dates",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/899c6a43b9976e1077522fe5a39cafa3-Abstract-Conference.html",
+      "locator": "FormalPDF5authors/SZU/SUSTech/TUE;DOI10.52202/085713-3195, publishercitation_publication_date2026-04-23, venueyear2025. arxivv1June3,2025/v4Nov4,2025;genericSep18acceptance removed."
+    },
+    {
+      "field": "supplements and versions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Supplemental-Conference.zip",
+      "locator": "Fresh25formal+5separatesupplementPDF=30pagesallmain/references/checklist/A-Fandolderline-numberedA-E. Older5pnoR3Csegmentablation/differentrefnumbers;all3largeresulttablesreadindependently. SourceZIP53membersnoscientificextraPDF/ipynb/archive/video;wholeofficialposter115747PNGscientificcontentread, notPDFpages."
+    },
+    {
+      "field": "original figure and protocol distinctions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/899c6a43b9976e1077522fe5a39cafa3-Paper-Conference.pdf#page=4",
+      "locator": "AllFigures1–5rendered/viewed andallTable1–9textread; sourceFig1crop108,72,505,312withcaption. Explicit6teachers480Mvsstudent20.4M/teacherstudentcheckpointwidths/100training/1k128test sizes, S.T./N8/R3C200separated. Sourcefixedseednotstochasticityabsence."
+    },
+    {
+      "field": "current implementation",
+      "source_url": "https://github.com/CIAM-Group/MTLKD",
+      "locator": "README/fullcoreTrainerKL166–225/R3C297–324/env635–716and1081–1136 plustraining/testparamsread. Frozenno_gradteachers/student-distributionstates; decoderstepoptimizer; signedcapacitybothbounds;improvingsegmentacceptance. run.py900epochs150kinstancesvspaper850/24k;testdefaultR3CFalse/aug1 andsample_sizeforced1, notcurrentdefaultpaperreproduction."
+    },
+    {
+      "field": "citation_identity:icam",
+      "source_url": "https://arxiv.org/abs/2405.01906",
+      "locator": "FormalRef50p13citesoldertitleendingNeuralCombinatorialOptimization;exactarxiv2405.01906andsixauthors matchtargetICAMfinaltitleendingNeuralRoutingSolver. Sameversionidentitynotaliasguess."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2506.02935",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-06-03; title on abstract page: MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver. This date is preprint history, not formal publication. Cached research/full-text-review/mtl-kd/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mtl-kd",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "constraint-tightness",
+      "reference_label": "Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "dpn",
+      "reference_label": "DPN: Decoupling Partition and Navigation for Neural Solvers of Min-max Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "elg",
+      "reference_label": "Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "l2r",
+      "reference_label": "Learning to Reduce Search Space for Generalizable Neural Routing Solver",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Multi-Decoder Attention Model with Embedding Glimpse for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "nds",
+      "reference_label": "Neural Deconstruction Search for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "neurolkh",
+      "reference_label": "NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "pointerformer",
+      "reference_label": "Pointerformer: Deep Reinforced Multi-Pointer Transformer for the Traveling Salesman Problem",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "reld",
+      "reference_label": "Rethinking Light Decoder-based Solvers for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "cada",
+      "reference_label": "CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "urs",
+      "reference_label": "URS: A Unified Neural Routing Solver for Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit formal bibliography entry; not inferred from topical similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete formal References, numbered1–55, manually read and identities matched; duplicateCaDA17/37 andLCHRegret15/46do not create duplicateedges."
+        }
+      ]
+    },
+    {
+      "citing": "mtl-kd",
+      "cited": "icam",
+      "reference_label": "[50] Instance-conditioned adaptation for large-scale generalization of neural combinatorial optimization, arXiv2405.01906",
+      "description": "Earlier title of the same ICAM work, identified by exact arXivID and sixauthors, not by abbreviation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Reference50:ChangliangZhou/XiLin/ZhenkunWang/XialiangTong/MingxuanYuan/QingfuZhang and2405.01906 matchcatalogprimaryarxiv identity despite finaltitleendingNeuralRoutingSolver."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read25formalpagesplusall5scientificsupplementpagesandwholeofficialposter.",
+    "Correctedinstitutions/publicationmetadata;removedunverifiedacceptanceandunsupportedpairedPDPtag.",
+    "Changedparadigmconstructive→constructive-improvementbasedownR3Clearnedincumbentreplacement.",
+    "Documented480Mteacherpretraining/20.4Mstudentdata andtrueKDloss/onstudentstates.",
+    "Separatedsingletrajectory/R3C200/N8budgets,RL20vsKD100,realmeanvsindividualnegativecells.",
+    "Qualifiedcurrentrelease900/150ksettingsanddefaultR3Coffwithoutclaimingexperimentinvalidity.",
+    "Added31explicitformalbibrelationsincludingidentity-checkedICAMandoriginalFigure1."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5b4969ead12b70ad67fd8e7678d7c9c7f0f002329837caefc66312063aa77eac"
+}
