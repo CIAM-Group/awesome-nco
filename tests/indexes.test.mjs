@@ -88,6 +88,12 @@ describe('README index generation', () => {
     expect(renderPaperIndex([])).toBe('_No papers have been added yet._')
   })
 
+  it('links retained reference notes to the repository instead of a hidden website page', () => {
+    const rendered = renderPaperIndex([{ ...paper, inclusion: 'reference' }])
+    expect(rendered).toContain('https://github.com/CIAM-Group/awesome-nco/blob/main/specialist/example.md')
+    expect(rendered).not.toContain('https://ciam-group.github.io/awesome-nco/papers/example')
+  })
+
   it('derives navigation badge counts from the current collections', () => {
     const rendered = renderNavigationBadges([
       paper,

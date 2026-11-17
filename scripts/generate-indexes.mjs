@@ -15,7 +15,7 @@ try {
   const batch = JSON.parse(await fs.readFile(path.join(root, 'data/imports/conference-163-2026-11-17.json'), 'utf8'))
   batchSummary = ` Conference batch: **${batch.completed_papers} reviewed notes**, with **${batch.deferred_papers} deferred candidates** recorded in the [batch checklist](docs/CONFERENCE_IMPORT_2026-11-17.md).`
 } catch (error) { if (error.code !== 'ENOENT') throw error }
-next = replaceGeneratedIndex(next, `**Full-text review: ${reviewedCount} / ${papers.length} papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation graph records explicit in-text citations with source-page evidence.${batchSummary}`, 'review')
+next = replaceGeneratedIndex(next, `**Full-text review: ${reviewedCount} / ${papers.length} papers complete.** Reading coverage, source versions, corrections, and qualifications are recorded in the [review ledger](docs/FULL_TEXT_REVIEW.md). The citation register records explicit in-text citations with source-page evidence.${batchSummary}`, 'review')
 
 for (const scope of ['generalist', 'specialist', 'study']) {
   const generated = renderPaperIndex(papers.filter((paper) => paper.scope === scope && paper.inclusion === 'main'))

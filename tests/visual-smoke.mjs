@@ -6,264 +6,201 @@ import { chromium } from 'playwright'
 const root = process.cwd()
 const artifacts = path.join(root, 'tests', 'artifacts')
 await fs.mkdir(artifacts, { recursive: true })
-const generatedContent = JSON.parse(await fs.readFile(path.join(root, 'src', 'generated', 'content.json'), 'utf8'))
-const mainPapers = generatedContent.papers.filter(paper => paper.inclusion === 'main')
-const mainIds = new Set(mainPapers.map(paper => paper.id))
-const mainRelations = generatedContent.relations.filter(edge => mainIds.has(edge.citing) && mainIds.has(edge.cited))
-const expectedRelationCount = mainRelations.length
-const expectedPaperCount = mainPapers.length
-const referencePapers = generatedContent.papers.filter(paper => paper.inclusion === 'reference')
-const studyIds = new Set(generatedContent.papers.filter(paper => paper.scope === 'study').map(paper => paper.id))
-const expectedBenchmarkCount = mainPapers.filter(paper => paper.scope === 'study' && paper.paper_type === 'benchmark').length
-const expectedGeneralistConstructiveCount = mainPapers.filter(
-  (paper) => paper.scope === 'generalist' && paper.paradigm === 'constructive',
-).length
+const content = JSON.parse(await fs.readFile(path.join(root, 'src/generated/content.json'), 'utf8'))
+const { papers, relations } = content
+const ids = new Set(papers.map(paper => paper.id))
+const size = 25
 const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
-const basePath = process.env.GITHUB_ACTIONS && repositoryName ? `/${repositoryName}` : ''
-const siteUrl = `http://127.0.0.1:4173${basePath}`
+const base = process.env.GITHUB_ACTIONS && repositoryName ? '/' + repositoryName : ''
+const site = 'http://127.0.0.1:4173' + base
+const server = spawn(process.execPath, [path.join(root, 'node_modules/vite/bin/vite.js'), 'preview', '--host', '127.0.0.1', '--port', '4173', '--strictPort'], { cwd: root, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })
+const outgoing = new Map(papers.map(paper => [paper.id, relations.filter(relation => relation.citing === paper.id)]))
+const date = paper => (paper.acceptance ?? paper.publication)?.date ?? paper.date
+const yearsFor = source => [...new Set(source.map(paper => Number(date(paper).slice(0, 4))))].sort((a, b) => b - a)
+const forYear = (source, year) => source.filter(paper => Number(date(paper).slice(0, 4)) === year)
+const link = id => base + '/papers/' + id
 
-const vite = path.join(root, 'node_modules', 'vite', 'bin', 'vite.js')
-const server = spawn(process.execPath, [vite, 'preview', '--host', '127.0.0.1', '--port', '4173'], {
-  cwd: root,
-  stdio: ['ignore', 'pipe', 'pipe'],
-})
-
-async function waitForServer() {
-  for (let attempt = 0; attempt < 40; attempt += 1) {
-    try {
-      const response = await fetch(`${siteUrl}/`)
-      if (response.ok) return
-    } catch {
-      // The preview server is still starting.
-    }
-    await new Promise((resolve) => setTimeout(resolve, 250))
-  }
-  throw new Error('Preview server did not start in time.')
+function assert(condition, message) { if (!condition) throw new Error(message) }
+async function count(page, selector, expected) {
+  await page.waitForFunction(({ selector, expected }) => document.querySelectorAll(selector).length === expected, { selector, expected }, { timeout: 5000 })
+}
+async function links(page, selector, expected) {
+  await page.waitForFunction(({ selector, expected }) => JSON.stringify([...document.querySelectorAll(selector)].map(a => a.getAttribute('href'))) === JSON.stringify(expected), { selector, expected }, { timeout: 5000 })
+}
+async function years(page, expected) {
+  await page.waitForFunction(expected => JSON.stringify([...document.querySelectorAll('.timeline-year')].map(section => Number(section.dataset.year))) === JSON.stringify(expected), expected, { timeout: 5000 })
+}
+async function noOverflow(page, label) {
+  const widths = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth])
+  assert(widths[0] <= widths[1], label + ': horizontal overflow ' + widths.join('/'))
+}
+async function noProgress(page) {
+  await count(page, '.review-notice', 0)
+  await count(page, '.primary-nav a[href$="/references"]', 0)
+}
+async function checkReferences(page, paper, pageNumber = 1) {
+  await noProgress(page)
+  assert(await page.getByRole('region', { name: 'Cited by this collection', exact: true }).count() === 0, paper.id + ': incoming section remains')
+  await count(page, '.related-papers > .eyebrow', 0)
+  const expected = outgoing.get(paper.id).slice((pageNumber - 1) * size, pageNumber * size)
+  await count(page, '.related-paper-card', expected.length)
+  await links(page, '.related-paper-card h3 a', expected.map(edge => link(edge.cited)))
+  if (!expected.length) assert((await page.locator('#paper-references').innerText()).includes('No references to papers in this collection.'), 'Missing empty reference state')
 }
 
 let browser
 try {
-  await waitForServer()
+  for (let attempt = 0; attempt < 40; attempt++) {
+    try { if ((await fetch(site + '/')).ok) break } catch {}
+    if (attempt === 39) throw new Error('Preview server did not start')
+    await new Promise(resolve => setTimeout(resolve, 250))
+  }
+  assert(papers.length === 482 && relations.length === 4945, 'Unexpected public collection')
+  assert(papers.every(paper => paper.inclusion === 'main'), 'Reference notes leaked into public data')
   browser = await chromium.launch({ headless: true, executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH })
-  const viewports = [
-    { name: 'desktop', width: 1440, height: 1000 },
-    { name: 'mobile', width: 390, height: 844 },
-  ]
-
-  for (const viewport of viewports) {
+  for (const viewport of [{ name: 'desktop', width: 1440, height: 1000 }, { name: 'mobile', width: 390, height: 844 }]) {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } })
-    const pageErrors = []
-    context.on('page', page => page.on('pageerror', error => pageErrors.push(error.message)))
+    const errors = []
+    context.on('page', page => page.on('pageerror', error => errors.push(error.message)))
+    const page = await context.newPage()
+    await page.goto(site + '/', { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'A focused index of neural optimization research.' }).waitFor()
+    await noProgress(page)
+    assert(await page.getByText('Main collection', { exact: true }).count() === 0, 'Main label remains')
+    const collectionStat = page.locator('.collection-stats div').filter({ has: page.locator('dt', { hasText: /^Collection$/ }) })
+    assert((await collectionStat.locator('dd').innerText()) === '482', 'Incorrect home collection count')
+    await noOverflow(page, viewport.name + ' home')
+    await page.screenshot({ path: path.join(artifacts, 'home-' + viewport.name + '.png'), fullPage: true })
 
-    const home = await context.newPage()
-    await home.goto(`${siteUrl}/`, { waitUntil: 'networkidle' })
-    await home.getByRole('heading', { name: 'A focused index of neural optimization research.' }).waitFor()
-    await assertNoHorizontalOverflow(home, `${viewport.name} home`)
-    await home.screenshot({ path: path.join(artifacts, `home-${viewport.name}.png`), fullPage: true })
-
-    const collection = await context.newPage()
-    await collection.goto(`${siteUrl}/specialist`, { waitUntil: 'networkidle' })
-    await collection.getByRole('heading', { name: 'Specialist Neural Solvers' }).waitFor()
-    await assertNoHorizontalOverflow(collection, `${viewport.name} collection`)
-    const timelineCard = collection.locator('.timeline-paper-card').first()
-    await timelineCard.waitFor()
-    if (!/^Accepted |^Published |^arXiv /i.test((await timelineCard.locator('.timeline-paper-card__public').innerText()).trim())) throw new Error(`${viewport.name}: timeline card does not expose acceptance/preprint timing`)
-    if (await collection.locator('.select-field', { hasText: 'Timeline year' }).locator('select').count() !== 1) throw new Error(`${viewport.name}: timeline-year filter is missing`)
-    if (await timelineCard.locator('.institution-marks').count() !== 1) throw new Error(`${viewport.name}: timeline institution marks were not rendered`)
-    const timelineRadius = await timelineCard.evaluate((element) => getComputedStyle(element).borderRadius)
-    if (timelineRadius !== '8px') throw new Error(`${viewport.name}: timeline card radius is not 8px`)
-    if (await timelineCard.locator('.paper-card__summary, .paper-card__metadata').count()) {
-      throw new Error(`${viewport.name}: compact timeline rendered removed detail metadata`)
+    for (const scope of ['specialist', 'generalist', 'study']) {
+      const route = scope === 'study' ? 'studies' : scope
+      const source = papers.filter(paper => paper.scope === scope)
+      const available = yearsFor(source)
+      const newest = forYear(source, available[0])
+      await page.goto(site + '/' + route, { waitUntil: 'networkidle' })
+      await years(page, [available[0]])
+      await count(page, '.timeline-paper-card', Math.min(size, newest.length))
+      await links(page, '.timeline-paper-card > a', newest.slice(0, size).map(paper => link(paper.id)))
+      assert(await page.locator('.year-index').isVisible(), 'Year navigation is unavailable')
+      assert(await page.getByLabel('Timeline year', { exact: true }).count() === 0, 'Old all-years selector remains')
+      await noOverflow(page, viewport.name + ' ' + route)
+      if (scope === 'specialist') {
+        assert(await page.locator('.timeline-paper-card').first().evaluate(element => getComputedStyle(element).borderRadius) === '8px', 'Card styling regressed')
+        await page.screenshot({ path: path.join(artifacts, 'specialist-' + viewport.name + '.png'), fullPage: false })
+      }
+      const last = Math.ceil(newest.length / size)
+      if (last > 1) {
+        assert(await page.getByRole('button', { name: 'Continue to ' + available[1], exact: true }).count() === 0, 'Earlier year offered before final page')
+        await page.getByRole('navigation', { name: available[0] + ' papers pagination', exact: true }).getByRole('button', { name: 'Next', exact: true }).click()
+        await links(page, '.timeline-paper-card > a', newest.slice(size, size * 2).map(paper => link(paper.id)))
+        await page.getByRole('navigation', { name: available[0] + ' papers pagination', exact: true }).getByRole('button', { name: 'Page ' + last, exact: true }).click()
+        await links(page, '.timeline-paper-card > a', newest.slice((last - 1) * size).map(paper => link(paper.id)))
+      }
+      if (available.length > 1) {
+        await page.getByRole('button', { name: 'Continue to ' + available[1], exact: true }).click()
+        await years(page, available.slice(0, 2))
+        await count(page, '#year-' + available[1] + ' .timeline-paper-card', Math.min(size, forYear(source, available[1]).length))
+        await page.reload({ waitUntil: 'networkidle' })
+        await years(page, available.slice(0, 2))
+        await page.getByRole('button', { name: 'Show ' + available[1], exact: true }).click()
+        await years(page, [available[1]])
+        await page.goBack({ waitUntil: 'domcontentloaded' })
+        await years(page, available.slice(0, 2))
+      }
+      const oldPaper = source.find(paper => Number(date(paper).slice(0, 4)) === available[available.length - 1])
+      await page.getByRole('textbox').fill(oldPaper.title)
+      await years(page, [Number(date(oldPaper).slice(0, 4))])
+      await count(page, '.timeline-paper-card', 1)
+      await page.getByRole('button', { name: 'Reset', exact: true }).click()
+      await years(page, [available[0]])
+      await page.getByRole('textbox').fill('no-matching-paper-xyz123')
+      await count(page, '.timeline-paper-card', 0)
+      await page.getByRole('textbox').fill('')
+      await years(page, [available[0]])
     }
-    if (viewport.name === 'desktop') {
-      const cardBox = await timelineCard.boundingBox()
-      if (!cardBox || cardBox.height < 125 || cardBox.height > 160) throw new Error('desktop: timeline card is outside the compact height target')
+
+    await page.goto(site + '/papers', { waitUntil: 'networkidle' })
+    await links(page, '.paper-table tbody th a', papers.slice(0, size).map(paper => link(paper.id)))
+    const headers = await page.locator('.paper-table thead th').allTextContents()
+    assert(headers.join('|') === 'Paper|Institution|Scope|Paradigm / Type|Problem family|Accepted|Published|Preprint|Venue|Resources', 'Paper table columns changed')
+    const navigation = () => page.getByRole('navigation', { name: 'Papers pagination', exact: true }).first()
+    await navigation().getByRole('button', { name: 'Next', exact: true }).click()
+    await links(page, '.paper-table tbody th a', papers.slice(size, size * 2).map(paper => link(paper.id)))
+    await page.reload({ waitUntil: 'networkidle' })
+    await links(page, '.paper-table tbody th a', papers.slice(size, size * 2).map(paper => link(paper.id)))
+    await page.goBack({ waitUntil: 'domcontentloaded' })
+    await links(page, '.paper-table tbody th a', papers.slice(0, size).map(paper => link(paper.id)))
+    await navigation().getByRole('button', { name: 'Page 20', exact: true }).click()
+    await count(page, '.paper-table tbody tr', 7)
+    await page.getByLabel('Scope', { exact: true }).selectOption('generalist')
+    await count(page, '.paper-table tbody tr', Math.min(size, papers.filter(paper => paper.scope === 'generalist').length))
+    assert(!new URL(page.url()).searchParams.has('page'), 'Filter did not reset page')
+    await noOverflow(page, viewport.name + ' papers')
+    await page.screenshot({ path: path.join(artifacts, 'papers-' + viewport.name + '.png'), fullPage: false })
+    for (const url of ['/papers?page=garbage', '/papers?page=0', '/papers?inclusion=reference', '/papers?inclusion=all']) {
+      await page.goto(site + url, { waitUntil: 'networkidle' })
+      await count(page, '.paper-table tbody tr', size)
+      assert(await page.getByLabel('Collection', { exact: true }).count() === 0, 'Reference inclusion selector remains')
     }
-    await collection.screenshot({ path: path.join(artifacts, `specialist-${viewport.name}.png`), fullPage: false })
+    await page.goto(site + '/papers?page=99999', { waitUntil: 'networkidle' })
+    await count(page, '.paper-table tbody tr', 7)
+    await page.goto(site + '/references', { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'All papers', exact: true }).waitFor()
+    assert(new URL(page.url()).pathname === base + '/papers', 'Reference route did not redirect')
+    await page.goto(site + '/papers/neural-combinatorial-optimization', { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'All papers', exact: true }).waitFor()
+    await page.goto(site + '/papers/neural-combinatorial-optimization?page=2', { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'All papers', exact: true }).waitFor()
 
-    const studies = await context.newPage()
-    await studies.goto(`${siteUrl}/studies?type=benchmark`, { waitUntil: 'networkidle' })
-    await studies.getByRole('heading', { name: 'Research Studies', exact: true }).waitFor()
-    if (await studies.locator('.timeline-paper-card').count() !== expectedBenchmarkCount) throw new Error(`${viewport.name}: study type filter returned an unexpected count`)
-    await studies.getByLabel('Paper type', { exact: true }).selectOption('theory')
-    const expectedTheoryCount = mainPapers.filter(paper => paper.scope === 'study' && paper.paper_type === 'theory').length
-    if (await studies.locator('.timeline-paper-card').count() !== expectedTheoryCount) throw new Error(`${viewport.name}: changing study type did not update the timeline`)
-    await assertNoHorizontalOverflow(studies, `${viewport.name} studies`)
-    await studies.screenshot({ path: path.join(artifacts, `studies-${viewport.name}.png`), fullPage: false })
+    await page.goto(site + '/relations', { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'Paper citations', exact: true }).waitFor()
+    await count(page, 'canvas, .relation-graph, .relation-toolbar, .relation-legend', 0)
+    const rows = relations.slice(0, size)
+    await links(page, '.relation-row h3 a', rows.flatMap(row => [link(row.citing), link(row.cited)]))
+    const citationNav = () => page.getByRole('navigation', { name: 'Citations pagination', exact: true }).first()
+    await citationNav().getByRole('button', { name: 'Next', exact: true }).click()
+    await links(page, '.relation-row h3 a', relations.slice(size, size * 2).flatMap(row => [link(row.citing), link(row.cited)]))
+    await page.getByLabel('Connected collection', { exact: true }).selectOption('study')
+    const studyIds = new Set(papers.filter(paper => paper.scope === 'study').map(paper => paper.id))
+    const expected = relations.filter(row => row.papers.some(id => studyIds.has(id)))
+    await links(page, '.relation-row h3 a', expected.slice(0, size).flatMap(row => [link(row.citing), link(row.cited)]))
+    assert(!new URL(page.url()).searchParams.has('page'), 'Citation filter did not reset page')
+    assert(await page.locator('.relation-row a[target="_blank"]').count() >= Math.min(size, expected.length), 'Evidence links missing')
+    await noProgress(page)
+    await noOverflow(page, viewport.name + ' relations')
+    await page.screenshot({ path: path.join(artifacts, 'relations-' + viewport.name + '.png'), fullPage: false })
+    await page.getByRole('textbox').fill('no-matching-citation-xyz123')
+    await count(page, '.relation-row', 0)
 
-    const papers = await context.newPage()
-    await papers.goto(`${siteUrl}/papers?scope=generalist&paradigm=constructive`, { waitUntil: 'networkidle' })
-    await papers.getByRole('heading', { name: 'All papers' }).waitFor()
-    if (await papers.locator('.paper-table tbody tr').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: combined paper filters returned an unexpected result count`)
-    const expectedColumns = ['Paper', 'Institution', 'Scope', 'Paradigm / Type', 'Problem family', 'Accepted', 'Published', 'Preprint', 'Venue', 'Resources']
-    const actualColumns = await papers.locator('.paper-table thead th').allTextContents()
-    if (JSON.stringify(actualColumns) !== JSON.stringify(expectedColumns)) throw new Error(`${viewport.name}: papers table columns are incorrect (${JSON.stringify(actualColumns)})`)
-    if (await papers.locator('.paper-table tbody .institution-marks').count() !== expectedGeneralistConstructiveCount) throw new Error(`${viewport.name}: papers table institution marks were not rendered`)
-    await assertNoHorizontalOverflow(papers, `${viewport.name} papers`)
-    const tableWrap = papers.locator('.paper-table-wrap')
-    if (viewport.name === 'mobile') {
-      const scrollable = await tableWrap.evaluate((element) => element.scrollWidth > element.clientWidth)
-      if (!scrollable) throw new Error('mobile: paper table should scroll inside its wrapper')
+    const longest = papers.reduce((best, paper) => outgoing.get(paper.id).length > outgoing.get(best.id).length ? paper : best)
+    await page.goto(site + '/papers/' + longest.id, { waitUntil: 'networkidle' })
+    await checkReferences(page, longest)
+    await page.getByRole('navigation', { name: 'References pagination', exact: true }).getByRole('button', { name: 'Next', exact: true }).click()
+    await checkReferences(page, longest, 2)
+    assert(await page.locator('#paper-references').evaluate(element => Math.abs(element.getBoundingClientRect().top) < 200), 'Reference pagination jumped to the wrong position')
+    await page.screenshot({ path: path.join(artifacts, 'references-detail-' + viewport.name + '.png'), fullPage: false })
+
+    for (const [index, paper] of papers.entries()) {
+      await page.goto(site + '/papers/' + paper.id, { waitUntil: 'domcontentloaded' })
+      await page.getByRole('heading', { name: 'Reproducibility', exact: true }).waitFor()
+      for (const section of ['Motivation', 'Contributions', 'Methodology', 'Experiments', 'Limitations']) assert(await page.getByRole('heading', { name: section, exact: true }).count() === 1, paper.id + ': missing ' + section)
+      await checkReferences(page, paper)
+      if (paper.figure) {
+        await page.waitForFunction(() => [...document.querySelectorAll('.paper-figure img')].every(image => image.complete && image.naturalWidth > 0))
+      } else await count(page, '.paper-figure', 0)
+      const noteLinks = await page.locator('.paper-note a').evaluateAll(anchors => anchors.map(a => a.href))
+      for (const href of noteLinks) {
+        const url = new URL(href)
+        if (url.origin === new URL(site).origin && url.pathname.startsWith(base + '/papers/')) assert(ids.has(url.pathname.slice((base + '/papers/').length)), paper.id + ': invalid public note link ' + href)
+      }
+      await noOverflow(page, viewport.name + ' ' + paper.id)
+      if ((index + 1) % 100 === 0) console.log('Checked ' + viewport.name + ' ' + (index + 1) + '/' + papers.length + ' public detail routes.')
     }
-    await papers.screenshot({ path: path.join(artifacts, `papers-${viewport.name}.png`), fullPage: true })
-    await papers.goto(`${siteUrl}/papers?scope=study&type=benchmark`, { waitUntil: 'networkidle' })
-    if (await papers.locator('.paper-table tbody tr').count() !== expectedBenchmarkCount) throw new Error(`${viewport.name}: all-papers study filter returned an unexpected count`)
-
-    const compactFamily = await context.newPage()
-    await compactFamily.goto(`${siteUrl}/papers?family=Multi-objective+Optimization`, { waitUntil: 'networkidle' })
-    const familyCell = compactFamily.locator('.paper-table__family').first()
-    await familyCell.waitFor()
-    if (!(await familyCell.innerText()).includes('Multi-object. Opt.')) throw new Error(`${viewport.name}: long problem-family label was not compacted`)
-    if (!(await familyCell.locator('span').getAttribute('title'))?.includes('Multi-objective Optimization')) throw new Error(`${viewport.name}: compact problem-family label lost its full tooltip`)
-
-    const arxivOnly = await context.newPage()
-    const preprint = generatedContent.papers.find(paper => paper.venue === 'arXiv')
-    if (!preprint) throw new Error('No retained arXiv fixture available for publication-status check')
-    await arxivOnly.goto(`${siteUrl}/papers?inclusion=all&q=${encodeURIComponent(preprint.title)}`, { waitUntil: 'networkidle' })
-    const arxivOnlyCells = arxivOnly.locator('.paper-table tbody tr').first().locator('th, td')
-    if ((await arxivOnlyCells.nth(5).innerText()).trim() !== '—') throw new Error(`${viewport.name}: arXiv-only paper must show an empty Accepted value`)
-    if (await arxivOnlyCells.nth(7).locator('time').getAttribute('datetime') !== preprint.date) throw new Error(`${viewport.name}: arXiv-only paper is missing its Preprint date`)
-
-    const references = await context.newPage()
-    await references.goto(`${siteUrl}/references`, { waitUntil: 'networkidle' })
-    await references.getByRole('heading', { name: 'Reference collection', exact: true }).waitFor()
-    if (await references.locator('.paper-table tbody tr').count() !== referencePapers.length) throw new Error(`${viewport.name}: reference collection count is incorrect`)
-    await assertNoHorizontalOverflow(references, `${viewport.name} reference collection`)
-    await references.screenshot({ path: path.join(artifacts, `references-${viewport.name}.png`), fullPage: false })
-    await papers.goto(`${siteUrl}/papers`, { waitUntil: 'networkidle' })
-    await papers.getByLabel('Collection', { exact: true }).selectOption('all')
-    if (await papers.locator('.paper-table tbody tr').count() !== generatedContent.papers.length) throw new Error(`${viewport.name}: all-notes collection selector failed`)
-    await papers.getByLabel('Collection', { exact: true }).selectOption('main')
-    if (await papers.locator('.paper-table tbody tr').count() !== expectedPaperCount) throw new Error(`${viewport.name}: main collection selector failed`)
-
-    const relationPage = await context.newPage()
-    await relationPage.goto(`${siteUrl}/relations`, { waitUntil: 'networkidle' })
-    await relationPage.getByRole('heading', { name: 'Paper citations' }).waitFor()
-    await relationPage.locator('.relation-graph canvas').waitFor()
-    if (await relationPage.locator('.relation-legend .relation-style-key').count() !== 1) throw new Error(`${viewport.name}: citation legend is incorrect`)
-    if (await relationPage.locator('.relation-row').count() !== expectedRelationCount) throw new Error(`${viewport.name}: relation register is incomplete`)
-    if (await relationPage.getByLabel('Focus a paper').locator('option').count() !== expectedPaperCount + 1) throw new Error(`${viewport.name}: relation focus selector is incomplete`)
-    await relationPage.getByLabel('Collection', { exact: true }).selectOption('all')
-    if (await relationPage.locator('.relation-row').count() !== generatedContent.relations.length) throw new Error(`${viewport.name}: reference-inclusive citation count is incorrect`)
-    if (await relationPage.getByLabel('Focus a paper').locator('option').count() !== generatedContent.papers.length + 1) throw new Error(`${viewport.name}: graph omitted retained isolated nodes`)
-    await relationPage.getByLabel('Collection', { exact: true }).selectOption('main')
-    await relationPage.getByLabel('Focus a paper').selectOption('attention-model')
-    await relationPage.waitForTimeout(800)
-    await assertNoHorizontalOverflow(relationPage, `${viewport.name} relations`)
-    await relationPage.screenshot({ path: path.join(artifacts, `relations-${viewport.name}.png`), fullPage: false })
-    await relationPage.getByLabel('Connected collection', { exact: true }).selectOption('study')
-    await relationPage.getByLabel('Relation', { exact: true }).selectOption('citation')
-    const expectedStudyCitations = mainRelations.filter(relation => relation.papers.some(id => studyIds.has(id))).length
-    if (await relationPage.locator('.relation-row').count() !== expectedStudyCitations) throw new Error(`${viewport.name}: graph scope and citation filters returned an unexpected count`)
-    if (await relationPage.locator('.relation-row a[href*="#page="]').count() < expectedStudyCitations) throw new Error(`${viewport.name}: citation evidence links are missing`)
-
-    const detail = await context.newPage()
-    await detail.goto(`${siteUrl}/papers/attention-model`, { waitUntil: 'networkidle' })
-    await detail.getByRole('heading', { name: 'Motivation' }).waitFor()
-    if (await detail.locator('.paper-metadata dt', { hasText: 'Accepted' }).count() !== 1 || await detail.locator('.paper-metadata dt', { hasText: 'Preprint' }).count() !== 1) throw new Error(`${viewport.name}: detail metadata does not separate Accepted and Preprint`)
-    await detail.locator('.paper-figure img').waitFor()
-    const imageLoaded = await detail.locator('.paper-figure img').evaluate((image) => image.complete && image.naturalWidth > 0)
-    if (!imageLoaded) throw new Error(`${viewport.name}: framework image did not load`)
-    await assertReviewAndCitations(detail, generatedContent.papers.find(paper => paper.id === 'attention-model'))
-    await assertNoHorizontalOverflow(detail, `${viewport.name} detail`)
-    const metadataBox = await detail.locator('.paper-metadata').boundingBox()
-    const noteBox = await detail.locator('.paper-note').boundingBox()
-    if (!metadataBox || !noteBox) throw new Error(`${viewport.name}: detail columns were not rendered`)
-    if (viewport.name === 'mobile' && metadataBox.y >= noteBox.y) {
-      throw new Error('mobile: metadata must appear above the paper note')
-    }
-    if (viewport.name === 'desktop' && metadataBox.x >= noteBox.x) {
-      throw new Error('desktop: metadata must appear beside the paper note')
-    }
-    await detail.screenshot({ path: path.join(artifacts, `detail-${viewport.name}.png`), fullPage: true })
-
-    const detailWithoutFigure = await context.newPage()
-    const paperWithoutFigure = generatedContent.papers.find(paper => !paper.figure)
-    if (!paperWithoutFigure) throw new Error('No figure-free paper available for the optional-figure check')
-    await detailWithoutFigure.goto(`${siteUrl}/papers/${paperWithoutFigure.id}`, { waitUntil: 'networkidle' })
-    await detailWithoutFigure.getByRole('heading', { name: 'Motivation' }).waitFor()
-    if (await detailWithoutFigure.locator('.paper-figure').count()) throw new Error(`${viewport.name}: an empty framework image block was rendered`)
-    await assertNoHorizontalOverflow(detailWithoutFigure, `${viewport.name} detail without figure`)
-
-    const importedDetail = await context.newPage()
-    await importedDetail.goto(`${siteUrl}/papers/fmip`, { waitUntil: 'networkidle' })
-    await importedDetail.getByRole('heading', { name: 'Reproducibility', exact: true }).waitFor()
-    if (await importedDetail.locator('.paper-metadata dt', { hasText: 'Published' }).count() !== 1) throw new Error(`${viewport.name}: imported paper is missing its publication evidence`)
-    if (!await importedDetail.locator('.paper-figure img').evaluate(image => image.complete && image.naturalWidth > 0)) throw new Error(`${viewport.name}: imported original figure failed to load`)
-    await assertNoHorizontalOverflow(importedDetail, `${viewport.name} imported detail`)
-    await importedDetail.screenshot({ path: path.join(artifacts, `imported-detail-${viewport.name}.png`), fullPage: true })
-
-    await importedDetail.goto(`${siteUrl}/papers/beyond-heatmap-mcts`, { waitUntil: 'networkidle' })
-    if ((await importedDetail.locator('.paper-metadata dt', { hasText: 'Paper type' }).count()) !== 1) throw new Error(`${viewport.name}: study detail is incorrectly classified as a solver`)
-    if (await importedDetail.locator('a.back-link').getAttribute('href') !== `${basePath}/studies`) throw new Error(`${viewport.name}: study detail links to the wrong collection`)
-
-    if (pageErrors.length) throw new Error(`${viewport.name}: browser errors: ${pageErrors.join('; ')}`)
-
+    assert(errors.length === 0, errors.join('; '))
     await context.close()
   }
-  for (const viewport of viewports) {
-    const routePage = await browser.newPage({ viewport: { width: viewport.width, height: viewport.height } })
-    const routeErrors = []
-    routePage.on('pageerror', error => routeErrors.push(error.message))
-    for (const [index, entry] of generatedContent.papers.entries()) {
-      await routePage.goto(`${siteUrl}/papers/${entry.id}`, { waitUntil: 'domcontentloaded' })
-      await routePage.getByRole('heading', { name: 'Reproducibility', exact: true }).waitFor()
-      for (const section of ['Motivation', 'Contributions', 'Methodology', 'Experiments', 'Limitations']) {
-        if (await routePage.getByRole('heading', { name: section, exact: true }).count() !== 1) throw new Error(`${entry.id}: missing ${section}`)
-      }
-      await assertReviewAndCitations(routePage, entry)
-      if (entry.figure) {
-        await routePage.waitForFunction(() => [...document.querySelectorAll('.paper-figure img')].every(image => image.complete))
-        if (!await routePage.locator('.paper-figure img').evaluate(image => image.naturalWidth > 0)) throw new Error(`${viewport.name} ${entry.id}: figure failed to load`)
-      }
-      await assertNoHorizontalOverflow(routePage, `${viewport.name} ${entry.id}`)
-      if (entry.inclusion === 'reference' && await routePage.locator('a.back-link').getAttribute('href') !== `${basePath}/references`) throw new Error(`${entry.id}: reference back link is incorrect`)
-      if ((index + 1) % 50 === 0) console.log(`Checked ${viewport.name} ${index + 1}/${generatedContent.papers.length} retained detail routes.`)
-    }
-    if (routeErrors.length) throw new Error(`${viewport.name}: detail browser errors: ${routeErrors.join('; ')}`)
-    await routePage.close()
-  }
-  console.log(`Visual smoke checks passed at desktop and mobile sizes; all ${generatedContent.papers.length} retained detail routes rendered successfully.`)
+  console.log('Visual checks passed: public collection, pagination, explicit year browsing, redirects and all482 desktop/mobile detail routes.')
 } finally {
   if (browser) await browser.close()
   server.kill()
-}
-
-async function assertReviewAndCitations(page, paper) {
-  const notice = page.locator(`.review-notice--${paper.review_status}`)
-  if (await notice.count() !== 1) throw new Error(`${paper.id}: missing actual review status`)
-  const recordHref = await notice.locator('a').getAttribute('href')
-  if (!recordHref?.endsWith(`/data/reviews/papers/${paper.id}.json`)) throw new Error(`${paper.id}: incorrect review-record link`)
-  for (const direction of ['outgoing', 'incoming']) {
-    const field = direction === 'outgoing' ? 'citing' : 'cited'
-    const targetField = direction === 'outgoing' ? 'cited' : 'citing'
-    const label = direction === 'outgoing' ? 'References in this collection' : 'Cited by this collection'
-    const section = page.getByRole('region', { name: label, exact: true })
-    const expected = generatedContent.relations.filter(edge => edge[field] === paper.id)
-    if (await section.locator('.related-paper-card').count() !== expected.length) throw new Error(`${paper.id}: incorrect ${direction} citation count`)
-    const hrefs = await section.locator('.related-paper-card h3 a').evaluateAll(links => links.map(link => link.getAttribute('href')))
-    const targets = expected.map(edge => `${basePath}/papers/${edge[targetField]}`)
-    if (JSON.stringify(hrefs.sort()) !== JSON.stringify(targets.sort())) throw new Error(`${paper.id}: incorrect ${direction} citation endpoints`)
-  }
-}
-
-async function assertNoHorizontalOverflow(page, label) {
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
-  if (overflow) {
-    const offenders = await page.evaluate(() => [...document.body.querySelectorAll('*')]
-      .map((element) => {
-        const bounds = element.getBoundingClientRect()
-        const parent = element.parentElement
-        return {
-          element: `${element.tagName.toLowerCase()}.${element.className}`,
-          left: Math.round(bounds.left), right: Math.round(bounds.right), width: Math.round(bounds.width),
-          parent: parent ? `${parent.tagName.toLowerCase()}.${parent.className}` : '',
-          parentOverflow: parent ? getComputedStyle(parent).overflowX : '',
-          parentWidth: parent ? Math.round(parent.getBoundingClientRect().width) : 0,
-        }
-      })
-      .filter((item) => item.left < -1 || item.right > document.documentElement.clientWidth + 1)
-      .slice(0, 8))
-    throw new Error(`${label}: page has horizontal overflow (${JSON.stringify(offenders)})`)
-  }
 }

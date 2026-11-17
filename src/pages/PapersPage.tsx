@@ -3,6 +3,9 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { FilterBar } from '../components/FilterBar'
 import { InstitutionMarks } from '../components/InstitutionMarks'
 import { PageMeta } from '../components/PageMeta'
+import { Pagination } from '../components/Pagination'
+import { usePagination } from '../lib/usePagination'
+import { clearPages } from '../lib/pagination'
 import {
   compactProblemFamily,
   compactVenue,
@@ -20,7 +23,7 @@ import {
 } from '../lib/data'
 import type { PaperFilters } from '../types'
 
-export function PapersPage({ referenceOnly = false }: { referenceOnly?: boolean }) {
+export function PapersPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const families = useMemo(() => uniqueValues(papers.flatMap((paper) => paper.problem_families)), [])
   const years = useMemo(() => uniqueValues(papers.map((paper) => String(timelineYear(paper)))).sort((a, b) => Number(b) - Number(a)), [])
@@ -30,13 +33,15 @@ export function PapersPage({ referenceOnly = false }: { referenceOnly?: boolean 
     families,
     years,
   })
-  if (referenceOnly) filters.inclusion = 'reference'
+  filters.inclusion = 'main'
   const filtered = filterPapers(papers, filters)
+  const page = usePagination(filtered, 'papers-results')
 
   function updateFilter(key: string, value: string) {
     const keyMap: Record<keyof PaperFilters, string> = { query: 'q', scope: 'scope', paradigm: 'paradigm', family: 'family', year: 'year', type: 'type', inclusion: 'inclusion' }
     const param = keyMap[key as keyof PaperFilters]
-    const next = new URLSearchParams(searchParams)
+    const next = clearPages(new URLSearchParams(searchParams))
+    next.delete('inclusion')
     if (value === '' || (key === 'inclusion' ? value === 'main' : value === 'all')) next.delete(param)
     else next.set(param, value)
     setSearchParams(next, { replace: true })
@@ -44,17 +49,16 @@ export function PapersPage({ referenceOnly = false }: { referenceOnly?: boolean 
 
   return (
     <div className="directory-page">
-      <PageMeta title={referenceOnly ? 'Reference collection' : 'Papers'} description="Search papers, publication status, and full-text review records." />
+      <PageMeta title="Papers" description="Search neural combinatorial optimization papers and research studies." />
       <header className="directory-heading directory-heading--papers page-shell">
         <p className="eyebrow">Complete collection</p>
-        <h1>{referenceOnly ? 'Reference collection' : 'All papers'}</h1>
-        <p>{referenceOnly ? 'Preprints, workshops and publications outside the main inclusion criteria. These notes retain their identifiers and are excluded from main-collection counts.' : 'A searchable directory of specialist and generalist solvers, theory, benchmarks, and analyses. Full-text verification progress is recorded separately.'}</p>
+        <h1>All papers</h1>
+        <p>A searchable directory of specialist and generalist solvers, theory, benchmarks, and analyses.</p>
       </header>
       <section className="directory-workbench page-shell" aria-label="All papers">
         <FilterBar
           query={filters.query}
           selects={[
-            ...(!referenceOnly ? [{ key: 'inclusion', label: 'Collection', value: filters.inclusion ?? 'main', options: [{ value: 'main', label: 'Main collection' }, { value: 'reference', label: 'Reference collection' }, { value: 'all', label: 'All retained notes' }] }] : []),
             { key: 'scope', label: 'Scope', value: filters.scope, options: [{ value: 'all', label: 'All scopes' }, { value: 'specialist', label: 'Specialist' }, { value: 'generalist', label: 'Generalist' }, { value: 'study', label: 'Research Studies' }] },
             { key: 'type', label: 'Paper type', value: filters.type ?? 'all', options: [{ value: 'all', label: 'All paper types' }, ...Object.entries(paperTypeLabels).map(([value, label]) => ({ value, label }))] },
             { key: 'paradigm', label: 'Paradigm', value: filters.paradigm, options: [{ value: 'all', label: 'All paradigms' }, ...Object.entries(paradigmLabels).map(([value, label]) => ({ value, label }))] },
@@ -66,11 +70,13 @@ export function PapersPage({ referenceOnly = false }: { referenceOnly?: boolean 
           onReset={() => setSearchParams({}, { replace: true })}
         />
         {filtered.length > 0 ? (
+          <div id="papers-results" className="listing-target">
+            <Pagination {...page} label="Papers" />
           <div className="paper-table-wrap">
             <table className="paper-table">
               <thead><tr><th>Paper</th><th>Institution</th><th>Scope</th><th>Paradigm / Type</th><th>Problem family</th><th>Accepted</th><th>Published</th><th>Preprint</th><th>Venue</th><th>Resources</th></tr></thead>
               <tbody>
-                {filtered.map((paper) => (
+                {page.items.map((paper) => (
                   <tr key={paper.id}>
                     <th scope="row"><Link to={`/papers/${paper.id}`}><strong>{paper.short_title}</strong><span>{paper.title}</span></Link></th>
                     <td className="paper-table__institution"><InstitutionMarks institutions={paper.institutions} /></td>
@@ -86,6 +92,8 @@ export function PapersPage({ referenceOnly = false }: { referenceOnly?: boolean 
                 ))}
               </tbody>
             </table>
+          </div>
+            <Pagination {...page} label="Papers" />
           </div>
         ) : (
           <div className="empty-state"><strong>No papers match this view.</strong><p>Clear the search or select broader filters.</p><button type="button" onClick={() => setSearchParams({}, { replace: true })}>Reset filters</button></div>

@@ -8,10 +8,7 @@ export function HomePage() {
   const specialistCount = papersForScope('specialist').length
   const generalistCount = papersForScope('generalist').length
   const studyCount = papersForScope('study').length
-  const mainPapers = papers.filter(paper => paper.inclusion === 'main')
-  const referenceCount = papers.length - mainPapers.length
-  const reviewedCount = papers.filter(paper => paper.review_status === 'verified').length
-  const latest = sortPapersByFirstPublicNewestFirst(mainPapers).slice(0, 3)
+  const latest = sortPapersByFirstPublicNewestFirst(papers).slice(0, 3)
 
   return (
     <div className="home-page">
@@ -25,14 +22,12 @@ export function HomePage() {
             <Link to="/specialist">Explore specialist solvers <ArrowRight size={15} aria-hidden="true" /></Link>
             <Link to="/generalist">Explore generalist solvers <ArrowRight size={15} aria-hidden="true" /></Link>
           </div>
-          <p className="review-notice"><strong>Full-text verification: {reviewedCount} / {papers.length} complete.</strong> <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/docs/FULL_TEXT_REVIEW.md" target="_blank" rel="noreferrer">Read the source evidence and qualifications</a>.</p>
         </div>
         <dl className="collection-stats" aria-label="Collection statistics">
-          <div><dt>Main collection</dt><dd>{mainPapers.length}</dd></div>
+          <div><dt>Collection</dt><dd>{papers.length}</dd></div>
           <div><dt>Specialist</dt><dd>{specialistCount}</dd></div>
           <div><dt>Generalist</dt><dd>{generalistCount}</dd></div>
           <div><dt>Studies</dt><dd>{studyCount}</dd></div>
-          <div><dt><Link to="/references">Reference collection</Link></dt><dd>{referenceCount}</dd></div>
         </dl>
       </section>
 
