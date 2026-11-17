@@ -1,0 +1,394 @@
+{
+  "version": 1,
+  "paper_id": "conpas",
+  "note_path": "specialist/conpas.md",
+  "baseline_note_sha256": "3f687a77c7e701961d813d884ad21f45b67182890b70796ae54d214dff1e0983",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/huang24f/huang24f.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/huang24f/huang24f.pdf",
+      "local_path": "research/import-272/nco-99eebacb98.pdf",
+      "sha256": "532ec428dfa3135ece7377cb50e246b8690f3803f0f7569f2e1a0ab839422a1b",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read formal5authors/USC Cornell Metaaffiliations, binaryMILP/independentmarginals, positive/negativecontrastive motivation and partialpredictionHammingtrustregion. Distinguish construction from citedLNSwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allrelatedwork andnegative-dataalgorithm; actualmethodconstructsfromscratch. Inf requires certifiednoLPcompletion;mixedLQ maximin distinguishes mincontinuouscompletion notarbitrarypoorcontinuousassignment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read mixed maximin heuristic and outcome-dependent InfoNCE temperatures,2roundGCN, explicitseparatenativemodels,400/100/100splits,1hourlabels/BKSportfolio,1000secondsolverbudget andtraining<=5hours."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allmainresults/survival/PI/50percentlargers/ablations; exacthyperparameternegativecellk0800ConPaS6.59>PaS6.28andPI117.5>114.4; gapimprovementnotglobaldominance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read datafraction/hyperparameterdiscussion and explicitnooptimality/completenessconclusion; fullrefsfirst2pages includingPSmisdated2022butexacttitleidentity, CL-LNS andvariouslearningB&Bpapers."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read fullremainingbibliography andAppendixA2halfconvolutionGCN64dims/Bformulations/Cbaselines, NDcoverageonly.2.3.4, exacttaskseparatemodels."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allhyperparameter/PI/std/WA/Gurobi/accuracytables andAppendixD; classificationaccuracynegativesand.16vs.55CAgapinconsistentcells explicit, noadditionalPDFsupppublisher."
+    }
+  ],
+  "claims": [
+    {
+      "id": "conpas-method",
+      "category": "method",
+      "statement": "Good-solution positives and infeasible/poor nearby negatives train a bipartiteGCN with quality-weighted contrastive loss before classical partialassignmenttrustregionsearch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            12
+          ],
+          "locator": "Sections2–4/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "conpas-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: explicitly separate familymodels and fromscratchconstruction, incumbentLNS/branching onlysuggestedcomplementaryuses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            9
+          ],
+          "locator": "Section3.3/4.3/5.1/6"
+        }
+      ]
+    },
+    {
+      "id": "conpas-results",
+      "category": "experiment",
+      "statement": "Reported fourfamily/50percentlargerBKSgapPIgains, withWAnear-tie,k0800negativecase andlowerpredictionaccuracies; distincttableinconsistenciespreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            13,
+            14,
+            15
+          ],
+          "locator": "Figures2–9/Tables2–8"
+        }
+      ]
+    },
+    {
+      "id": "conpas-limits",
+      "category": "limitation",
+      "statement": "No completeness/optimality guarantee; mixedmaximinnegativeheuristic andtaskspecificnormalization/codeavailabilitylimitreplication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            9,
+            12,
+            13
+          ],
+          "locator": "Eq4/temperature/gapformula/explicitconclusion andNDcoveragegrid"
+        }
+      ]
+    },
+    {
+      "id": "conpas-contribution",
+      "category": "contribution",
+      "statement": "Infeasible and low-quality negative sample construction plus quality-weighted contrastive supervision improve a partial-assignment solver heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1–4.2/Figure1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v235/huang24f.html",
+      "locator": "FormalPDFp1fiveauthors USC/Cornell/Meta; publisherAaronMFerberexpandedname."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v235/huang24f.html",
+      "locator": "HTMLcitation_publication_date2024/07/08, PMLR23519757–19771."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/huang24f.html",
+      "locator": "ManualPMLRdownloadonlyintegrated15pagePDF; allA–D/bibread. ICMLevent32626officialscientificposter826604bytesread. Authorpublicationentry/PMLR/eventnoadditionalscientificsupplementorimplementationlinklocated."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/huang24f/huang24f.pdf",
+      "locator": "PDFp3 explicitlyconstructfromscratchratherthanCL-LNSrefine; p6separatemodelperbenchmark; p5Sec4.3 singlepredictionrestrictedsolve."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "conpas",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Song and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2022)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "contrastive-sat",
+      "reference_label": "Duan et al. (2022)",
+      "description": "Explicit body author-year citation and actual matching full bibliography identity; PS printed2022 is same identified formal work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Duan and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "Khalil et al., 2022",
+      "description": "Solution-prediction related work describes MIP-GNN warm starts/node guidance; exact three-author AAAI2022 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "conpas",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al., 2021",
+      "description": "B&B related work cites neural variable branching; exact TreeGate title/byline/AAAI2021 identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read15formalpages/A–D/fullrefs+official826604byteposter; manuallycheckedprimarysupplement/codeentries; correctedconstructive-only fromactualfromscratchmethod andretainedspecialist; qualifiednegativecases/BKS/normalization/mixedLQheuristic andtableconflicts;10explicitcitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "338932b954b593d7c19ff8daa01a1d3ea695a7da334c45f0c38a1adba0ae5621"
+}

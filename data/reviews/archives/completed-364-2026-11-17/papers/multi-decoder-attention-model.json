@@ -1,0 +1,381 @@
+{
+  "version": 1,
+  "paper_id": "multi-decoder-attention-model",
+  "note_path": "specialist/multi-decoder-attention-model.md",
+  "baseline_note_sha256": "ae2ee895991d1bdce8a1ab21c9e4d4053440e795ac9ef60782fd3fd78378d985",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2012.10638v1",
+      "retrieval_url": "https://arxiv.org/pdf/2012.10638",
+      "version": "arXiv:2012.10638v1,19December2020,11pages includingappendices",
+      "local_path": "research/full-text-review/multi-decoder-attention-model/paper.pdf",
+      "sha256": "6ec58b55d652e1120abf42e557c068ed7f7472b9e8a6343ae91b687aff201f25",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh titleblock andaffiliations, introduction/relatedworks, encoderEquations1-5; firstoutputpage3truncatedthenreread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh decoder andpairwiseKL formula, separatedbeams anddominanceconditions, EGtoplayer reembedding andpolicygradient/baselineEquations6-19."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 7,
+      "notes": "Fresh six-task setting, firststepKLonly, trainingprotocol andfullTable1comparisons, Table2ablations anddiscussion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Fresh acknowledgments andcompletebibliography; nineinternalmatches, noPOMOcitation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh fullscientificsupplement, fouradditionalproblemdefinitions, mergingcontrols, AMtemperaturetable, decoder-numberplot andCVRP150/200transfer."
+    }
+  ],
+  "claims": [
+    {
+      "id": "multi",
+      "category": "contribution",
+      "statement": "Sharedencoderwithfiveunsharedparameterdecoders andinitial-step pairwiseKLdiversity. ",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1/3.3 Equations11,19"
+        }
+      ]
+    },
+    {
+      "id": "EG",
+      "category": "method",
+      "statement": "Topencoderlayerisrefreshed everypstepsusingvisitednodeattentionmask, with lowerlayersfixed andprojectionscached.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section3.2 Equations12-15; hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "beam",
+      "category": "method",
+      "statement": "Separatewidth30/50beamsforeachfive decoderstotal150/250; within-decoder dominanceusesCVRPcapacitycondition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "CustomizedBeamSearch; comparative study"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP100bs50 objective7.79gap.38% in44min; CVRP10015.99gap2.23% in53min,total10000instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Table1 includingfootnotes"
+        }
+      ]
+    },
+    {
+      "id": "other-tasks",
+      "category": "experiment",
+      "statement": "ExperimentsalsoevaluateSDVRP, OP, PCTSP andSPCTSPwithtask-specificreferenceinterpretations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            10
+          ],
+          "locator": "Table1 andMoreDetailsComparativeStudy"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "CVRP100-trained bs50reaches29.28onCVRP200, versusAM1280sample29.54.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "TableS2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Task-specificroutingconstructionwithsharedencoder/multipledecoderpertrainedmodel; nojointmultitaskcheckpointdemonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            10
+          ],
+          "locator": "Taskinput/maskingadaptations andperproblemtraining/evaluation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2012.10638v1",
+      "locator": "arxivv1page1 titleblock: NTU,Shandong,NUS; twofirstauthors equalcontribution. Affiliationsdescribereadingversion."
+    },
+    {
+      "field": "publication date, venue",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/citationstylelanguage/get/turabian-fullnote-bibliography?publicationId=15746&submissionId=17430",
+      "locator": "Primarypublishercitationexport states35(13),18May2021,12042-12049; DOI10.1609/aaai.v35i13.17430."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2012.10638",
+      "locator": "Submissionhistory sole v1 on19December2020, commentsAcceptedAAAI2021; matchingPDFwatermark."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/liangxinedu/MDAM",
+      "locator": "PDFp5footnote; authorsREADMEreadandprovides six-task commandsandcheckpointdownloads."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/17430",
+      "locator": "Manually attemptedOJSofficiallanding2026-11-16; botprotection520/accessdenied. Accepted arxivv1includes scientificSupplementaryMaterialpp10-11, allmaintext-referenced comparisons/ablationsread. No unavailableattachmentinspectionclaimed."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2012.10638v1#page=3",
+      "locator": "OriginalFigure1 onPDFpage3, cropRect(45,35,570,273)points at3xscale; completebottomlinearinputandlowerdecoderretained. Atomicreplacementofownedpublicframeworkasset; visuallychecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2012.10638",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-12-19; title on abstract page: Multi-Decoder Attention Model with Embedding Glimpse for Solving Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/multi-decoder-attention-model/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals,FortunatoandJaitly2015",
+      "description": "Supervisedpointerpredecessor andlabelcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Belloetal.2016,preprint-era citation",
+      "description": "REINFORCEpointerpolicy, glimpse andclippingpredecessor; preservecited2016year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "rl-vrp",
+      "reference_label": "Nazarietal.2018",
+      "description": "Permutation-awareembedding, beamsearch andCVRP/SDVRPbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            8,
+            10
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "attention-model",
+      "reference_label": "Kool,vanHoofandWelling2019, AttentionLearntoSolveRoutingProblems",
+      "description": "Policyarchitecture/trainingbaseline andsix-taskbenchmarkpredecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "neurewriter",
+      "reference_label": "ChenandTian2019",
+      "description": "Localrewritingbaseline; constructiveversusimprovementdistinction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Daietal.2017",
+      "description": "Structure2vecDQNrelatedworkandexcludedbaseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudonetal.2018",
+      "description": "Explicitlycitedexcludedbaselinebasedonreportedperformance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "learning-to-improve",
+      "reference_label": "HaoLu,XingwenZhang,S.Y.2020",
+      "description": "Iterativelocalmovelearningcomparison omittedfromtable duetoreportedcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            8
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    },
+    {
+      "citing": "multi-decoder-attention-model",
+      "cited": "step-wise-routing",
+      "reference_label": "Xinetal.2020,TIIearlyaccessDOI3031409",
+      "description": "Motivatesirrelevantnoderemoval andEGgeneralizationofstepwisereembedding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            9
+          ],
+          "locator": "Explicit intextauthor-year citationandmatchingbibliography pp8-9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "CorrectedEGfromdecoder-context/every-stepdescription toperiodictoplayernodereembedding.",
+    "Addedfourmissingtaskformulations, first-step-onlyKL andperdecoderbeamaccounting.",
+    "RemovedunsupportedacceptancedateandPOMObaselinedescription; retainedpublisherpublicationdate.",
+    "ReplacedclippedpublicFigure1 withcompleteoriginalcrop, includinginputprojectionandlowerdecoder.",
+    "Expandedmethods/budgets/referenceunits/negativecomparisons andnineexplicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6fc74fc4cd41a5131cb53961efae330a98a6c0a4d2b6e099038727ebbaab6d72"
+}

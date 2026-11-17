@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "paper_id": "automatic-local-annealing",
+  "note_path": "specialist/automatic-local-annealing.md",
+  "baseline_note_sha256": "a703543f881d6cab7126cf50101573d66a58cc22d4946e2a60018607be0af4e5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/42a0e188f5033bc65bf8d78622277c4e-Paper.pdf",
+      "version": "OfficialNIPS1988volume1scannedproceedingsPDF,8pages602-609",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/42a0e188f5033bc65bf8d78622277c4e-Paper.pdf",
+      "local_path": "research/import-272/nco-f6370a7218.pdf",
+      "sha256": "98ca012436254992b465fbd009b5327346c92a7c5410df4f39e76ea9420b28ef",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh scannedfirsthalfread: fixedweightedconstraintnetworkmotivation, synchronouscontinuousactivation normalstepvsrestreset, localgoodness-normalizedsignedtemperature, k0.6/activation0-1/rest0.5, monotoneupdateprobability freezingbelow-0.79; schedulefreeclaim doesnotremovehandchosenresponsefunction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh secondhalfread: bothhanddesignednetworks/globalandlocalstates,100trialcurvesvsbestthree-legBoltzmannschedules, stableglobalmeansrestoftrial, informalquality/visitednessargumentexplicitlynotmathematicallydeveloped, freezing/satisficingandweightlearningonlyfuturework; all3references read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "local-temperature",
+      "category": "contribution",
+      "statement": "Localgoodness-temperature replaces global annealingschedule andcontrolsnormalupdatevsrestreset.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Motivation,Mechanics,Definitions andprobabilitycurve"
+        }
+      ]
+    },
+    {
+      "id": "mechanics",
+      "category": "method",
+      "statement": "Continuoussynchronousupdates,range0-1/rest0.5/k0.6 andfreeze threshold-0.79; responsefunctionstillhandchosen.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Mechanics andsimulationparameters"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Twohanddesignednetworks,100trialspercurve,bestthreelegBoltzmannschedules; stabilitydefinedrestoftrial.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Simulations/Results,Figures1-2andfootnotes"
+        }
+      ]
+    },
+    {
+      "id": "proof-limit",
+      "category": "limitation",
+      "statement": "Author explicitlyhasnomathematicaldescription ofstatequality-versusvisitedness; freezing canstabilizeimperfectconstraintstates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "HowItWorks"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "category": "classification",
+      "statement": "Weightsfixedconstraintinstance; proposedweightlearningisfuturework, no trainedcrossproblemcheckpoint; specialistneurodynamic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            8
+          ],
+          "locator": "Mechanics andfuturelearningdiscussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/42a0e188f5033bc65bf8d78622277c4e-Paper.pdf",
+      "locator": "Scannedp1 JaredLeinbach,Carnegie-MellonPsychology;titlematchesofficialentry."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/hash/42a0e188f5033bc65bf8d78622277c4e-Abstract.html",
+      "locator": "OfficialNIPS1988volume1 proceedingsentry."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/hash/42a0e188f5033bc65bf8d78622277c4e-Abstract.html",
+      "locator": "ManuallyopenedofficiallandingBibtex/Metadata/Paperonly; all8pagesread,no appendix/extra scientificattachmentreference."
+    },
+    {
+      "field": "figures",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1988/file/42a0e188f5033bc65bf8d78622277c4e-Paper.pdf",
+      "locator": "VisualfreshsheetPDFpp3,4,6,7 checksformulas/probabilitycurve/100trialplots; Figure1structuresandcaptionsreadonp5."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshreadall8scannedpages andall3references; keyformulaandcurvevisualcrosschecks.",
+    "Specifiedgoodness-basedsignedtemperatureandnormalupdatevsrestreset, notgenericthermalnoise.",
+    "Addedactualcontinuousactivation/k/thresholdsettings andhandchosenresponsefunctionlimitation.",
+    "Restrictedperformanceto2networks/100trials/cycles; stableglobalmeansfinite-trialpersistence.",
+    "Preservedauthors explicitlackofmathematicalproof andfuture-onlyweightlearning, no convergence/speedup/generalistclaims."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4a94dc65a2631d9513d98a8acb3ce3404f35f59667f54e05ecfbf5af0649c360"
+}

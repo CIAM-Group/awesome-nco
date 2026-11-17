@@ -1,0 +1,908 @@
+{
+  "version": 1,
+  "paper_id": "dimes",
+  "note_path": "specialist/dimes.md",
+  "baseline_note_sha256": "76820af8e991e3cf850d2b50ea2280fa734a126ba1d52bb508596468a708a855",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/dimes/paper.pdf",
+      "sha256": "7295e86474fcb166bc45537fc5b5ff8804e4e08ab26ae01fdb24638bf70c6575",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Supplemental-Conference.pdf",
+      "version": "publisher supplementary PDF",
+      "local_path": "research/full-text-review/dimes/supplement.pdf",
+      "sha256": "c9d3847de05e5384fc1be5cc74ee5ec8d5defb204289f92f04d91875ebb62f0e",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart reading: complete title, abstract, motivation, related work, cost-constrained solution distribution and independent-set objective; distinguish objective from maximal terminology."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh restart: read all auxiliary TSP/MIS distributions, first-order MAML equations and Algorithm 1, per-instance search, distinct graph backbones, all experimental settings and full-test-set timing definition."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh restart: read all TSP/MIS result and ablation tables, fine-tuning settings, train/test distribution differences, conventional solver and hardware caveats, MIS no-active-search and no-local-reduction evaluation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh restart: complete discussion of large-ER failure and one-shot reasoning/MIP limitations, plus bibliography references 1-36 including exact cited preprint versions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Fresh restart: read all final references 37-77 and entire checklist; no error bars reported. Manually scan exact titles and actual preprint/journal versions for catalogue citation matching."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart: complete search decoders, anisotropic/GCN/MLP architectures, sparsification, TSP/MIS training and hardware details, and conditional distribution concentration statements and beginning TSP proof."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Fresh restart: read complete TSP/MIS distribution concentration proofs, first-order meta-gradient derivation and all additional TSP results/transfer/training comparisons. These conditional propositions do not prove convergence of REINFORCE to a global optimum. Visually checked main PDF pages 4,5,7,8 and supplement pages 3,4,5,6,7 via existing rendered sheets."
+    }
+  ],
+  "claims": [
+    {
+      "id": "continuous-sampling",
+      "category": "contribution",
+      "statement": "Continuous scores initialize efficient auxiliary solution samplers without per-decision neural forward passes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections 3.1-3.2"
+        }
+      ]
+    },
+    {
+      "id": "meta-learning",
+      "category": "method",
+      "statement": "First-order instance-level meta-learning optimizes post-adaptation objective costs without labeled solutions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Section 3.3 Equations 12-17; Algorithm 1"
+        }
+      ]
+    },
+    {
+      "id": "adapted-parts",
+      "category": "method",
+      "statement": "The main TSP implementation adapts GNN output representations and MLP parameters, not merely raw logits or the entire GNN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Section 4.1.2; Table 2b and ablation discussion"
+        }
+      ]
+    },
+    {
+      "id": "different-networks",
+      "category": "method",
+      "statement": "TSP uses a 12-layer width-32 AGNN plus three-layer MLP; MIS uses GCN with a ten-layer residual MLP.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Appendix C.1-C.2"
+        }
+      ]
+    },
+    {
+      "id": "conditional-proofs",
+      "category": "limitation",
+      "statement": "The propositions condition on concentration on a solution and, for MIS, normalized bounded parameters; they do not prove global optimization convergence.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Appendix E Propositions 1-3 and proofs"
+        }
+      ]
+    },
+    {
+      "id": "tsp-quality-budget",
+      "category": "experiment",
+      "statement": "TSP10000 MCTS gap is 3.98% without adaptation and 3.19% with adaptation; total times are 29.83 minutes and 3.57 hours on 16 test instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Test-set sizes; Table 1"
+        }
+      ]
+    },
+    {
+      "id": "mis-counterexample",
+      "category": "experiment",
+      "statement": "Large ER sampling size 332.80 trails LwD 345.88 and KaMIS 381.31; active search is not used for MIS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Table 3; Section 4.2.2 and continuation"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "The paper explicitly places the neural method among construction learners; separate task networks and parameter adaptation do not establish a generalist or a local-move neural policy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            9
+          ],
+          "locator": "Section 2.1; Section 3.5; task-specific inference settings"
+        }
+      ]
+    },
+    {
+      "id": "error-bars",
+      "category": "reproducibility",
+      "statement": "The authors explicitly report no experimental error bars.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Checklist 3(c)"
+        }
+      ]
+    },
+    {
+      "id": "training-comparison",
+      "category": "reproducibility",
+      "statement": "The training-cost comparison evaluates AM/POMO trained on TSP100 and DIMES trained on TSP500 on TSP500 test graphs.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Appendix F.3 Table 6 and Figure 1"
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "The auxiliary sampler eliminates per-decision neural forward passes, while preserving sequential node choices; this targets neural decoding overhead for large instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Introduction; Section 3.2.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Paper-Conference.pdf",
+      "locator": "Publisher PDF page 1; UIUC and CMU title-block affiliations; equal-contribution/internship footnotes"
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2210.04123",
+      "locator": "Submission history v1, 8 October 2022"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/DIMESTeam/DIMES",
+      "locator": "Supplement pages 2-3 footnotes 7 and 10; matching author repository with TSP and MIS directories"
+    },
+    {
+      "field": "paradigm and scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/a3a7387e49f4de290c23beea2dfcdc75-Paper-Conference.pdf",
+      "locator": "Section 2.1 explicitly calls DIMES a construction learner; separate networks in Section 3.5"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a3a7387e49f4de290c23beea2dfcdc75-Abstract-Conference.html",
+      "locator": "Manual publisher landing and its Supplemental link checked 2026-11-16. Exactly one scientific supplementary PDF, seven pages, linked as Supplemental-Conference.pdf; all seven pages read, no ZIP/other attachment listed."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/a3a7387e49f4de290c23beea2dfcdc75-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-12-06; cached evidence research/full-text-review/dimes/page-1.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2210.04123",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-10-08; title on abstract page: DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems. This date is preprint history, not formal publication. Cached research/full-text-review/dimes/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dimes",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[1] Ahn et al., ICML 2020",
+      "description": "Discusses locally decomposable MIS methods and compares LwD, including its stronger large-ER result.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10,
+            11
+          ],
+          "locator": "Main text and bibliography reference [1]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[7] Bello et al., arXiv:1611.09940 (2016)",
+      "description": "Discusses RL construction and active search; the cited record is the preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            11
+          ],
+          "locator": "Main text and bibliography reference [7]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [7]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "[8] Bother et al., ICLR 2022",
+      "description": "Uses its integrated MIS benchmark and local-search/reduction controls.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            11
+          ],
+          "locator": "Main text and bibliography reference [8]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "neurewriter",
+      "reference_label": "[10] Chen and Tian, NeurIPS 2019",
+      "description": "Cites local rewriting as an incumbent-improvement learner.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Main text and bibliography reference [10]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-heuristic",
+      "reference_label": "[13] Deudon et al., CPAIOR 2018",
+      "description": "Cites and compares the policy-gradient TSP heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            11
+          ],
+          "locator": "Main text and bibliography reference [13]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "att-gcn",
+      "reference_label": "[19] Fu et al., arXiv:2012.10658 (2020)",
+      "description": "Uses its benchmark instances and MCTS decoder and compares learned heatmaps; bibliography cites the preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Main text and bibliography reference [19]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [19]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[26] Hottung and Tierney, arXiv:1911.09539 (2019)",
+      "description": "Cites neural large-neighborhood routing search among improvement methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Main text and bibliography reference [26]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[27] Hottung et al., latent-space routing; source bibliography lists year 2020",
+      "description": "Discusses per-instance search in a VAE latent space in the supplement; the source year is retained as a bibliographic caveat rather than copied into target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Main text and bibliography reference [27]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [27]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "efficient-active-search",
+      "reference_label": "[28] Hottung et al., arXiv:2106.05126 (2021)",
+      "description": "Discusses subset-parameter active search and compares POMO-plus-EAS variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            12
+          ],
+          "locator": "Main text and bibliography reference [28]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [28]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "graph-guided-local-search",
+      "reference_label": "[29] Hudson et al., arXiv:2110.05291 (2021)",
+      "description": "Cites graph-guided local search among improvement approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Main text and bibliography reference [29]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[31] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Discusses supervised edge heatmaps and compares GCN decoding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            12
+          ],
+          "locator": "Main text and bibliography reference [31]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [31]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[34] Karalias and Loukas, NeurIPS 2020",
+      "description": "Discusses expected objective plus feasibility penalties for locally decomposable graph optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            12
+          ],
+          "locator": "Main text and bibliography reference [34]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[36] Khalil et al., NeurIPS 2017",
+      "description": "Cites learned graph construction and the S2V-DQN MIS baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            12
+          ],
+          "locator": "Main text and bibliography reference [36]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[37] Kim and Park, NeurIPS 2021",
+      "description": "Cites learned collaborative improvement policies in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            13
+          ],
+          "locator": "Main text and bibliography reference [37]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "attention-model",
+      "reference_label": "[42] Kool et al., ICLR 2019",
+      "description": "Uses neural routing and sampling as predecessor/baseline and its instance-generation conventions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            8,
+            13
+          ],
+          "locator": "Main text and bibliography reference [42]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [42]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Appendix F.3 training-comparison discussion"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[44] Kool et al., arXiv:2102.11756 (2021)",
+      "description": "Discusses heatmap-guided dynamic programming and cites its preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            13
+          ],
+          "locator": "Main text and bibliography reference [44]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [44]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "pomo",
+      "reference_label": "[45] Kwon et al., arXiv:2010.16011 (2020)",
+      "description": "Cites POMO construction and compares its active-search and training-cost settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            8,
+            13
+          ],
+          "locator": "Main text and bibliography reference [45]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Appendix F.3 training-comparison discussion"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[46] Kwon et al., NeurIPS 2021",
+      "description": "Cites matrix encoding among constructive neural architectures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Main text and bibliography reference [46]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[48] Li et al., NeurIPS 2018",
+      "description": "Discusses supervised node heatmaps and compares guided-tree-search MIS results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            9,
+            13
+          ],
+          "locator": "Main text and bibliography reference [48]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Appendix A.1 explicit reference [48]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-to-improve",
+      "reference_label": "[51] Lu et al., ICLR 2020",
+      "description": "Cites iterative routing improvement in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Main text and bibliography reference [51]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "[52] Ma et al., arXiv:1911.04936 (2019)",
+      "description": "Cites graph-pointer hierarchical reinforcement learning among neural constructive methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Main text and bibliography reference [52]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "dact",
+      "reference_label": "[53] Ma et al., NeurIPS 2021",
+      "description": "Cites dual-aspect collaborative transformation as an improvement learner.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Main text and bibliography reference [53]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "rl-vrp",
+      "reference_label": "[57] Nazari et al., arXiv:1802.04240 (2018)",
+      "description": "Cites reinforcement-learning vehicle routing as another neural-optimization task.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Main text and bibliography reference [57]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "dynamic-am",
+      "reference_label": "[63] Peng et al., ISICA 2019",
+      "description": "Cites dynamic attention in neural constructive related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Main text and bibliography reference [63]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "pointer-networks",
+      "reference_label": "[68] Vinyals et al., NeurIPS 2015",
+      "description": "Discusses supervised Pointer Network tour construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            14
+          ],
+          "locator": "Main text and bibliography reference [68]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "ppo-bihyb",
+      "reference_label": "[70] Wang et al., arXiv:2106.04927 (2021)",
+      "description": "Cites the bi-level graph-optimization framework among improvement methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Main text and bibliography reference [70]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[72] Wu et al., TNNLS early-access citation (2021)",
+      "description": "Discusses learned improvement methods and their scaling limitations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            14
+          ],
+          "locator": "Main text and bibliography reference [72]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[73] Xin et al., AAAI 2021",
+      "description": "Cites multi-decoder constructive routing in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Main text and bibliography reference [73]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "neurolkh",
+      "reference_label": "[74] Xin et al., NeurIPS 2021",
+      "description": "Cites neural-guided LKH as a learned improvement approach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "Main text and bibliography reference [74]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[75] Yolcu and Poczos, NeurIPS 2019",
+      "description": "Cites learned local search for SAT among neural optimization tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Main text and bibliography reference [75]"
+        }
+      ]
+    },
+    {
+      "citing": "dimes",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[76] Zhang et al., arXiv:2010.12367 (2020)",
+      "description": "Cites job-shop RL dispatching; bibliography cites its preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Main text and bibliography reference [76]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added omitted University of Illinois Urbana-Champaign affiliation and retained internship distinction.",
+    "Replaced inferred acceptance date with publisher-supported publication year.",
+    "Reclassified the principal neural method as constructive, separating parameter adaptation from optional incumbent MCTS.",
+    "Specified actual adapted representations/MLP parameters and separate TSP/MIS backbones.",
+    "Qualified conditional concentration propositions and first-order approximation instead of claiming global convergence.",
+    "Added test-set sizes, dataset-total timings, task-specific hardware, and active-search update counts.",
+    "Recorded no MIS active search, large-ER counterexample, absent error bars and training-scale differences in efficiency comparisons.",
+    "Recorded 31 explicit internal citations, including supplement-only latent-space discussion.",
+    "Fresh restart independently reread every main/supplement page, rechecked all explicit citations and official supplemental attachment; retained task-specific models, adverse large-ER result and conditional-theorem caveats.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a1e402a7c0e2ec951c44a20dce7c2d2f6e0196b6952968eb586c550345ab3d4f"
+}

@@ -1,0 +1,950 @@
+{
+  "version": 1,
+  "paper_id": "fast-t2t",
+  "note_path": "specialist/fast-t2t.md",
+  "baseline_note_sha256": "7efad66a33861d0a59b57857e6b96dabe19bb205b3076e40495a6dc6a1d0f745",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/352b13f01566ae34affacc60e98c16af-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/352b13f01566ae34affacc60e98c16af-Paper-Conference.pdf",
+      "version": "NeurIPS2024 publisher28pages including A-E and checklist; arxiv2025posting separatelychecked",
+      "local_path": "research/full-text-review/fast-t2t/paper.pdf",
+      "sha256": "ef4a097b3889922e44b220371b6b1adb9fc9003729b09615d19136d463651ccf",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh5authors SJTU/MIT/CUHKShenzhen affiliations missinglatter2; maxcardinalityMISmissing; one-step optimizationconsistencymapping ownnewconstructor plus newprobabilitygradientsearch. Allintro/related/prelim and OptCMDefs4.1/4.2 lossEq3-4 across independentnoise trajectories read; supervisedtarget not actualoptimality guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Fresh entiretwo core stages: ownOptCMinitialoneforward+multistepAlg1; freeenergy pointestimateeta, px=etaQalphaT, exponentialgradientEq8 combines consistencytoincumbent andobjective then two heatmapsdecodechoosebetter, neuralweightsfixed. Ts/Tg schedules actualdiffbaseline50+3x5; FAST1+1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Fresh Tables1-3 allsettings/timing: 1+1 vs5+5, singleshot TSP500 sampling quality loss, relativegapnotlength; originalT2Tbaseline15prose vs30table discrepancy; crossscale fulltable needsvisual. MISRB200-300newnotSATLIB, ER700-800p.15, LKHruntimecurve notuniversalquality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Fresh allMIStable4 includes one+one samplingER worseT2T, KaMISbetter and GurobiRB gap inconsistent displayedmeans, fullrefs1-57 actualcited UTSP/LEHD2024vol36 preserve; nofuturebadedge. All references done."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 17,
+      "notes": "Fresh Aalgorithm/trainingtimesalpha.5 BCE loss vs triangle metric caveat, lambda1/2TSP50/MIS2 rewritenoise.2/.3; fullTSPLIB29+20 rows GSbenefits notalways; SATLIB425.23 stillbelowKaMIS, limiteddatascience; MISp/size/crossdataset allrowsread. Table3 vs Fig7 axes caption conflict and claimed<.6 transfer notuniform supported. Hardware4090small/MIS,A100large."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Fresh CdataTSP1280/128MIS90ktrain500testRB/163840ER, k50/100notboth50, trainingdoubleDIFUSCO4A10041h16m/139h26m/45h2m/101h3m, C baseline100vs50+30, allDsinusoid12layer256/128 andElimitsserialbottleneck/doubleoffline. Table10duplicatedER->RBlabel twooppositedirections cannotforce direction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 25,
+      "notes": "Fresh checklist1-10 fullguidelines and answers; explicit no statisticalsignificance/errorbars, sourcecodepromisedatacceptancehistoricalnotcurrentmissing; noextra theorem proof declared, onlySect5derivations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 28,
+      "notes": "Fresh completechecklist11-15 allguidelines, assets release intent and no humans/IRB. All28pages including A-E/checklist complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "optcm",
+      "category": "contribution",
+      "statement": "Ownnewconditionalconsistencyconstructor plus ownnewfreeenergyprobabilitysearch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4/5"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Twonoisetrajectories supervisedBCEtowardreference,12layerGNN,heuristiclabelsnotcertifiedoptima.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14,
+            18,
+            19,
+            20
+          ],
+          "locator": "Eq3-4 Algorithm2 AppendixC/D"
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "category": "method",
+      "statement": "FixedNN weights, latentBernoulliprobabilities exponentialgradient, twoheatmaps greedyfeasibility plus optional2opt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            14
+          ],
+          "locator": "Section5 Eq8"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "1280/128 tests4090smallA100large,doubleofflinebudget,Ts/Tg/sampling/2optqualified, failures retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Tables1-12"
+        }
+      ]
+    },
+    {
+      "id": "source-caveats",
+      "category": "experiment",
+      "statement": "Table3/Fig7axes conflict,Table10duplicateddirection,Table4gapmeans mismatch, no statisticaltests.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10,
+            16,
+            18,
+            24
+          ],
+          "locator": "Matrixlabels/Checklist7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive-improvement ownOptCMconstructionandgradientincumbent core, Ts-onlyconstructorablation, restoredmaximumMIS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "locator": "Sections3/5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/352b13f01566ae34affacc60e98c16af-Abstract-Conference.html",
+      "locator": "Publisher/titlepage5authors SJTU/MIT/CUHKShenzhen; restored2institutions; formal2024yearprecision removedgenericnotificationacceptance."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2502.02941",
+      "locator": "Manualhistoryv1Feb5,2025 afterNeurIPS2024; actualpublisherPDFread, notunreadarxivversion."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/352b13f01566ae34affacc60e98c16af-Abstract-Conference.html",
+      "locator": "ManualpublisherintegratedPDFonly/noextra; all28pages A-E/checklist complete. ORAPIchallenge403 saved, GitHubtree noPDFZIPadditionalscience, officialmain/dataREADMEs read."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/Fast-T2T",
+      "locator": "ExacttitleofficialREADME withDIFUSCOfoundation andTSP50/100initialization; Fast1+1andearlierT2Tcommandsdistinguished, data90kRB/163840ER."
+    },
+    {
+      "field": "paradigm, problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/352b13f01566ae34affacc60e98c16af-Paper-Conference.pdf#page=6",
+      "locator": "OwnnewOptCM constructor Section5.1 plusnewguidedincumbent Section5.2 bothcore, parentagrees hybrid; maxcardinalityMISmissingrestored, separatecheckpoints specialist."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/352b13f01566ae34affacc60e98c16af-Paper-Conference.pdf#page=5",
+      "locator": "OriginalFigure2 cropRect(105,65,515,184)5x; visualformulas/architecture/alltables/axes/checklist inspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/352b13f01566ae34affacc60e98c16af-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/fast-t2t/page-1.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/352b13f01566ae34affacc60e98c16af-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/fast-t2t/page-1.html; citation_title=['Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2502.02941",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-02-05; title on abstract page: Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/fast-t2t/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "fast-t2t",
+      "cited": "attention-model",
+      "reference_label": "2arxiv2018",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "3arxiv2019",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "pomo",
+      "reference_label": "4",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "sym-nco",
+      "reference_label": "5arxiv2022",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "dimes",
+      "reference_label": "6arxiv2022",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "difusco",
+      "reference_label": "7",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "t2t",
+      "reference_label": "8",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "utsp",
+      "reference_label": "9cited2024vol36",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "pointer-networks",
+      "reference_label": "10",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "graph-guided-local-search",
+      "reference_label": "11and56arxiv2021",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "att-gcn",
+      "reference_label": "12",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "lehd",
+      "reference_label": "13cited2024vol36",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "14arxiv2016",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "efficient-active-search",
+      "reference_label": "15arxiv2021",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "20",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "latent-search-space-routing",
+      "reference_label": "21",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "22",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "cryptoanfnet",
+      "reference_label": "23",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "25cited2021",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "neurewriter",
+      "reference_label": "26",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "learning-to-delegate",
+      "reference_label": "27",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "tam",
+      "reference_label": "28",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "prnet-chip-design",
+      "reference_label": "29",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "hubrouter",
+      "reference_label": "30",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "gflownet-combopt",
+      "reference_label": "31arxiv2023",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "erdos-goes-neural",
+      "reference_label": "39",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "principled-co-relaxation",
+      "reference_label": "40",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "42arxiv2022",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "learning-heuristic",
+      "reference_label": "50",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "52",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "53arxiv2022",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "fast-t2t",
+      "cited": "learning-what-to-defer",
+      "reference_label": "54",
+      "description": "Explicit numbered text/table citation and matching reference. Actual cited preprint/year retained, duplicate references merged into one edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit numbered text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredMIS/maxcardinality andMIT/CUHKShenzhen affiliations.",
+    "Correctedconstructiveto constructive-improvement ownnewOptCMconstructor+search, distinguishedpureconstructionablation andT2Tborrowedinitialpoint.",
+    "Fullsupervisedloss/approximatefreeenergy/latentupdatesnotweights/feasibilitymethodanddoubleofflinebudget.",
+    "Budgetqualifiedquality/speed inclsingle-step losses,MISheuristicsstronger,49TSPLIBcases and SATLIB/multi-distribution allscience read.",
+    "Preserved Table3/Fig7axis,Table10direction,Table4gap andbaseline15/30 inconsistencieswithoutinventedresolution.",
+    "ReplacedfigurewithoriginalFig2, removedgenericacceptance, rebuilt32explicitcitationedges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f617dc42361bb79895b1719eb7b1b103f2639a07bd353d3bfdd6859985ce7589"
+}

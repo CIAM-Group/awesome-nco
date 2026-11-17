@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "paper_id": "learn-lagrangian-multipliers",
+  "note_path": "specialist/learn-lagrangian-multipliers.md",
+  "baseline_note_sha256": "2cbe541578ac99e4a1ea0113beb48d7203297ddedfd605fcec3bc57557f1d808",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/demelas24a/demelas24a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/demelas24a/demelas24a.pdf",
+      "local_path": "research/import-272/nco-32bfddae0c.pdf",
+      "sha256": "20075a5531aba6041e11766861f6af239a777be32fc38c74c63b4dfdf46515e5",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read Lagrangiandualweakduality/nonnegativepredictedmultipliers/CRprimaldualrequired, softplusdeviations, exactrelaxedsubproblemsupplyboundsandanalyticb-Axsubgradient; notneuralprimalfeasiblesolver."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read residual GCN encoder and 5 stochastic predictions, structured exact LR decoder, related work and 6 synthetic MCND/GA datasets with SMS++ reference and relative Lagrangian-bound GAP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all bound accuracy/runtime tables, warm-start bundle and ablation negatives, larger-instance tests and conclusions; GAP is SMS++ Lagrangian reference, not primal gap. Read first bibliography page."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete bibliography and explicit cited solver identities; distinguish survey/non-neural baseline references from registered neural solver relations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all features and MCND/GA formulations, flow equalities require unrestricted MC multipliers versus GA nonnegative upper-bound relaxation, generated data and different 5-block MC/3-block GA models/hardware. Flag printed MC minimization ordering and check rendered formula."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read all remaining kNN/features/architecture depth and subgradient appendix; Table7 gains only marginal and cap100000 may preclude reaching targets; rendered main architecture, Table1, MC mathematical ordering and Table7."
+    }
+  ],
+  "claims": [
+    {
+      "id": "lm-contribution",
+      "category": "contribution",
+      "statement": "AmortizedprobabilisticmultiplierpredictionwithoutoptimalLMlabels andclassicaldualwarmstarts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections1-2"
+        }
+      ]
+    },
+    {
+      "id": "lm-method",
+      "category": "method",
+      "statement": "SelfsupervisedCRconditionedprobabilisticGCN predicts dualmultipliers; exactrelaxedsubproblemoptima provide boundandanalyticgradient.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            13,
+            14,
+            15
+          ],
+          "locator": "Sections2/AppendicesA-C/E"
+        }
+      ]
+    },
+    {
+      "id": "lm-experiments",
+      "category": "experiment",
+      "statement": "Sixseparatedatasets improvereferenceLagrangianGAPataddedCR/LRcost; strongbundlewarmstartsbutminor cappedsubgradientgains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            15,
+            16,
+            17
+          ],
+          "locator": "Tables1-7"
+        }
+      ]
+    },
+    {
+      "id": "lm-classification",
+      "category": "classification",
+      "statement": "SeparatelytrainedMC/GAmodels5vs3blocks; largercommoditytransferwithinMC; dualcomponentconstructionnotprimalincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            15
+          ],
+          "locator": "Generalization/AppendixE"
+        }
+      ]
+    },
+    {
+      "id": "lm-limits",
+      "category": "limitation",
+      "statement": "MCflowequalitymultipliersunrestricted; GAmaximizationnonnegativeLRupperbound; decreasingcostmin-knapsackprintedrecipeincorrectaswritten.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "locator": "AppendixB.2/C.1; renderchecked counterexamplew(-1,-2),cap1,f.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v235/demelas24a.html",
+      "locator": "HTMLtitle/fourauthors/pages10368-10384 andPDFp1LIPN/SorbonneParisNord/CNRS/CERMICSEcoledesPonts."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v235/demelas24a.html",
+      "locator": "HTMLcitation_publication_date2024/07/08,ICML/PMLR235."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/demelas24a.html",
+      "locator": "ManualpublisherDownloadPDFandORaZnZOqUOHqonly;all17pagesA-Iintegrated. OrdinaryAPI403. Author76472byteJuliaZIPand1284216byteInstancesZIPinventoried,noextrascientificPDF/ZIP/TeX;linkedonlinedocschecked."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/FDemelas/Learning_Lagrangian_Multipliers.jl",
+      "locator": "READMElinksInstances/datasets;Graphormer/Sampler/LRlossanalyticpullback/runTesttiming/MlpGAsigninspected; historicalconfignotinferredfromcurrentdefaults."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicitbipartiteencoding/architecturecitationsandexactbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8,
+            10,
+            13,
+            16
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicitnode-selectioncitationandmatchingtitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicitroutingcitationandmatchingtitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "ExplicitroutingGCNcitationandDIFUSCOentry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicitcutselectioncitationandhierarchicalsequencetitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lagrangian-multipliers",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "ExplicitcutselectioncitationandLearningtoCutentry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedall17pagesandA-I; separatedMCfree-signlowerboundsfromGAmaxupperbounds, exactoracleandCRcost, weakerablations/subgradientresults; qualifiedprintedknapsackrecipe andretainedsixexplicitinternalcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "30883376d77be04282de62779bb525cdeb46830dff6a38a83bc11cb2b4d33d61"
+}

@@ -7,7 +7,11 @@ import { papers, papersForScope, scopeDescriptions, sortPapersByFirstPublicNewes
 export function HomePage() {
   const specialistCount = papersForScope('specialist').length
   const generalistCount = papersForScope('generalist').length
-  const latest = sortPapersByFirstPublicNewestFirst(papers).slice(0, 3)
+  const studyCount = papersForScope('study').length
+  const mainPapers = papers.filter(paper => paper.inclusion === 'main')
+  const referenceCount = papers.length - mainPapers.length
+  const reviewedCount = papers.filter(paper => paper.review_status === 'verified').length
+  const latest = sortPapersByFirstPublicNewestFirst(mainPapers).slice(0, 3)
 
   return (
     <div className="home-page">
@@ -15,24 +19,27 @@ export function HomePage() {
       <section className="home-hero page-shell">
         <div className="home-hero__copy">
           <p className="eyebrow">Neural combinatorial optimization</p>
-          <h1>A focused index of neural solvers.</h1>
-          <p className="home-hero__lede">Browse structured research notes across specialist and generalist neural solvers, with a consistent taxonomy and evidence-aware summaries.</p>
+          <h1>A focused index of neural optimization research.</h1>
+          <p className="home-hero__lede">Browse structured research notes across specialist and generalist neural solvers, alongside theory and evaluation, with a consistent taxonomy and source-driven summaries.</p>
           <div className="home-hero__actions">
             <Link to="/specialist">Explore specialist solvers <ArrowRight size={15} aria-hidden="true" /></Link>
             <Link to="/generalist">Explore generalist solvers <ArrowRight size={15} aria-hidden="true" /></Link>
           </div>
+          <p className="review-notice"><strong>Full-text verification: {reviewedCount} / {papers.length} complete.</strong> <a href="https://github.com/CIAM-Group/awesome-nco/blob/main/docs/FULL_TEXT_REVIEW.md" target="_blank" rel="noreferrer">Read the source evidence and qualifications</a>.</p>
         </div>
         <dl className="collection-stats" aria-label="Collection statistics">
-          <div><dt>Curated papers</dt><dd>{papers.length}</dd></div>
+          <div><dt>Main collection</dt><dd>{mainPapers.length}</dd></div>
           <div><dt>Specialist</dt><dd>{specialistCount}</dd></div>
           <div><dt>Generalist</dt><dd>{generalistCount}</dd></div>
+          <div><dt>Studies</dt><dd>{studyCount}</dd></div>
+          <div><dt><Link to="/references">Reference collection</Link></dt><dd>{referenceCount}</dd></div>
         </dl>
       </section>
 
       <section className="scope-overview page-shell" aria-labelledby="browse-title">
         <header className="section-heading">
           <p className="eyebrow">Browse the collection</p>
-          <h2 id="browse-title">Two scopes, one consistent reading format.</h2>
+          <h2 id="browse-title">Solvers and studies, one consistent reading format.</h2>
         </header>
         <div className="scope-grid">
           <Link className="scope-panel scope-panel--specialist" to="/specialist">
@@ -47,6 +54,7 @@ export function HomePage() {
             <p>{scopeDescriptions.generalist}</p>
             <strong>{generalistCount} paper{generalistCount === 1 ? '' : 's'} <ArrowRight size={15} aria-hidden="true" /></strong>
           </Link>
+          <Link className="scope-panel scope-panel--study" to="/studies"><span>03</span><h3>Research Studies</h3><p>{scopeDescriptions.study}</p><strong>{studyCount} papers <ArrowRight size={15} aria-hidden="true" /></strong></Link>
         </div>
       </section>
 

@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "paper_id": "circuit-sat-neural",
+  "note_path": "generalist/circuit-sat-neural.md",
+  "baseline_note_sha256": "739cf2e9337fc51d1c1fab72179060cb328619b7290bc8f5ec7399ab26a9797d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.microsoft.com/applied-sciences/uploads/publications/91/learning_to_solve_circuit_sat_an_unsupervised_differentiable_approach.pdf",
+      "version": "Author-hosted ICLR2019 reading copy, PDF created/modified2018-12-29,14pages including AppendicesA-D; formal-byte comparison unavailable",
+      "retrieval_url": "https://www.microsoft.com/applied-sciences/uploads/publications/91/learning_to_solve_circuit_sat_an_unsupervised_differentiable_approach.pdf",
+      "local_path": "research/import-272/nco-594e11561f.pdf",
+      "sha256": "588625809671ab80c49a6b520d412919543c6bbce4aae8fbe5f35043adba67a2",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete contributions/related work and sequential-DAG embedding formulation, exact authors/Microsoft affiliation and ICLR2019 header; differentiable objective training differs from RL and from label-based NeuroSAT."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all sequential forward/reverse GRU aggregation and recurrence equations, circuit encoding, variable soft-assignment decoder and smooth fixed evaluator/loss. Temperature-limit intuition does not replace checking the original Boolean circuit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read exact test-time replacement of smooth gates by min/max and no-false-positive claim, SAT-only training/test selection, matched-size300k paired generation, full training hyperparameters, generalization bars/time claims and graph-coloring data/circuit preprocessing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all graph-coloring results, explicit mismatch with NeuroSAT original protocol and open explanation, discussion/limits and entire bibliography through Deep Sets. Scientific method not claimed competitive with industrial solvers."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read all integrated AppendicesA-D, classification variant, complete threshold/no-false-positive argument and proofs, CNF cube expansion/order heuristic and graph-coloring encoding. Note strict threshold tie subtlety in printed negation lemma."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Direct assignment discovery and circuit-aware propagation target limitations of CNF SAT classification proxies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and related work"
+        }
+      ]
+    },
+    {
+      "id": "dag",
+      "category": "contribution",
+      "statement": "Forward/reverse sequential GRU DAG layers reuse recurrent weights and predict variable assignments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3-4"
+        }
+      ]
+    },
+    {
+      "id": "objective",
+      "category": "method",
+      "statement": "A nontrainable smooth evaluator supplies differentiable loss; test-time min/max replaces smooth gates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section4.1"
+        }
+      ]
+    },
+    {
+      "id": "selection",
+      "category": "limitation",
+      "statement": "Only SAT training examples are used experimentally, despite label-free objective form.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "SATselection paragraph and footnote2"
+        }
+      ]
+    },
+    {
+      "id": "positive-witness",
+      "category": "method",
+      "statement": "AppendixB connects exact min/max evaluation to positive witnesses; strict-threshold NOT identity has an exact0.5boundary caveat and negative candidates do not proveUNSAT.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13,
+            14
+          ],
+          "locator": "Prediction and full AppendixB proof"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "classification",
+      "statement": "The unchanged random-kSAT-trained model transfers via circuit encodings to graph-coloring decision tasks, supporting reduction-based generalist reuse.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            14
+          ],
+          "locator": "Section5.2 and AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Graph-coloring transfer is48%/27%inSATselected tiny-graph datasets; discrepancy with original NeuroSAT result remains unresolved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Dataset1/2 and results"
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "category": "reproducibility",
+      "statement": "Training oneGPU/day and roughly180kparameters; circuit expansion and variable-order heuristics add work beyond neural iterations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            14
+          ],
+          "locator": "Experimental setup, timing and AppendixC-D"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://www.microsoft.com/applied-sciences/uploads/publications/91/learning_to_solve_circuit_sat_an_unsupervised_differentiable_approach.pdf",
+      "locator": "PDFpage1 title block: SaeedAmizadeh,SergiyMatusevych,MarkusWeimer,Microsoft."
+    },
+    {
+      "field": "venue,year",
+      "source_url": "https://www.microsoft.com/en-us/research/event/iclr-2019/accepted-posters/",
+      "locator": "Author institution accepted-poster listing and official ICLR2019Downloads include matching title; PDFheader confirms conference publication."
+    },
+    {
+      "field": "date,source.version",
+      "source_url": "https://www.microsoft.com/applied-sciences/uploads/publications/91/learning_to_solve_circuit_sat_an_unsupervised_differentiable_approach.pdf",
+      "locator": "Formal year2019 retained; PDFmetadata creationDate/modDate2018-12-29. Actual14page author-hosted reading copy, not byte-claimed OpenReview final."
+    },
+    {
+      "field": "scope,paradigm,problems",
+      "source_url": "https://www.microsoft.com/applied-sciences/uploads/publications/91/learning_to_solve_circuit_sat_an_unsupervised_differentiable_approach.pdf",
+      "locator": "MainSection5.2 pages9-10 explicitly tests same kSAT-trained models on unseen graph-coloring encodings; AppendixD fixed decision encoding. Moved to generalist by consistent shared-model reduction criterion."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=BJxgz2R9t7",
+      "locator": "Manual check2026-11-16: forum challenge,API403,attachment403. Complete author-hosted14page copy includes scientific AppendicesA-D with all referenced proof/conversion details; all read, no missing external scientific appendix mentioned. Author institutional paper/ICLR pages checked, official code not established."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "circuit-sat-neural",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Explicit neural optimization predecessor/baseline citation; the NeuroSAT bibliography cites its2018preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "circuit-sat-neural",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017), NeurIPS",
+      "description": "Explicit neural optimization predecessor/baseline citation; the NeuroSAT bibliography cites its2018preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "circuit-sat-neural",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018), arXiv:1802.03685",
+      "description": "Explicit neural optimization predecessor/baseline citation; the NeuroSAT bibliography cites its2018preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "circuit-sat-neural",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015), NeurIPS",
+      "description": "Explicit neural optimization predecessor/baseline citation; the NeuroSAT bibliography cites its2018preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Moved entry togeneralist while preservingID because the same trained model transfers through fixed circuit encodings to coloring; no cardinality optimization claimed.",
+    "Qualified label-free loss versus SAT-only data selection, exact test evaluator versus smooth training and threshold-proof boundary.",
+    "Recorded preprocessing, SAT-selected success rates, NeuroSAT discrepancy and per-example/batch timing distinctions.",
+    "Read every integrated appendix, checked official author-hosted pre-cutoff version and four explicit internal citations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7e0d3b610fa798bd7aca24ee63816db8d686a500e1770e673f62451a162c2fff"
+}

@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "paper_id": "geodemographic-influence-maximization",
+  "note_path": "specialist/geodemographic-influence-maximization.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "2add84b1fc47e551a3580db8c153b3c19e7b7e5ff02696ae3962e3cc456e08aa",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "retrieval_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "version": "Author-hosted11-pageACMKDD2020-layout six-author DOIidentified fullmain+31refs+integratedAppendixA1–A6;formalCrossrefpages2764–2774identitymatches,noassertionbyteidenticalpublisherPDF.",
+      "local_path": "research/full-text-review/geodemographic-influence-maximization/reading-candidate.pdf",
+      "sha256": "e41ba34d64e558fb70cdeb150b6212720e07299b074415328dfcc55f0391a785",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Complete pp1?3 read: six-author KDD2020 DOI/byline formal author-hosted11p. Budgeted POI reach via Markov transition and spectator counts, not person-to-person diffusion. KnapsackNP-hardness, exact marginal ratio greedy bestsingleton 0.5(1?1/e), guarantee not transfer NN variant. Locality/LazyTag and learned region sampled candidate responsibilities distinguished;appendixscientificproofexplicit mustread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Complete pp4?6 read Fig2architecture/locality, exactLazyTagbounds andAlgorithm2/bestsingleton preservegreedy guarantee;RandomPartitioncostweightedresamplingandconditionalratioThm6.2 notuniformNNguarantee; DOracleexpectedbestofr sampledscore;printedEq2CE orderpotentialneedsrendercheck. NNMLP predictsregion distributionnotnodes/directcompletefeasibleincumbent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Complete pp7?9 read all31refs;NNper-cityMLP512/256/128ReLUsoftmaxm output,m?16historyminmaxinput;Doracle imitationoffline60runs17krecords80/10/10randomrecordsplit12hdata1000strainseparateonline. Two2018cities626m/420mmoves,estimatedcostsbeta. NN91%CELFnotopt and2%onlineclaim,55xmatchingqualitysamplebudgetcomparison;smallKNNslowernegative,scalingdisjointcopiesnotnewtopologies. NoactiveNCOrefsidentifiedallclassic/modelResNetnotcatalogue."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Complete allappendixA1?A6proofs/Algorithm5/plots read:monotone/submodularweightedhittingcoverage;Thm6.2conditionalrealizedcostweightedratio nofixedNNfactor. Printed1?x?exp(?x)signoppositebutfollowingproductboundderiveswithcorrect?;Eq2renderpending. Offlinegenerator/budget400k/r200crossbudget+sampletransferwithinproblem/percity;fixedm144BJ64CD. Deploymentexplicitfutureplannotliveclaim. All11pagesnowtextread,actualrenderinspectionbeforeflags."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gim-motivation",
+      "category": "motivation",
+      "statement": "Aggregateshortmovementstatisticssupport budgetedlocation reachwithoutdenselongtrajectories.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/problem"
+        }
+      ]
+    },
+    {
+      "id": "gim-contribution",
+      "category": "contribution",
+      "statement": "GIMformulation/NP-hardness/submodularity,exactLazySowerandNNregionaloracle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/Theorems3.2–3.3/Sections5–7"
+        }
+      ]
+    },
+    {
+      "id": "gim-method",
+      "category": "method",
+      "statement": "MLP512/256/128ReLU,msoftmaxfromm×16recentregiondigest;DOracleonehotteacher,costweightedsampledclassicalargmax.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            11
+          ],
+          "locator": "Sections6–7,Settings,Algorithm5"
+        }
+      ]
+    },
+    {
+      "id": "gim-guarantee",
+      "category": "limitation",
+      "statement": "Fixed0.5(1−1/e)toGreedy/Lazy+singleton;NNThm6.2conditionalcostweightedrealizedratios;printedexponentialsignreversedbutrepairable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            10,
+            11
+          ],
+          "locator": "Theorem3.3/Section5.3/Theorem6.2/AppendixA2"
+        }
+      ]
+    },
+    {
+      "id": "gim-results",
+      "category": "experiment",
+      "statement": "Two2018urban datasets626m/420mmoves;NN91%relativeCELFnotopt,offline12hdata/1000strainexcludeonline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Tables2–3/Figures4–8/settings"
+        }
+      ]
+    },
+    {
+      "id": "gim-loss",
+      "category": "limitation",
+      "statement": "RenderedEq2−ΣpOlogpD withonehotteacherhaslog0;usualCEreversesroles,nocodeidentifiedcannotinferexecutedformula.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Equation2/Section7.1 actualrender"
+        }
+      ]
+    },
+    {
+      "id": "gim-classification",
+      "category": "classification",
+      "statement": "Per-cityseparatelytrainedregionMLPconstructssetwithclassicalsampler/marginalgain,budget/samplingtransferwithinproblemnotnativecross-task.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            11
+          ],
+          "locator": "Architecture/training/AppendixA5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3394486.3403327",
+      "locator": "Cachedpublisher-depositedCrossrefexacttitle/sixauthors/2764–2774/published-online2020-08-20vsprint2020-08-23;authorhostedp1ACMlayoutsameDOI/byline;officialKDDacceptedentryalsoidentity. Formalqualificationindependentofreadcopybytes."
+    },
+    {
+      "field": "date",
+      "source_url": "https://doi.org/10.1145/3394486.3403327",
+      "locator": "Noidentifiedmatchingarxivafterexacttitlesearch;earliestverifiedonline2020-08-20used,dateandpublication.date same;conferenceAugust23–27notfirstonline."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "locator": "All11authorhostedpagesincludingexplicitAppendixA1–A6scientificproofs/Algorithm5/gridexperiment/deploymentread. AuthorprimarypaperentryPDFonly;KDDitem/listanduniversityprimarychecked. ACMlanding403;nochallengebypass. Noseparateidentifiedscienceattachment;integratedappendixcomplete. source-inventory.json/supplement-code-inventory.json recordchecks."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://zhoujingbo.github.io/",
+      "locator": "PrimaryexactpaperentrylinksonlyPDF;exacttitleandNNSowergithub/codequeryonlythirdpartylists,noauthor-endorsedimplementationidentified. Noarxivrecordidentified;nocode/model/dataexecutionclaimed."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "locator": "OriginalFigure2p4Rect50,83,562,302at2.5xwholecaptionphysicalpublicassetviewed. Main/suppsourcepp3–11renderedandactuallyviewedobjective/theory/Algorithms1–5/Eq2/alltables/plots."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "locator": "Complete31refsallp9readandactualrenderchecked. Classicalinfluence/submodular/mobileads/ResNetnoneactiveNCOidentity;0internaledges."
+    },
+    {
+      "field": "review_handoff",
+      "source_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "locator": "Root2026-11-17explicitlytransferredlastpendingGIMitemtofull_review_graphs,rootdoesnotconcurrentlywrite. Originalreviewer=rootretained;full_review_graphs independentlyreadall11sciencepages/rendered/inventoried/finalized."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://zhoujingbo.github.io/paper/2020GeodemographicKDD.pdf",
+      "locator": "SeparatepercityMLPtrainingp8,fixedgridm/inputoutput;AppendixA5samecitybudget/sampletransferonly. Specialist/constructivebudgetedsetselection;notNNincumbentimprovement."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full11pageauthorprimarymain/references/integratedscienceappendixA1–A6read/rendered;formalidentity/dateindependentlypublisherverified.",
+    "GuaranteesproperlyassignedexactGreedy/LazySowerandconditionalNNratio;91%CELFnotopt/55xcomparisonconditions/offlinecostsseparate.",
+    "Renderedlossrolesandexpinequalitysigndiscrepanciespreciselyqualified,nounverifiedimplementationfailureclaim.",
+    "Two-cityspecialistconstructive,disjointduplicationscalingandfuturedeploymentplanexplicit;noinventedcodeorinternaledges.",
+    "OriginalFig2completecaptionphysicallysaved/viewed;reviewerrootwithactualhandoffevidence."
+  ],
+  "reviewed_note_sha256": "74909581cc2289eb4c7d87644527030faab9c8e81deff65c8782b0d43ae6def7"
+}

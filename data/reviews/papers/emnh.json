@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "paper_id": "emnh",
+  "note_path": "specialist/emnh.md",
+  "baseline_note_sha256": "53f8b736c8e9743399ed9d07b0be4e04a7ec1d2eb877866128c264efa30d5c4e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf",
+      "version": "NeurIPS2023formal13pageproceedings, DOI10.52202/075280-2482, December15,2023",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/b1efde53be364a73914f58805a001731-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-9f78fa6a83.pdf",
+      "sha256": "0f947283ed6afa4399ecee9a7e225c2b8f11ea8bf110d9b6484d2ce63d6d26c2",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/b1efde53be364a73914f58805a001731-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/b1efde53be364a73914f58805a001731-Supplemental-Conference.pdf",
+      "version": "Publisher-linked complete12pageAppendixA-K for EMNH; samepaper scientificsupplement",
+      "local_path": "research/full-text-review/emnh/supplement.pdf",
+      "sha256": "aec83b7083aa34f00a970bc137b02330468f998243516d8e899deeaa5e289e98",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read6authorsSYSU/SMU,EMNHmeta-initthenperweightfine-tunedmodels;partialsharedbodyheadsparallelpreferenceONLYnotnativeCOPsharing. WSdecompositionParetoapproxnotexactgeneralfront,PMOCO/MDRLcomparisons.Newnotesneedclassifierseparatepreferencevsnative."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read POMO/Reptilelike meta algorithm sharedbodyallattentionexceptfinalWK head128;parallelpreferenceheads Tuupdates,θbodydirectcopy/headepsilonaverage—notallparamsReptile. Scaleweights cyclicMrotations via validationequalweightobjectiveestimate fprime nottrueideal;positivewell-definedscalesassumed. Fine-tunegradientsrequiredperpreference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTable1/2balanced/imbalanced200randomHVgaprelativeEMNH-AUGnottrueoptimalgap,Wilcoxonrank-sum1percent/tiesmany. Training3000meta100inner64batchNtildeM;fine101bi/105triweights7x20/4x25. WS-LKHbetterlargerTSPnotneuraldominance;testtimesinferenceonlyfinecostpending. Hierarchyratiogeometricfactororder1/Lnotexact1/L."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read learningefficiency1/NtildeMDRLtraining/fineonDEDICATEDqueryinstancesnottestinstanceadaptation,PMOCOadditionalfinetuningtested. NoexactPFguaranteeexplicit. Figure4extractiongarbledwillvisualallpanels. Refs1-23readpointer/Bello/Nazari/PMOCO/MDRLexact."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Read allremainingrefs24-52inclPOMO/AM/Pointer/Bello/Nazari/MatNet/POMOcollab/GCOMB/NeuRewriter/neuralLNS/DACT/learningimprovement exactIDsneeded.Full13pcomplete."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read supplementidentitymatchingtitle;6layer8head128POMO/lastWKhead128;Alg2allcyclicweightsfprimeestimatednotoracle,printedargmaxgvsminnotationambiguityneedscodecheck. HierarchyfinalN101/105isnotexacta^L;finallevelsdefinitionexplicit."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Read fullhierarchyFigure5/Alg3queryreinforcewholemodel,task-specificTSP2M/2M-1input,CVRP2/3projection/demand1-9capacity30/40/50,KMOKPM+1inputvaluesweightsU[0,1]capacity12.5/25/25. AllHVref/idealpointsTable4normproductnotgroundtruthPF,WSunsupportedPFgeneral limitation."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Read F1exact19.2MtrainvsPMOCO20M/DRLMOA700/720epochs;F2Table5balancedtie/MDRLbetterrawn50 .6374>.6362 contraryallwinclaim. F3exactbi227KupdatesvMDRL101Ktilde;tri189*25=105*45. G64/512TSP1,16/128TSP2,8CVRP/noKPaugment. H1PMOCOscaling/H2nonuniformPFadmitted.Fig6/7garbledtextwillvisualentireplots."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read Table6PMOCOscalednotuniformbetter(S=TSP2worse),H2SWAvalidationestimates/asymmetriccoordranges .1/.5 actualplotswillvisual. ITable7BiTSP1larger150/200 EMNHneuralbestbutWS-LKHhigherHVnegativegap. JNtildeMablation/noothernativegeneralization.Metricgrowthaugmenttime1.6h."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allremainingtables8-11/Fig9/Fig10needvisual;WSvsTCHfewcountercellsnotuniformWSbest. LightweightFD/FHonlyheadsdecoderstoreN variants notsinglefullypreferenceunadaptedmodel;triTSPqualitydrops/CVRP100benefits,parameters1.3M/115k/16k. Table10EMDRLlabelsasprintedtreatEMNHcontext.Noformalproofs.Fullsupp12A-Kread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Repeatedpreferenceadaptationandunstablefewweightmetasamples motivateparallelheads/scaling/hierarchy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/Methods"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Threeactualmechanismsacceleratedsharedbody/scaledsymmetrichierarchy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "ContributionsandAlgorithms"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "PreferenceheadsharingwithinoneproblemnotnativeTSP/CVRP/KPjointcheckpoint;fullparamfine-tuningdefault.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            10
+          ],
+          "locator": "MainprotocolplusAppendixD/Kandrepo"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "POMOREINFORCE/128finalWKheads/copybodyaverageheadmeta/scaledvalidationestimatedweights/hierarchyqueryinstances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            10
+          ],
+          "locator": "Alg1/Eq3-6/finequeryvsinference"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "200randomperproblem,HVsrelativeEMNH-Augnottruefront,MfoldMDRLtraincompute,weightedhierarchyadaptationseparatefromsolvetimes/neuralties/LKHhigherHV.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "AllmainTables1/2/Figure4andprotocols"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "NoexactPF/uniformcoverage guarantee;weighted-sumunsupportedtradeoffs andtaskrepresentation/adaptationcost/branchingconstantstepcount.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            9,
+            10
+          ],
+          "locator": "Authorlimitation/scalarization/hierarchyandcuratorqualification"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "13main+12suppallread/12visualp/repo104files41tensorpaths/noexp rerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Fullreadinglogs/actualcache"
+        }
+      ]
+    },
+    {
+      "id": "supplementdetails",
+      "category": "experiment",
+      "statement": "Exactbi227Ktr189Ksteps,augmentation64/512/16/128/8,scalingnotuniformlybetter,larger-sizeonly/FD-FHtradeoffs.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "AllscientificAppendicesA-K/Algorithms2-3/Tables3-11/Figs5-10"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html",
+      "locator": "Exact6authors/bylineSYSU/SMU;p1/publishercitation_publication_date2023-12-15andDOI10.52202/075280-2482verified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html",
+      "locator": "ManuallypublisherSupplementalPDF12p linked andallreadA-K/SHAaec83b7083aa34f00a970bc137b02330468f998243516d8e899deeaa5e289e98. Main13pallrefsread. OpenReviewnotesforum593fc38lhNAPIv1/v2both403cached. Officialrepo104filesnoPDFZIP/separatescientificdocument. Noexplicitmissing scienceattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html",
+      "locator": "Formalmain13pSHA0f947283ed6afa4399ecee9a7e225c2b8f11ea8bf110d9b6484d2ce63d6d26c2. SupplementtitleAppendixsamepaper12p. Actualvisualmain5/6/8/10;supp2/3/5/6/8/10/11/12;allgarbledFigure4/6/7/8/9/10visuallyread."
+    },
+    {
+      "field": "scope,experimental_conditions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html",
+      "locator": "Nativeinputdimensions2M/2M-1TSPvsCVRP2/3vsKPM+1/taskcontexts/masks,independentfoldersmodelsandcheckpoints. Sharedbodypreferenceheads16k/full1.3Mdefaultperweightcompletefine-tune;FH/FDoptionalK. Querydataindependenttestinstances. HVgapisEMNH-Augbaseline/WS-LKHcannegativegap;noexactParetofront. Exacthierarchybi227Kandtri189K,notuniversalexact1/L."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/bill-cjb/EMNH",
+      "locator": "Commitf5740a86a1747706efd9a85ac879e6481c30cc8b104files41PT/PTH inclperproblem/sizecheckpoint3000. FullREADME/CVRPHYPER42/evalhelper105/trainhelper137read;activeCVRPrun.pyselectedlines46-115/301-390/611-712validate+sharedheads+hierarchyread(notall787claimed). validateusesmultinomialthenargminpositiveweightedcost vsprintedAlg2greedyargmaxcostambiguity. Noexecution/model/HVbenchmarkrerun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "emnh",
+      "cited": "pointer-networks",
+      "reference_label": "[21]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[21](includingranges);fullbibliographyPDFp11"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[22]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[22](includingranges);fullbibliographyPDFp11"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "rl-vrp",
+      "reference_label": "[23]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[23](includingranges);fullbibliographyPDFp11"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "attention-model",
+      "reference_label": "[24]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[24](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "pomo",
+      "reference_label": "[26]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[26](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[27]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[27](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[28]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[28](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[29]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[29](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "dynamic-am",
+      "reference_label": "[30]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[30](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[31]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[31](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "gcomb",
+      "reference_label": "[32]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[32](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "practical-vrp-joint-learning",
+      "reference_label": "[33]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[33](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "neurewriter",
+      "reference_label": "[35]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[35](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "learning-to-improve",
+      "reference_label": "[36]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[36](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[37]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[37](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[38]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[38](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "dact",
+      "reference_label": "[39]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[39](includingranges);fullbibliographyPDFp12"
+        }
+      ]
+    },
+    {
+      "citing": "emnh",
+      "cited": "pareto-set-learning",
+      "reference_label": "[12]",
+      "description": "Explicit neural CO or multi-objective method/base/comparator reference; preference sharing is distinct from native-task sharing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2bodyPDFp3explicitcitation[12](includingranges);fullbibliographyPDFp11"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Distinguishedpreference-metainit/adaptedpolicyfamiliesfromsharednativecheckpoint.",
+    "ExpandedPOMOmetaexactbody/headupdate,queryfine-tuningcost,augmentation/qualitymetricdenominators/actualtradeoffs.",
+    "All13main+12supppagesA-K/12visualread;currentcodevalidationnotationdifferencequalified."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3217899cca397c0cad0bd8f28d37ab363f640f612748c8c9b9f2fc01399b4e66"
+}

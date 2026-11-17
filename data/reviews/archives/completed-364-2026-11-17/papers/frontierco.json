@@ -1,0 +1,631 @@
+{
+  "version": 1,
+  "paper_id": "frontierco",
+  "note_path": "studies/frontierco.md",
+  "baseline_note_sha256": "bb984134f1bf3bea5902ffffad9117a868aec245987de01bcc1f8ddc6ac16f1f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/c131c8875c7b1133ffdad2b53cb10e91-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/c131c8875c7b1133ffdad2b53cb10e91-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-37e1516244.pdf",
+      "sha256": "04c42bfc3d0e23286bc2c455f92a8bf730d69b58c719b9d94542b70fbcb1812c",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfullfrontmatter5CMUauthors(titlePDFTalwalker typo vsHTMLTalwalkar)/abstract/introduction/objective1/primalgap2/all8taskdefinitions/train-testshift. Realworldtestbuttrainsynthetic. Primalgapformulaalso1forzero-costfeasiblevsnonzero negativeMISreference,notinfeasibilityexclusive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullTable1allinstancecounts/scales/sources,easyhardselection/BKS/reference2hrsolverversus1hrtest/trainresources/hardware/aggregate/timepenalty/all16neuralbaselinebullets+3LLMagents/resultsintro. MIS8Miseasy-hardcanbesmaller;BKSnotcertopt. SILparentheticalLuo2023likelymiscitationneedrefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readallresultsdiscussion/Table2/3/Fig2-4captions. EasyMISselfrefineandhardCVRPFUNsearchwins;DIFUSCO4.19vs2opt20.09butLKH.03,GCNN3.22vsSCIP6.5butGurobi0. STP2separatelytrainedGNNsexperimentnotuniversalexpressivityproof.16neuralenumeratedplus3agentsinconsistentabstract16totalneedsqualified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readconclusion/reprostatementandfullreferencesA-G inclallcitations. PublisherZIP180entriesnoPDF,allREADME/requirements textshown/read;artifactoldcodeconfigsnotseparatearticle."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadallrefsH-Scomplete inclCOsurveys,classicaldatasets,CLLNS/SORREL/RLNN/SPL-LNS/GCNN/LRHO/LEHD/ML4bench/DIMES/DiffUCO/SDDS/tMDP;SILbulletcitesLuo2023butrefSon2025existsusedlaterneedtrace."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readallremainingreferences+AppendixA/B1-B5. EasyMISDIMACScomplements/hard16BHOS SATgraphs;MDS20+20selectedafter1hGurobimaxgap,2hBKS. TSPeasyroundedEUC2Dknownopt;hardDIMACSsyntheticnotallrealindustrial. CVRPfirst8Goldenroutelengthconstraintremoved. CFLPstandardmultisourcesplitdeliveryvsSSvariantfuture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "ReadallB6-B8/C1-C3inclallcodeprompt. HardFJSP24B7vsTable1 20. Actualofficialcheckpoints/differenttasktraining/sizes;DeepACOneural+HGS,GCNNstrongbranchsamples/LNS20%/twoSTPdistributions. LLM64iters300sdev3600stest,o4minimediumSelfRefine,FunSearch10islands/ReEvopop10mutation.5;generatedsolversnotjoint8problemcheckpoint. Viewedpp3/4/7/9fullformula/table/all16chartpanels/STPF1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 25,
+      "notes": "ReadallTables4-14 everygap/time/std/failureflag,AppendixD/E/F/G/completeprompt. HardTSPLEHD76.84,DIFUSCO69.04,SIL21.34vsLKH2.89;easyMISSelf1.30vsKaMIS1.51;hardCVRPFUN6.52vsHGS6.74. EfastLEHD4767soutsidecore1hrprotocol;notconfused. ATSPadditional64instancesseparate9thtype,RRNCO. RL/SLSTProwsidenticalallmetricsunresolvedprintingnotinventedresults. Full25pcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Small synthetic evaluations underrepresent scale/structural/testdistribution shifts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Complete introduction"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Benchmark study, task-specific pretrained/retrained neural models and separately developed programs; eight main tasks and additional ATSP appendix, no one joint solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            20,
+            21,
+            25
+          ],
+          "locator": "Taskdefinitions/checkpoint specifications/ATSP addendum"
+        }
+      ]
+    },
+    {
+      "id": "suite",
+      "category": "contribution",
+      "statement": "Easy/hard public archive sets across eight classes, training/dev generators/BKS toolkit; hard not purely larger, synthetic as well as real test instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "AllTable1/B1-B8 definitions/sources"
+        }
+      ]
+    },
+    {
+      "id": "metric",
+      "category": "method",
+      "statement": "Equation2 normalized absolute distance to best-known or optimal reference with penalties, not routing gap/certified optimality gap; feasible zero-cost case can give1.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "FullEquations1/2 and BKS collection"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "method",
+      "statement": "Core1hr/oneEPYCcore/A6000; arithmeticgaps/geometricruntime; different upstreamcheckpoints; agents64iters300sdev3600stest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            20,
+            21,
+            22
+          ],
+          "locator": "AllC1/C2/C3 configurations/prompt"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Exacttable TSP gaps show failures/shift; easyMIS Self1.30 vsKaMIS1.51/hardCVRPFUN6.52 vsHGS6.74; agentaggregate20.35/15.11/13.25.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "All14tables read, main/detailed tables and plots visually inspected"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "DIFUSCO/GCNN improve simpler baselines but not strongest; separate twoSTPGNNs empirical F1 patterns not universal limitation theorem; fast mode distinctprotocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            20,
+            24,
+            25
+          ],
+          "locator": "Allcomponent/globalstructure/efficiency/ATSP analyses"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Finite configurations/coupledshift/bestknownrefs, rawsolvercount and FJSPcount discrepancies, identicalSTP rows, publicmetrichelper boundaries not reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            19,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Precise author statements and curator distinctions, external code evidence in metadata"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full25pagearticle/reference/A-G and code-only publisherZIP/manualAPI complete; publicresources delegate neuraltraining upstream, no runs reproduced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Actualfulltextcoverage plus metadata/manualattachment/code evidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publicationdate",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "ICLR2026 official title/all5 CMU authors matched; HTML Talwalkar corrects formalPDFp1 Talwalker typo. No exact day in cited publicationrecord, imported2026-04-20 replaced confirmed2026."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "Actual Supplemental ZIP downloaded/recurse180entries, SHA f515d1be72567566acdf2de78e5034bc6ec565d0e0bdaa02b20b924b1529bd59. NoPDF/video/nested scientificdocument; all included README/requirement texts read. Full25pageformalarticle bibliography/AppendicesA-G read. OpenReviewforumBVprkacwFY notesv1/v2 returned403ChallengeRequired cached, no explicit missing scientific document."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/c131c8875c7b1133ffdad2b53cb10e91-Paper-Conference.pdf",
+      "locator": "Actual formal25page2026 proceedingsPDF SHA04c42bfc3d0e23286bc2c455f92a8bf730d69b58c719b9d94542b70fbcb1812c beforeNov16. Fullpages1-25logged; visual pp3/4/5/7/8/9/19/20/22/23/24/25: metric, dataTable1,16Fig2panels/F1/wordcloud/hyperparams/allresults11/12/ATSP tables."
+    },
+    {
+      "field": "code_url,code_evidence",
+      "source_url": "https://github.com/sunnweiwei/FrontierCO",
+      "locator": "Publicrecursivecommit6cafdd8fc0b8138f50e7cf8c2effad80c837b9c3 has118 files,noPDF/ZIP/video. FullREADME/requirements and selected evaluation/compute_baseline_results.py functions cached/read. compute_metrics lines39-61 lacks sign guard, mapsdenominator0to1 and pads gapsbefore computing missingtimes, so no assertion identical Eq2 aggregate at boundary; selected code review not allcode execution. README o3-mini example differsC2o4-mini. Neural repositories external perauthors."
+    },
+    {
+      "field": "citationidentity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "Allfullbibliography pp10-17 matched explicitbody. Added manual ML4TSPBench pp10/14 and RRNCO pp25/15 beyond17automaticcandidates. SILp5 citesLuo2023LEHD instead ofSILfullref; officialartifactlinkp20verifiesimplementationbut no correspondingfullpaperreference, no inventedSILedge. IL-LNSSonnerat2021 not Wu2021LearnLNS norSong2020generalLNS; no falseedge."
+    },
+    {
+      "field": "printedcountsandinterpretations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "Abstract16ML vs3.2enumerates16neural +3agents, AppendixFadditionalRRNCO;Table1hardFJSP20vsB7 24;STPRL/SLallrowsidenticalTable11. Table1MIS8Mreported notverifiedrawdatasetnodecount;B1DIMACSdescriptionnotresolved. Directformula feasibleemptyMIS0 vsnegativeBKS gives1;absdistance not signedoptimalitycertificate. Sourceglobalstructure/LLMreasoningcauses hypotheses not formaltheorems."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-20; cached evidence research/full-text-review/frontierco/supplement-landing.html. Conference edition year 2026 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date canonical primary history",
+      "source_url": "https://arxiv.org/abs/2505.16952",
+      "locator": "Primary current and explicitv1 HTML inspected: exactfiveauthorsShengyuFeng/WeiweiSun/ShandaLi/AmeetTalwalkar/YimingYang, v1May22_2025; v3formalFrontierCOtitle. Caches research/full-text-review/citation-identity-primary/frontier-current.html and frontier-v1.html. date2025-05-22 added independently from publication2026-04-20."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c131c8875c7b1133ffdad2b53cb10e91-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2026-04-20; primary cachedHTML research/full-text-review/frontierco/supplement-landing.html; citation_title=['FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2505.16952",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-05-22; title on abstract page: FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/frontierco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "frontierco",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicit body PDFp1, matched fullreference PDFp13: Kool et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            13
+          ],
+          "locator": "Explicit body PDFp6, matched fullreference PDFp13: Huang et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "deepaco",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            16
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp16: Ye et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al. (2024)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            15
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp15: Sanokowski et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            16
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp16: Sun and Yang (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            15
+          ],
+          "locator": "Explicit body PDFp2, matched fullreference PDFp15: Qiu et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "Explicit body PDFp6, matched fullreference PDFp12: Gasse et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al. (2023)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            17
+          ],
+          "locator": "Explicit body PDFp3, matched fullreference PDFp17: Zhang et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "gs4co",
+      "reference_label": "Kuang et al. (2024b)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Explicit body PDFp9, matched fullreference PDFp13: Kuang et al. (2024b)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "l-rho",
+      "reference_label": "Li et al. (2025a)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            14
+          ],
+          "locator": "Explicit body PDFp6, matched fullreference PDFp14: Li et al. (2025a)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2023)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp14: Luo et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "rld-co",
+      "reference_label": "Feng and Yang (2025a)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp12: Feng and Yang (2025a)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "sdds",
+      "reference_label": "Sanokowski et al. (2025)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            15
+          ],
+          "locator": "Explicit body PDFp5, matched fullreference PDFp15: Sanokowski et al. (2025)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "symb4co",
+      "reference_label": "Kuang et al. (2024a)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Explicit body PDFp9, matched fullreference PDFp13: Kuang et al. (2024a)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            15
+          ],
+          "locator": "Explicit body PDFp6, matched fullreference PDFp15: Scavuzzo et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Boether et al. (2022)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicit body PDFp8, matched fullreference PDFp11: Boether et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "ml4co-bench-101",
+      "reference_label": "Ma et al. (2025)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14
+          ],
+          "locator": "Explicit body PDFp9, matched fullreference PDFp14: Ma et al. (2025)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "ml4tspbench",
+      "reference_label": "Li et al. (2025b)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicit body PDFp10, matched fullreference PDFp14: Li et al. (2025b)"
+        }
+      ]
+    },
+    {
+      "citing": "frontierco",
+      "cited": "rrnco",
+      "reference_label": "Son et al. (2025)",
+      "description": "Explicit baseline or related-work citation; benchmark results concern the stated configuration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25,
+            15
+          ],
+          "locator": "Explicit body PDFp25, matched fullreference PDFp15: Son et al. (2025)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded eight main tasks plus separate ATSP, task-specific solver checkpoints, exact BKS-relative metric and budget protocol.",
+    "Recorded complete results and specific agent wins without universal failure/globalexpressivity claims; distinguished fast-mode appendix.",
+    "Qualified solver/FJSPcounts, identicalSTProws, SILmisreference, metriczero/betterreference edgecases and publichelper boundaries.",
+    "Full25pages/allreferences/A-G/12visualpages/publisher180entryZIP/dualAPI/code evidence complete;19exactinternaledges, confirmedyear; benchmarkstudy retained.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a861f6b50f0f58c0d6878c6263d831a2cf62410c1f42f88640c3e48d3bb22992"
+}

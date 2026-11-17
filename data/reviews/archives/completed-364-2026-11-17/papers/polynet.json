@@ -1,0 +1,915 @@
+{
+  "version": 1,
+  "paper_id": "polynet",
+  "note_path": "specialist/polynet.md",
+  "baseline_note_sha256": "3404ffed4d208c72d182b83cf2137fc0905d20c3207b6143acc9a01a9b1ecc3d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c7b9810b2e27bccdc8d605a3a54c8cd6-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c7b9810b2e27bccdc8d605a3a54c8cd6-Paper-Conference.pdf",
+      "version": "Actual official ICLR2025 proceedings19-page PDF, all main text/references/AppendicesA-F freshly read.",
+      "local_path": "research/full-text-review/polynet/paper.pdf",
+      "sha256": "9fceec039ac3b2c18e68260e1b57661042f556d79e6c06a516dadecce474aa63",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh formalICLR2025titlepage AndréHottung/MridulMahajan/KevinTierney Bielefeld/Boston notTUDortmund. FouractualtasksTSP/CVRP/CVRPTW/FFSP. Singledecoder conditioned learnedstrategies NOTmultipleheads;implicitdiversitywithoutforcedfirstaction. Authorsacknowledgelargescalearconstructionimpractical. RelatedPOMO/MDAM/Poppy/BQ/LEHD read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fullrelatedworkexplicitlatent/EAS/NDS/T2T/SGBS/diversitymethods. Singleencoderinstanceonce/singledecoderbitvectorcondition, Kunique strategy vectors, portfolio specialization bywinnertrainingnotKLorforcedfirstaction;Figure1originalneedvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Best-ofKonly gradient baseline meanKrollout reward, noforcedfirstmoves;new256residualMLPconditionssinglePOMOdecoder onbitvectorcanignorev. OptionalEASfine-tunesonlynewlayersnotincumbentediting. FourtasksFFSPAppendixA, clusteredTWgenerator. Separate task100/200models transfer100to150,200to300 notsharedcheckpoints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadfullTables1-3allnumbers: timesTOTAL10k/1ktestsetnotperinstance, unguided64Nwithaug/guided200x8xN200iter. K128main2/300epochs4e8rollouts each then20/40epochs200warmfrom100;POMOpretrainexcluded. TSP1000.000roundednotproofalloptimal;EASCVRP100.14%/TW.96% vsclassicalnotneuraldominanceoverOR;CVRP1502.34%fastvsEAS.59%. CVRPTWPyVRPv.5stop1000noimp,customPOMO50000epochs. DiversityexperimentKdifferent480batchlr1e4zeroresidualwarmstart800samplesvalidation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All diversity Tables4/5 andFig3-5 textread: brokenpairs4.621vs2.4TSP/18.535vs16.785CVRP/19.969vs18.162TW100samples;all128contributebesttiescountTSP544least;notmutuallyexclusivepercentages. Only24.5/3.8/7firstnodes despitegreaterwholediversity;forcingfirsthurts100sample6400 setting. Limitsattention<1000/blackboxinterpretabilityauthors."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "FullbibliographyA-Kread. NDSexplicit2025arxiv2501.03715, CAMPformalAAMAS2025ref(notjustabstractmention), BQformalEfficient2023, Routefinder9author2024bversiondistinctNDS8author2024c preserveactual;noautomaticfuturedate. NeedcatalogCAMP/T2Tmatch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "AllremainingbibK-Zread. T2Ttitlewithoutprefix Li2023b actualmatches, MatrixEncodingKwon2021AppA, FERLi2023a intro;Wu2019printedTNNLSearlyyear preserve. NoforcedCAMPnoncatalog. Fullreference scancompleted."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "FullA/B/C: FFSP3stages4machines20/50/100jobs,MatNet differentarchitecture residualeachdecoder/K24notrouting128,batch256/128/32,100/100/20epochs2.4mrollouts warmtrainedMatNet. Table6makespangapsABSOLUTEdifference21.5=46.4-24.9notpercent;PolyNetreferenceNOTopt. Unaug26.7/51/91.2vsaug24.9/49.2/89.2. Bparametercountcontrolcodezero-padbitvector improvesvsPOMOadditionalMLPbutlessfullPolyNet. C400epochsseveralweeks coldCVRP/TWstillworse,TSPconvergesonly400;offlinecostpretrainexcluded."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 19,
+      "notes": "ReadremainingD/E/Fcomplete18scatterpanelsneedvisual;diversitycanworsenindividualtourqualitybestofsetnotallbetter. SearchK32/64/128noaug/noEAS150epochsorCVRP200,explicitnotmultipletrainingseeds. TWclusteredconfig2demandsconfig2centerdepot[0,999]^2cap50<200else70,horizon2400maxwidth500service50/no3optreference. Entire19pagesA-Fread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "diversity",
+      "category": "contribution",
+      "statement": "Single conditional decoder, implicit useful diversity through winner-only loss, free first move and optional EAS rather than independent decoder population.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1/3/Figures1-2."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Shared instance encoder/bit-conditioned residual decoder, K128 winner gradient with mean reward baseline; EAS changes only conditional layers, FFSP uses separate MatNet branch K24.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            15
+          ],
+          "locator": "Equation2/Sections3/4.2/AppendixA."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Four tasks with separate task/size models;64N or200x8N main construction budgets, total test-set runtimes, rounded TSPzero/heuristic references and absolute FFSP makespan gap; transfer and long warm-start training qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Tables1-6/AppendicesA-F."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive: each task/scale trained separately, different MatNet scheduling architecture; optional EAS updates conditional parameters while reconstructing whole routes, not a neural incumbent edit operator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            15
+          ],
+          "locator": "Sections3.5/4.2/AppendixA."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date, problems",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c7b9810b2e27bccdc8d605a3a54c8cd6-Abstract-Conference.html",
+      "locator": "Official proceedings title/authors/ICLR2025 and formal p1 Bielefeld/Boston, not TU Dortmund; actual firstarxiv2024-02-21 history retained, genericJan22 acceptance removed; publicationyear2025 only. ActualfourtaskincludesTW/FFSPAppA."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c7b9810b2e27bccdc8d605a3a54c8cd6-Abstract-Conference.html",
+      "locator": "Manual actual publisherHTML actions only combined19pagePaper/Bibtex; all includedA-Fread. OpenReviewAPI403 not claimed inaccessible attachments inspected. Complete123entry GitHubtree no scientificPDFZIPTEX/noFFSP implementation; no explicit missing-science pointer in full formalPDF."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/ahottung/PolyNet",
+      "locator": "README/fullselected TSP conditionaldecoder/winnerloss/vector sampling/EAS function andconfigs read; 16bit pool65536 withK128sampled not128fixedheads, EAS conditionalparameter copies+incumbentimitation; validation uniquecosts proxy differsunique solutions."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/c7b9810b2e27bccdc8d605a3a54c8cd6-Paper-Conference.pdf#page=4",
+      "locator": "Full originalFigure1/page4 Rect(110,72,505,164)4x, single shareddecoder repeatedapplications; all6tables/allscientificplots18scatterpanels/formula inspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c7b9810b2e27bccdc8d605a3a54c8cd6-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-05-01; cached evidence research/full-text-review/polynet/page-1.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/c7b9810b2e27bccdc8d605a3a54c8cd6-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2025-05-01; primary cachedHTML research/full-text-review/polynet/page-1.html; citation_title=['PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2402.14048",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-02-21; title on abstract page: PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/polynet/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "polynet",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023Efficient",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "lehd",
+      "reference_label": "Luo2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "routefinder",
+      "reference_label": "Berto2024b nine-author arxiv2406.15007",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022b",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "utsp",
+      "reference_label": "Min2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "softdist",
+      "reference_label": "Xia2024positionpaper",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2020ECAI",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "dact",
+      "reference_label": "Ma2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "nds",
+      "reference_label": "Hottung2025 actualarxiv2501.03715",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2019 printed early year",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "neuopt",
+      "reference_label": "Ma2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "difusco",
+      "reference_label": "SunYang2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "symmetric-replay-training",
+      "reference_label": "Kim2024",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "t2t",
+      "reference_label": "Li2023b prefix omitted",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "compass",
+      "reference_label": "Chalumeau2023",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "fer",
+      "reference_label": "Li2023a",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    },
+    {
+      "citing": "polynet",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon2021",
+      "description": "Explicit in-text citation and actual matching bibliography. Preserve cited RouteFinder2024 nine-author version/NDS2025 arxiv and early Wu2019, not later publication metadata. Noncatalog CAMP/JointAttention/ACML not forced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actual explicit author-year in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Full actual bibliography title/authors/year match."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh all19formal pages completeA-Fscientificmaterials, visualallfigures/tables/18scatterpanels, manualprimarypublisher+123entrytreeinventory.",
+    "Corrected oldmultipledecoder/heads claim to actualsingleconditionaldecoder; winner-only baseline/freefirstmove/EASsubsetweights vs incumbentmoves distinguished; retained specialistconstructive.",
+    "Added actualCVRPTW+FFSP/Scheduling, corrected André/Bielefeld/Boston, removedunsupportedgenericacceptanceday forpublicationyear2025; firstarxivdateverified.",
+    "Explicit mainK128/400mrollouts per epoch200or300/warmPOMO and200nodefinetune/FFSPK24differentMatNet/2.4mrollouts, weeks coldwarm study andseparate tasksizeweights.",
+    "Corrected times as total10k/1ktestset not perinstance,64Nvs200x8N; roundedTSPzero notexactall and classicreferences betterquality, actualtransfer deficits.",
+    "FFSPTable6gaps ABSOLUTEmakespandifferences vsbestPolyNet notpercent/optimality; actualdiversitymetrics/firstmoveablation/individualqualitytradeoff andno repeatedseedsAppendixE.",
+    "Publicrelease16bit65536pool/K128sampled, EAScopies+imitation/uniquecostvalidationproxy andmissingFFSPimplementation documented; completeoriginalFig1 withsharedweightsmeaning,32trueexplicitmatchededges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c2e4f61427ea2820af84cfff6d1f7cd186c1bfcbe91cb670b54e4ca4148bb5aa"
+}

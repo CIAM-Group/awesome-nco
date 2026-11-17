@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "paper_id": "dreamshard",
+  "note_path": "specialist/dreamshard.md",
+  "baseline_note_sha256": "e504064fae4aa448564465c12ad5803f09db40c3e3c4c0afc20d0b7409cc4295",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/62302a24b04589f9f9cdd5b02c344b6c-Paper-Conference.pdf",
+      "version": "FormalNeurIPS2022publisher14pagePDFallpages/checklist/referencesread",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/62302a24b04589f9f9cdd5b02c344b6c-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-17ef73043b.pdf",
+      "sha256": "bf3fbab1a0092062d60dee9f457b23ca956af6e3318527ccb7087e7673c537b4",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/62302a24b04589f9f9cdd5b02c344b6c-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/62302a24b04589f9f9cdd5b02c344b6c-Supplemental-Conference.pdf",
+      "version": "Publisher-linked26page scientificSupplemental-ConferencePDF includingcompleteAppendicesA-L; allpagesread",
+      "local_path": "research/full-text-review/dreamshard/supplement.pdf",
+      "sha256": "1d8e432b8a3e72859c8a3b3a6ddb7cf198a8bc77cc59df789bb5e9534ef1693f",
+      "pages": 26,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title9authorsRiceMetaTAMU/fullintro/GETPdefined21tablefeatures/operationfusion/estimatedMDP. Whole-tableplacements identicalGPUs memorymask/terminalnegativebenchmarklatency. Shared variabletable/devicecount checkpoint stillsameembeddingplacementnativeproblem notgeneralist. CosttrainingusesrealGPUmeasurements, notclaimalltraininghardwarefree."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read algorithm1/fusioncostnetworksharedMLP+sumtables/maxdevices/policydevicehead/estimatedMDPloops. 10iterations100realplacements/300costupdates/10RLupdates×10episodesperiter,notzeroGPUsamplingtotal.50train50testtasksdisjointtablepools,5runsmeanstd2080Ti/V100. Semanticnativeembeddingplacementdespitesize/devicecountgeneralization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read entiremainTables1-3/Figs5-8/relatedwork. Prod80bestbaseline41.9vs35.2throughputratio1.19,not19%latencyreduction(16%). DLRM40(8)trainDream9.8tieslookup9.8notstrictwin. Crosscount/devicessamecheckpointstate dimension pooling;notproofanyunseenarbitraryhardware.100datapoints empiricalpolicyplateau notuniformcostmodelerrorbound. Ablationpooling/coststrong;unmeasuredNNoptimalitynoguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read conclusion/limitationsfuturetiermemorycomplexclusters/ack and fullreferences1-54. Actualsixcandidatecatalogdeviceplacementrefs allbody2/9 andfullbib10-11;Bello24body3/9. OtherGDP/GDP2019notcatalogcandidate absentdon'tinvent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read allremainingreferences55-73andcompletechecklist. AuthorNAtheorynoformalproof;5runsmeanstdconfirmed;privateProdnotfullypublic despitegenericchecklistdatasetstatement. All14mainpagesfullyread,26p supplementongoing."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full distributedDLRM pipeline/data-modelparallelism/alltoall/computationoverlap/onlysparseembeddingportion objective,notentireendtoendtraining speed. Table21features:dim/hash/pooling/tablememory/17accessfreqfeatures. AssumptionssameGPUsandtrainbatch/kernelcontextmatter."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completefeaturefreqhist17bins/tablecostFigs10-12/fusionstudy andcommunicationcapacity/wholehardwarefixed65536batch.50random10-tablefusion1-3xspeedupnonlinearMSE linear77.97vsnetwork<1 notuniformregretbound. AnalysisA3.1/2reusedfromAutoShard. Communication imbalancewhole tabledimnotpoolfactorassumingfixedbatch."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullTable4communication/forwardwaitexclusion,networkcost21-128-32/heads32-64-1 max/sum/policyindependenttableMLP,cost3-64-32/head64-1. ReductionsMSEcontrolled20%split50ktrainbatches5runs notuniversalcapacitytheorem. Table4maxcolumnsomeinconsistent printed values no silentlyreuse allmaxasproof."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allMSE/PGentropy/B4training+inferenceAlg2/paramhardware/dataset21featuresprotocol. Realbench5warmup10median/PARAMdata;sortbyestimatedsingle-tablecostdescending;deterministicargmaxinference;gamma1 sparse. Eq2printingindex/signambiguousmustcodecrosschecknotliteralclaims. Adam5e-4lineardecay,fp16Py3.8.4Torch1.9.1 four2080TiSilver4116/V100Prod. DLRM856tables;privateProdnotreleased."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all datahist15-18/nohashpoolcorrelation/DLRMdim16fixed/productiondim4-768private/completeexpert4coststrategies andadaptedRNNbaselinearchitecture. Allbenchmarkcasesstate5repeatstd butprivateProddataunreleased,notrecommendationaccuracyobjective. RNNnativeinputencoderadaptednotdirectoriginalbaselineperformance."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read all experimentalconfiguration/completeTables6-10andFigs19-20. Explicitsamepooldisjointseen/unseen tables/test50tasks;2GPUcounterexamples10test13.9Dream>13.7best/30test38.6>38.5. Mixed2to4transferworstloss33.8vs32.4 (1.4ms) contradictuniversal<.5headline;claimtypicalnotbound. Table6DLRM10size-lookup9.6raw conflicts21.4%speedup,donot silentlycorrect."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read all I-L/Figs21-23/Tables11-13. 128GPU private production almost1000tables/multiTB reports fulltraining throughput45.3% overrandom vs13.9%bestheuristic, relative27.6%; unlike mainmicrobenchmark this IS end-to-end overall throughput, clearly separate one industrial test. Table12million Prod cost examples80/10/10,not main100realplacements."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read full good/badcase diagrams24-26. Case3Dream40.98<43.24heurbutnotcomputationbalance;communicationcontributionmatters;badcase1still41.13<42.05 slightly,qualitativecase selectionnotuniform guarantee."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Read complete remaining Fig27-28: explicit perinstance bestheuristic40.51 beatsDream40.76; otherbadcasesimbalance/roomforimprovement. All26supplementPDFpages fullyread including40totalmain+supp scientificpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Nonlinear fusion/communication plus expensive GPU rollout motivate learned costs and estimated environment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/GETP"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Fusion-aware cost predictor and shared variable-size policy transfer within embedding placement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "locator": "Framework/experiments"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive native embeddingtable placement; size/devicecount transfer is not distinctproblem jointcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            10
+          ],
+          "locator": "Definition/scope/futurework"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "21features/threecostfeatures/MLP21-128-32 sum/max/64devicehead/100realplacements plus simulated policytraining/memorymask sparsegamma1.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Mainmethod andtraining; fullsuppB1-6 read"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Mainlatency19%throughput notlatency;128GPU separateoveralltraining45.3vs13.9%overrandom;2GPUexceptions and mixedtransfer1.4ms.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            16,
+            17,
+            20,
+            25
+          ],
+          "locator": "SupplementTables6-13/Fig27;mainTable1 distinction"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Empirical nooptimality/uniformtransferbound/privateProd;printedEq2positive sign vsnegativeNLLrelease and legal-sampling/all-device-NLL normalization difference boundedcodeanalysis.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            10,
+            11,
+            12,
+            16,
+            17,
+            20,
+            25
+          ],
+          "locator": "Full losses/protocol/results plus code/check saved"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All14main+26supp read/ref/checklist;official20filecode noPDF/checkpoint/corefilesread/403titleAPI/localprimitivechecknotbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "Complete scientific40page audit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/62302a24b04589f9f9cdd5b02c344b6c-Abstract-Conference.html",
+      "locator": "Publisher title9authorsNeurIPS35MainConference2022/pp15190-15203/DOI10.52202/068431-1105; citation_publication_date2022-12-06 cachedpublisher.html. PDF1RiceUniversity/MetaPlatformsInc/TexasA&M."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/62302a24b04589f9f9cdd5b02c344b6c-Abstract-Conference.html",
+      "locator": "ManuallycheckedpublisherPaper andSupplementalPDF. Main14p andseparate26pSupplemental-ConferencePDF registered andall40scientificpages fullyread inclA-L/checklist/fullrefs. NootherpublisherZIP. BothOpenReviewAPIcontent.titleexactqueries403 cachedopenreview-v1.txt/v2.txt, noforumidentified/noexplicitmissing scientificattachment. GitHub20filesnosciencePDFZIP. Thus separatecomplete scientificsupplementcovered."
+    },
+    {
+      "field": "version,figures",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/62302a24b04589f9f9cdd5b02c344b6c-Abstract-Conference.html",
+      "locator": "Actualformalmain14pSHAbf3fbab1a0092062d60dee9f457b23ca956af6e3318527ccb7087e7673c537b4;publisher supplement26pSHA1d8e432b8a3e72859c8a3b3a6ddb7cf198a8bc77cc59df789bb5e9534ef1693f. Allread/logged. Visualcontact sheetsrestart-main/results/method/transfer/cases/costs/data inspected,coverpaper2-5/7-9 andsupp1/4-11/13-21/23/25-26 centralarchitecture/Eq1-2/hyperparams/results/alltypesofcases."
+    },
+    {
+      "field": "scope,experiments",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/62302a24b04589f9f9cdd5b02c344b6c-Abstract-Conference.html",
+      "locator": "GETPdefinition3identicalGPUs1nativeproblem;21featurevector;100realplacementsdefault. MainTable1Prod80eightGPU41.9to35.2=>19.03%throughput/15.99%latency;Supplement17Table10source10(2)to40(4)33.8vs32.4gap1.4ms,16Table72GPUcounterexamples;25Fig27heur40.51vsDream40.76. Supplement20Table13private128GPU~1000tablesmultiTB fulltraining throughputrelative1.453/1.139-1=27.568%,notmainembeddinglatency-only. NoRNNinindustrialtable."
+    },
+    {
+      "field": "code_url,release,curator-check",
+      "source_url": "https://github.com/daochenzha/dreamshard",
+      "locator": "Pinned73128edfd02576c96adcfacd8622ef5855061708/tree20filesnoPDFZIPweights. FullREADME/model/env/training/sharders/eval/train/tasks/multigpubenchread;5warmup10medianFP16true. training.py samplefilterslegalobs whileobs_buforiginal/alllogitNLLreplay:recompute_mask_scope.py/json localtorchNLLgradient0vs(-.5,.5) ifonlydevice0legal,notfulltrainingreproduction. PrintedEq2positivePGterm whereascodeusesnegativeNLL*standardizedreward. Noeffectonempiricalresultsclaimed. Main8says1080Ti vsSup11B62080Ti unresolvedhardwareattributionexplicit."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dreamshard",
+      "cited": "rl-device-placement",
+      "reference_label": "[13]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "Body [13] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "hierarchical-device-placement",
+      "reference_label": "[14]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            11
+          ],
+          "locator": "Body [14] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "spotlight-placement",
+      "reference_label": "[15]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            11
+          ],
+          "locator": "Body [15] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "placeto",
+      "reference_label": "[16]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            11
+          ],
+          "locator": "Body [16] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "post-device-placement",
+      "reference_label": "[19]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            11
+          ],
+          "locator": "Body [19] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[24]",
+      "description": "Explicit related-work/body citation and full bibliography identity; no architecture-only edge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9,
+            11
+          ],
+          "locator": "Body [24] in placement/RLdiscussion; completebibliographyentry onlastlistedPDFpage."
+        }
+      ]
+    },
+    {
+      "citing": "dreamshard",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "[69]",
+      "description": "DeepRL related work cites ECO-DQN among RL combinatorial optimization methods; full four-author AAAI2020 entry is69 inside the combined block, not its leading55.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded40page fullscientificreview/sixspecificEnglishsections;6realcitedcatalogedges.",
+    "Qualifiednativeplacement scope/realmeasurementtraining/privateproduction, separated128GPUfulltrainingfrommainembeddingmicrobenchmark.",
+    "Correctedthroughputvslatency/mixedtransferand2GPUexceptions;boundedliteralPGsign andcurrentmaskNLLcode distinction.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a6a49e8d46f5f423b0ce46a199e1239e8ec7f9f42b81c767b6a4243c8d2a6c0a"
+}

@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "paper_id": "greedy-policy-moco",
+  "note_path": "specialist/greedy-policy-moco.md",
+  "baseline_note_sha256": "fc217c9320e006b618eb2abecc19faabe566516132dca4fb1218e7df2914504b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/lee24w/lee24w.pdf",
+      "version": "Complete formal ICML2024 PMLR235:26948-26975,28pages with all references and scientific Appendices A-D",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/lee24w/lee24w.pdf",
+      "local_path": "research/import-272/nco-5c7feb2e20.pdf",
+      "sha256": "ec667a7dfee1cd6eb6de77684b68df2c8530f51c83b98cce7ffa139096320cfb",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exact3authors/SNU NCoreNYUGenentech,proposalbatchsubset innerloop overaminoacid/graphs,notgenericParetopolicynativesharing. Setconditionedgreedypolicytrainedacrosssubproblems;near-submodular/diversitytheoryconditional andRFP1.69queryratio needsfullprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read Alg2-5, J(theta,thetab)fixedpointdefinition andTheorem3.5niceconditionsdeferredA1; practicalJmaynotmeet explicitly. Approxguaranteesconditionalalpha perstep/near-submodgamma/diversityuses s/2+lambda div notsame scoringas target. DeepSetfeaturespredictedobjective/UCBnotfullobject. Alg5batch-return normalization notsameunbiasedfixedbaselineProp3.6."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTables1-3/fig2/related/conclusion/firstrefs. Synthetic2/3/4bigram+DNA n4-25610trials meanSD; RFP1024queries10trialsmedian30/70percentile bands notSD;reported25%HVadvantagevsreproducedMBGA and1.69ratio notwetlab. BaselinesfixedNEHVIissues detailedD; individualvsbatchobjectiveimportant. Greedysamplingstillsequentialafterparalleltraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullremainingreferencesandA1conditions smoothF,stronglyconcavefirstvariableuniformHessL<=M<0,crosssingularMprime<-M. TheseareconditionalnotprovedactualNNJ; requiresfixedpoint/closedinvariantdomainforthestatements asapplicable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read contractionproofA3 Hessians/crossnorm,CorA4/A5fixedbehaviorNt proofandA2universalrepresentabilityassumption,exactgreedydefinitionties. SufficientconditionsnotNNtrainingproof; iterationdomain/stationarity implicit needsconditions. No specificnumerical claimfailure inferred."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read completedA7contradiction withuniversalconditionalpolicies, A8logderivativeunbiasedfixedsetbaselineproof; displayedA8p16dropslog correctedp17 final. A9statementtruefor deterministicHVIthoughproofprintsDelta=a(B), recordasnotationnotinvalid theorem. SubmodratioA11/nearboundA12/A13setupread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read entireA13/A14near-submodrecurrenceandTheorem3.9 proof; nonnegativea0discarded. A15non-oblivioushalfscore,trianglemetriclemmasA16/A17 withdisjointU/V/W andallcoefficients, A18scorebounds fullread. Bounddependsactualalpha+gamma notestablishedfromtraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read completeA15threecasesandcorollariesA19/20/table6. Printedcase2a firststepusesDeltaa despiteapproxassumptiononDeltatilde; followingchaincaninsteadstartDeltatilde viaA18, do notclaimtheoremfalse. B1append/editMDPs,B2DeepSetthreeequivmaxpool2MLPplusTransformer,MLMtrainedwithsurrogateandhashpool. Fullallproofread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Read allB3protocolTables7/8+Table9andC2/Fig3/4. Syntheticbestcheckpoint/HV andbesthyperparam across10trials notheldoutselection; ours4000*160=baseline5000*128,matchsurrogatequeries notwallruntime. DNA2000steps4layer16head256. BO256stepsn16edit1/MLMwithMTGP,UCBbeta.1,modelsreinitperroundcode;RFP2-3daysallmethods,notfreequeries. MLAharmsonsynthetic; ntrain64sharedcardinalitiesnotnative-tasksharing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "Read allTable10NEHVI/UCBHVI/PES runtimes/fullC3Table11/Fig5andD/Fig6. OursNEHVI18.9min slowerMBGA14 buthalf9.5better .778 vs.654;otherUCB4.1/PES12.8. Diversitytradeoff.779→.731/78.35→95.92 noinputdivfeaturesexplicitlimitation. AuthorscorrectNEHVI/mutation+longbaselines;plotsmedian10trials,original/corrected/longdistinct. All28pagesrefsA-Dcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Jointbatchacquisitiondependscandidateoverlapandsequentialdistinctgreedyoptimizationcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/Eq2"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Set-conditionedgreedytraining/near-submodularanddiversityconditionalbounds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            12,
+            18,
+            20
+          ],
+          "locator": "Definitions/Thms3.5/3.9/3.10"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Partialset/cardinalitysharingnotnative-taskcheckpoint;separatetasktrainingwithinsequencebatchdesign.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            24,
+            25,
+            26
+          ],
+          "locator": "Architecture/B3/cardinalityexperimentsandrepocfg"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "DeepSetpredictedobjectiveconditioning/Transformerappend-or-edit,REINFORCEpracticalbatchnormalization,sequentialsampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            16,
+            17,
+            24
+          ],
+          "locator": "Alg4/5/A2/B1-B2"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "10trialsyntheticmeanSD/bestcheckpointandgridmatchedsurrogatequerybudget;RFP1.69ratio1024queriesmedian30/70bands,NEHVIruntime18.9vs14.0andhalf9.5.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "AllTables1-3/7-11/Figs2-6/protocolandbaselinesD"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Theoryrequiresstrongconcavity/crossnorm/universalrepresentation/certifiedalphagamma,notprovedforNNJororacle;diversityfeatureslimited/runtime/trainingcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            12,
+            13,
+            14,
+            15,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            27
+          ],
+          "locator": "Allproofsconditions/authorcaveatsandboundedinterpretation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "28formalpagesallrefsA-Dread8visual;122repoassetsnoPDFZIP;fullREADMEconfigs200wrapperandselectedcorecode/norun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Fullcoverage/cache/metadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v235/lee24w.html",
+      "locator": "Exact3authors/PDFp1fouraffiliations;formalICML2024PMLR23526948-26975/HTMLcitation_publication_date2024/07/08verified."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/lee24w.html",
+      "locator": "ManualRelatedMaterialPDF+OpenReviewonly;complete28p includesA-D/refs. API1/2forumjP8mf34iCWboth403cached;official122-filetree(noPDFZIP),READMEallreadreferencesnootherscience. Noexplicitmissingattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v235/lee24w.html",
+      "locator": "Formal28pSHAec667a7dfee1cd6eb6de77684b68df2c8530f51c83b98cce7ffa139096320cfb allread;visual5/6/8/12/13/26/27/28includingplotlegends/proofconditions."
+    },
+    {
+      "field": "code_url,configuration",
+      "source_url": "https://github.com/snu-mllab/GreedyPolicyForMOCO",
+      "locator": "OfficialPDFp6code;commitf13a40a7eaf465d3f7cc67f2242b35a89b00b730122files. FullREADMErequirements/3configs/200lineoptimizerwrapper read;selectedalgsetrl81-270/271-355andeditingloop111-260/266-380 read(notallmodulesclaimed). defaultreinitmodelperround and num_eval_samples32 vsprinted16;norun."
+    },
+    {
+      "field": "theory scope",
+      "source_url": "https://proceedings.mlr.press/v235/lee24w.html",
+      "locator": "A1smooth+uniformstrongconcavityL<=M<0 andcrossnormMprime<-M;stationaryfixedpoint/suitableiterationdomain. A2fullconditionalpolicyexpressiveness;A3alphaqualityeachstep,nonnegative monotone,metricdiversity;half-s scoring essential, no learnedalpha certificate. Practicalnormalizationnotcoveredbyfixedbaselineunbiasedclaim."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "greedy-policy-moco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit related neural constructive or preference-conditioned approach with exact complete bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "BodyPDF8explicitBello et al. (2017);completebibliographyPDF9."
+        }
+      ]
+    },
+    {
+      "citing": "greedy-policy-moco",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicit related neural constructive or preference-conditioned approach with exact complete bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "BodyPDF8explicitKool et al. (2019);completebibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "greedy-policy-moco",
+      "cited": "pareto-set-learning",
+      "reference_label": "Xi Lin (2022)",
+      "description": "Explicit related neural constructive or preference-conditioned approach with exact complete bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "BodyPDF5explicitXi Lin (2022);completebibliographyPDF11."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedactualjointacquisitionproblem/deep-setarchitecture/append-editMDPs/conditionaltheory.",
+    "Separatedcardinalitysharingfromnative-tasksharedcheckpoint;finiteRLfromexactgreedyguarantees.",
+    "Capturedbestcheckpoint/grid/surrogatequerybudget,medianpercentileplots,correctedbaselineidentity/runtimeandMLM/diversitytradeoffs.",
+    "All28formalpagesA-Dandscientificattachmentinventorycomplete;actualcodeconfigurationdifferencequalified."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "538c6aaeb416df4372be3092bd495f1330d4206609b1bdc557a9557675894508"
+}

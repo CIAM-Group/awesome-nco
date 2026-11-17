@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "paper_id": "idr-gm",
+  "note_path": "specialist/idr-gm.md",
+  "baseline_note_sha256": "7fe8fd44a01479bc4c44e376406affc92a93e22e628c282a784361c4862b50d1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v139/ren21c/ren21c.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v139/ren21c/ren21c.pdf",
+      "local_path": "research/import-272/nco-5389463cd2.pdf",
+      "sha256": "9da98068be5c18c907bdaf7c41ef5f7df76b2561d39524056a200c232e11d262",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.mlr.press/v139/ren21c/ren21c-supp.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v139/ren21c/ren21c-supp.pdf",
+      "version": "publisher-linked seven-page scientific supplement",
+      "local_path": "research/full-text-review/idr-gm/supplement.pdf",
+      "sha256": "d6dde3fd9529bdc6733be6dafcc14d8101a7710c3a0202ab18e9ae05e6675375",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read full threat setting/transductive supervised alignment and cosine embedding loss, regular-simplex geometry Theorems1-4, sampledregularity/detection heuristic and softmatchinglossweight. Geometricidentities require regularnondegenerate simplex, not universalattackcharacterization/certifieddefense."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Read phase-type definitions, marginaldiagonalCDFfit and parameterformulas, densestnodehillclimbing/separationloss, three realgraphtriples, 30/70matchedsplits fiveaverages, attacks/budgets, mainTable2 and all Figures3-8. Algebrausesnonexistentvectorinverses and matrixexponentialderivativesneedqualification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 16,
+      "notes": "Read complete complexity analysis and sevenreferencepages. Claimedlinearcomplexity suppressespreviousN^2embeddingcost; explicitRGMhereYu2021JointTransformationLearning isnotcataloguerevocableRL-RGM. ExactDGMC/CIE/GANNcitationsmatched."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Read everygeometryproof, phase-type expressiveness/Theorem7proof, alladditionalHits@10/parameterplots andimplementation/hardware/hyperparameters. Theorem7argues moments withChebyshev butdoesnotestablish learnedCDFconvergence; repeatedthresholdsubsetsnotindependentsamples. ReadnegativeIDRGM-DvsAentriescontrarytoprose. Noexactmodelarchitecture/codeURLgiven."
+    }
+  ],
+  "claims": [
+    {
+      "id": "idr-defense",
+      "category": "contribution",
+      "statement": "Integrated simplex lossweight and densitybasedseparation defend empirical supervised networkalignment againstedgeperturbations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-4; Equation22"
+        }
+      ]
+    },
+    {
+      "id": "idr-method",
+      "category": "method",
+      "statement": "Regularsimplexidentitiesrequiregeometricassumptions; heuristicdetectorandphase-typeobjectiveare notcertifiedattackdefense or exactQAPsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            9
+          ],
+          "locator": "Theorems1-6, lossconstruction andcertifiedmethodsrelatedwork"
+        }
+      ]
+    },
+    {
+      "id": "idr-results",
+      "category": "experiment",
+      "statement": "Main5%budgetTable2leadsnineHits@1columns; transductive30/70five-splitaverages, notoptimalityrates; noadaptiveattackoronlinecostguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Problemobservability, Table1-2 andprotocol"
+        }
+      ]
+    },
+    {
+      "id": "idr-proof-gap",
+      "category": "limitation",
+      "statement": "Theorem7moment/ChebyshevargumentdoesnotestablishfittedCDFconsistency; tablecontainsDvsAnegativecasescontrarytoprose.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Theorem7proof andTable3"
+        }
+      ]
+    },
+    {
+      "id": "idr-specialist",
+      "category": "classification",
+      "statement": "Same networkalignment native task onthreegraphtriples; no demonstratedunchangedmodelacrossothernativeoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7
+          ],
+          "locator": "Training/testdefinition anddatasets"
+        }
+      ]
+    },
+    {
+      "id": "root-neural-inclusion-boundary",
+      "category": "classification",
+      "statement": "Learned embedding and graph-matching defense without an identifiable neural solver architecture in the reviewed paper or supplement; retained as a related reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Section 2 and Equation 1 define M and its objective without a neural architecture."
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Appendix A.4 implementation and hyperparameters identify PyTorch, not the architecture of M."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/ren21c.html",
+      "locator": "Officialtitle,tenauthors,ICML2021PMLR139:8982-8997; PDFp1sixaffiliationsmatch; MicrosoftlistingduplicatesShenbutprimarypaperdoesnot"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v139/gh-pages/_posts/2021-07-01-ren21c.md",
+      "locator": "Explicitdateandissued date-parts2021-07-01; notconferenceJuly18-24"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/ren21c.html",
+      "locator": "ManualRelatedMaterial/rawextrascheckidentifiesone7pScientificSupplementaryPDF; entireA.1-A.4readincludingTheorem7/additionalresults; authorMicrosoftrecordnoadditionalscientificattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://www.microsoft.com/en-us/research/publication/integrated-defense-for-resilient-graph-matching/",
+      "locator": "Authorpublicationpage/PMLRnoIDRGMcode; supplementlinksattacks/baselinesonly; targetedofficiallabinventoryandsearchnoexactimplementationidentified"
+    },
+    {
+      "field": "inclusion",
+      "source_url": "https://proceedings.mlr.press/v139/ren21c/ren21c.pdf",
+      "locator": "Root independently read paper pp2-3 and supplement pp6-7, and searched all sources for architecture descriptions; complete-source review by full_review_graphs did not identify the solver as a neural architecture."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "idr-gm",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Explicitgraphmatchingbaseline/bodycitation andexacttitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "idr-gm",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "ExplicitCIErelatedwork andexactchannel-independentHungarianattentionbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "idr-gm",
+      "cited": "gann",
+      "reference_label": "Wang et al. (2020c)",
+      "description": "ExplicitGA-MGMrelatedwork andexactgraduatedassignmentjointmatching/clusteringtitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "idr-gm",
+      "cited": "adversarial-graph-matching",
+      "reference_label": "Zhang et al. (2020b)",
+      "description": "ExplicitGMAattackcitation andexactAdversarialAttacksonDeepGraphMatchingbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            14
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "idr-gm",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "Wang et al., 2020e",
+      "description": "Introduction cites LCS among computer-vision object matching applications; exact CVPR2020 title/byline/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "idr-gm",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "Yan et al., 2020",
+      "description": "Related work cites the IJCAI2020 graph matching survey among reviews; exact three-author title/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall16main+7supplementpagesincludingallproofs/references/plots; manuallycheckedpublisherandsupplementinventory.",
+    "Replacedgenericrobustnesswithprecisesupervision,metrics,budgets,resourcecostandnegativeablationcases.",
+    "Qualifiedregularsimplex/phase-typeclaims; documentedTheorem7proofgap, matrix/vectorupdateambiguities andnonlinearcomplexityomission; avoidedfalseRGMcitationalias.",
+    "Root scope check: retained as reference because a neural solver architecture could not be established from the full paper and supplement; PyTorch alone is not sufficient evidence.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8362e8a557d04d8b6e30fb61cff439efa8714d4c20bb3cacf23af213bfb71e39"
+}

@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "paper_id": "gnn-approximation-ratios",
+  "note_path": "studies/gnn-approximation-ratios.md",
+  "baseline_note_sha256": "2add03fa6f0d4c1b33b35667ccd055bba6cc30ba121189b815650cb44c0d5b61",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/635440afdfc39fe37995fed127d7df4f-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/635440afdfc39fe37995fed127d7df4f-Paper.pdf",
+      "local_path": "research/import-272/nco-6ddc851027.pdf",
+      "sha256": "1a8bbeb19523c2772257fc1f93c7a79e41ad7e5da91c8d185e9803f5794bbebd",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/635440afdfc39fe37995fed127d7df4f-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/635440afdfc39fe37995fed127d7df4f-Supplemental.zip",
+      "archive_member": "approximation_1910241941_supp.pdf",
+      "version": "official NeurIPS2019 scientific supplement, printed pages11-15, extracted from publisher ZIP",
+      "local_path": "research/full-text-review/gnn-approximation-ratios/supplement-scientific.pdf",
+      "sha256": "4b76de5aa87d21bf2739a3bc617af6c8532535e682d184055db377627714bb73",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh read of complete introduction, related work and exact bounded-degree, finite-label, graph-uniform parameter and degree-only feature definitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Read all consistent-port/VVC definitions, Theorems1-10, architecture and complete approximation statements including weak/proper coloring distinctions and matching edge-output rule."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read acknowledgments and entire numbered bibliography, checking exact existing-work identities."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read every line of bidirectional local-model simulation, induction encoding and CPNGNN finite-view completeness proof; inspected full formulas visually."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read transferred local bounds and references, both preprocessing algorithms and all toy experiment details; visually inspected algorithms and theorem assumptions."
+    }
+  ],
+  "claims": [
+    {
+      "id": "correspondence",
+      "category": "contribution",
+      "statement": "Equates specified GNN classes with constant-round anonymous distributed models under bounded degree and finite node features.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Assumptions1-3, graph-problem definition and Theorem1"
+        }
+      ]
+    },
+    {
+      "id": "port-model",
+      "category": "method",
+      "statement": "CPNGNN concatenates ordered consistent-port neighbor information; most-powerful claim is restricted to VVC and finite features.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "VVC definition; Algorithm2; Theorems2-3"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "category": "method",
+      "statement": "Completeness encodes bounded local views and approximates a finite-label function; this is representability, not training convergence.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Supplement A Lemmas11-16 and complete Theorem3 proof"
+        }
+      ]
+    },
+    {
+      "id": "ratios",
+      "category": "contribution",
+      "statement": "Degree-only tight MDS/MVC ratios are Delta+1 and2; weak coloring improves MDS and enables matching; proper coloring restricts to bipartite matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Theorems4-10, exact quantifiers and endpoint edge labeling"
+        }
+      ]
+    },
+    {
+      "id": "toy",
+      "category": "experiment",
+      "statement": "Only a four-node single-leaf toy experiment is reported, same graph for training/testing, ten seeds and10000 iterations; CPNGNN succeeds.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Supplement C full protocol/result"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A theory study of deterministic local architecture power, with a small illustrative experiment, not one checkpoint solving several CO tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            7,
+            8
+          ],
+          "locator": "Contributions; model and parameter quantifiers; theorem statements"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Worst-case bounds do not extend automatically to global, randomized, uniquely identified or search-augmented architectures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            8
+          ],
+          "locator": "Explicit no-ID/randomness assumptions; local model and discussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/635440afdfc39fe37995fed127d7df4f-Abstract.html",
+      "locator": "Manually opened official NeurIPS2019 record with exact three authors/title. Main PDF page1 lists Kyoto University, RIKEN AIP, JST PRESTO and formal proceedings footer."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/635440afdfc39fe37995fed127d7df4f-Supplemental.zip",
+      "locator": "Manually inspected entire official ZIP: one scientific PDF approximation_1910241941_supp.pdf, five pages. Extracted, registered and read all5 pages, including proofs, preprocessing and experiment; no other members."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/635440afdfc39fe37995fed127d7df4f-Abstract.html",
+      "locator": "No implementation URL found in complete main text, supplement or official ZIP; no unsupported code link added."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-approximation-ratios",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[11] Khalil et al. (2017)",
+      "description": "Discusses GNN-based combinatorial optimization with search, contrasted with the local-only model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit Section2.1 citation on PDF page2; matching bibliography entry on PDF page9: [11] Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-approximation-ratios",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4] Bello et al. (2016), CoRR abs/1611.09940",
+      "description": "Cites reinforcement learning of pointer policies in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit Section2.1 citation on PDF page2; matching bibliography entry on PDF page9: [4] Bello et al. (2016), CoRR abs/1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-approximation-ratios",
+      "cited": "pointer-networks",
+      "reference_label": "[27] Vinyals, Fortunato and Jaitly (2015)",
+      "description": "Cites Pointer Networks as an early neural combinatorial approach and explicitly distinguishes it from GNNs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit Section2.1 citation on PDF page2; matching bibliography entry on PDF page10: [27] Vinyals, Fortunato and Jaitly (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-approximation-ratios",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[16] Li, Chen and Koltun (2018)",
+      "description": "Cites graph convolution with guided tree search as a search-augmented approach outside this isolated GNN analysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit Section2.1 citation on PDF page2; matching bibliography entry on PDF page10: [16] Li, Chen and Koltun (2018)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded six sections with all theorem assumptions, quantifiers, tight ratios and distinct weak/proper-coloring matching conclusions.",
+    "Added actual single-leaf experiment from separately downloaded scientific supplement; did not claim experiments absent.",
+    "Added Maximum Matching to problem metadata and kept theory/study classification.",
+    "Flagged erroneous introduction NP-hard grouping of ordinary maximum matching; scoped impossibility to the anonymous local model.",
+    "Documented preprocessing disconnected/isolated-vertex caveat and avoided universal GNN limitations.",
+    "Recorded four exact internal citations, with body and bibliography page locators."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7938e3b24fcd3248a894533dfc355c58171a0317044343bf0746ec7199e93dcf"
+}

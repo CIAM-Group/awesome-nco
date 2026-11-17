@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "paper_id": "aero-enhancing-sharding-blockchain-via-deep-reinforcement-learning-for-account-migrati",
+  "note_path": "specialist/aero-enhancing-sharding-blockchain-via-deep-reinforcement-learning-for-account-migrati.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "ae7fa82c8c234db7720cb0d49546107d3ac2e8acd20bd1d98b0355eeadf5a04a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.mingxuansong.com/papers/AERO-%20Enhancing%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20for%20Account%20Migration.pdf",
+      "retrieval_url": "https://www.mingxuansong.com/papers/AERO-%20Enhancing%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20for%20Account%20Migration.pdf",
+      "version": "Namedauthor-hosted completeWWW2025proceedings-format11pages withformalDOI/6authorbyline; allbody/36refs/AppendicesA–Dactualread andkeyvisualschecked, cutoffeligible.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-d298172936/author.pdf",
+      "sha256": "8dda339ce27336be1bc835f29422fe3cef0c1a39866605f4da758237964184ef",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read full named formal byline/affiliations/DOI, introduction and contribution motivation of prefix group migration vs per-account choices, full background2.1 and opening related-accountmigration2.2; exact31.77headline to trace experimentally and priorSPRING explicit18 citation identified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read all relatedaccountmigration/systemdesign and workflow. Physicalshard handlesaccounts,logicalglobal shard PBFTmigration proposals2f+1, sharedseed/model determinism assumption and explicitAppendixA safety/liveness reference flaggedforread. Fig1/2/3 textandarchitecture/trieprefix migration read; actiondefinitionlater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read migration transaction triple/actionsequence, allMDPstate/history features and Eq1–13. Printed objective argmax of positive CSTXratio contrasts statedminimize; Eq12 negativevariance ofCSTcounts notnormalizedratios. Needweightssigns/AppendB/Ctoqualify. 10Mtrain1MtestEthereum2024, AERO-S/SPRING/Broker baselines and namedAppendA/Callwithin11ppending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all five baselines and every resultssection5.3–5.6, Fig4CSTXratio/Fig6EWMAandboxplots/Fig5selected8-shardheatmaps/Fig7TPS, conclusion+acknowledgments. Throughput31.77%relativeSOTAbutno numericbarlabels; Monoxide hasgoodloadvariance despiteworstTPS, so noeverymetricdominance. Full16shardAppendDexplicitremaining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read complete36entrybibliography andallAppendicesA–D: safety/livenessproofassumptions1/3honestthreshold/partial synchrony/deterministicreplicas; attentionEq14–17 proseandmatrixinputscontradict, discrete actiondecodeunderspecified. FullTable1 gamma.99,6heads,batch128/minibatch4/lr1e-5/256; 16x8nodes100blocks/epoch1000txblock,90KB/.06sdecision/.9supdate. Allthreefull16x16heatmaps inclcounts/sumsread, noextraappendix afterp11."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Prefixgroupmigration aimsreduce cross-shardtransactions andbalance load withless per-accountdecisioncost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "PPOgroupmigration+AEROChainPBFT system withAERO-S andfivebaselineexperimentalcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Contributions/Systemdesign/Evaluation"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Existingallocation migration triples/variablelengthsequence attentionoverstate/history; printedcost/argmax/rewardsign/variance andQKVassignment ambiguities explicitlyqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            10
+          ],
+          "locator": "Eqs1–17 andAppendixB"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "10Mtrain1Mtest Ethereum2024,16shardsx8nodes/100blocksper-epoch/1000txlimit;31.77%authorTPSclaim, noexactlabelsforsignificance,90KB/.06s/.9scomponentoverhead.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Setup/Figs4–10/AppendixC/D"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "ConditionalPBFTconsensus safety/liveness sketchesrequireper-shardhonestthreshold,partial synchronyanddeterministicsharedmodelstate; notpolicyoptimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            9,
+            10
+          ],
+          "locator": "BasicSystemDesign andallAppendixA"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist neuralmigrationmoves improve existingcompleteaccountpartition; oneproblem acrossworkload/epochvariation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Migrationtransactions/MDP/actionspace"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Namedauthorfull11pformalcopy includesallA–D/36refs; noidentifiedofficialAEROcode norunreadattachmentsclaimed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9,
+            10,
+            11
+          ],
+          "locator": "Byline/completeReferences/allappendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://www.mingxuansong.com/papers/AERO-%20Enhancing%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20for%20Account%20Migration.pdf",
+      "locator": "Formalnamedbylinep1all6authors/orderandPekingUniversity/ThetaLabs; ACMreferenceformatDOI/WWW2025/11pages. Crossrefauthorsandaffiliationsagree."
+    },
+    {
+      "field": "venue, date, publication date",
+      "source_url": "https://dl.acm.org/doi/10.1145/3696410.3714926",
+      "locator": "SavedCrossrefpublished-online/print2025-04-22,pp706–716,DOI10.1145/3696410.3714926; paperconferenceApr28–May2 distinctfrompublication. AuthorhomepageMay2025isvenue-descriptionnotexactpublisherdate. Noidentifiedarxiv."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://www.mingxuansong.com/papers/AERO-%20Enhancing%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20for%20Account%20Migration.pdf",
+      "locator": "pp3–6existingaccountallocation migratedthrough(source,destination,prefix)triples. Specialistone-nativeplacement/migrationproblem; improvementratherthannewaccountconstruction."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://api2.openreview.net/notes?id=WcuXvn3HVk",
+      "locator": "ManualACMsupplementpage403/OpenReviewAPI403 responsecachedattachments-check.json. Namedauthorprimarypageonlypaperlink,noadditionalcode/scientificcompanion; complete11pformalPDFintegratesnamedAppendicesA–Dpp9–11allread. Allrefs/figures/heatmaps/tablescomplete; noassertionunknownblockedattachmentsnonexistent."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://www.mingxuansong.com/",
+      "locator": "Authorpublicationspage+fullPDFalllinks/targetedAEROChain/titleGitHubsearch: noidentifiedofficialAEROrepo/checkpoints. Paperp10claims4000lineGolang/Pythonimplementation basedonBlockEmulator/CleanRL; do notsubstitutebaseprojects/unrelatedAEROcoinormiraAIrepositories. NoCodeURLadded."
+    },
+    {
+      "field": "formulas, proofs and visual checks",
+      "source_url": "https://www.mingxuansong.com/papers/AERO-%20Enhancing%20Sharding%20Blockchain%20via%20Deep%20Reinforcement%20Learning%20for%20Account%20Migration.pdf#page=10",
+      "locator": "Actualrender/view pp3/5/6/7/8/9/10/11; allA/Bsafety+attention andTable1 inspected. PrintedEq2–4costminimizationvsargmax/Eq8–12ratioandnegativecountvariance/nofixedweights, Eq14QKVprosevsformulasqualifiedwithoutinventedrepair. OriginalFig1crop40,78,560,247actualviewpass; noindependentblockchainexperiment."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "aero-enhancing-sharding-blockchain-via-deep-reinforcement-learning-for-account-migrati",
+      "cited": "spring-improving-the-throughput-of-sharding-blockchain-via-deep-reinforcement-learning",
+      "reference_label": "[18]",
+      "description": "Explicitly contrasts new-account state placement with migration of existing account groups and evaluates SPRING as a baseline; no shared checkpoint claim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "BodyIntroduction/RelatedWork/ExperimentalBaselines andResults; completePengzeLi etal.WWW2024SPRINGbibliographicentry[18]p9."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraft withcompleteformal11pbody/references/A–D scientificreview.",
+    "Changedparadigmconstructive→improvement: existingcompleteaccountpartitionmigrationmoves, specialistone-nativeproblem.",
+    "Preserved31.77%authorTPSclaimandcomponenttimingswithoutunreportedexactbars/hardware/significance.",
+    "Qualifiedprintedreward/attentioninconsistencies/PBFTassumptions, noinventedcodeURL; originalFig1andoneactualSPRINGreference."
+  ],
+  "reviewed_note_sha256": "8426640175c08c728814b99cfb127b06e1eb950c112c703ca9e501accc6913c5"
+}

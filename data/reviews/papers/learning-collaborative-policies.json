@@ -1,0 +1,533 @@
+{
+  "version": 1,
+  "paper_id": "learning-collaborative-policies",
+  "note_path": "specialist/learning-collaborative-policies.md",
+  "baseline_note_sha256": "27487cfb5547776bcfd22e455e7176a09873ea97b3ff4ed9e363777cffdf31d5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/learning-collaborative-policies/paper.pdf",
+      "sha256": "1123b04ab8af73f4860c9c793378988d246c456ada35a0d301295904ee61a2bf",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Supplemental.pdf",
+      "version": "publisher scientific supplementary PDF, AppendicesA-G",
+      "local_path": "research/full-text-review/learning-collaborative-policies/supplement.pdf",
+      "sha256": "560bfdc9d48c112fd9de71f9e28511950ff70d9219583d03e4944240f77aefbb",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/KAISTaffiliations, scientificmotivation andallrelatedworkonconstructive/improvement/hybridmethods."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh constructiveMDP, entropyweightedseederREINFORCE, reviserfixedendpoints andparallelsegmentformulas."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh separatetraining, problemdefinitions andbaselineexclusions, fullTable1budgets/results,Figure4/Table2ablation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh limitations/futurework, funding andfirst20bibliographyentries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Fresh remainingreferences21-41, preservingpreprintyears; matched15internalcollectionpapers."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh PCTSP/CVRPformalization, temperaturedefinition, task-specificreviserconstraints andAlgorithms1-2, runtime/datasetprotocol."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh CPU/GPU/batchrestrictions andallinstance/temperaturetables, entropycoefficientablation andtemperaturecurves."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh fullPointerNetworkablationTable6 andseeder+reviserversusDRL2optanalysis."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Fresh fourseedtrainingcurves andfullTSPLIBTable7. Counted33actualrowsversus35inprose; preservednegativeinstances andbest-of-fourtemperaturebudget."
+    }
+  ],
+  "claims": [
+    {
+      "id": "seeder",
+      "category": "contribution",
+      "statement": "Separateseederuseslinearlyweightedconditionalentropyreward, favoringearlydiversity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7
+          ],
+          "locator": "Section4.1 Equations1-2; hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "reviser",
+      "category": "method",
+      "statement": "Separatelytrainedfixedendpointreviser greedilyreconstructsdisjointsegments andshiftsdecompositionoffset.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "AppendixA3-A4 Algorithms1-2; noexplicitaccept-only-ifimprovedstep"
+        }
+      ]
+    },
+    {
+      "id": "task-limits",
+      "category": "method",
+      "statement": "SmallPCTSPfixesselectednodeset, onlyrevisingorder; CVRPusesdepot-delimitedsubrouteswithpadding.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "AppendixA3"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP100LCPstar1280seeds45rounds has7.81length .54percentgap and4.30secondaverageperinstancetime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Table1 andSection5.2"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "category": "experiment",
+      "statement": "PerinstancetimesincludeGPUbatching; smallbatch<=100, largebatch1exceptDRL2opt/NLNS10; someheuristicstimesimported.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "AppendixA5"
+        }
+      ]
+    },
+    {
+      "id": "ablations",
+      "category": "experiment",
+      "statement": "Linearschedulingisnotbestatallalphas; fourrandomseedcurvesreported.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "AppendixBTable5 andFcurves"
+        }
+      ]
+    },
+    {
+      "id": "tsplib",
+      "category": "experiment",
+      "statement": "Prosedescribes35instances butTable7lists33; printedaveragesAM9.90,DRL2opt7.63,LCP5.14percent.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "AppendixGTable7 allrowsandcaption"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "The proposed entropy-trained neural seeder constructs solutions and separately trained revisers improve them; both are core stages. Under the repository taxonomy this is specialist constructive-improvement, not improvement only.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4-5 separatetrainingandincumbentrevision"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Paper.pdf",
+      "locator": "PublisherPDFp1 titleblock, KAISTelectricalandindustrial/systemsengineeringdepartments."
+    },
+    {
+      "field": "publication year, venue",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/564127c03caab942e503ee6f810f54fd-Abstract.html",
+      "locator": "OfficialNeurIPS2021article record."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2110.13987",
+      "locator": "arxivv1submitted26October2021;23pagescomment."
+    },
+    {
+      "field": "code_url and scope",
+      "source_url": "https://github.com/alstn12088/LCP",
+      "locator": "Mainp7footnote2; manuallyreadREADME declaresTSPfocus andtraining/pretrainedevaluationcommands, exampleiterationcountsdifferfrompaper."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/564127c03caab942e503ee6f810f54fd-Abstract.html",
+      "locator": "Officiallandingmanuallyinspected2026-11-16; onesupplementalPDF, all10pagesAppendicesA-Gread. NoadditionalZIP/scientificattachmentlinked."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/564127c03caab942e503ee6f810f54fd-Paper.pdf#page=4",
+      "locator": "OriginalFigure1PDFp4 cropRect(105,65,510,190)points at4x; completeleftseedingandbottomrecompositionloopretained. Replacedclippedassetatomicallyandvisuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/564127c03caab942e503ee6f810f54fd-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/learning-collaborative-policies/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2110.13987",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-10-26; title on abstract page: Learning Collaborative Policies to Solve NP-hard Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/learning-collaborative-policies/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[10] Bello2017arxiv1611.09940",
+      "description": "PointerRLconstructivepredecessorandarchitecturealternative",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            10,
+            11
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[11] KhaliletalNeurIPS2017",
+      "description": "GraphembeddingDQNpredecessorandbaseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            11
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "attention-model",
+      "reference_label": "[12] KooletalICLR2019",
+      "description": "Seeder/reviserarchitecture, rolloutbaseline andbenchmarkfoundation",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "rl-device-placement",
+      "reference_label": "[16] MirhoseinietalICML2017",
+      "description": "Practicaldeviceplacementapplicationmotivation",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "pointer-networks",
+      "reference_label": "[21] VinyalsetalNeurIPS2015",
+      "description": "PointerarchitectureandappendixDalternative",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "rl-vrp",
+      "reference_label": "[22] NazarietalNeurIPS2018",
+      "description": "CVRPconstructivepolicyandbaseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "learning-heuristic",
+      "reference_label": "[23] DeudonetalCPAIOR2018",
+      "description": "EANroutingpredecessorandbaseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "pomo",
+      "reference_label": "[26] KwonetalNeurIPS2020",
+      "description": "Relatedwork; explicitlyexcludedbenchmarkandpotentialcollaborator",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            10,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[27] XinetalAAAI2021",
+      "description": "Diversityrelatedwork; excludedbenchmarkandpotentialcollaborator",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            10,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "neurewriter",
+      "reference_label": "[29] ChenandTianNeurIPS2019",
+      "description": "Learnedlocalrewritingrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[30] Wuetal2020arxiv1912.05784",
+      "description": "LearnedimprovementandGATTbaseline; preservespreprintversion",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[32] HottungTierneyCoRR1911.09539,2019",
+      "description": "CVRPdestroy/repairrelatedworkandNLNSbaseline; citedpreprint",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "learning-to-improve",
+      "reference_label": "[33] LuetalICLR2020",
+      "description": "Learnedoperatorcontrolhybridrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "att-gcn",
+      "reference_label": "[35] FuetalCoRR2012.10658,2020",
+      "description": "SubgraphmodelplusMCTSrelatedwork; cited2020preprint",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-collaborative-policies",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[36] KooletalCoRR2102.11756,2021",
+      "description": "SupervisedguidancewithDPrelatedwork; cited2021preprint",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicitintextnumberedcitationwithmatchingbibliographyentry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedgenericnote withfullseeder/revisertrainingandtask-specificconstraints, sample/revision/temperature/hardwarebudgets.",
+    "Removedunsupportedacceptanceandaccept-only-beneficialreplacementclaim; noexhaustivefactorialsearchoroptimalityguaranteeinferred.",
+    "DocumentedTSPLIB33tablerowsversus35prose, ablationsamplesizediscrepancy andREADMEiterationmismatch.",
+    "Qualifiedheuristicreferences, batchingandunfavorablecomparisons;15explicitcitationspreservepreprintlabels.",
+    "ReplacedclippedFigure1withcompleteoriginalseeding/revision/recompositiondiagram.",
+    "Corrected paradigm to constructive-improvement: the independently trained seeder and reviser are both substantive novel neural stages.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e38cc17091f98eaafd86caa1ce1bfab82abc87aaf85cc1630be11317273dfd29"
+}

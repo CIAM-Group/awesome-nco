@@ -1,0 +1,322 @@
+{
+  "version": 1,
+  "paper_id": "gcn-guided-tree-search",
+  "note_path": "generalist/gcn-guided-tree-search.md",
+  "baseline_note_sha256": "c0bea124380885a7d7cb820fe80b2ce80d437377786a372a02109a5b9a3cb92c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Paper.pdf",
+      "local_path": "research/import-272/nco-5ea34f5406.pdf",
+      "sha256": "84d11450d5bd33b93373acb0cf037cb982b6444334d4042a9eb4843ebd7290e7",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Supplemental.zip",
+      "version": "publisher supplementary PDF inside official ZIP",
+      "local_path": "research/full-text-review/gcn-guided-tree-search/zip-1.pdf",
+      "sha256": "95b0a54ecaaa1c59b04ab92e8cff6389efdadb5f1136f6a582d0c46f4c1eb965",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "Neurips319-supp.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete motivation, comparisons, actual maximum-cardinality graph definitions, SAT decision semantics, reduction-based reuse of one MIS model, full pipeline and supervised network setup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all network/hindsight loss, random-queue tree search and reduction/local-search details, complete data/train/test protocols, 20-layer 32-map model and main SAT tables. Same trained MIS model reused across reductions; 16-thread versus 16-times baseline time accounting."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Read every remaining result/ablation/table/figure caption, conclusion and references 1-39. Main claim of social-graph optimality is explicitly conjectural; large-clique complement failure and local-search contribution recorded."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read complete official ZIP supplement: exact task reductions, all three algorithms, 2-improvement and four reduction rules, all real-graph stats, width ablation and references. Heuristic failure to reach clause count cannot certify UNSAT."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Multiple incompatible optimum labels can blur one membership map.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4
+          ],
+          "locator": "Introduction; Section 4.2"
+        }
+      ]
+    },
+    {
+      "id": "diversity",
+      "category": "contribution",
+      "statement": "A 32-map supervised GCN and hindsight loss guide randomized queue tree search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections 4.2 and 5.1"
+        }
+      ]
+    },
+    {
+      "id": "reduction-reuse",
+      "category": "classification",
+      "statement": "The same SATLIB-trained MIS network is used for all tasks via explicit MIS reductions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "Reduction description; Section 5.1 same network statement"
+        }
+      ]
+    },
+    {
+      "id": "classical",
+      "category": "method",
+      "statement": "Graph reduction and 2-improvement local search form part of the solver.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "C.1-C.2"
+        }
+      ]
+    },
+    {
+      "id": "sat-witness",
+      "category": "limitation",
+      "statement": "An independent set meeting clause count proves SAT; incomplete heuristic failure cannot certify UNSAT.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "SAT-to-MIS reduction; maximum versus found independent set distinction"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "All SATLIB test formulas are solved; Z3 has the same fraction and much lower median time.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Table 1 and interpretation"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "Without local search SATLIB validation success falls from full single-thread 98.8% to 42.4%.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Table 4 and controlled-experiment text"
+        }
+      ]
+    },
+    {
+      "id": "large-clique",
+      "category": "limitation",
+      "statement": "Dense graph complements prevent large clique experiments; matching ReduMIS sizes does not prove optimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables 5-6 interpretation and conclusion"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "reproducibility",
+      "statement": "16-thread tree search uses a different wall-clock allowance from 16-times-time continuing baselines; training takes about 16 hours on the stated CPU/GPU.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Training and testing"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, venue, year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Paper.pdf",
+      "locator": "Main PDF page 1 and matching supplement title block; NeurIPS 2018 footer."
+    },
+    {
+      "field": "date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html",
+      "locator": "Formal proceedings supports publication year 2018; no exact date inferred."
+    },
+    {
+      "field": "scope, paradigm, problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/8d3bba7425e7c98c50f52ca1b52d3735-Paper.pdf",
+      "locator": "Main pages 3 and 5: same trained MIS network across reductions; actual largest-set definitions; Supplement A reduction conditions."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/isl-org/NPHard",
+      "locator": "Matching paper title/authors in official Intel repository; README specifies default no-GR/LS demo, KaMIS integration and missing training data."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/8d3bba7425e7c98c50f52ca1b52d3735-Abstract.html",
+      "locator": "Manual official landing and archive inspection on 2026-11-16. Supplemental ZIP contains exactly one member Neurips319-supp.pdf, four pages, all read; no other documents or code attachments."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gcn-guided-tree-search",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[6] Bello et al., arXiv:1611.09940 (2016)",
+      "description": "Explicit predecessor or baseline citation; the Attention Model is cited under its earlier preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            9
+          ],
+          "locator": "Explicit in-text citation [6] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcn-guided-tree-search",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[10] Dai et al., NeurIPS 2017",
+      "description": "Explicit predecessor or baseline citation; the Attention Model is cited under its earlier preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            7,
+            9
+          ],
+          "locator": "Explicit in-text citation [10] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcn-guided-tree-search",
+      "cited": "attention-model",
+      "reference_label": "[25] Kool et al., Attention solves your TSP, approximately; arXiv:1803.08475 (2018)",
+      "description": "Explicit predecessor or baseline citation; the Attention Model is cited under its earlier preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation [25] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcn-guided-tree-search",
+      "cited": "neurosat",
+      "reference_label": "[32] Selsam et al., arXiv:1802.03685 (2018)",
+      "description": "Explicit predecessor or baseline citation; the Attention Model is cited under its earlier preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation [32] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gcn-guided-tree-search",
+      "cited": "pointer-networks",
+      "reference_label": "[37] Vinyals et al., NeurIPS 2015",
+      "description": "Explicit predecessor or baseline citation; the Attention Model is cited under its earlier preprint title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [37] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced placeholder with full methods, exact reductions, training protocol, budgets, numerical results and adverse cases.",
+    "Qualified reduction-based generalist reuse, maximum versus maximal terminology, SAT witnesses versus UNSAT proof and conjectural large-graph optimality.",
+    "Added verified official implementation and its default omission of classical components.",
+    "Read and registered the previously undiscovered four-page scientific supplement in ZIP; recorded five explicit internal citations including early Attention Model title."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9f909dafc23fdf683a77b6e2cab99c46810c591c4adcc05486207d9b32a28b94"
+}

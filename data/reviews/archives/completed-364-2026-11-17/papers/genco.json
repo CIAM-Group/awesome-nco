@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "paper_id": "genco",
+  "note_path": "specialist/genco.md",
+  "baseline_note_sha256": "492ead6966204bdad150e82b82c0baa8c5693ef9be9d12bdc15f3d4f5b34b2dd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/ferber24a/ferber24a.pdf",
+      "version": "Complete formal ICML2024 PMLR235:13445-13459,15pages including scientific Appendices A-C, publisher publication July8,2024",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/ferber24a/ferber24a.pdf",
+      "local_path": "research/import-272/nco-143ef8b0ba.pdf",
+      "sha256": "5fff98ea676f9de5302bf8ef5bf9acafffb987f13bf5651bcecedf3b45b3e6ab",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read5authorsUSC/Cornell/Meta,GenCOgenerator→costspace→argminsolverfeasibleoutput;populationgenerativelossplusindividualnonlinearobjectiveonSOLUTIONS notrawlatents. ConditionalencodednonemptyOmega+correctsolverreturn;stillsolverforwardcostnotneural-alonefast. WGAN/VQVAEvariants/nogeneralsharedcheckpointproof. Broadrelateddiffoptimizationrefsneed18exactIDs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read Alg1forwardKsolvercalls/approxBBoridentitybackward(notexactdiscretederivative). Table2mapL onlatentexception;constraintsrequiregwelldefined/Dgradient/groupSGD. Zelda50humanlevelsWGAN+ILPpatch,allmethodsplayable.Unique995/1000vs520/1000updatedvsold,fixed220/1000worse;densitycoverageupdatednotbest/proxyadversarynotrealgamefun."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read WarcraftfixedResNetdefinescost/PATHfeasibleNOTmapfeasibleconstraints.L(C)rawimageexception clear;IwithProjectionapproxgrad Table4SP36.45→23.99density.81→.94coverage.98→.93,notallmetricsbetter. gamma.01blankcollapse.SP0metricnotgoodimage. Photonic100SurCodesigns→1000generationcombined100%uniqueavg0roundedMaxwellloss;unionbrushmanufacturingdomainSolver;objective/recontradeoffs. Limitationsonlyencodedconstraints/scalability/differentiability."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all impact/acknowledgment and references A-Z across pp10-12; exact CO-layer refs Agrawal/Amos/Berthet/DC3/MIPaaL/SurCo/CombOptNet/Pogancic/Sahoo/SATNet/DIFUSCO; check title changes and body locators before edges. No scientific appendix here yet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read full Appendices A-C and Algorithms2-4; Warcraft10000pretrain12x12maps96x96RGB/75epochsAdam.0005, actual groundtruthnotusedResNetcost. GANgroupfeasiblevariant separatefrommapexception. AppCmaximizeslosswordingvsAlg4minimizespositiveMSE+objective, qualified pseudocode/sign inconsistencies not experiments invalid. No external scientificattachment referenced; no code URL in full article."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Generationmayviolateconstraints;posthocrepaircollapsesdiversityandpenaltiesdonotensurefeasibility.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/Table1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Endtoendgenerativelossplusindividualobjectivecoupledwithencodedfeasibilitysolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Eq2-4/Figure1/Alg1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Task-specificGAN/VQVAEconfigurationsandsolversnotsharednative-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Table2andallthreeexperimentalsettings"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Noise→cost→solver;approxblackbox/identitygradients;WarcraftL(C)explicitexception.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            13,
+            14,
+            15
+          ],
+          "locator": "Eq2-4/Alg1-4/AppendicesA-C"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Zelda995vs520unique/1000butfixed220;Warcraft23.99vs36.45SPcost;photonics100training1000evalcombined100%unique/rounded0loss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables3-6/datasetsandtradeoffs"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Encodedfeasibilitynotouterglobaloptimality/unencodedrequirements;solverruntimeapproxgradients/collapse/diversitytradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            8,
+            9,
+            14,
+            15
+          ],
+          "locator": "Assumptions/Table5/conclusionandqualifiedcuratorpseudocodenotes"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All15formalpagesincludingAppA-C/allrefsread8visualpages;manualpublisher/APIattachmentschecknocodeverified/noexperimentrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Fullreadinglog/primarymetadata/cache/API403"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v235/ferber24a.html",
+      "locator": "Publisher5authors/ICML2024PMLR23513445-13459;HTMLcitation_publication_date2024/07/08, notconferenceJul21-27;PDFp1USC/Cornell/MetaFAIR."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/ferber24a.html",
+      "locator": "ManualRelatedMateriallinksPDFandOpenReviewDiyE6OOGBaonly,no separatesupplement;APIapi.openreview.net and api2.openreview.net notesforum403 cached;forumverificationchallenge. Full15pformalPDFincludesAppendicesA-C;noexplicitmissing scientificattachment referenced."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v235/ferber24a.html",
+      "locator": "Formal15pPMLRPDFSHA5fff98ea676f9de5302bf8ef5bf9acafffb987f13bf5651bcecedf3b45b3e6ab. Allread;visualPDF4,6,7,8,9,13,14,15contactrestart-main/restart-appendix. Actualcost/latentloss exception and Table3fixedadversaryfailure captured."
+    },
+    {
+      "field": "scope,code_url",
+      "source_url": "https://proceedings.mlr.press/v235/ferber24a.html",
+      "locator": "SeparateZeldaGAN/GurobiILP,WarcraftGAN/fixedResNet/GurobiLP,photonicsVQVAE/domain-specificsolver;no sharedcheckpoint. No implementationURLverifiedfullarticle/accessiblesourcepage;noexecution rerun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "genco",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang,2023",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "ExplicitbodyPDF3;completeexacttitle/bylinebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "gflownet-scheduling",
+      "reference_label": "Zhang et al.,2022",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "ExplicitbodyPDF3;completeexacttitle/bylinebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "satnet",
+      "reference_label": "Wang et al.,2019",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "ExplicitbodyPDF3;completeexacttitle/bylinebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "surco",
+      "reference_label": "Ferber et al.,2023",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "ExplicitbodyPDF4;completeexacttitle/bylinebibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic et al.,2020",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "ExplicitbodyPDF4;completeexacttitle/bylinebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "comboptnet",
+      "reference_label": "Paulus et al.,2021",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "ExplicitbodyPDF3;completeexacttitle/bylinebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "genco",
+      "cited": "identity-projection",
+      "reference_label": "Sahoo et al.,2022",
+      "description": "Explicit framework predecessor, differentiable layer, or generative-CO related work with exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "ExplicitbodyPDF4;completeexacttitle/bylinebibliographyPDF12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedallthreeexperimentalprotocols/tradeoffsandconditionalguarantees.",
+    "CorrecteduniversalfeasiblespacelossclaimusingexplicitWarcraftL(C)exception.",
+    "Separatedroundedfinitephotonicszerolossfromglobalguarantee;no solver-free speed claim.",
+    "IntegratedallA-Cscientificappendices;qualifiedprintedpseudocodesign/coefficientconventions."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0b625aeefd9b91e6e85feb1840446f0beeca68f29d24daca26aee5df5f2d24af"
+}

@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+  "note_path": "studies/learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "d16e016d70dab075b23585578dab8b21c7dfc8cd735b03fa634202fad7fc6703",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/4399/4399-13-7438-1-10-20190706.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/4399/4399-13-7438-1-10-20190706.pdf",
+      "version": "FormalAAAI2019 eight-page publisherCDNPDF pp4731–4738 fullyread.",
+      "local_path": "research/full-text-review/learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp/paper.pdf",
+      "sha256": "c9b4fee28913b7b101412b7aeecf57dff08a513c4f898f35ebdf4b4b1e283bf1",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "author-slides",
+      "url": "https://github.com/machine-reasoning-ufrgs/TSP-GNN/blob/020437574e246b62060a2ab082cc95177e2ca49a/paper/Learning_to_Solve_NP_Complete_Problems__AAAI_2019_.pdf",
+      "retrieval_url": "https://github.com/machine-reasoning-ufrgs/TSP-GNN/blob/020437574e246b62060a2ab082cc95177e2ca49a/paper/Learning_to_Solve_NP_Complete_Problems__AAAI_2019_.pdf",
+      "version": "Pinned officialrepo46-slide authorpresentation dated2018-11-14 fullyread; not paperappendix.",
+      "local_path": "research/full-text-review/learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp/author-paper.pdf",
+      "sha256": "cbc16f587be929c471c18118029aed687ef869188250a1db9947883d7c74dad2",
+      "pages": 46,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readformal5authorsPratesAvelarLemosLambVardi/UFRGSRice/first3equalnoCorrespondmarker. Bipartiteedge-vertexGNNweight+target2input=>dlatent/meanedgevotesigmoidyesno64MPprobablynext. Noautoregressiverouteconstructionorwitnessreportedsofar;rootapprovedstudyiffullscopeconfirmed. CompleteAlg1andcrossentropyBooleanlabels."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fullyreadtraining n20-40 euclidean sqrt2/2square distances<=1;2^20graphs2^21decisionpairs(not220literal),128x16per2000epochs1024graphs/2048decisionepoch/d64MLP64x3MP32AdamBCE. Report80percenttest2048vsFig2caption85trainnotmerge. Binarycostsearchneedsadditional1epochlargepositive100/200/1000percenttargets tofixnonmonotonicOODconfidence;delta.01mean1.5percentabsolute8.9passes1024graphs notguarantee/feasibletour."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Allgeneralization/baselineTables1-2/fig4-6read. ±2accuracydecays50byn75,randommetric64andnonmetric50/nativeonenotgeneralist. BaselineTPRcomparisonGNNmayfalsepositivewhileNN/SAfeasibletournotfairqualityguarantee. Costestimatecanunderestimateoptimumnotfeasiblelength. ReprosectionlayersEinit8,16,32contradicts d64?codecheck;32MPd64layernormLSTM. Batchimpl16PAIRversusFigure1caption16instancesandmain1024graphs/epochnotresolved;recordsourceprecision."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fullformal8pagesconclusionTable3all9TSPLIB+refs. ExplicitrouteextractionisFUTUREworknotdemonstrated=>rootapprovedstudy/analysis/reference. NegativeGNNcostestimates-27.20to+6.37notfeasibleroutes/SAactualroutesTPRcomparisonunmatchedfalsepositivebudget. Allweights[0,1]/Cnormalizedbyn. ExistingNeuroSATactualSelsam2018preprintidentity1802.03685andRRNPalm1711.08028checkcatalog. Noadditionalappendixpointer."
+    },
+    {
+      "source_id": "author-slides",
+      "first_page": 1,
+      "last_page": 12,
+      "notes": "Readall12authorpresentationpagesdatedNov14_2018/title5authors/RNNparameter-sharingintro/GNNsum-aggregationlearnedmessageMLPupdateLSTMnotadditionaltourreconstructionresults. Thisis46slidepresentationnotformal46pagepaper."
+    },
+    {
+      "source_id": "author-slides",
+      "first_page": 13,
+      "last_page": 24,
+      "notes": "Read all twelve slides; GNN differentiable composition, NeuroSAT incidence exchange, TSP decision mean-edge-vote Algorithm1, trainable vertex vector/edge initial MLP/message definitions. Decorative TSP art is not generated solution evidence."
+    },
+    {
+      "source_id": "author-slides",
+      "first_page": 25,
+      "last_page": 38,
+      "notes": "Read full updates/vote definitions, opposite labels .98/1.02 opt, slides batch 2x8=16 instances128/epoch, 2000 epochs85train80test, binary cost search8.9 passes1.5percent empirical, accuracy declines with n, TPR only baseline comparison. Slides support main batch reading but formal repro text differs."
+    },
+    {
+      "source_id": "author-slides",
+      "first_page": 39,
+      "last_page": 46,
+      "notes": "All final eight slides read, exact Table1/TSPLIB estimates and refs. Slide42 explicitly unsuccessful route extraction via clustering, future work; supports analysis/reference. No independent appendix promised."
+    }
+  ],
+  "claims": [
+    {
+      "id": "decision",
+      "category": "contribution",
+      "statement": "Bipartite edge–vertex message passing learns decision TSP from paired Boolean supervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Algorithm1;Training"
+        }
+      ]
+    },
+    {
+      "id": "queries",
+      "category": "method",
+      "statement": "Additional broad-target retraining precedes binary scalar-cost search, without witness construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Extracting Route Costs;Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Mean1.5% absolute cost error/8.9queries on1024graphs; nonmetric accuracy50%; training-range80% at2%.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Results;Tables1–2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "No evaluated feasible-tour extraction; formal conclusion leaves it future work, supporting study/analysis/reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Conclusions"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Learned true positives do not certify feasibility; negative TSPLIB cost estimates are not better valid tours.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Figure6;Table3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions",
+      "source_url": "https://cdn.aaai.org/ojs/4399/4399-13-7438-1-10-20190706.pdf",
+      "locator": "p1 five authors/UFRGS/Rice; firstthree equal; no corresponding marker"
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v33i01.33014731",
+      "locator": "published-online2019-07-17; article4399 pp4731–4738; CDN20190706 not publication evidence"
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/1809.02721",
+      "locator": "Saved primaryhistory v1 2018-09-08; v2Oct31/v3Nov16; noarxivPDFreadingclaimed"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/machine-reasoning-ufrgs/TSP-GNN",
+      "locator": "Manually inventoried22paths and emptyreleases; onlyPDF is46slide authorpresentation allread. Formal8pendsrefs/noextra necessaryappendix pointer. FullREADME and selected model/train/loader/binarysearch read."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://cdn.aaai.org/ojs/4399/4399-13-7438-1-10-20190706.pdf",
+      "locator": "OriginalAlgorithm1p2 cropRect319,260,563,553@4x; actualview keyformalpages/slides20,30,31,42/publiccrop"
+    },
+    {
+      "field": "topic inclusion after full scientific review",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/4399",
+      "locator": "Evaluated output is decision probability or estimated optimal cost; feasible-tour extraction is explicitly future work."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. 2018",
+      "description": "Explicit single-bit decision supervision; actual cited2018arxiv1802.03685 maps via sameprimaryversion chain toNeuroSAT, not futurepublication citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            8
+          ],
+          "locator": "Introduction;ExtractingCosts;Conclusion;References Selsam2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected incorrect OJS33014731 to official article4399.",
+    "Moved draft solver to study/analysis/reference: no evaluated feasible-tour construction.",
+    "Final scope screen distinguishes direct NCO research resources from pure prediction/control or related boundary resources; publication validity and complete reading are retained.",
+    "Final internal Markdown link audit: ../specialist/neurosat.md ? ../generalist/neurosat.md"
+  ],
+  "reviewed_note_sha256": "22755919669ac6bf643d3bdc2d7df9d2c261b851fd3d17e6055d6c5cf3331059"
+}

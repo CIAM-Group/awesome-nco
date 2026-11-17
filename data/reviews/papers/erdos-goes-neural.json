@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "paper_id": "erdos-goes-neural",
+  "note_path": "specialist/erdos-goes-neural.md",
+  "baseline_note_sha256": "aaf78aca81e4f06dbf798e3a30a4bf16f6c87d7b3df428de8c563fd4ca230334",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Paper.pdf",
+      "local_path": "research/import-272/nco-c825795101.pdf",
+      "sha256": "fba9902a113d18f9321d2278b4b0f325104def28543ab31789017b5f360d523f",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Supplemental.zip",
+      "version": "publisher supplementary PDF inside official ZIP",
+      "local_path": "research/full-text-review/erdos-goes-neural/zip-1.pdf",
+      "sha256": "670c7993c95df7074da65c80b375df9ca0277905101f04a9d7c40c62c917ccc4",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "CO_supplementary_material.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete introduction, pipeline, related work and probabilistic-method background; separate evaluated maximum clique/local constrained min-cut from illustrative MaxCut."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read general Bernoulli set formulation, nonnegative penalty certificate with beta bound, box rescaling/probability theorem, conditional-expectation decoder and clique/constrained-cut specializations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read cut corollary, methods/data/protocol and all Tables 1-3 entries. Record Gurobi/greedy and RUN-CSP counterexamples, per-graph seconds, reduction costs, partial overfit and larger-instance degradation, and conductance versus cut objective."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 14,
+      "notes": "Read entire broader-impact section, acknowledgements and all references 1-87; distinguish exact cited versions and restrict later links to catalogue titles with explicit in-text citation."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read official ZIP supplement visual example, all dataset statistics, task-specific architectures (clique omits GAT), exact local-cut seed protocol and corrective footnote, hardware, models and all constraint-violation/learning ablations."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all Gurobi/local-cut budget tables and setup costs; complete penalty theorem, scaling and box proofs, clique derivation and beginning cut proof. Checked low-loss nonnegative/penalty assumptions and distinction between deterministic certificate and unrestricted sampling claim."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 11,
+      "notes": "Read complete constrained-cut derivation and all separately numbered supplement references 1-83. Supplement uses draft line/page/reference numbering, so citation labels will be sourced from final main bibliography."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Soft relaxation outputs need a principled feasible integral decoding bridge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and related work"
+        }
+      ]
+    },
+    {
+      "id": "probabilistic-loss",
+      "category": "contribution",
+      "statement": "Independent Bernoulli subset distributions use expected nonnegative cost and a feasibility penalty.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section 3"
+        }
+      ]
+    },
+    {
+      "id": "conditional-certificate",
+      "category": "method",
+      "statement": "Low achieved expected penalized cost below a sufficiently large penalty supports feasible conditional-expectation decoding; this is not optimization convergence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Theorem 1 and Section 3.3"
+        }
+      ]
+    },
+    {
+      "id": "box-caveat",
+      "category": "limitation",
+      "statement": "Box feasibility relies on successful rescaling and an informative Hoeffding/union lower bound; sequential decoding is not an unconditional joint guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Theorem 2 and cluster decoding"
+        }
+      ]
+    },
+    {
+      "id": "architectures",
+      "category": "method",
+      "statement": "The local-cut model uses GIN plus GAT; the clique model omits GAT, uses local masks, and the two tasks have separate models.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "B.2"
+        }
+      ]
+    },
+    {
+      "id": "rb-counterexample",
+      "category": "experiment",
+      "statement": "Accurate large-RB clique ratio 0.735 trails RUN-CSP 0.804 and greedy 0.829.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Table 2"
+        }
+      ]
+    },
+    {
+      "id": "cut-protocol",
+      "category": "experiment",
+      "statement": "Clustering reports conductance with dataset-specific seed counts; supplement corrects the older aggregation description.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "B.3 and footnote 1"
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "category": "reproducibility",
+      "statement": "Reported graph runtimes include reductions or problem setup and use CPU/GPU resources; optimization-limit labels are not total elapsed times.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "B.4 and C.2"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Separate task-specific distributions/losses and constructive decoding do not show a shared trained generalist model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Case studies and methods"
+        }
+      ]
+    },
+    {
+      "id": "penalty-threshold",
+      "category": "limitation",
+      "statement": "Excluding infeasible samples by a penalty threshold requires the sampled cost threshold below beta; the printed general probability statement omits the restriction for arbitrary t.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "D.1 equality (8), Markov step (9)"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, venue, year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Paper.pdf",
+      "locator": "Main PDF page 1 title block, EPFL affiliations, NeurIPS 2020 footer; matching official proceedings landing."
+    },
+    {
+      "field": "date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/49f85a9ed090b20c8bed85a5923c669f-Abstract.html",
+      "locator": "Proceedings supports publication year 2020; no invented exact day."
+    },
+    {
+      "field": "problems, scope, paradigm",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/49f85a9ed090b20c8bed85a5923c669f-Paper.pdf",
+      "locator": "Sections 3-5; task-specific networks and constructive sequential subset decoder; Supplement B.2."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Stalence/erdos_neu",
+      "locator": "Main PDF page 2 footnote 1; matching official repository with clique/cut notebooks."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/49f85a9ed090b20c8bed85a5923c669f-Abstract.html",
+      "locator": "Manual publisher landing inspection 2026-11-16. Supplemental links official ZIP (SHA256 4813b8d22783a58e428200ecb299ef281b6c37cceca4d1bb7cefeab64266a499); all eight members inventoried. One scientific PDF CO_supplementary_material.pdf, 11 pages, all read; four notebooks have only short workflow-heading Markdown cells, all read; remaining two Python modules are code."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[2] Amizadeh et al., source bibliography year 2018",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "In-text citation [2] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[9] Bello et al., arXiv:1611.09940 (2016)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "In-text citation [9] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "neurewriter",
+      "reference_label": "[16] Chen and Tian, NeurIPS 2019",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "In-text citation [16] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "learning-heuristic",
+      "reference_label": "[20] Deudon et al., CPAIOR 2018",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "In-text citation [20] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "egate",
+      "reference_label": "[25] Gao et al., arXiv:2002.08539 (2020)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "In-text citation [25] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "gcnn-branching",
+      "reference_label": "[27] Gasse et al., arXiv:1906.01629 (2019)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            11
+          ],
+          "locator": "In-text citation [27] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[35] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            12
+          ],
+          "locator": "In-text citation [35] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[38] Khalil et al., NeurIPS 2017",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            12
+          ],
+          "locator": "In-text citation [38] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "attention-model",
+      "reference_label": "[41] Kool et al., arXiv:1803.08475 (2018)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            12
+          ],
+          "locator": "In-text citation [41] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[45] Li et al., NeurIPS 2018",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            12
+          ],
+          "locator": "In-text citation [45] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "rl-vrp",
+      "reference_label": "[51] Nazari et al., NeurIPS 2018",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text citation [51] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "dynamic-am",
+      "reference_label": "[55] Peng et al., ISICA 2019",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text citation [55] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "neurosat",
+      "reference_label": "[62] Selsam et al., source bibliography year 2018",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            13
+          ],
+          "locator": "In-text citation [62] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "pointer-networks",
+      "reference_label": "[74] Vinyals et al., NeurIPS 2015",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "In-text citation [74] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "blackbox-backprop",
+      "reference_label": "[76] Vlastelica et al., arXiv:1912.02175 (2019)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text citation [76] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "satnet",
+      "reference_label": "[78] Wang et al., arXiv:1905.12149 (2019)",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text citation [78] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "gnn-approximation-ratios",
+      "reference_label": "[59] Sato et al., source bibliography year 2019",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "In-text citation [59] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[87] Yolcu and Poczos, NeurIPS 2019",
+      "description": "Explicitly cites this work in the neural combinatorial optimization related-work discussion; version follows the source bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            14
+          ],
+          "locator": "In-text citation [87] and matching final-main bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "erdos-goes-neural",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "[56]",
+      "description": "Graph-neural CO background explicitly cites decision TSP; exact five-author AAAI33 pages4731?4738 formal entry. This is a decision/analysis reference, not evidence for feasible-tour construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read complete body citation paragraphs: [56]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [56]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced sparse placeholder sections with source-grounded full-text note.",
+    "Added the actual constrained minimum cut formulation and conductance protocol.",
+    "Corrected clique-versus-cut architecture and seed-aggregation details from the official ZIP PDF.",
+    "Qualified certificates, positive probability bound and penalty sampling threshold; no unsupported global-optimality claim.",
+    "Recorded quality counterexamples, per-graph runtimes, setup/reduction costs and all explicit internal citations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "88bbedde2bce83d2cb9cfde5500c844b5257faa0d2e3cad087f6d0628638a2c6"
+}

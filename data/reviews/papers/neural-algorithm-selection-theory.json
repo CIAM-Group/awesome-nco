@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "paper_id": "neural-algorithm-selection-theory",
+  "note_path": "studies/neural-algorithm-selection-theory.md",
+  "baseline_note_sha256": "eda1802b02ea448ed13935f5ffc204fe4d214bb59983b3b625aea877f6fb49ee",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2c9d78ed62ff5bf2377c3840188114c0-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2c9d78ed62ff5bf2377c3840188114c0-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-9dc7d3f551.pdf",
+      "sha256": "3a699987d5d871fb4d9db5a09148c2b116011e6d01fdc0b9b543d61820010e0e",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh reading title/fourauthors/JHU, instance-dependent algorithm mapping versus single globalparameter, prior piecewise samplecomplexity theory and cutselection motivation; infinitecomplexity danger for unrestricted mappings acknowledged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read direct instance-to-cut framing, comparison with RL/weighted auxiliaryscores, formal pseudo-dimension and uniformbounded-score iidgeneralizationTheorem2.3. NetworksLT/ReLU/CReLU/sigmoid and fixedencoder/intervalparameter formulation; ERM success conditional not guaranteed by PPO."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read exact Theorems2.5/2.6 pseudo-dimension bounds and gamma/Gamma/lambda polynomialpartition assumptions, fixedencoder, LT+sigmoid versus ReLU+CReLU. Applications3.3/3.5/3.6/3.7 rootCG sequences/finitecuts/weightedscoring with boundedm,n,coefficientL1 and cappedtreescore; unifiedtreeencoder onlyfuture proposal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read authors explicit rootonly/encoder/RLnonconvergence limitations, funding and entirebibliography inclCutRL Tang2020, Huang2022/Turner2023, prior Balcanbounds and statisticalnetworkreferences. Publication page onlyPaper/Bibtex noSupplemental link; public authorrepoREADME checked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read full experimentsA: multipleknapsack16items2knapsacks5000train1000test, TD3 normalizedpercentreduction reward, Gurobi11.0.1 cuts/heuristics/presolveoff, PyTorch2.3 hardware; Table1 totals100repetitions0.010GPU/.055CPU/2.031LP seconds not endtoendruntime. Read auxiliaryB1-B5 definitions/proofs/piecewise signcount bounds."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read complete LT proof using exp-transformed final weights/rational sigmoid and ReLU proof using piecewisepolynomial composition/signcount. Flag limited printed LT claim that general lambda>0 h itself is polynomial in original A: S(p)=p yields sigmoid(Az); rational sign treatment needed. CGapplications lambda0 not refuted. Parent sent exact pages for independent check."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read finitecandidate argmaxhyperplane Corollary2.8 andProposition3.7 proof; checklistclaims/limitations/theory/reproduction including authorrepoURL. No separate publisher scientificsupplement listed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 25,
+      "notes": "Complete checklist read: explicit no errorbars, computational resources, code/data reproduction, safeguards/licenses/assets/humanresearch/IRB. All25pages and scientificAppendicesA-C complete; visual main/core tables read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "selector",
+      "category": "contribution",
+      "statement": "Instance-conditioned neural parameter selection has reported pseudo-dimension bounds under fixedencoder/architecture and controlled piecewisepolynomial score structure.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Theorems2.3/2.5/2.6, definitions and full AppendicesB-C"
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "category": "method",
+      "statement": "Uniform iid generalization uses boundedscoreB and sampleorderB2/epsilon2 times pdimlog(B/epsilon)+log1/delta; goodpopulationoptimization additionally needs goodERM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          "locator": "Theorem2.3 and applicationtreecap/coefficientconditions; explicitRLnonconvergence discussion"
+        }
+      ]
+    },
+    {
+      "id": "cut-applications",
+      "category": "contribution",
+      "statement": "Applications bound root one/sequentialCG, finitecandidate and weightedauxiliaryscorecut selection; general tree decisions requirefutureencoder/trainingwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            19
+          ],
+          "locator": "Propositions3.3/3.5/3.6/3.7 and full proofs/limitations"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Empirical TD3 reward is percentreduction relative no-cut tree, with separateLTstraightthrough training; not literal rawaveragetreesizeERM objective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "AppendixA1 actor/reward and A2thresholdimplementation"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "SyntheticChvatal multipleknapsack16items2knapsacks5000train1000test, Gurobi11.0.1 defaultcuts/heuristics/presolveoff; learnedrootcuts beat weighted efficacy/parallelism sweep mean testtree inFigure1.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "locator": "Complete AppendixA setup/results"
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "category": "experiment",
+      "statement": "Table1 prints100repetitions1000test totals.010GPU,.055CPU,2.031LPseconds for cut-computation ingredients, not fullsolvingruntime; noerrorbars.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            22
+          ],
+          "locator": "Exact Table1caption/entries and checkliststatisticalNo"
+        }
+      ]
+    },
+    {
+      "id": "lt-proof-step",
+      "category": "limitation",
+      "statement": "Curator qualification: positive-lambdaLTsigmoid proof wrongly calls composedscore polynomial in originalweights before LemmaB3; S(p)=p gives sigmoid(a), so rational sign treatment needed. Not a refutation of bound,lambda0CGorReLU.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            15,
+            16,
+            17
+          ],
+          "locator": "Theorem2.5, LemmaB3, exact exponentialreparametrization and polynomialclaim; symbolic exampleanalytical, parent alerted"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Samplecomplexity theory and narrow learned rootCG demonstration; no general-purpose COsolver, alltreepolicy or singlemultitask checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            7,
+            8,
+            9,
+            10,
+            13,
+            14
+          ],
+          "locator": "Actual target/fixedencoder/futurework and empirical domain"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2c9d78ed62ff5bf2377c3840188114c0-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS37/2024 mainconference title/fourauthors/DOI manuallyopened; PDFp1 allfourJHUaffiliations. No exactday supported; importedDec16 changed to verified2024year."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2c9d78ed62ff5bf2377c3840188114c0-Abstract-Conference.html",
+      "locator": "Manually checked all publisher links: Bibtex and25pagePaper, no Supplemental link. All explicit scientific AppendicesA-C integrated and fully read with entirebibliography/checklist. Two visual contact sheets cover assumptions, samplebound, both mainproofs, actual reward, Figure1 and Table1; no identified missing scientificattachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Hongyu-Cheng/LearnCGusingNN",
+      "locator": "ExplicitPDFp13authorURL and publicrepo/README manuallyopened: data/knapsack_train/test,src/generateIP.py, separateReLU/LTknapsack notebooks and requirements file. Docschecked without experimentrerun."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2c9d78ed62ff5bf2377c3840188114c0-Paper-Conference.pdf",
+      "locator": "Publisher25pagePDF exact identitychecked, fullread1-25 inclproofs and allchecklist. Main theoreticalclaim attribution separated from narrowcuratorpositive-lambdaLTproofqualification, no wholesale theoryrejection."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2c9d78ed62ff5bf2377c3840188114c0-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/neural-algorithm-selection-theory/supplement-landing.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2c9d78ed62ff5bf2377c3840188114c0-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/neural-algorithm-selection-theory/supplement-landing.html; citation_title=['Sample Complexity of Algorithm Selection Using Neural Networks and Its Applications to Branch-and-Cut']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-algorithm-selection-theory",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang, Agrawal and Faenza (2020)",
+      "description": "Contrasts prior reinforcement learning selection of tableau-derived CG cuts with direct root multiplier selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "Explicit Tang etal2020 discussion PDFp4; exact ICML2020 Learning to Cut bibliography PDFp11"
+        }
+      ]
+    },
+    {
+      "citing": "neural-algorithm-selection-theory",
+      "cited": "machine-learning-for-cutting-planes-in-integer-programming-a-survey",
+      "reference_label": "Deza and Khalil [2023]",
+      "description": "Cut-selection comparison directly recommends this survey; exact two-author same-title arxiv2302.09166 preprint maps to IJCAI2023 survey.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "Actual body citation Deza and Khalil [2023] on PDF pp[4]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Cut-selection comparison directly recommends this survey; exact two-author same-title arxiv2302.09166 preprint maps to IJCAI2023 survey."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded actual statistical assumptions/quantifiers and all rootcut applications without claiming optimization convergence.",
+    "Recorded full empirical protocol and normalizedTD3reward/rawERM distinction; timing is ingredients not solverwalltime.",
+    "Precisely limited curatorLTpolynomialproof-step qualification to generalpositive-lambda case; didnot refuteCGpiececonstantapplications orReLU.",
+    "Verified formalyear/code/integratedscience and exactTangcitation; no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ece42c9f2fb12a039da48e7196f158803fe7c851e98154397822b9e0f8ee29e3"
+}

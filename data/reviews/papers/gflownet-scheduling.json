@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "paper_id": "gflownet-scheduling",
+  "note_path": "specialist/gflownet-scheduling.md",
+  "baseline_note_sha256": "5844cbec27a70c87504efe76d1f35797da11ebce716dd08979b5c0e38e59010e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2302.05446",
+      "version": "IdentifiedarXiv2302.05446v2Feb14,2023authorconferenceversion17pagesincludingcompleteAppendicesA-F/fullreferences,ICLR2023header;allread",
+      "retrieval_url": "https://arxiv.org/pdf/2302.05446",
+      "local_path": "research/import-272/nco-16c6d2b37b.pdf",
+      "sha256": "5478b022aa239e79d84f7fc1e04bf8390be85efe80d58585ceacd7a3a7e21283",
+      "pages": 17,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title4authors/AmsterdamQualcommaffils/arxiv2302.05446v2Feb14,2023 andICLRheader. NativeDAG homogeneousmulti-device scheduling with deviceassignment+devicechains. Proxyzero communicationperfectduration assumptions; diverseN samples proxyfilter topk thenactualtargetselection,notpureproxyrobustnessguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allEq4-9/theorem1/architecture/relatedwork. Feasibleappend onlyreadyop→chain scheduleDAG. logpartitionvarianceζ batchexpectation notlearnZhead;rewardexp((speedup-m)/sigma);loguniformtemperature conditioning sharedTopoformer separatePF/PB heads. Flowcontinuityexistence proofpendingdoesnotguaranteeNNlearnsdistribution."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTables1-3/Figs2-3/protocol. ALLexperimentsfourhomogeneousdevices;1000samplesproxyfiltertop100andtargetMODELS (noise/bandwidth/latency),notmeasuredactualhardwareinTables1/3. SinglegraphnoisyPPO3.07>GFN3.05 despiteGFNotherwins;Table2proxytop1PPO3.48>GFN3.46 whilediversityhigher. RealworldunseengraphconditionalcheckpointbutsameDAGtask. DetailprivategraphavailpendingE6."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allcompletebibliography Addanki→Zhou;primarysameIDtitleidentityRLplacement/L2D/MaoDecima/GDPZhou. Noautomaticedgesbeforecandidate+bodycheck. OfficialcodecurrentlyREADME+.gitignore2filesonly,no implementation;arxivv2Feb14identified/earlierv1Jan17notformalpublicationdate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read fullTheorem1proof/Cor1/BEq14-25/C/D/E1. Finite trajectory terminalrescale Ri/R anduniformifR0 provesflowexistence/continuity,nolearnedmodelrobustness. MonotoneunnormalizedflowwithU<=m notallnormalizedactionprobabilities. Gradientflipargument assumesPBthetaindependent andnonzerograds. Batch100singlegraphsinglesigma loguniform.01-1/infer.005;state includesstarttime/placement/ready/removable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read completeE2-6/Fallremainingpages. Synthetic1000train50test50nodes/5distributions;real8train<1004test12-128/subgraphs25-75. Targetlinearcommunicationmodelsf(m)=am+b,notphysicalmeasurements. Fig4LPvarianceimprovesearlierhigherthanlearnZTB;Fig5variabletemperaturebeatsfixed. No independentseedcount/CIdefinition identified for±tables. Full17pagesinclrefsproofA-Fread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Proxyperfectruntime/zerocommunicationassumptions canfail;diversegoodshortlisthelpsmodeledtargetselection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Motivation/targetvsproxy"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Graph+temperatureTopoformer/logpartitionvariance/noexplicitZhead;finiteflowcontinuity andempiricalrobustness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13,
+            14,
+            15
+          ],
+          "locator": "Completeformulation/proofs"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive singleDAGschedulingnativeproblem/allfourhomogeneousdevices despitegraph/temperaturetransfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            6,
+            7,
+            8,
+            9,
+            16
+          ],
+          "locator": "Problem/experimentalprotocol"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "PF/PBsharedTopoformerseparateheads/readyappenddevicechain/exp((U-m)/sigma)/variancezeta/batch100singlegraphsigma loguniform.01-1/infer.005/1000top100targeteval.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            15,
+            16
+          ],
+          "locator": "Eqs1-9/AppendC-E"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Single78graph2of3targetwins(noisyPPOslightlyhigher);synthetic1000train50test50nodesGFNproxybelowPPO;real8train4test12-128modeledtargetsbetter;ablationsLPvariance/temp.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            16,
+            17
+          ],
+          "locator": "All3tables/all5figs"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "TargetMODELSnotphysicalhardware;100targetevalcost/shortlistinglimits;flowexistencenotlearningorrobustnessguarantee/Bgradientassumesfixedbackward;placeholderrepoandseeddefinitionmissing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            9,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Theoryassumptions/completeexperimentalreproducibilityscope"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full17pageactualarxivv2Feb14allA-Frefs/officialICLRheaderseparateyearpublication/API403/repotwofilesnoimplementation/3actualrefs/9visualpages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Completeaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://ivi.fnwi.uva.nl/vislab/publication/david-iclr-2023/",
+      "locator": "UniversityauthorpublicationrecordICLR2023conferencepaper/4authorsDavidW.ZhangCorradoRainoneMarkusPeschlRobertoBondesan/PDF1AmsterdamQualcomm. FormalOpenReviewZBUthI6wK9handICLR2023header. arxivJan17v1submission notformalexactday;setdateyear2023."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=ZBUthI6wK9h",
+      "locator": "Manualformalforumchallenge;bothnotesAPIsv1/v2forumZBUthI6wK9h403cached. Scientificarxivv2all17pagescompleteA-Fintegrated/read;noexplicitmissingseparatescientificattachmentnamed. GitHub2filesonlyREADME/LICENSEnoPDFZIP. APIunavailabledoesnotmeanunknownattachmentread;completeidentifiedarxivversionauthorized."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://arxiv.org/abs/2302.05446v2",
+      "locator": "Versionactual2302.05446v2watermarkFeb14,2023andabstracthistorylastrevFeb14,2023<=cutoff;SHA5478b022aa239e79d84f7fc1e04bf8390be85efe80d58585ceacd7a3a7e21283/17pallread. CompleteA-Fproof/refs10-12. restart-core2/5/8/9andproof13/14/15/17viewed;PDF7correlationseparate. NoformalPDFbyteidentityclaim."
+    },
+    {
+      "field": "scope,experiments,theory",
+      "source_url": "https://arxiv.org/abs/2302.05446v2",
+      "locator": "All4homogeneousdevicesp7,samenativeDAGproblem;training1000synthetic/test50orreal8/4graphs12-128subgraphs25-75;1000samples/top100proxythen3targetMODELSlinearcomm/noise notactualhardware. Table1PPOnoisy3.07>GFN3.05,Table2PPOproxy3.48>3.46;Table3GFNtargetswins. Noidentifiedindependentseedcount/±definition/hardwarewallclock. A13finiteflowterminalrescalingexistence inclR0uniform;B14fixedPB+nonzerogradassumption,notlearnedsharedencodergeneralguarantee."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/davzha/scheduling-gflownet",
+      "locator": "GitHubtreecommit8bc2e0d71d9865ad98f7249293521306c7e1a735fully2filesREADME.md73bytes/LICENSE1063bytes;mainREADMEfullyreadonlypapertitle. Noimplementation/dataset/checkpoint/scienceattachments. Linkretainedexplicitplaceholder. NoNNtraining/testbenchmarkrerun."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2302.05446",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-01-17; title on abstract page: Robust Scheduling with GFlowNets. This date is preprint history, not formal publication. Cached research/full-text-review/gflownet-scheduling/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gflownet-scheduling",
+      "cited": "placeto",
+      "reference_label": "Addanki et al. (2019)",
+      "description": "Explicit related-work/body citation plus matching complete bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            10
+          ],
+          "locator": "BodyPDF6relatedwork Addanki et al. (2019); fullreferencePDF10."
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-scheduling",
+      "cited": "egrl",
+      "reference_label": "Khadka et al. (2021)",
+      "description": "Explicit related-work/body citation plus matching complete bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "BodyPDF6relatedwork Khadka et al. (2021); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-scheduling",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit related-work/body citation plus matching complete bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "BodyPDF6relatedwork Zhang et al. (2020); fullreferencePDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gflownet-scheduling",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "Mao et al., 2019",
+      "description": "Introduction scheduling/proxy discussion cites exact five-author SIGCOMM2019 Decima article, with complete bibliographytitle/pages270–288.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Actual body citation Mao et al., 2019 on PDF pp[1]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Introduction scheduling/proxy discussion cites exact five-author SIGCOMM2019 Decima article, with complete bibliographytitle/pages270–288."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedcomplete17pagev2A-Faudit/theoryassumptions/alltables/3explicitrelations.",
+    "CorrectedtitleauthorDavidW.Zhang/formalyearratherthanarxivsubmissionday.",
+    "Distinguishedtargetmodelvsactualhardwareandpublishedplaceholderrepo;qualifiedproxyquality/diversity/robustnessscope.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "fec901a35c4e21ac4fe58c600ca05df1aba2c48276e9273dbaffc62ef76489fa"
+}

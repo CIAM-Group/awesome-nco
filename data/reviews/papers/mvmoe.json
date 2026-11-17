@@ -1,0 +1,881 @@
+{
+  "version": 1,
+  "paper_id": "mvmoe",
+  "note_path": "generalist/mvmoe.md",
+  "baseline_note_sha256": "ce017d8424015260c5611bff897306c09e31709ff0bc66207d4df0ab4163b59b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhou24c/zhou24c.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhou24c/zhou24c.pdf",
+      "version": "FormalPMLR235 ICML2024,21pagesincludingAppendicesA-D; allfreshlyread",
+      "local_path": "research/full-text-review/mvmoe/paper.pdf",
+      "sha256": "d86dd104f4626f49edf9994ebb2aed627e9796cc0ccdd7d4752c354dd24c9294",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://raw.githubusercontent.com/RoyalSkye/Routing-MVMoE/main/assets/Poster_ICML24.pdf",
+      "version": "OfficialauthorrepoICML2024poster,1pageSHA d1a489d4e9be8b19d6524fb4a8ba8c036a446829f9db2ae8e5e50e42fe90c3ba, extractedfrom298memberZIP andfullyread",
+      "local_path": "research/full-text-review/mvmoe/poster.pdf",
+      "sha256": "d1a489d4e9be8b19d6524fb4a8ba8c036a446829f9db2ae8e5e50e42fe90c3ba",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalPMLR235ICML2024 title/byline7authors5affiliations NTU/SMU/Eindhoven/Shandong/AstarSIMtech. MoEconditionalFFNs/hierarchicalgate notwhole-solverportfolio, cross-variantcompositionaltest10unseen. Completeintro/relatedwork, limitationsdeductedlater, PMLRformalversionidentityheaderchecked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 14,
+      "notes": "Freshentiremain3-9 inclbase+hierarchicalgates,6trained/10unseen/100Mtraining/A100vs32CPU,allrefs9-12,AppendixAfull16variants/generation andB1+B2p14. EncFFNMoE/decoderattentionlinearMoE, hierarchybatchproblemmean routesdensevsnodeMoEs, handcodedconstraintmasking. Table2lightn50OVRPB6.522>POMO6.430 etc meansnotuniformwins, rareexpertsmoredata budgets50/100/200M. MainTable1/2textread visualstillpending. Separate50/100checkpoints. AllstaticTW/O/B/L flags notgenericnewconstraintlearning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 21,
+      "notes": "FreshallAppendixB2-B4noise/loadestimators/gatinglevels,C1-C5alltrainingdistribution/normalization/load/benchmarktables,Dcompletebatchgatingefficiencyinterpretabilityscalememory/newattributesdiscussion. G1problemlevelwholebatchnotnewproblemoracle,100Mvsablation50M, learnedbalancedonsameproblemsbutlargeOODimbalance; Table8dense16.796vs4E26.408/4EL19.607, LEHD9.678vs12.836 andRRC1006.884vs7.001notallinstancewins. All32largecasecells actuallyread; all21pagescomplete, visualfigurespending."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "FreshfullofficialICML24postertextandrender: all3columns introductiontimeline/16taskconstrainttable, fullmethod/MoE/hierarchyformula, experimentsreproduce mainFigure6/Tables1-2, limitationsscalability/generality/interpretability, adssectionread. Noadditionalnewquantitativeexperiment; papergraphs/tablesalsofullread/rendered. OfficialReviewsMD16241bytesfullreadseparatelynonPDF; existingMoEtheorynotassertedproved, reviewersnotpaper-citationedges."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Taskcompositionneedsmorecapacitywithoutproportionalexpertarithmetic, decoderdispatchcost motivateshierarchy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Introduction/MoEdesign"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "SharedPOMOwithencoderFFN/decoderlinearMoEs, top2of4experts, upperdense/sparsegate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            14,
+            15,
+            16
+          ],
+          "locator": "Figures2-4/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Explicitattribute-state/maskinteraction, REINFORCEsharedpolicy sixnativevariants andtenunseen; modelsseparatebysize.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Model/training/actualtaskdefinition"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "100Mmain/50Mablations; 1ktesttotal8aug; hierarchical23%trainingreductionbutlargeSetXdense16.796beats26.408/19.607, separateLEHD+RRCbudgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Tables1-8/Figure6/AppendicesC-D"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Onlypredefinedattributes, all-expertmemory, sizeOODfailures andunprovedimbalanceexplanation; no universalwin.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            19,
+            20,
+            21
+          ],
+          "locator": "Negativecells/externalbenchmarks/discussion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructiveactualsharedpolicyacrossnativevariants, notwhole-solverexpertportfolio; LEHDextensionseparatetrainedexperiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            13
+          ],
+          "locator": "Actualactions/checkpoint/taskset"
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "category": "reproducibility",
+      "statement": "OfficialICMLposterfullyread; restatesmainarchitecture/resultsandscalability/generality/interpretabilitylimits, noadditionalindependentbenchmark.",
+      "evidence": [
+        {
+          "source_id": "poster",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "FullthreecolumnposterwithTables1-2/Figure6andmethod/limitationsections"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication and authors",
+      "source_url": "https://proceedings.mlr.press/v235/zhou24c.html",
+      "locator": "FormalPMLR23561804-61824, explicitHTMLcitation_publication_date2024/07/08 vsmeeting21-27Jul; PDF/authorREADMEChiXu versusHTML/BibTeXXuChi recorded; 5affiliationsfromPDF1."
+    },
+    {
+      "field": "first public date",
+      "source_url": "https://arxiv.org/abs/2405.01029",
+      "locator": "Primaryarxivhistoryv1May2/v2May6,2024; removedgenericconferenceMay1acceptancenotification."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/RoyalSkye/Routing-MVMoE",
+      "locator": "OfficialmainZIP298members onePDF assets/Poster_ICML24.pdf1pagefullyreadandregistered; noextraPDF/ipynb/nestedarchive/video. PaperAppendicesA-Dall21pagesread."
+    },
+    {
+      "field": "scientific author-hosted reviews",
+      "source_url": "https://github.com/RoyalSkye/Routing-MVMoE/blob/main/assets/Reviews_ICML24.md",
+      "locator": "Full16241bytesread separately; cache research/full-text-review/mvmoe/Reviews_ICML24.md SHAd7b9fae2b2d9ee3330a05a18bf68c333c907ccbeb25ea443364ca6f59178c3f8; reviewsnotpaperresult/citationedges."
+    },
+    {
+      "field": "current code",
+      "source_url": "https://github.com/RoyalSkye/Routing-MVMoE/blob/main/models/MOEModel_Light.py",
+      "locator": "323-330cachesuppergateprobatstep2thenresampleslaterbranches; paperdesignnotuncriticallyassignedtoevery-steprecomputation. VRPBEnvuppercapacity/specialpickup-onlylogicinspected. README/keymodel/envcodeonly, noexperimentsrerun."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhou24c/zhou24c.pdf#page=4",
+      "locator": "OriginalFig2completecrop48,63,550,256at2.5xvisuallychecked; mainTables1-2 andappendixTables3-8/readallcasecells, posterscientificfiguresread."
+    },
+    {
+      "field": "citation_identity:bq-nco",
+      "source_url": "https://arxiv.org/abs/2301.03313",
+      "locator": "Source formal p10 uses the earlier generalizable title with the same five authors and NeurIPS2023; target formal p1 has the Efficient title. Same BQ-NCO work, not an inferred relation from shared methods."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2405.01029",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-05-02; title on abstract page: MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts. This date is preprint history, not formal publication. Cached research/full-text-review/mvmoe/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mvmoe",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "nhde",
+      "reference_label": "Chen et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "elg",
+      "reference_label": "Gao et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al. (2022)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2020)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "polynet",
+      "reference_label": "Hottung et al. (2024)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "tam",
+      "reference_label": "Hou et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2022)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "gfacs",
+      "reference_label": "Kim et al. (2024)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al. (2022)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021b)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            13,
+            17
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "cross-problem-learning",
+      "reference_label": "Lin et al. (2024)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al. (2024)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            11,
+            13,
+            17
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al. (2020)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "neuopt",
+      "reference_label": "Ma et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "utsp",
+      "reference_label": "Min et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "meta-sage",
+      "reference_label": "Son et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "deepaco",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023b)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "asp",
+      "reference_label": "Wang et al. (2024)",
+      "description": "Explicit author-year citation to the exact catalogue work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "In-text author-year citation and exact-title bibliography; inaccurate printed years/name order are separately qualified."
+        }
+      ]
+    },
+    {
+      "citing": "mvmoe",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al. (2022)",
+      "description": "Discusses cross-distribution neural routing generalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Bodyp2Zhang2022distributiongeneralization; completefourauthorAAAI2022HACentryp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Zhang et al. (2022); Learning to Solve Travelling Salesman Problem with Hardness-Adaptive Curriculum. Bodyp2Zhang2022distributiongeneralization; completefourauthorAAAI2022HACentryp12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read21formalpages/allAppendicesA-D+1scientificposter andfullreviewcompilation.",
+    "Addedactual5affiliations, removedpairedPDPunsupportedtask, restoredTW/durationlimits.",
+    "Removedgenericcalendaracceptance, preservedcorrectMay2firstdate andaddedactualJuly8publication.",
+    "SeparatedMoEcomponentrouting/sharedmodel/specializedsizecheckpoints andLEHDextension.",
+    "Preservednegative4ELcells, largeSetXdensebaselineadvantage, scalingdataandaugmentation/FTbudgets.",
+    "Qualifiedcacheduppergateprobabilitycurrentcodevsper-stepdescription.",
+    "AddedoriginalcompleteFigure2and37exactcitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9c976d1d99e7f456a824cad69cd6d01a9b0a353f20c493d507574efb7f0ddab7"
+}

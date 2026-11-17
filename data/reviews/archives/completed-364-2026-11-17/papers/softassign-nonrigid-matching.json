@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "paper_id": "softassign-nonrigid-matching",
+  "note_path": "specialist/softassign-nonrigid-matching.md",
+  "baseline_note_sha256": "156250b690a34cee1938fe9772f716b5d3263f7864fbd54df4f59aaf67af8823",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/c60d060b946d6dd6145dcbad5c4ccf6f-Paper.pdf",
+      "version": "Official NIPS1995 volume8 scanned proceedings,7pages795-801",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/c60d060b946d6dd6145dcbad5c4ccf6f-Paper.pdf",
+      "local_path": "research/import-272/nco-a28503093f.pdf",
+      "sha256": "1829d6843217b6b5bcf2ca2b3ebd94082cfba5d91f9c59d0a3043d6e936dc7ed",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh pp1-4: Yale3authors; affine+partialmatching objective residual +lambda||A||F2-alpha sumM withslack, entropysoftassign iterative rowcolnormalization, analytic weightedaffineupdate includingregularizer, betaouterloop. Affinequilt knownmodelpartlabels,featuresinvariant handweighted, imageunknownparts. O(JK)stated withoutiterationcount/matrixinversion qualification, 20s for50points SGIR4400,250pointdrawnfaces."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 7,
+      "notes": "Fresh pp5-7 all4refs. Face225 manuallyoutlined points+binary skin/hair/lip/eye features; handdrawn6parts,synthetic50points,affineinterval1.5,jitter.01-.08,deletion/spurious settings,featurePr.05,parameters beta.091→100 factor1.075,T4. Fig4andfeatureFig5 eachpoint500runs,4part120points70runs, Wr.2; errornormalizedaffineparameterL1 notassignmentaccuracy,4partsspurioimplicitoverlap. Annealedlocalnotglobalproof."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Noise/occlusion and independentpartmotion motivate features and locallyaffine matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Regularized analytic affineupdate +softassign, invariantfeatures andaffinequilts.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "I+A transform, slacks forpartialmatches, entropyexponentiatedcost+rowcolnormalization, knownmodelpartlabels andperregion affineupdates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Equations1-4 andaffinequilts"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "50pointSGIR4400~20s; 500runsperpoint singlepart/features,120point4parts70runs; normalizedaffineparametererror, beta.091→100factor1.075,T4.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Section4/Figures4-5"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Handextractedfeatures/knownmodelregions, missing/noisypoints, annealingandstopping sensitivity; O(JK) suppresses dimension/features/iterationcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Algorithm/extension/experiments; curatorqualification"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Handdesigned annealedcorrespondence/affineenergy, specialistneurodynamic notsharedtrainedsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Algorithm"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/c60d060b946d6dd6145dcbad5c4ccf6f-Paper.pdf",
+      "locator": "PDFp1 title/3authors/Yale."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/c60d060b946d6dd6145dcbad5c4ccf6f-Abstract.html",
+      "locator": "OfficialNIPS1995volume8 record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/c60d060b946d6dd6145dcbad5c4ccf6f-Abstract.html",
+      "locator": "Manually inspectedofficialentry Bibtex/Metadata/Paper only; all7pagesread,noscientificattachment/appendix."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/c60d060b946d6dd6145dcbad5c4ccf6f-Paper.pdf",
+      "locator": "Visuallychecked equations1-4, allreportedexampletypes andFigures4-5legends;no new asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read7pages/4references and inspectedmath/charts.",
+    "Specified I+A regularization, slackpartialmatches, knownmodelparts andhandweightedfeatures.",
+    "Addedactual500/70trialprotocols, beta schedule, SGI timing andnormalizedparametererror meaning.",
+    "Qualified O(JK), arbitrarydimension andfiniteT/globaloptimality statements."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ab147351cf075653537c77ca900c246032991038bbccc831b0dca6ac22414e78"
+}

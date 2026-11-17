@@ -1,0 +1,666 @@
+{
+  "version": 1,
+  "paper_id": "cross-problem-learning",
+  "note_path": "specialist/cross-problem-learning.md",
+  "baseline_note_sha256": "dcf6387fae22d280e52f61c3b002ac8c09a1fbec7bc716426371095cd83deaa0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2404.11677",
+      "retrieval_url": "https://arxiv.org/pdf/2404.11677",
+      "version": "arXiv2404.11677v3,18June2024,12pagesincludingcompleteA-D, fullyread; main matches formalpublication",
+      "local_path": "research/full-text-review/cross-problem-learning/paper.pdf",
+      "sha256": "1872654e620592fcd447189c9a86490779da0f19b4fe1efdd849e8f4a8dd9bfb",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "published",
+      "url": "https://ijcai.org/proceedings/2024/0769.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2024/0769.pdf",
+      "version": "IJCAI2024formalproceedings9pages6958-6966, fullyread, appendicesexplicitlylinkedtoarxiv",
+      "local_path": "research/full-text-review/cross-problem-learning/published.pdf",
+      "sha256": "85b162d015c113d22b48a06bd1566f534823f1304bab817f361c9d5a92ebfbba",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh reading arxiv2404.11677v3Jun18,2024 title/7authors5affiliations; transferpretrainingTSP followed separatelyfine-tuneddowntasks/fulloradapters, notsamefrozentasksolver; fullrelatedwork and4native taskdefinitions/REINFORCE/modularizationFigure1."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read complete modularization, TSPpretrain rationale, full/adaptersInside/Side/LoRArank2 equations andtraining settings; previouscombinedtool outputtruncated page6, willreread6 separately."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "FreshfullTable1/2+Figures3-4 andmainexperiments:10ktesttotalruntimes1280samples, OP20fullgap.76vsAM.71 exception, parametercountsaretrainednotwholebackbone; POMOseparatetaskCVRPfine-tuned,8aug,LRchanges, meanrelativebestnotprovenoptima; futureotherCOPs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 10,
+      "notes": "Freshly read completeA-D includingall19rowsTable3/4/POMOalgorithm andGaussianfine-tuningcross-distributionnotzeroshot; p8callsSidewhileFig5Inside; sharedfrozenbackboneplusseparatetrainedadapters notgeneralist; referencesbeginningread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Freshly read completebibliography toend, exacttitlematchingincludingNLNS/EAS/LEHD/DACT/LCP/NCE/SymNCO/DIMES/MDAM/PPOBiHyb; noimplicitinfluenceedges."
+    },
+    {
+      "source_id": "published",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshly read formalIJCAI PDFpp6958-6960, title/byline5affiliations andmainmotivation/fullrelatedwork/MDP/modularization; confirmsarxivmainidentity and points toarxivAppendix."
+    },
+    {
+      "source_id": "published",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh formal6951? actual6961-6963 completeadapterequations/modularTSPpretraining/fulltrainingsettings/Table1/Fig2-3 andablation, checkedsameOP20exception .76vs.71 andtotalruntimes asarxivmain."
+    },
+    {
+      "source_id": "published",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh formal6964-6966 completePOMOTable2/Fig4/mainconclusion/ack/allformalreferences; formal9pagecopy excludesAppendixA-Dcoveredin12pagearxivv3. Bothversionsfullyread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Reuse sharedroutinggeometry instead oftrainingeachdownstreamtaskfromscratch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "TSPpretrain +modularfull/inside/side/LoRAfinetuning fordownstreamtasktraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Contributions/Section4/Figures1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Maskedautoregressiveconstruction, REINFORCEgreedyrollout andseparatetargettask optimization withrank2LoRAoradapters.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections3-5/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "OP/PCTSP10ktests1280sampling; POMO CVRPseparatefinetuneswith8aug; Gaussian experiments fine-tuneand19CVRPLIBrowsdo notuniformly improve.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "All tables/AppendixA-D"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Trainableparametercounts exclude frozenbackbone, OP20full worseAM, GaussianInside/Sidewordingconflict, noVRPTWevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Actual model/tasks andtables/curatorqualifications"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive transfer: a separate fullmodelortrainedadapter pertarget, notonecompletefrozencross-tasksolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "locator": "Explicit separate targetfine-tuning workflow"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations, publication",
+      "source_url": "https://ijcai.org/proceedings/2024/769",
+      "locator": "OfficialHTMLcitation_author/institution/date2024/page6958-6966 andformalPDFp1; correctedNTUonlyto5actualaffiliations."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2404.11677",
+      "locator": "Primaryarxivsubmissionhistoryv1Wed17Apr2024; v3Tue18Jun2024read. Calendar-basedacceptance removed."
+    },
+    {
+      "field": "supplements and versions",
+      "source_url": "https://ijcai.org/proceedings/2024/769",
+      "locator": "Officialpage linksformal9pagePDFonly; formalp3footnote points toarxiv. Bothformal9 andarxivv3complete12read; fullA-Dinlatter, noidentifiedadditionalmissingnarrativesupplement."
+    },
+    {
+      "field": "scope",
+      "source_url": "https://ijcai.org/proceedings/2024/0769.pdf#page=4",
+      "locator": "Sections4.3-4.4 separatelyfine-tunefullweightsortaskadapters. Movednote generalist=>specialistwithoutchangingID."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Zhuoyi-Lin/Cross_problem_learning",
+      "locator": "Paperlinkedrepo200/rawREADME/options/run/modelchecked. run.py123-137encoderfreezing leavesdecodertrainable, READMEOPexamplesomitproblemop, optiondefaultsTSP/tanh. RecursiveAPI403noalltreeclaim."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ijcai.org/proceedings/2024/0769.pdf#page=3",
+      "locator": "FormalFigure1completeoriginalcrop[52,55,560,275]at3x; method/ablation/appendixvisualcontactsheetchecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2404.11677",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-04-17; title on abstract page: Cross-Problem Learning for Solving Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/cross-problem-learning/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cross-problem-learning",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2023)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al. (2021a)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022b)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "dact",
+      "reference_label": "Ma et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al. (2022a)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2020)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "egate",
+      "reference_label": "Gao et al. (2020)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021b)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al. (2021)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    },
+    {
+      "citing": "cross-problem-learning",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al. (2022)",
+      "description": "Explicitly cites this exact work as a routing method or generalization/transfer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Named text citation and exact-title bibliography in complete arXiv version; printed author-year aliases retained."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshreadarxivv3all12pageswithA-Dandformalall9pages, separatelyregisteredsourcehashes.",
+    "Movedgeneralisttospecialistbecausealltargettasksseparatelyfine-tuned; stableIDpreserved.",
+    "RemovedunsupportedVRPTWandaddedactualTSP/PCTSP; corrected5affiliations.",
+    "CorrectedobsoletezeropaddedHTMLURL, retainedverifiedarxivfirstsubmissiondate andremovedcalendaracceptance.",
+    "Qualifiedtrained-vs-totalparameters, totaltestruntimes, OP20exception, CVRPLIBexceptions andGaussianfinetuning.",
+    "Notedcurrentdecodertrainability andREADME/defaultmismatches precisely withoutclaimingpaperexperimentsrerun.",
+    "Restored originalformalFigure1 and25exactinternalcitations; excludedclassicalCompassneuralnamecollision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "193baaf62917e978959d84e377dcb1c44a845770a0e0a838c8abbb9238ef4d0e"
+}

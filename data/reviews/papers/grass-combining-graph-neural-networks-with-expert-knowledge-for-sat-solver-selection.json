@@ -1,0 +1,296 @@
+{
+  "version": 1,
+  "paper_id": "grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection",
+  "note_path": "specialist/grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "7d11dce901e354ee8234fc5a2056b41dd510ccb39397c197ac0f752c4ff50942",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2405.11024",
+      "retrieval_url": "https://arxiv.org/pdf/2405.11024",
+      "version": "Identifiedarxiv2405.11024v1 onlyversiondated2024-05-17, complete10p/full50references/AppendixA; formalpublicationidentityindependentlyverified.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-eca67b8790/arxiv.pdf",
+      "sha256": "6ccaffac180b8002f698ea6d624957f0151249da82d135aaa750b46ed4799779",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read complete10authorbylineHuaweiMontreal/HongKong/BeijingandMcGill affiliations, abstract/introduction/workflowFig1 andsolverportfolio supervisedruntime-sensitiveclassification motivation, allcontributions/SATzillaopening. Actualarxivv1single2024-05-17 witholdACMplaceholder2018DOInotformal metadata; formalKDD2024separatelychecked. NativeSATonlyselectsamong7classicalsolvers."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullSATzillafeaturecost/clustering/CNNandgeneralalgorithmselection/GNN-SATrelatedworkallcitations. Native SATselectorfixedKruntime-labelsupervision; 3nodeLCGpositive/negative/clause/complementedges, SATzillainspiredHornfeatures+10Dsin/cosclauseorderencoding. AppendixAexplicitneededfeatureinventory flagged; all3relationmessageaggregationformulasreadthroughp4."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read allmessagepassingGCN3relations/tworounds,17/3/3featuredims, regret-square expectedruntimeEq1 andargmaxdeployment. DatasetLEC78727/30circuitsproprietary,SATsubset2088afteranysolver1500sfilter/nvar<=20000,allTable1rows counts/features. Sevenbasesolvers Kissat3/bulky/HyWalk/MOSS/mabgb/ESA/UCB; V100Adam1e-3upto100earlystop. AdaptedSATzilla07/12removeprobe/presolve, ArgoK9/CNN128x128 details;fivefoldmetricdefinitionread. Runtimeincludesoverheadpendingnextpages."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTables2–6/Fig4, runtime/success500s/accuracyfivefoldresults, quartilenegatives andseparatefeaturetimingcosts. GraSS341.549vsSATzilla12344.290LEC,220.251vs222.146SC≈.8%notlarge; accuracy .259SCvsArgo.449, overhead33.862SCexcludedsolver-only220.251. SATzillaeasierquartilesbetter, noallmetricdominance. AblationNeuroSAT4vs26layersnotoriginalmodel, CustomPEablation, limitationsrequiresall7timelabels/offline/noeasyonline adaptation. Fullreferencesstart1/2read."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read all50completebibentries andentireAppendixA/Table7 positive3/negative3/clause17featuredims/descriptions inclHorn/positive-negativecounts/sinencoding10. NoextraAppendB/scienceafterp10. Actualtencanonicalauthors/arxivv1 versiondistinctformal11ppagination. SixSATrelatedrefs actualbodymatching inclHardSATGENnewstabletarget."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "SAT runtime variation motivates structure-aware offline portfolio selection.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/Related Work/Problem Setup"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Expert features, heterogeneous literal-clause graph, positional encoding and squared expected-runtime-regret objective.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            8,
+            10
+          ],
+          "locator": "Contributions/3.2–3.4/Eq1/ablations/Appendix A"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Two graph-convolution rounds and mean pooling predict seven solver probabilities; argmax selection delegates SAT solving.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "3.2–3.5/Figs1–2/4.1"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Five-fold LEC78727 and filtered SC2088; main runtime excludes feature cost; easy quartiles and accuracy can favor baselines.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–6 andmetrics/fullresults"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Proprietary/censored data, no grouped unseen-circuit protocol, all-runtime supervision and no online adaptation; clause-shuffle dataset text/caption ambiguity.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "3.2.1/Fig3caption/datasets/metrics/limitations"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One SAT native task; learned portfolio selection, not direct assignment prediction nor one shared checkpoint across different problems.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            8
+          ],
+          "locator": "3.1/3.5/dataset setup/limitations"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete ten-page v1 and integrated feature Appendix A/full50refs; no identified official implementation; actual formulas/tables rendered.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Byline andallscientificmaterials includingAppendixA"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2405.11024",
+      "locator": "Fullp1 ten-authorbyline; Huawei Montreal/HongKong/Beijing andMcGill. FormalCrossrefauthorDidierChételat accent retained."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://dl.acm.org/doi/10.1145/3637528.3671627",
+      "locator": "SavedCrossref DOI10.1145/3637528.3671627 KDD2024pp6301–6311 published-online2024-08-24 vsprint2024-08-25; conferenceAug25–29distinct. PreprintACM2018placeholdernotused."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2405.11024",
+      "locator": "Savedprimaryarxiv-primary.html onlyv1 Fri17May202418:00:50UTC. Actualv1PDF10p allread, separateformal11ppagination no byteidentityrequirement."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2405.11024#page=5",
+      "locator": "3.5argmaxselectexistingclassicalSATsolver; 4.1sevenoptionsoneSATnativetask, eachdatasetseparatesetup. No crossnativeproblem checkpoint. Specialistconstructiveportfolio selector."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://dl.acm.org/doi/suppl/10.1145/3637528.3671627",
+      "locator": "Manualpublisherarticle/supp403 savedacquisition. Identifiedcompletearxiv10p includesAppendixA/Table7 allread; fullrefs/conclusionnoexplicitmissingseparatescientificsupplement. Targetedexacttitleauthorcodesearchnoidentifiedofficialrepo/sciencearchive, unrelated2025gradientGraSSexcluded. Unknown inaccessiblepublisherattachmentsnotclaimedread."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://arxiv.org/abs/2405.11024",
+      "locator": "Primaryabstract/fullpaper noofficialCodeURL; exacttitle+authorGithub searchesnoidentifiedimplementation. No CodeURLinvented fromunrelatedGraSSrepo."
+    },
+    {
+      "field": "figures and result budgets",
+      "source_url": "https://arxiv.org/pdf/2405.11024#page=8",
+      "locator": "Actualrendercontactmethodpp2/4/5/6 andresultspp7/8/10 viewed, all4fig7tables/formulas. OriginalFig1crop53,90,560,271 viewed. Table4featurecostexcludedTable2runtime; easyquartile/accuracybaselinewinsretained, inferencebudgetnotinvented."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "[29]",
+      "description": "Related SAT formula generation and feature-design work; cited as background, not a component of the GraSS selector.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            8,
+            9
+          ],
+          "locator": "Explicitbodyrelatedworkp3 andnode-typefeaturecomparisonp8; completeLi etalKDD2023reference29p9"
+        }
+      ]
+    },
+    {
+      "citing": "grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection",
+      "cited": "graph-q-sat",
+      "reference_label": "[28]",
+      "description": "Cites graph-based deep-Q branching for SAT as related neural solver guidance.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "ExplicitGNN-SATbodyp3 andcompleteKurin etalNeurIPS2020reference28p9"
+        }
+      ]
+    },
+    {
+      "citing": "grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection",
+      "cited": "neurosat",
+      "reference_label": "[38]",
+      "description": "Cites NeuroSAT message passing and tests a modified four-layer NeuroSAT-inspired portfolio classifier.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            8,
+            9
+          ],
+          "locator": "Bodyrelatedworkp3 andablationp8; fullSelsam etalICLR2019reference38p9"
+        }
+      ]
+    },
+    {
+      "citing": "grass-combining-graph-neural-networks-with-expert-knowledge-for-sat-solver-selection",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[48]",
+      "description": "Cites reinforcement learning for SAT local search as related solver guidance.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "ExplicitSAT-GNNrelatedworkp3; fullYolcuandPóczosNeurIPS2019reference48p9"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftwithcomplete10pv1/all50refs/AppendixA.",
+    "DistinguishedSATportfolio selector fromdirect assignment solver/sharedcrossproblem model.",
+    "Separatedsolver-onlyruntime/featurecost/500ssuccess/1500sfilter/5000sshuffle; retainedbaselinewinsandadaptedSATzillaprotocol.",
+    "Verifiedformalonline/printandv1dates/byline; actualoriginalFig1 and4body+bibidentityedges."
+  ],
+  "reviewed_note_sha256": "ec41df6656901f71e3dc6c6373d8fa96bbe2157b1b6fd36d655c492f9af1758c"
+}

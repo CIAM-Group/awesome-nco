@@ -1,0 +1,421 @@
+{
+  "version": 1,
+  "paper_id": "glinsat",
+  "note_path": "specialist/glinsat.md",
+  "baseline_note_sha256": "746b39fbf77cb06ba7768f64cf77ba52de563bca1f1a07873a0d79fd7bf6dfe5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-00f7be60cb.pdf",
+      "sha256": "6325028de5fd2a0aaa974ad9095d9499a016b542f8f7452f8956a3025d2d0acb",
+      "pages": 32,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readall5authors2affiliations/fullintro/Table1comparisons;coreparam-freegeneralSIGNEDlinearconstraintmodelinglayer,notSATBoolean/networksharedsolvertask. PositiveLinSATlimitation,explicitunrollingvsimplicitmemory/gradient,firstclaimqualifiedauthorsnotuniversalexactalgorithmguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullgeneralboundedlinearAx=bslackshift/logisticentropyEq1-8/sigmoiddual/oppositeggradient/APDAGDAlgorithm1allsteps/numericaldelta+consecutiveMdecrease. DotproductprojectionnotEuclidean. Nonemptyfeasibleassumed;finite-dualattainmentboundary/ranklimitsawaitappendix."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadCor1finiteoptimaldualnormRneeded/APDAGDcomplexitysqrtθRε;fullbackpropEq9-11inversePSD/CGimplicitnonsingularitypendingappendix. AllTSPTable2/3(20nodes1024batch)roundvsbeamfeasibility/timing/memory;GMTable4giveninliers/Hungarian/batchdiagvsCVXPYloop andportfolioTable5. SmallF1differencesnoCIsnotuniformwin."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readunitcommitmenthardgeneratorlogical/minupdownvssoftload/networkwithpenalty,supervisedGurobi0.1%labels/roundfixstatusLPinitnotwholeMILPsolvedbyNN;Table6allfeas/gapsconditionalfeasible,100%testedtemp.0005notgeneric. Wholeconclusionfunding/fullrefs1-32read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remaining refs33-44 and Appendix A1-A5 beginning: bounded general signed constraints, one-sided/unbounded and nonlinear limitations; slack reformulation and strong convexity Hessian."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read strong-convexity-to-Lipschitz and APDAGD finite bounded dual optimum R complexity; all implicit derivatives A14-A24 and PSD Hessian A21 (inverse needs extra rank/regularity); TSP formulation beginning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read A8 full TSP model/training/temperature and decoding, A1-A2 tables; A9 given inlier count NGMv2 pretrained partial matching, sequential vs block diagonal baselines, float64 OptNet/explicit GLinSAT, tolerance and A3 timing/memory limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read portfolio future120-day training protocol and A4 timings; full UC three-binary MILP A31-A38 hard vs soft constraints, 360units96periods1400sections, supervised Gurobi0.1pct labels, 70/30 one-year split, fixed-status LP and sparse implicit million-row training."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read UC validation fixed-status Gurobi LP, temperature/double precision, A5 timings first-epoch only CPU/OptNet baselines; checklist claims limitations theory/reproducibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 32,
+      "notes": "Read remaining full checklist: public first-three-task code vs confidential UC, no error bars due compute, hardware, dataset credits, asset licenses, no human-subject research; all32 pages now read incl refs and A1-A11."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Signed bounded linear constraints require joint feasibility beyond penalties/positive-only layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            14
+          ],
+          "locator": "Full introduction and A1"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Parameter-free logistic entropy/APDAGD/explicit and implicit dense/sparse layer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations1-11/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialist modeling layer with four separate domain pipelines; UC omitted task added, not shared checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            19,
+            20,
+            22,
+            24
+          ],
+          "locator": "All task protocols/networks"
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "Bound conditional on finite attained dual norm R; PSD does not alone imply literal inverse, finite sigmoid map excludes exact boundary.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Cor1/A12-A24 and explicitly labeled curator regularity analysis"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP rounding vs beam; given-inlier GM; portfolio no universal win; UC state fixing LP and feasible-only gaps; implementation/batching/precision qualifiers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Tables2-6/A1-A5 and all experimental appendices"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Bounded linear feasible systems; no generic integrality; no reported error bars, confidential UC.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            15,
+            25,
+            26,
+            28
+          ],
+          "locator": "A3/checklist5,7 and validation protocol"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete32pages/refs/checklist/8visual pages, ZIP246 noPDF, four instructions plus selected complete code inspected, no experiment rerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+          ],
+          "locator": "Full reading logs/manual metadata/cache"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dd73f39426a03131c38c8d943153d44b-Abstract-Conference.html",
+      "locator": "Publisher NeurIPS37 Main Conference DOI10.52202/079017-3896 exact5authors;PDFp1Tsinghua/AlibabaDAMO;HTML citation_publication_date2024-12-16 confirmed cached publisher-landing.html."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Supplemental-Conference.zip",
+      "locator": "Publisher Supplemental downloaded/manualrecursiveinventory246members code/README only noPDF. SHA8fae7a3efb20b63408b75396d4273d965863582ab1d6903d528a5d8e2b11d1d7. Four complete root/GraphMatch/TSP/portfolio instructions read; UC withheld as checklistp28. GitHubREADME points OpenReview m1PVjNHvtP supplementary;notes APIv1/v2 both403cached, no explicitly missing science;full A1-A11 integrated proceedings32pages."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf",
+      "locator": "Formal32pSHA6325028de5fd2a0aaa974ad9095d9499a016b542f8f7452f8956a3025d2d0acb allread. Visual restart-theory.jpg pp5,7,17,18 and restart-results.jpg pp8,9,10,24."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/HunterTracer/GLinSAT",
+      "locator": "Official publisher+PDF+repo exacttitle/bylinecrosslinks. Commit56d72b8044cfe9e25cf62d0199e9d84df70e6dfe181filesnoPDFZIP;allfour README instructions read and completeTSP_exp/dense_apdagd_layer.py242lines/cg_batch_new.py80lines read. Code numerical safeguards include zero denominator thresholds/finite CG caps;not a proof of general invertibility/no execution."
+    },
+    {
+      "field": "scope,regularity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dd73f39426a03131c38c8d943153d44b-Abstract-Conference.html",
+      "locator": "SeparateTSPTransformer,GMpretrainedNGMv2,portfolioStemGNN,UCMLP. Cor1p7explicitfiniteoptimaldualnormR. Eq10p7/A15p17 inverse while A21p18onlyPSD: redundantrowexample singular, possible compatible generalized-system solution distinct. Boundaryx=0,u=1notfinite sigmoid. Conditionsnotrefuteempirics."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dd73f39426a03131c38c8d943153d44b-Abstract-Conference.html",
+      "locator": "Entire44referencespp11-13 and explicitbodyread;8exactexistingIDs, no similarity-onlyedges. Other named differentiable layers/NGM/perturbed optimizers not exact existing catalogue matches."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "glinsat",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[1]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [1] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "cardnn",
+      "reference_label": "[4]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [4] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[8]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [8] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[9]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [9] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "blackbox-backprop",
+      "reference_label": "[10]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [10] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "comboptnet",
+      "reference_label": "[12]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Body p2 and full reference [12] p11"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "satnet",
+      "reference_label": "[19]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Body p2 and full reference [19] p12"
+        }
+      ]
+    },
+    {
+      "citing": "glinsat",
+      "cited": "linsatnet",
+      "reference_label": "[20]",
+      "description": "Explicit constraint-handling related work or application baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Body p2 and full reference [20] p12"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added actual Unit Commitment task and qualified layer vs task models/decoding/LP oracle.",
+    "Expanded all experiments with finite validation, feasible-only gaps, batching/precision/baseline-training and no-errorbar qualifications.",
+    "Kept finite-dual and inverse-Jacobian regularity conditions explicit; no unconditional integrality or generic solver claim.",
+    "Full32pages/scientific appendices/ZIP246/codeinstructions/8visualpages read;8 exact citations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8b678498b346dae6e9f07feddd8066a83eaa15462a773c52b341a995360d718a"
+}

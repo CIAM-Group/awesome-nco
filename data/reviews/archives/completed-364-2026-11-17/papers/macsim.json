@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "paper_id": "macsim",
+  "note_path": "specialist/macsim.md",
+  "baseline_note_sha256": "1523124efdb5c32cf6e840471e3764e42d2c8322f5afd6191d4cabc4f3960280",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1bf4cad47f5a54c98fbe7d10516ebf77-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/1bf4cad47f5a54c98fbe7d10516ebf77-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8ad249ba3f.pdf",
+      "sha256": "2ca03f891f4d2d577c2c3fde04d6424562a1920ef9c71c6188add2dbbcafaf80",
+      "pages": 32,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readfullfrontmatter2authors/institutionsandintro/relatedwork/allMMDPdefinitions; same-agentorder symmetries requireorder-invarianttransition, selfimprovementistrainingnotneuralincumbentediting."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readfulljointscorematrixautoregressivematchingwithoutreplacement, skipreusable/noallskip, CEvsML/PLlossandselfimprovementtraining; Propositionrequiresnonemptyremainingfeasiblepairs, surrogateindependentagentCEnotexactsetlikelihood. FJSPbaseline/goaldefinitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readallthreeproblembaselines/protocol andcompleteTables1–4/mainfigures/conclusionlimitation: MACSIMsamebudgetneuralwins butORtoolsFJSPtwo/30x10wins,SISRallroutingwins,some2DPtr/PARCOquicker; largerqualityslowtradeoffs. Top1selfimprovementnotincumbentedit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete references pp10–12; checked cited identities/years and canonical title variants, including PARCO, SLIM, ATT-GCN, POMO, MatNet, Gumbeldore, DIMES and DIFUSCO. No automatic citation edges; final mapping awaits remaining reference page."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Read final references, Proposition1 normalization proof and policy architecture. Proposition1 uses nonempty remaining feasible pair sets at every sampled history; general bipartite greedy choices need not retain a complete matching, so distinguish local stochastic normalization from an unconditional feasible-completion theorem. Read FJSP definition and MILP notation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Read all scheduling and HCVRP mathematical formulations and MDP mappings. Scheduling assigns next operations earliest-feasible with precedence/machine masks; minmax HCVRP minimizes maximum vehicle travel cost under capacity and once-only service, rather than total tour length. FFSP formal printed predecessor notation and nonlinear max constraints are descriptive formulation, not an extra proven algorithm guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Read benchmark generalization Tables5–8, full skip-token training dynamics and scalability/profiling. Best-performing trained-size model is selected per public benchmark; MACSIM sampling best among neural comparators but OR-Tools remains best for all four public groups. MatNet memory numbers are measured with batch1, while training times use method-specific maximum batch sizes. Multi-action reduces neural evaluations, but its sequential sampler still has cost (125–156ms versus SLIM120–121ms)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "Read complete loss-gradient analysis and Theorem2/proof. Row-wise softmax cross-entropy target-logit derivative p−1 does not vanish as p→0, contrary to broad vanishing-gradient prose. Theorem2 bounds unordered matching NLL under its explicitly defined exogenous permutation-prior plus row-conditional sampler; this is not automatically the global pair-softmax generative mechanism Eq3, and is not solution optimality or convergence. Its RHS sum log(1+r) equals LCE, with near-certain-row tightness conditional on each expert pair staying available."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 32,
+      "notes": "Read shared-parameter coordination argument and raw-conflict visualizations; they support an empirical mechanism, not an injectivity guarantee from independent loss. Read all problem-specific training settings, datasets, hardware/software and LLM disclosure. FJSP/FFSP/HCVRP train separate models (README explicitly disallows cross-family evaluation), so specialist. Each run one A10080GB; scaling experiment earlier uses40GB. FFSP AppendixH.2 prose mentions machines6/8/10 whereas Table6 actually4/6/8; report evaluated table values."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "Multi-action self-imitation amortizes neural encoding across coordinated agent-task assignments using set CE and skip actions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "locator": "Abstract/Section4/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "Joint pair-softmax autoregressive masking with reusable skips; elite generated trajectory imitation uses independent per-agent CE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            25,
+            26,
+            29,
+            30
+          ],
+          "locator": "Algorithm1/Sections4.2–4.4/AppendicesB/E/G"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Neural quality improvements and reduced SLIM latency coexist with OR-Tools/SISR quality wins and faster lightweight routing baselines; gaps are best-known-reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Tables1–8/Sections5/D/H"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Theorem2 applies to its row-conditional auxiliary model, Proposition1 needs nonempty remaining choices, and target-logit CE gradients do not vanish solely because p is tiny.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            14,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Proposition1/AppendixA/E/F; rendered equations"
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "category": "limitation",
+      "statement": "Printed single-depot-departure routing model differs from released refilling multi-trip environment, while minmax objective remains consistent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            20,
+            31
+          ],
+          "locator": "C.3 Eq29–35/H.3; current official env.py reset used_capacity at depot"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialist constructive: distinct FJSP/FFSP/routing models; self-improvement is training, not full-incumbent neural editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            30,
+            31
+          ],
+          "locator": "Two-stage self-imitation and per-problem training; README disallows cross-family checkpoint evaluation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/1bf4cad47f5a54c98fbe7d10516ebf77-Abstract-Conference.html",
+      "locator": "Official HTML citation_publication_date2026-04-20; publisher BibTeXpp16617–16648; formalp1 two authors and exact institutional names."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://osf.io/5z2aj/?view_only=783b0bb138e64431a681fd36452ea710",
+      "locator": "All32formalPDFpages includeA–H. Officialevent10011385posterPNGviewed/noextraPDFslides; ORAPI403. AuthorGitHubfull1545-entrytreeSHA b08a608ea487933a3afd332d36b92d5d8d55325e noextraPDF/TeX/notebook. OSFAPIallfiles1ZIP3.76GB: full296-membercentraldirectory range-read, onlyweights22configs/macOSmetadata; all22configssizeCRCchecked/read, no scientificprosedocument. Cachezip-inventory/config-integrity/configs-normalizedJSON. APIsha256isprovenance,notfull-localZIPhash."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/LTluttmann/macsim/tree/b08a608ea487933a3afd332d36b92d5d8d55325e",
+      "locator": "README+dpnREADME, multi_agent.py, losses.py, sl.py, policies.py, checkpointbase154–207, test.py, decodingutils/strategies and threeenv.py/maskpaths inspected; archived22configs differ in selected settings from formalH. No model execution."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "macsim",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Fu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al. (2023)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Drakulic and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "deepaco",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Ye and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang (2023)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Qiu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "dpn",
+      "reference_label": "Zheng et al. (2024)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            13
+          ],
+          "locator": "Explicit in-text citation Zheng and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Joshi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al. (2024)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay & Grimm (2024)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            12,
+            25
+          ],
+          "locator": "Explicit in-text citation Pirnay and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "lehd",
+      "reference_label": "Luo et al. (2024)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation Luo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11,
+            15,
+            18,
+            23,
+            31
+          ],
+          "locator": "Explicit in-text citation Kwon and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10,
+            16
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "polynet",
+      "reference_label": "Hottung et al. (2025)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Hottung and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Kwon and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al. (2023)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Grinsztajn and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini et al. (2024)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            10
+          ],
+          "locator": "Explicit in-text citation Corsini and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Kim and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "macsim",
+      "cited": "t2t",
+      "reference_label": "Li et al. (2023)",
+      "description": "Actual in-text citation and matching full bibliography; canonical identity/version checked against stable target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Complete32-page/formal/poster/OSF296-member/22config/code audit; clarified constructive training, per-family specialization, minmax time/refilling task, exact sampled budgets and classical/runtime negatives, auxiliary theorem scope and printed/config differences."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ab6c346ef4bc09a50321f0394a7961aaa82ff1d996f269115c57261d7b5d45a7"
+}

@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "paper_id": "neural-qaoa-squared",
+  "note_path": "generalist/neural-qaoa-squared.md",
+  "baseline_note_sha256": "79109cf1e0d326c52e4562f995eec503410836f7c9d3e94b2758b6032e3dec47",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zheng26x/zheng26x.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zheng26x/zheng26x.pdf",
+      "local_path": "research/import-272/nco-3035357043.pdf",
+      "sha256": "b9478e631f87cd380c0d2e9a40c788a998671b7930bffac719b90e3a3effcf95",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://icml.cc/media/icml-2026/Slides/62005.pdf",
+      "version": "Official ICML2026 presentation slides",
+      "local_path": "research/full-text-review/neural-qaoa-squared/slides.pdf",
+      "sha256": "079d0284f2713e83909d273ae7763103d0a602e32d7d29a66f26b387da62ee32",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal identity/relatedwork/QUBO-Ising-MaxCut reductions, QAOA circuits/recursive polarity merge, rho definition andGEN learning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read evaluator three views, generator OCH/greedy-capacity/STE/stop-gradient, train split and all main/distribution benchmark tables/ten-run metric."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read full size/TTA/cost/ablations/noise and surrogate correlation experiments, practical64 vs1000/4096steps and explicitIsingboundarynegative."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read parameter-initialization ablation/statistics, limitation statement and complete first two bibliography pages."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Read final bibliography and OCH QR construction/frozen anchors plus completeGCD algorithm and capacity-negotiation description."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read allGCD worst-case/STE/relaxation qualifications and five structural features, full evaluator/generator architecture tables and optimizer/hardware specification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Read all training/inference hyperparameters, deterministic200/50graphsplit,52587simulatedlabels/two-daycost, four baselines and full recursive quantum protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Read every advanced-initialization/depth table cell,hardware5–15/ERtopologytransfer,generatedsamplecalibration and evaluator-errorrobustness results."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 26,
+      "notes": "Read all cost scaling tables, stronger PI-GNN/GW comparisons and configurations, sampleefficiencytests, firstpartofboundednessproof includingBKSOPTupperboundassumption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "Read completeProp4.1proofincluding explicitno-worse-than-random premise, extendedbibliographydiscussion and all additional limitations/timingT_efftable."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 16,
+      "notes": "Read everyofficialslide,renderedall16includingfiguresonlyandmetaratio/formulas/results;fullposterimagechecked. Scientificmainappendicesprovideadditionalclassical/noise/costresultsbeyondconferenceoverview."
+    }
+  ],
+  "claims": [
+    {
+      "id": "nq-contribution",
+      "category": "contribution",
+      "statement": "GENlearnsquantum-performance-awaregraphpartitionandparameterinitialization,evaluatorfrozenforgeneratortraining/TTA.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1–4.3"
+        }
+      ]
+    },
+    {
+      "id": "nq-method",
+      "category": "method",
+      "statement": "OCHQR+capacitygreedy/STE+partitionconditionedanglesconfigureQAOA²beforecompletecut;ratio boundconditionalonno-worse-randomandtrueupperreference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            13,
+            14,
+            15,
+            16,
+            17,
+            26,
+            27
+          ],
+          "locator": "Figure2/Eq3–17/Prop4.1/AppendixD"
+        }
+      ]
+    },
+    {
+      "id": "nq-classification",
+      "category": "classification",
+      "statement": "Generalistconstructive:oneGENmixedB/BEQUBO/WMaxCuttrainingandsharedcheckpointacrossGKA/L/HR/BMZviafixedreductions,instanceTTAconfignotcompletecutediting,rootapproved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            18
+          ],
+          "locator": "Figure2/train200graphs/heldoutnativefamilytransferplusutilities177–180andlocal_search55–92samefixedloader"
+        }
+      ]
+    },
+    {
+      "id": "nq-experiment",
+      "category": "experiment",
+      "statement": "101/183winsagainstQAOA²heuristicsbutLmeanboundarybetter,PI-GNNB/BEandGWWhigher;64vs1000budget/runtimeaccountsandfinite-noisesimulationexplicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            18,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            28
+          ],
+          "locator": "Tables1–18/Figures3–8"
+        }
+      ]
+    },
+    {
+      "id": "nq-limit",
+      "category": "limitation",
+      "statement": "Noquantumhardwareadvantage/arbitraryhardconstraints/monotonicsurrogateperformanceguarantee;BKS/ratioassumptions,partitioncap127andlatencycostclassicalnegativesqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9,
+            13,
+            17,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Section7/AppendicesA/C/D/F"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/zheng26x.html",
+      "locator": "FormalPDFp1ZubinZheng/JiahaoWu(equal)/ShengcaiLiu,SUSTechCSE/keylaboratorychecked."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/zheng26x.html",
+      "locator": "OfficialHTMLcitation_publication_date2026/09/29PMLR306pp163739–163766."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://github.com/0SliverBullet/Neural-QAOA-Squared/blob/main/src/local_search.py",
+      "locator": "Formalpp5/18mixed200QUBO+MaxCutgraphs→sameGENuntrainedIsing,utilities177–180andload_partition_generator55–92fixedgenerator_best_model_1766545107.pth;NNpartition/paramsnotprimalcutediting;rootapprovedgeneralistconstructive."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://icml.cc/virtual/2026/poster/62005",
+      "locator": "Publisher28pintegratedA–Fallread/HTMLnoseparatesciattachment,assetAPI404/ORknVbandOWj403nobypass. Official16slides11783696Bfulltext+renderallandposter2017352Bfullvisual. AuthorZIP15101015B691members5READMEs(2empty)read/noPDFTeXnotebook. Releasev1.0May10,2026fourassets2weights+2serializeddatasets/noextrascidoc."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/0SliverBullet/Neural-QAOA-Squared",
+      "locator": "Actualsharedload/capacityk<128/current64iteration63updates/QAOAconstant.01fallbackvsformaluniform/READMEcriticfilenameextensiondifferencesrecorded."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-qaoa-squared",
+      "cited": "cra-co",
+      "reference_label": "Ichikawa (2024)",
+      "description": "Explicit main/appendix text citation and complete matching author/title/year bibliography confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            27
+          ],
+          "locator": "Explicit in-text citation Ichikawa and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neural-qaoa-squared",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicit main/appendix text citation and complete matching author/title/year bibliography confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            27
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neural-qaoa-squared",
+      "cited": "qap-qnn",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Explicit main/appendix text citation and complete matching author/title/year bibliography confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12,
+            27
+          ],
+          "locator": "Explicit in-text citation Ye and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neural-qaoa-squared",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "Mena et al. (2018)",
+      "description": "Explicit main/appendix text citation and complete matching author/title/year bibliography confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            15
+          ],
+          "locator": "Explicit in-text citation Mena and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "All28formalpages/AppendicesA–F/refs/tables/proofsand16officialslides+posterread/rendered;4actualedges. RootapprovedstableIDmigrationgeneralist/constructivewithsamecheckpointloading;conditionalratio/BKS/quantum-local-vsNNprimalimprovement/negativePI-GNNGW/runtimedifferencesprecise."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0ddd3f0550250252de405c41f5c4537f37b2d008736ff48e2079149466570bee"
+}

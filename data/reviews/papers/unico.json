@@ -1,0 +1,943 @@
+{
+  "version": 1,
+  "paper_id": "unico",
+  "note_path": "generalist/unico.md",
+  "baseline_note_sha256": "af56164dd3718ba95ff7b34c0d5dc0afd683e6c73b100145a51f5bed1aa7f2f8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/3acefc84f1355f5f974195bb9f6014a4-Paper-Conference.pdf",
+      "version": "FormalICLR2025proceedings41pageswithAppendicesA-G; allfreshlyread",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/3acefc84f1355f5f974195bb9f6014a4-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-e4b8b44df9.pdf",
+      "sha256": "3f2324f45d95e09691749cc7ee594efe9dbf922273d9fee65ffbb1238e898f11",
+      "pages": 41,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://iclr.cc/media/iclr-2025/Slides/27742.pdf",
+      "version": "OfficialICLR2025scientificposter1page, completevisual/textfreshlyread",
+      "local_path": "research/full-text-review/unico/poster.pdf",
+      "sha256": "1897e575e972f9850bf59ddf77dce149298ad4055d1520b44cbf40ad46acf3b3",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Fresh formalICLR2025fullmain1-10read:6authorsSJTU+correspondingShanghaiInnovationInstitute, actual4coretasks+appendixVC. MatPOE NNroughordertorankfeature notincumbentedit; matrixTransformerPOMORLsizeagnosticPOE, MatDiffsupervisedmatrix/noisedheatmapdualfeatures2OPTclassical. MixedvsSinglevsstarallscalesdistinct; 10k/scale2500/task, positiveHCPplanted; 8parallelvs2opt/AS100, CPU/GPUbatch1, baselinewinscontinuous andmixedDiffnegative. Generalistactualsharedmodels; mainconclusionlimits/reductionoverhead andnewtaskchecksappendixpending. 3SATdefp4atmost3variableswordingmustperclause, notglobal3vars. AllreferencesandAppendicesnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 41,
+      "notes": "Fresh complete References11-16 andAppendicesA-G17-41:allproof/reductionformulas, modelattention/diffusionELBO, hyperparams20MPOE/100vs400epochDiff8H80050denoisesteps, actualtiny3SATNvars3-9, VC2500extraexperiments notMIS/Clique/VRPimplemented, allablation/FT/SL/standard1280TSP/45TSPLIBtablesread. MainavgbeatsLKHbecausebinarySATbutcontinuousLKHwins; SingleDiffbetterSATthanmixed; mixed50to100zeroshotFR0 andonlyFTimproves, starsharedallscalesnotuniversalwin. F2text500iterationsvsTable12epochs50/100/200 inconsistencyretain. Sourceincorrect3SATdefinitionatmost3variablesvsperclause, Concordeonly2Dclaimnotrepeat, proposedVRPSATsketchmissingflow/subtournotverifiedsolver. Formalsource41pagesallread; figurevisual/checkcode/metadata next."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Fresh entireofficialICLRpostertextandfullrenderread:3columnsallmodel/reductiondiagrams, mainTable2allrows, Table3timing, Tables12/13FT andPOE/diffusionformulas; repeatsmainresults/printedFT500iterationsvs50/100/200epochs; noadditionalindependentexperiment."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "MatrixTSPiscommoninterfacebutrequirespracticalreduction/recovery; coordinatesaloneinsufficient.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/pipeline"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "UniCOreductionframework,MatPOEpositionalinitializerandMatDIFFmix-noiseddualfeaturemodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            19,
+            20,
+            24,
+            25,
+            26
+          ],
+          "locator": "Methods/reduction/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "SharedmixedtaskconstructivePOMOandseparatesuperviseddiffusion; NNroughorderfeatureandclassical2optnotlearnedincumbenteditprimarypipeline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            24,
+            25,
+            26,
+            29,
+            30
+          ],
+          "locator": "Algorithms/encoderdecoder/objectives"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Core4tasks10k/scale,smallsat3-9vars,20MPOE; mixed/single/starandFTdistinct; residualgapscontinuousclassicwins andVCadditionalexperiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            27,
+            28,
+            30,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          "locator": "Tables2-5,7-22/actualbudgets"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Cubictrainingmemory/reductionexpansion/zero-shot50to100FR0; proposedCVRPconstraintsnotcompletenativeimplementedsolver, noUNSATcertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            19,
+            20,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            38,
+            40,
+            41
+          ],
+          "locator": "Limitations/AppendixE-G"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "ActualsharedmodelmixednativeATSP/TSP/DHCP/3SAT; separateVCexperiment; primaryconstructive, GLOPexternalreviserextensiondistinct.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8,
+            10,
+            22,
+            36,
+            39,
+            40
+          ],
+          "locator": "Actualmixedcheckpointrows vsfutureapplicability"
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "category": "reproducibility",
+      "statement": "OfficialICLRonepageposterfullyreadincludingallthreecolumntext/formulas/mainandFTtables; restatespaperresults.",
+      "evidence": [
+        {
+          "source_id": "poster",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "AllscientificposterincludingembeddedTables2/3/12/13andPOE/diffusionfigures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal metadata and date precision",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3acefc84f1355f5f974195bb9f6014a4-Abstract-Conference.html",
+      "locator": "PublisherHTMLsixauthor/title/ICLR2025identity; PDF1correspondingauthorShanghaiInnovationInstitutefootnote. AccessibleprimaryrecorddoesnotestablishMay1day; OpenReviewforum/API403challenge, retainyearprecisionanddonotconfuseotherUniCO2505.06290."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://iclr.cc/media/iclr-2025/Slides/27742.pdf",
+      "locator": "1pageofficialscientificposterdownloaded,hashregistered,entiretextandembeddedscientifictables/figuresfreshlyread. NontruncatedGitHubtree12089entries+archive12090membersnoadditionalPDF/ipynb/archive/video;3READMEsread."
+    },
+    {
+      "field": "release identity and code",
+      "source_url": "https://github.com/Thinklab-SJTU/UniCO/tree/776cc1f7589518e2948317dce21de9d41b2243ad",
+      "locator": "ActualreadATSPEnvtraininggeneratorcalls,utilsATSProblemDefshortestpathclosure,utils/generate_data30linesmissing3generators, completeJittorgenerate_data, diffusionenvgeneration/validation anddecoder directedgreedy+ATSP2opt,READMEconfigs. CurrentVCvalidationcallsHCP. Noexecutionorhistoricalequivalenceclaim."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/3acefc84f1355f5f974195bb9f6014a4-Paper-Conference.pdf#page=3",
+      "locator": "CompleteoriginalFigure2crop65,65,550,184visuallychecked, alltablescriticalvaluesrendered, all8figsseen; posterfullrenderread."
+    },
+    {
+      "field": "Concorde claim qualification",
+      "source_url": "https://www.math.uwaterloo.ca/tsp/concorde.html",
+      "locator": "OfficialauthorsolverhomepageexplicitlysymmetricTSP, notonly2DEuclidean; paper8/20restrictionnotrepeatedasfact."
+    },
+    {
+      "field": "citation_identity:sil",
+      "source_url": "https://arxiv.org/abs/2403.19561",
+      "locator": "The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3acefc84f1355f5f974195bb9f6014a4-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-05-01; cached evidence research/full-text-review/unico/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3acefc84f1355f5f974195bb9f6014a4-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2025-05-01; primary cachedHTML research/full-text-review/unico/supplement-landing.html; citation_title=['UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "unico",
+      "cited": "asp",
+      "reference_label": "ASP: Learn a Universal Neural Solver!",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "cryptoanfnet",
+      "reference_label": "Learning Plaintext-Ciphertext Cryptographic Problems via ANF-based SAT Instance Representation",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Deep Policy Dynamic Programming for Vehicle Routing Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "deepaco",
+      "reference_label": "DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "diffuco",
+      "reference_label": "A Diffusion Model Framework for Unsupervised Neural Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "efficient-active-search",
+      "reference_label": "Efficient Active Search for Combinatorial Optimization Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "gfacs",
+      "reference_label": "Ant Colony Sampling with GFlowNets for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Learning a Latent Search Space for Routing Problems Using Variational Autoencoders",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Learning Combinatorial Optimization Algorithms over Graphs",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "neural-3-opt",
+      "reference_label": "Learning 3-opt Heuristics for Traveling Salesman Problem via Deep Reinforcement Learning",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "neurolkh",
+      "reference_label": "NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "nsnet",
+      "reference_label": "NSNet: A General Neural Probabilistic Framework for Satisfiability Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "ppo-bihyb",
+      "reference_label": "A Bi-Level Framework for Learning to Solve Combinatorial Optimization on Graphs",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "vag-co",
+      "reference_label": "Variational Annealing on Graphs for Combinatorial Optimization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Learning To Solve Circuit-SAT: An Unsupervised Differentiable Approach",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "neurosat",
+      "reference_label": "Learning a SAT Solver from Single-Bit Supervision",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "ml4tspbench",
+      "reference_label": "Unify ML4TSP: Drawing Methodological Principles for TSP and Beyond from Streamlined Design Space of Learning and Search",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "softdist",
+      "reference_label": "Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems",
+      "description": "Exact-work bibliography identity freshly checked, including separately checked preprint/formal versions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "References exact title/authors/identifier; not inferred from topical similarity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "sil",
+      "reference_label": "Luo et al. (2024), Self-improved learning for scalable neural combinatorial optimization, arXiv:2403.19561",
+      "description": "The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Explicit source bibliography p14: old Self-Improved Learning arxiv2403.19561; The source cites Self-Improved Learning, arxiv2403.19561, a six-author precursor. Curator comparison of both complete manuscripts supports a precursor-to-formal-representative mapping to seven-author Boosting, rather than arXiv retitling: old p4 Fig3/formal p6 Fig2 share the distinctive tour/reconstruction/training layout; old p5 Eq3–6 and formal p5 Eq2–4 share endpoint projections and aggregate/broadcast attention; old/formal p15 share the exact 10-customer route, depot-access bit vector and following misalignment explanation. The old and formal warmup, training budgets and results differ and must remain version-specific. Root independently read formal pp5–6 and visually compared old pp4–5/15 with formal p15; full versions independently read by routing reviewer."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "predicting-propositional-satisfiability-via-end-to-end-learning",
+      "reference_label": "Cameron et al., 2020",
+      "description": "Appendix SAT taxonomy explicitly cites the four-author AAAI2020 predicting-satisfiability article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            23
+          ],
+          "locator": "Actual body citation Cameron et al., 2020 on PDF pp[23]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix SAT taxonomy explicitly cites the four-author AAAI2020 predicting-satisfiability article."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "Li et al., 2023a",
+      "description": "Appendix SAT instance generation cites the nine-author KDD2023 HardSATGEN article; exact full bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13,
+            23
+          ],
+          "locator": "Actual body citation Li et al., 2023a on PDF pp[23]; full bibliography entry on pp[13]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix SAT instance generation cites the nine-author KDD2023 HardSATGEN article; exact full bibliography title/author identity."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "Xiao et al., 2024",
+      "description": "Appendix identifies GNARKD knowledge distillation and its TSP/CVRP scope; seven-author same-title arxiv2312.12469 preprint maps to formal2024 article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            20
+          ],
+          "locator": "Actual body citation Xiao et al., 2024 on PDF pp[20]; full bibliography entry on pp[15]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix identifies GNARKD knowledge distillation and its TSP/CVRP scope; seven-author same-title arxiv2312.12469 preprint maps to formal2024 article."
+        }
+      ]
+    },
+    {
+      "citing": "unico",
+      "cited": "learning-branching-heuristics-for-propositional-model-counting",
+      "reference_label": "Vaezipoor et al., 2021",
+      "description": "Appendix #Neuro branching discussion cites exact seven-author AAAI2021 model-counting paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15,
+            23
+          ],
+          "locator": "Actual body citation Vaezipoor et al., 2021 on PDF pp[23]; full bibliography entry on pp[15]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix #Neuro branching discussion cites exact seven-author AAAI2021 model-counting paper."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read41formalpagesallAppendicesA-Gplus1officialposter, originalFig2.",
+    "AddedactualShanghaiInnovationInstitute/VCexperiment, keptactualsharedmodelgeneralistconstructive.",
+    "RemovedunsupportedMay1dateprecision, retainedpublisherconfirmedyear.",
+    "Distinguishedfourcoretasks/tinySATreducedsizes fromunevaluatedClique/MIS/VRP/FFSPextensions.",
+    "RecordedactualPOE/diffusion/search/traininghardwarebudgets andnegativeclassic/mixed/zero-shottransferresults.",
+    "Qualifiedsource3SATdefinition/FTunits/TSPLIBd198 andcurrentmetricclosure/missinggenerators/VCvalidationdifferences.",
+    "MappedfullbibliographyexactidentitiesincludingSILprecursormappingwithversion-specificqualification.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9f6225cf8208c97d8160861dd9732a4b33d8d97f35dedc9c16ec8ecfe090b308"
+}

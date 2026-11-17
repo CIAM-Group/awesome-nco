@@ -1,0 +1,520 @@
+{
+  "version": 1,
+  "paper_id": "ppo-bihyb",
+  "note_path": "specialist/ppo-bihyb.md",
+  "baseline_note_sha256": "419024427e48da1e81929543cd7c46a8159788e635feb70b4cada4cf907f0174",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Paper.pdf",
+      "local_path": "research/import-272/nco-110cd7a051.pdf",
+      "sha256": "ae4baf573c3bcb2937707bec1d44f76e350299ed3a78f73e0ae283b705163e0e",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/ppo-bihyb/supplement.pdf",
+      "sha256": "64b0d4d4d2ffc8020e284bc60ad485ff19c245504175639cc154a692b97b76f7",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title/authors/affiliations, introduction, related work, complete two-level pipeline and original constrained formulation; graph modifications must be analyzed for original-instance feasibility, not assumed safe."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full surjection proposition/proof, bi-level feasibility constraints, rollout/PPO, action factorization, DAG-specific two-direction encoder/beam3/critical-path heuristic and baseline protocol. Existence under surjectivity is not efficient optimality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read complete DAG data/table/protocol and generalization; GED graph-pair formulation, feature propagation, IPFP/beam3 and all Table2 values; HCP 0/1-TSP reduction, +10 tour-edge penalties and beam12. Objectives always rescored on original instances."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read HCP Table3 and full protocol: 50train/20test subset, LKH5 versus100 restarts, HCP success versus mean0/1-TSP cost counterexample; discussions, acknowledgement and bibliography1-44."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read all final references45-65 and complete checklist. Citation versions include workshop/preprint/year inconsistencies, retained as source provenance rather than copied into target metadata."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all framework capability/limitations table (potential applicability not evaluated tasks), full PPO-Single protocols and model hyperparameters. Table5 actual BiHyb uses K20/10/8, beam3/3/12 and task-specific layers; prose/table labels and GED baseline beam widths differ."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read all PPO-Single hyperparameters, inference-time Table7, GED action correlation Table8, complete hardware, broader impact and licenses. Table7 does not explicitly say per-instance versus full-set aggregation; retain reported values without invented denominator."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "A short graph-modification sequence uses existing heuristics rather than learning every complete-solution decision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and method motivation"
+        }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "category": "contribution",
+      "statement": "The learned upper level modifies inputs; the lower heuristic provides full candidates scored on original-instance objectives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Algorithm1 and bi-level objective"
+        }
+      ]
+    },
+    {
+      "id": "proposition",
+      "category": "limitation",
+      "statement": "The proposition assumes a surjective heuristic over modified graphs and proves existence only, not efficient reachability or PPO convergence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Proposition, proof and Some Remarks"
+        }
+      ]
+    },
+    {
+      "id": "task-mappings",
+      "category": "method",
+      "statement": "DAG adds precedence edges, GED modifies first-graph edges for IPFP, HCP penalizes LKH tour edges while rescoring original0/1cost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections4.1-4.3"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Different task encoders, actions, heuristics and models demonstrate a specialist hybrid framework, not one shared cross-task checkpoint.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Tables5-6 and task-specific architecture settings"
+        }
+      ]
+    },
+    {
+      "id": "numerical",
+      "category": "experiment",
+      "statement": "DAG/GED improve over heuristic references; HCP25%success beats LKH20%but mean cost6.7 trails6.3.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9,
+            10
+          ],
+          "locator": "Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "category": "reproducibility",
+      "statement": "Training capped at48h/model; beam and repeated lower solves contribute overhead; hardware differs between DAG/GED and HCP.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "C,D,F"
+        }
+      ]
+    },
+    {
+      "id": "inconsistent-baseline",
+      "category": "limitation",
+      "statement": "GED baseline beamwidth differs between main text20 and supplement10.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Learning Methods; Supplement B.2/Table6"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, venue, year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Paper.pdf",
+      "locator": "Page1 title block includes all nine authors, SJTU/Ant Group affiliations, NeurIPS2021 footer."
+    },
+    {
+      "field": "date, publication.date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/b2f627fff19fda463cb386442eac2b3d-Abstract.html",
+      "locator": "Formal proceedings supports2021; former exact2021-12-06 is not substantiated by this record."
+    },
+    {
+      "field": "scope, paradigm, problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/b2f627fff19fda463cb386442eac2b3d-Paper.pdf",
+      "locator": "Sections4.1-4.3 task-specific graph-modifier/heuristic implementations; Supplement Tables5-6 show differing models, no joint checkpoint."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/PPO-BiHyb",
+      "locator": "Main page1 explicit link and matching author repository with separate task train/eval scripts and pretrained resources."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/b2f627fff19fda463cb386442eac2b3d-Abstract.html",
+      "locator": "Manual publisher landing and Supplemental link checked2026-11-16; exactly one Supplemental.pdf, five pages with AppendicesA-H, all read; no other scientific attachment/ZIP listed."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/b2f627fff19fda463cb386442eac2b3d-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/ppo-bihyb/supplement-landing.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ppo-bihyb",
+      "cited": "neurewriter",
+      "reference_label": "[8] Chen and Tian, NeurIPS2019",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [8] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "att-gcn",
+      "reference_label": "[15] Fu et al., AAAI2021",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation [15] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "gcnn-branching",
+      "reference_label": "[18] Gasse et al., NeurIPS2019",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [18] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[28] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation [28] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[29] Karalias and Loukas, NeurIPS2020",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [29] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[30] Khalil et al., NeurIPS2017",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            9,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation [30] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "attention-model",
+      "reference_label": "[33] Kool et al., ICLR2019",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation [33] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[35] Li et al., NeurIPS2018",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation [35] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-to-improve",
+      "reference_label": "[38] Lu et al., source bibliography says ICLR2019",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation [38] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-to-cut",
+      "reference_label": "[54] Tang et al., ICML2020",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [54] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "pointer-networks",
+      "reference_label": "[57] Vinyals et al., NeurIPS2015",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            9,
+            10,
+            13
+          ],
+          "locator": "Explicit in-text citation [57] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[64] Zhang et al., NeurIPS2020",
+      "description": "Explicit predecessor/related-method citation; source citation year/version is retained, not substituted with later metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            13
+          ],
+          "locator": "Explicit in-text citation [64] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "[39]",
+      "description": "Scheduling related work and PPO-Single construction reference Decima; authors explicitly distinguish settings and reimplement a peer baseline rather than assert direct same-setting Decima comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "reference_label": "[60]",
+      "description": "Hybrid-method related work discusses the supervised learned A* GED heuristic; exact CVPR2021 combinatorial graph edit distance entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "ppo-bihyb",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "[62]",
+      "description": "Related-work introduction explicitly cites the IJCAI2020 graph matching/CO survey.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded six sections with actual graph mappings, original-instance objectives and theorem assumptions.",
+    "Separated task-specific framework breadth from shared-checkpoint generality; retained hybrid constructive/improvement pipeline with precise neural role.",
+    "Recorded HCP success-versus-average-cost counterexample, small test subsets, heuristic-relative metrics and repeated-solve budgets.",
+    "Corrected unsupported exact date to formal year; documented GED baseline beamwidth/Table-label and timing aggregation ambiguities.",
+    "Verified complete five-page supplement and12explicit internal citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "9736c1c51a15d307beb6e4f488fd7d4520a9318460e757f6030d63ca2616a1b1"
+}

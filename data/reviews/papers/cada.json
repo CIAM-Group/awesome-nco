@@ -1,0 +1,587 @@
+{
+  "version": 1,
+  "paper_id": "cada",
+  "note_path": "generalist/cada.md",
+  "baseline_note_sha256": "daa3285c53f8c2479f70c461cb7fa391cfe3ffffd82b4cc56c9bfda6d63993cd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25bi/li25bi.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25bi/li25bi.pdf",
+      "version": "Formal ICML2025/PMLR267 PDF19pagesincluding main/references/allAppendicesA–C freshread",
+      "local_path": "research/full-text-review/cada/paper.pdf",
+      "sha256": "cfe8c1fc917c809281d139022d90c15805a151aa27cdc36b278da6b58b526657",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 19,
+      "notes": "Fresh all19formalpages read in complete nontruncated chunks:5authorsSUSTech/CityU;16trained variants with2separate50/100checkpoints, prompt5multi-hot and global+sparse6layers, POMO Reinforce30M/17h25h3090. ActualTable1 all50best but13/16100 bestgaps, CVRP/OVRP/VRPB100negative. NewMD16/MB8zero-shot and32promptenum separate;10epoch128batch10000adapt forMD. Allrefs9-13/AppA-C/mainFigures1-9andTables1-7textread; code/formula and originalvisual checks continuing. No speculative automatic links."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Explicit constraint conditioning and selective/global representations address cross-VRP encoder limitations; attention plots are diagnostics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            14,
+            18,
+            19
+          ],
+          "locator": "Introduction/constraint-awareness analysis"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Five-bit prompt, dual attention with feature exchange, RMSNorm/SwiGLU and prompt/sparsity ablations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Figure2/Eqs5–13/ablationFigures4–7"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Shared POMO autoregressive policy with dynamic capacities/time/length/open features, feasibility masking and REINFORCE; separate50/100checkpoints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            15,
+            16
+          ],
+          "locator": "MDP/decoder/actions/actual training"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "16trainedvariants/30Minstances;1ktest/task8aug;13of16winsat100; MD16/MB8ordinaryvs32promptsearch;10epochs100kMDadaptation;99CVRPLibinstances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            18,
+            19
+          ],
+          "locator": "Allmain/appendixresults andbudgets"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "PoorMDzero-shot, remainingnegative100nodeandCVRPLibcells;32promptcost/kselection and denseglobalbranch limit claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            18,
+            19
+          ],
+          "locator": "Tables1/3/6/7 andgeneralizationdiscussion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One neural policy solves16nativeVRPconstraintcombinations withconstructivenodeactions; promptbest-ofsearchnotlearnedincumbentediting, newtaskadaptationseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8,
+            9,
+            16,
+            18
+          ],
+          "locator": "Actualpolicy/tasksharing/actionandFTboundary"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and dates",
+      "source_url": "https://proceedings.mlr.press/v267/li25bi.html",
+      "locator": "FormalPDFp1fiveauthors/SUSTechandCityU; primaryarxiv2412.00346v1Nov30,2024. PMLRHTMLcitation_publication_date2025/10/06. Genericacceptancedayremoved."
+    },
+    {
+      "field": "supplements and poster inventory",
+      "source_url": "https://icml.cc/virtual/2025/poster/46063",
+      "locator": "All19formalpagesfreshread. EntireofficialposterPNG46063scientificcontentvisuallyread including extra promptinteractiondrawing;notPDFpagecount. OpenReviewforumCS4RyQuTig/API403;publisheronlymainPDF. OfficialcodeZIP32members+checkpointZIP6+dataZIP677actualdownload/inventory:noadditionalPDF/ipynb/tex/video/nestedZIP."
+    },
+    {
+      "field": "original figure and empirical boundaries",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25bi/li25bi.pdf#page=4",
+      "locator": "AllFigures1–9rendered/viewed;allTables1–7read. OriginalFig2crop52,63,544,318withcaption. Negative100-nodeCVRP/OVRP/VRPBgaps, CVRPLibA/P/X,32promptenum,10epochMDfine-tuningandk25selection explicitly separated."
+    },
+    {
+      "field": "printed formulas versus current release",
+      "source_url": "https://github.com/CIAM-Group/CaDA",
+      "locator": "50/model.py301–325 and100/model.py308–331 use -inf for trueTopksparsity; bothencoderreturnfusedsparseout instead of namedglobalprose;PromptNet50returns5tokens/100returns1token with deeperMLP. 50/envs/env.py218–285 checksstartwindow, separatepositivecapacities/perroutebackhaulorder vsprintedEq23/24 andsignedemand appendix. Staticversionauditnotbenchmarkrerun."
+    },
+    {
+      "field": "table arithmetic qualification",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/li25bi/li25bi.pdf#page=19",
+      "locator": "Table7MVMoEAvgObj919.8 vs(1071.3+999.2+791.3+614.0+28688.4)/5=6432.84;gapnumbersnotreplaced. Table6k75rownotintextset. No fabricated repaired measurement."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2412.00346",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-11-30; title on abstract page: CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention. This date is preprint history, not formal publication. Cached research/full-text-review/cada/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cada",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Deep Policy Dynamic Programming for Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "dynamic-am",
+      "reference_label": "A Deep Reinforcement Learning Algorithm Using Dynamic Attention Model for Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "egate",
+      "reference_label": "Learn to Design the Heuristics for Vehicle Routing Problem",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "elg",
+      "reference_label": "Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Learning Collaborative Policies to Solve NP-hard Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Multi-Decoder Attention Model with Embedding Glimpse for Solving Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "practical-vrp-joint-learning",
+      "reference_label": "Efficiently Solving the Practical Vehicle Routing Problem: A Novel Joint Learning Approach",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "routing-dro",
+      "reference_label": "Learning to Solve Routing Problems via Distributionally Robust Optimization",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked. Source labels ICLR13 as2024; actual formal venueyear2025 confirmed fromtarget, threeauthors/titlematch."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked. Cites the 2024 workshop precursor, not later TMLR48-task measurements."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "unico",
+      "reference_label": "UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Generalization of Neural Combinatorial Solvers Through the Lens of Adversarial Robustness",
+      "description": "Explicit bibliographic citation, not inferred from methodological similarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "Complete bibliography pp9–13 manually read; exact reference title and author identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "combining-reinforcement-learning-and-constraint-programming-for-combinatorial-optimiza",
+      "reference_label": "Cappart et al., 2021",
+      "description": "Appendix routing constraints related-work paragraph cites exact AAAI2021 five-author pp3677–3687 work. The citing paper labels it among VRPTW literature; that is citation context, not an endorsement of a VRPTW experiment in the target (TSPTW).",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Actual complete body context and full exact bibliography entry inspected; cited work/version and any source terminology error explicitly qualified."
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al. 2024a; Berto et al. 2025",
+      "description": "Neural VRP/specialist-training background cites RL4CO both as identified arXiv2306.17100 and formal KDD2025 proceedings entry. These are one work, not two citation edges; distinct from Berto2024b RouteFinder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read complete body citation paragraphs: Berto et al. 2024a; Berto et al. 2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Berto et al. 2024a; Berto et al. 2025"
+        }
+      ]
+    },
+    {
+      "citing": "cada",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al. 2022b",
+      "description": "Appendix generalization related work explicitly cites hardness-adaptive curriculum; exact four-author AAAI36 pages9136?9144 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zhang et al. 2022b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zhang et al. 2022b"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshfull19pages/AppA–C+scientificposterallread, source/data/checkpointarchivesinventoried.",
+    "Correctedfirstdatefromarxivv1,actualPMLRpublicationmetadata,CityUaffiliation/code.",
+    "Rewroteactualprompt/dualattention/POMO/30Mtraining/16nativetaskprotocol.",
+    "Preservedthree100nodetasklossesandCVRPLibnegativecells;separated32promptsearchandMDfine-tuning.",
+    "Qualifiedprintedmask/demand/timewindows/tablearithmetic/currentarchitectureversionswithoutinvalidatinghistoricalexperiments.",
+    "Added22explicitbibliographyrelationsandoriginalFigure2.",
+    "Final manual residual citation review: restored newly available CP–RL target or checked exact body/bibliography identity; no title-only edge.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1ca0ef80f5416faeec9969f04e265c05f77fa4457a349817e9e634fa0dad7f8b"
+}

@@ -11,7 +11,9 @@ export function SiteHeader() {
       <nav className="primary-nav" aria-label="Primary navigation">
         <NavLink to="/specialist" className={({ isActive }) => isActive ? 'is-active' : undefined}>Specialist</NavLink>
         <NavLink to="/generalist" className={({ isActive }) => isActive ? 'is-active' : undefined}>Generalist</NavLink>
+        <NavLink to="/studies" className={({ isActive }) => isActive ? 'is-active' : undefined}>Studies</NavLink>
         <NavLink to="/papers" className={({ isActive }) => isActive ? 'is-active' : undefined}>Papers</NavLink>
+        <NavLink to="/references" className={({ isActive }) => isActive ? 'is-active' : undefined}>References</NavLink>
         <NavLink to="/relations" className={({ isActive }) => isActive ? 'is-active' : undefined}>Relations</NavLink>
       </nav>
       <a

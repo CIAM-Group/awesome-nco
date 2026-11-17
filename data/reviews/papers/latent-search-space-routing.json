@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "paper_id": "latent-search-space-routing",
+  "note_path": "specialist/latent-search-space-routing.md",
+  "baseline_note_sha256": "38ef749d8448bba968de6db92517dcc3ca5ede95a23c0c7e82db6c84c942254f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openreview.net/pdf?id=90JprVrJBO",
+      "retrieval_url": "https://huggingface.co/datasets/Chelsea707/Conference_2020-2025/resolve/main/ICLR/2021/Learning%20a%20Latent%20Search%20Space%20for%20Routing%20Problems%20using%20Variational%20Autoencoders.pdf",
+      "version": "ICLR2021 published-header13-page copy via public conference archive mirror, completeA-B; title/byline matched primaryrecord; original-byte identity not asserted",
+      "local_path": "research/full-text-review/latent-search-space-routing/paper.pdf",
+      "sha256": "ed7408014c8a170bd8760d0983adcb1f0e9040687c7b1249af2d3de46e43da96",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh complete reading: title/byline/affiliations, TSP and CVRP metric setting, offline high-quality targets, instance-conditioned CVAE and generic continuous optimizer motivation; complete related-work and Figure1 context."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete autoregressive masked construction, shared encoder/decoder attention, beta-CVAE objective, random symmetric target, per-class supervised models, 93440 training +100 search validation+1000 test, DE600 population/300 iterations and separate1000 encoded bound-estimation instances; all settings/ablation values."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Freshly read all Figures3-8/Table1-3, bounded-neighborhood cost experiment with best-of1000 reference and identical-decoding exclusion; AM500k samples/hardware controls, GCN200 batching, NLNS10CPUcores, NeuRewriter literature timing; classical baselines often better, 95-150 size transfer deterioration, random-key ablation and conclusions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read all35 bibliography entries, complete AppendixA encoder/decoder equations with128dim embeddings/GRU and shared components, full AppendixB/Figure9 sixproblemclasses; noticed latent dimension wording (100 in Figure6 vs dh128 AppendixA) for code check."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Learn instance-conditioned continuous representations to exploit longer runtime with generic continuous search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and contributions"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "CVAE decoder with symmetry-equivalent reconstruction and differential evolution latent search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3-4.1/Figures1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Shared GRU/attention encoder-decoder, beta ELBO and feasibility masks; fixed weights, DE600/300/F.3/CR.95.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            12
+          ],
+          "locator": "Model/training/search/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Per-class93440/100/1000, six separate task-size models; quality-runtime and ablations do not beat classical solvers generally; size150 degrades.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            13
+          ],
+          "locator": "All experimental subsections/Tables1-3/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Supervised labels and extensive search; empirical geometry not smoothness guarantee, CVRP heuristic-relative gaps, AppendixA latent128 vs Figure6 latent100/code100 distinction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Reported limitations and curator cross-check"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: separate task/size models and fixed autoregressive whole-solution decoder, classical latent population updates rather than learned incumbent tour edits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Actual model/action and separate training setup"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations, publication",
+      "source_url": "https://iclr.cc/Downloads/2021",
+      "locator": "Official ICLR2021 listing; mirror PDFp1 matches Andre Hottung/Bhanu Bhandari/Kevin Tierney and Bielefeld/UMass Amherst. Only publication year established; removed unsupported calendar-based acceptance/submission dates."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://openreview.net/pdf?id=90JprVrJBO",
+      "locator": "13-page published-header mirror with fullA-B, stable actual HF retrieval URL/hash registered; no original-byte identity assertion."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=90JprVrJBO",
+      "locator": "Full13pages includeA-B; normalOpenReview challenged, no identified separate missing supplement; official code tree48entries, ZIP files are training data LFS pointers, not narrative scientific appendices."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/ahottung/CVAE-Opt",
+      "locator": "Paperp5 footnote exactauthorrepo; currentREADME/configs and selectedVAE_8/search_control/de checked. Hidden128 vs latent100 separate configuration, independent time limit600sec."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openreview.net/pdf?id=90JprVrJBO#page=3",
+      "locator": "Figure1 originalcrop[105,55,510,195]at3x, both panels/caption; contact sheet checks alsoFigures2,7-9."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Prior pointer-network construction and decoder mechanism.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Related RL-trained routing constructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Related graph-embedding combinatorial optimizer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "Related attention-based TSP policy-gradient heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "GCN beam-search comparison and prior graph-convolutional constructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Dynamic routing representation and pointer-decoder predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            11,
+            12
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Instance generation and attention-sampling comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Related improvement method and literature-result comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            10
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    },
+    {
+      "citing": "latent-search-space-routing",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2020)",
+      "description": "Contrasts routing-specific LNS and compares its published ECAI method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            10
+          ],
+          "locator": "Explicit named citation and exact-title bibliography match."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read all13pages/35references/AppendicesA-B.",
+    "Corrected officialcodeURL and removed unsupported exact submission/acceptance dates.",
+    "Changed paradigm to constructive under actual neural-action definition; retained specialist due separate models.",
+    "Added concrete training/search budgets, nonuniversal comparisons, size generalization and heuristic-relative CVRP gaps.",
+    "Qualified empirical latent geometry and latent100/hidden128 source-notation difference with code.",
+    "Added complete original Figure1 and nine exact internal citations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d95b6f0baa2591201def9499ac22d1d47fec68691094611a6ea0d2908b9c91f6"
+}

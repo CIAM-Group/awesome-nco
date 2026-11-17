@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "paper_id": "gedranker",
+  "note_path": "specialist/gedranker.md",
+  "baseline_note_sha256": "c1b63bf3ee78542740a51223c5987efead3f2ddd36f200487614e50591256e4b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/ebf8764ecf0688cdd9fe1e5a9c525d0d-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/ebf8764ecf0688cdd9fe1e5a9c525d0d-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-4468acaf08.pdf",
+      "sha256": "155b85ff0a547040db2ef5bbf6471196f5bb0397cf5df15cecbfce3ca75d9c64",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal6authors3institutions, fullintro/relatedworks/linear-timepathcost and greedycubicmatching, unit-costnode/edgeeditnoedgerelabel; matching-derived upperboundvsregression. Publishedissued2026Apr23despitevenue2025 metadata."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadfullDiffGEDforward/reverse/posterior/supervisedEq3andGEDRankerbest/lastrecordsGANtrainingGumbelSinkhornAlgorithms1/Eq4–7;explorationpreferenceVSscalarMSEexample. Eq3printedpositiveBCEsumminimizedmissingminuscheckimplementation;rectangularrowcolnormalizationrequirespaddingcheckcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadBPRbothdirectionsonequalcost/lastrecordanddiscriminatorarchitecture, allmainTable1/2/Fig3andmetrics; IMDBsyntheticapproxreferences mayabovefeasiblecost/GEDGWMAEbetter, HingeLinux.00299.9outperformsBPR.01099.5. Noformalproofthattrainedgphimonotoneonlystoredincumbent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadrankingHingecomparison/conclusion/acknowledgmentsandcomplete36references, actualDiffGEDarxiv2503precursorandDIFUSCO/DIMESAGNNTSPgeneralizationbaseline cites; no broadSOTAwithout DiffGEDandGEDGW/Hingecounterexamples."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Readfullchecklist13–15includingexplicitNAformaltheory/noerrorbarsjustificationcode/dataassupp; needpublishercodeartifactmanualinventorynotassumesameauthorrepo."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readallchecklist16–18compute/ethics/licenses/newassets/humans; referencesallreadbutappendixsciencepending; completeauthorrootREADMEtraining/maingroundtruthfree commands."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Readlastchecklist/LLMNAandAlgorithm2inference/3GANupdatesrecordmaintenance, fullA3GINGraphNorm/AGNNonehotlabel/timeandbidirectionalpairembeddingsscoreensuresgraphswapdesign; nochosenNCOsolverglobalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "ReadallDarchitectureEq13/14/Hinge15, Bdatasetlabelprotocol(exact<=10;syntheticDeltaupperboundlarger), fullparameters6gphi3D1000train10inference100candidates200epochs128RMSProp, lambda1→0first100 thenoff; allunseenTable4andlargeTable5prelude."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "ReadallscalabilityrealunlabeledlargegraphpairtrainvsDiffGEDsmallonly, Tables6–9allablationrows/architecture/annealscheduleandlimitationsnooptreference. GEDRankerAvg140.138vsGEDGW140.278 only.14gainnotcertified; GEDGNNcompatAIDS44.6<52.5 exactHingeLinuxnegative preserved. All28pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gedranker-contribution",
+      "category": "contribution",
+      "statement": "Preference-BPRdiscriminator and annealedbestmatchingreconstructiontrainGEDbackboneswithoutoptimalmatchtargets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Section4/Eq5–9"
+        }
+      ]
+    },
+    {
+      "id": "gedranker-method",
+      "category": "method",
+      "statement": "Best/lastrecordsderivecostpreferences, GINAGNNgenerator/discriminator,10reverse100candidateconstruction; onlystoredrecordcostsmonotone,nottrainedoptimumguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "Sections3.2/4/Algorithms1–3/AppendixA/B"
+        }
+      ]
+    },
+    {
+      "id": "gedranker-experiment",
+      "category": "experiment",
+      "statement": "Exactsmallreferencesversusapproximatesyntheticlargeronesandunlabeledlargecosts areseparate; DiffGEDbettercostaccuracy,HingeLinux/GEDGWIMDBnegativecasesand100candidatebudgetsretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Tables1–9/AppendicesB–D"
+        }
+      ]
+    },
+    {
+      "id": "gedranker-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive nativeGED latentdenoisingfollowedbyfirstfeasiblematching;perdatasettrainingandbackbonerecipecompatibilitynotsharedNNmultinativepolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            23,
+            28
+          ],
+          "locator": "Diffusioninference/experimentsettings/Table9"
+        }
+      ]
+    },
+    {
+      "id": "gedranker-limit",
+      "category": "limitation",
+      "statement": "PrintedEq3BCEsignincorrectwhilereleasecorrect; rectangularunitrow/columnnormalizationcannotmeetassignmentmarginals,hardgreedydecoderremainsfeasible; noformaltheory/errorbars.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            14,
+            15,
+            28
+          ],
+          "locator": "Eq1/3/Alg1/checklist/Dandloss_fn.pyactualcode"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ebf8764ecf0688cdd9fe1e5a9c525d0d-Abstract-Conference.html",
+      "locator": "FormalPDFp1sixauthorsUNSW/UTS/SJTU;ShaozhenMaformal/posterqualifiedversuspublisherSHAOZHENMA."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ebf8764ecf0688cdd9fe1e5a9c525d0d-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date2026-04-23/volume38pp161231–161258/DOI10.52202/085713-5382;venueyear2025distinct."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ebf8764ecf0688cdd9fe1e5a9c525d0d-Abstract-Conference.html",
+      "locator": "Manualpublishermainintegrated28pPDFallA–D/checklistread,noseparatescientificlink;normalSupplemental-Conference.zip404,OR59HMRbpQ25API403nobypass. Fullofficialevent119891poster1688245Bviewed;author38600283B3985membersentireinventoryandsixREADMEread, noPDFTeXnbimageorotherprosedoc;code/dataanonarchiveidentitynotassumed."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/piupiupiuu/GEDRanker",
+      "locator": "src/GEDRanker/loss_fn.pymapping_losscorrectBCE/roll_out_gumbelrectangularnormalization/bprties;trainer.pybest/lastrecordandlambdaoff100/10steps100candidatescosttiming;trainer_no_gt.pydoesnotloadGEDreferences. Coretrainingtargetsbestnotoptimalgroundtruth."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gedranker",
+      "cited": "diffged",
+      "reference_label": "[13]",
+      "description": "Six-author arXiv2503.18245 DiffGED precursor; same existing formally published retitled representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            11
+          ],
+          "locator": "Explicit in-text citation [13] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gedranker",
+      "cited": "difusco",
+      "reference_label": "[31]",
+      "description": "Explicit anisotropic-message architecture source and full NeurIPS2023 reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12,
+            21
+          ],
+          "locator": "Explicit in-text citation [31] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gedranker",
+      "cited": "dimes",
+      "reference_label": "[32]",
+      "description": "Explicit anisotropic-message architecture source and full NeurIPS2022 reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12,
+            21
+          ],
+          "locator": "Explicit in-text citation [32] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gedranker",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "[27]",
+      "description": "Actual Gumbel-Sinkhorn method text and four-author arXiv1802.08665 reference to formal stable identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "Explicit in-text citation [27] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "All28formalpages/fullscienceappendices/checklist/references/tablesread,poster/corecode/3985membersandsixREADMEinventorycomplete.4actualcitations, officialissued2026Apr23whilevenue2025, Maidentitynormalized; referencequality/negativecases/budgets/signandrectangularrelaxationlimitsseparatedfromharddecoderandempiricalutility.",
+    "Final stable-ID note-link audit corrected relative paths after catalogue classification migrations; scientific claims and citation edges unchanged."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6fbfa4d8b1ef6bc558d801147a3a588d8404a32f607aeba26fc0079ffaea5d58"
+}

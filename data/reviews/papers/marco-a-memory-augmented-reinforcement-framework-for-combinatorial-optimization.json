@@ -1,0 +1,507 @@
+{
+  "version": 1,
+  "paper_id": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+  "note_path": "specialist/marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "66ab7209719954028feb03669f04caad48bb9ba23374d7ba60c7298dbb040734",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2024/0766.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2024/0766.pdf",
+      "version": "Formal IJCAI2024 nine-page proceedings PDF, complete main/references/allfigures and tables read",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-25659b6519/publisher.pdf",
+      "sha256": "d0b137edbff1814344696f9cc8a38399be1998062afabcf3a6284cef5987ba26",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://raw.githubusercontent.com/TheLeprechaun25/MARCO/HEAD/Supplementary_Material_MARCO.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/TheLeprechaun25/MARCO/HEAD/Supplementary_Material_MARCO.pdf",
+      "version": "Author repository four-page Supplementary Material for MARCO, complete AppendicesA-D and references, commit6106cb2819ca89208729fc46badb6d03d5566fb1",
+      "local_path": "research/full-text-review/marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization/supplement.pdf",
+      "sha256": "f4a1a655a56704f5452dfa6fbd8539ce22972184eefd25c9852f453a81ca8a91",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "FreshmainPDF1-4alltext:4authorsUPV+Polytechnique, memoryframeworkdirectNNinputs KNN similarityweightedactions vs merelyexternal tabu; independent/sharedthreadmemories. Own substantive MC/MISbitflipimprovement andTSPfreshconstructor variants (notsequentialsamepipeline), separateproblemimplementations. Rewardbest-improvementminusrevisitpenalty; fullAlgorithms1/2andformulas1/2read; code+explicitscientificsuppavailablepaperfootnote."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 9,
+      "notes": "Read complete pages5-9 including all results, limitations and bibliography. Separate problem-trained models, MC/MIS50 threads2N steps and TSP100 starts20 constructions; A100 vs Xeon baseline caveat. MIS printed minimum definition conflicts with maximum objective; Tables2/3 KaMIS beats MARCO, TSP50016.78 worse Concorde16.59 and LEHD16.63 with different time budgets. Full bibliography identities manually checked, DGL is Bother tree-search audit not routing DGL. All main/supp figures and tables visually checked in four rendered contact sheets, original Fig2 crop publicly viewed."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read all four supplementary pages A-D and full refs: MC/MIS64-dim3layers, TSP512-dim6layers16heads; AdamW1e-4,128batch1000episodes/epoch,100/250epochs, .95 discount/20step graph training. TSP200base+50memory-only training, frozen original weights; Table1TSPk3/10 constructions differs maink20/20; source defaultsk10/10samples/50POMO/10000memory vs supplement100000. Memory O(N^2+TN) or O(N^2+TN^2), empirical memory and penalty ablations, five models per penalty, complete Figure3 visualchecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Memory addresses repetitive exploration and action-only history.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Related Work/Memory"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Similarity retrieval feeds complete visited-solution history into parallel neural policies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Contributions/Algorithms1-2/Fig2-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Separate binary-improvement and fresh-tour construction models; REINFORCE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3-5"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One trained model per task; binary improvement and TSP construction are separate implementations, not one pipeline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections4/6.2"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "MC/MIS/TSP data, budgets and Tables1-3 support qualified gains and classical-solver exceptions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections6.1-6.3/Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Growing memory, task-specific integration, negative baselines and printed MIS objective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections6.1/6.3/7"
+        }
+      ]
+    },
+    {
+      "id": "supplement",
+      "category": "reproducibility",
+      "statement": "Complete supplementary hyperparameters, ablations and memory analysis; TSP setting differences.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "AppendicesA-D/fullrefs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity byline publication and arxiv history",
+      "source_url": "https://ijcai.org/proceedings/2024/766",
+      "locator": "PDFp1 exacttitle/fourauthors/twoinstitutions; officialBibTeX pages6931-6939 DOI10.24963/ijcai.2024/766 month8/year2024; arxiv2408.02207history onev1 2024-08-05 samefourauthors/title, savedhistoryHTML."
+    },
+    {
+      "field": "supplements scientific inventory and source checks",
+      "source_url": "https://github.com/TheLeprechaun25/MARCO/tree/6106cb2819ca89208729fc46badb6d03d5566fb1",
+      "locator": "649-entry untruncated tree/335985970B inventory: single4p Supplementary_Material_MARCO.pdf, no scientificzip/tex/pptx/video;36smallcode/config/README files cached, fullrootREADMEread plus corememory/environment/evalconfigschecked. All9+4PDFpages actualread/checkpointed/visuallyrendered. No fullweights download/trainingclaim."
+    },
+    {
+      "field": "figure original",
+      "source_url": "https://ijcai.org/proceedings/2024/0766.pdf#page=4",
+      "locator": "OriginalFig2crop48,48,302,282 at3.5x publicfile actualview; completecaption."
+    },
+    {
+      "field": "classification and configuration discrepancies",
+      "source_url": "https://ijcai.org/proceedings/2024/0766.pdf#page=5",
+      "locator": "Unique model perproblem6.2/AppA.3; two independentlysubstantiveNNroles notsequentialconstructimprovepipeline. Maink20/20TSPconstructions vsAppTable1k3/10;sourcek10/10samples/50starts/1e4memory vsApp100starts/1e5. MCcode±1similarityvsprinted0/1; MISprintedminobjectivecontradiction preserved."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.2016",
+      "description": "Foundational neural construction/active-search reference; actual arxiv1611.09940 matches retained reference entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2018",
+      "description": "Constructor/dataset reference; source year2018 identifies preprint of same authors/title formal ICLR2019.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.2020",
+      "description": "TSP constructor/reward and initialization basis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            6,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al.2019",
+      "description": "Improvement-method background; source2019 preprint identifies actual three-author formal ICLR2020 article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian2019",
+      "description": "Local rewriting background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al.2021",
+      "description": "Neural improvement background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al.2022",
+      "description": "Beam-search comparison/background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.2021",
+      "description": "Test-time parameter adaptation background; same actual title/authors as formal ICLR2022.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al.2021",
+      "description": "Entropy-based exploration comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al.2024",
+      "description": "Population exploration comparison; volume36/year2024 source matches formal NeurIPS2023 title/five authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.2023",
+      "description": "External pheromone versus in-policy memory comparison; actualarxiv2309.14032/title/fiveauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al.2020",
+      "description": "ECO-DQN action-history comparison and MC baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "Bother et al.2021",
+      "description": "DGL-labelled MIS baseline identifies What is Wrong... tree-search audit, not the routing DGL article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al.2020",
+      "description": "LwD baseline and MIS evaluation protocol. Identity crosscheck: Complete Ahn/Seo/Shin2020 ICMLpp134–144 bibliography title splits maximum independent / sets across PDFpages7–8 and footer/column ordering disrupts lexical concatenation. Actual body names LwD and Ahn2020 onpage6; exact target confirmed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified. Final manual literal bibliography/body identity resolution: Complete Ahn/Seo/Shin2020 ICMLpp134–144 bibliography title splits maximum independent / sets across PDFpages7–8 and footer/column ordering disrupts lexical concatenation. Actual body names LwD and Ahn2020 onpage6; exact target confirmed."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.2023",
+      "description": "FlowNet MIS baseline/data.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "lehd",
+      "reference_label": "Luo et al.2024",
+      "description": "Heavy-decoder comparator; volume36 and full five-author title match formal NeurIPS2023.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "dact",
+      "reference_label": "Ma et al.2021",
+      "description": "TSP improvement comparator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    },
+    {
+      "citing": "marco-a-memory-augmented-reinforcement-framework-for-combinatorial-optimization",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.2023",
+      "description": "Flexible neural k-opt comparator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Explicit body citation/baseline plus matching full bibliography; identity checked, source-year variants qualified."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced draft byline/tasks/scope with complete13-page scientific review.",
+    "Classified specialist with separately implemented constructive and improvement variants.",
+    "Recorded original tables, negative cases, hardware/budget limits and source-setting discrepancies.",
+    "Added original Fig2 and18 manually identified explicit internal citations.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged.",
+    "Resolved final lexical citation-identity flag from actual complete bibliography/body and exact byline/version, preserving source title/date discrepancies."
+  ],
+  "reviewed_note_sha256": "b7a16e9b77b117aee4b00af9d2a302ca6c771bf2cbe8af37aabd2ffd234ef9f8"
+}

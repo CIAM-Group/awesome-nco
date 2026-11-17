@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { formatPublicDate, paradigmLabels, scopeShortLabels } from '../lib/data'
+import { formatPublicDate, paperClassification, scopeShortLabels } from '../lib/data'
 import type { Paper } from '../types'
 
 interface PaperCardProps {
@@ -32,7 +32,7 @@ export function PaperCard({ paper, side = 'right', compact = false }: PaperCardP
           <div><dt>Institution</dt><dd>{paper.institutions[0]}{paper.institutions.length > 1 ? ` +${paper.institutions.length - 1}` : ''}</dd></div>
         </dl>
         <div className="paper-card__footer">
-          <span>{paradigmLabels[paper.paradigm]}</span>
+          <span>{paperClassification(paper)}</span>
           <span>{paper.problem_families.slice(0, 2).join(' · ')}{paper.problem_families.length > 2 ? ` +${paper.problem_families.length - 2}` : ''}</span>
         </div>
         <ArrowUpRight className="paper-card__arrow" size={17} aria-hidden="true" />

@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "paper_id": "hybrid-scattering-clique",
+  "note_path": "specialist/hybrid-scattering-clique.md",
+  "baseline_note_sha256": "72267a4aedf7901137a0b30933653e161a69eb387afd7bbfa8503c5c5f9ba414",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-3916b538fd.pdf",
+      "sha256": "35951b913fc4c909b496176184dbba94655cc21a7dd392904a9608c1a511248b",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Supplemental-Conference.zip",
+      "version": "publisher supplementary PDF inside official ZIP",
+      "local_path": "research/full-text-review/hybrid-scattering-clique/zip-1.pdf",
+      "sha256": "c3c62f37ae44104ae4f227f4af570f0faae60761b9568876c144080ff335097f",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "mc-camera-ready-supp.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete motivation/related work, genuine maximum-clique task, two-stage pipeline and all graph-signal-processing definitions; oversmoothing motivation is not an exact-solver claim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read every wavelet/filter/attention/readout equation, node statistics, unsupervised edge-mass plus nonedge-penalty loss and full Lemma1 proof. Exact zero nonedge penalty iff support clique does not guarantee finite-loss outputs are maximum cliques."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read decoder pseudocode/prose and all real/large dataset settings/results; true-optimum versus Gurobi0.1s normalization; Table1 and Figures2-3; note RUN-CSP accuracy counterexample, decoder budget and indexing inconsistencies, parameter-count claim comparison conditions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete LARGE table, parameter counts, conclusion/acknowledgements and every bibliography entry. LARGE ratios use short-budget heuristic incumbent and may exceed one; broad abstract superiority has counterexamples."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read full checklist, implementation link, all dataset stats, precise loss relationship and explicit statement that Erdos probability corollary does not apply, entire SMALL table and discussion. Checklist admits no limitations/compute disclosure."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read all qualitative comparison captions/examples and complete supplement references; examples include near misses, not universal exact recovery."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Oversmoothing can blur clique members and nearby nonmembers for score-based decoding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction and Figure 2"
+        }
+      ]
+    },
+    {
+      "id": "hybrid",
+      "category": "contribution",
+      "statement": "Attention mixes multiscale band-pass scattering and low-pass filters with readouts across layers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections 3.1-3.3"
+        }
+      ]
+    },
+    {
+      "id": "loss",
+      "category": "method",
+      "statement": "Unsupervised edge/nonedge quadratic loss and greedy multistart decoding construct feasible cliques.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Sections 3.4-3.5"
+        }
+      ]
+    },
+    {
+      "id": "no-certificate",
+      "category": "limitation",
+      "statement": "The selected loss explicitly does not satisfy the Erdos Goes Neural probability corollary.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Appendix C"
+        }
+      ]
+    },
+    {
+      "id": "metric",
+      "category": "experiment",
+      "statement": "LARGE scores normalize to a short-budget Gurobi incumbent, allowing values above one without exceeding a true optimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "Section 4.3 and Table 2"
+        }
+      ]
+    },
+    {
+      "id": "counterexample",
+      "category": "experiment",
+      "statement": "TWITTER score0.952 is below accurate RUN-CSP0.987; longer-budget Gurobi/heuristics also beat several settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Tables 1-2 and narrative"
+        }
+      ]
+    },
+    {
+      "id": "compute",
+      "category": "reproducibility",
+      "statement": "The checklist discloses no compute amount/hardware; decoder parameters and model sizes differ by dataset.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Checklist item10; main Tables1-2 and model-size paragraph"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "All optimization experiments target maximum clique using specialized loss/features/decoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections 3.5-4"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, venue, year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Paper-Conference.pdf",
+      "locator": "Main PDF page1 title block, Cornell/Universite de Montreal/Mila/UCLA affiliations and NeurIPS2022 footer; official landing matches."
+    },
+    {
+      "field": "date, publication.date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ec88961d36d9a87ac24baf45402744f-Abstract-Conference.html",
+      "locator": "Formal proceedings supports publication year2022; prior exact2022-12-06 not supported by this record."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/yimengmin/GeometricScatteringMaximalClique",
+      "locator": "Official Supplement A direct code link and matching repository."
+    },
+    {
+      "field": "scope, paradigm, problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8ec88961d36d9a87ac24baf45402744f-Paper-Conference.pdf",
+      "locator": "Maximum-clique-only experiments, specialized constructive greedy decoder in Section3.5."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ec88961d36d9a87ac24baf45402744f-Abstract-Conference.html",
+      "locator": "Manual official landing and archive inspection2026-11-16. Supplemental-Conference.zip contains exactly mc-camera-ready-supp.pdf, four pages, all read, including checklist/certificate caveat/dataset and SMALL tables/examples; no other archive members."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ec88961d36d9a87ac24baf45402744f-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-12-06; cached evidence research/full-text-review/hybrid-scattering-clique/supplement-landing.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/8ec88961d36d9a87ac24baf45402744f-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2022-12-06; primary cachedHTML research/full-text-review/hybrid-scattering-clique/supplement-landing.html; citation_title=['Can Hybrid Geometric Scattering Networks Help Solve the Maximum Clique Problem?']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hybrid-scattering-clique",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018a), NeurIPS",
+      "description": "Explicit graph-optimization predecessor citation; Erdos is additionally a loss source and benchmark baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hybrid-scattering-clique",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020), NeurIPS",
+      "description": "Explicit graph-optimization predecessor citation; Erdos is additionally a loss source and benchmark baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "hybrid-scattering-clique",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019), arXiv:1906.01227",
+      "description": "Explicit graph-optimization predecessor citation; Erdos is additionally a loss source and benchmark baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Joshi and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded note from all main/ZIP supplementary pages, including explicit denial of inherited Erdos probability guarantee.",
+    "Separated optimum-based versus Gurobi-incumbent metrics and retained stronger RUN-CSP/Gurobi/heuristic cases.",
+    "Documented missing compute details, structural-feature/preprocessing uncertainty, decoder indexing and runtime table/prose caveats.",
+    "Corrected unsupported exact date to publisher-supported year and added official code; three explicit internal citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5da8b7430c253363373a7b9fec394764f59a95a0e9d7602f74f178dc560aba90"
+}

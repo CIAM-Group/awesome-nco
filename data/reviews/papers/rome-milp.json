@@ -1,0 +1,527 @@
+{
+  "version": 1,
+  "paper_id": "rome-milp",
+  "note_path": "generalist/rome-milp.md",
+  "baseline_note_sha256": "7cce0a3fe35a294fc0b6d7ddac1e0fcbce09841299df91682bd9a23c14ec83e0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/3071ed272658c4418309962ba7b94ec8-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/3071ed272658c4418309962ba7b94ec8-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-43d9b25982.pdf",
+      "sha256": "46095433ead858a524d99fd01c5b0c9c10b3c0d3f288b120fd8f85e6988e5677",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full8authorNUDT/USTC identity/introductionrelated/formulation. Sharedthree-native-domainNNmodelplusPS actuallyclaimedcrossfive, classifyexistinggeneralist onactualexperimentratherthanMoEword; robusttrainingnotoptimizationproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read solutionmarginalweightedBCEandPSrestrictedclassicalsolver, sharedGNN/densesoftexpertandmultidecoderweights, diversitycosineregularizer/randomnormalizedGaussianlearnableradiusconsistency. Nooptimization/orthogonalityguaranteeinferred."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read interdomainGroupDROminmax/alternatingqweights, exact240x3sharedtrain80x3valid/100testperfamily, five-nativetaskTable1, BKS3600singlethreadnotcertopt, PS1000 andselectedMIPLIB6/5+15testscopes."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allinterpretabilityexpertactivation/tSNEandcompletefirst2bibliographypages. CurrentauthorREADMEexplicitjournalextensionnotformalarchitecture; noextraunreviewedtaskclaimsimported."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read completebibliographyall68entries, distinguishactualroutingMoE/MTL/GOAL/UniCO references andmiscellaneousmetadata. OfficialNeurIPSpostereventORwRQm differsauthorREADMEVmK route needprovenancechecked, nobyteidentityassumption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullchecklistclaims/limitations/theory/reproducibility/codeNoanswerandsettings/statistics; notconfusechecklistYeswithactualproof/errorbars."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read remainingchecklistcompute/licenses/assets/human/LLMquestion. Noadditionalproof/sciattachmentsimplicitlyassumedfromchecklist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read finalchecklist+Agraphfeatures/GNN, baselineConPSreimplemented andallPSradiiTable3, train3008020vsmain240/80 countmismatch, RoME2000ep/128/3experts3heads/2kepochs, libraryversions vs currentjournalREADME."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read allbenchmarkdimensions/fullMIPLIBmanifest/subsetcriterion, Tables7-11everyresult inclRoME lossesdws008-01/bab2/bab6/bg512142vsGurobiorConPS, explicit35/100CA9/100SClosses; Table7ConPS14.2vs210.6-19614.6 andIISscpk4/scpl4scopeinconsistency."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "Read allfinalTables12-16/limitationsfutureimpacts. AblationIPsingleheadbetter/SCnoMoEbetter; perturbrawfeaturesWA.05beatsdefault.06, selectedradius.15SC.02beats.10.05. Hightrainingcost/denseMoEsparsefuture/robustobjectiveformalnotoptguarantee. All29pagescovered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rome-contribution",
+      "category": "contribution",
+      "statement": "Shared dense-softMoE predictor andtrainingdomainDRO/perturbation transferoneNN acrossIS/IP/SCtoWA/CAandselectedMILPs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections3-4/Table1"
+        }
+      ]
+    },
+    {
+      "id": "rome-method",
+      "category": "method",
+      "statement": "BCEfromweightedfeasiblesolutions, 3experts3heads, groupDRO/consistency feedclassicalPSrestrictedsearchwithtunedfamilyparameters.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            23,
+            24
+          ],
+          "locator": "Eq3-17/Table3-4"
+        }
+      ]
+    },
+    {
+      "id": "rome-experiment",
+      "category": "experiment",
+      "statement": "Averagegainsandactualzero-shotnativefamilies coexistwith35CA/9SClossesandMIPLIB/ablationcounterexamples; BKSandbudgets differbyblock.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "locator": "Tables1/7-16"
+        }
+      ]
+    },
+    {
+      "id": "rome-classification",
+      "category": "classification",
+      "statement": "Generalist constructive onactualonecheckpointtrainIS/IP/SC,testWA/CA unchanged; sharedpredictioncomponentwithclassicalPSnotfreeuniversaldecode.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            24
+          ],
+          "locator": "Training/Evaluation paragraph/Table1/Table3"
+        }
+      ]
+    },
+    {
+      "id": "rome-limits",
+      "category": "limitation",
+      "statement": "Noarbitrarydomain/optimalitytheorem; namedsubset/split/gap inconsistencies and currentjournalextensionrelease distinctfromformalconferenceversion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            24,
+            25,
+            26,
+            28,
+            29
+          ],
+          "locator": "Objectiveandappendixscope/limitations; currentprimaryREADMEprovenance"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3071ed272658c4418309962ba7b94ec8-Abstract-Conference.html",
+      "locator": "Title8authors/NUDT+USTC PDFp1 formalNeurIPS2025."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3071ed272658c4418309962ba7b94ec8-Abstract-Conference.html",
+      "locator": "Official HTMLcitation_publication_date2026-04-23, venueyear2025 preserved."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3071ed272658c4418309962ba7b94ec8-Abstract-Conference.html",
+      "locator": "ManualpublisherPaper/Bibtexonly; all29integratedpagesA-E+checklistread. Author3871363byteZIPnoPDF/TeX/ipynb; NeurIPSevent115327scientificposter1484522bytesfullyread/viewed. EventORwRQmQ6UXYFdiffersREADMEVmK7gYaKXl; latterordinaryAPI403."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/happypu326/RoME",
+      "locator": "READMEexplicitextendedjournalversion; model/moe.pycurrenttop-k/shareddedicated/perturbations vsformaldensesoft3experts3heads, model/loss.pygroupDRO, test.pysharedcheckpointloading andsolverentries; checkpointfilenamealone nothistoricalequivalence."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rome-milp",
+      "cited": "apollo-milp",
+      "reference_label": "[32]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13,
+            23,
+            25
+          ],
+          "locator": "Explicit in-text citation [32] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "cl-lns",
+      "reference_label": "[16]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "conpas",
+      "reference_label": "[19]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            12,
+            24
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "gcnn-branching",
+      "reference_label": "[11]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            11,
+            23,
+            24,
+            25
+          ],
+          "locator": "Explicit in-text citation [11] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "general-lns-ilp",
+      "reference_label": "[29]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [29] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "gnn-gbdt-ip",
+      "reference_label": "[31]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [31] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "hem-cut-selection",
+      "reference_label": "[12]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation [12] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "[26]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [26] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "learn-configure-separators",
+      "reference_label": "[28]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [28] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "learn-lns-ip",
+      "reference_label": "[30]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [30] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "predict-and-search",
+      "reference_label": "[18]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            8,
+            12,
+            24,
+            27
+          ],
+          "locator": "Explicit in-text citation [18] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "symb4co",
+      "reference_label": "[13]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [13] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "trgnn-node-selection",
+      "reference_label": "[27]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [27] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "goal",
+      "reference_label": "[43]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "Explicit in-text citation [43] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "mtpomo",
+      "reference_label": "[41]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [41] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "mvmoe",
+      "reference_label": "[40]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation [40] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "unico",
+      "reference_label": "[48]",
+      "description": "Explicitintextnumberandfullmatchingactualbibliographytitle/authors/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "Explicit in-text citation [48] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rome-milp",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "[20] via [20?23]",
+      "description": "MILP machine-learning background cites inclusive range20?23 containing MIP-GNN; exact Khalil/Morris/Lodi AAAI36 pages10219?10227 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read complete body citation paragraphs: [20] via [20?23]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [20] via [20?23]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall29formalpages/A-E+checklist+officialposter, inventoriedcurrentjournalextensioncode separately; exactissueddatecorrected; explicitsharednativeweights retainsgeneralist, boundedreference/tuning/negativecases/sourcediscrepanciesrecorded;17explicitcitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6f80c390d092ff1dc81b08528be96ab2fcd10b6ab9c13e598b7356b16b4bfe45"
+}

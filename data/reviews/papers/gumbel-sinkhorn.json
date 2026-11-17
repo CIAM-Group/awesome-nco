@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "paper_id": "gumbel-sinkhorn",
+  "note_path": "studies/gumbel-sinkhorn.md",
+  "baseline_note_sha256": "a7ef3568469e94763de2fe382d6dadd117fef8d5454c36dd9f2a3e259174bfef",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1802.08665",
+      "version": "arXiv:1802.08665v1, submitted 23 February 2018; published-ICLR-2018 header",
+      "retrieval_url": "https://arxiv.org/pdf/1802.08665",
+      "local_path": "research/import-272/nco-957b5e9cee.pdf",
+      "sha256": "2f54a51bb7e31b4704d14fe5b0ac21b33a2c950954cc19768bf711e8630368bc",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh reading of complete introduction, entropic assignment theorem, independent-continuous-entry assumption, practical truncation and permutation-equivariant network construction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "Read all Gumbel/variational constructions, all main experiments, tables, provenance and related work; distinguished implicit matching samples from exact factorial Gibbs sampling."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 14,
+      "notes": "Read complete discussion and entire bibliography. Checked Vinyals sorting reference is Order Matters, not Pointer Networks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 18,
+      "notes": "Read every step of scaling/unique-LP-limit proof, softmax correspondence, Figure 3, all experimental protocols and parameter counts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 22,
+      "notes": "Read complete affine-Gumbel KL calculation, all supplemental experiments/tables, categorical KL inequality proof and complete marginal-inference discussion. Visually inspected framework, reconstructions, theorem, tables and operator analogies."
+    }
+  ],
+  "claims": [
+    {
+      "id": "relaxation",
+      "category": "contribution",
+      "statement": "Introduces deterministic Sinkhorn learning layers and stochastic Gumbel-Sinkhorn implicit relaxations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections 2-4"
+        }
+      ]
+    },
+    {
+      "id": "theorem",
+      "category": "method",
+      "statement": "Exact entropic normalization converges to a unique permutation almost surely under independent absolutely continuous entries; finite iterations are approximate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            15,
+            16,
+            17
+          ],
+          "locator": "Theorem 1; Appendix A Lemmas 1-3 and full proof"
+        }
+      ]
+    },
+    {
+      "id": "variational",
+      "category": "method",
+      "statement": "Densities of implicit permutation distributions are intractable; an auxiliary affine-Gumbel-space KL can yield a looser bound.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            19,
+            20
+          ],
+          "locator": "Section 4.1; Appendix B.3; Appendix C.3"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Separately specified networks study sorting, puzzles, arbitrary supervised assembly and worm identity inference; success varies by task/condition.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            18,
+            20,
+            21
+          ],
+          "locator": "Tables 1-7; Sections 5.1-5.4; Appendix B protocol"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "A reusable differentiable permutation modeling/inference layer, with distinct task networks, is not one jointly trained generalist solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Network construction; four task definitions; discussion"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Variable image structure, temperature/truncation and surrogate variational bounds limit practical conclusions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            10,
+            11,
+            20
+          ],
+          "locator": "Sections 3, 4.1, 5.2, 6-7 and Appendix C.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/1802.08665v1",
+      "locator": "PDF page 1 full author names/affiliations and published conference header; capitalized first author from title page."
+    },
+    {
+      "field": "formal publication",
+      "source_url": "https://iclr.cc/virtual/2018/poster/183",
+      "locator": "Manually opened official ICLR 2018 poster page, title/four authors and link to the OpenReview paper. Publication year 2018, no individual acceptance day inferred."
+    },
+    {
+      "field": "date and reviewed version",
+      "source_url": "https://arxiv.org/abs/1802.08665",
+      "locator": "Manual arXiv submission history: only v1, 23 February 2018; cached PDF page 1 carries arXiv:1802.08665v1 and same date."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/google/gumbel_sinkhorn",
+      "locator": "PDF page 11 explicit Google repository link; manually opened public archived repository, sorting directory and operator implementation."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://iclr.cc/virtual/2018/poster/183",
+      "locator": "Official ICLR page manually inspected: PDF link only. Available arXiv v1 integrates scientific Appendices A-D (proofs, methods, results and discussion), all read; every scientific appendix referenced in the main text is present. OpenReview forum and legacy API notes?id=Byt3oJ-0W returned 403 ChallengeRequiredError, so no claim is made that unknown attachment fields were successfully inventoried. Under the confirmed policy, the complete identified arXiv scientific version suffices absent an explicitly missing scientific attachment."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1802.08665",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-02-23; title on abstract page: Learning Latent Permutations with Gumbel-Sinkhorn Networks. This date is preprint history, not formal publication. Cached research/full-text-review/gumbel-sinkhorn/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gumbel-sinkhorn",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Suggests reinforcement learning as a possible extension for sequential improvement of permutation reconstructions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Section 7 explicit Bello et al. citation and matching full bibliography entry on PDF page 11"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded all six sections with theorem assumptions, practical truncation, implicit perturbation distribution, variational KL and exact task metrics.",
+    "Separated reusable modeling layer and task-specific networks from a generalist neural solver; retained study category.",
+    "Corrected first-author capitalization and refused false Pointer Networks citation identity: the bibliography cites Order Matters instead.",
+    "Recorded one exact internal citation and kept unresolved OpenReview attachment-field access explicit."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "90e11bef3ad05278be3c3be58d720ca776aef0fc7d5aded7bfb94eb59f5822a6"
+}

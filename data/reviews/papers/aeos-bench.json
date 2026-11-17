@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "paper_id": "aeos-bench",
+  "note_path": "studies/aeos-bench.md",
+  "baseline_note_sha256": "7968d8b28db3218a80ba3be341a43055ce03d6150c0f1b3085cc3351bc85a976",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/7c40c5050bd029a3ea7ff8b01412f735-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/7c40c5050bd029a3ea7ff8b01412f735-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-343e566993.pdf",
+      "sha256": "a06f55ee2c9291b6abb69c8d33eadb161c0018e34ab40c1e862f0ed3d1bdeb57",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read alltitle/authors/Beihang/abstract,introFigure1description/Table1/relatedwork. 3907assets16410scenarios1-50sat50-300tasks3600steps;predictedfeasibilitymoduleanditerativeretrain nothardcertification. Annotationoptimalitytobedetermined."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allscenario/actionabstraction5simulatorconstraints,heuristicdistanceinitialization+iterativefilter/humanannotation notcertifiedoptimal;3907assets/split16218+3x64. Dynamicstatequeriesandfull-datasetnormalization, learnedconstraintapproxlabelscontributionnotstandalonefeasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allarchitectureEqs4-10 andfullTables2/3, metrics/hardware90kiterations48GPUh. LearnedlogitmaskEq8multiplicationnotguaranteefeasibility. TestCR19.25<baseline19.44/PCR22.31<24;fullmodelCRloweriterativeonly. CS7.33→6.28notblanketmetricdominance. TAT/hunitsneedappendix/codecheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read conclusion/acknowledgement/allrefs1-32. BaselineMSCPO-SHCS[9]bibliographicpaperMegaLEOnetworkQoSpathplanningnotobviousobservation-schedulingidentity;reviewcodeforqualification. Datasetstudyalsomodelmethodscopekeepbenchmark."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allremainingrefs33-44/checklist1-5 including explicitabsenceoftheoreticalguarantees. Datasetannotationsreference notcertifiedoptima;publishingcodeauthorlinkchecked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read allchecklist5-12 inclNoerrorbars(computeprohibitive),licensesNA despiteBasilisk/websourcesclaimed;noinferredstatisticalguarantees."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 22,
+      "notes": "Read remainingchecklist/Apointtargetlimitation/Bimpact/CfullsimulatorarchitectureFigure9/completeTable4all21satelliteparamsandTable5taskduration/release/due0-3600s. Entire22pages44refs/all5tablesA-Ccovered. Main8/9resultsvisualchecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Dynamicconstellationassignmentrequiresorbital/attitude/power/FOV/continuousobservation/windowconstraintsratherthansimplifiedmatching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Fullintro/relatedwork/platformsetup"
+        }
+      ]
+    },
+    {
+      "id": "benchmark",
+      "category": "contribution",
+      "statement": "3907assets16410scenarios1-50sat50-300task3600seconds;16218traintrajectoriesplus3x64evaluationsplits;websourcedtestpropertiesstillinsimulation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            21,
+            22
+          ],
+          "locator": "Completecounts/splits/parameterTables1/4/5"
+        }
+      ]
+    },
+    {
+      "id": "reference-labels",
+      "category": "method",
+      "statement": "Distanceinitializer/iterativefilter/humanreviewreferenceannotationsnotgloballycertifiedoptima;learnedpaircontributionlabelsnotunaidedsatellitecompletioncertificates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Fullannotationpipeline/approximatefeasibilitydefinition"
+        }
+      ]
+    },
+    {
+      "id": "scheduler",
+      "category": "method",
+      "statement": "Dynamicstatequeries/taskencoder/satellitedecoder/MLPfeasibilitytime/learnednull/constraintbias plus3x30kthresholdfilteredrolloutretraining;simulatorhardvaliditydistinctlearnedmask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "AllEqs1-10 andmodeldescription"
+        }
+      ]
+    },
+    {
+      "id": "metric-results",
+      "category": "experiment",
+      "statement": "ValunseenCS4.43vs5.21/CR35.42vs35.35/PC68.99vs140.83;testCS6.28vs7.33butCR19.25<19.44/PCR22.31<24;fullmodelnotallmetricdominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "AllTable2/3rowsandmetricweights,visuallychecked"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "ValunseeniterativeonlyCR40.88vsfull35.42butPC140.87vs68.99andCS4.72vs4.43;noerrorbarschecklistexplicitNo.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            16
+          ],
+          "locator": "CompleteTable3andstatisticalsignificancechecklist"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Benchmarkstudywithproposedtask-specificscheduler,notgeneralistacrossunrelatedCO;pointtargets/biasedscenariofrequency/realexecutionunvalidated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            21,
+            22
+          ],
+          "locator": "Actualtaskdomain/limitations/setup"
+        }
+      ]
+    },
+    {
+      "id": "unit-qualification",
+      "category": "limitation",
+      "statement": "PrintedTAThours6-7exceedonehourhorizon;publicTATrawseconds andPCsumassignedsteps*Wwithoutconversionatmetricstage. Noinventedcorrectedunitorindependentphysicaltotal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8,
+            9,
+            22
+          ],
+          "locator": "Exactprintedhorizon/taskranges/tableunitlabels plusauthorcodefunctions"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Paper90k3loss48GPUh/96simulators8RTX4090serverversuscurrentcode200kCEforward;sourceversiondifferenceexplicitnotclaimedreplication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            15,
+            16,
+            17
+          ],
+          "locator": "Fulltraining/resources andprimarycurrentmodel/config/README"
+        }
+      ]
+    },
+    {
+      "id": "baseline-attribution",
+      "category": "limitation",
+      "statement": "MSCPO-SHCS[9]bibliographynamestheLEOnetworkQoSpathplanningpaper,notclearlytheobservationhillclimbingidentity;adapterdetailsneedchecking.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8,
+            9,
+            11
+          ],
+          "locator": "Exactbodybaselineandfullreference9"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c40c5050bd029a3ea7ff8b01412f735-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS38/2025 MainConferencetrackDOI10.52202/085713-2878,exact6authors/BeihangPDFp1matched;yearprecisionpreserved."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c40c5050bd029a3ea7ff8b01412f735-Abstract-Conference.html",
+      "locator": "ManualpublisherallPaper/BibtexlinksnoSupplemental. OpenReviewv1/v2notesAPIforumisil4sVqSQboth403cached. Full22pageformalPDFall44refs/checklist/A-C/all5tablesread;two4pagecontactsheetsp4/6/8/9/2/5/21/22visuallyread. Complete99fileauthorrepotreeinventory;onlydata/orbits.zip1,513,616bytesdownloadedandall4995membernamesinventoried(noPDF/video/nestedZIPscience),SHAinorbit-zip-inventory.json. Basilisksubmoduleissimulationdependency,notidentifiedseparatemissingarticle-scienceattachment."
+    },
+    {
+      "field": "sourceversion",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/7c40c5050bd029a3ea7ff8b01412f735-Paper-Conference.pdf",
+      "locator": "Actualpublisher22page2025versionidentity/SHAchecked;scientificappendicesintegrated."
+    },
+    {
+      "field": "code_url,data,version",
+      "source_url": "https://github.com/buaa-colalab/AEOSBench",
+      "locator": "Explicitprimaryauthorrepo,completeREADMEandselectedevaluator/model/config/controller/timerfunctionsread;treecommit58b8ac2cd6a1245115b7b236f53dc59469591d0e. Cached80Pythonfilesnotclaimedallread. READMEPython3.11.10/Torch2.6CUDA12.4/HFdatasetlinks;200kconfig/CEforwarddifferspaper90k3loss;noexecution/datasetdownloadexceptorbitZIP."
+    },
+    {
+      "field": "metricimplementation",
+      "source_url": "https://github.com/buaa-colalab/AEOSBench/blob/main/constellation/evaluators/turn_around_time.py",
+      "locator": "EntireTATfunctionrawmeancompletion-minus-releaseandPowerUsageEvaluatorentiresumworkingsteps*sensorpowerread. Timerincrements1,constantsINTERVAL1secondMAX_TIME_STEP3600. Publicationh/Whconversionnotpresentinthesemetricfunctions;do notclaimglobalrepoabsenceofanyconversionorthatpublishedunitsindependentlycorrected."
+    },
+    {
+      "field": "citationidentityandbaseline",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/7c40c5050bd029a3ea7ff8b01412f735-Paper-Conference.pdf",
+      "locator": "All44fullreferencescomparedwith364catalog. PointerNetworks[29]body3/ref12exact. RejectedautomaticBelloNCOcandidate:actualref43Zhao2020TwoPhaseNCOdifferentpaper. SatNet[11]GohsatellitebenchmarknotWangSATNetdifferentiableSATlayer. MSCPO-SHCS[9]attributionnamesMegaLEOQoSpathplanning,qualifiednotinventedcorrectreference."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/7c40c5050bd029a3ea7ff8b01412f735-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/aeos-bench/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "aeos-bench",
+      "cited": "pointer-networks",
+      "reference_label": "[29] Vinyals, Fortunato and Jaitly (2015), Pointer Networks",
+      "description": "Explicit sequence-to-sequence combinatorial assignment precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Bodyrelatedwork PDFp3 [29]; exactfullreference PDFp12"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedactual3907/16410/splits/heuristicreferenceconstruction and dynamicphysicsconstraints;learnedlogitsdistinguishedsimulatorhardchecks.",
+    "SeparatedCS/energytradeofffromnonuniformCR/PCRandcomponentresults;hardware/errorbarlimitsrecorded.",
+    "DocumentedTATunit/horizonandrawmetriccodequalification/currentcodeprotocoldifferences/baselinecitationidentitywithoutinventedcorrections.",
+    "All22pages44refs/A-C/checklist/5tables/8visualpages/publisherdualAPI99filetree4995orbitZIPmemberschecked;oneexactcitation;studyunchanged.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "80e6c363b44d36c71c8c2e6145969b70f3edf943462fe78094a6b7a0293d8f2d"
+}

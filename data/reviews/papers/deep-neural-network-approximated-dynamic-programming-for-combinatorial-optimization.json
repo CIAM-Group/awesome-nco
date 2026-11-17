@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "paper_id": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+  "note_path": "specialist/deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "aa84285403a4a915959797335427e5cdf297c7111a321ed525c7a49bf0be0013",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/shenghexu/DNN-DP/41864a6df870391aa83c218db9dbad3465aa20e8/Deep%20Neural%20Network%20Approximated%20Dynamic%20Programming%20for%20Combinatorial%20Optimization.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/shenghexu/DNN-DP/41864a6df870391aa83c218db9dbad3465aa20e8/Deep%20Neural%20Network%20Approximated%20Dynamic%20Programming%20for%20Combinatorial%20Optimization.pdf",
+      "version": "Author-repository8p AAAI2020 scientificarticle at immutablecommit41864a6d, exacttitle/byline/formalDOIindependentlymatched; fullmain/algorithms/results/references, noextraappendix",
+      "local_path": "research/full-text-review/deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization/author-repository.pdf",
+      "sha256": "062c2a487a50fef5b3bf942ad02063361bc32fa930e066784d573f2b3c75ad7e",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Actual complete8p authorrepositorycopy pp1-3 read: motivation/relatedwork/DPvalueapproximation/two-stagebootstrap. SeparateDNNforeachremainingstage withsmallproblemexactrewardbase,largerlabelsfrompreviousnetworkrollouts; notexactBellmancertificateafterapproximation. No target-instancetraining, but sourceproblemdistributionsknown. Fullbody/backgroundcitationschecked againstactualbibliography later, nottitleguess."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Actualfullpp4-6 Algorithms1-2/CEpolicytraining/nativeLSAP/TSP/talentDPstates/allarchitecture/training/runtimeprotocol read. Independentnetworksperproblem/stage/size, specialistconstructive despitegeneralframework. FCNNvarybytask,LSAP3->20/TSP20and50/talent20actors20-30scenes. Testbatch10kLSAP/TSPand1ktalent P100+2Xeon CPUs,10000neuralbatch vsCPUallcores. Training28hLSAP20/70hTSP20/55-75hTSP50; nofreepretrainingorinstantadaptation. All2contactimages/sourceFig1+caption actualviewed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Actualfullpp7-8 Tables1-3/conclusion/complete references read. TSP50policy12.02/value24.69%vsAM1.76,FI5.53;talent30policy14.63/value21.77%;LSAPspeed tradesexactness. Runtimebatchthroughputnotperinstanceincluding training; proseEBBsequentialtimesdiffertablebatchtimings, no unqualifiedlatency/speedup. Official37member50MBZIP inventoried, solePDFSHAidenticalreadcopy; noextrascienceappendix/PDF/notebook. READMEfullread publicTSP20policyrelease/1600epochs60hP40vsprinted1500/70h, noassertsameconfigs. No training/modeldeserialization."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "ApproximateDPstages toreduceinferenceworkwithouttargetinstance retraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Value/policy variants andsmall-to-largepretraining plusrolloutdistributionfinetuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Equations2-6/Algorithms1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "SeparateFCnetworkperstage/task/size buildsassignments/tours/sceneschedules.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "NativeDPformulations/architectures"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Noactualcrossproblemcheckpointsharing; independenttask/stagebanks meansspecialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            8
+          ],
+          "locator": "Architectures/training/futureparametersharing"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Batchedthroughput gains trade exactness forLSAP/TSP/talent, withlargeTSP50and30scenenegativegaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Experimentalsetup/Tables1-3"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Training/storage/distributiondependence, approximateDPnotcertifiedexact, hardwarebatchingqualifications.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Two-phase rationale/runtime/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete8p scientificarticle includesarchitecture/hyperparameters/results/fullreferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Figure1/setup/Tables/fullreferences"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and readingcopy",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/5531",
+      "locator": "ExactDOI10.1609/aaai.v34i02.5531/fourauthors/pages1684-1691/date2020-04-03primarydeposit; authorrepositoryeightpagecopytitle/byline/orgs match, immutableSHA source. Formaldownload520; noidentifiedarxivhistoryandnosyntheticdate."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://github.com/shenghexu/DNN-DP/tree/41864a6df870391aa83c218db9dbad3465aa20e8",
+      "locator": "Full8p allscience/fullrefs/2figures/3tables actuallyread andbothcontactsviewed.37member50MBZIPonlyPDFSHAidenticalto readcopy/noextraPDF/TeX/notebook. READMEfullread, onlydocumentedTSP20policyworkflow/1600epochs60hP40notpaper1500/70h, noimplementationorbenchmarkexecution."
+    },
+    {
+      "field": "classification experimental and originalfigure",
+      "source_url": "https://raw.githubusercontent.com/shenghexu/DNN-DP/41864a6df870391aa83c218db9dbad3465aa20e8/Deep%20Neural%20Network%20Approximated%20Dynamic%20Programming%20for%20Combinatorial%20Optimization.pdf#page=5",
+      "locator": "Task-specificinputs/FCwidths anddifferentstagenetworkbanks notgeneralcheckpoint.10kLSAP/TSP/1ktalentbatch P100+CPU, notsingle-instancelatency. Table2TSP50gaps12.02/24.69vsAM1.76;Table3talent30gaps14.63/21.77. OriginalFig1crop350,48,530,2064x/fullcaptionactualview."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.2016",
+      "description": "Policy-gradient pointer-network background; exact title/fiveauthors/arxiv1611.09940.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Actualbodyandcompletebibliography"
+        }
+      ]
+    },
+    {
+      "citing": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.2017",
+      "description": "S2V-DQN graph learning background; exact five-authorNeurIPS2017 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Actualbodyandcompletebibliography"
+        }
+      ]
+    },
+    {
+      "citing": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2018",
+      "description": "Routing architecture/data/baseline; same three-author arxiv1803.08475 mapped to identically titled ICLR2019 work, notnew2018formalpaper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Actualbody/experimentsandfullreference"
+        }
+      ]
+    },
+    {
+      "citing": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.2015",
+      "description": "Recurrent architecture context, exact three-authorNeurIPS2015 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Actualbodyandcompletebibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readalleightpages ofidentifiedauthorcopy,fullmethods/results/references andsourceinventory.",
+    "Setactualfourauthors/formaldate andspecialistconstructiveclassification basedindependentmodelbanks.",
+    "SeparatedGPUbatchthroughputfromlatency/training, retainedsubstantialnegativequalitygaps andpublicworkflowdifferences.",
+    "AddedoriginalTSPnetworkFigure1 andfouractualinternalcitations."
+  ],
+  "reviewed_note_sha256": "b7692432e165b09c31f02362ccd8273c88efc06953a5797fccfd933067cb59f6"
+}

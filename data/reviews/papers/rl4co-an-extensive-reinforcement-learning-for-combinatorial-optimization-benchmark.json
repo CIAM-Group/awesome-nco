@@ -1,0 +1,1345 @@
+{
+  "version": 1,
+  "paper_id": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+  "note_path": "studies/rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "760a4b8795437d7609de5f72fed1fabbb7db700a903e989e1661f5eeea4b7d60",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "formal",
+      "url": "https://dr.ntu.edu.sg/server/api/core/bitstreams/1ac5ccd4-7cd1-4381-99a8-12db10c375cc/content",
+      "retrieval_url": "https://dr.ntu.edu.sg/server/api/core/bitstreams/1ac5ccd4-7cd1-4381-99a8-12db10c375cc/content",
+      "version": "Institutional NTU-hosted12-page ACM-layout KDD2025 formalreadingcopy; exacttitle/DOI33authors/pp5278–5289identified; AppendixBdirects fullarxivscience, not claimbyteidenticaltoACMdownload.",
+      "local_path": "research/full-text-review/rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark/formal-ntu.pdf",
+      "sha256": "28ec7ca57a4fea9b81c4c3d2a9947ada3b5d0beee8ae52a8bbff71a755f8668c",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2306.17100v6",
+      "retrieval_url": "https://arxiv.org/pdf/2306.17100v6",
+      "version": "Canonical arXiv2306.17100v6,21July2025,58pages; allmain/161refs/AppendicesA–Ereadindependently; explicit versionnot conflatedwithformal12pagepagination.",
+      "local_path": "research/full-text-review/rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark/arxiv-v6.pdf",
+      "sha256": "c90280f02cb1ea5375320ec07f02b50b21611a1d8b7a22b3a65f1c31d56db10a",
+      "pages": 58,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Complete formalpp1?2 read all33authors/order and21?institutionbylines;KDD2025V2DOI/5278start12pages,first4equal. 27environments23baselines claim/librarybenchmarknotnewsharedsolver. Officialai4co/rl4corepo+homepage explicitly. FormalNTUcopyACMDOImetadataidentity;exactpublisheronline vsAug3?7conferenceverifylater."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Completeformalpp3?5 readlibrarycomparison27env/23baselinepolicy+RLalgcountnot23trainedpolicies;taxonomyconstructiveAR/NARandimprovement;TorchRLTensorDictstatelessGPU env decoupleddata/policy/RL/Hydrautility. TaxonomyEq1?4notnewoptimizationguarantee. Decodingmask/searchresponsibilities andinductivevstransductiveexplicit;modularproblemAPInotsharedcheckpointgeneralist."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Completeformalpp6?8read27envexpandedincl16MTVRPvariants/23zooincludingRLalgorithmsnot23independentNN;hydra/mixedprecision/TensorDict modular. AllTables4.1/5.1?5.4+Fig5.1textvaluesread. FJSPHGNN111.82?MatNet103.91?pointer101.17?128sample98.31 notidenticaldecodecost. BaselinePOMObetterTSP/CVRPbutOP14.26/PCTSP11.61bad;SymNCOEuclideanboundary. MultiTaskCVRPLibSetA/BworsethanPOMO,MDSetX23.69negative;allmustretain. LargeCVRP GLOPreimplementationbenchmarkedmethodsnotnewsolver."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Completeformalpp9?10readPI bootstrappingTSP50:DACT2.99/NeuOpt2.26vsPOMO.08 andPOMOinit.08/.04 (lowerbetter,notjustfinalgap). LibraryMIT/limitationsGymadaptation/RL-onlyfutureSL/foundationmodels aspiration;notnewtrainedgeneralistsolver. References1?51fullread withactualNeuralidentityarticleversions inclRouteFinder8authorarxivprecursor/GFACSformaltitleretitle;needallremainingrefsnext."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Completeformalpp11?12readremaining42refs52?93;all93complete,plusAppendixAsoftware rationale/thirdpartylicenses andBexplicitarxiv~40scienceappendix. LibraryMITdoesnotrelicenseTSPLIB/CVRPLIB/LKH3noncommercialconstraints. Distinctsourcefull58pavailable;mustfullcoverappendix. Reading formalall12nowcomplete;visualpendingbeforefinalflags."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Independentfullarxivv6pp1?3read33authors/bylines,sameformalDOIbut58ppcitation,21July2025versionheader. Intro/contributions27env23baseline/CPUvsGPU/table1.1actuallyreadagain,notdedupformal. Expandedreferenceindicesdiffer(e.gBello8,AM74) mustuseactualsourcespecificcitationlabels."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fullarxivpp4?6independentlyreadtaxonomyEq1?4/MLPfeaturemodularization/TensorDictstatelessGPU/27environmentcollection23baselinezoocount. ExplicitappendixCbaseline/E7.2flash differformalplaceholderB. Embeddedlatexitannotationp6notformulacontent/renderlater;notreadmarkbyacquisition."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fullarxivpp7?9independentread23baselinezooandhydra/decode/testcode;alltables5.1?5.4andPIcurvevaluesreadagain. ActualindexremapAM74/POMO76/GFACS68/N2S100/GLOP156. NegativePOMOOP14.26vsA2C8.64andMTPOMOSetA/B/MDSetX preserved;largeCVRP7kAMGLOP190.9/2secvsLKHhybrid190.1/3.9notuniversalSOTA. Libraryfutureaspirationsseparatefromsharedtrainedmodels."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Allarxivexpandedbibrefs1?99fullread:morethanformal93refs,includesOptiMUS/ULCO/COMPASS/MultiObj/POPPY/RoutePlacer/HAC/PickerRouting/SIL/evolutionLLMnotformal12bibliographyall. Needrefs100?160andactualbodymatchesincludingappendixbeforeedgefinalization. SameRouteFinder8auth2024preprintandGFACSrenamedformalboundariesknown."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Allremainingexpandedrefs100?161fullreadnow161totalmainrefs;includesformalEquityN2S/HAM andsamearxivprecursors,methodological Ecoleworkshopnotautomaticallyformalalias. AppendixTOCfullreadstructureAsoftwareBenvCbaselinesDsetupEexperiments35?58. Noexternalunknownscienceassumptions;needactualallsectionsnext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "AllarxivAppendixA pp15?17readsoftware/licenseMITwiththirdpartylimits,fullB1routingprotocolvalid/test10000seed4321/1234,sampledunit2D;TSP2opt/koptandCVRPmasklogic. Berlin52tourfigcost7542vs7897/7603/7616/7674 andA54cost1167vs1200/1181/1196/1176 merelysamplevisualnotaggregateSOTA."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Fullpp18?20B1OP/PCTSP/PDPprecedenceandpairconstruction(uncapacitatedPDTSP)read;MTVRP16powersetC+O/B/L/TWconstraints,backhaullinehaulfirst(notpairprecedence),fullTableB1gen/horizon/capacity/svcTW details;JSSPdiscreteeventmachinejobactions andGanttdefinition. Modelconfigurationlibrarynotnewsharedpolicy guarantee;fixturesareuniform/batched generated."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Fullpp21?23readFJSSP/JSSPTableB2andFFSP,PDNsingle/multiportmaxsum/maxminobjective(random2?5ports)notfloorplacement. FLP100Euclidean/10centerskmedianandMCP200weighteditems/100setschoose10;GurobiSCIPreference. B5explicitextraATSP/mTSP/SkillVRP/SMTWTP/SPCTSPnotcounted27andnotfullybenchmarked;futuremultiobj/multiagentnotactualmaincapability. C1REINFORCE/A2C formulasread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 24,
+      "last_page": 26,
+      "notes": "Fullpp24?26C1PPOandC2AMfullMHA/encoder/decoder/cache/formulas8?26read;rolloutpairedtupdate,POMOsharedstarts,SymNCOproblem+solutionsymmetry,PolyNetbestofK/Poppy,HAMPDPpairattention,MTPOMO/MVMoEsharedmodel components summarizedasexistingmethodsnotpapernewunifiedsolver. Mathematicaldefinitionsnotglobalguarantees;infeasiblemask/tanhclippingcodeactualchecklateronlyneededclaims."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 27,
+      "last_page": 29,
+      "notes": "Completepp27?29C2?C4readMVMoEgates/L2DGCN/HGNNbipartite/MatNet+selfcross/DevFormerRLadaptofflineoriginal;multiportmaxsumvsmaxminseparatelytrained explicit. DeepACOandGFACSsameinferencebutdifferenttraining,sourcebroadpolicygradientcriticisminterpretedasauthorviewnotimpossibility;GLOPNAR+ARhybridclassicalinsertion/reviser;DACT/N2S/NeuOptcompleteMDPoperatorslearnernotnewpapercontrib."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 30,
+      "last_page": 32,
+      "notes": "Fullpp30?32AS/EAS,D1gaptoBKSandnormalizedprimalintegralEq32?34,PassMarknormnotexacthardwareequivalence,batchlatencyvsperinstanceimportantread. Hardware4A6000butoneinference,Py3.11Torch2.3mixedprec/trainingvariedcluster explicit. Common250kupdates/AMXL500epochsandweightdecayPOMOexception;sampleeff5runsmatchbatchaftermultistart/augmentation;fullHydraListing1andAS/EAS200iters/100instances/OOD2005001000 setupsread. BKS0notcertificateunlessknownopt."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 33,
+      "last_page": 35,
+      "notes": "Completepp33?35D3cross-task6VRP/MDsetups10000epochs10kinstances,8xaugmentationandmultistarts actualbudget vsmaincaptiongreedymultistart;GLOPtraining1/2kand10/20kgen;bootstrap3090hardware/1000cases. Fullaugmentation/temp/topk/toppformulas35?38read:Eq37?cumulativeomitscrossingelementprosesayssmallestexceeds?needactualrender/codecheck ifnote. E1methodsarchitecture/samplecontrols,PtrNetexcludedTSP50>4%,actorcriticcanbetterlimitedsamples;E1LR.001vsD3.3.0001 source inconsistencyretainwithoutinventingresolution."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 36,
+      "last_page": 37,
+      "notes": "CompleteTablesE1/E2everyclassicalrow/7(6)NN?5decode?5taskcost/gap/time read plusE1pareto/OOdiscussion/searchintro. BKSdefinedasclassicalheuristic reference,notcertopt;avgperinstancegapmaynotratioofroundedmeanobjective,donotrecomputeerroneously. POMOPCTSP/OPpooracrossdecoders;PolyNetgenerallystrongbutPDPgreedymultistart20gap5.43worseothers,notallwinner. Finalplotsrenderpending."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 38,
+      "last_page": 40,
+      "notes": "Completepp38?40allE2?E7plotaxes/legendscaptions/TableE3entireAS/EAScostgapruntime/OOMreadandTableE4all10/20k rows. Strongin-distributionnotOOD,memory1000ASOOM/EASstillhugegaps52.89/67.63TSP;searchnotfreecertificate. GLOP35konevisual24GBcapcapacity2000cost180.743time46.39notaggregateallVRPguarantee;10/20kHGS108.1/182.7hoursvsGLOPLKH111.4/191.4secondsqualitytradeoffretained. Figuresactualviewpending."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 41,
+      "last_page": 43,
+      "notes": "Fullpp41?43E2TablesE5/E6allACOrows128casesperinstance time/gaptoConcordeavgcost (specificmetricrelativeaveragecostvsD1meaninstancegap). E3JSSPdensePPOdifferentenvtimecreditGCN?MatNetplus128rolloutsnotarchitecturealone;E7/E8allrowsORToolsoptfractions BKSnotallopt;FJSPE9allrows100casesnormalizedHGNN/MatNet20x10?2.7vsincompletelysolvedORToolsnotnegativeoptimalitygapcertificate;FFSPseparatepolicyperstageexplicit."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 44,
+      "last_page": 46,
+      "notes": "Fullpp44?46TablesE10/E11/E12/E13allread negativeFJSPgapsrelativeORToolstimeboundedincumbentsnotcertopt;FFSP50RL4CO51.6worseoriginal51.5negative. DenseTSP4.51/7.05/9.80worseepisodic3.83/5.81/7.82 vsFJSPreverse,algorithmnotuniversal. mDPP20decaps100shotsRS/GA vszero-shottrainedDF,criticworseRS/GA/PPOnearrollout (no claimguarantees). E5FLPMCP100epoch/100k/1000batch encodersbaselines64samples+AS100iter setupcomplete."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 47,
+      "last_page": 48,
+      "notes": "AllE14FLP12rows?best/mean/greedy/AS/EAS2+UR/DG/optread,prose/heatmapE10fulllegendread. ExactreportedGCNcriticbestgap3.82%mean.54% violatesbest?meanunderstatedsame64sample protocol(notratioofmeansissue);GATmean/expo/criticrelatedbestmeaninversion needsactualtableviewbeforequalify. Do notinfercorrectnumbers. Samplingbest64oftenbetterDG butsamplemeanMLProllout11.0056>worseDG10.9831,soavoidunqualifiedallRLsamplingbetter. Heatmapall24cellssetsactualviewpending."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 49,
+      "last_page": 50,
+      "notes": "AllE15MCP12rows64best/mean/greedy/AS/EAS2andbaselinesfullread plusOODprotocoln100?200/m200?400,k10?20,allE11heatmapaxes/captions. SourcepositiveNNgapsvsnegativebaselinegapsdespiteabsolutegapdeclared,do notuseasconsistentcertmetric. DirectcounterexampleSAGEcriticbest676.919<DG680.205 challengesproseallRLsamplingbetter;AScanworsenSAGEmeangreedy670.409?666.036. Retainprotocolscope/noinfercorrectednumbers."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 51,
+      "last_page": 53,
+      "notes": "AllE16/E17FLPMCPoutofdistribution12rows/6schemes andbaselinesfullread;MCP64bestall?DG1367.224whileEASusuallybetter,avoidbroadsamplingbeatsgreedy. EntireE18speed/memory3methods/E19fp16allrowsread. E6PDPbootstrapPI2.234vsrandom5.580butrandomfinalgapbetterimportantcounterexample;jointconstructionimprovementfutureproposalnotdone. Trainingheterogeneity/decoderbudgets remainimportant. 53pagesarxivreadnow,5remaining."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 54,
+      "last_page": 56,
+      "notes": "Fullpp54?56E13flashplot/E20all6stepspeedrows/inputsingleTensorDict (notunconditionalspeedclaim),E8foundation6traintasks/16testvariants/1000cases10/20secCPU16parallelvsGPUbatchtime,300epochs30m generatedinstances3e-4exactscope. EntireE21all16task?2sizes?5methodsobjgap/time read:OVRPB/OVRPBLN100NN14?15%vsORTools~3% negative;currenttemplatescannotnovelconstraints. E8LLMdirections actualrefs55/94/153,93/120/154,2/146/150 notournewsolverclaims;E9starts."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 57,
+      "last_page": 58,
+      "notes": "Completefinalpp57?58entireE22alltwo-panelCVRPLIBinstancecost/BKS/gaprowsA/B/E/F/M/P/X andE23all6sets?4modelsread. MTPOMO/MDnotuniversallybetter:57X655MD168.53%/X819164.20%,58SetFallmultitaskworseCVRP-POMO12.7%vs16.3/13.8/14.1;SetMMTPOMO8.6>worse6.3. All58arxivpagesnowtextreadandallformal12;visual/code/citationfinalverificationpendingbeforeflags."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rl4co-motivation",
+      "category": "motivation",
+      "statement": "Implementation, environment and budget differences obstruct reproducibility; unified modular infrastructure supports controlled NCO research.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Introduction/related work"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-contribution",
+      "category": "contribution",
+      "statement": "27 environments/23 baselines library taxonomy, reusable environment/policy/RL components and benchmark studies, not 23 new neural models.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions, Sections3–5 and zoo"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-method",
+      "category": "method",
+      "statement": "Environment owns transitions/masks/rewards; AR construction, NAR heuristic plus construction/search, incumbent improvement and transductive neural adaptation are separated.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations1–4/Figures2.1,3.1,4.1/Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-task-scope",
+      "category": "method",
+      "statement": "Sixteen MTVRP variants count within27; PDP is uncapacitated precedence TSP; EDA discrete decaps separately maxsum/maxmin; extra B5 implemented tasks not fully benchmarked.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "AppendixB complete task definitions"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-main-results",
+      "category": "experiment",
+      "statement": "FJSSP encoder/decoder gains include128sampling; POMO subset tasks worse, MTPOMO/MD negative CVRPLIB cells, large CVRP quality/time tradeoff retained.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables5.1–5.4 and Figure5.2"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-appendix-results",
+      "category": "experiment",
+      "statement": "Long benchmark preserves AS/EAS costs/OOM, ACO comparisons, nonoptimal ORTools negative gap, critic decap failures, graph sampling counterexamples, template-limited foundation results.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            39,
+            40,
+            41,
+            43,
+            44,
+            45,
+            47,
+            49,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58
+          ],
+          "locator": "AppendixE tables/plots, complete text read and key originals visually checked"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-top-p",
+      "category": "limitation",
+      "statement": "PrintedEq37 cumulative≤p retains no crossing token and may empty; current pinned ascending-tail code differs, not claimed historical experiment failure.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            33,
+            34
+          ],
+          "locator": "AppendixD.4.2 Eq37 rendered; current decoding.py117–188 separately checked"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-table-gap",
+      "category": "limitation",
+      "statement": "TableE14 best-of64 gap can exceed mean gap despite minimization dominance; printed GCNCritic3.82%/.54% and GAT rows need clarification; no invented corrections.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            47,
+            49,
+            52
+          ],
+          "locator": "Rendered TablesE14,E15,E17 actual column/sign checks"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-protocol",
+      "category": "reproducibility",
+      "statement": "Gap BKS not universal optimum; heterogeneous budgets/hardware and approximate PassMark normalization, LR1e−4 vs.001 source sections differ.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            30,
+            31,
+            32,
+            33,
+            35
+          ],
+          "locator": "AppendixD.1,D.3.3,E.1"
+        }
+      ]
+    },
+    {
+      "id": "rl4co-classification",
+      "category": "classification",
+      "statement": "Direct NCO neural-solver library and empirical benchmark qualifies main study/benchmark; neither a new shared27taskcheckpoint nor absence of new solver is an exclusion.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Abstract/contributions/taxonomy/zoo/benchmark/discussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3711896.3737433",
+      "locator": "Exact formal title,33-author Crossref byline, online2025-08-03,5278–5289. Independent formal NTU sourcepp1–2 same DOI/byline/institutions; first4 equal. Current README30author BibTeX omitsQingfuZhang/JounghoKim/KevinTierney; formal controls."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2306.17100",
+      "locator": "Primary canonical history cached graphs/old-incoming-identity/rl4co-current.html and rl4co-v1.html: v1 2023-06-29, v6 2025-07-21; v6header inspected. Preprint first submission separate from formal2025-08-03."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://arxiv.org/pdf/2306.17100v6",
+      "locator": "Formal12p AppendixB explicitly points to roughly40p expanded scientific appendix in arXiv. Full58pv6 includingall AppendicesA–E+161refs independentlyread; all12formal+93refs read; exactpage text+pixels comparison yields0duplicates. Official homepage/repo current complete541entrytree+pinnedZIP inventoried,15tutorial purposes/headings inspected,no additional identified scientific PDF/ZIP. ACMlanding403,not bypassed. Scientific coverage actual70pages; inventory files preserve provenance."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://dr.ntu.edu.sg/server/api/core/bitstreams/1ac5ccd4-7cd1-4381-99a8-12db10c375cc/content#page=5",
+      "locator": "OriginalFig3.1 entire diagram+caption extracted Rect50,78,562,195 at2.5x,publicasset exists and actuallyviewed. visual-supplement-inventory.json lists exact formal/arxiv key rendered pages actuallyviewed inclEq37/TableE14."
+    },
+    {
+      "field": "code_url/current implementation",
+      "source_url": "https://github.com/ai4co/rl4co/tree/dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0",
+      "locator": "Official mainp2 repo/homepage; gitHEAD dbd18e7a06ef9c8e35f54ab93adf6136ceeffad0, tree541untruncated, completecodeloadZIPSHA409b5d1f414db1daca338b2730af5f7b965ce2cc79664d3de21dd1394a52667e. README+15tutorialinventory+base.py117–190 and decoding.py117–188 actual inspected; ascendingtail differsprintedEq37; nohistoricalbyteidentity/trainingexecutionclaimed."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/pdf/2306.17100v6",
+      "locator": "All161longbibliography+93formal entries/bodyread; 49 explicitly matched active targets, citation-identity-decisions.json stores realfullrefs/bodypages. BQprimaryarxiv2301.03313Generalizable→Efficient; RouteFindersamecanonical2406.15007eightauthor2024precursor; SIL sixauthor2403.19561 retained by existing detailed curator16p/27p manuscriptcomparison research/full-text-review/sil/precursor-identity-evidence.json, not arxiv retitling. No different formal journal extension merged."
+    },
+    {
+      "field": "classification/inclusion",
+      "source_url": "https://doi.org/10.1145/3711896.3737433",
+      "locator": "Directly studies neural COsolvers and reproduciblebenchmarking; mainstudy/benchmark per authorized inclusion of NCOsurvey/evaluationresources. Sharedsoftwaremodularity not sharedneuralcheckpoint; does not force solver/generalist classification."
+    },
+    {
+      "field": "review_handoff",
+      "source_url": "https://dr.ntu.edu.sg/server/api/core/bitstreams/1ac5ccd4-7cd1-4381-99a8-12db10c375cc/content",
+      "locator": "Root explicitlytransferred unstartedRL4CO fromfull_review_routing tofull_review_graphs2026-11-17; root/routingnotconcurrentlywriting. Originalreviewer full_review_routing retained; full_review_graphs independentlyread70pages/rendered/inventoried/citationchecked/finalized."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "arXiv v6 [8]",
+      "description": "Uses Bello et al. for RL constructive policies and active search; actual cited 2017/arXiv1611.09940 version retained.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            7,
+            10,
+            26,
+            30,
+            35,
+            37,
+            46
+          ],
+          "locator": "Complete bibliography [8] on PDF p10; explicit in-text/table/appendix citation on PDF pp3,7,26,30,35,37,46. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "routefinder",
+      "reference_label": "arXiv v6 [13]",
+      "description": "Uses the eight-author 2024 RouteFinder preprint for mixed-variant routing environments and foundation-model experiments. Same canonical arXiv2406.15007 precursor is represented by the formal RouteFinder ID; no 48-variant later experiment is attributed to this source.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            10,
+            18,
+            33,
+            54,
+            55,
+            58
+          ],
+          "locator": "Complete bibliography [13] on PDF p10; explicit in-text/table/appendix citation on PDF pp6,18,33,54,55,58. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "pip",
+      "reference_label": "arXiv v6 [17]",
+      "description": "Cites PIP as an extension of RL solvers to complex routing constraints.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Complete bibliography [17] on PDF p10; explicit in-text/table/appendix citation on PDF pp2. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "ucom2",
+      "reference_label": "arXiv v6 [27]",
+      "description": "Uses UCom2 as prior neural FLP/MCP problem formulations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            22
+          ],
+          "locator": "Complete bibliography [27] on PDF p10; explicit in-text/table/appendix citation on PDF pp22. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "compass",
+      "reference_label": "arXiv v6 [29]",
+      "description": "Cites COMPASS with Poppy in the PolyNet best-of-population training discussion.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            26
+          ],
+          "locator": "Complete bibliography [29] on PDF p10; explicit in-text/table/appendix citation on PDF pp26. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "nhde",
+      "reference_label": "arXiv v6 [31]",
+      "description": "Identifies neural multi-objective optimization as a future environment extension.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            23
+          ],
+          "locator": "Complete bibliography [31] on PDF p10; explicit in-text/table/appendix citation on PDF pp23. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "neurewriter",
+      "reference_label": "arXiv v6 [32]",
+      "description": "Places neural local rewriting among NCO network/method families.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Complete bibliography [32] on PDF p10; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "bq-nco",
+      "reference_label": "arXiv v6 [37]",
+      "description": "Actual bibliography uses BQ-NCO: Bisimulation Quotienting for Generalizable Neural Combinatorial Optimization, five authors. Primary arXiv2301.03313v1 has this title and v3/formal NeurIPS title uses Efficient; same-paper title history, not a distinct journal extension.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            10,
+            24,
+            35
+          ],
+          "locator": "Complete bibliography [37] on PDF p10; explicit in-text/table/appendix citation on PDF pp2,3,24,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "poppy",
+      "reference_label": "arXiv v6 [43]",
+      "description": "Uses Poppy winner-based training in the PolyNet loss discussion.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            26
+          ],
+          "locator": "Complete bibliography [43] on PDF p10; explicit in-text/table/appendix citation on PDF pp26. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "latent-search-space-routing",
+      "reference_label": "arXiv v6 [49]",
+      "description": "Cites the routing VAE as a supervised-learning route to NCO.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Complete bibliography [49] on PDF p10; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "efficient-active-search",
+      "reference_label": "arXiv v6 [50]",
+      "description": "Implements and benchmarks EAS as test-instance adaptation of a subset of neural parameters.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            7,
+            10,
+            30,
+            32,
+            38,
+            46
+          ],
+          "locator": "Complete bibliography [50] on PDF p10; explicit in-text/table/appendix citation on PDF pp7,30,32,38,46. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "polynet",
+      "reference_label": "arXiv v6 [51]",
+      "description": "Includes PolyNet in the baseline zoo and explains its diverse strategy conditioning and winner-based learning.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            7,
+            11,
+            24,
+            26,
+            35
+          ],
+          "locator": "Complete bibliography [51] on PDF p11; explicit in-text/table/appendix citation on PDF pp2,7,24,26,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "self-guiding-exploration",
+      "reference_label": "arXiv v6 [55]",
+      "description": "Cites the four-author arXiv2405.17950 version when discussing LLM-guided solution generation; the canonical version history is preserved.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            56
+          ],
+          "locator": "Complete bibliography [55] on PDF p11; explicit in-text/table/appendix citation on PDF pp56. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "routing-dro",
+      "reference_label": "arXiv v6 [59]",
+      "description": "Identifies distributionally robust routing training as prior distribution-generalization work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            56
+          ],
+          "locator": "Complete bibliography [59] on PDF p11; explicit in-text/table/appendix citation on PDF pp56. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "arXiv v6 [61]",
+      "description": "Uses the 2019 arXiv1906.01227 GCN TSP paper as a non-autoregressive heatmap example.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            11,
+            28
+          ],
+          "locator": "Complete bibliography [61] on PDF p11; explicit in-text/table/appendix citation on PDF pp3,28. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "arXiv v6 [64]",
+      "description": "Cites Khalil et al. in the graph-based combinatorial problem formulation discussion.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            22
+          ],
+          "locator": "Complete bibliography [64] on PDF p11; explicit in-text/table/appendix citation on PDF pp22. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "devformer",
+      "reference_label": "arXiv v6 [67]",
+      "description": "Implements DevFormer and expands its decap-placement setting to multiple probing ports/objectives.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            11,
+            21,
+            22,
+            28
+          ],
+          "locator": "Complete bibliography [67] on PDF p11; explicit in-text/table/appendix citation on PDF pp2,3,6,7,8,21,22,28. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "gfacs",
+      "reference_label": "arXiv v6 [68]",
+      "description": "Actually cites the six-author AISTATS2025 Ant Colony Sampling with GFlowNets paper and benchmarks its ACO heuristic in Appendix E.2.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            11,
+            28,
+            41
+          ],
+          "locator": "Complete bibliography [68] on PDF p11; explicit in-text/table/appendix citation on PDF pp3,4,7,28,41. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "arXiv v6 [69]",
+      "description": "Cites collaborative neural routing policies as prior exploration-efficiency work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Complete bibliography [69] on PDF p11; explicit in-text/table/appendix citation on PDF pp2. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "sym-nco",
+      "reference_label": "arXiv v6 [70]",
+      "description": "Implements Sym-NCO and studies symmetry-based training/augmentation and its task-dependent limitations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            7,
+            8,
+            11,
+            24,
+            26,
+            33,
+            35
+          ],
+          "locator": "Complete bibliography [70] on PDF p11; explicit in-text/table/appendix citation on PDF pp7,8,24,26,33,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "attention-model",
+      "reference_label": "arXiv v6 [74]",
+      "description": "Uses the Attention Model encoder/decoder, rollout baseline and routing benchmark protocol.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            11,
+            16,
+            17,
+            24,
+            26,
+            27,
+            28,
+            35,
+            44,
+            55
+          ],
+          "locator": "Complete bibliography [74] on PDF p11; explicit in-text/table/appendix citation on PDF pp2,3,6,7,8,16,17,24,26,27,28,35,44,55. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "pomo",
+      "reference_label": "arXiv v6 [76]",
+      "description": "Implements POMO multistart training/decoding and evaluates its task, distribution and size limitations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            9,
+            11,
+            24,
+            26,
+            33,
+            35,
+            44,
+            55
+          ],
+          "locator": "Complete bibliography [76] on PDF p11; explicit in-text/table/appendix citation on PDF pp2,3,7,8,9,24,26,33,35,44,55. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "arXiv v6 [77]",
+      "description": "Reuses MatNet encoders in scheduling and compares them with HGNN representations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            7,
+            11,
+            21,
+            27,
+            41,
+            42,
+            43,
+            44
+          ],
+          "locator": "Complete bibliography [77] on PDF p11; explicit in-text/table/appendix citation on PDF pp7,21,27,41,42,43,44. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "fer",
+      "reference_label": "arXiv v6 [82]",
+      "description": "Cites the Feature Embedding Refiner as a recurrent NCO network example.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Complete bibliography [82] on PDF p11; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "t2t",
+      "reference_label": "arXiv v6 [85]",
+      "description": "Actual bibliography omits the T2T prefix but gives the matching four-author From Distribution Learning in Training to Gradient Search in Testing title. Uses it as supervised NCO background.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Complete bibliography [85] on PDF p11; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "pareto-set-learning",
+      "reference_label": "arXiv v6 [89]",
+      "description": "Cites Pareto set learning as a multi-objective NCO extension direction.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            23
+          ],
+          "locator": "Complete bibliography [89] on PDF p11; explicit in-text/table/appendix citation on PDF pp23. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "mtpomo",
+      "reference_label": "arXiv v6 [92]",
+      "description": "Uses MTPOMO for multitask routing environments and cross-variant/generalization benchmarks.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            11,
+            18,
+            26,
+            33,
+            54,
+            55,
+            58
+          ],
+          "locator": "Complete bibliography [92] on PDF p11; explicit in-text/table/appendix citation on PDF pp6,7,8,18,26,33,54,55,58. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "lehd",
+      "reference_label": "arXiv v6 [96]",
+      "description": "Discusses heavy-decoder supervised solvers and their inference/size-generalization tradeoffs.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            11,
+            24,
+            35
+          ],
+          "locator": "Complete bibliography [96] on PDF p11; explicit in-text/table/appendix citation on PDF pp2,3,24,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "sil",
+      "reference_label": "arXiv v6 [97]",
+      "description": "Actual reference is the six-author 2024 Self-Improved Learning for Scalable Neural Combinatorial Optimization, arXiv2403.19561. Retained under the existing curator-verified manuscript-precursor representation of SIL, not claimed to be an arXiv retitling or the seven-author formal version.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            24,
+            35
+          ],
+          "locator": "Complete bibliography [97] on PDF p11; explicit in-text/table/appendix citation on PDF pp24,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "neuopt",
+      "reference_label": "arXiv v6 [99]",
+      "description": "Implements flexible neural k-opt improvement and combines it with constructive initialization.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            7,
+            9,
+            11,
+            17,
+            29,
+            51,
+            52
+          ],
+          "locator": "Complete bibliography [99] on PDF p11; explicit in-text/table/appendix citation on PDF pp3,7,9,17,29,51,52. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "efficient-neural-neighborhood-search-for-pickup-and-delivery-problems",
+      "reference_label": "arXiv v6 [100]",
+      "description": "Implements N2S, uses its pickup/delivery precedence setting and evaluates constructive bootstrapping.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            7,
+            12,
+            18,
+            29,
+            51,
+            52
+          ],
+          "locator": "Complete bibliography [100] on PDF p12; explicit in-text/table/appendix citation on PDF pp7,18,29,51,52. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "dact",
+      "reference_label": "arXiv v6 [101]",
+      "description": "Implements dual-aspect improvement and benchmarks random versus constructive initialization.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            7,
+            9,
+            12,
+            17,
+            18,
+            29,
+            51,
+            52
+          ],
+          "locator": "Complete bibliography [101] on PDF p12; explicit in-text/table/appendix citation on PDF pp7,9,17,18,29,51,52. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "utsp",
+      "reference_label": "arXiv v6 [105]",
+      "description": "Uses UTSP as a GNN-based NCO architecture example.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Complete bibliography [105] on PDF p12; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "rl-vrp",
+      "reference_label": "arXiv v6 [109]",
+      "description": "Cites Nazari et al. as prior RL vehicle routing work and as a reference for synthetic demand generation.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            12,
+            33
+          ],
+          "locator": "Complete bibliography [109] on PDF p12; explicit in-text/table/appendix citation on PDF pp2,3,33. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "gumbeldore",
+      "reference_label": "arXiv v6 [115]",
+      "description": "Cites the two-author arXiv2403.15180 self-improvement paper when discussing decoder-only models and augmentation.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12,
+            35
+          ],
+          "locator": "Complete bibliography [115] on PDF p12; explicit in-text/table/appendix citation on PDF pp35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "equity-transformer-solving-np-hard-min-max-routing-problems-as-sequential-generation-w",
+      "reference_label": "arXiv v6 [126]",
+      "description": "Uses Equity-Transformer as an example of sequential decisions for multi-agent/min-max routing extensions.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12,
+            23
+          ],
+          "locator": "Complete bibliography [126] on PDF p12; explicit in-text/table/appendix citation on PDF pp23. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "meta-sage",
+      "reference_label": "arXiv v6 [127]",
+      "description": "Cites Meta-SAGE as prior size-shift adaptation in routing.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12,
+            56
+          ],
+          "locator": "Complete bibliography [127] on PDF p12; explicit in-text/table/appendix citation on PDF pp56. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "general-lns-ilp",
+      "reference_label": "arXiv v6 [128]",
+      "description": "Cites learned large-neighborhood search as an improvement/metaheuristic NCO family.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Complete bibliography [128] on PDF p12; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "difusco",
+      "reference_label": "arXiv v6 [131]",
+      "description": "Cites DIFUSCO as a diffusion-based supervised NCO architecture.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Complete bibliography [131] on PDF p12; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "pointer-networks",
+      "reference_label": "arXiv v6 [143]",
+      "description": "Includes Pointer Networks in the constructive baseline lineage and discusses the recurrent pointer decoder.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            12,
+            26,
+            35
+          ],
+          "locator": "Complete bibliography [143] on PDF p12; explicit in-text/table/appendix citation on PDF pp2,3,7,26,35. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "cardnn",
+      "reference_label": "arXiv v6 [145]",
+      "description": "Uses CardNN as prior cardinality-constrained neural FLP/MCP problem formulations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            12,
+            22
+          ],
+          "locator": "Complete bibliography [145] on PDF p12; explicit in-text/table/appendix citation on PDF pp22. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "arXiv v6 [149]",
+      "description": "Discusses neural improvement and contrasts DACT dual-aspect embeddings with the earlier combined representations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            13,
+            29
+          ],
+          "locator": "Complete bibliography [149] on PDF p13; explicit in-text/table/appendix citation on PDF pp3,29. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "deepaco",
+      "reference_label": "arXiv v6 [155]",
+      "description": "Implements and benchmarks neural heatmap-guided ACO, citing the actual 2023 arXiv2309.14032 manuscript.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            7,
+            13,
+            28,
+            41
+          ],
+          "locator": "Complete bibliography [155] on PDF p13; explicit in-text/table/appendix citation on PDF pp4,7,28,41. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "glop",
+      "reference_label": "arXiv v6 [156]",
+      "description": "Implements hybrid global partition/local construction and reports large-scale CVRP quality/time results.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            13,
+            28,
+            33,
+            40
+          ],
+          "locator": "Complete bibliography [156] on PDF p13; explicit in-text/table/appendix citation on PDF pp4,7,8,28,33,40. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "learning-to-dispatch",
+      "reference_label": "arXiv v6 [157]",
+      "description": "Implements the JSSP dispatching baseline and compares revised encoders/decoding budgets.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            13,
+            21,
+            27,
+            41,
+            42,
+            43
+          ],
+          "locator": "Complete bibliography [157] on PDF p13; explicit in-text/table/appendix citation on PDF pp2,3,7,21,27,41,42,43. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "gflownet-combopt",
+      "reference_label": "arXiv v6 [158]",
+      "description": "Cites graph-CO GFlowNets as a generative model family and graph problem application.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Complete bibliography [158] on PDF p13; explicit in-text/table/appendix citation on PDF pp3. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "dpn",
+      "reference_label": "arXiv v6 [159]",
+      "description": "Uses DPN as a sequential partition/navigation example for future multi-agent routing environments.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            13,
+            23
+          ],
+          "locator": "Complete bibliography [159] on PDF p13; explicit in-text/table/appendix citation on PDF pp23. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "mvmoe",
+      "reference_label": "arXiv v6 [160]",
+      "description": "Implements MVMoE foundation routing baselines and evaluates six trained versus sixteen tested constraint combinations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            7,
+            13,
+            18,
+            26,
+            33,
+            54,
+            55,
+            58
+          ],
+          "locator": "Complete bibliography [160] on PDF p13; explicit in-text/table/appendix citation on PDF pp6,7,18,26,33,54,55,58. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    },
+    {
+      "citing": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "cited": "omni-vrp",
+      "reference_label": "arXiv v6 [161]",
+      "description": "Discusses omni-generalizable routing as prior joint distribution/size generalization.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            13,
+            56
+          ],
+          "locator": "Complete bibliography [161] on PDF p13; explicit in-text/table/appendix citation on PDF pp56. Identity checked using actual title, byline and cited version."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced all pending fields with formal33author/date/institution metadata; preprint2023-06-29 separate fromformal2025-08-03.",
+    "Full70pages actual independent reading including formalAppendixB-required expandedscience; nofalse duplicatepage credit.",
+    "Classified main study/benchmark asdirectNCOsolverresource,not newly proposed shared27taskneuralpolicy.",
+    "Preserved negative task/generalization/graph/decap/initialization examples, offline/testbudget and BKS/optimality distinctions.",
+    "Original renderedEq37/TableE14 and protocol discrepancies precisely qualified; code currentpinnedseparate frompaperexecutedversion.",
+    "OriginalFig3.1 physicalcompletecaptionviewed; 49 actualbody+bib referenceidentities including versionqualifiedBQ/RouteFinder/SIL."
+  ],
+  "reviewed_note_sha256": "76d1e645086e3d2751cd870777c6619d599bb61e621f524f03776e65b7b3d7f9"
+}

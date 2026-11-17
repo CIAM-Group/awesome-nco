@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "paper_id": "cvae-sip",
+  "note_path": "specialist/cvae-sip.md",
+  "baseline_note_sha256": "1bb837152582d6a130f102ec49fb0a2ca8a9e3a1e41b3c9173d79ce725a82c0d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openreview.net/pdf/87cf7ed439965040c8013759c94576533321c4b5.pdf",
+      "version": "conference paper (public mirror)",
+      "retrieval_url": "https://lacuna.tiptreesystems.com/pdf/art_dddea8714e8ca69dbe8ea575ef096249",
+      "local_path": "research/import-272/nco-29755626cc.pdf",
+      "sha256": "ad3fe3a85b20e0d922f9073acb0c92f4730a93ca5bad33f15f71ed9cb0d060dc",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formalICLR2022title/authors/affiliations, two-stage graph SIP/SAA objective, CVAE motivation and explicit introductory citations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read sharedcontext/scenario GCN, two-dimensional latent/context codes, three losses, one-percent single-scenario optimal objective labels, weighted representative formulation and separate NDP/FLP features."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read training/evaluation/hardware, all main comparison/generalization tables and formula; ratio errors are not percentages; FLP120reference one-hourcap, negative cases and task-specific models."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read entire bibliography, exact identities and aliases for explicit internal references; formal conference header and acknowledgements checked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read AppendixA?E complete graph network equations, NDP/FLP mathematical formulations, sampling regimes, baseline modifications; visually checked equations, noted NDP variable/index inconsistencies without silently repairing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 19,
+      "notes": "Read AppendixF?J all distribution/dependency, objective plots, OR comparisons and ablations; visually checked tables/plots, multiple Scen-red/CSSC wins and semi-supervised negative cases retained."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cvae-method",
+      "category": "method",
+      "statement": "Shared within-model GCN embeds context/scenario, CVAE reconstruction/KL and optional single-scenario objective supervision produce clustering representations; reduced weighted SIP still uses CPLEX.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4–5 and Eq10"
+        }
+      ]
+    },
+    {
+      "id": "cvae-contribution",
+      "category": "contribution",
+      "statement": "CVAE-SIP and semi-supervised CVAE-SIPA learn context-dependent scenario representations for graph-based two-stage SIP reduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Contributions and method"
+        }
+      ]
+    },
+    {
+      "id": "cvae-results",
+      "category": "experiment",
+      "statement": "Errors are ratios, large FLP reference has1h cap; augmented model and raw/OR baselines each win some settings, including Scen-red all normal FLP rows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            18
+          ],
+          "locator": "Error footnote and Tables2–6"
+        }
+      ]
+    },
+    {
+      "id": "cvae-specialist",
+      "category": "classification",
+      "statement": "Separate NDP and FLP training/configurations; unchanged transfer is within each task across size, scenario count and selected distributions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Table1 and Sections5.1–5.4"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://iclr.cc/virtual/2022/poster/7065",
+      "locator": "OfficialICLR2022accepted listing and poster, exact title; reviewedPDFp1acceptedheader fourauthors/affiliations; author publication page matches"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://openreview.net/forum?id=06Wy2BtxXrz",
+      "locator": "FormalICLR2022 independently verified officialconference and coauthor listing; noexactpublicationdateverified, retain2022precision"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=06Wy2BtxXrz",
+      "locator": "Manualnormal forum/PDF/API/api2 checks receive challenge403;19pacceptedPDF includes completeA–J, no body mention ofmissing science; officialconference, coauthor and recursive authorrepo documents inspected, no extra scientificPDF found; no challenge bypass"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/WXY1427/Learning-to-solve-stochastic-integer-programs",
+      "locator": "Coauthorpublication exact title links repository, officialREADME repeatsICLRrecord and explains notebooks plus extra contrastive method; network-design formulation inspected"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cvae-sip",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11,
+            13
+          ],
+          "locator": "Explicit in-text citation Joshi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung et al. (2020)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Hottung and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Kwon and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cvae-sip",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit body citation and exact bibliography title/authors; Joshi2019 earlier INFORMS version identified, not an invented new venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all19 accepted-version pages including integratedA–J and manual scientific attachment discovery; documented public-mirror/publisher-access provenance.",
+    "Added author-confirmed code and clarified source versus implementation NDP fallback formulation.",
+    "Corrected error units, reference optimality limits, training scope, single-scenario supervision and broad superiority claims using explicit negative cases."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "593e20e3bc5778d8df512a1d50ebef436998fbd84b75b0a47f134f638080a012"
+}

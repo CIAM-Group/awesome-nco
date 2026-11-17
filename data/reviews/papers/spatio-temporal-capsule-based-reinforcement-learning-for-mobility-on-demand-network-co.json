@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "paper_id": "spatio-temporal-capsule-based-reinforcement-learning-for-mobility-on-demand-network-co",
+  "note_path": "specialist/spatio-temporal-capsule-based-reinforcement-learning-for-mobility-on-demand-network-co.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "b4f6f001aca76610d6c76635f012c445c3f2b57b91a5d1a3193c09cc7c91d5ad",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1145/3308558.3313401",
+      "retrieval_url": "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/he-www19.pdf",
+      "version": "Author-lablinkedWWW2019sevenpageversioncorrectDOI/title/byline;all7pages/scientificcontent/40refsread;proceedings8pagepaginationdisclosed.",
+      "local_path": "research/full-text-review/spatio-temporal-capsule-based-reinforcement-learning-for-mobility-on-demand-network-co/paper.pdf",
+      "sha256": "7b8bc5f707043cd5c8d52557e3f38c0d24b7351fa0e7e6bfd7eff2915f3c4570",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read twoauthorsSuiningHe/KangShinUMich/noequalcorrespond;WWW2019sevenpageauthorPDF correctDOI. STRide DDQNcapsuleneuralzone relocationoneMODtask notgeneralist. 30minsteps/stateheatmapsD/A/V+external factors,pervehicle Lneighbor+stay action,nearestrequestmatching."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Fullmethod/fig1-3/equations1–18read. Sequentialidlevehicle localcontext cropD/A/V and16external+location;sharedDDQN capsuleQ plusdenseexternal branch. Rewardrollingw15stepsfareminusridepreference-weightedrelocationcost,omega sigmoidbidirectionalhistoricalproportionsperiod6hr;noformaloptimalitytheorem. 21,150,163rides3datasets datesJune2015/May2016/Nov2016/ETA randomforest shortestpathOSM. Capsule routing updatesactivation agreement notvehicleincumbentediting."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Read all evaluation/results40refs. 8000vehiclesalpha1beta.3eps.1/12episodes30h/30min/no5kmnearbyrejection/20percentfareandcostplatformshare;mapdimensionssuperscriptsneedvisualconfirmation;capsule8x8and8x50/conv64x9/64x6/dense10,15^2likely225verify. Figure5profitsTaxi.7665/.5847/.3554/.2917Didi.6799/.4199/.3909/.2718;Fig8reject.0863±.043/.2262±.028/.2616±.056/.2689±.047. No train/testsplit,DDQNlrbufferupdateshardware/walltimesspecified. Noextraappendixpointer. Refs20bike21fleet explicitbody6."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contrib",
+      "category": "contribution",
+      "statement": "Capsule-basedDDQNcoordinates sequentialvehicle relocations fromheatmapsandexternalcontext.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5
+          ],
+          "locator": "Systemoverview;Fig1–2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "LocalcontextcandidateQmapcombinescapsuleswithdenseexternalbranch;rewardwindow15withpreferenceweightedrelocationcost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Equations5–18"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Neuralzonechoicesconstructonlineallocation;capsuleroutingisinternalactivationnotincumbentediting;onenativetask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "ActionU;sequentiallearning;capsulerouting"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "21,150,163historicalrides;12x30hepisodes8000vehicles;Fig5normalizedprofitsTaxi.7665DiDi.6799;rejection.0863±.043.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6
+          ],
+          "locator": "Dataset;Experimentalsettings;Fig5/8"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Noexplicittrain/testsplit,optimizer/replay/hardware/fulltrainingbudgetornewconvergenceguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "DDQNdescription;§5;Conclusionandrefs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions",
+      "source_url": "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/he-www19.pdf",
+      "locator": "p1SuiningHe/KangG.ShinUMich;noequal/correspondmarker;officialconferenceTOCcorroborates2"
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3308558.3313401",
+      "locator": "published-online/print2019-05-13;depositedpp2806–2813eightpagesvsactualauthorversion7fullyread;notbyteidentityclaimed"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://rtcl.eecs.umich.edu/rtclweb/publications/",
+      "locator": "ActuallyinspectedexactWWWentrylinkhe-www19.pdfonly;separateTKDE2022entrynotconfused. All7read/noappendixpointer. OfficialTOCchecked. Title/arxiv/code/suppqueriesnoidentifiedrelease;thirdpartycodeisPWCsearchURLnotcode."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2019/he-www19.pdf",
+      "locator": "OriginalFig2p5Rect48,90,420,217@4x;actualviewkeyformulas/reward/capsules/allresultsplots/publiccrop"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "spatio-temporal-capsule-based-reinforcement-learning-for-mobility-on-demand-network-co",
+      "cited": "dynamic-bike-reposition-a-spatio-temporal-reinforcement-learning-approach",
+      "reference_label": "[20]",
+      "description": "Explicitrelatedlearning-basedtransportationwork, exactKDD2018title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "§6RelatedWork[20];fullReferences[20]"
+        }
+      ]
+    },
+    {
+      "citing": "spatio-temporal-capsule-based-reinforcement-learning-for-mobility-on-demand-network-co",
+      "cited": "efficient-large-scale-fleet-management-via-multi-agent-deep-reinforcement-learning",
+      "reference_label": "[21]",
+      "description": "ExplicitRLfleetcomparison exact2018KDDtitle/authors/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "§6RelatedWorkLin[21];References[21]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Separatedsevenpageauthorversionfromeightpageproceedingspagination.",
+    "ClassifiedactualMODzoneallocationResourceAllocation/specialistconstructive;noarxiv/codeinvented."
+  ],
+  "reviewed_note_sha256": "aedf9c8ba5e8bf9ccc5bbb1b73f8cce4b5fd64f7e6f2112eb44cfdc9804bf9ec"
+}

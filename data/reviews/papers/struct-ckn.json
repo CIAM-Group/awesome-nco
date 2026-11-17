@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "paper_id": "struct-ckn",
+  "note_path": "specialist/struct-ckn.md",
+  "baseline_note_sha256": "daf6b7d97d7e62bffb941434177c7bd9e63e9c41e626e715ec3ad66d288c19f3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v139/yaakoubi21a/yaakoubi21a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v139/yaakoubi21a/yaakoubi21a.pdf",
+      "local_path": "research/import-272/nco-3df5985048.pdf",
+      "sha256": "7f9e3675a754eb1227261be26dd22cc1e7fa4092943d704dc9ef6b03ab201ecc",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.mlr.press/v139/yaakoubi21a/yaakoubi21a-supp.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v139/yaakoubi21a/yaakoubi21a-supp.pdf",
+      "version": "publisher-linked 22-page full-paper-plus-appendices supplement",
+      "local_path": "research/full-text-review/struct-ckn/supplement.pdf",
+      "sha256": "2dbbd92d701316f837bcbb5a62866ab33f5138c5154a1b41c7e5c78452c07908",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read motivationmonthlyCPPwarmstartnotdirectfeasibleCPPsolver; CKNkernel/Nystrom/sphericalkmeans andjointnonconvexfeaturelearning, CRF/SDCA fixedfeatureconvexsetup; localconstraintsnotfullairlineregulations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 11,
+      "notes": "ReadapproxAD3MAPwithMAP-pseudomarginalSDCA, allmainOCR/crewprotocols, six50k-flighttrainingmonths, localXORnotfullCPPfeasibility, repair/deadheads/windowing, Table4plusrerun17%baseline costnotonepass/CNN gain; negativeCPUtime/feasiblecostcases; completereferences."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 12,
+      "notes": "Readfullsupplementfirst11pagesduplicatepublishedmain includingbibliography, notjustappendix; appendixoutline,kerneltrick/RKHSDefinition/Theoremread. First17/97%claimbelongsplusrerunbaselinecomparison."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 13,
+      "last_page": 22,
+      "notes": "ReadallRKHS/representertheorem/Nystrom/MCKassumptions, SDCAjunctiontreeentropy andexplicitMAPpseudomarginalheuristic, BCFWvariant, OCRgridsearch/convergenceplots, privateflightarcs, start/layoverheuristics/repair/windowing, everylargeTable6-9cell. Plusruntime41.44h=6*24863s isrerunpassalone; firstpass64.48h required, cumulative105.92h ifcharged."
+    }
+  ],
+  "claims": [
+    {
+      "id": "struct-contribution",
+      "category": "contribution",
+      "statement": "CKNplusconstrainedCRF supplieslearnedflightconnectionwarmstartstocommercialCPPsolver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+          ],
+          "locator": "Sections1-5/6.2"
+        }
+      ]
+    },
+    {
+      "id": "struct-method",
+      "category": "method",
+      "statement": "LargeflightCRF usesapproxAD3MAPasunit-pseudomarginals, localconstraintsnotcompleteCPPfeasibility; conventionalrepair/rollingoptimizerrequired.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            15,
+            18,
+            19,
+            20
+          ],
+          "locator": "B.1explicitheuristic andD.1-D.4"
+        }
+      ]
+    },
+    {
+      "id": "struct-results",
+      "category": "experiment",
+      "statement": "Singlepasscost9.51%/plus16.93%belowbaseline;plus41.44hisonrerunwindows andfirst64.48hneeded; lowconnectionerrorstill11.07%illegalpairings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables2-4 andplusconstruction"
+        }
+      ]
+    },
+    {
+      "id": "struct-scope",
+      "category": "classification",
+      "statement": "SeparateOCRandcrewtraining; actualoptimizationdemonstrationisspecialistcrew-pairingwarmstartnotcommonunchangedmodelacrosstasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections6.1-6.2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/yaakoubi21a.html",
+      "locator": "Officialtitle/threeauthors/ICML2021PMLR139:11626-11636; PDFp1Frenchaccentsandfourinstitutionnamesconfirmed"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v139/gh-pages/_posts/2021-07-01-yaakoubi21a.md",
+      "locator": "Explicitdateandissued date-parts2021-07-01; notconferenceJuly18-24"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/yaakoubi21a.html",
+      "locator": "ManuallycheckedRelatedMaterial/rawextrasone22pPDF,repeatsmain1-11thenAppendicesA-D.5pages12-22; all33sourcepagesread,officialreporecursivetreenoextraPDF/ZIPscienceidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Yaakoubi/Struct-CKN",
+      "locator": "Paperp2directofficiallink; READMEtraining/evaluationOCR andolderPyStructPythonconstraint;main/ChainCRFLocal/inferenceinspected, nofullprivateairlinecommercialsolverpipeline;D.2privatearcs"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "struct-ckn",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicitvariable-selectioninbranchandbound andexactGCNNbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "struct-ckn",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicitendtoendgraphcombinatoriallearningcitation andexactpublishedtitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall11main+22supplementpagesincludingduplicatedmain,allA-D.5derivations/figures/detailedtables/references; manuallycheckedattachmentinventory.",
+    "Verifiedofficialissueddate, author/institutionaccents andpublicOCRcodeversusprivateairlinearcs/solverrestriction.",
+    "Corrected17%headlinebaseline/pluspassscope, singlepassnegatives, cumulativeplusbudget, localfeasibilityversuslegalfragments, approximateMAPmarginals andtheoremboundaries."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b4e23ba24de0c58772dc6a790584fbc28e27ae417e55bf30f6153d56c184fb0a"
+}

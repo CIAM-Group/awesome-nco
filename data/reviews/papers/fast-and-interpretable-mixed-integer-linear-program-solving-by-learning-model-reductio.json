@@ -1,0 +1,445 @@
+{
+  "version": 1,
+  "paper_id": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+  "note_path": "specialist/fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "c12c2fe89b23a2f6b7236f416f6bcd3ed501ceff27c22407d0ea3c43f1e6f557",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2501.00307v1",
+      "retrieval_url": "https://arxiv.org/pdf/2501.00307v1",
+      "version": "IdentifiedarXiv2501.00307v1 submitted2024-12-31, complete12pagesmain/fullReferences/integratedscientificAppendixallactualread. FormalAAAI39(25)2025-04-11eligibilitycheckedseparately; publisherPDF520notformalbytecompared.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-00befc0f9e/arxiv.pdf",
+      "sha256": "3fcd751c53b51e9100ff784156da81f312708c3cb8df608a3e05cf009269c3f9",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read all1–2 byline9SEU/Huawei, motivationhomogeneousparameterizedMILPs/modelreductioninteger+activeconstraint strategy, completeRelatedWorkandformulationEqs1–3. Strongfeasibilityclaimsneedactualreducedsolve/evaluationconditions next, notinferperfectsafeclassifier."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullframework/reductionEqs4–7/Tdefinedalltightconstraints; |T|<=nneedsnondegeneratebasisqualification, fullLPsolvesfixedintegeractiveselection. OfflineGoodTuringstop; fullinstance-strategycrossLPfeasibility/subopt8–9/setcovergreedy(notexactminimum)/rewards10–11andtransitivepreferencechain. Needfullconstraintvalidationattestnotassumeequivalenceeverypredictedstrategy."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fullAlgorithm1/attention13–15/adjacentranking16–17+tielabel.5/differenceMSE18/combined19, onlineTopK20 thenminviolation21 notminobjectiveamongfeasible, predictionerrorsnotguaranteed. Metricsaccuracy bothnormviolation+relativegap<=1e-4, 6MIPLIB+fuelcell+5industrialinventory, baselineswarmGurobi/1sheuristic/MLOPT/PredictSearch."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all7–8 numericalfigcaptions/results/scalability/train/testprotocol1000/500MIPLIB+industrial,10000/1000fuelcell,CPU32core2.16GHz; Pinventory270kconstraints/around90pctaccuracy not100optimal; excludesPredictSearchfuel/inventoryduefewinteger. ReadcompleteacknowledgmentsandfirstfullreferencepageA–Lin, exactpublisherjournalextensionsnotoldconferenceautomatched."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read allreferencepage9complete; Appendix10MIPLIBparameterballperturbation/moregeneralranges, fuelcellEq22explicitconvexMIQPnotMILP/privatedataLPdemoexternalmention andsubmittedcodepointer, actualAdamWlr1e-4–1e-3/100epochs/batch128/lambda.8–.9; fullsuppfig7andstrategycoveragecontinuationnext. Mustmanualcheckpublisherattachments forcode/anonymizedLPdemo."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read completeAppendix11–12allFig7fuelT10–60curves/strategycoverageFig6 discussion/Algorithm2greedysetcover,RFvsrankinglossEq23, fullTables1/2allT/k1andnegativeT30subopt14.33399 vsRF.04398/NR.02675, otherNRnegativecells. k1accuracy39.71pctatT60 notmainTopKfullaccuracy; averagepointgains notunqualifiedrelativepercent."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "RepeatedhomogeneousparametricMILPs motivateinterpretable reductionstrategyinsteadfullsolutionprediction.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/modelreduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Greedyfiniteinstancecoverpruning plusattentionadjacentpreference/differenceloss andTopKreducedsolves.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            11
+          ],
+          "locator": "Fig1/Eqs4–21/Algorithms1–2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Storeactiveconstraints+integervalues; fullviolation/objectivecrosslabels; onlineselectminviolationnotguaranteedbestobjective/feasiblefallback.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs4–21"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "6MIPLIB/MIQPfuelcell/5industrial models, train/test1000/500or10000/1000; tolerance1e-4,onlineCPUtimesexcludeoffline; fuelT60accuracy84.9vs45.97=38.93points.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            6,
+            7,
+            10
+          ],
+          "locator": "Setup/Fig3–5/Appendix"
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "category": "limitation",
+      "statement": "k1T60accuracy39.71andT30subopt14.33399vsRF.04398 demonstratecandidatebudget/erroroutliers; notallmetricdominance.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "FullappendixFig7/Tables1–2"
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "category": "limitation",
+      "statement": "Allactivecardinality<=nrequiresbasis/nondegeneracyqualification;greedycovernotgloballyminimum; curatorlocalexamplesdonotdenycorrectstrategyrecovery.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            11
+          ],
+          "locator": "Eq4definition/cardinalitysentence/Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Homogeneousfixedfamilystrategy/model separateperproblem; nojointcrossnativecheckpoint; neuralreductionchoiceconstructive, fuelcaseexplicitMIQP.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            10
+          ],
+          "locator": "Objective/Experiments/AppendixEq22"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete12p arxivmain/refs/appendixscientificevidence; submittedcode/anonymizedLPdemo referencedbutunlocated/notread; nofakeimplementationurl.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Byline/fullReferences/Appendixartifactmentions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2501.00307v1",
+      "locator": "p1exact9authorbyline SEUSchoolComputerScienceEngineering andHuaweiNoahsArkLab; publisherindexedbyline/Crossrefagrees."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/34916",
+      "locator": "Publisherprimaryindexed2025-04-11, depositedCrossrefpublished-online2025-04-11 AAAI39(25)27090–27098 DOI10.1609/aaai.v39i25.34916; formalPDF/pageHTTP520notread."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2501.00307",
+      "locator": "Savedprimaryhistorysinglev1 Tue31Dec202406:50:42UTC, watermarkp1agrees; actualdate2024-12-31despite2501identifier. Complete12pversionbeforeNov16cutoff; formaleligibilityseparate."
+    },
+    {
+      "field": "scope, paradigm, native problem coverage",
+      "source_url": "https://arxiv.org/pdf/2501.00307v1",
+      "locator": "pp3fixedstructureparametricfamily,pp6–7scenarioseparatetraining/strategy libraries,pp10MIQPfuelcellobjectivequadratic. Nojointcheckpoint/nativeproblem sharing; specialistconstructive modelreductionclassification."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/34916",
+      "locator": "Manualpublisherpage/PDF520challenge; indexedprimarydownloadlinksPDFonly. Completeidentifiedarxivall12p/main/refs+scientificappendix/extraFig6–7/Tables1–2 read; noplainURLlinksinsidePDF. p10submittedcode/anonymizedLPdemo explicitdata/implementationartifacts notfoundaftertargetedauthor/title/github/suppsearches, notread/countedascoverage. Fullscientificbody/proofs/additionalresultsnotmissing; reproducibilitylimitsclearlystated, nofakeCodeurl."
+    },
+    {
+      "field": "figure, mathematical and empirical crosscheck",
+      "source_url": "https://arxiv.org/pdf/2501.00307v1#page=3",
+      "locator": "pp3/4/5/6/7/10/11/12renderedallkeyformula/allplots/tables; originalFig1fullbboxcropped(76,51,536,283)andactualviewedaftercorrectinginitialtruncatedcrop. local-boundary-check.json activecount1var2active,greedy3vsoptimal2, speed6.2/70.1/392.2x and38.93pp; enumerative/arithmeticonlynotpaperbenchmark."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://arxiv.org/abs/2501.00307",
+      "locator": "Noexplicitpublishedrepo/CodeURLprimarypaper/arxiv; p10submittedcodeandLPdemo unavailable, noimplementationread/training/benchmarkreproduction. NoassigninglaterICLR2026ConstraintMatterspapercodetoearlierAAAIpaper."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "asp",
+      "reference_label": "Wang et al. (2024a)",
+      "description": "Related solver-learning context, literal bibliography identifies the TPAMI ASP article.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "efficientplace",
+      "reference_label": "Geng et al. (2024)",
+      "description": "Cites learned optimization decision-horizon limitations; the reference is the ICML macro-placement paper, not a MILP implementation dependency.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020a, 2020b)",
+      "description": "Discusses learned large-neighborhood search; the two near-duplicate bibliography entries identify the same NeurIPS framework, consolidated into one edge.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "gnn-gbdt-ip",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Discusses predicting partial variables followed by classical solving.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Cut-selection related work; this edge uses the explicit ICLR2023 conference entry, not the separately listed differently titled TPAMI extension.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Discusses learned large-neighborhood search in integer programming as related work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Literal background citation in learning-to-optimize discussion; exact title is graph-based combinatorial optimization, not claimed reduced-model reuse.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "learning-to-stop-cut-generation-for-efficient-mixed-integer-linear-programming",
+      "reference_label": "Ling, Wang, and Wang (2024)",
+      "description": "Learning-to-optimize background explicitly cites learned stopping of cut generation.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Related predicted-solution neighborhood search and directly evaluated MIPLIB baseline; excluded from the two other benchmark groups.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            8
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "rlcg",
+      "reference_label": "Chi et al. (2022)",
+      "description": "Cites reinforcement learning for column generation as solver-process learning.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "l2p-mip",
+      "reference_label": "Liu et al. (2024a)",
+      "description": "Explicit learned presolve related work and distinction from optimal active-set strategy prediction.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    },
+    {
+      "citing": "fast-and-interpretable-mixed-integer-linear-program-solving-by-learning-model-reductio",
+      "cited": "gnn-milp-expressivity",
+      "reference_label": "Chen et al. (2023)",
+      "description": "Literal theoretical representation paper cited in solution-prediction background; the edge is a citation, not an implemented solver baseline.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            8
+          ],
+          "locator": "Explicitbodyauthor-year attribution atlistedpages and fullReferencespp8–9 verifiedexacttargetidentity; noautomaticjournal-extension substitution."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingplaceholder withcomplete12pactualscientificreadinginclallappendixresults.",
+    "Topdateactualarxivv12024-12-31 separatedfromformalAAAI2025-04-11.",
+    "Keptspecialistconstructive; distinguishedfuelMIQP, knowncorrectstrategytheoryandpredictedTopKerrors.",
+    "Qualifiedalltightcardinality/greedyminimum wordingwithtinycuratorcases; preservedmain38.93ppgainandk1accuracy/outlier/runtime/offlinecostlimits.",
+    "RecordedunavailabledataLPdemo/submittedcodewithoutfakeCodeURL; originalFig1fullcroppass and12literalinternalcitationsadded."
+  ],
+  "reviewed_note_sha256": "dc658ba1bdea0ecb796d0ef3ce4553caec8cc57e3e2834bbc442e4035339f591"
+}

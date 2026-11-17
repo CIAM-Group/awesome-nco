@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "paper_id": "ridgecut-learning-graph-partitioning-with-rings-and-wedges",
+  "note_path": "specialist/ridgecut-learning-graph-partitioning-with-rings-and-wedges.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "8430ec1e40ade732e720fd1c7e90c4cdb47f8741ba82ba9d921f6602cb961b51",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2505.13986v4",
+      "retrieval_url": "https://arxiv.org/pdf/2505.13986v4",
+      "version": "arxiv2505.13986v4 dated2026-06-13 latest21p ten-authorKDD2026extendedversion including fullmain/references/scientificAppendicesA-J, DOI/formalbyline independentlymatched",
+      "local_path": "research/full-text-review/ridgecut-learning-graph-partitioning-with-rings-and-wedges/arxiv-v4.pdf",
+      "sha256": "f972d522a00bff38c6e1fbb9fe9f82190ecad948086685f97fb90cae59c96817",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Read actual completepp1-6 latest21p arxivv4 withtenauthors andformalDOI, not earlierunread26p v3nonauthormetadata. Allintro/relatedwork/objective/conditionalCheegerstatement/method/architecture. NC ismaxcut-volume ratio, notcanonicalsum. Ring/wedge transformationspreserveedgeweights, differentweightsmodules; PPOwedgefirstrandring thenfrozenwedgepolicy/ringtrainingcriticsreinitialized. NeuralmaxradiusplusclassicalringDP, greedyclassicalconnectivitypostprocessnotneuralimprovement. Fullsourcefigure4cropped/viewed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 11,
+      "notes": "Read actualfullpp7-11 includingTables1-6/41completebibliography/realdatarestriction/allscale/runtime/ablationdiscussion.100testgraphs400ktrain,10samples; synthetic50/100are nodesperring notsameasreal50/100totalnodes. Maincity1004part.060vsNeuroCut.078,6part.182vs.226. Mambascalabilityvariant1000nodeTable5slowerthanNeuroCut, NC>1unnamedscaleconflictsEq3range; do notmergeabsolute scales. Readallactualbody+matchingreferences16/33/37for3internaledges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 16,
+      "notes": "Read fullpp12-16 scientificAmetricdefinitions/BcompleteCheegerproofs/Cmodule/Dtwo-stagetrainingandgreedypostrefinement/Eprotocol/Fstart Tables7-9. TheoryrestrictedunweightedC_NxP_r nohubcenter, notlearnedPPOoptimalityguaranteeorweightedroadgraphbound. Table7low/highintrainterlabelsreversebody. NegativeTable9w/oPAMHA.169betterfull.174city50K4;Table8nfw.150vsfull.158, noPost.014vsfull.085city200K6 retained ratherthan universalablationclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 21,
+      "notes": "Read fullpp17-21 entireF2-7/G/H/I/J includingallproof/statements/formulas/pruningTables12/Algorithms1-6and9. FourtestspercheckpointFig8minmaxnotindependenttrainingCIs; center±5%canimprove15%cases>10%, classicalpostrefaverage22.4mainbutnotalltransfercells. Pruning100NC+26.15%;transformerquadraticandringDP O(n²k), newMambabackbone separate. Allsixcontactimages/all12tables/9figuresactualviewed. Authorlinked39memberZIP noPDFscience/proprietarydata; READMEfullandselectedtrain/eval/method/syntheticconfigread, default32hidden20-30perringvsTable764/50-100. No codeexecution/benchmarks."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Use spatial domain knowledge to reduce graph-partition actionspace.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/problem"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Ring/wedge ordering and partition-aware PPO with stagedtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            14,
+            15
+          ],
+          "locator": "Figure4/AppendicesC-D"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Maximum cut-volume objective, distinct ring/wedge policies plus classical DP/refinement and ten-sample protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            19,
+            20,
+            21
+          ],
+          "locator": "Equation3/Table7/Algorithms"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Single native graph-partition task; neural construction/classical refinement specialist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            15
+          ],
+          "locator": "Pipeline/Testing"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Empirical quality and transfer plus specific negative ablations and speed/scalabilitytradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Tables1-12/Figures8-9"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Unweighted-spider bounds conditional; proprietarydata, metric-scale/config ambiguities constrain reproduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            12,
+            13,
+            14,
+            16,
+            19
+          ],
+          "locator": "Datarestriction/Equation3/Table5/AppendicesA-B/E/H"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Latestten-author extendedversion includes fullA-J andpaper-linked implementation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Versionheader/fullappendices/codefootnote"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity latestversion formal publication",
+      "source_url": "https://doi.org/10.1145/3770855.3818103",
+      "locator": "Latestarxivv4June13,2026/21p explicitlyextendedKDD2026accepted paper matchesDOI/tenauthors inclAngeloZangari andformalorgs; v1May20,2025actualhistory. Earlier26pv3nineauthorsdownloadednotregisteredread. CrossrefonlineAug8/printAug9,2026/pages2122-2131; preferexplicitonline, repoBibTeXyearonly. FormalPDF403notread."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://arxiv.org/pdf/2505.13986v4",
+      "locator": "All21p fullmain/41refs/completeA-J proofs/formulas/algorithms/results read; allsixcontacts/allfigures/tablesviewed. Public39member55704byteauthorlinkedZIP noPDFscience/data/checkpoint; READMEanddata/train/eval/method/syntheticconfigs inspected. Extraunique scientificappendixnotmissing."
+    },
+    {
+      "field": "metric experimental and classification scope",
+      "source_url": "https://arxiv.org/pdf/2505.13986v4#page=8",
+      "locator": "MaxnormalizedcutEq3 notsum. TheoryunweightedC_NxP_r, notlearnedpolicy bound. Table5NC>1 unspecifiedscale/meanaggregation vsboundedEq3; MambavariantactualslowerNeuroCut; specificTable8/9negativeablations. Syntheticcountsperring vsrealtotalnodes; Table7weightlabelsreversedbody. Classicalgreedypostprocess notneuralimprovement."
+    },
+    {
+      "field": "originalfigure codeconfig",
+      "source_url": "https://github.com/zyr17/RIDGECUT/tree/a0cd56206d6eb0a278bb7305cae6d2ec939e2108",
+      "locator": "Fig4sourcep6 crop53,78,562,4453x fullcaptionactualview. Currentdefaultnet_hidden32 andppr20-30 vsTable764and50/100, config changesnecessary; no code/modelruns. ArchiveSHAinventorysaved."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ridgecut-learning-graph-partitioning-with-rings-and-wedges",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[16]",
+      "description": "Domain knowledge in graph-CO background; exact Karalias/Loukas NeurIPS2020 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Introductionactual[16] andfullreference16"
+        }
+      ]
+    },
+    {
+      "citing": "ridgecut-learning-graph-partitioning-with-rings-and-wedges",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "[33]",
+      "description": "Graph-CO background; exact five-author AAAI2019 DecisionTSP title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Introductionactual[33] andfullreference33"
+        }
+      ]
+    },
+    {
+      "citing": "ridgecut-learning-graph-partitioning-with-rings-and-wedges",
+      "cited": "neurocut-a-neural-approach-for-robust-graph-partitioning",
+      "reference_label": "[37]",
+      "description": "Primary learned node-relocation partitioning baseline; exact five-authorKDD2024 title/pages2584-2595.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            11
+          ],
+          "locator": "Methods/baselinecomparison andfullreference37"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read latestcomplete21p fullscientificA-J instead of relying on earlier acquired26pbyline.",
+    "Correctedtenauthors/formalaffiliations/v1andpublicationdates andkeptspecialistconstructive.",
+    "Retainedexactmax-NC objective, per-ring syntheticsizes, restrictedtheory, actualnegativeablations anddistinctMambascalingvariant.",
+    "Recordedproprietarydata/currentconfiglimitations andoriginalFigure4 withthreebody-supportedcitationedges."
+  ],
+  "reviewed_note_sha256": "8bb4100716d8b23db24566205412df70f38532e5a72dcf09d2f34192ea591337"
+}

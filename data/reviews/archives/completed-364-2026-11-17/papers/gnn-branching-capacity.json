@@ -1,0 +1,454 @@
+{
+  "version": 1,
+  "paper_id": "gnn-branching-capacity",
+  "note_path": "studies/gnn-branching-capacity.md",
+  "baseline_note_sha256": "4b26ca4f2e1f64865ba0ddfb5c25331c8aae613055c82eff467e2636e85f2a59",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dff528ce3e1390c88f10bbf5e722a241-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dff528ce3e1390c88f10bbf5e722a241-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-a83b865493.pdf",
+      "sha256": "07977b48e988141819971eecf34f9d024605f3843b07d7fa736dfedbaeb8f79b",
+      "pages": 34,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal title/fiveauthors/affiliations, strong branching motivation and restricted class/fixedm,n MILP graph encoding, exact objective/bounds/integrality features; no solver improvement theorem inferred from capacity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read continuous MP-GNN/2-FGNN exact definitions, zero-weight message condition, SB product definition with unique minimum-L2 LP optimum, finite feasible root/child LP domain to examine; WL hashing/color partition, tree-node qualification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read definitions and all main Theorems4.1-4.7: constant entries each stabilizedWL block sufficient; Borel regular fixedm,n finiteSB assumption; MP indistinguishable8cycle vs2triangles+doubleedge counterexample; 2FGNN probability approximation existence not size/time guarantee. Main experiment setup100smalltrainingonly and2counterexampleinstances."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read complete empirical Figure3/Table1 incl64to2048 widths, additional100set-cover1000variable2000constraint training-fit1.94e-4; references1-29 including exact priorLP/MILPcapacity and learning-branching identities. No heldout runtime comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read bibliography30-61 in full and AppendixA separationdefinitions/TheoremsA2-A3: constant WL blocks force equalA after constraint permutation, equalSB and withincolor equality. Identified exact priorLP/MILP/branching/largeneighborhood/cut papers for body+ref scan."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read Lusin/StoneWeierstrass compact symmetrization proofA4-A5, complete exact SB counterexample proofB (allzeros vs sixquarters,twozeros), MP induction; 2FWL Algorithm2 and all equivalence definitionsC1/C2. Prior min-norm selector avoids previous MILP fixed-target symmetry problem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read fullC2 equivalence-permutation proof andC3-C6 individualization proof:2FWL fixes j singleton, preserves equitable blocks and LP value/minimumL2opt after arbitrary bound changes. Verified logic/conditions row/columnsum and coordinate permutation handling."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read full C3 conclusion andC7-C9 both directions 2FWL/2FGNNseparation equivalence: finite-feature continuous injective maps, tensoronehot multiset counts, scalar invariant readout construction. All proof lines22-24 covered."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read completeC7 scalar construction, C10equivariantStoneWeierstrass and4.7proof; AppendixD scorefunction and varying-size extensions (boundedfiniteunion/unboundedtail-removal in probability, no uniform all-size guarantee). AppendixE exactGaussian100MILP generator and43.0M/35.7Mparameter networks,TF1.15/learningrate decay."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 31,
+      "notes": "Read checklistclaims/theory/repro/open-code/settings/statisticalNA/compute/ethics/impact. Authors explicitly say training demonstrations notSOTAstatisticalbenchmark; source/data supplement promised and independently codearchive inventoried725members noPDF."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 32,
+      "last_page": 34,
+      "notes": "Read remainder of complete checklist safeguards/licenses/newassets/humanresearch/IRB. All34scientific/checklist pages plus61refs/A-E complete; code supplement725members has no scientific PDFs/nested ZIPs."
+    }
+  ],
+  "claims": [
+    {
+      "id": "mp-capacity",
+      "category": "contribution",
+      "statement": "Constant stabilizedWL coefficient blocks define MP-tractability; under Borelregular distribution and finiteSB almostsurely MP-GNN approximates scores in probability.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            15,
+            16
+          ],
+          "locator": "Definition4.2, Assumption4.3, Theorem4.4 and entire AppendixA proof"
+        }
+      ]
+    },
+    {
+      "id": "counterexample",
+      "category": "contribution",
+      "statement": "Eightcycle and two triangles plus duplicate pair constraint give identical MP output but SB vectors0 versus sixquarters,twozeros under minimumL2LP tie breaking.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            17
+          ],
+          "locator": "Eq4.1-4.2, Theorem4.5 and full AppendixB exactcalculation/induction"
+        }
+      ]
+    },
+    {
+      "id": "pair-capacity",
+      "category": "method",
+      "statement": "2FGNN/2FWL singleton individualization preserves needed bound-change LP properties; Lusin and equivariant StoneWeierstrass yield broad approximation existence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            8,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "locator": "Definition2.3, Theorem4.7 and complete AppendixC1-C4"
+        }
+      ]
+    },
+    {
+      "id": "canonical-target",
+      "category": "method",
+      "statement": "Product SB uses unique minimumL2 LP optimum and feasible finite rootLP; main assumption excludes infinite child scores.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            26
+          ],
+          "locator": "Definitions3.1-3.2, remarks, Assumption4.3 and AppendixD1"
+        }
+      ]
+    },
+    {
+      "id": "varying-size",
+      "category": "contribution",
+      "statement": "AppendixD2 extends existence over bounded size unions and fixed-distribution unbounded support by small-probability tail removal, not uniform all-size efficient accuracy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            27
+          ],
+          "locator": "Complete AppendixD2 bounded/unbounded arguments"
+        }
+      ]
+    },
+    {
+      "id": "fits",
+      "category": "experiment",
+      "statement": "100generated6constraint20variable trainingMILPs plus2counterexamples; both fittractable and only2FGNN fitscounterexamples; no heldout solver speed benchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            27,
+            30
+          ],
+          "locator": "Section5/Figure3 and AppendixE/checkliststatisticalscope"
+        }
+      ]
+    },
+    {
+      "id": "width-and-large",
+      "category": "experiment",
+      "statement": "Width64to2048 fitting ablation and100large2000constraint1000variable setcoverMP trainingerror1.94e-4 are additional empirical studies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Table1 and Largerinstances paragraph"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Existence does not bound model/training complexity or branching argmax stability; MPtractability not solvability and not necessary for every individually fittable dataset.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            27
+          ],
+          "locator": "Actual quantifiers/negativeexistential examples/author futurework; curator distinguishes sufficiency and universal obstruction"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Theory of SB representation with training demonstrations; not a new certifiedMILPsolver or single efficient generalist checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            9,
+            10
+          ],
+          "locator": "Stated scientific question, actual experimental targets and absence endtoendbenchmark"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dff528ce3e1390c88f10bbf5e722a241-Abstract-Conference.html",
+      "locator": "Manually opened official NeurIPS37/2024 mainconference page: exactfiveauthors/title and DOI. PDFp1 MIT,UCF,AlibabaUSDAMO checked. No exact day supported on primaryrecord; replaced importedDec16 with verified2024year."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dff528ce3e1390c88f10bbf5e722a241-Supplemental-Conference.zip",
+      "locator": "Manually followed actualpublisherSupplementalZIP link, downloaded and inventoried all725members including nestedZIP handling. NoPDF nor nested scientificZIP. Code/data only; README/requirements/run.sh read. Inventory+SHA in publisher-archive-inventory.json. Full34page publisherPDF contains all scientific AppendicesA-E and checklist; all pages/61refs read. Two contact sheets visually checked theoremdomains, full counterexample, proof and numerical tables."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dff528ce3e1390c88f10bbf5e722a241-Supplemental-Conference.zip",
+      "locator": "Publisherarchive is verified implementation resource, not guessed GitHub. Contains code-2fgnn/gnn.py,second_order_fgnn.py,train.py,utils.py,run.sh,README.txt,requirements.txt and data. Four exact run.sh experiments and TF1.15/NumPy1.19.5 verified; added ZIPcodeURL. Training not rerun."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/dff528ce3e1390c88f10bbf5e722a241-Paper-Conference.pdf",
+      "locator": "Publisherproceedings34page source, exact identity/title/author checked. All science A-E,61refs and checklist read; normalized note and raw sourceSHA retained."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dff528ce3e1390c88f10bbf5e722a241-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/gnn-branching-capacity/supplement-landing.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/dff528ce3e1390c88f10bbf5e722a241-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/gnn-branching-capacity/supplement-landing.html; citation_title=['Rethinking the Capacity of Graph Neural Networks for Branching Strategy']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "gcnn-branching",
+      "reference_label": "[19] Gasse et al. (2019)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit numbered body citation PDFp3; exact bibliography identity PDFp12: [19] Gasse et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "gnn-gbdt-ip",
+      "reference_label": "[57] Ye et al. (2023)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp14: [57] Ye et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "hem-cut-selection",
+      "reference_label": "[52] Wang et al.,arXiv2302.00244",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp14: [52] Wang et al.,arXiv2302.00244"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "hybrid-branching",
+      "reference_label": "[24] Gupta et al. (2020)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp12: [24] Gupta et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "[32] Labassi et al. (2022)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp13: [32] Labassi et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "learn-lns-ip",
+      "reference_label": "[54] Wu et al. (2021)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp14: [54] Wu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "rlcg",
+      "reference_label": "[13] Chi et al. (2022)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit numbered body citation PDFp2; exact bibliography identity PDFp12: [13] Chi et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "tree-mdp-branching",
+      "reference_label": "[48] Scavuzzo et al. (2022)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Explicit numbered body citation PDFp5; exact bibliography identity PDFp14: [48] Scavuzzo et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "gnn-approximation-ratios",
+      "reference_label": "[47] Sato et al. (2019)",
+      "description": "Explicit prior learned optimization/branching or representation study discussed in the body.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit numbered body citation PDFp3; exact bibliography identity PDFp13: [47] Sato et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-branching-capacity",
+      "cited": "gnn-milp-expressivity",
+      "reference_label": "[12] Chen et al. (2023)",
+      "description": "Builds on prior MILP representation theory.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit numbered body citation PDFp3; exact bibliography identity PDFp11: [12] Chen et al. (2023)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded all main theorems with actual architecture, measure, finite-score and canonical LP tie conditions.",
+    "Correctly limited MP negative result to obstruction of unrestricted universal capacity, not every nontractable instance; included actual varying-size AppendixD2.",
+    "Recorded all training demonstrations, widthablation and larger setcover trainingfit; no invented solver speedup/testbenchmark.",
+    "Verified publishercode archive/no extra science, addedcodeURL and replaced unsupportedday with year;10internalcitations;no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "acfc3209594aa322f70507d6635499f6eecb4ebe2e3a0d1a843ace929d8ef1f9"
+}

@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "paper_id": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+  "note_path": "specialist/learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "87f114368e5610d842e7685405e8ce83e565cea68417bde99ce4c2fad1186566",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/papers/He_Learnable_Graph_Matching_Incorporating_Graph_Partitioning_With_Deep_Feature_Learning_CVPR_2021_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/He_Learnable_Graph_Matching_Incorporating_Graph_Partitioning_With_Deep_Feature_Learning_CVPR_2021_paper.pdf",
+      "version": "Formal CVF11p5299–5309 4authors complete main/77references read.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-d246071e60/publisher.pdf",
+      "sha256": "a0bc2707ba1f82ffcfda6f71fa44743ef1b5c92c876ac98b4c5382f9c64c229c",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2021/supplemental/He_Learnable_Graph_Matching_CVPR_2021_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2021/supplemental/He_Learnable_Graph_Matching_CVPR_2021_supplemental.pdf",
+      "version": "Official CVF4p scientific supplement same4authors/title; fullgradient derivation/pseudocode/tables/plots/all12references read.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-d246071e60/supplement.pdf",
+      "sha256": "b3ce14109c68bc81d99de25c76704f3bcc5852389629813da9f5626713e6c118",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "All pp1?3 read4CASIA/UCAS/TuSimple/HKISIauthors;online MOT complete detection+tracklet graphs, explicit intra-frame context;KBQAP -> ||A1Pi?PiA2||? convex relaxation, implicitKKT/QPlayer feature learning; contextual data association, not independent general graph partitioning benchmark."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Complete pp4?5 scalar->unit edge feature formulation;vectorized (n?1)^2I?M QP with partialrow/col constraints; cosine edge+unary affinities; ReID mean tracklet features, crossgraph GCN uses appearance+IoU exceptmovingcamera, Kalmancontinuousbbox motion, no separate neural graphpartitiontask."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "All pp6?8 read qpthtrainingCVXPYinference+greedyroundingnotHungarianmainQAP;motion/appearancegates+IoUHungarianfallback/new/deadtracks,ECCKalman;frozenReID external3datasets;MOT17val3foldablationsIDF168.1->71.5withoutinterp68.9->73with,identityswitchesnotallbetter. TestIDF163.8/63.9withMOTA56.2/55.9lowerthancomparators,offlineinterpseparate. Detailed Table5 detection-dependent metrics notglobalSOTA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "All77refs pp9?11 read:MPNTrack8/PCA61/CIE69/deepGM71 actualcatalogue identities;OptNet2maybe catalogued? fullcandidatecomparisonpending. Rest classical/deepMOT references not mapped by merely shared area; no journal lineage aliases."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "All scientificsupp pp1?2 read fullKKT derivative A?E with inverseJacobian regularity needed?not unconditional global smoothness;completeAlgA partial matchingpostgates/IoU.3Hungarianfallback;oraclegap71.5vs77.2IDF1 and1017vs14IDS;threshold sigma sensitive;TableAotherdetectionmetricsmostlysimilar."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "All supplementalTableB completeMOT16/17 metrics rows read;HOTA49.1vsMPN49.0MOT17withMOTA56.2<58.8 andworseIDS1778>1185;offlinePostprocessing/nondetectionsregimes distinct;all12supprefs read MPNTrack3sameactualidentity no extra target."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gmt-contrib",
+      "category": "contribution",
+      "statement": "Learned intra/cross-graph context plus relaxed QP association for online multiple object tracking.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "locator": "Introduction/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "gmt-method",
+      "category": "method",
+      "statement": "Frozen ReID+trainableMLP/GCN, qpthtraining/CVXPYinference, greedy primary rounding and IoU-Hungarian fallback.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4.1–4.4/5.2"
+        }
+      ]
+    },
+    {
+      "id": "gmt-results",
+      "category": "experiment",
+      "statement": "MOT17/16 onlineIDF163.8/63.9 MOTA56.2/55.9; CenterTrack/offlinevariants separate; oracle77.2vs71.5IDF1.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables1–5"
+        }
+      ]
+    },
+    {
+      "id": "gmt-supp",
+      "category": "experiment",
+      "statement": "Supplement detailed metrics show HOTA49.1 vs49.0butIDS1778>1185MOT17;oracle andthreshold sensitivity preserve headroom.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "TablesA–B/FigureA"
+        }
+      ]
+    },
+    {
+      "id": "gmt-limit",
+      "category": "limitation",
+      "statement": "Relaxed-QP optimization and KKT implicit differentiation not integer-optimality/semantic-correctness guarantees; inverse requires regularity.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "EqsA–E"
+        }
+      ]
+    },
+    {
+      "id": "gmt-class",
+      "category": "classification",
+      "statement": "Specialist constructive neural affinity+relaxed optimizer/rounding for MOT; classical interpolation not neural incumbent improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Native MOT task/inference/postprocessing"
+        }
+      ]
+    },
+    {
+      "id": "gmt-repro",
+      "category": "reproducibility",
+      "statement": "All11main+4scientificsupp pages and complete references read; full official102member code/README and necessary rounding paths inspected.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            11
+          ],
+          "locator": "MainReferences/officialrepo"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR46437.2021.00526",
+      "locator": "Cached exact title/4author Crossref published-print2021-06; formalp1bylineCASIA/UCAS/TuSimple/HKISI. ActualCVF5299–5309 vsdeposited5295–5305 recorded."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2103.16178",
+      "locator": "Cached primarycanonicalhistory v1 2021-03-30; separate from June2021 official publication month."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/supplemental/He_Learnable_Graph_Matching_CVPR_2021_supplemental.pdf",
+      "locator": "CVFlandinglists4p officialscientificsupp;completeallA–C/AlgorithmA/TablesA–B/refs read. Full102member archive2a6cc6343b6f99bfae4edde4d0f58e6c9ca14cdf has2ipynb identifiedasvendoredOptNet/qpth ownheaders, not GMTrackeradditionalscience;nootherPDFZIPscience."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/He_Learnable_Graph_Matching_Incorporating_Graph_Partitioning_With_Deep_Feature_Learning_CVPR_2021_paper.pdf",
+      "locator": "OriginalFig3wholecaption PDFp5/5303Rect40,65,572,390at2x physicallysaved/actuallyviewed;main4/5/7/8andallscientificsupp1–3math/algorithm/table/plotpagesrendered/inspected."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/jiaweihe1996/GMTracker",
+      "locator": "FullREADMEread;GMMOT/gmatching.py77–140CVXPY/SCSandrow/columnexcludinggreedy,model.py187–243qpthtraining;currentunaryreranking40–43notplainpaperEq11 noted."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2021/papers/He_Learnable_Graph_Matching_Incorporating_Graph_Partitioning_With_Deep_Feature_Learning_CVPR_2021_paper.pdf",
+      "locator": "All77main+12supprefsread;3actualcatalogueidentities, MPNTrack/OptNet notcatalogued, no inventedtargets."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "61",
+      "description": "Direct actual main bibliography title/byline identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[61]"
+        }
+      ]
+    },
+    {
+      "citing": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+      "cited": "cie-h",
+      "reference_label": "69",
+      "description": "Direct actual main bibliography title/byline identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[69]"
+        }
+      ]
+    },
+    {
+      "citing": "learnable-graph-matching-incorporating-graph-partitioning-with-deep-feature-learning-f",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "71",
+      "description": "Direct actual main bibliography title/byline identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References[71]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending draft after full11formal+4scientificsupp reading.",
+    "Distinguished greedy primary QP rounding and IoUHungarian fallback.",
+    "Separated online/detector/offline protocols and retained metric regressions/oracle headroom.",
+    "Kept KKT regularity/relaxation boundaries and exact current code provenance."
+  ],
+  "reviewed_note_sha256": "8b2eb75602f72e0d40daa6c7ea9df48416b1899d8baeadee318f43f741ce6547"
+}

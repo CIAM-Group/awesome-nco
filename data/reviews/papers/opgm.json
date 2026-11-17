@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "paper_id": "opgm",
+  "note_path": "specialist/opgm.md",
+  "baseline_note_sha256": "97663af5a26609b38fd9992a483f16741212623ec2eb143d2635d6961c665b2f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/cfa8440d500a6a6867157dfd4eaff66e-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/cfa8440d500a6a6867157dfd4eaff66e-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-db2b8600d1.pdf",
+      "sha256": "5b1b3355adbd83aa7815cc1bdd243d18ef94264e6f64db4c5be4a9e4c5e18199",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Read formalpartialassignment unit-mass weighted-TV linearobjective, alltheoremstatements and cappedcost/dummyrow Hungarian reduction. Existence integral optimum not everyOPTplan; cubicexactness only learnedlinearobjective, not originalquadraticGM."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 15,
+      "notes": "Read neuralcost/bias/maskedBCE architecture andallvisual/PPI protocols/mainresults/noisefigures, fullreferences, extendedOT/unitmassproofsA.1-A.2. No originalQAP or semanticoptimality guarantee; SPair/IMC/Pascal negatives andnecessary-only costthreshold distinguished."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 21,
+      "notes": "Read complete Birkhoff/unit-mass integrality, assignmentcost equivalence and extension/comparisonproofs, all AppendixB metrics/hyperparams/efficiency/failuremode results; PPI biased model losesfixedbias fournoiselevels, PascalbelowAFAT, true-matchpartiality failures explicit."
+    }
+  ],
+  "claims": [
+    {
+      "id": "opgm-contribution",
+      "category": "contribution",
+      "statement": "WeightedTV learnedpartialassignment objective with unitmassintegrality/cappedLAPexactdecoder andsupervisedcost/biastraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Contributions/Theorems5.1-6.2/architecture"
+        }
+      ]
+    },
+    {
+      "id": "opgm-method",
+      "category": "method",
+      "statement": "Exactness appliesunitmasslinearobjective; eligiblethresholdnecessary notsufficient, everyOPToptimum notnecessarilyintegral, distinctGCAN/GINfeaturemodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Fullproofs/Sections4-8"
+        }
+      ]
+    },
+    {
+      "id": "opgm-experiment",
+      "category": "experiment",
+      "statement": "SPair57.7, IMC10072.8, negativeIMC50/Pascal/PPIlearnedbias cases;117.8ms endtoend inference on3000pairs excludesofflinecost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            20,
+            21
+          ],
+          "locator": "Tables1-4/Figures2-3/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "opgm-classification",
+      "category": "classification",
+      "statement": "Partialvisual andbijectivePPI graphcorrespondence family with differentbackbones/training, noactualunchangedpolicycrossunrelatednativeoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            20
+          ],
+          "locator": "Experimentalarchitectureandhyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "opgm-limit",
+      "category": "limitation",
+      "statement": "Surrogateoptimum notsemanticF1/globalQAP; ambiguous/noisydata andpartialitythreshold failures; generalmassappendixconstantunitnotation qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14,
+            20,
+            21
+          ],
+          "locator": "Conclusion/AppendixA.1/B"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/cfa8440d500a6a6867157dfd4eaff66e-Abstract-Conference.html",
+      "locator": "Official title/threeauthors/pages83575-83595 match21pagepublisherPDF; ANU SchoolofComputing+BiologicalDataScienceInstitute affiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/cfa8440d500a6a6867157dfd4eaff66e-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date=2025-05-01, formalICLR2025 record independentofeventdates."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/cfa8440d500a6a6867157dfd4eaff66e-Supplemental-Conference.zip",
+      "locator": "Downloaded453bytepublisherZIP, inventorysupplementary/directory+supplementary/code; readsolefile: one-lineGithubGathika94/OPGMrs.git link, noextrascientificPDF. Full21pageintegratedAppendixA/B read; authorarchivealsoinventoried."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Gathika94/OPGMrs",
+      "locator": "OfficiallinkPDFandpublisherZIP; mainZIPallfilesinventoried, GCANnetwork/pma/pmatnew/loss/configs/selectedtrainingnotebookcellsread; noPPIcompletepipeline/checkpointsidentified."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "opgm",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicit body author-year citation and matching bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Explicit body author-year citation and matching bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "sigma-matching",
+      "reference_label": "Liu et al. (2021)",
+      "description": "Explicit body author-year citation and matching bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "reference_label": "Jiang et al., 2022b",
+      "description": "Partial matching/dummy-node discussion identifies exact five-author CVPR2022 GCAN article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Actual body citation Jiang et al., 2022b on PDF pp[2]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Partial matching/dummy-node discussion identifies exact five-author CVPR2022 GCAN article."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "Gao et al., 2021",
+      "description": "Related embedding methods explicitly cite the five-author CVPR2021 quadratic-constraint article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Actual body citation Gao et al., 2021 on PDF pp[3]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Related embedding methods explicitly cite the five-author CVPR2021 quadratic-constraint article."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "universe-points-representation-learning-for-partial-multi-graph-matching",
+      "reference_label": "Nurlanov et al., 2023",
+      "description": "Universe-graph representation discussion directly cites exact three-author AAAI2023 article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Actual body citation Nurlanov et al., 2023 on PDF pp[3]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Universe-graph representation discussion directly cites exact three-author AAAI2023 article."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "Rolínek et al., 2020",
+      "description": "Neural correspondence methods cite exact six-author ECCV2020 BBGM title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Actual body citation Rolínek et al., 2020 on PDF pp[3]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Neural correspondence methods cite exact six-author ECCV2020 BBGM title."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al., 2019b",
+      "description": "Injective matching discussion cites exact three-author ICCV2019 PCA title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Actual body citation Wang et al., 2019b on PDF pp[2]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Injective matching discussion cites exact three-author ICCV2019 PCA title."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "reference_label": "Wang et al., 2023",
+      "description": "Match-count estimation/GreedyTopK discussion cites exact five-author CVPR2023 differentiable-top-k title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Actual body citation Wang et al., 2023 on PDF pp[2]; full bibliography entry on pp[13]. Title and author identity matched to the target reading record, independently of topic similarity. Match-count estimation/GreedyTopK discussion cites exact five-author CVPR2023 differentiable-top-k title."
+        }
+      ]
+    },
+    {
+      "citing": "opgm",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "Wang et al., 2020b",
+      "description": "Baseline paragraph calls this citation NGM-v2, but its full bibliography is explicitly the six-author CVPR2020 Learning Combinatorial Solver paper; retain actual cited identity without adopting the baseline label as method identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13
+          ],
+          "locator": "Actual body citation Wang et al., 2020b on PDF pp[8]; full bibliography entry on pp[13]. Title and author identity matched to the target reading record, independently of topic similarity. Baseline paragraph calls this citation NGM-v2, but its full bibliography is explicitly the six-author CVPR2020 Learning Combinatorial Solver paper; retain actual cited identity without adopting the baseline label as method identity."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all21publisherpages/allproofs/results and inspectedkeymath/figures; scientificsuppZIPsolecodeURLfilefullyreadandrecorded.",
+    "Restrictedcubicexactness/integralitytounitmasslinearobjective andthresholdto necessarycondition; separatedneuralcostquality/trueF1/globalQAPclaims.",
+    "Retainedvisual/PPInegativecases/confidenceintervals/hardwaretiming andactualcodedifferences; formaldateverified and3exactcitationsrestored.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3b612e6623b292eec86ce47deb0f02af5c8e2df86ec5b14aee13ff4f3a894581"
+}

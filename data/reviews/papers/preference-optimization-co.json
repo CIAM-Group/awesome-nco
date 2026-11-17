@@ -1,0 +1,691 @@
+{
+  "version": 1,
+  "paper_id": "preference-optimization-co",
+  "note_path": "specialist/preference-optimization-co.md",
+  "baseline_note_sha256": "36a17b7d83e3b3e7e4ecde6da88923e0e715908f54753c69f98d1831df401870",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/pan25e/pan25e.pdf",
+      "version": "Complete formal ICML2025 PMLR267:47672-47696,25pages with all scientific AppendicesA-F;publisherOctober6,2025",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/pan25e/pan25e.pdf",
+      "local_path": "research/import-272/nco-5e5d82d674.pdf",
+      "sha256": "6598a4d72e770c9bcd72971416043c6dea735816e7c2d838867eb987afe6c771",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exact7authors6institutions(equalfirstPan/Lin). POusesonpolicysolutionrewardranknotactualhumanfeedback. SeparateTSP/CVRP/FFSPbackbonesforthose native tasks,notmultiobjectivepreferencevectors. Claimsentropy/rewardreparamtheoryneedfullproof;relatedNeurewriter(dOCosta2020)misattributionmustbibidentifyactualpaper."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "ReadEq2-9/Alg1/additiveshiftProp3.1correctGibbsfinitealpha buthardordinalsignlabelsnotBTsoftrewardprobabilities. Eq7samplingπthetaθ-dependent,Eq8logpreferencegradientomitsdistributiongradient unlessstopgrad. Actualscaleinvariancepositiveaffinerefrelativeranks notallshaping,entropyinterpretationneedsDproof. LSfinetunehardpositivepairsoffpolicyBCperspective noimportanceunbiasedclaim. TSP/CVRPcostsign prosepositivebutmaximize negative mustclarify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTables2/3/Figs2/3/limitations; 10kroute1000FFSPtimes vsTable3MEANperinstance nottotal. POmostnotall AM20worse/Table2FFSP50unaug51.5>51.3 RF despiteprintedconsistentclaim;matnet100po91.1vs91.5. 1.5-2.5fasterinEPOCHnotuniversalwalltime. ELGTSPLIB3.08→3.00/CVRPX6.03→5.94,notbetterLEHD/BQNCOglobalTSP. Finerankconsistency75/78%not100;earlysumactionentropyempiricalnottheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadallbibliographyA-Zexactidentities. dOCosta2020refLearning2optACML notChenTianNeurewriter despitebodyname;excludedinventedneurewriteredge. VinyalsPointeractualbibyes;Sultanaarxiv/PbRLnotcatalog. 24candidateIDsneedexplicitbodyevidencefullread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadallAproblemdefinitions andBencoder/decoder formulas19. CVRPprintedallnodesdistinctincludesdepot contradiction;FFSPprintsassignmentovermachineallstages simplifiednotfullimplementableMILP. Useverbalcorrectstandardtasksnotcopyformula asguarantee. ActualPointerbib+body14confirmed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullpreferenceBT/Th/PLdefinitions+C;D1GibbsKLderivationfinitevalidpositivepolicy optimum;Eq24prints+logZ butalgebra−,independentpiargminunchanged. D2additiveinstance-shiftproofallratiostepsreadthrough18. Doesnotderivehardordinalobjectiveequivalentfinite-tempGibbs noractualEq7fullgradient. Needread19 rest."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "ReadD2remainingcorrectshiftratio/E1code BTlineoverwrittenExp pseudocode notactiveproof;E2alphagridfinite .005..2,notguaranteedfixedtempentropy. FullTables4-7 POMO2000/4000epochs andfinetune100/200,AMbodybatch512vsTable256inconsistency. TSPBTalpha.05,CVRPExp.03;no allBT claim. αhigherdoesnotalonecalibrateentropytheoretically."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "ReadfullDIMES/MatNetconfigTables8/9/F1F2F3/Table10/Fig4. ActualTable10MCTSTSP1000 PO5.23 worseRF5.10 contradictuniversalallclaims;LSnotinferencefreeforhybridDIMESstillMCTS2optAS. LongPOMO2000/4000epochs+100/200FT costTSP9→12min,CVRP8→20minCPUrealcost. COMPASS/Poppyseparatelytrained100kstepsA800 toread24results."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "ReadallF3-F5/Fig5/6/Table11. Poppy/COMPASSreportedstep-target7.2/11/7/4 notwalltime. F4explicitBT/Thhardpreflimitlatentgap∞,Expunboundednotprobability;notfinitecalibratedGibbs. Crossdist10kexamples5typesPOMOPOallbetterbaselineempiricalnofullno-rewardclaim(currentlabelsgroundreward). All25pagesrefsA-Fcomplete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 7,
+      "notes": "VISUALCORRECTION atfinalcrosscheck: PDFp7Table2 rowsare RF51.5/PO51.3 forFFSP50; priorlayoutinterleavingnotehad reversedrows. Currentnoteandclaimcorrected;donotcountFFSP50negative. FFSP20RF27.3/PO27.0,100RF91.5/PO91.1 alsoimprove. OtherAM20/DIMES1000negativecasesvisuallyconfirmed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Closeout reread: full Eq2-8/Proposition3.1/Alg1 and sample-distribution vs detached-loss distinction; preserve fixed-pair qualifier, no claim about full theta-dependent sampling optimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 19,
+      "notes": "Closeout reread: entire Gibbs KL derivation and additive-shift proof, plus printed implementation snippet. Correct theorem scope remains conditional and independent of calibration from hard ranks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Closeout repeat visual restart-experiments.jpg: Table2 FFSP50 RF51.5 vs PO51.3 and100 RF91.5 vs PO91.1; Table3 mean-time and architecture comparisons confirmed. Prior final log had reset status through helper, not missing whole-paper coverage."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "OrdinalrewardcomparisonsmitigatesmalladvantageandLStrainingratherthaninference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Intro/contribution"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "POcomparisontraining plusGibbs/additiveshiftmotivationandoptionalLSfinetuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Eq3-9/Prop3.1/AppendixC-D"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separatenativetask/backbone/checkpointtraining;trainingalgorithmuniversalitynotgeneralistmodel;DIMEShybrid.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "Allbenchmarkspecificsettings"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Ranknegcostwinnersagainstlosers/logsigmoidpolicy-logratios/tiesignored/detachedsamplegradient/LSoffpolicyimitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            19,
+            20,
+            24
+          ],
+          "locator": "Eq6-9/E1/F4/codechecked"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "10kroute1000FFSPtotalvsTable3meantimes;POMOPOplusLSimprovesmain100 butAM20/DIMESMCTS1000counterexamples;FFSP50RF51.5→PO51.3visualcorrected;epochnotwalltimeclaims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "All11tables/6figs/longtraining/crossdist"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "AdditiveshiftGibbstheoremnotfinite-tempcalibrationfromhardranks;fullEq7samplingderivativevsdetachedsurrogate distinguished;experimentusefulnessnotrefuted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            16,
+            17,
+            18,
+            19,
+            24,
+            25
+          ],
+          "locator": "Precisecuratorarithmetic/recompute_ordinal_scope.pyandtrueDproofscope"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "25formalpagesA-F/allrefs12visual/60filerepo/4weights/codeBTvExp/LSlosstypo/nobenchmarkrun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Actualreadcoverage/sourceinspection"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.mlr.press/v267/pan25e.html",
+      "locator": "Exact7authors/equalfirstPanLin;PDFp1ChinaMobile/PKU/Tsinghua/Jiaying/SYSU/CentralSouth. ICML2025PMLR26747672-47696,HTMLcitation_publication_date2025/10/06."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v267/pan25e.html",
+      "locator": "ManualpublisherPaper/OpenReview/Softwareonly;25pA-Fallrefs/proofs/experimentsread. API1/2forumJwe5FJ8QGx403cached. Official60filesnoPDFZIP/scientificdocument;4PT/PTH;noexplicitmissingattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v267/pan25e.html",
+      "locator": "Formal25pSHA6598a4d72e770c9bcd72971416043c6dea735816e7c2d838867eb987afe6c771;visual4/5/6/7/8/9/17/18/20/23/24/25includingallFigs1-6andtheory."
+    },
+    {
+      "field": "code_url,release differences",
+      "source_url": "https://github.com/MingjunPan/PO4COPs",
+      "locator": "PublishersoftwarecanonicalredirectMingjunPan/PO4COPscommitc300a7103e3a507088c04c49446a04bae07dcc7960files. FullREADMErequirements/TSPTrainer270/traincfg144,selectedCVRPTrainer121-233read. Fixedsampleloss.logsigmoidautograd;CVRPBTnotprintedExp;local_searchcfgpf_ls_lossvsdispatchpo_ls_loss;2010vs2000epochs. Noexternalcodechanged/noexp rerun."
+    },
+    {
+      "field": "theory scope, curator arithmetic",
+      "source_url": "https://proceedings.mlr.press/v267/pan25e.html",
+      "locator": "Dpp16-19provesGibbs+instanceadditiveshift only. Eq7θ-dependentsamplingfullgradientnotEq8fixedpairgradientwithoutstopgrad. r=(1,0)/(10,0),alpha1sameordinaldiffGibbs.73105857863/.99995460213;conditionalpairCEcomparisonnotfullEq7optimum. Executedownrecompute_ordinal_scope.py arithmeticonly. Empiricalresultsnotinvalidated."
+    },
+    {
+      "field": "closeout,revalidation,release tensors",
+      "source_url": "https://proceedings.mlr.press/v267/pan25e.html",
+      "locator": "Full prior25page coverage/source and note SHA/7claims/24cites/allflags confirmed; reread4-5/17-19 and visual7-8/20/25. Publishercachedlinks Paper/OpenReview/Software no separate supplement;cachedOpenReviewchallenge403;repo c300a7103e3a507088c04c49446a04bae07dcc79 exactly60files,noPDFZIP,2modelcheckpoints+2validationtensors. Reexecuted ordinal script, inspected actualtrainer/configlines. Latestfour-modecandidate scan returns same24IDs,no newcandidate. Ownerprogresshelper unconditionally setsreading, consistent with last visual correction log following full finalization. Status restored only after this explicit crosscheck."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "preference-optimization-co",
+      "cited": "asp",
+      "reference_label": "Wang et al.(2024)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitWang et al.(2024);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al.(2021)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2explicitFu et al.(2021);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.(2019)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1explicitKool et al.(2019);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "BodyPDF8explicitDrakulic et al.(2023);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "BodyPDF7explicitChalumeau et al.(2023);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "dact",
+      "reference_label": "Ma et al.(2021)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2explicitMa et al.(2021);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitYe et al.(2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12
+          ],
+          "locator": "BodyPDF8explicitSun & Yang(2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.(2022)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "BodyPDF7explicitQiu et al.(2022);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "elg",
+      "reference_label": "Gao et al.(2024)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "BodyPDF7explicitGao et al.(2024);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al.(2021)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitWu et al.(2021);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "lehd",
+      "reference_label": "Luo et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "BodyPDF8explicitLuo et al.(2023);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al.(2021)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "BodyPDF7explicitKwon et al.(2021);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al.(2021a)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitXin et al.(2021a);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.(2016)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1explicitBello et al.(2016);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al.(2021b)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitXin et al.(2021b);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitZhou et al.(2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.(2015)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            12
+          ],
+          "locator": "BodyPDF14explicitVinyals et al.(2015);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "pointerformer",
+      "reference_label": "Jin et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "BodyPDF7explicitJin et al.(2023);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.(2020)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2explicitKwon et al.(2020);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "BodyPDF7explicitGrinsztajn et al.(2023);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.(2018)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2explicitNazari et al.(2018);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.(2022)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2explicitKim et al.(2022);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "preference-optimization-co",
+      "cited": "t2t",
+      "reference_label": "Li et al.(2023)",
+      "description": "Explicit background/base/comparator/additional experiment, complete bibliographic identity checked; numerical year variations do not imply different work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "BodyPDF8explicitLi et al.(2023);fullbibliographyPDF11."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "AddedverifiedofficialPO4COPscodeandactualreleasescope/configurationissues.",
+    "Expandedalltraining/benchmark/FTcostsandnegativeexceptions/time-denominator distinctions.",
+    "PreciselylimitedGibbs-shifttheoremvsordinalcalibration anddetachedsamplegradient;conditionalpairillustrationnotfullsamplingoptimum.",
+    "All25formalpagesA-F/12visual/allreferences/scientificattachmentcheckscomplete.",
+    "Closed completed audit after final visual correction logging reset status to reading; crosschecked full coverage, hashes, formulas/results/code and clarified two model plus two validation tensors."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "72f433891ba5949b96d577310d77a552226092cacf2b8483a87a22aeef0d90e1"
+}

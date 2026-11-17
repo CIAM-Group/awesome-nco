@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "paper_id": "dynamic-bike-reposition-a-spatio-temporal-reinforcement-learning-approach",
+  "note_path": "specialist/dynamic-bike-reposition-a-spatio-temporal-reinforcement-learning-approach.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "d89aa4e977036df00b4bdb72d03f58b77b35e45454cca7a2ae78fbaa7270d236",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://doi.org/10.1145/3219819.3220110",
+      "retrieval_url": "http://urban-computing.com/pdf/KDD2018dynamic-bike-reposition.pdf",
+      "version": "First-authorhomepage-linkedtenpageKDD2018manuscriptcorrecttitle/byline/DOI;allpagesincludingfullAppendix/20refsread.",
+      "local_path": "research/full-text-review/dynamic-bike-reposition-a-spatio-temporal-reinforcement-learning-approach/paper.pdf",
+      "sha256": "35fce793b780bc703bdd08892ac1eb49b3b385d564446e075ea888ab2409da39",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Full3pagesread;authorlinkedurbancomputing10pKDD2018DOI3authorsLiHKUST+JDZhengJDYangHKUST/noequalcorrespondmarkers. RegionsbipartiteclusteringthenIIIBinnerbalanceindependentclusters;separateSTRLneuralnetworkperclusterthereforeNOTgeneralist;multiagenttrikesasyncnextactionaftercompletiononlineconstruction. OModelKNNrent/IModeltransitionreturns/Poissonemulator. Regioncommute18to56percentillustrative;mustverifyclusterguaranteesempiricaltol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "FullIIIBthresholdgraphcommunityagglomerativeheuristicapproxinnerbalanced/independence(notexactguarantee). Fiveoverlappingepisodewindowsnotpartitionallday;clusterperwindow. OModelKNNrentPoisson/IModeldestinationduration/noemptywait/fullreturnsnearestregion;trike speedloadnoise. Sharedwithinclusterpolicy separateacrossclusters. Observationpredavailability+otherplannedtrikemoves/onehotload,historyinterleavedactionsL1time;actiondest+signedbikeload/asynconeatatime reducesjointspace notglobaloptproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fullnetworktraining+pruning+Tables3–6read. SharedregionembeddingMLPvalue/timezerocutoffrho2heuristic;negativecustomerlossTDreplay;prunealwaysdeliverpreddeficient/pickuppredcongested/topknearest/loadstepsheuristicnotguaranteeoptimal.389stations98regions9,846,248rides4clusters/intertransitions~10percentnotzero. EvaluateonlybusyC1C3loss113/178total291vsNR553PGR395OR427;C2C4<50simpleheuristicenough. OR usesonevehiclekxspeedcapacitynotmatchedphysicalfleet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Alllastpagesreadincl20refsandAPPENDIXparameterTable7inprose/Table6captionduplicate.45epochs500episodes=22500morningclustersims/500pertrainingepoch,eps1to.1;withoutpruningno45epochimprovement. C1trikecap10speed200m/min4trikes/load3min/noiseN(0,3)/step5/embed30FC64,32/rho2table20minvsnearendzerocutoffambiguity/rho324. Nooptimizerlrreplay/gamma/L1spec. Noexplicitexternalappendixpointer;includedAppendixallread. Noexistinginternalbibcandidate."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contrib",
+      "category": "contribution",
+      "statement": "IIIBdecomposition,demand-drivenemulator andperclusterSTRLselectasynchronoustrikemoves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Framework;§3.1–3.3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Stateactionhistory/embeddingsMLPTDlearningwithtwoheuristicpruningrules;negativecustomerlossreward.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "§3.3.2–3.3.4;Fig7–9;Eq7–11"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Eachclusterhasitsownnetwork;withinclustertrikessharepolicyforonenativeonlineallocationtask: specialistconstructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "OnlineReposition;STRLmodel"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "C1C3combinedloss291vsNR553PGR395;45epochs500episodeseach;includedappendixC1budget.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Table6;Fig12–13;Appendix"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Approxindependenceignores10percentcrossclusterrides;ORusesdifferentonevehiclekxspeed/capacity;noexactglobaloptproof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            8
+          ],
+          "locator": "IIIBproperties;Table5;ORbaseline"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions",
+      "source_url": "http://urban-computing.com/pdf/KDD2018dynamic-bike-reposition.pdf",
+      "locator": "p1LiHKUST+JD/ZhengJD/YangHKUST;noequal/correspondmarker;officialKDDacceptedentrycorroborates"
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3219819.3220110",
+      "locator": "published-online/print2018-07-19;conferenceAugustdistinct;noarxivIDidentified"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://liyexn.github.io/",
+      "locator": "Actuallyinspectedauthorentryexplicitlinkto10purbancomputingPDF;all10inclAppendixand20refsread. OfficialKDDentryonlypublisherlink/promovideo;noadditionalnecessarysciencepointer. Searchnoverifiedofficialcode/arxiv;unrelatedMobikeprojectnotpresentedasofficial."
+    },
+    {
+      "field": "figure",
+      "source_url": "http://urban-computing.com/pdf/KDD2018dynamic-bike-reposition.pdf",
+      "locator": "OriginalFig9p7Rect44,476,300,595@5x;actualviewmethod/results/Appendix/publiccrop"
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Recordedseparatelytrainedclusterpolicyas specialist ratherthanmultiagentgeneralist.",
+    "ExplicitlyscopedresultstobusyC1C3simulationanddifferentORphysicalfleet."
+  ],
+  "reviewed_note_sha256": "f0b75217604e9c9b67defcbbe0077fefc6393bdfd4869c85ff69cc0d0a7856a6"
+}

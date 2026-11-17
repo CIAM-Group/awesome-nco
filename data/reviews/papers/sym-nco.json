@@ -1,0 +1,559 @@
+{
+  "version": 1,
+  "paper_id": "sym-nco",
+  "note_path": "specialist/sym-nco.md",
+  "baseline_note_sha256": "2c647c45737ec87cebede69f57a402d8da21b0e0fbf3e261ea2a780b17cbcb78",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/sym-nco/paper.pdf",
+      "sha256": "bf1761d343932da6281f1f1e1a2a2f7020dc521f3138ca9613106ae4b71aedb2",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Supplemental-Conference.pdf",
+      "version": "Publisher scientific supplement, complete Appendices A-D.5, nine PDF pages (printed 15-23), fully read.",
+      "local_path": "research/full-text-review/sym-nco/supplement.pdf",
+      "sha256": "7e839ae37fd65cf0ea3e934b82a5272a04761ddfd43ed673630fc8fb21e27997",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Fresh title/KAIST authors; full symmetric CO-MDP definitions, orthogonal invariance scope and REINFORCE shared-baseline/projection losses; related work and four-task different backbone protocol, full Tables1-2 and CPU/GPU comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 14,
+      "notes": "Fresh all training/equivariance/projection ablations, TSPLIB aggregate, limits, all 51 bibliography entries and checklist. Noted Table1 MDAM printed [25] mismatch vs actual MDAM [26], exact training symmetry not guaranteed, no main-result error bars."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh complete orthogonal-distance invariance proof; baseline/Sym-NCO hyperparameter tables; K/L/alpha/beta and TSP-only forced first node, random orthogonal versus eightfold augmentation, projection head, full A100 two-week/three-day training compute and alpha ablation."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 9,
+      "notes": "Fresh all 28 TSPLIB rows, N*20 actual sampling; ten-instance CVRP500/1000 EAS200 iteration and few-shot tables, all improvement/equivariant comparison tables and hardware caveats. Main Table1 and supplement Table12 contain printed label/reference typos; no invented exact symmetry guarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "loss",
+      "category": "contribution",
+      "statement": "Same-instance and transformed-instance shared-return baselines plus projected cosine regularization improve existing constructive policies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equation2, Sections3.1-3.2"
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "Orthogonal problem symmetry is proved under invariant Euclidean distances and unchanged features; policy symmetry is encouraged approximately.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "AppendixA proof, contrasted with mainSection3"
+        }
+      ]
+    },
+    {
+      "id": "hyper",
+      "category": "method",
+      "statement": "AM beta0/K1/L10; POMO beta1/K100/L2, TSP-only forced initial nodes and task-dependent alpha; separate task backbones.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "AppendicesB-C"
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "category": "experiment",
+      "statement": "Tables1-2 use10k dataset totals, different CPU/GPU configurations, 100/200 candidate budgets and task-specific reference gaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Sections5.2-5.4 Tables1-2"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "TSPLIB N*20 candidates, reported1.62% average with some worse instances; large-scale CVRP uses onlyten examples and EAS200 parameter-adaptation iterations.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Tables9-11"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "experiment",
+      "statement": "Improvement/equivariance comparison timings span different GPUs; no repeated-seed main error bars; finite ablation evidence.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "AppendicesD.4-D.5"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Problem-specific POMO TSP/CVRP and AM PCTSP/OP policies, no single cross-task checkpoint; constructive rollouts with optional EAS only in separate study.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Section5 architecture selection and Section6.2"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Paper-Conference.pdf",
+      "locator": "Title page: Kim/Park/Park, KAIST Industrial & Systems Engineering, NeurIPS2022; year-level formal publication, no individual acceptance day evidence."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2205.13209",
+      "locator": "Manually inspected v1 submission 26May2022; actual reading sources are publisher PDFs, not later arXivv2."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/0cddb777d3441326544e21b67f41bdc8-Abstract-Conference.html",
+      "locator": "Manually inspected official page and links: one Supplemental PDF. Its nine pages printed15-23 include complete AppendicesA-D.5, proof, training and additional results, all fully read; no missing explicit scientific attachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/alstn12088/Sym-NCO",
+      "locator": "Paper p1 explicit official URL; complete README manually read, POMO TSP/CVRP and AM four-task commands, pretrained PCTSP/OP references."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/0cddb777d3441326544e21b67f41bdc8-Paper-Conference.pdf#page=4",
+      "locator": "OriginalFigure3 rendered at5x from publisherPDFp4 Rect(145,70,467,189), complete content visually inspected and atomically installed; results/theory/proof/transfer tables visually crosschecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/0cddb777d3441326544e21b67f41bdc8-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-12-06; cached evidence research/full-text-review/sym-nco/page-1.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2205.13209",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-05-26; title on abstract page: Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/sym-nco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sym-nco",
+      "cited": "rl-device-placement",
+      "reference_label": "[5] Mirhoseini2017 ICML",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "pointer-networks",
+      "reference_label": "[10] Vinyals2015 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[12] Kool2021 arXiv",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "att-gcn",
+      "reference_label": "[13] Fu2020 preprint",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[14] Hottung ICLR2020 as printed (bibliographic year error; stable title/authors match)",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[15] Hottung2019 arXiv",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[16] Wu2020 as printed",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[18] Ahn2020 ICML",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[19] Kim2021 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[20] Bello2017 as printed",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "attention-model",
+      "reference_label": "[21] Kool2019 ICLR",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "rl-vrp",
+      "reference_label": "[22] Nazari2018 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "pomo",
+      "reference_label": "[23] Kwon2020 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "dact",
+      "reference_label": "[25] Ma2021 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[26] Xin2021 AAAI; Table1 incorrectly prints[25]",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "neurewriter",
+      "reference_label": "[28] Chen2019 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "graph-guided-local-search",
+      "reference_label": "[38] Hudson2021 arXiv",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[41] Khalil2017 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "efficient-active-search",
+      "reference_label": "[44] Hottung2021 arXiv",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[51] Li2018 NeurIPS",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed version/year retained without replacing it with a later publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "In-text citation and matching numbered reference; MDAM resolved from prose[26], not erroneous table label."
+        }
+      ]
+    },
+    {
+      "citing": "sym-nco",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "[46]",
+      "description": "Non-Euclidean graph-CO extension discussion cites ECO-DQN among graph solvers; exact four-author AAAI2020 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced vague equivalence of sampled trajectories with actual shared-return baseline mechanism and approximate symmetry distinction.",
+    "Corrected unsupported20/50-node experimental scale claim to actual100-node main tests, TSPLIB51-226 and ten-instance EAS large-scale study.",
+    "Added exact task-specific backbones, loss weights/K/L, TSP-only first-node restriction, two-week/four-GPU offline costs and inference candidate counts.",
+    "Added exact main-table values and reference denominators, CPU/GPU qualifiers, no-seed-uncertainty limits, transfer failures and source-table label/value inconsistencies.",
+    "Removed generic conference notification-day acceptance; kept verified formal2022 publication and first-arXiv date.",
+    "Replaced prior image with traceable original publisherFigure3 full crop, checked proof/formulas/tables visually.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "36e18dcdea550187c5c14699d5690442e2d93fc2b9ba2e86d64f2eba870ebf0d"
+}

@@ -1,0 +1,463 @@
+{
+  "version": 1,
+  "paper_id": "mis-self-training-dp",
+  "note_path": "specialist/mis-self-training-dp.md",
+  "baseline_note_sha256": "0658fe137be336e721c603ce7c8f9c395adf6c150de61c9e17e4ca8bd1b43a25",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-0df032a62d.pdf",
+      "sha256": "79c5bf2928e5891330ba7337b779661f60353ad12fc6d37e302d9c89fbb66657",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Supplemental-Conference.zip",
+      "archive_member": "additional_material/main_paper_appendix.pdf",
+      "version": "Publisher-linked supplement ZIP appendix PDF",
+      "local_path": "research/full-text-review/mis-self-training-dp/supplement-appendix.pdf",
+      "sha256": "beae90b4ae78a71925e131660324a27bd93d91e0d3da57520022b9c743c92ff8",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read MISrecurrence keepingvwhenremovingneighbors, onlyoraclecomparisonsmakeexact, learnedsinglebranchavoidscombinatorialsearch butnoNP-hardexactguarantee; selfannotation andMVCextensionrequiresactualmodelcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read randomizedfeasible singlebranchrecursion, neighbor/antineighborGEM O(n2)andwholeinferenceO(n3), consistencyforallgraphs/exactexpectations impliesoracleMIS theorem butnoexistence/trainingguarantee, finitepseudo-labelbuffer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read actualmaxofmrolloutnotexpectedlabels/mixedgreedy, datasets/referencesfiniteGurobi1h, Table1traditionalstrongerandLwDMISfasterTwitter, Table2RBtoTwitter.668vsErdos.752negative OOD."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read explicitlimitations(noempiricalconvergence/approxoptimalityguarantee) andfullbibliographythroughZhang; catalogueidentitycrosscheck ofRLVRP,Ptr,L2D,Erdos,LwD,GCN,Gasse,UCOM2."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainingbibliography/AppendixA relatedwork, MVCextensiongadgetDPcaseswithmincoverbasecase, notautomaticallysameneuralweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read separatelyselftrainedMVCcomparator/gadgetalgorithm, alltraining/data/hardware, AppendixDnegativeBA/WSgreedy andborrowedMVCbaselinesnotmatchedtrainingtiming; SPECIALengineeredgreedyfailure."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 22,
+      "notes": "Read allMVCTable6(lowerbetter)negativegreedy/MetaEGNcases, ILPformulations, D/K/Lablations/proofsofrecurrenceanduniversalconsistencytheorem, finitepairconsistencyplotnotcalibratedconfidence."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read anonymouspublisherZIPmanuscriptabstract/introduction/relatedwork/conditionalMISrecurrence, samecoreidentitybutearlierversiondistinctfromfinal22pageproceedings."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Read earlieranonymousGEM/comparator/consistencytheorem/fulltrainingmax-rollout/mixedgreedyalgorithm; finalpaperaddscomplexityandwording, noalternateuniversalguarantee."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 8,
+      "last_page": 11,
+      "notes": "Read earliermainTables1-2/results/limitations andfullbibliographyparts; samefinalkeynumbers butversionwording/noaddedfinalcomplexity, refsnotusedtosupersedefinalmetadata."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 12,
+      "last_page": 15,
+      "notes": "Read earlierremainingreferences/Arelatedwork/BMVCgadgetrecurrence/Algorithm3/selftraining/Ctraining setup; sameMVCnativeextension notsameweights."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read earlierallhardware/datasetstatistics/MISadditionalTable5/MVCTable6/ILPdefinitions; scientificresultsconsistentfinalandborrowedbaselineprotocolretained."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read allsupplementA-Iproofsandablations/broaderimpact, renderedkeyoldTables1/6/proofs; anonymousdraft lacksfinalAppendixJ, finalversionnotreplaced."
+    }
+  ],
+  "claims": [
+    {
+      "id": "misdp-contribution",
+      "category": "contribution",
+      "statement": "NeuralgraphcomparisonchoosesonefeasibleMISbranch,selftrainedbestofrollouts/mixedgreedypseudolabels, separateMVCgadgetvariant.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            15,
+            16
+          ],
+          "locator": "Sections3-5/Algorithms1-3"
+        }
+      ]
+    },
+    {
+      "id": "misdp-method",
+      "category": "method",
+      "statement": "ExactMISonlyiforaclebranches/universalexactexpectedvalueconsistency; finitebestofmtrainingnotpremise/noguaranteedapproximation; denseO(n3)heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7,
+            10,
+            21
+          ],
+          "locator": "Theorems1-2/Remark4/proofs/limitations"
+        }
+      ]
+    },
+    {
+      "id": "misdp-experiment",
+      "category": "experiment",
+      "statement": "MISmixed.836/.990/.977/.994withstrongergreedy/MIP/OODnegatives;MVC1.031/1.015losesgreedyboth andMetaEGNRB200; finiteGurobi1hreferencequalified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            22
+          ],
+          "locator": "Tables1-9/Figure3/AppendicesC-J"
+        }
+      ]
+    },
+    {
+      "id": "misdp-classification",
+      "category": "classification",
+      "statement": "MIScrossdistributiontransfer one task; MVCdistinctcomparator/decoderandselftraining, noactualunchangedweights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            15,
+            16,
+            18,
+            19
+          ],
+          "locator": "Table2/AppendicesB/E"
+        }
+      ]
+    },
+    {
+      "id": "misdp-supplement",
+      "category": "reproducibility",
+      "statement": "PublisherZIPincludes20pageanonymousfullmanuscriptpluscode; allscienceA-Ireadseparately andfinal22pageA-Jtakesprecedence.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            8,
+            9,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "ZIPmemberadditional_material/main_paper_appendix.pdf/fullcoverage"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7fe3170d88a8310ca86df2843f54236c-Abstract-Conference.html",
+      "locator": "Finalfiveauthors/EPFL/equalfirstthreeandChrysosfootnote match22pagefinalpublisherPDF; separateanonymous20pagesubmissionidentifiedbyofficialZIPandexacttitle/science."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/7fe3170d88a8310ca86df2843f54236c-Abstract-Conference.html",
+      "locator": "OfficialHTMLcitation_publication_date2023-12-15, notconferenceeventinference."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Supplemental-Conference.zip",
+      "locator": "Downloaded552895bytepublisherZIP; fullinventorycode/MIS+MVC+READMEand20pageadditional_material/main_paper_appendix.pdf; all20scientificpagesread/registeredwitharchive_member, notassumedduplicate. Finalmain22pagesA-Jalsofullyread."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/LIONS-EPFL/dynamic-MIS",
+      "locator": "Officialpaperp2/mainauthorZIP+publishercodeREADME/coremodel/rollout/referenceevaluation inspected; 3corefilesidenticalafterlineendingnormalization, separateMVCtraining andvalue-onlywitnessbookkeepingqualified."
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/7fe3170d88a8310ca86df2843f54236c-Paper-Conference.pdf",
+      "locator": "Fresh full bibliography pages[12] plus actual body pages[1]: Body p1 two-author Xing and Tu2020; bibliography two-author IEEEAccess8:108418-108428 exact target, distinct from three-author Xing/Tu/Xu arXiv2005.06879 cited p15."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al. (2020)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation Ahn and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            9,
+            11,
+            14,
+            18
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang et al. (2022)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "meta-egn",
+      "reference_label": "Wang and Li (2023)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            14,
+            17,
+            18
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body author-year citation and exact bibliography title/author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "gnn-mcts-tsp",
+      "reference_label": "Xing and Tu (2020)",
+      "description": "Body p1 two-author Xing and Tu2020; bibliography two-author IEEEAccess8:108418-108428 exact target, distinct from three-author Xing/Tu/Xu arXiv2005.06879 cited p15.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Xing and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "Prates et al., 2019",
+      "description": "Introduction/GNN CO related work cites decision-TSP; exact five-author AAAI2019 title/pages, not a witnessed tour construction claim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "mis-self-training-dp",
+      "cited": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "reference_label": "Xu et al., 2020",
+      "description": "Dynamic-programming discussion cites the AAAI2020 neural DP approximation; exact four-author title/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall22finalpagesand20pageanonymousmanuscriptinsidepublisherZIPpluscodeinventory/README; restoredmissingscientificsupplementsource.",
+    "Restrictedoptimalitytheoremtoallgraphsexactexpectedconsistency, actualmaxrollouttraining/O(n3)heuristicandseparateMVCmodels.",
+    "Preservedtraditional/greedy/OOD/MVCnegativecases, finiteMIPreference/timing/offlinecost/engineereddatasetlimits and9exactcitations.",
+    "Follow-up complete bibliography audit restored explicit citation to gnn-mcts-tsp; identity checked, no inferred topic edge.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "58230e737bbb599d4ba36d8452551a4878236efdc8c85cb8d2e0d127af06cb94"
+}

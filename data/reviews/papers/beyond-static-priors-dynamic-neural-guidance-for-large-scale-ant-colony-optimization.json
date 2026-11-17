@@ -1,0 +1,746 @@
+{
+  "version": 1,
+  "paper_id": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+  "note_path": "specialist/beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "d9a265232c5175d2a1d3f488e286b88eb6b72ecdb08f5092fd9250d1dfe82f41",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2606.04039",
+      "retrieval_url": "https://arxiv.org/pdf/2606.04039",
+      "version": "Actualarxiv2606.04039v1posted2026-06-02,12pagesfullyread includingfullrefs/AppendicesA–D;formalKDDDOIverifiedseparately.",
+      "local_path": "research/full-text-review/beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization/paper.pdf",
+      "sha256": "a193a4be5c090af3f309339d0ea0cd12ce63415f2f28ae4443019f7b671fb88b",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "prototype-viz",
+      "url": "https://raw.githubusercontent.com/shoraaa/DyNACO/v2/test_viz.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/shoraaa/DyNACO/v2/test_viz.pdf",
+      "version": "Actualhistoricalv2branchtest_viz.pdfonepage; fullyread/visuallyviewed; undocumentedprototypeBaseMFACOplotnotformalbenchmarkevidence.",
+      "local_path": "research/full-text-review/beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization/prototype-test-viz.pdf",
+      "sha256": "664f9dcc1ddebd73e9c59390955ff787e097d381c76978a1a20d3db8542e25ba",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullfrontmatter/3authorsVinUniversityMIT/correspondence, introduction/relatedwork and semiMDP/formalperturbativeenvironment Figure1. Method starts complete incumbent and up toM relocations, retains classicaldistance/pheromone withdynamicresiduallogits; newconstructionnotinproposedcore. FullclaimO(MK)SRRneedsappendixconditions andtrialcount; generalistnotestablishedbyTSP/CVRPextensions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read SRR mechanism/assumed incumbentcandidate2optoptimality, fixedpheromonebounds,stateawareGNN12layers, trajectory PPOperdecisionnormalization and algorithm/replay, inference schedules, fullsetup/Table1TSP+CVRPallscales. Fixedseed singleevaluation,320traininstances, RTX5090/Ryzen7950X16cores. Table1 CVRP10K I1000 runtime7.93vs7.32(+8.3percent),CVRP50K34.73vs31.73(+9.5percent); neural<1percent overhead notsameendtoend1–3percent claim. CVRP100K both minutes11.70vs11.55, referenceHGSnotcertifiedoptimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTables2–12/figures3–4analysis/conclusion/initialrefs. FulltimingI10000 CVRP10Kneural.56sec<1percent buttotal76.70vs74.43(+3.05percent),100K701.97vs692.81(+1.32percent); distinguish. Staticdynamicablationdifferent16testsubsetnotmain128. Table9TSPphased1.20betteranneal1.23despitechoosinganneal5K; CVRP5Kphased7.07worseconstant6.58. FullTSP improvements/crosssizeCVRP10K+0.68ppI1000, 33/14realworldtestscope; extraOP/MKP/BPPTable10separatetrainingneedsappendix. Conclusiononly1Ktrainingoverstatesmainin-scale100Ktraining, distinguishtransferprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read complete40bibliography and AppendicesAfeatures/BfullCVRPoperators/SRRproof/Cdefaulttable. FormalRLSurveyreferencesnoncatalogue/Learning2opt2021journalextensionmustnotmapECAI2020. SRR proof conditionalinitialcandidate2optoptimal+completeaffectednodecoverage, notglobaloptimal/full2opt norO(MK)worstcase total sincepropagatingchecklistcanexpand. Backupneighborsmain64vsTableA2 32conflict retained. ActualPPOgeometricmeanperdecisionratio ismodifiednotliteralfullpathISratio Eq5; inspectcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 12,
+      "notes": "ReadallAppendixC.1A3–A8andD. SupplementtablePOMO/LEHDmemoryfinite10KcontradictsTable1OOM10K, AppendixDSILPRC1000TSP100K42hcontradictsTable1 2.60h likelyinstance-settotal16butnotdefined. DyNACOstaticdynamicmemory2.584vsTableA5 3.11differentprotocolunexplained. SRRO(MK)perinitialscannotboundedfullpropagation; K/M/H/S sensitivity single-seed empirical notworstcasebound. End-to-endstatedtraining4h100K/mainin-scale models separatefrom1Kzero-shot."
+    },
+    {
+      "source_id": "prototype-viz",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read and visuallyinspect historicalv2branch onepage visualization: fourpanels, onlyupperleftpopulated BaseMFACOgapperH1~.0035→H2–5zero,remainingthreeemptyaxes. No identifiedbenchmark/sample/hardware; prototypeartifact notformalTableevidence/reproduction."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Dynamic semiMDP guidance conditions on pheromone/incumbent, trajectoryaware training and sparse perturbative routing backend with SRR.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Intro/Sections3.1–3.4/Figure1/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "100ants H10/S100 M12 K32/6features12layerGNN; meanlogpreplay ratio ismodified surrogate. Routing incumbentrelocations vsOP/MKP/BPPconstructiveextensions independentlytrained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8,
+            11
+          ],
+          "locator": "Method/Section4.4/Table10/AppendixA–C; actualcodeinspection"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Singlefixedseed320traininginstances perrun; in-scalemainmodels vs1Kzero-shot. Fullquality/runtime gainsTSP butsyntheticCVRPSILstronger andGPUoverheadnotfullruntimeoverhead.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Tables1–12/A3–A8/setup"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "SRR proof conditionalinitialcandidate2optoptimal/fullreactivationcoverage; noNindependentworstcasecompletepropagationbound. Actualfinal_final TSPoncepernodechecklistdoesnotreactivateprocessedendpoints.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11,
+            12
+          ],
+          "locator": "SRRmechanism/fullB.2proof/complexityclaims plusactualcpp"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Overallspecialist/mixed: TSP/CVRPneuralguidedincumbentimprovement andoriginalOP/MKP/BPPconstructiveACOextensions. Separateproblem/scaleweights/inputdimensions; nojointnativeproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            8,
+            9,
+            11
+          ],
+          "locator": "Routingactions/Section4.4/Table10/scaleprotocol"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actual12pagearxivv1allappendices and1prototypeplot fullyread, sevenbranch/releaseinventory, keymain/final_finalsourcechecked, completeoriginalFigure1andallkeyvisualsactuallyviewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Fullregisteredreading/manualinventory/provenance"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3770855.3817893",
+      "locator": "PublisherCrossrefDOI/3authors/pp4671–4682 online2026-08-08print08-09. ActualPDFp1VinUniversityTran/Vu andMITLIDSYiningMacorrespondence."
+    },
+    {
+      "field": "arxiv v1/date",
+      "source_url": "https://arxiv.org/abs/2606.04039v1",
+      "locator": "Savedprimaryarxivhistoryv1Tue2Jun2026 03:32:36UTC; actual12pagePDFsamev1stampandDOI, allscienceAppendicesA–Dread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/shoraaa/DyNACO",
+      "locator": "Manualmain667entrytree/all7branchtrees/releaseinventory(noassets). Main7PDFs arethirdpartyLKH/TSPLIB reports notDyNACOsupp. FullpublishedmanuscriptAppendicesA–Dread. Historicalv2standalone1pplotactuallyregistered/fulltext+visualread; v2draftTeX/prototypenotebooksarehistoricalimplementationartifactsnotclaimedexhaustivelyreadorusedformaltableproof. Noexplicitmissingfinalpaperscientificattachmentfound."
+    },
+    {
+      "field": "classification/code version",
+      "source_url": "https://github.com/shoraaa/DyNACO/tree/final_final",
+      "locator": "WholepaperSection4.4/Table10ownOP/MKP/BPPconstructivebrancheswithoutSRR; TSP/CVRPcompleteincumbentperturbations. Actualfinal_finaltrain TSPfeats2/CVRPfeats1/problem-specificcheckpoints;specialistmixed. MainolderCVRPgiant-tour/split differslaterexplicitroutes."
+    },
+    {
+      "field": "theory/implementation boundary",
+      "source_url": "https://github.com/shoraaa/DyNACO/tree/final_final",
+      "locator": "ActualcppTSPtwo_opt_nn advanceschecklistcursor; std::findentirelist preventsre-addingprocessedendpoints;build_initial_tourgreedy8startsnotcertified2optoptimal. AppendixB.2conditionalcoverageproofnotautomaticallyapplicable. Actualtrain normalizeslogp bydecisioncountbeforeexpnew-old, modifiedPPOsurrogatenotliteralwholepathIS."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2606.04039v1#page=3",
+      "locator": "OriginalcompleteFigure1p3Rect52,80,560,338@4xatomicPNGactuallyviewed. Framework/algorithm/fullproof/mainandsupp tables/allFigures1–4rendered/viewed; prototype-vizonepagefullplotviewedandcheckpointed."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2606.04039v1",
+      "locator": "23explicitbody/table+fullbibmatches. RL4COprimaryCrossrefDOI10.1145/3711896.3737433titleand33authorssame; separate2021SNCSLearning2optjournalextensionexcluded. NoncatalogueHeatACO/GTGACOremainexternal."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "att-gcn",
+      "reference_label": "[9]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitbody/table [9]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [9] identity att-gcn"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "attention-model",
+      "reference_label": "[16]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [16]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [16] identity attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "bq-nco",
+      "reference_label": "[7]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [7]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [7] identity bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "conpas",
+      "reference_label": "[14]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [14]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [14] identity conpas"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "deepaco",
+      "reference_label": "[39]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [39]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [39] identity deepaco"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "difusco",
+      "reference_label": "[35]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitbody/table [35]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [35] identity difusco"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "dimes",
+      "reference_label": "[31]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitbody/table [31]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [31] identity dimes"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "gcnn-branching",
+      "reference_label": "[10]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [10]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [10] identity gcnn-branching"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "gfacs",
+      "reference_label": "[15]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [15]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [15] identity gfacs"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "glop",
+      "reference_label": "[40]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicitbody/table [40]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [40] identity glop"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "gumbeldore",
+      "reference_label": "[30]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [30]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [30] identity gumbeldore"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "h-tsp",
+      "reference_label": "[29]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicitbody/table [29]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [29] identity h-tsp"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "invit",
+      "reference_label": "[8]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [8]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [8] identity invit"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "l2c-insert",
+      "reference_label": "[22]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [22]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [22] identity l2c-insert"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "l2seg",
+      "reference_label": "[28]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [28]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [28] identity l2seg"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "learning-to-delegate",
+      "reference_label": "[18]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [18]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [18] identity learning-to-delegate"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "lehd",
+      "reference_label": "[20]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [20]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [20] identity lehd"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "neuopt",
+      "reference_label": "[23]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [23]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [23] identity neuopt"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "neurolkh",
+      "reference_label": "[38]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [38]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [38] identity neurolkh"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "pomo",
+      "reference_label": "[17]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitbody/table [17]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [17] identity pomo"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "[3]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [3]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [3] identity rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "sil",
+      "reference_label": "[21]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicitbody/table [21]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [21] identity sil"
+        }
+      ]
+    },
+    {
+      "citing": "beyond-static-priors-dynamic-neural-guidance-for-large-scale-ant-colony-optimization",
+      "cited": "utsp",
+      "reference_label": "[27]",
+      "description": "Explicitintext/table citation and exactfullbibidentity. RL4COprimarypublisherDOI/all33authors independentlyconfirmed. SIGDexactTMLRtitle=Gumbeldoreentry; SILexplicitformalBoostingtitle. DoNOTmapseparate2021SNCS2optjournalextensiontoECAI2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicitbody/table [27]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullreference [27] identity utsp"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingmetadatawithformal3authors/institutions/onlinepublicationandarxivv1date.",
+    "Overallspecialistmixedperactualtaskbranches; routingonlyimprovement, separateOP/MKP/BPPconstructionnotjointcheckpoint.",
+    "Readall12main/refs/AppendicesA–Dplus1prototypeplot, actualfullFigure1andkeyvisuals.",
+    "Separatein-scalemainmodelsand1Kzero-shot; fullCPU+GPUtimingsvsneuralfraction/shortbudgetnegativecases.",
+    "QualifySRRconditionalproof/complexityandactualprocessednode-reactivationdifference; meanlogpmodifiedsurrogate.",
+    "Inventory7branches/releaseassets; inspectlaterfinal_finalactualbackend ratherthancallingoldermainCVRPsplitformaldesign.",
+    "23explicitinternalcitationswithindependentRL4COprimaryidentity; nojournalextensionforcedconferenceedge."
+  ],
+  "reviewed_note_sha256": "275e2c8a37f47464e8c031552f326545a587156b9edcc36ee4f25f545447d0e1"
+}

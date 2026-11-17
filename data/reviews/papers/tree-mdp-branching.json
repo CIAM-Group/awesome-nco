@@ -1,0 +1,300 @@
+{
+  "version": 1,
+  "paper_id": "tree-mdp-branching",
+  "note_path": "specialist/tree-mdp-branching.md",
+  "baseline_note_sha256": "bfb7cd13250f65bbfad01014e5ce1b3cbfa7cdf31ffd4076f9e0ba028dd86ac2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-0e1845e29c.pdf",
+      "sha256": "a3884cbc8ae11b8c34e53c32aaf4707c9f99b738f67fb0c79b5ec63cc76a783b",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Supplemental-Conference.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/tree-mdp-branching/supplement.pdf",
+      "sha256": "c7919a6e36829234be9509c99fe9b3b0725c6764f1e5205489b60a43ce61202a",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read treeversustemporalcreditmotivation, DFSoroptimalobjective limitforTreeMarkov, MILP/B&Bbounds andfiniteepisodeMDPframework; theoremnotoptimizationguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read temporalpolicygradient andstrongbranchingexpertlimits, formalbinarytreeMDPfiniteepisodes/treeconditionalindependence, Proposition4.1descendantrewards, Assumption4.2GUBtransition,counterexample,andObjLim/left-firstDFSconditions; theoryrestrictedvanillaB&B."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read rewarddecomposabilityAssumption4.6andruntimecostassumptions, explicittheoreticaltrain/evalmismatchnotguaranteed, REINFORCE6day/15kepochprotocol, fivefamilyseparatemodels, successful-all-onlygeometricnodesmetric andRLlosesSCIP/ILon4families."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read allTable1numbers includingnegativeObjLimauction87vs86.7MDPandDFSMIStransfer2970vs2768.5MDP, multipleknapsackgains, conclusions andfirst17references."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Readremaining36entrybibliographyandmanuallymappedGasse/Hybrid/MIPGNNpotentialrelationsincludingpreprintidentities."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fullside-by-sideMDPdefinitions andeveryrecursivepolicygradientproofstep; childrenMILPlemma, conditionalvanillaB&Bproposition andcompleteObjLim/left-firstDFSproofs, includingrightchildGUBasminofleftoptimumandparent."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allfivecompletelearningcurves, conditional-allfinishedmetricselection, SCIPstrongbranchingsideeffects,nativeauctionmodel andallTable2times/nodes includingknapsacktransferObjLim3.9sslowerSCIP3.7sdespitefewer425.3vs592.3nodes."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read entiretimeoutTable3 including16–20MIStimeouts/RLvs1SCIPtransfer, allbenchmarkparameterTable4 andeverynativeIPformulationcliquecoverMISbinaryfacility/knapsack, all19registeredpagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "tree",
+      "category": "contribution",
+      "statement": "TreeMDPpolicygradientcreditsonlydescendantreturnsunderfiniteepisodetreeMarkovmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "DefinitionandProposition4.1"
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "category": "method",
+      "statement": "VanillaB&BneedslocalGUBchildtransitionAssumption4.2anddecomposablereward4.6; ObjLimorleftfirstDFSsuffice.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Propositions4.3–4.5Assumptions4.2,4.6"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Separatefivebenchmarkpoliciestransfersizewithspecialtrainsettingsremoved; noonecrossnativepolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Section5.1–5.2"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "FourfamiliesremainweakerthanSCIP/ILintreesize; multipleknapsackfavorablenodesneednotfastertime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Table1andSection5.2"
+        }
+      ]
+    },
+    {
+      "id": "timeouts",
+      "category": "experiment",
+      "statement": "MIStreeObjLim16vsSCIP1timeoutsandknapsackObjLim3.9vsSCIP3.7squalifynoderesults.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Tables2–3"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "category": "method",
+      "statement": "RecursivegradientandObjLim/DFSproofsareunderstatedfinitevanillaB&Bconditionsnotgeneralconvergenceguarantees.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "AppendixA2allproofs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/756d74cd58592849c904421e3b2ec7a4-Abstract-Conference.html",
+      "locator": "NeurIPS2022volume35title/authors; paperp1FengYangChenname"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Paper-Conference.pdf",
+      "locator": "Section5.1perbenchmarktraining/evaluation; samefamilysize transfer"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/756d74cd58592849c904421e3b2ec7a4-Supplemental-Conference.pdf",
+      "locator": "AppendixA5fiveexplicitnativeIPformulationsandTable4sizes"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/756d74cd58592849c904421e3b2ec7a4-Abstract-Conference.html",
+      "locator": "ManuallycheckedSupplementallinkto6pageA1–A5PDF; allproofs/extendedresults/timeouts/formulationsread"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/lascavana/rl2branch",
+      "locator": "Paperp8authorfootnote andREADMEofficialimplementation"
+    },
+    {
+      "field": "benchmark_provenance",
+      "source_url": "https://github.com/lascavana/rl2branch/blob/master/01_generate_instances.py",
+      "locator": "SupplementTable4callsMISErdosRenyi affinity4; officialgeneratorusesBarabasiAlbertnear726; discrepancyexplicitlyretained"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "tree-mdp-branching",
+      "cited": "gcnn-branching",
+      "reference_label": "[17]",
+      "description": "ImitationbaselineandGNNrepresentationusedforRL.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation [17] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "tree-mdp-branching",
+      "cited": "hybrid-branching",
+      "reference_label": "[19]",
+      "description": "Learning-to-branchimitationrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "tree-mdp-branching",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "[22] Khalil et al. (2022)",
+      "description": "Cites MIP-GNN as learning support within branch-and-bound.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read citation body context: Conclusionp10MLkeycomponents[5,7,22]; fullAAAI2022MIP-GNNthreeauthorentryp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [22] Khalil et al. (2022); MIP-GNN: A Data-Driven Framework for Guiding Combinatorial Solvers. Conclusionp10MLkeycomponents[5,7,22]; fullAAAI2022MIP-GNNthreeauthorentryp12."
+        }
+      ]
+    },
+    {
+      "citing": "tree-mdp-branching",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "[36] Zarpellon et al. (2021)",
+      "description": "Cites learned strong-branching approximations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actually read citation body context: Bodyp4ILbranchingreferencesinclude[36]; fullAAAI2021fourauthorTreeGatetitlepp3931–3939entryp13."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [36] Zarpellon et al. (2021); Parameterizing Branch-and-Bound Search Trees to Learn Branching Policies. Bodyp4ILbranchingreferencesinclude[36]; fullAAAI2021fourauthorTreeGatetitlepp3931–3939entryp13."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full13+6pagereadincludingallproofsandnegativeextendedresults.",
+    "SpecifiedfinitevanillaB&B/treeMarkov/decomposablerewardassumptions andknownoptimumtrainingcost.",
+    "Separatednodereductionsfromwalltime andsampleefficiencyfromtrainingtime.",
+    "Recordedtimeoutselection, pervariantcounterexamples andMISErdos/BAprovenanceconflict.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "78e5ebaab54bd13662c130ae3683f39cfcc33e4768427d06265cce339096ffa4"
+}

@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "paper_id": "roco",
+  "note_path": "studies/roco.md",
+  "baseline_note_sha256": "e6fa27759db04e430a0c22022535f9efb7b4c7393b7d6c6389b74049533d31a0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2201.00402",
+      "version": "arXiv2201.00402v2,4June2022,18pages with AppendicesA-I; six-author reading copy, distinct from formal nine-author ICLR2023 metadata",
+      "retrieval_url": "https://arxiv.org/pdf/2201.00402",
+      "local_path": "research/import-272/nco-5f0876ba5b.pdf",
+      "sha256": "3ce483c459eb11b08f640686e6f871c49aa9552f22770ad8260cd8556cbd6c9e",
+      "pages": 18,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh arxivv2 reading: six authors/June4 2022/preprint title differs formal nine-author ICLR2023 metadata. Intro/relation/objective/blackbox robustness; investigate actual available formal/latest version before finalizing."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read successful-attack Definition1, elementary no-worse-optimum additive-gap implication2, attacker reward/MDP, PPO/beam search and random/OG/SA distinctions, main task designs. Beam topB is heuristic not globally optimal attack."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all main task resultsTables2-4: DAG relaxation, ATSPedgehalving, coverageedgeaddition, 50train10/20test, solver time limits and calibration; Gurobi20percent belongs MCSCC not ordinaryMC. Potential tmat closure violation to qualify; small candidate masks not exhaustive search."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all43bibliography entries, exact prior robustness9, blackbox26, data-generation39; AppendixA SA pseudocode andB MCSCC objective/targets/blackedge-only no-worse argument."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read MCSCC Table5/Fig4 and all graph encodersC, attack examplesD, constructive SetCover NP-hard reductionE1 (unique white element per selected set). Main Gurobi 30-150-3K1s drops18.8934to14.2740."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read all AppendixE2-I: coverage indicator Eq13 (printed bilinear), calibration20runs/speed ratio, deliberate MCSCC generator, all PPO/search hyperparametersTables6-7 and explicit graph/action limits. All18pages and43references complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gap-test",
+      "category": "contribution",
+      "statement": "No-worse optimum together with worse feasible returned cost implies an increase in additive optimality gap, without computing either optimum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Definition1 and Eq2-3; minimization direction"
+        }
+      ]
+    },
+    {
+      "id": "admissible-edits",
+      "category": "method",
+      "statement": "DAG edge deletion, ATSP cost halving, MC incidence addition and MCSCC black-incidence addition give problem-specific optimum monotonicity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "All four attack models and no-worse arguments"
+        }
+      ]
+    },
+    {
+      "id": "attacker",
+      "category": "method",
+      "statement": "Task-specific PPO GNN actor-critic and deterministic beam decoding attack black-box solvers; candidate masking and RA/OG/SA are budgeted search alternatives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            13,
+            14,
+            17
+          ],
+          "locator": "MDP/reward4,encoders5-7/10-12, Algorithms1-2 and Tables6-7"
+        }
+      ]
+    },
+    {
+      "id": "budget-results",
+      "category": "experiment",
+      "statement": "MCSCC30-150-3000 Gurobi1s clean18.8934 attacked14.2740; MC100-200 Gurobi.5s clean.7491 attacked.7409 times1e4. Headline20percent is not universal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Tables4-5 with explicit solver limits and objective direction"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "experiment",
+      "statement": "DAG/ATSP/MC/MCSCC attack datasets use50train and10/20/20/10test each configuration; random100trials/search10/fixedRLone decode; retraining seed invariance not established.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            13,
+            17
+          ],
+          "locator": "Dataset paragraphs, table captions and exact decoding discussion"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Framework evaluates solvers on four tasks with task-specific encoders/actions; not a single generalist CO-solving checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            5,
+            6,
+            13,
+            14,
+            17,
+            18
+          ],
+          "locator": "Stated objective, actual architecture/hyperparameter variants and limitations"
+        }
+      ]
+    },
+    {
+      "id": "validity-limits",
+      "category": "limitation",
+      "statement": "No found attack does not certify robustness; no-worse optimum does not imply distribution or triangle-inequality preservation; MCSCC generator deliberately separates set qualities.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            8,
+            9,
+            16,
+            18
+          ],
+          "locator": "Admissible edits, candidate masks, tmat generator, AppendixG/I"
+        }
+      ]
+    },
+    {
+      "id": "printed-formulation",
+      "category": "limitation",
+      "statement": "Curator qualification: AppendixE2 Eq13 has a decision-variable product and is not literally linear although it encodes the intended coverage equivalence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Visual Eq13 verified; limitation refers to printed formula, not uninspected code implementation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, publication",
+      "source_url": "https://iclr.cc/virtual/2023/poster/11370",
+      "locator": "Official ICLRDownloads2023 exact ROCO poster11370 manually followed with requestsHTTP200; title/nine authors/poster accept read. Full official scientific poster PNG also viewed: nine authors and author codeURL confirmed. Formal nine-author metadata retained."
+    },
+    {
+      "field": "source version, date, institutions",
+      "source_url": "https://arxiv.org/abs/2201.00402",
+      "locator": "Primary history: v1Dec28,2021; latestv2June4,2022. Cached18page PDFheader positively identifiesv2 and six-author preprint with SJTU affiliation. Formal2023title addsROCO and threeauthors; version difference explicitly documented, not falsely treated as byte-identical final."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=2r6YMqz4Mml",
+      "locator": "Manual forum access, both api.openreview.net/api2 notes?forum and formal/pdf returned403verificationrequired; outcomes stored source-checks.json. Available18pagev2 contains every explicitly referenced scientific AppendixA-I,43references; all pages read. Official poster scientificPNG linked at ICLR11370 independently downloaded/read completely, saved official-poster.png. No identified missing scientific appendix. Two contact sheets checked definitions, attack diagrams, NP-hard proof, formulation and all key tables."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/ROCO",
+      "locator": "Official poster links this exact author repository; live public repo/readme manually read and saved. DAG/ATSP/MC/fc directories, pretrained weights, LKH3, environment and training/evaluation commands confirmed; formal nine-author bib identity checked. No experiments rerun."
+    },
+    {
+      "field": "poster evidence",
+      "source_url": "https://iclr.cc/media/PosterPDFs/ICLR%202023/11370.png",
+      "locator": "Complete original scientific PNG read visually. Confirms no-worse-optimum framework, extra robustness definition, four task illustrations and formal author/code information. Numerical note uses exact fully read arxiv tablevalues, not poster red ratio annotations or changed clean CBC/SCIP labels."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2201.00402",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-12-28; title on abstract page: A General Framework for Evaluating Robustness of Combinatorial Optimization Solvers on Graphs. This date is preprint history, not formal publication. Cached research/full-text-review/roco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "roco",
+      "cited": "idr-gm",
+      "reference_label": "[27] Ren et al. (2021)",
+      "description": "Contrasts geometry-regularized defense for graph matching with general black-box CO evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp11, [27] Ren et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[18] Khalil et al. (2017)",
+      "description": "Introduces S2V-DQN as a learned CO solver and motivation for graph formulations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp10, [18] Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "[20] Kwon et al. (2021)",
+      "description": "Attacks MatNet on ATSP and uses its tmat generator/training variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "Explicit body citation PDFp8; exact bibliography PDFp10, [20] Kwon et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "pointer-networks",
+      "reference_label": "[36] Vinyals et al. (2015)",
+      "description": "Surveys supervised end-to-end learned CO solvers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp11, [36] Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "ppo-bihyb",
+      "reference_label": "[37] Wang et al. (2021)",
+      "description": "Motivates graph-based CO formulation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit body citation PDFp2; exact bibliography PDFp11, [37] Wang et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "adversarial-graph-matching",
+      "reference_label": "[42] Zhang et al. (2020)",
+      "description": "Contrasts density-based matching attacks with broader solver coverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp11, [42] Zhang et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "[9] Geisler et al. (2021), arXiv2110.10942",
+      "description": "Contrasts differentiable neural attacks with black-box solvers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp10, [9] Geisler et al. (2021), arXiv2110.10942"
+        }
+      ]
+    },
+    {
+      "citing": "roco",
+      "cited": "blackbox-backprop",
+      "reference_label": "[26] Vlastelica Pogančić et al.",
+      "description": "Discusses black-box differentiation and its linear-objective assumption; printed bibliography year2019 not adopted as formal year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit body citation PDFp3; exact bibliography PDFp11, [26] Vlastelica Pogančić et al."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all18pages/43refs/A-I plus original official poster; preserved nine-author formal metadata versus six-author arxivv2.",
+    "Expanded exact optimum-monotonicity/gap implication, four attack action domains, task-specific checkpoints and search budgets.",
+    "Located official author code and qualified finite-time results, dataset sizes, deterministic decode versus retraining, distribution assumptions and printed nonlinear ILP expression.",
+    "Eight explicit internal citation identities checked; no migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2c7f24ae967ce7f0bc101c6aed94137786f5cd95e12956f447142211c943cd09"
+}

@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "paper_id": "value-set-invariance",
+  "note_path": "specialist/value-set-invariance.md",
+  "baseline_note_sha256": "229d3d825429b779479f87f92da19353226625f53a7932096d2c3004730f659c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2202.03229",
+      "version": "arXiv:2202.03229v1, 7 February 2022; complete accepted ICLR 2022 author manuscript",
+      "retrieval_url": "https://arxiv.org/pdf/2202.03229",
+      "local_path": "research/import-272/nco-bf8e2f63f7.pdf",
+      "sha256": "bee44f1014f1d1314c123fabe7b6d6992750d4e1196e4f0e0599320c053e5ae2",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallfrontmatter4authorssingleIITDelhi/LiftedCSPdefinitions/relatedwork. ActualarXiv2202.03229v1Feb7printedICLR2022. TwoRRNextensionssame-domainvaluesettransfer,notonecrossdomaincheckpoint;multivaluedpretrainedembeddingpoolboundsunseenvaluesnotunlimited. Constraintsgraphknownbutrelationsemanticslearned."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readentireproblem/graphs/allbinarizednodes/typedconstraint-relationaledges/3inputembeddings/BCEeveryT/argmax andmultivaluedCMPG/RMPGconstructionrandomk-permutationpoolkmaxknownattrain. Noformalguaranteealloutputsfeasible;architecturalvaluesetflexibility+empiricaltransfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadCMPGinit/scoring/CEorthogonality/pooltestfirstkprime/all3datasetprotocols/allTables1-4andFig2caption. Three-seedmeansstd; boardCSPvalidityvspointnearestsolutionappendixpending. BINbetterfromsmalltrain,MVmemory/24finetuneseparatecheckpoint,9trainedBINnotfinetuned24. Knownkmax12/7/16vs24fine25."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readfullconclusion/ethics/reprostatement/allbibliographypp10-12/startAppendix. PotentialexactRRN/one-of-many/NeuroSAT/PDP/circuitSAT/SATNet/iterativehomogeneousGNNrefs; matchbodylater. ExistingJune/arxivdatevsformal2022needsseparate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadallAppGNNrepresentation/learnabilityhypotheses(notguarantee),edge-typemessages/Bahdanauvsrelationmean/LSTMinitupdates/CMPGRMPGdetails/alternativecompactencodingdiscussion/fullFig3caption."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Readalternatecompactfailure/allSATcomparisonqualifications/datasetsTables5-7/uniquenessgeneration/GCPtraincountdiscrepancy40-120vsTable540-100. Full24/25multiple-solutionlossvaliddiscoveryandpointaccuracyORtoolslowerbound,notexactnearestsolution. NoSATsolverbaselineruntimeclaim. Allmetric/hardware/hyperparamsstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadallTables8-9completehyperparams/trainingcost/modelaveraging/lastpageconclusion. All20pagesread.3seedstd+largersizehighvariance,resourceadvantagesinference notalways trainingwalltime."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Fixedoutputlabels hinder same-domain value-set transfer even when graphsizeflexible.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Full Lifted CSP definition"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "category": "contribution",
+      "statement": "Binarized and compact RRN extensions trade accuracy/memory; compactpoolkmaxknownattraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Complete architecture andpoolconstruction"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Separate CSP-domain specialized solvers, not one cross-domain checkpoint or proved feasibility/generalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            9,
+            13
+          ],
+          "locator": "Task-specific training and hypothetical theorydiscussion"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Typed recurrent messages/96dimLSTM32steps/CEeverytime/oneRMPGstep/randompool/orthogonality/modelaveraging.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            14,
+            18,
+            19
+          ],
+          "locator": "All models/appendix/hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Three-seed Tables1-4 show BINbettertransferfromsmall, separate24finetunedMVimproveslargerSudoku withunequalbaseline training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Full tables/variance andcheckpointdifference"
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "category": "experiment",
+      "statement": "Boardvalidityvsclosestsolutionpointwise; localORtoolsnearestvalidlowerboundinmultiple-solutiontasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            18
+          ],
+          "locator": "Full metric andsolutionmultiplicity details"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Finitepool/BINmemory/generalizationdecline/size-dependentdatasets/prosenodecountsdisagree/noindustrialSATcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "All practical/theoretical scopeconditions"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full20pages v1 includingappendix/references/alltables; noverifiedexternalcode/API403manualchecks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Actual logs/manualmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://arxiv.org/abs/2202.03229v1",
+      "locator": "Exact4authorsPDFp1/arxiv; corrected Mausam punctuation. IITDelhi affiliation. v1Feb7printed/arxivhistorysupportsdate; officialICLR2022downloadslists title,publicationyear2022separate."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=ibrUkC-pbis",
+      "locator": "ManualofficialOpenReviewwebchallenge andv1/v2notesAPI403cached. Scientificsourceidentifiedcompletearxivv1Feb7beforecutoff,20pagescontainsAppentire; noexplicitlyreferencedmissingseparatescientificattachment. Manuscriptreprostatementreleasepromise,noURL;notassumeunknownattachmentsabsent."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://arxiv.org/pdf/2202.03229v1",
+      "locator": "Actualread20pagev1SHAbee44f1014f1d1314c123fabe7b6d6992750d4e1196e4f0e0599320c053e5ae2;all1-20logs;rendered4/8/9/18 graphschema/results/metrics. Allrefsreadpp10-12,formulas/messagesreadpp4-7/13-14/18."
+    },
+    {
+      "field": "scope,checkpoints,metrics",
+      "source_url": "https://openreview.net/forum?id=ibrUkC-pbis",
+      "locator": "Same-liftedCSPnotmulti-domainmodel;MVkmaxknowntrain,allpoollearnedrandomsubsets. Table4MV24finetune8kpuzzlesvsBIN9notfinetuned; fullfeasibleboardvsORtoolslowerboundpointwise. Coloringrange40-120prosevs40-100Table5recordednotresolved."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://openreview.net/forum?id=ibrUkC-pbis",
+      "locator": "Allbibliographypp10-12plusmain/appendixbodyread; fourexactexistingIDs. RRN/PDP/IterGNN/NLMnotcurrentcatalogIDs; nofabricatededges."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2202.03229",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-02-07; title on abstract page: Neural Models for Output-Space Invariance in Combinatorial Problems. This date is preprint history, not formal publication. Cached research/full-text-review/value-set-invariance/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "value-set-invariance",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "Explicit neural constraint-learning related work or one-of-many training discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Body p3; full bibliography p12: Wang et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "value-set-invariance",
+      "cited": "selectr",
+      "reference_label": "Nandwani et al. (2021)",
+      "description": "Explicit neural constraint-learning related work or one-of-many training discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            12
+          ],
+          "locator": "Body p18; full bibliography p12: Nandwani et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "value-set-invariance",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al. (2019a)",
+      "description": "Explicit neural constraint-learning related work or one-of-many training discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Body p2; full bibliography p10: Amizadeh et al. (2019a)"
+        }
+      ]
+    },
+    {
+      "citing": "value-set-invariance",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicit neural constraint-learning related work or one-of-many training discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Body p2; full bibliography p12: Selsam et al. (2019)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected Mausam name; retained preprintv1 date and formalICLRyear separately.",
+    "Specified knownpoolbound/same-domain transfer andseparatelytrained24fine-tunecheckpoint.",
+    "Replaced genericresults withactualthree-seedboard/pointwise metrics andunequaltraining/resourceconditions.",
+    "Full20pageappendix/manualAPI/visual/refchecks complete;4exactedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "07b9c12f712d16b21d539202645ec16971ff24e8619410f7ea83791ddbe18af4"
+}

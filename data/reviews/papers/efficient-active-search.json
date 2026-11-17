@@ -1,0 +1,507 @@
+{
+  "version": 1,
+  "paper_id": "efficient-active-search",
+  "note_path": "specialist/efficient-active-search.md",
+  "baseline_note_sha256": "abcfe04fb4cef65c904dc0b590b9788f2a8636d9dac4e142151cf1d1842414ce",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2106.05126v3",
+      "retrieval_url": "https://arxiv.org/pdf/2106.05126",
+      "version": "arXivv3,15March2022, ICLR2022 accepted author version",
+      "local_path": "research/full-text-review/efficient-active-search/paper.pdf",
+      "sha256": "1a01e26691f55cda646b72c8f8004a6f736c754e0a7bf9c08d65c290229a01bd",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title and two institutions, TSP/CVRP/JSSP scope (not FFSP/OP/PCTSP), all related work and three instance-specific adaptation modes."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh RL+incumbent imitation losses, identity-initialized residual layer, gradient-free tabular update, POMO key/query implementations and allTSPTable1 with exact200*8*n budget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all CVRP/JSSP results, poorTab200customer11.8% and retuning caveat; JSSPdynamicembeddingoffset,8000samples and CPU-bound loops; IL ablation and limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh all bibliography entries with exact work identities: Xin Step-wise, Fu2020preprint, DPDP2021preprint, Peng2019 printed event label."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Fresh every XE row and actual group-specific3week training, ten sharingcopies, exactAS-ILablation and tabular parameter sweep; all scientific materialcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "adaptation",
+      "category": "contribution",
+      "statement": "Three distinct instance-specific methods: keys or residual gradients with RL+IL, versus gradient-free table.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1-3.3 Equations1-5"
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "category": "method",
+      "statement": "Experiments are TSP/CVRP viaPOMO andJSSP viaL2D with dynamicembeddingsplusstaticoffset.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Section4"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "experiment",
+      "statement": "Routing200*8*n candidates and200iterations; dataset-total V100/singleCPU times;JSSP8000schedules.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1-3 setups"
+        }
+      ]
+    },
+    {
+      "id": "failure",
+      "category": "experiment",
+      "statement": "TabCVRP20011.8% gap, fullAS stronger thanEAS onthatsetting;notuniformtransfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Table2"
+        }
+      ]
+    },
+    {
+      "id": "xe",
+      "category": "experiment",
+      "statement": "XEgroupmodels train3weeks each;Laystar is separate unchangeduniformmodel;comparison isgaptoGS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "AppendixA Table4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Adaptive distribution samples fresh complete solutions, not local incumbent moves; task-specific basepolicies mean specialist constructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            8
+          ],
+          "locator": "Definition of construction/improvement and implementation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://arxiv.org/pdf/2106.05126v3",
+      "locator": "Readv3PDFpage1: publishedconferencepaperICLR2022, Hottung/Tierney Bielefeld, KwonSamsungSDS."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2106.05126",
+      "locator": "v1 9June2021; actualreadv3 15March2022,13pages."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/ahottung/EAS",
+      "locator": "Mainpage6explicitlink; completeREADME andrecursivePDF/ZIPinventorymanuallyinspected, routing-onlyreleasedinstructions and tuningcommands."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=nO5caZwFwYu",
+      "locator": "OpenReviewbrowser-verificationgate observed. CompleteacceptedauthorarXivv3includesAppendicesA-C, allread; authorrepositoryinventoryhasREADMEonlyamongPDF/ZIP/MDscientificdocuments. Noexplicitlyreferencedscienceattachmentmissing."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2106.05126v3#page=4",
+      "locator": "OriginalFigure1PDFpage4 Rect(150,75,465,153)at5x, atomicreplacementrestoresclippeddecodingtrajectory;visualcheck."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2106.05126",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-06-09; title on abstract page: Efficient Active Search for Combinatorial Optimization Problems. This date is preprint history, not formal publication. Cached research/full-text-review/efficient-active-search/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "efficient-active-search",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arXiv",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "neurewriter",
+      "reference_label": "Chen2019",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "att-gcn",
+      "reference_label": "Fu2020arXiv2012.10658",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2020",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            10,
+            12
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2021",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arXiv",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2021arXiv2102.11756",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li2018",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "dynamic-am",
+      "reference_label": "Peng2019eventlabel asprinted",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2021TNNLS",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "step-wise-routing",
+      "reference_label": "Xin2021TII",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "efficient-active-search",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020",
+      "description": "Explicit author-year citation and matching printed work; do not substitute a different work with the same authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            8,
+            11
+          ],
+          "locator": "In-text relatedwork/method/experiment citation and bibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected tasklist: actualJSSP, removedunsupportedOP/PCTSP/FFSP;restoredauthoraccent.",
+    "DistinguishedgradientfreeEASTabfromgradientEAS, anddistributionadaptationfromincumbentlocalmoves.",
+    "Addedexactcandidatecounts, datasettime,hour/daybudgets, negativeCVRP200transfer andXEgrouptraining.",
+    "Removedunsupportedacceptancedate; restoredcompleteFigure1 and limitedreleasedcodeclaimtorouting."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "01b71576e409ca7a0374c787bafcb93d7f6685b9917e4bcd6f21893ff1865b73"
+}

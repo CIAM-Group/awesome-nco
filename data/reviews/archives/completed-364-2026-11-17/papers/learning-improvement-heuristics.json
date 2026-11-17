@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "paper_id": "learning-improvement-heuristics",
+  "note_path": "specialist/learning-improvement-heuristics.md",
+  "baseline_note_sha256": "223f03d6f048624c38eb24582a70a0a82039487ef331dcc14d2553b7cb86213d",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1912.05784v2",
+      "retrieval_url": "https://arxiv.org/pdf/1912.05784",
+      "version": "arXivv2,10May2020,10pageauthorversion,fullread; formal2021online/2022issueeligibilityseparate.",
+      "local_path": "research/full-text-review/learning-improvement-heuristics/paper.pdf",
+      "sha256": "c3e65b6c280b09570466ca1e992e4e691cb55596e2d93812ceaab47c3ab5e33d",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Fresh all10pages arXivv2May10,2020: fullpairwise2optalwaysacceptMDP/bestsofarreward, feedforward3blocksingleheadpolicy (no recurrenthistory), nstepAC/trainsettings, allTablesI-V/41refsandgeneralization failures; actualversionidentified."
+    }
+  ],
+  "claims": [
+    {
+      "id": "framework",
+      "category": "contribution",
+      "statement": "Learn pairwise neighborhood solution selection in always-accept continuing search, return bestsofar.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "SectionsIII-IV.A"
+        }
+      ]
+    },
+    {
+      "id": "reward",
+      "category": "method",
+      "statement": "Nonnegativeincumbent improvement reward; currentmovescanworsen; nstepACbootstraps atrolloutlimit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equation1 Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "category": "method",
+      "statement": "Threefeedforwardsingleheadattentionblocks, sinusoidalpositions andmaxpoolgraphcompatibility; no recurrenthistorymodule, previouspairmaskonly.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure2 SectionsIV.B-D"
+        }
+      ]
+    },
+    {
+      "id": "train",
+      "category": "method",
+      "statement": "Separate task/sizemodels, TSP random/CVRPnearestinsertion, paddeddepotlimitations and exactn/T/gamma/200epochs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "SectionVprotocol"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "10kdataset-totalTSP1001.42%2h/CVRP1002.47%5hat5000moves, referenceConcorde/LKH, additionalrunbudgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "TablesI-III"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "Crosssizetransferfailsfromrandomstarts;36TSPLIB17.12% and22CVRPLIB14.27%behindORToolsaverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Figure3 TablesIV-V"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistimprovement: learnedpolicyupdatesexistingtour, no learned initialconstruction; differenttask/sizemodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "SectionsIIIandV"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, version",
+      "source_url": "https://arxiv.org/pdf/1912.05784v2",
+      "locator": "ActualcachedtitlepagearXivv2May10,2020 fiveauthors; all10pagesread."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/1912.05784",
+      "locator": "Firstv1 12December2019, actualreadv2 10May2020."
+    },
+    {
+      "field": "publication, venue",
+      "source_url": "https://ieeexplore.ieee.org/document/9393606/",
+      "locator": "PublisherindexedmetadataDateofPublication1April2021;TNNLS33(9)September2022pp5057-5069. Acceptanceyearinference removed; issueyearpreserved."
+    },
+    {
+      "field": "institutions",
+      "source_url": "https://research.tue.nl/en/publications/learning-improvement-heuristics-for-solving-routing-problems/",
+      "locator": "AuthorinstitutionalpublicationrecordexplicitNTU,Shandong,SIMTech,NUS; arXivtitlepagehasnoinstitutionfootnote."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ieeexplore.ieee.org/document/9393606/",
+      "locator": "ManualpublisheraccessshowsJavaScriptgate;SMUacceptedVersionrecordcheckedbutdownloadchallenge. FullarXivv2 has10pagesandnoexplicitseparateappendix/scientificsupplementpointer. AuthorcodeGitHubrecursiveAPIinventoryonlyREADMEamongPDF/ZIP/MD; noexplicitlyreferencedscientifictextmissing. arXivfallbackaccepted;nofalseclaimofunretrievedformalattachmentinspection."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/WXY1427/Learn-Improvement-Heuristics-for-Routing",
+      "locator": "Completeauthor-repositoryREADMEread, publishedarticleDOIandproblem/sizeentrypoints;recursivefileinventorymanuallyinspected."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/1912.05784v2#page=3",
+      "locator": "OriginalFigure2p3 Rect(310,65,572,251)5x: fulltopinputandbottomoutputwithheaderwhitespaceremoved,atomicinstallationandvisualcheck. Formula/TableI-V/transfer/trajectoryvisualschecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1912.05784",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2019-12-12; title on abstract page: Learning Improvement Heuristics for Solving Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/learning-improvement-heuristics/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[10] KhalilNIPS2017",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "pointer-networks",
+      "reference_label": "[14] VinyalsNIPS2015",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[15] BelloICLR2017asprinted (authorlisttruncatedinbibliography)",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "rl-vrp",
+      "reference_label": "[16] NazariNIPS2018",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "attention-model",
+      "reference_label": "[17] KoolICLR2019",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "learning-heuristic",
+      "reference_label": "[19] DeudonCPAIOR2018",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "learning-improvement-heuristics",
+      "cited": "neurewriter",
+      "reference_label": "[23] ChenNeurIPS2019",
+      "description": "Explicit in-text numbered citation, matched to complete actual-read manuscript reference; printed historical venue/version retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkin-textnumberandmatchingbibliographyentry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Removed unsupportedrecurrent-historycontribution;actualfeedforwardselfattention/sinusoidalpositionandpreviouspairmaskexplained.",
+    "Clarifiedalwaysacceptcurrenttourversusbestsofarincumbent,nonnegativeimprovementrewardandstochasticinference.",
+    "Addedexacttasksize-specifictraining/paddinglimits,TableI-IIIsearch/multi-runbudgets,CPU/GPUandheuristicgapdenominators.",
+    "Qualifiedtransferwithactualfailedrandom-initialcrosssizeexperimentandTSPLIB17.12%/CVRPLIB14.27%behindORTools.",
+    "Replacedunsupportedacceptanceyearwithpublisheronline2021-04-01datewhilepreserving2022issueyear;transparentarXivv2fallbackversionandaccessinventory.",
+    "Re-renderedcompleteoriginalFigure2,removingpageheader/excesswhitespace."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c406094f7c564a3c46e2ddf2f28c0a4a41f71d53559cf7a3c657bf63c103c2ab"
+}

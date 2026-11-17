@@ -1,0 +1,434 @@
+{
+  "version": 1,
+  "paper_id": "m3c",
+  "note_path": "specialist/m3c.md",
+  "baseline_note_sha256": "ca7b5b71f072ee806552da78592529a8ef7e675ad3c07cba0f0552e4ae63c083",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/2030d35841f8617ab22cca913f55697e-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/2030d35841f8617ab22cca913f55697e-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-7536c8424e.pdf",
+      "sha256": "50015a8c9f696aee87f2b397ff14e5b18be0317417659d1e9d4b88b6d58be385",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Read MGMC formulation/MM exact-indicator assumptions, relaxed global/local/fused rank/path-composition algorithm and unsupervised VGG/Spline edge affinities, pseudo-label selection and signed printed BCE; convergence is fixed-affinity objective conditional, not global labels or neural-training theorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 22,
+      "notes": "Read all results/references and AppendixA-G.3, all MM/indicator proofs and algorithms/complexity/neural affinity/hyperparameters/dataset/metrics. Exact-h theory versus spectral/fuse heuristics, objective convergence not neural/global guarantee; MA truecluster pairs, supervised transfer variants, 404-vs304 Willow count and fixedT2 explicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 28,
+      "notes": "Read all ranking/clustering/convergence/r/noisepseudolabel tests and all qualitative images; finalclustering k10, dynamicconnectededge rule, fixedT2 and limitedNNtransfer conditions. Pseudolabel quality degrades sharply, clustering/matching not uniformly monotone."
+    }
+  ],
+  "claims": [
+    {
+      "id": "m3c-contribution",
+      "category": "contribution",
+      "statement": "Learning-freeMM matching/clustering with relaxed ranks extended to neural edge-affinity/pseudo-labelUM3C.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Contributions/Sections3-5"
+        }
+      ]
+    },
+    {
+      "id": "m3c-method",
+      "category": "method",
+      "statement": "Fixed-affinity exact-indicator/nondecreasing surrogate proof gives objective convergence only; practical fusedrank/dynamicedge/spectral andchanging neuraltraining require qualification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            16,
+            17,
+            18,
+            19,
+            25,
+            26
+          ],
+          "locator": "MM proof/Algorithms1-2/H.4-H.5"
+        }
+      ]
+    },
+    {
+      "id": "m3c-experiment",
+      "category": "experiment",
+      "statement": "Truecluster MA separateclusteringmetrics, main/adapted pretrainedprotocols andnegativeMA/time cases/pseudolabel sensitivity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Tables2-3/7-11/G-H-I"
+        }
+      ]
+    },
+    {
+      "id": "m3c-classification",
+      "category": "classification",
+      "statement": "NeuralUM3C solves jointvisualcorrespondence/grouping; crosscluster/datasetsolvertransfer within same task, proposedothernativeapplicationsfuture only.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            23,
+            26
+          ],
+          "locator": "Sections6-7/H.1/H.6"
+        }
+      ]
+    },
+    {
+      "id": "m3c-limit",
+      "category": "limitation",
+      "statement": "PrintedBCEsign/probability range unresolvedwithoutcode; Willowcounts404vs304 andtheorem tie/equivalence assumptions explicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16,
+            17,
+            18,
+            21
+          ],
+          "locator": "Eq8/C.1-C.3/G.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/2030d35841f8617ab22cca913f55697e-Abstract-Conference.html",
+      "locator": "Officialtitle/fourauthors/pages8029-8056 match28pagePDF; PDFp1 firsttwoequalcontribution/UT Austin+SJTU."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/2030d35841f8617ab22cca913f55697e-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2024-05-31; formalICLR2024 publisherrecord notinferredfromevent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/2030d35841f8617ab22cca913f55697e-Abstract-Conference.html",
+      "locator": "ManuallandinglinksPaper/Bibtex andall28integratedpagesAppendicesA-Iread; authorrepositoryexplicitlyempty andmain/masterarchives404; normalOpenReviewAXC9KydyZq/API2verification403; noadditionalscientificmaterialidentified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Thinklab-SJTU/M3C",
+      "locator": "Paperpromisedlocation; normalGitHubpageexplicitlyThisrepositoryisempty, notrunnablecode/filesretrieved; main/mastercodeload404, nochallengebypass."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "m3c",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Explicit body reference and exact bibliography identity; laterTPAMI mixture-of-modes article is a distinct work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "Yu et al. (2021)",
+      "description": "Explicit body reference and exact bibliography identity; laterTPAMI mixture-of-modes article is a distinct work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "gann",
+      "reference_label": "Wang et al. (2020a)",
+      "description": "Explicit body reference and exact bibliography identity; laterTPAMI mixture-of-modes article is a distinct work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            8,
+            13,
+            15
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "sigma-matching",
+      "reference_label": "Liu et al. (2021)",
+      "description": "Explicit body reference and exact bibliography identity; laterTPAMI mixture-of-modes article is a distinct work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "reference_label": "Jiang et al. 2022b",
+      "description": "Explicit graph-matching related work and GCAN baseline; exact five-author CVPR2022 title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Jiang et al. 2022b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Jiang et al. 2022b"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "Li et al. 2023",
+      "description": "Future instance-generation application discussion explicitly cites exact HardSATGEN KDD2023 title/nine-author bibliography; no claim this method already applied it.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read complete body citation paragraphs: Li et al. 2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Li et al. 2023"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "universe-points-representation-learning-for-partial-multi-graph-matching",
+      "reference_label": "Nurlanov et al. 2023",
+      "description": "Related supervised/unsupervised matching work; exact three-author AAAI2023 Universe Points title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Nurlanov et al. 2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Nurlanov et al. 2023"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "graph-matching-with-bi-level-noisy-correspondence",
+      "reference_label": "Lin et al. 2023",
+      "description": "Related work and COMMON baseline; exact six-author ICCV2023 bi-level noisy-correspondence entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Lin et al. 2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Lin et al. 2023"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "Rolínek et al. 2020",
+      "description": "BBGM feature/solver pipeline and baseline explicitly cited; exact ECCV2020 six-author entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Rolínek et al. 2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Rolínek et al. 2020"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al. 2019",
+      "description": "Matching feature extraction and unsupervised integration context; exact ICCV2019 three-author PCA-GM title, not independent TPAMI2020 extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6
+          ],
+          "locator": "Actually read complete body citation paragraphs: Wang et al. 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Wang et al. 2019"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir and Sminchisescu 2018",
+      "description": "Deep matching features context; exact CVPR2018 two-author paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zanfir and Sminchisescu 2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zanfir and Sminchisescu 2018"
+        }
+      ]
+    },
+    {
+      "citing": "m3c",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "Yan et al. 2020b",
+      "description": "Graph-matching background explicitly cites survey; exact IJCAI2020 pages4988–4996. Bibliography duplicate2020a title variant is not a second work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read complete body citation paragraphs: Yan et al. 2020b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Yan et al. 2020b"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all28publisherpages/A-I/allproofs+figures andmanuallycheckedscientificattachments; formaldatefromHTMLmeta.",
+    "SeparatedlearningfreeM3CconditionalobjectiveconvergencefromUM3Cneuraltraining andfinalsemanticaccuracy; distinguishedtrueclusterMA/pretrainedextensions/time andnegativecases.",
+    "Documentedemptyimplementationpromise, missingprintedBCEminus/range andWillowcountdiscrepancy; retained4exactcataloguecitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge.",
+    "Final prose inspection repaired citation-count wording after catalogue expansion; no scientific quantities or source-reading coverage changed."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7b6930188ff55b948b4c7b19d91736f65c1098454408635035c436a15df7c91a"
+}

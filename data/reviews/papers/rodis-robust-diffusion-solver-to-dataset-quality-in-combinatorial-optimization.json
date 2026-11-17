@@ -1,0 +1,286 @@
+{
+  "version": 1,
+  "paper_id": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+  "note_path": "specialist/rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "2011fc791e6f66e40762d857e56d69dd98ed4010b51a2c48317be5fc63326fd8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2026/0586.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2026/0586.pdf",
+      "version": "Formal IJCAI2026 MainTrack8-page proceedings PDF; complete main/references and all scientific material read",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-e93796a220/publisher.pdf",
+      "sha256": "f44df7d18d908b79991d11791be337b2099f285e638cc82d8b44f5bb3269720a",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "FreshcompletePDF1-4: tenauthors MetaRankingAI +Princeton actualaffiliations (HTMLincorrectallPrinceton), TSP plusweighted/unweightedMIS, suboptimalheuristiclabelstudy. Solutiongraphs+classicalfeasiblegreedydecode; conditional/unconditionalobjective sameNN within tasknotsharedcrossproblemclaim. CFGmaskp.1 andgammahyperparam/targetvalidation. Eq5usesE0hatwhereposteriornoisyEtlikelyneeded andEq6BayesfactorindependentG0 needsvisuallyverify; no universaloptimalityoff-support objective."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh fullPDF5-8 alltables2-5/alg2/backbone/5seedablation/completebibliography.12-layer256GNN,T1000training/50inference,CFG2passes,gamma&targetvalidation. TSP50solver Table2 actualimageRODIS6.67vsDIF6.74 (textlayerinterleavesreverse),notfalseworseclaim; TSP1000solver27.60worse27.44, SATLIBsolver421.74worse423.09. WMISheur130.66vs121.78 andfindMIS122.37; ntrain12800/76800/1502000. Main8pages+all7fig/5tablesvisuallychecked; publisherJSONvideosempty/noowncode/supp. Eq5/6printingissuesverifiedimagep4; affiliationsPDFMeta+Princeton vsHTMLincorrectallPrinceton."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Objective conditioning addresses diffusion sensitivity to weak labels and dataset size.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/Fig2/Table1"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Solution-graph generation, classifier-free objective guidance and TSP/MIS robustness study.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Method/experiments"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "12layer256GNN withmaskedobjectivep.1,T1000train/50test; task-specificgreedydecode andvalidationtuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1/2/architecture/protocol"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "TSP50weaklabel6.55vs6.91;weightedMIS130.66vs121.78;high-qualitySATLIB/TSP1000negativecases;labeltimesnottestinference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1–5 andFig6"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "LiteralprintedEq5 posteriorunnormalized/Eq6constantfactor andnoimplementation;qualifiednotbenchmarkrefutation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7
+          ],
+          "locator": "Eq5–8/Table4/curator exactboundarychecks"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive noise-to-solutiongraph+decoder; sharedCFGbranchesnotcrossproblemcheckpointproof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Model scope/inference/experiments"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity byline affiliation and publication",
+      "source_url": "https://ijcai.org/proceedings/2026/586",
+      "locator": "FormaltenauthorPDFp1 MetaRankingAI/Princeton supersedes erroneousHTML/JSONallPrinceton. MainTrack5263–5270doi10.24963/ijcai.2026/586; primaryelectronicmetadata2026yearprecision."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://ijcai.org/proceedings/2026/586.json",
+      "locator": "OfficialHTML/structuredJSONactualchecked: PDF/Markdown/BibTeX/refs only,videos=[]; noseparatesupp/owncodeURLor explicitmissingappendix in complete8pPDF. All8actualread+checkpoints/all7fig5tables2algorithmsvisuallychecked. No inaccessibleattachmentclaimedread."
+    },
+    {
+      "field": "classification protocol and negative cases",
+      "source_url": "https://ijcai.org/proceedings/2026/0586.pdf#page=7",
+      "locator": "TSP/weightedMIS/unweightedMISactualseparateproblemexperiments, noonecheckpointreuseevidence;CFGbranchsharingwithintaskonly,constructivenoise+greedydecode. 12layer256/T1000train50test,p.1;Table2rawtextinterleavesrowssoactualimageused; SATLIB421.74<423.09/TSP100027.60>27.44negativecasesretained."
+    },
+    {
+      "field": "scoped probability checks",
+      "source_url": "https://ijcai.org/proceedings/2026/0586.pdf#page=4",
+      "locator": "ActualrenderEq5predictedcleanlikelihoodfactor givesfull-supportexampleweights148/65,1/5sum161/65vsnormalizedposterior4/13,9/13. Eq6candidate-independentfactorcancels. Currentimplementationnotidentified;printingerrorpossible,notbenchmarkrefutation. boundary-check.jsonexactFractionarithmetic."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://ijcai.org/proceedings/2026/0586.pdf#page=2",
+      "locator": "OriginalFig1crop101,48,512,267 at3.5x completecaptionactualpublicfileviewed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2019",
+      "description": "Explicitly cited in the TSP dataset setup, not a claim that its checkpoint is used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference."
+        }
+      ]
+    },
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "Graikos et al.2022",
+      "description": "Explicit generate-then-decode/greedy decoding reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference."
+        }
+      ]
+    },
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang2023",
+      "description": "Explicit baseline, architecture and dataset protocol reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference."
+        }
+      ]
+    },
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.2022",
+      "description": "Explicit graph-solution decoding and MIS dataset reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference."
+        }
+      ]
+    },
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.2019",
+      "description": "Explicit anisotropic GNN and TSP data reference; actual arxiv1906.01227 matches retained reference entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference."
+        }
+      ]
+    },
+    {
+      "citing": "rodis-robust-diffusion-solver-to-dataset-quality-in-combinatorial-optimization",
+      "cited": "t2t",
+      "reference_label": "Li et al.2024",
+      "description": "Actual cited four-author From distribution learning... title identifies T2T; source omits prefix and prints2024 versus formal NeurIPS2023, preserved without inventing a separate article. Identity crosscheck: Complete four-author YangLi/JinpeiGuo/RunzhongWang/JunchiYan reference gives the exact substantive From Distribution Learning... title but omits the catalogue title acronym prefix T2T. Printed NeurIPS36/2024 reference date retained; no substitution with the different five-author FastT2T.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            8
+          ],
+          "locator": "Explicit body citation and full bibliography p8; identity checked from complete reference. Final manual literal bibliography/body identity resolution: Complete four-author YangLi/JinpeiGuo/RunzhongWang/JunchiYan reference gives the exact substantive From Distribution Learning... title but omits the catalogue title acronym prefix T2T. Printed NeurIPS36/2024 reference date retained; no substitution with the different five-author FastT2T."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall8formalpages/fullrefs/allscientificfigures/tables andpublishercompanioninventory.",
+    "Replacedpendingbylinewithtenauthors andcorrectMeta/Princetonaffiliations despitepublishermetadataerror.",
+    "Retainedspecialistconstructive role andactualTSP/MIS tasks withoutinferringsharedcrossproblemcheckpoint.",
+    "Recordedweaklabelimprovements, highqualitynegativecases, validation/2forwardpassbudget andlabelgenerationvsinferencetime.",
+    "QualifiedprintedEq5/Eq6withexactexamplesandmissingcodewithoutdenyingempiricalresults.",
+    "AddedoriginalFig1and6explicitinternalcitationidentities,includingqualifiedT2Tyear/titlevariant.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged.",
+    "Resolved final lexical citation-identity flag from actual complete bibliography/body and exact byline/version, preserving source title/date discrepancies."
+  ],
+  "reviewed_note_sha256": "29642856df6ec75d81101a2e10fc12da9b7e2c8492523ae07436156f8f360cfc"
+}

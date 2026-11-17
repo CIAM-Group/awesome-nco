@@ -1,0 +1,378 @@
+{
+  "version": 1,
+  "paper_id": "save",
+  "note_path": "specialist/save.md",
+  "baseline_note_sha256": "ef0ef55bda125c11d1276c3f93a5050f889751301ddf46ec3c0f255ff635130e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1912.02807",
+      "version": "arXiv:1912.02807v2, January 10 2020, complete 27-page manuscript marked Published as a conference paper at ICLR 2020",
+      "retrieval_url": "https://arxiv.org/pdf/1912.02807",
+      "local_path": "research/import-272/nco-4a476e9f24.pdf",
+      "sha256": "c599e444c6438e4a6e8cfedcb4fd73349eb2323f845b92e7d7e65c6c94d9fc1a",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all7DeepMindauthors and actualarxiv1912.02807v2Jan10 2020conferenceheader, combinesDQNrealTD andMCTSrootQdistillation ratherthancountpolicy. SearchpriorQ/negativeactionsforgottenmotivation/fullRelatedWorkexplicitMCTSnetcite,methodroot-Qreplaydiagram."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read exactUCTpriorpseudocount1/maxQleaf/realTD+softmaxcrossentropyrootQlossτ1 notrawL2regression,staleoffpolicysearchvalues concern. Allperfectmodel experiments. Tightrope11states100actions/curriculum,tabular500episodes vsfunctionapprox;Constructionthreephysicaltasks/trainbudget10/testvaries UCT1000."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allConstructionFigure3matched10seedmediansminmax/testbudget0-50,UCT1000notwallclockmatch/ablationloss;MarbleRunadaptivecurriculum50pctadvance/cost0,.04 model-freemoreepisodesstillworse;AtariR2D2replayratio controlandmodelcost notuniformcompute. Authorsmodelerrorconfidencefuturework,allperfectmodel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullreferencesAbadi-Sutton including exactMCTSnetGuez2018 andphysicalconstructionBapst2019; noarchitectureinferrededges. Formalreferencescontinuep13."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read fullrefsfinishandAagent/TensorFlowSonnet distributedGPUlearner64CPUactors, batch16 replay4 buffer4000 target100,fullSAVEAlgorithmA1 plusimportantgreedyonlyexploredactions;PUCTbaselinecountpolicy/valueMC withnoise/tunings, allB1environmentspecstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read entireTightrope500train100evaltabularc.1/hyperparams/nozero-actionvisitbaseline,1000transitionbuffer;10seedfunctionapprox1Mepisodes. ConstructionC1/C2ablationactualwithoutQLusesL2notCE,PUCTweights/search/prior,medianminmaxplotsactualprotocols."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read GNedge-relativeactions/10seeds1Mepisodes hardestcurriculum10000evalmainvs1000ablations,softmaxvsL2/noQLstalevaluesreasons,explorationQmaxbackupsandmatchedtotalmodeled+realtransitions Coveringplotnotwallclock proof,MarbleRunscene generation firsthalf."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read fullMarbleRunD1-D7scene/curriculumweightedlowerlevelmix/geometric.5,strict50pctsuccesslast50eachadequatebin criterion notjustglobalhalf;actionphysicsrestoremarbleunobserved,cost0/.04,collisiontrialvsfatalplacement,checkpointbestcurriculum reward vs10seedeval;fullD1-D3figures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read allAtariE1-E2 fourteen games,3seedmeans/last20kTRAINepisodesnotseparateheldoutassessment,median40pctacrosspercentchanges/mean174.5%,1024actorsvs256 replayratioeffort andControlledrunsMCTSdiscardoutput,alllearningcurves;AppendixcompleteA-E/all27pagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Searchnegativeevidenceandvisit-countsmallbudgetfailure motivatesvalueamortization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Fullintro/background"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Qpseudocountprior+TDandsoftmaxQcrossentropy andMarbleRunbudget/loss/explorationstudies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Exactmethodandfullresults"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialistplanningmethodseparatetaskagents/architecturesand14separateAtarigames,notjointCOcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8,
+            17,
+            19,
+            25,
+            26
+          ],
+          "locator": "Taskprotocols/actualarchitectures"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Priorpseudocount1/meanreturns/maxQleaf/actingonlyvisitedepsilon-greedy;τ1CErelativevaluesnotrawL2;perfectmodels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14,
+            15,
+            18,
+            19
+          ],
+          "locator": "Eq1-6/AlgA1/Cablation"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Task-specificseed/budget/episodecontrols;Marblecurriculummix/bincriterion/checkpoint,Atari3seedlast20ktrainingepisodes/replaycontrol medianpercentage40.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            16,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Allmain/appendixresultsandprotocols"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Noapproxmodel/globalconvergenceproof,staletargets/noisysearch,rewardscale,seeduncertainty andsimulatorbudgetnotwallclockequal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            9,
+            18,
+            19,
+            20,
+            25,
+            26
+          ],
+          "locator": "Authorsdiscussion and actualcontrols"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "27fullpages/A-E/allreferences/8visualpages/manualpublisher/API checks;12silentclips110timeframesactualscope,noexperimentsrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Completeactualreadinglogs/media manifest"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://iclr.cc/virtual_2020/poster_SkeAaJrKDS.html",
+      "locator": "OfficialICLR2020posterexact7authors/titlelinksSkeAaJrKDS. AllDeepMindp1. arxivabs1912.02807v2Jan10 2020datedsidebarconfirmed,originalDec5 2019retained;unsupportedpublication2020-04reducedyear2020."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=SkeAaJrKDS",
+      "locator": "ManualofficialposterandTobiasPfaffauthorpageonlyPDF/noextrascientificPDFsupp. OpenReviewnotesv1/v2SkeAaJrKDSboth403cached. Complete27parxivv2AppendicesA-Eallread. PaperFigure4p8links tinyurl.com/yxm4ma47 →Drivefolder1koJwZmqlYmGQ04CfqL8Kz3Ejgc3z9cvs;manuallyinventory12MP4anddownloadallpublicuc. NoPDFZIPinthatfolder. All12ffmpegmetadata noaudio,11010sec+finaltimeframesvisuallyread;notfullframeplayback;qualitativeonly."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://arxiv.org/abs/1912.02807v2",
+      "locator": "Complete27pSHA c599e444c6438e4a6e8cfedcb4fd73349eb2323f845b92e7d7e65c6c94d9fc1a identitysidebarv2Jan10conferenceheader. Visualrestart-mainp4/5/7/8,restart-appendixp22/23/25/26 actualread. Noformalbyteidentityclaim."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://tobiaspfaff.com/publication/hamrick-2020-combining/",
+      "locator": "AuthorpagePDFarxivandcitationonly,noimplementation;fullpaperlibraryTensorFlow/Sonnetrefsnotauthorsolverrelease. Officialconferencepaper/reviewslinksnoCode. NoauthorcodeURLverified/added."
+    },
+    {
+      "field": "scope,experimental_conditions",
+      "source_url": "https://arxiv.org/abs/1912.02807v2",
+      "locator": "SeparateTightropeMLP/graph-construction/R2D2models. C2p19explicitindividualtaskstraining,MarbleRunD2mixcurrent+lowerdifficulty .5 geometric;D3strictlast50perbin50percent,underrepresentedbinsignored. E2p26scoreslast20000TRAINepisodes and3seedmean,controlledrunssameMCTSdiscardoutput/replayratio,1024vsbaseline256actors. Nojointcheckpoint/heldoutepisodeclaim. C1p18withoutQLalsoL2lossswitchqualified."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/15OTkrrq4JsW8SvpuMRBiv6eKLqkL-2JG/view",
+      "locator": "qlearning_sticky_cost_0_difficulty_4.mp4 SHAe77bd2b12c652201163f5d9ba4752f982a34a44b76cfb6759ad3ba31fc742263 341472bytes 114.87seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 114.82000000000001] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1AJSx_wxI2zNmwTuE1vUmIA6M-Rv57rQF/view",
+      "locator": "qlearning_sticky_cost_0_difficulty_5.mp4 SHA32e4698be24c1ea784edd783d3d795f215861aded39026c59e4e887cf49d0f25 448367bytes 120.67seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 120.62] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1ew8ug88BrOBf3y7e2YgqpBxw97f7Qx9_/view",
+      "locator": "qlearning_sticky_cost_0_difficulty_6.mp4 SHAd6f7469a79f3b2a808fc2625f60a5ffd19555963dc1f6f76e2210f775344f2a2 290969bytes 82.03seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 81.98] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1N_4YV-BoCQ6qvoVON78BlhiKRGP7Qhm5/view",
+      "locator": "qlearning_sticky_cost_0.04_difficulty_4.mp4 SHAe449ef7a59a0a738d17a48da9ace6deecf03848184d527909a3cc4b83060f65a 166063bytes 46.1seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 46.050000000000004] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1KxGu3lbLyVVycywWfygR55kgCj5zVCOr/view",
+      "locator": "qlearning_sticky_cost_0.04_difficulty_5.mp4 SHA37b60618f5023de888b13d012e1eb1fc8f37d3cbca0a456a9731cf122a8a45ab 315268bytes 63.17seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 63.120000000000005] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1xBWKQOCIi1dt4ad5RsLqwwjociEDIKf8/view",
+      "locator": "qlearning_sticky_cost_0.04_difficulty_6.mp4 SHA53d405dfe9d329baab09e1e5e777ee0f26a92385d52071e7c9937ceb826cf631 83257bytes 25.9seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 25.849999999999998] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/16oZVNqDofBhfa370Fj83fbofZhw4WW9o/view",
+      "locator": "save_sticky_cost_0_difficulty_4.mp4 SHA9e0276ba47d5577c58c9c6d19c7b9c3908739cf3d5436221556d76c9ce0a1eaf 179378bytes 51.77seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 51.720000000000006] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1YGyM1UT8DbFHJTa7YsUf25IOr83RDIZR/view",
+      "locator": "save_sticky_cost_0_difficulty_5.mp4 SHAeb235265059c1c5bb946fc46d1edd1c1139f0dceaecb77d7a6507872d13572fb 245978bytes 68.47seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 68.42] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1T7OziGQso4iwUQ4w9QiZ2ToJEh8Gv7mF/view",
+      "locator": "save_sticky_cost_0_difficulty_6.mp4 SHA42eef7b156331c8f0f35c9f277f5590660ca9bd982f9fd94f144094182716020 464379bytes 113.72999999999999seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 113.67999999999999] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1BVL_ej5J2oNlm6RzKmT-GBZ43zULQfFk/view",
+      "locator": "save_sticky_cost_0.04_difficulty_4.mp4 SHA8c0be9331ffc5563ebea3e870f5fab3ed5398ef5dd263239de998887635b22ed 192195bytes 57.9seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 57.85] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/1ThKkznxgG0rpvBcuHzctarLcEf5ozE5t/view",
+      "locator": "save_sticky_cost_0.04_difficulty_5.mp4 SHA27862e3ffb70d95d25cc7ea77f49b94f0e8fc7521af685d2bf8e3da223cbccde 366008bytes 80.37seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 80.32000000000001] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "supplement_video",
+      "source_url": "https://drive.google.com/file/d/10FPEuFIB-6kh1Hdez_whQsr9hedrnU9S/view",
+      "locator": "save_sticky_cost_0.04_difficulty_6.mp4 SHA3293d9c7d921971a7519ddc54345e1ff4835ec982de0d12b543e5940d6f13b85 365576bytes 83.2seconds; fullcontainerinventorynoaudio; sampletimes[0, 10, 20, 30, 40, 50, 60, 70, 80, 83.15] inspectedallcontactframes; noonscreenexpositorytextobserved,onlyanimatedMarbleRunscenes. Exact10sec+lastmethodnotcompleteplayback; noquantitativeinference."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://openreview.net/forum?id=SkeAaJrKDS",
+      "locator": "Identity-matched publisher citation_publication_date=2020-04; cached evidence research/full-text-review/save/iclr2020-poster.html. Conference edition year 2020 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://openreview.net/forum?id=SkeAaJrKDS",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2020-04; primary cachedHTML research/full-text-review/save/iclr2020-poster.html; citation_title=['Combining Q-Learning and Search with Amortized Value Estimates']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1912.02807",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2019-12-05; title on abstract page: Combining Q-Learning and Search with Amortized Value Estimates. This date is preprint history, not formal publication. Cached research/full-text-review/save/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "save",
+      "cited": "mctsnets",
+      "reference_label": "Guez et al. (2018)",
+      "description": "Explicit implicit-planning related-work comparison to MCTSnet.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Section2.3p3explicitGuez2018;completeLearningtoSearchwithMCTSnets8authorreferencep11"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedalltaskprotocolsandqualifiedseparateagents/perfectmodel/curriculum/AtariTrainingepisodemeans.",
+    "Correctedamortizationtoroot-QsoftmaxCEversusrawQregression;withoutQLablationalsoL2factor.",
+    "Specificactualplanningtasktagsadded/paradigmconstructive/publicationyearprecision.",
+    "Full27pA-E/8visualpages/12silentMP4individualhashes110timesamplesdocumented;oneexactcitation.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0764ca7b6d14155f43ad03c3617a9e76f05008fa680483d6b027fc701a36025b"
+}

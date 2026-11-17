@@ -1,0 +1,708 @@
+{
+  "version": 1,
+  "paper_id": "dgl",
+  "note_path": "specialist/dgl.md",
+  "baseline_note_sha256": "4336f6eb7dae02a0959c61ccae5d90734d52a05972032e3e48a5f1ed98034918",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2025/0964.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2025/0964.pdf",
+      "version": "Actual formal IJCAI2025 9-page publisher PDF, all main/fullbibliography/tables/figures freshly read; official10-author identity.",
+      "local_path": "research/full-text-review/dgl/paper.pdf",
+      "sha256": "9a86872889e74c900af51dff0ce6c7e784c3b5cdca59be2ca291a3122ea45199",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "correction",
+      "url": "https://raw.githubusercontent.com/wuyuesong/DGL/master/Experimental_Results.jpg",
+      "retrieval_url": "https://raw.githubusercontent.com/wuyuesong/DGL/master/Experimental_Results.jpg",
+      "version": "Official author README2025-10-24 correction, fullCVRPtable originalExperimental_Results.jpg visuallyread; JPEGembeddedunchanged1-pagePDFforreviewledger, notpartofformalPDF.",
+      "local_path": "research/full-text-review/dgl/author-correction.pdf",
+      "sha256": "348ee6c8c9edd05a6f905a76d4571987b939a640a7affe8192f5e31f86c386b2",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalIJCAI9pagesp1-2title/10AUTHORS actualYuesongWu notYaoxinWu, XuanWu missing, YuanshuLi notYongLi, YouZhou notYuZhou, YuanJiangnotYingJiang. AffiliationsJilin+NTU+SMU missingJilin/SMU. ActualTSPlikemissingtaskANDCVRP, dynamicglobal/lokNNconstructor SILreplacement. NeedmainRRCdominanttypepotentialhybrid. DoNOTreuseoldgenericmetadata."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Freshp3-4Fig2/Eq1-7 methodfull. Decoder-onlycandidatek-nearest, dynamiccoordinates/distcurrent/globaldistanceMEANSTD/unvisited/directionstartingdepot, minmaxeachfeature. No globalneuralembeddingencoder. Eq1maskdescriptionm=1visited contradictorysumunvisited intended;Eq7variance deletionomitsmean-shiftterm =>notgenericexactvarianceupdate proof, codecheckneeded. CostO(n)PERfeatureupdateallnodes, notoveralllinear/noquadraticinitialdistance. SILreplacementnotincumbenteditunlessRRCnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh5-6Eq8-10Alg1Table1allrows. Actual4layerdecoder1288head;NNconstructor noRRCmentions; candidatek30TSP50CVRP. Separate?singlemodel100uniform likelyPERtask checkcode. Training100epochs100iterationsB256,M64samplebeam,alpha.125lr1e-4decay.97; initializationNNlabels,ifbettersample replace, CEaug rotation/reflection/norm +TSPcyclic/CVRPflip&routeswap thenreplace12.5% data. Noheldoutvalidation. Plain+BS4 separatebudgets. All4090Xeon8352V, borrowed pretrainedgreedyLEHD/BQ. TSP100ELG.24%beatsDGLplain.60/BS.27;largeuniformDGL4.46/2.58 at10k5.9/6.4min;cluster10kDGL6.02tiesINViT6.02 butBS4.49. Needtimeswholetestcountmissingnotassumeperinstance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh7-9allTable2/3/conclusion/contrib/fullbib. Tenactualauthors equalfirstXiao/WuYuesong/CaoRui, correspondingYouZhou/YuanJiang. Table2CVRP500plain8.38/6.26/8.09/7.95substantiallyworseBQ3.31/4.54/4.50/3.87,5000DGL2.22..3.20betterlisted. CountryAR9152BEAMWORSENS9.51to12.46,QA194UDC.58beatsDGL1.27butBS.50. TSPLIB>10kINViT7.57beatsplain8.24,BS5.77. Table3CVRPLIBmentionedprosebutNOactualCVRPcolumns! noinventresults. AblationnumbersNOTinarticle authorcontactonly;donotclaimdetailedquantread. All9formalpagescomplete noappendix. BibliographyincludesirrelevantlncRNA2020bodymiscitationnotmapNCO. SILold2403 precursoronly versionqualify."
+    },
+    {
+      "source_id": "correction",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "FreshfulloriginalJPEGvisualreadall12CVRPcases/allbaselineandDGLrows, authorREADMEexplicit2025-10-24ELGpomo_size50correction. UniformELG3.81/6.49/7.04 vsformal8.88/7.86/8.20;cluster5.61/8.71/20.84;explosion4.00/7.03/14.22;implosion4.02/6.48/8.16 gaps. DGLnumbersunchanged;smallELGbetterplainDGLuniform/explosion/implosion, uniform500ELG6.49beatsDGL8.38ANDbeam7.20. CorrectionCVRPonlynotassumeTSPupdated. OriginalJPGembeddedPDFunchangedscienceledger1page."
+    }
+  ],
+  "claims": [
+    {
+      "id": "features",
+      "category": "contribution",
+      "statement": "Dynamic kNNcandidateglobaldistance/currentmean/variance-like/direction features, local4attentionlayers; notprecomputedglobalneuralencoder. PerupdateO(n)notwholelinearsolver; densematrices/sorting; printedvarianceupdate/sourceomitsmean-shiftterm exactnessqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Eq1-10/Fig1-2 actualTSP/CVRPsource initialoneattention+3decoder, recurrentfeaturecode."
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "NNinitiallabels/best-of64selfimitation, coordinate/solutionaugmentation and12.5%newpool;100epochs100iterationsB256=2.56m presentationspluscandidatecost, noheldoutvalidation. SeparateTSP/CVRPcheckpoints, uniform100trainandzero-shotscale/distribution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Alg1wholeloop/Section4 actualtrain/testconfigs beam4*16sampling,task-specificpaths."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Allformal3tables pluslaterCVRPcorrection: large-scaleDGLqualitygainsbut100TSP/500CVRPandAR9152beamnegativecases; differentfailuresetsandmissingnumericCVRPLIBtable/ablations. Wholeevaluationruntimecounts/sourceaugtrajs differentiated, noallprotocolSOTA/optimalityclaims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "All TSP16/CVRP12cases/TSPLIB3groups8countrymaps; correctionseparatesbelow."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistconstructive: two distincttaskmodels/checkpoints withtaskprojections; currentnodeconstruction only, selfimprovedlabelsnotnewneuralincumbentedit. Scale/distribution singlemodelperproblem notjointcrossproblem.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Complete method/actualTSP-CVRPdirs/pretraincheckpoint100 separate"
+        }
+      ]
+    },
+    {
+      "id": "official-correction",
+      "category": "experiment",
+      "statement": "Author2025-10-24correctedunfairELGCVRPconfigpomo_size50:12gaps3.81/6.49/7.04,5.61/8.71/20.84,4.00/7.03/14.22,4.02/6.48/8.16;DGLunchanged. CorrectionnotTSP. Entireofficialtablevisuallyread.",
+      "evidence": [
+        {
+          "source_id": "correction",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "FullscientificJPGtableallmethods12cases, officialREADMEdatednoticecorrection."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://www.ijcai.org/proceedings/2025/964",
+      "locator": "Actualpublisher10authors/p1JilinNTUSMU, contributionp8first3equal/correspondingYouZhouYuanJiang. Formal/BibTeXmonth8year2025only; use2025-08notJan15/unsupportedday/genericApr28accept. AuthorREADME9nameBibTeXomitsXuanWu soformalwins."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2025/964",
+      "locator": "ActualpublisherPDFonlynoadditionalscientificattachment. Official35entrytreeccb449114beccefa3e88221d93d8032ff3abb9bb noPDF/TEX/notebooks/archives; actualreadme/image.pngmatchesFig2/Experimental_Results.jpgnewscience. CorrectedJPGALLreadandregistered1pagederivedPDF. Formalp7detailedablationsavailablebycontactnotprovided; noteclaimslimitedtounquantifiedverbalfindings."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/wuyuesong/DGL",
+      "locator": "ActualTSP/CVRPmodel/env/trainer/train/test inspected, separatecheckpoints; oneattentionencoder+3decoder, DEBUGoverrides100epochs256beam4pomo16, candidatefeatures,varianceupdateCVRPclamp, densecdist+argsort, wholeevaluationclock/augcounts. ActualREADME2025-10-24pomo50correctionread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://ijcai.org/proceedings/2025/0964.pdf",
+      "locator": "OriginalfullFigure2formalpage3Rect(60,54,552,292)4x; fullsourcePNGmatchedandformalp3/4/6/7renderedvisualcheck. OfficialJPGall12CVRPcasesvisuallyinspected."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://www.ijcai.org/proceedings/2025/964",
+      "locator": "Identity-matched publisher citation_publication_date=2025; cached evidence research/full-text-review/dgl/page-1.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "final date precision prose crosscheck",
+      "source_url": "https://www.ijcai.org/proceedings/2025/964",
+      "locator": "Root independently reread exact-title ten-author publisher BibTeX month8/year2025 and citation_publication_date=2025. Preserve year electronic-record display; separately disclose official BibTeX month, not an inferred exact day."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dgl",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2019",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Kool et al.,2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Drakulic et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al.,2022",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Kool et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity deep-policy-dynamic-programming"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang,2023",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Sun & Yang,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity difusco"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.,2022",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Qiu et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity dimes"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "elg",
+      "reference_label": "Gao et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Gao et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity elg"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "glop",
+      "reference_label": "Ye et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Ye et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity glop"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay & Grimm,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text Pirnay & Grimm,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity gumbeldore"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "hncs",
+      "reference_label": "Goh et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Goh et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity hncs"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "invit",
+      "reference_label": "Fang et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Fang et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity invit"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al.,2021",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Li et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity learning-to-delegate"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Luo et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity lehd"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.,2023",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Zhou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity omni-vrp"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity pomo"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "rbg",
+      "reference_label": "Zong et al.,2022",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity rbg"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al.,2022",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Jiang et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity routing-dro"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "udc",
+      "reference_label": "Zheng et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Zheng et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity udc"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "utsp",
+      "reference_label": "Min et al.,2023",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Min et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity utsp"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al.,2022",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Geisler et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Full bibliography matches stable primary identity adversarial-nco-generalization"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "softdist",
+      "reference_label": "Xia et al.,2024",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Xia et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity softdist"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "sil",
+      "reference_label": "Luo et al.,2024; arXiv2403.19561 precursor",
+      "description": "Actual explicit in-text + matching fullreference title/authors; preserve actualcitedversions. SILoldprecursor curator-establishedformalrepresentative notautomaticretitling. DistinctBi2022KD/JoshiConstraints2022/lncRNA2020notforcedontounrelatedIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text Luo et al.,2024; arXiv2403.19561 precursor"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography matches stable primary identity sil"
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "distilling-autoregressive-models-to-obtain-high-performance-non-autoregressive-solvers",
+      "reference_label": "Xiao et al. (2024b)",
+      "description": "Cites autoregressive-to-nonautoregressive distillation as a neural VRP method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Body2.1p2explicitXiao2024b,not2024ajournalentry; completeAAAI3820274–20283sevenauthorbibp9."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Xiao et al. (2024b); Distilling Autoregressive Models to Obtain High-Performance Non-autoregressive Solvers for Vehicle Routing Problems with Faster Inference Speed. Body2.1p2explicitXiao2024b,not2024ajournalentry; completeAAAI3820274–20283sevenauthorbibp9."
+        }
+      ]
+    },
+    {
+      "citing": "dgl",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al. (2022)",
+      "description": "Cites hardness-adaptive curriculum in distribution-generalization discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Bodyp2distributionreferencesZhang2022; completeAAAI2022fourauthorpp9136–9144entryp9."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Zhang et al. (2022); Learning to Solve Travelling Salesman Problem with Hardness-Adaptive Curriculum. Bodyp2distributionreferencesZhang2022; completeAAAI2022fourauthorpp9136–9144entryp9."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshall9formalpages plusentireofficialpostpubCVRPcorrectionJPGembedded1pagePDF scientificsource, all3tables/2figures/fullbib/codeinventory.",
+    "Replacedwrong9authorswithformal10: YuesongWu/XuanWu/YuanshuLi/YouZhou/YuanJiang corrections; Jilin/SMUadded,first3equal/correspondingclarified; officialREADMEBibTeXomitsXuan notusedasauthority.",
+    "AddedmissingTSP,actualdynamiccompactglobalfeatures+local4attentionconstructor, independentTSP/CVRPmodels specialistconstructive notRRC/genericlocalimprovement.",
+    "SeparatedO(n)featurestepfromdensequadraticmatrixandwholeconstructcost, Eq1maskconflict/varianceomitsmean-shiftcodeconfirmed notexactstatisticalupdate.",
+    "Exact100epochs100iterB256/M64offlineSILwith12.5%replace/source16*4, mixedpretrainedbaselines andaugmentedplainvsbeamcounts/wholetesttiming notperinstance.",
+    "Preserved100TSP/500CVRPqualityfailures, AR9152beamdegrades/TSPLIBlargestINViTbetterplain, OOMsubsetsdifferent, missingnumericCVRPLIB/ablationtablesnotinvented.",
+    "Official2025-10-24noticeELGunfairpomo_size50 correctedall12CVRPcells read; DGLunchangedandsmallcorrectedELGbeatingDGLclear, TSPnotassumedcorrected.",
+    "Publishedyear/month2025-08officialBibTeXratherthanunsupportedJan15date/Apr28genericaccept; fullFig2and21explicitinternalcitations actualpreprintversions preserved.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final date prose audit distinguishes publisher electronic-record year from the additionally supplied BibTeX month; no exact publication day is invented.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4b0801f3eb8148db3ad9ea4ba060b159c85e633e6e1027dd6b037f39b3440c99"
+}

@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "paper_id": "deepim",
+  "note_path": "specialist/deepim.md",
+  "baseline_note_sha256": "d9411c70d7dbe95c5858c9c49c3c28330c283328a7fb74d3299ff5437d877ece",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/ling23b/ling23b.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/ling23b/ling23b.pdf",
+      "local_path": "research/import-272/nco-557309cf0d.pdf",
+      "sha256": "f529f1d9d56150f6f5a3159f563ff0402e9cd328f763f044a604efc5deaabe89",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read IMscope, generativefixedgraphseedvector andGNNdiffusionlearning/inference separation; printedPDFLukasXuevsoldRenhao requirespublishermetadata; noeliminationNP-hardness fromcontinuousrelaxation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read autoencoder+nonnegativeGATteacher/studentdistillation and latentprojectedseedinference, constraintcosts; GATmonotonicityproof wronglytreatssoftmaxcoordinatewisemonotone, Jensenprintedinequalitydirection andconsistencyassumptions needrenderedappendixverification."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullIC/LTtables andscalability/Jazzvisuals, simulatedtraininglabels(notunknownrealcascades), Table4training/inferenceseparated; claimedbillionnetworknotactual2.25m225medges; ICnegativeCora1%OIM8.9>8.4Digg20%ties."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read completebibliographyandAppendixAproofs/B-SIS Table5. Cor3proofonlynon-strictmonotonicity/exactorderunsupported bylowreconstruction; JensenflippeddirectionandBernoullityposneedrenderqualification. MetadataauthorRenhaoofficial vsLukasPDF preserved."
+    }
+  ],
+  "claims": [
+    {
+      "id": "deepim-contribution",
+      "category": "contribution",
+      "statement": "Fixedgraphseedautoencoder+GATdiffusionteacher/student andlatentbudgetedseedinference forIM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Contributions/Sections3-4/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "deepim-method",
+      "category": "method",
+      "statement": "Graphindexedautoencoder, nonnegativeGATteacher/student, latentoptimizationwithproposedcardinality/node-costprojection, noexactglobaloptimizationguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            12
+          ],
+          "locator": "Sections3-4/Algorithm1/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "deepim-theory",
+      "category": "limitation",
+      "statement": "Theorem1conditionalcomposition valid; Cor2softmaxmonotonicity step unsupported, Eq6Jensendirection reversed, Cor3rankingrequiresstrongerreconstruction/marginconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            12
+          ],
+          "locator": "Theorem1/Corollaries2-3/Equation6/AppendixA/renderedformula"
+        }
+      ]
+    },
+    {
+      "id": "deepim-experiment",
+      "category": "experiment",
+      "statement": "Sixreal+onesyntheticgraphs, simulatorgeneratedIC/LT/SISlabels, influencednodepercentagesnotoptimalityratios, studentnegativequalitycases/trainingandinferencetiming separated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Tables1-5/Figures2-3/Section5"
+        }
+      ]
+    },
+    {
+      "id": "deepim-classification",
+      "category": "classification",
+      "statement": "Fixedgraphnodeindexedseedautoencoders andseparategraph/diffusionsettings; noactualsharedweightscrossnativeoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7
+          ],
+          "locator": "Seedrepresentation/inputdimension/experimentsetup"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v202/ling23b.html",
+      "locator": "Officialeightauthors matchedexceptpublisherRenhaoXue/PDFLukasXueexplicitversiondiscrepancy; sharedfirstLing/Jiang andEmory/Fudan/NEC/Florida/DakotaStateaffiliations. Publisherpagescheckedseparately."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v202/ling23b.html",
+      "locator": "HTMLcitation_publication_date2023/07/03 andrawpublicationrecordissued; dateindependentofconferenceevent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/ling23b.html",
+      "locator": "ManualpublisherHTML/rawrecordextras[]; integratedAppendicesA-B onp12 allread. FullauthorZIPinventory containscode+SGdata,noadditionalPDF/scientificsupplement."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/triplej0079/DeepIM",
+      "locator": "Paperp1officiallink;mainZIPinventory/README/genim.py/model/gat.pyread. DocumentedignoredCLI, L1/finaltopk vsprintedprojection, andlimiteddataset/studentrelease coverage."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall12pagesincludingAppendixA/B/theory/SIStableandcompletebibliography; manuallycheckedpublisherattachments/authorarchive.",
+    "Qualifiedconditionaltheory, reversedJenseninequality andunsupportedGAT/rankingproofsteps; noempiricalfailureinferred.",
+    "Separatedsimulatedlabels/referencepercentages/trainingandtesttiming, currentcodebudget/CLI/studentlimitsandpublisher/PDFauthorname discrepancy."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "036f47210ee97bd991b504991a7118c8503c780b85f1037bf06d7de84e34f130"
+}

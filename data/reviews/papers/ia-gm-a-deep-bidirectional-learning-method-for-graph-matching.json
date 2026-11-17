@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "paper_id": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+  "note_path": "specialist/ia-gm-a-deep-bidirectional-learning-method-for-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "1561dc5d694360046ff991b49852c6dfec1dba7b6c273673a1169383f75ab7de",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/16461/16461-13-19955-1-2-20210518.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/16461/16461-13-19955-1-2-20210518.pdf",
+      "version": "FormalAAAI2021CDN9page3474–3482exact3SJTUauthors/fullreferencesread.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-4f30250095/paper.pdf",
+      "sha256": "476e105b2de0a1eb633134f3aa0dd0815d90b1666fc071be3cad10ba3e899f77",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallmainpp1?3threeSJTUauthors;IA-DSMGMhardHungarianassignmentfeedbackenrichesinputGNN;SRGGNNincoming/outgoing/residualsharedweights;shapecontextCMU/VGGPascal;supervised/selfconsistencyseparate. ClaimediterativeimprovementmustseparateactualhardincumbentNNfeedbackfromguaranteedmonotoneQAPoptimum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Allmainpp4?5readSRGGNNGRU/residualEqs4?6;hardHungarianVfeedbackrepermutesembeddingBprimeandlinearblend?1/?2?learnedsoftmax?Sinkhorn?hardV;actualincumbentNNrefinementnotjustcontinuousstate. BinaryfeasibilitynotexactQAP/normonotoneguarantee;supervisedBCEloss15vsunsupnextpage;allmathequationscheckednextvisual."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Readmainpp6?7alltables/unsupEq16:supervisedPascal3510train841testpairs4IAiterations?.05?40,fusion.75/1.25;crossclass66.58vsPCA63.90inclass68.84vs65.24,classnegativescar68.01<68.88,bike66.60<SR66.92. directedCars94.8/Motor92.6<FGM95.5,mean93.7vs92.6. CMU99.5house<99.8andhotel97.8mean98.7. Ablationcumulative58.95?63.04?66.10?66.32?66.58;selfconsistencyHungarianpseudo targetdoesnotguaranteerealGT."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Allmainreferencespp8?9read:PCAGM/CIE/GMN/LCSexplicit;SPGpreprintidentityconditionalcataloguecandidate;2019NGMmultiplehypergraphpreprintdifferenttitlejournalnotconferencealias;laterIA-NGM2023differentpublicationexcluded."
+    }
+  ],
+  "claims": [
+    {
+      "id": "iagm-contribution",
+      "category": "contribution",
+      "statement": "HardassignmentfeedbackaffinityfusionandSRGGNNbidirectionallearning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Introduction/Methods/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "iagm-method",
+      "category": "method",
+      "statement": "Initialconstructionand3furtherneuralhardassignmentfeedbackrounds;SinkhornHungarianlinearassignmentnotexactQAP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs4–16/4IAiterations"
+        }
+      ]
+    },
+    {
+      "id": "iagm-results",
+      "category": "experiment",
+      "statement": "Pascal66.58/68.84cross/inclass;directed93.7meanwithmotorbikenegative;CMU98.7meanwithhouse99.5<99.8.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Tables1–4"
+        }
+      ]
+    },
+    {
+      "id": "iagm-limits",
+      "category": "limitation",
+      "statement": "Noobjectivemonotonicity/semanticcorrectnessguaranteeforhardfeedbackselfconsistency;knownkeypointsandseparatetrainingregimes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "QAPapproximation/Eqs8–16/protocol"
+        }
+      ]
+    },
+    {
+      "id": "iagm-class",
+      "category": "classification",
+      "statement": "Specialistconstructive-improvement:actualfreshNNmatchingthenhardcompleteHungarianincumbentfedthroughlearnedfusiontoreplacement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6
+          ],
+          "locator": "Figure1/Eqs8–14/4rounds;codeindependentlychecked"
+        }
+      ]
+    },
+    {
+      "id": "iagm-repro",
+      "category": "reproducibility",
+      "statement": "All9formalpages/refsandkeyvisualsread;1236memberrepo/READMEandnecessaryforwardpathschecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "CompleteReferences/officialmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v35i4.16461",
+      "locator": "CachedCrossrefexacttitle/3authorspublished2021-05-18AAAI35(4)3474–3482;formalCDNp1SJTU/CMaCH."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/CMACH508/2021-IA-GM",
+      "locator": "Complete1236memberarchiveca3c93dba88703ff19d4b5a3eee36ad25a7c9d95noPDFZIPipynb;fullREADMEread,authorlabpublicationsHTMLchecked,formalmainnoexplicitmissingscienceappendix. OJSpage403notcircumvented;publicformalCDN9pcomplete. Talklistingnotcountedasreadscience."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://cdn.aaai.org/ojs/16461/16461-13-19955-1-2-20210518.pdf",
+      "locator": "OriginalFig1all3panelsandwholecaptionformalPDFp4/3477Rect40,38,572,400at3xpublicassetexists/actualview;pp4–7math/tables/qualrendered."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/CMACH508/2021-IA-GM",
+      "locator": "BIIA/model_IA.py95–110andmodel_unsup.py68–84:iteration0constructswithoutp;laterlearnedaffinityembeddingsreorderedbypriorhardp;eachiterationSinkhorn→self.hung→p.4roundsactual,constructive-improvementrootcriterionconfirmed;nouniversalmonotonicityguarantee."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://cdn.aaai.org/ojs/16461/16461-13-19955-1-2-20210518.pdf",
+      "locator": "Fullbibliographypp8–9read4actualcatalogueidentities;NGMdifferenttitlemultiple/hypergraphpreprintnotconferencealias;IA-NGMjournaldistinctnotmerged."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang2019a",
+      "description": "Directactualbibliographyfulltitle/bylineidentity;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "References Wang2019a"
+        }
+      ]
+    },
+    {
+      "citing": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "Wang2020",
+      "description": "Directactualbibliographyfulltitle/bylineidentity;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References Wang2020"
+        }
+      ]
+    },
+    {
+      "citing": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "cited": "cie-h",
+      "reference_label": "Yu2020",
+      "description": "Directactualbibliographyfulltitle/bylineidentity;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References Yu2020"
+        }
+      ]
+    },
+    {
+      "citing": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir2018",
+      "description": "Directactualbibliographyfulltitle/bylineidentity;nojournalextensionlineagemerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References Zanfir2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafterall9formalpagesread.",
+    "Changedparadigmtoconstructive-improvementbasedonactualfullhardincumbentNNfeedback.",
+    "Retainedclass/datasetnegativecasesandcumulativeablationconditions.",
+    "NoexactQAP/monotonicityclaim;distinctjournalextensionnotmerged."
+  ],
+  "reviewed_note_sha256": "af2d001d9beb4436a257e5a50574be36445b0632d4e751e8694a40d466fbdc62"
+}

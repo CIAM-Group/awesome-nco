@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "paper_id": "neurosat",
+  "note_path": "generalist/neurosat.md",
+  "baseline_note_sha256": "74abc6b2d7496bd3e91b508189a530b9c9434ad0d94cdc94562ee38f4c96e4ac",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1802.03685",
+      "version": "arXiv:1802.03685v4, revised2019-03-12; ICLR2019 author reading copy",
+      "retrieval_url": "https://arxiv.org/pdf/1802.03685",
+      "local_path": "research/import-272/nco-20cd9d4d7f.pdf",
+      "sha256": "5d68e371386fadc86cac48b7405818a80c738cbc25933ab48f6a137d87f07091",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh full read: title block identifies arXiv1802.03685v4 dated12March2019 and ICLR2019 header; complete motivation, SAT/search versus classification and distinct NeuroUNSAT model; all literal/clause message updates/invariances."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full paired-SAT generation/labeling, actual training millions of10-40variable problems with26steps, width128 model and optimizer, phase-transition/cluster decoder and every Table1 metric; 85%classification differs from70%SAT-witness recovery."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all size/graph-task extrapolation: SAT encodings of four decision tasks on tiny graphs, 4888 SAT-selected cases and512steps; separate NeuroUNSAT trained on three tiny-core templates, full limits/discussion/related work and bibliography start."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read complete remaining bibliography through SATzilla; exactly three internal catalogue citations verified from explicit in-text citations and matching bibliography, not title overlap alone."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "The study tests whether satisfiability bits can induce precise discrete-search behavior without assignment supervision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction and problem setup"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "contribution",
+      "statement": "Shared recurrent literal/clause messages preserve structural symmetries and produce a satisfiability logit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Model equations and size-independence"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "category": "method",
+      "statement": "Nearly identical paired formulas are generated and labelled using repeated MiniSAT calls.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Training data"
+        }
+      ]
+    },
+    {
+      "id": "decoder",
+      "category": "method",
+      "statement": "Clustering embeddings and checking both orientations extracts SAT witnesses; classifier failure is not UNSAT proof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8
+          ],
+          "locator": "Decoding and NeuroSAT limitation"
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "category": "experiment",
+      "statement": "Classification85%, SATclassification73%, and SATwitness70% are distinct outcomes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table1"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "Same checkpoint solves85%of4888SAT-selected graph-decision encodings from roughly10-node graphs using512rounds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Different problems"
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "category": "limitation",
+      "statement": "Separate NeuroUNSAT model recognizes three small core templates; no generic UNSAT proof learned.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Finding UNSAT cores"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "One fixed random-SAT model reuses SAT reductions for four bounded decision tasks rather than evaluating their cardinality optima.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7
+          ],
+          "locator": "Fixed NeuroSAT definition and graph-task ranges"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "reproducibility",
+      "statement": "Millions of10-40variable formulas,128dimensions,26trainingrounds and Adam2e-5; full compute budget not specified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Training protocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/abs/1802.03685v4",
+      "locator": "v4 PDF page1 and arXiv author list: Benedikt Bünz, Leonardo de Moura, David L.Dill; Stanford/Microsoft affiliations. Corrected corrupted author spelling."
+    },
+    {
+      "field": "venue, publication.year",
+      "source_url": "https://iclr.cc/Downloads/2019",
+      "locator": "Official conference listing includes matching title; reading PDF says Published as a conference paper at ICLR2019."
+    },
+    {
+      "field": "date and reading version",
+      "source_url": "https://arxiv.org/abs/1802.03685v4",
+      "locator": "arXiv history v1 submitted2018-02-11; actual cached PDF margin identifiesv4 revised2019-03-12, before cutoff."
+    },
+    {
+      "field": "scope, paradigm, problems",
+      "source_url": "https://arxiv.org/abs/1802.03685v4",
+      "locator": "Sections3,5,7.2: fixed trained model plus SAT reductions; exact bounded decision tasks and SAT-selected evaluation; no evaluated cardinality optimization loop."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/dselsam/neurosat",
+      "locator": "Matching author repository title and README with experimental SAT solver description, Python/scripts resources."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=HJMC_iA5tm",
+      "locator": "Manual available-source check2026-11-16: formal forum challenge; publicAPI403 and attachment403. Full11-page arXivv4 read, no separate scientific appendix referenced; author recursive repository tree contains README only among .md/.pdf/.zip documents, no scientific attachment found. No assertion of retrieving blocked formal archive."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1802.03685",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2018-02-11; title on abstract page: Learning a SAT Solver from Single-Bit Supervision. This date is preprint history, not formal publication. Cached research/full-text-review/neurosat/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neurosat",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Explicit neural combinatorial optimization predecessor citation; source bibliography versions retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurosat",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017), arXiv:1704.01665",
+      "description": "Explicit neural combinatorial optimization predecessor citation; source bibliography versions retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurosat",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015), NeurIPS",
+      "description": "Explicit neural combinatorial optimization predecessor citation; source bibliography versions retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected corrupted BenediktBunz encoding and Leonardo deMoura spelling using author list.",
+    "Replaced unsupported maximum/minimum graph-optimization labels with actual bounded decision tasks.",
+    "Separated classification,witness,large-instance and SAT-selected graph-transfer metrics and the distinct NeuroUNSAT model.",
+    "Recorded actual arXivv4 reading provenance, available-source supplement checks and three explicit internal citations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ef2a204b8eb01b4af5e372fa9a4ef150b2e133ec7e28d63f86371a6bcf848f31"
+}

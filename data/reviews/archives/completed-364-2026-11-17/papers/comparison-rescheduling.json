@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "paper_id": "comparison-rescheduling",
+  "note_path": "specialist/comparison-rescheduling.md",
+  "baseline_note_sha256": "f275040ffc60c3724495b008dca4c37ed4174b0f5fad8ee2d23601b230642ae0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/aeb3135b436aa55373822c010763dd54-Paper.pdf",
+      "version": "Official NIPS1993 volume6 scanned proceedings,8pages801-808",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/aeb3135b436aa55373822c010763dd54-Paper.pdf",
+      "local_path": "research/import-272/nco-857768eea6.pdf",
+      "sha256": "7268d1dd9c67696b593c160c1fecbd1631a99579b21a1492c22685c5c762ad4c",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh pp1-4 read: VUB AI/Prog affiliations, Sabena crew rescheduling; candidates generated externally already legal/security feasible; best-choice expert labels not full ranking/scoring. Perpilot occupancy/social features plus sharedschedule context rated0-1; comparator lower better, dual comparison motivation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh pp5-8 all7refs. Shared-weight dual nonlinear scorer with positive/negative output weights and sigmoid difference; best/lesspreferred both orders, recall argmin single scorer; manual V increase aids comparison learning vs auto learnedV no significant effect. 15inputfeatures, observed Sabena15days, Figure3trainingerrors only no heldoutaccuracy/size/timing, contradiction nonconvergence, similar schedule generalization unquantified. Feasible candidates provided externalOR/expertsoftware, notendtoend optimum."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Expert best-choice labels select one legal substitute while preserving stability/equity; feasible candidate generation is external.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Comparison formulation and dual nonlinear-network training; manual comparison-scale increase.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.2.1-3.2.4"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Shared-weight nonlinear profile scorer, sigmoid of output difference, both pair orders with0/1 targets; recall argmin single-copy outputs,15inputfeatures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations2-3 and architecture"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Sabena15days observation, Figure3trainingerrors; no quantifiedheldoutaccuracy/sizes, contradiction nonconvergence and similarity-generalization caveat.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Section4/Conclusion"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "External feasibility, hand-coded features and incomplete evaluation prevent claims of end-to-end scheduling optimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "locator": "Candidate generator/features/results"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist single substitute selection; constructive decision component, not iterative local search or complete schedule generator.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6
+          ],
+          "locator": "Pipeline and singlecopy recall"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/aeb3135b436aa55373822c010763dd54-Paper.pdf",
+      "locator": "PDFp1 names andVUB AI/Prog laboratories."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/hash/aeb3135b436aa55373822c010763dd54-Abstract.html",
+      "locator": "Official NIPS1993 volume6 entry."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/hash/aeb3135b436aa55373822c010763dd54-Abstract.html",
+      "locator": "Manual landing inspection Bibtex/Metadata/Paper only; all8pages no appendix or attached scientific supplement."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1993/file/aeb3135b436aa55373822c010763dd54-Paper.pdf",
+      "locator": "Visualcheck PDFpp5-7 comparisonloss/nonlinearity identity/dualarchitecture/learningcurves; no new asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read8pages and7references.",
+    "Specified external legal/safety candidate generation and learned preference role.",
+    "Explained shared weights, both trainingpair orders, lowerisbetter recall and manualVschedule.",
+    "Separated qualitative similar-schedule generalization from missing quantitativeheldoutbenchmark and cost savings.",
+    "Qualified constructive classification as a single replacement-selection component."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7aab2e84399bd000f1f9e76272e5b4ce465d63e5bbc9128d367b6373eba9f4a8"
+}

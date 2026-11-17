@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "paper_id": "solving-continual-combinatorial-selection-via-deep-reinforcement-learning",
+  "note_path": "specialist/solving-continual-combinatorial-selection-via-deep-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "39eb656529560f351ebe109046f69b684dd2e2af1e968f05550fb7a7b97d1518",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2019/0481.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2019/0481.pdf",
+      "version": "Formal IJCAI2019 MainTrack8-page PDF, full main/refs read",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-f78ce9ca87/publisher.pdf",
+      "sha256": "e87905a3144fc9550bd6e252421b54acdc30399d44bad1ed14215995848f6070",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "technical-report",
+      "url": "https://raw.githubusercontent.com/selectmdp/selectmdp/e645f8bbee6965d3c94cd6e7d2503d2f0a9c5434/selectmdp.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/selectmdp/selectmdp/e645f8bbee6965d3c94cd6e7d2503d2f0a9c5434/selectmdp.pdf",
+      "version": "Author13-page technical report including full AppendicesA-C/proofs/results; repositorye645f8bbee6965d3c94cd6e7d2503d2f0a9c5434",
+      "local_path": "research/full-text-review/solving-continual-combinatorial-selection-via-deep-reinforcement-learning/technical-report.pdf",
+      "sha256": "d84546eaf2f95c1f84af26c82a577289981453aaa902a5962dccd8589dea6c0d",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 8,
+      "notes": "Read all8formalpages including fullreferences and results: IS-MDPdecomposesKsubsetcommands, symmetry I/U/Psharing, localoptimum/UA claims require separate technicalreport, zero-gamma footnote discrepancy needs check. CS/PPseparateexperiments and N50to200 reusewithinCS notcrosstask generalist. 4trials95CI/20episodes; transfer103%forward86%reverse; noquantitative table for blanketwinclaim. Technicalreport identified in authorrepo and fetched13p; notyet read."
+    },
+    {
+      "source_id": "technical-report",
+      "first_page": 1,
+      "last_page": 13,
+      "notes": "Actually read complete13p technicalreport, repeatedmainfullrefs andA-C: normalizedselected/unselectedmeanlayers/multichannel; B1proof startsnonlocalmin impliesnegativefirstdirectionalderivative (stationarysaddle gap), B2continuousfunctionsumdecomposition/4layers withwidthallowedgrowth. CSgeometricrewardcases/PPcapture3+predators; hyperparams50000buffer64batchAdam.001gamma.99target1000eps1to.1,3layers48channels4seeds; CPU1.16e6steps/day N200K6. Viewedall21registeredPDFpages/8technicalfigures and formal5figures/alltable via6contactimages; originalformalFig2cropviewed. Formalfootnotegamma0 vsreleaseintermediate1/final.99 anddefaultbatch3/buffer200/layers4 preserved."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Dynamic subset-and-command selection needs coordination and manageable joint-action scoring.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/S-MDP"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "IS-MDP plus intra/unified/progressive shared Q-networks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Cascaded Q-network item-command construction with permutation-aware aggregation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2-3/Fig2-3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Cross-size CS checkpoint reuse is not cross-environment checkpoint generalization; constructive subset selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Environments/generalization"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Synthetic CS/PP experiments four trials20episodes; transfer103%/86% is asymmetric.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Section5/Fig4-5"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Approximation continuity/width assumptions, local-proof stationary-saddle gap, hyperparameters and training throughput.",
+      "evidence": [
+        {
+          "source_id": "technical-report",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Technical reportA-C andB.1 directional derivative argument"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete proof and experimental settings are in the author13-page report.",
+      "evidence": [
+        {
+          "source_id": "technical-report",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "AppendicesA-C"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and arxiv history",
+      "source_url": "https://ijcai.org/proceedings/2019/bibtex/481",
+      "locator": "Formal8authors/KAIST KingCollegeNaver exactPDFp1; primaryBibTeXmonth8/year2019 pp3467-3474 DOI481; arxiv1909.03638history actualonev1Sep9same8authors/title, afterpublicationmonth."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://github.com/selectmdp/selectmdp/tree/e645f8bbee6965d3c94cd6e7d2503d2f0a9c5434",
+      "locator": "Untruncated77entryrepo withone13pselectmdp.pdf report,READMEonlytitle, no scientificzip/tex/pptx/video. Complete8formal+13reportpages actuallyread/all6contactimagesvisuallychecked includingall8reportfigures/Table1. Fetched3coreconfig/codefiles and inspectedactualBellman/defaultsettings; notclaimallcodeexecuted."
+    },
+    {
+      "field": "scope and printed proof/configuration limitations",
+      "source_url": "https://github.com/selectmdp/selectmdp/blob/e645f8bbee6965d3c94cd6e7d2503d2f0a9c5434/selectmdp.pdf",
+      "locator": "AppB1 assumesnonminimum⇒negativefirstderivative, missesstationarysaddle; B2continuity/compactness/width; reportedfootnotegamma0 vsactualq_networkintermediate1/finalGAMMA. configbatch3/buf200/layers4 vsAppC64/50000/3."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://ijcai.org/proceedings/2019/0481.pdf#page=4",
+      "locator": "Fig2widecrop48,48,566,2153x exactpublicfileviewed/fullcaption."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "solving-continual-combinatorial-selection-via-deep-reinforcement-learning",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al.2017",
+      "description": "Explicit related-work citation and matching bibliography; background rather than an implementation dependency.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Section1.1/full matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "solving-continual-combinatorial-selection-via-deep-reinforcement-learning",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2019",
+      "description": "Explicit related-work citation and matching bibliography; background rather than an implementation dependency.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Section1.1/full matching reference"
+        }
+      ]
+    },
+    {
+      "citing": "solving-continual-combinatorial-selection-via-deep-reinforcement-learning",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al.2018",
+      "description": "Explicit related-work citation and matching bibliography; background rather than an implementation dependency.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7
+          ],
+          "locator": "Section1.1/full matching reference"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read complete8-page formal paper and13-page scientific technical report including full proof and experiment appendices.",
+    "Corrected classification to specialist constructive with only cross-size transfer evidence.",
+    "Retained asymmetric transfer, theoretical scope and publication/preprint date distinction.",
+    "Documented printed discount/proof assumptions and source-default differences; added3explicitcitationedges and originalFig2.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged."
+  ],
+  "reviewed_note_sha256": "97037afc2be585b43b15c09da8040e573ba469fff76141989588a54e8535b129"
+}

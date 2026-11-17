@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "paper_id": "beyond-single-step-updates-reinforcement-learning-of-heuristics-with-limited-horizon-s",
+  "note_path": "specialist/beyond-single-step-updates-reinforcement-learning-of-heuristics-with-limited-horizon-s.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "9cdb8794ef66d1be66824816d48842afe423b82189ef93715578359ad8076496",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2511.10264v1",
+      "retrieval_url": "https://arxiv.org/pdf/2511.10264v1",
+      "version": "arxiv2511.10264v1 2025-11-13 ten pages including complete main/references and integrated scientific AppendicesA-B; formal eligibility independently publisher-verified",
+      "local_path": "research/full-text-review/beyond-single-step-updates-reinforcement-learning-of-heuristics-with-limited-horizon-s/arxiv.pdf",
+      "sha256": "d4f59f5c0bd286389b1750b4a7f877842674e16c0dcf3fea734517c80228aa20",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Read full10-page arxivv1 main/references/integratedscienceAppendicesA-B, all7figures rendered and resultsheatmaps7/10 zoomed/actuallyviewed. LHBL frontierpath+targetheuristic labels via reverseDijkstra, searchsampler ablationLHBLS and10/50/100horizons.3domainsseparatelytrained, 3seeds200tests600slimit, fulltrainedlambda.6. NegativeRubikLHBLSbeatsfullLHBL; Lights10sampling-onlybetter21vs28.3,SSBL4.7-13.2solved. Training10b/1bsamples and3-12days/domain/seed,notcheapguarantee; noadmissibility/globaloptimality. Repo144entries fullinventory onlyREADME noadditionalPDF/ZIP/sciencecompanion. ASTARcode unitcost+clamp0, configs weights .6/.8/.2 differ unifiedtest. FormalprimaryCrossrefMar14byline3; arxivactualhistoryNov13v1."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Training/deployment state-distribution mismatch and one-step bootstrap motivate search-derived labels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Limitations ofSSBL"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "Searchsampling, frontierpath target and reverseDijkstra with sampler-onlyablation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equation5/Algorithm1/LHBLS"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Targetnetworkheuristic labels fitMSE; offlineLHBL plus deployedBWAS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Equations1-5/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Puzzle-specific trained heuristics guide newpathconstruction; no sharedcheckpoint crosspuzzleclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            10
+          ],
+          "locator": "Domains/evaluation/AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "3seeds200tests600scap; heatmaps show benefits and Rubiksampling-onlynegativecase.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            10
+          ],
+          "locator": "Figures3-4/7/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "UncertifiedNNheuristics and horizon/batch/domaintradeoffs; training3-12days, samplingvsfullupdateexceptions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            7,
+            10
+          ],
+          "locator": "Background/evaluation/summary/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "CompleteintegratedsupplementA-B and author code/data/checkpoints inventorychecked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            10
+          ],
+          "locator": "Codefootnote/fullrefs/AppendicesA-B"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and arxiv history",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v40i43.41023",
+      "locator": "Primarypublisherdeposit published-online2026-03-14 exact3authors/title DOI/page range36955-36963; arxivactualhistoryonlyv1Nov13,2025/title3authors confirmed andsaved."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://github.com/SPL-BGU/limited-horizon-bellman-learning/tree/0ab94364f82760455fdd8dc6ea21c3e1d107a249",
+      "locator": "Arxiv10p integratedAppendicesA-Bcomplete/fullrefs, all7figsvisuallychecked in3contactimages plus enlargedFigures4/7. Untruncated144entryrepo hasnoadditionalPDF/zip/tex/pptx/video; model pathsforeachpuzzle,readfullREADME and train/testconfigs pluscoreupdater/reverseDijkstra. No unavailableformalbytesortraining claimedread/reproduced."
+    },
+    {
+      "field": "classification and negative comparisons",
+      "source_url": "https://arxiv.org/pdf/2511.10264v1#page=7",
+      "locator": "Separatepuzzleseeds/models; fullLHBLvsLHBLSRubiknegativeFig4batch1LHBL50solved95/528025nodes vsLHBLS50solved100/2819; lightsLHBL10worseLHBLS10;3seeds200600s,10b/1bsamples and3-12daytraining."
+    },
+    {
+      "field": "code configuration and original figure",
+      "source_url": "https://github.com/SPL-BGU/limited-horizon-bellman-learning/tree/0ab94364f82760455fdd8dc6ea21c3e1d107a249",
+      "locator": "ASTARusesOPEN+goals,reversehelperclampsh>=0, unitcost1;testdomainweights.6/.8/.2 vsfullytrainedlambda.6. OriginalFig2crop305,45,565,207 at3.5x fullcaptionpublicactualview."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read complete10-page identified preprint with integrated scientificsupplement/fullreferences.",
+    "Set accurate byline/date/specialist constructive task-specific checkpoint classification.",
+    "Added actual quantitative benefits, full-update negativecases, compute costs and noadmissibilityguarantee.",
+    "Added originalFig2 and documented authorcode configuration/unitcost scope; no inventedinternaledges.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged."
+  ],
+  "reviewed_note_sha256": "04a064baa039606dcd5e42091b55379fb230612a2d62b07c30bd7f36297a80f6"
+}

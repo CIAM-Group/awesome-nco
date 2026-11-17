@@ -1,0 +1,442 @@
+{
+  "version": 1,
+  "paper_id": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+  "note_path": "specialist/planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "f5d1647c8a10c2b3f818459d529e8a460884c4f000d90ce1bf5ef3ee172db95b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2511.09219v4",
+      "retrieval_url": "https://arxiv.org/pdf/2511.09219v4",
+      "version": "Identified arXiv2511.09219v4,2026-04-02,19pagesincludingcompleteAppendicesA–I; allactualread beforeverified. v1date2025-11-12independentlyprimaryhistory;formalAAAI2026-03-14eligibilityseparate, formalPDF520challenge notread/byteidentityclaimed.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-1e1f8eb215/arxiv-v4.pdf",
+      "sha256": "a0e3d5d8dc4b5d1d3f31cf706095b1cc02bd19a49f6b2819b716d176931e970b",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fulltitle6authors4affiliations,abstract/introduction and normalizedtimeFig1; MILP/B&B/exactness/expectedtrees objectiveEq1, fixeddimension distribution repeatedMILPs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read completeB&BexampleFig2, DFSsubtreevalueEq2, MuZerorepresentation/dynamics/predictionbackground, learnedtwochildmodel/branchabilitythreshold0.5, imaginaryopenstack DFS andFig3, Kstepreplay loss Eq includingLT andnstepbootstrap. Learnedbranchabilityonlyimaginedtree, notactualSCIPpruning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read completeRelatedWork, all4researchquestions andexperimentalprotocol/ALLTable1 numbers. Separateperfamilymodels, SCIP8.0.3,100test/100transferx5seeds; noMCTSinTable1evaluation, rootcutsonly/restartoff/otherdefault. ImportantILstartransferbetteraggregate83vs100, ILDFS136; timeexcludespresolve; learnedbrancherauxroutinesconfoundplainnodescomparisons. NbudgetMIStradeoff andILstarlimits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read fullFig4MCTSnode/timecurves,MISalignmentTable2, discoverytimeTable3/DFSinterpretation, Conclusion andReferencesAchterbergthroughLeytonBrown. DistinguishPLanningvsN0 policyanddefaultnode-selectionILstarbettertransfer; originalmodel learnedlatentnotcertifiedLPapproximation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read remainingfullReferencesLinthroughZhang, AppendixAactionsetsizeanddatasetpointer, Bfullh/f/garchitectures, histogramvalueheadHLGauss, independentleft/rightlatentdynamics andDFSsimulation notLPsolver. Printed p outputspace Rmb incongruouswithopRn, treatlocalnotationnotclaiminvalidmethod."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read entireTable4benchmarkdimensions, Bimaginedsubtreeopenstack/retrievingp/value, CfullGumbelrootsequentialhalving/deepselection/expansion/backprop/targetQnormalization formulas; Dstrongbranchingminscore andfullwidthdepth1lookaheadinterpretation. Conditionalsearchguaranteesnotcertifiedtruelearneddynamics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read allE losses/treeconsistency Eq3/SimSiamFigure5, trainingFpipelineFigure6/Table5 100ksteps K=n=3 batch128 N50 M10 4A100server, completeGbaselineprotocol and startHHLGauss. AppendixG explicitly says MK allbaselinesexceptILDFS evaluatedSCIPdefaultnode-selection; must qualify mainDFSlanguage. Printed loglikelihood/cosinesign inminimizationneedscomparecode, notexperimentalinvalidity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read Hlog2negativevalue support/HLGauss transform, allFigure7ablationcurves andinterpretation: branchabilityimportant,temporalconsistencymodestearly/no longrunmeasurablegain; AppendixI wins/ranksmetrics, CAnode/timeFigure8generalizationfailure andSBalignmentnormalization/100test20transfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Read fullTable6DFSwarmstarttransitiontimesanddiscussion, completeTable7allfourfamilies/traintransfer solved/wins/ranks, inclCAtransfer DQNprintedrank9.97 inconsistentwithlistedbaselinecount. MainmodelallsolvedwhileDQNRetroMIS22/100transfer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 19,
+      "notes": "Read completeTable8all4families/nodes/time/success/std5seeds. NotedprintedTable1versusTable8differences e.gCAtransferRandom317235vs3172355, MISILnodes1993vs1882, avoidsilentsubstitution; noadditionalpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Distribution-specific learn-to-branch using latentplanning reduces expensive realLPlookahead burden.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction; Section3"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Learnedtwochilddynamics/branchability plusGumbelplanningtargets andsubtree-replaylosses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Section3/Fig3/AppendicesB–E"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "DFSundiscountedsubtreeformulation, bipartite43/5/1features, learnedhfg, HL-Gaussvalues andbranchability/consistencyloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Eq2; AppendicesB–H/Table5"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "experiment",
+      "statement": "4separatefamilies,100test+100transferx5seeds,SCIP8.0.3 rootcutsonly1h; Table1N0, MKdefaultnode-selectionexception, no universaltestDFS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            11,
+            14
+          ],
+          "locator": "Section5/Table1/Table4/AppendixG"
+        }
+      ]
+    },
+    {
+      "id": "findings",
+      "category": "experiment",
+      "statement": "AggregatepriorRL/ILDFSadvantages, ILstarbettertransfer, MISplanningnode/timebudgettradeoff andCAtransferfailure, branchabilityvsconsistencyablation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            15,
+            16,
+            18,
+            19
+          ],
+          "locator": "Table1/Fig4/Fig7/Fig8/Tables7–8"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "EachnativeMILPfamily separatelytrained/owncheckpoint, specialistconstructivevariablebranching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            14
+          ],
+          "locator": "MILPobjective; branchaction; Section5Trainingevaluation; AppendixG"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "ApproxlatentmodelnotcertifiedLP, DFS/scaletradeoffs andnegativeCAtransferplanning; positiveprintedlossversusnegativeCEcode/summarytables inconsistencies qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "AppendicesE/G/I; actualcodecrosscheck describedmetadata"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete19pagev4integratedAppendicesA–I; scientificclaims/authoridentity/formal/arxivdatesindependentlyqualified, officialcodeand4currentcheckpoints inventoried.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Titlebyline; entireReferences/Appendices; trainingcomputeTable5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2511.09219v4",
+      "locator": "p1sixbylineauthorsinclOlivierJuan,4institutionblocks; publisherindexedformalsixauthorlistagrees. v1indexedbylineonlyfive notusedforfinalauthors."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/39759",
+      "locator": "Primaryindexed Published2026-03-14,AAAI40(30),25627–25635; centralcrossref.json publisherdeposit published-online same. Actualpublisherpage/PDF520HTML notregistered."
+    },
+    {
+      "field": "arxiv_url, date, source version",
+      "source_url": "https://arxiv.org/abs/2511.09219",
+      "locator": "arxiv-primary.html historyv1Nov12,2025 11:28:08UTC;v2Nov19;v3Nov25;v4Apr2,2026 16:17:50UTC. Readingcopyidentifiedv4,19p <=2026-11-16cutoff; datefrontmatterv1 notv4/formal."
+    },
+    {
+      "field": "scope, paradigm, problem coverage",
+      "source_url": "https://arxiv.org/pdf/2511.09219v4",
+      "locator": "p5Trainingevaluation explicitlyperbenchmarkseparateagent, Table4SC/CA/MIS/MK, fourmodels/checkpointsinspectedtree; branchingactionconstructive. AppendixGp14MKdefaultnode-selectionexception confirmedcode test/run_agents.py81–82."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/39759",
+      "locator": "Manualpublisheraccess520,indexedprimaryDownloadsPDFonly. Full19pagearxivhasAppendicesA–Icomplete, noexplicitmissingseparatescientificsupplement. AuthorprojectlinksOpenReview8481hfKVsr; API2/API1both403 responses saved. Full61memberauthorrepoZIPinventory contains45files/noPDF/video/scientificsupp ZIP, code/env/checkpoints only. All19registeredpagesactualread, referencesandallfigures/tables; no inaccessibleitemcountedasread."
+    },
+    {
+      "field": "code, implementation version",
+      "source_url": "https://github.com/abfariah/planbb/tree/198eebf302184748ec9f8d2d0a2f812d5c52ad2a",
+      "locator": "PinnedgitHEAD198eeb... andcommit.patch primarydate2026-07-21. Fullrepo.zip4330419bytes/61members/45files hashedrepo-file-hashes.json. Fourcurrentfamilymodel.p+MKold_model.p identifiednotexecuted. InspectedRepresentation/Dynamics/Prediction,gcnn,trainCE/consistency,envrootcuts/no restart/defaultheuristics andevaluatorN0/MKdefault. EnvironmentSCIP8.0.3/PySCIPOpt4.3.0/Ecole0.8.1."
+    },
+    {
+      "field": "figures, printed formula and table checks",
+      "source_url": "https://arxiv.org/pdf/2511.09219v4",
+      "locator": "Visualcontactmethods pp4/6/13/14,appendix pp15/16/18/19,search pp7/11 allactuallyviewed. OriginalFig3p4clipRect(310,55,582,230)3x renderedframework.png visuallycheckedfull labels. Table1/Table8 CA Randomtransfer317235vs3172355, MISIL1993vs1882; p18DQNrank9.97. PositiveprintedLp/Lv/Lb andcosine p13 versusnegativeCE/distancecode explicitlyseparated."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "attention-model",
+      "reference_label": "Kool, van Hoof, and Welling (2019)",
+      "description": "Uses attention routing as background direct-search neural heuristic, distinct from exact MILP branching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp8 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al. (2023)",
+      "description": "Cites latent-space policy adaptation for direct-search routing/scheduling in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp8 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Adopts bipartite MILP observation and compares strong-branching imitation baseline; explicit architectural attribution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8
+          ],
+          "locator": "Explicitbodyattributionp3; fullReferencesp8 authors/title/yearidentity. AlsoSection3p4representationandAppendixGp14ILbaseline."
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay and Grimm (2024)",
+      "description": "Discusses stochastic-beam-search self-improvement as prior planning-inspired neural CO training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp9 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Lists hierarchical-sequence cut selection among model-free learned solver heuristics, not a component of PlanB&B.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp9 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al. (2023)",
+      "description": "Cites RL4CO benchmark for limitations of prior RL; bibliography arXiv2306.17100 identifies same work despite formal-year difference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Explicitbodyattributionp1; fullReferencesp8 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Uses DFS subtree decomposition background and compares PG-tMDP, with official checkpoint usage inAppendixG.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Explicitbodyattributionp3; fullReferencesp9 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "trgnn-node-selection",
+      "reference_label": "Zhang et al. (2025)",
+      "description": "Discusses learned node selection and richer global-tree representations as a direction beyond local DFS observations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp9 authors/title/yearidentity. "
+        }
+      ]
+    },
+    {
+      "citing": "planning-in-branch-and-bound-model-based-reinforcement-learning-for-exact-combinatoria",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang, Agrawal, and Faenza (2020)",
+      "description": "Cites reinforcement learning cut selection as related model-free solver guidance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicitbodyattributionp5; fullReferencesp9 authors/title/yearidentity. "
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced allpendingdraftmetadata/sixsectionsusingcomplete19pagev4andprimaryformalmetadata.",
+    "Retainedspecialistconstructive: fourindependentlytrainednativefamilies/checkpoints.",
+    "Separatedarxivv1date2025-11-12/readv4Apr2,2026/formalMar14,2026; correctedbylinetoincludeOlivierJuan.",
+    "Qualifiedpolicy-onlyTable1versusMCTSbudgetexperiments,MKdefaultnode-selectionexception,ILstartransferadvantage,CAplanningfailure,consistencymodestlongrungain.",
+    "Documentedprintedloss/currentcodesigns andcross-tabletranscriptiondifferenceswithoutclaimingexperimentinvalidity.",
+    "AddedoriginalFigure3and9actualbody+bibinternalcitationedges."
+  ],
+  "reviewed_note_sha256": "1162312a498cef40698376fbf280c3733db20cebd2cc46f7251f15d3412bac30"
+}

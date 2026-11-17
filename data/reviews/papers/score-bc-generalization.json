@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "paper_id": "score-bc-generalization",
+  "note_path": "studies/score-bc-generalization.md",
+  "baseline_note_sha256": "7c49def0ba7f5d86f4d07f4a3bc11b6aacf39bc2d595895e81954d597f5d7b5b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/ac04e54e0a2d1927d60709019e4e7870-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/ac04e54e0a2d1927d60709019e4e7870-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-0a2be706e0.pdf",
+      "sha256": "2a3348615eb11f1fedeb2882a946c8bec122855c41b4585e8547c38552538026",
+      "pages": 31,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh read title2authorsJHU; general score-guided BnC state/actions/nodecutbranch taxonomy, fixedfeatureextractors, deterministicconsistent ties and expert targets; algorithmroundcap and hybrid SCIPfeatures explicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read empiricalpriors/completeframeworkmotivation, boundedH uniformconvergence iid, distinction2024directparameterselector vs2025scorepolicy; Algorithm2 deterministic transitions, lexicographicties, dtypes/Mroundlimit, fixedfeatures and (Gamma,gamma,beta) structureddualscoreclass."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full mainstructuredclass/pdimTheorem3.3, linear/ReLUbounds, data-dependentRademacher based on allreachable stateactions, rootRroundkappacutbound vs joint3decisions. Empirical fixedMLP2x10+clippedReLU,10rootcuts, packing10x20/15x30, gaps30trialsN1-100; needvisual absolutevalue bars check."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read empiricalcurveR2 .951/.959 with95percentCI and authors futurelimitsoptimality/experts/infiniteactions/stochastictransitions. BibliographyAchterberg throughKazachkov read; exact2024neuralalgorithmselection/title identity verified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remaining fullbibliography, auxiliaryA1Jensen/logmonotonicity/A2polynomialsigncounts/A3pdimdefinition and completeLemma3.2 proof splitbeta0vspositive. Internalpriorcitation scan pending exactids."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read full branching-envelope LemmaB1/B2 and Theorem3.3proof: allpossible reachablepairs acrosspolicyparams, partition scores then allpaircomparisons, consistentties give identicaltrajectory/penalty; visual p9 confirms fN ABSOLUTE difference (OCRbarsmissing), not signedmean. Main theory/displayedformulas inspected."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read full linearboundcancellation, MLPstructuralLemma3.7 and general/ReLUProp3.8 proofs; Massart finiteoutputvector proof3.9 gives HsqrtN radius. Every inequality19-21read; reachable envelope not readily measured on fixedtrajectory."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read entireC2 worstcase-vs-Rademacher comparison, binaryLP-interior earlytermination example, smallerstateenvelope refinements, expectedRademacher/JensenderivationmuM,k. No claim allreachableenvelope efficiently estimable just singlepolicy logs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "Read completechecklistclaims/limitations/theory/reproduction/code/settings/statistics/compute/ethics/broaderimpacts. Empirical95percentCIs capture30samplingtrials, not fulltrainingvariability or estimatedsupremum."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 31,
+      "notes": "Read remainingchecklistsafeguards/licenses/assets/humans/IRB/LLM. Full31pagesinclallscienceA-C,entirebibliography andchecklistcomplete. Checked code READMEactualquickstart and separate fixed-policyresources; no extra publisherattachment."
+    }
+  ],
+  "claims": [
+    {
+      "id": "structured-cost",
+      "category": "contribution",
+      "statement": "Structured piecewisepolynomial score classes yield piecewiseconstant downstreamcost via score/comparison partitions in a deterministic capped sequentialprocess.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Definition3.1/Lemma3.2/Theorem3.3 and full proofs"
+        }
+      ]
+    },
+    {
+      "id": "linear-relu",
+      "category": "contribution",
+      "statement": "Linear and piecewisepolynomialMLP pseudo-dimension bounds account for parameters, horizon, actioncaps and architecture; ReLU specialcase given.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            18,
+            19,
+            20
+          ],
+          "locator": "Propositions3.4/3.8,Lemma3.7 and full algebra"
+        }
+      ]
+    },
+    {
+      "id": "rademacher",
+      "category": "method",
+      "statement": "Data-dependent Massart/Rademacher bound uses allreachable stateaction counts acrosspolicy executions, not just one fixedtrajectory; boundedH and iid sample assumptions apply.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            8,
+            16,
+            17,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Prop3.9, LemmaB1/B2,C1 and fullAppendixC2"
+        }
+      ]
+    },
+    {
+      "id": "bnc-domains",
+      "category": "method",
+      "statement": "RootRroundkappa finitepoolcut specialization and jointnodecutbranchReLUpolicies have separate bounds with deterministic fixed auxiliaryrules inrootcase.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Propositions4.1/4.2 and future stochastic/infiniteactionlimitations"
+        }
+      ]
+    },
+    {
+      "id": "fixed-policy-empirical",
+      "category": "experiment",
+      "statement": "Fixed2input2x10ReLUMLP withclippedoutput selects10rootcuts onpacking10x20/15x30; absolutemeangapN1-100 averaged30trials fitsa/sqrtN+b withR2.951/.959 and95percentCI.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "CompleteSection5/Figure1; visual confirms bars in fN"
+        }
+      ]
+    },
+    {
+      "id": "empirical-limits",
+      "category": "limitation",
+      "statement": "Fixedpolicygapcurve does not estimate supremumoverpolicies or verify practical uniformboundconstants; currentcode shuffles existingfilepools andprefixes rather than regeneratingeachtrial.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Section5 actualfixedcheckpoint; currentauthor test.py lines263-333 manuallyread, cached in ownresearch"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Generalizationtheory withnarrow learnedcut experiment, not endtoend universalMILPsolver or generalist taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            9,
+            10
+          ],
+          "locator": "Actual scientificaims/assumptions/empiricaldomain"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ac04e54e0a2d1927d60709019e4e7870-Abstract-Conference.html",
+      "locator": "OfficialNeurIPS38/2025 mainconference exacttitle/twoauthors/DOI manuallyopened; PDFp1 bothJHU affiliations verified; formalyear retained."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ac04e54e0a2d1927d60709019e4e7870-Abstract-Conference.html",
+      "locator": "All official publisherlinks manuallychecked: Paper/Bibtex, noSupplemental. All31page publisherPDF read including entirebibliography,fullAppendicesA-C andchecklist. Two contact sheets visuallycheck structure/proofs/Qcounts/samplebound/absolutevaluegap/Figure1. No identifiedmissing scientificattachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Hongyu-Cheng/MLP4ScoreBnC",
+      "locator": "ExplicitPDFp9authorURL and publicrepo/README manuallyopened. RawREADME,requirements,test.py downloadedtoowncache; evaluated code excerpts aroundfixedcheckpoint,shuffle,absmeans,StudenttCIs and quickstartoverrides. No numericalrerun."
+    },
+    {
+      "field": "reproduction protocol",
+      "source_url": "https://github.com/Hongyu-Cheng/MLP4ScoreBnC/blob/main/test.py",
+      "locator": "Currenttest.py lines263-333: sharedfixedmodel; alltrain/testnpzfiles shuffled eachrun;prefixmeans computed; fN=abs(sumtrain-sumtest)/N; Studentt.975SEMin tervals. Distinguishes finitepoolpermutation uncertainty from freshiid populationdraws and trainingvariability. No claim papertheory invalid."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/ac04e54e0a2d1927d60709019e4e7870-Paper-Conference.pdf",
+      "locator": "Publisher31page source exactidentity/versionchecked; allscientific/checklistpages covered, rawbytes sourceSHA retained."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/ac04e54e0a2d1927d60709019e4e7870-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/score-bc-generalization/supplement-landing.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "score-bc-generalization",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Discusses fixed graph representation used by prior lookaheadcutmodel.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicit body citation PDFp4; exact fullreference PDFp12: Gasse et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "score-bc-generalization",
+      "cited": "learn-cgf",
+      "reference_label": "Cheng and Basu (2024)",
+      "description": "Contrasts earlier instance-dependent CGF parameterlearning with sequential scorepolicy analysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit body citation PDFp5; exact fullreference PDFp12: Cheng and Basu (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "score-bc-generalization",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang, Agrawal and Faenza (2020)",
+      "description": "Cites RL policytraining and uses its packinginstancefamilies in empiricalsetup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13
+          ],
+          "locator": "Explicit body citation PDFp8; exact fullreference PDFp13: Tang, Agrawal and Faenza (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "score-bc-generalization",
+      "cited": "neural-algorithm-selection-theory",
+      "reference_label": "Cheng et al. (2024)",
+      "description": "Builds on priorneural instance-to-algorithm parametergeneralization framework.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit body citation PDFp5; exact fullreference PDFp12: Cheng et al. (2024)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded exact finitehorizon/actioncaps/determinism/fixedfeatures/boundedscore/iidconditions and completeallreachableRademacher scope.",
+    "Added actual fixedpolicy empirical experiment, gapabsolutevalue, samples/trials/95percentCI/R2; no inventedtrainingguarantee/speedup.",
+    "Read currentcode and documented fixedpoolshuffle/prefix protocol and quickstartoverrides instead of equating to freshpopulation trials.",
+    "Formalmetadata/integratedscience/4exactinternalcites verified; no migration.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3320c318c37e9f45c540ce1ea78c9e30049209c1f3f308e34f8eb854758a6336"
+}

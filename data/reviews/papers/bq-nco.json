@@ -1,0 +1,624 @@
+{
+  "version": 1,
+  "paper_id": "bq-nco",
+  "note_path": "specialist/bq-nco.md",
+  "baseline_note_sha256": "b26ac8b8217f9bed9272a7fd39ced1f1a434890bb22a82379fae6ed664e5c66b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/bq-nco/paper.pdf",
+      "sha256": "2c9ea358c611281ff8797fed9dd2c57cfeaffafb446e4b50cf5e9bf5cf5ca8f1",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Supplemental-Conference.pdf",
+      "version": "Publisher scientific supplement, complete AppendicesA-H,12pages printed15-26;all science/proofs/plots fully read.",
+      "local_path": "research/full-text-review/bq-nco/supplement.pdf",
+      "sha256": "eac0eff87e6b86993e85eab7d806bdb2eeecb4201082a9ebd402ab9ebde6d626",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 9,
+      "notes": "Fresh full formal titleEfficient, author/IDIAPfootnote; monoid/direct/BQ MDP definitions, feasibility assumption and soundness propositions, tail-subproblem architecture, full supervised training/protocol and generalization claims/limits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 14,
+      "notes": "Fresh complete synthetic Table1 with10k100-node vs128larger test sets and dataset-total times, TSPLIB/CVRPLIB Table2, all51bibliographyentries."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh full CVRP/OP/KP solution spaces/actions/models; multi-class optimal-item loss, KP200capacity25 1Mdata/50epochs andall12testregimes, KNN table, PerceiverIO, recomputation ablation, expert-subtour capacity ordering."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 12,
+      "notes": "Fresh all proofsF.1-F.3 and allG monoid/LTS/bisimulation definitions/propositions3-8 with commutation/quotient proofs; allAppendixHrouteplots and statedreferencegaps. VisuallycheckedTables1-4 andkeyproofpages/routepanels."
+    }
+  ],
+  "claims": [
+    {
+      "id": "bq",
+      "category": "contribution",
+      "statement": "Direct solution-space MDP and residual-instance bisimulation preserve optimal policy/COP solution correspondence under stated assumptions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Definitions1, Propositions1-2, Section3.3"
+        }
+      ]
+    },
+    {
+      "id": "proof",
+      "category": "method",
+      "statement": "All finite-action/no-deadend/finite-step and return soundness/bisimulation proofs, disjoint-union quotient and LTS background read; not a learned-policy optimality guarantee.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "AppendicesF-G all"
+        }
+      ]
+    },
+    {
+      "id": "reencoding",
+      "category": "method",
+      "statement": "Entire nine-layer model recomputed at every remaining-state decision, cubic full-graph cost; KNN250 and Perceiver alternatives trade quality and runtime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8
+          ],
+          "locator": "Sections3.2,4,6"
+        }
+      ]
+    },
+    {
+      "id": "tasks",
+      "category": "method",
+      "statement": "Separate TSP/ATSP/CVRP/OP/KP policies with role/resource/directional inputs and action masks, not shared checkpoint.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "AppendicesA-C plus mainATSPSection4"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Routing1Msize100solutions/500epochs; KP200capacity25/50epochs; CVRP expert-subtour ordering and frozen-bottom-layer ablation materially matter.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "AppendicesC,E.2-E.3 plus mainp8"
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "category": "experiment",
+      "statement": "Table110k100-node versus128larger-instance dataset totals, TSP optimum and LKH/EA4OP heuristic reference gaps; no universal all-size dominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10
+          ],
+          "locator": "Section6 Table1-2"
+        }
+      ]
+    },
+    {
+      "id": "kp",
+      "category": "experiment",
+      "statement": "KPaggregate0.516% versusPOMO4.647%, but some cells worse; large-scale/benchmark gaps and candidate restrictions explicit.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Tables3-4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Reusable formulation but task-specific supervised models construct new complete solutions; no instance-weight adaptation or neural incumbent moves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8
+          ],
+          "locator": "Sections4,6"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf",
+      "locator": "Publisher titlepage explicitlyEfficient, fiveauthors; NAVERLABSEurope andFlorianMaiIDIAPfootnote."
+    },
+    {
+      "field": "publication, date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract-Conference.html",
+      "locator": "FormalNeurIPS2023maintrack verified; no individual acceptance day. FirstarXiv9Jan2023."
+    },
+    {
+      "field": "title version history",
+      "source_url": "https://arxiv.org/abs/2301.03313v1",
+      "locator": "Manually inspected v1/v2 pages:Generalizable, Jan9/12; currentv3Sep28andformalpublication:Efficient. StableIDpreserved;notduplicateworks."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract-Conference.html",
+      "locator": "Manually inspected official page/link inventory: one scientific SupplementalPDF. All12pages includingA-Ctaskextensions,D-Eablations,F-Gcompleteproofs/backgroundandHrouteplotsreadandkeypagesvisuallychecked."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/naver/bq-nco",
+      "locator": "Officialproceedingslinkresolvesnaver/bq-nco (publisherPDFfirstpageplaceholderurl); completeREADMEread task-specific commands/checkpointsandPerceiverbranch."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf#page=5",
+      "locator": "OriginalFigure1PDFp5 Rect(122,213,488,302)5x, rightoutputmarker complete, atomicreplacementandvisualcheck; Tables1-4/keyproof/routeplotvisualschecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/bq-nco/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2023-12-15; primary cachedHTML research/full-text-review/bq-nco/page-1.html; citation_title=['BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2301.03313",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-01-09; title on abstract page: BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/bq-nco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "bq-nco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[4] Bello arXiv January2017",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "[10] Choo NeurIPS2022",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "att-gcn",
+      "reference_label": "[14] Fu AAAI2021",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "[15] Geisler NeurIPS2022",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "tam",
+      "reference_label": "[18] Hou EleventhICLR September2022 as printed",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[21] Joshi arXiv June2019",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[23] Khalil NeurIPS2017",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "sym-nco",
+      "reference_label": "[24] Kim NeurIPS2022",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "attention-model",
+      "reference_label": "[28] Kool ICLR2019",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "pomo",
+      "reference_label": "[29] Kwon NeurIPS2020",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "learning-to-delegate",
+      "reference_label": "[30] Li NeurIPS2021preproceedings",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "rl-vrp",
+      "reference_label": "[34] Nazari NeurIPS2018",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "dynamic-am",
+      "reference_label": "[36] Peng Springer2020",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "dimes",
+      "reference_label": "[38] Qiu NeurIPS2022",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "meta-sage",
+      "reference_label": "[41] Son June2023preprint",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "difusco",
+      "reference_label": "[42] Sun February2023preprint",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "pointer-networks",
+      "reference_label": "[45] Vinyals NeurIPS2015",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[46] Xin AAAI2021",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "step-wise-routing",
+      "reference_label": "[47] Xin TII2021",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            13
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[49] Zhang NeurIPS2020",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            14
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "omni-vrp",
+      "reference_label": "[50] Zhou June2023preprint",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "rbg",
+      "reference_label": "[51] Zong KDD2022",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual cited version/year retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            14
+          ],
+          "locator": "In-text numbered reference and complete bibliography matching title/authors."
+        }
+      ]
+    },
+    {
+      "citing": "bq-nco",
+      "cited": "combining-reinforcement-learning-and-constraint-programming-for-combinatorial-optimiza",
+      "reference_label": "[8]",
+      "description": "Conclusion discusses RL plus CP for difficult global constraints; exact five-author arXiv2006.01610 June2020 reference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Actual complete body context and full exact bibliography entry inspected; cited work/version and any source terminology error explicitly qualified."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected reversed central claim: BQ recomputes entire model every step with full-graph cubic cost, not no-reencoding lightweight decoder.",
+    "Restored omittedATSP,OP,KP andPackingfamily, plusFlorianMaiIDIAPaffiliation.",
+    "Verified formalEfficient versusarXivv1/v2Generalizabletitlehistory, retainingstableID.",
+    "Added precise theoryassumptions/proofs and separatedoptimalMDPpolicytheorem fromlearnedheuristicguarantees.",
+    "Added actualteacherdata/training/subtrajectory/expertordering, KNN250 andPerceivertradeoffs,10kvs128datasetcounts,hardware/referencegapbudgets andnegativeall-sizefindings.",
+    "Removed unsupported conference-notification acceptance day; originalpublisherFigure1fullyrenderedandinstalled.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved.",
+    "Final manual residual citation review: restored newly available CP–RL target or checked exact body/bibliography identity; no title-only edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a724d0ecb1ed5288f57611e09a714bc283e36d60f781b20ff89f1051dd2c48c7"
+}

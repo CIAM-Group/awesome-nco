@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "paper_id": "deep-graph-matching-consensus",
+  "note_path": "specialist/deep-graph-matching-consensus.md",
+  "baseline_note_sha256": "83b8294288c14de7d631817e51dc9652c9ebf4c143bf4ba2e8670064a5bff415",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2001.09621v1",
+      "version": "arXiv:2001.09621v1, submitted 2020-01-27; complete author manuscript with ICLR 2020 header",
+      "retrieval_url": "https://arxiv.org/pdf/2001.09621v1",
+      "local_path": "research/import-272/nco-9801fd8678.pdf",
+      "sha256": "41a7888ea1dbda4dbf9eea4ebe4a9d22ea0086804c0cc9f9960814ef217a23be",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Readsupervised/semisupervisedgraphmatchingformalQAP, initialSinkhornscores, synchronousunique-colorpropagation/refinement, loss andTheorems1-2 assumptions. LocalT-layercannotingeneralseeedgesbetweenT-hopboundarynodes; inspectfullproofbeforeinterpretinginducedneighborhoodclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "ReadGAconnection,allscalingchanges(topk support cap, randomnodefunctionsTheorem2explicitlynotretained, rowsoftmaxdropscolumnconstraints), allsynthetic/visual/geometric/DBP15Kprotocols/results/negativerefinementcases andWLlimitations. Versionv1Willowtablevalues differlaterciters; retainactualreviewedsource."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 16,
+      "notes": "Readcompleteacknowledgementsandsixbibliographypages; manuallycompareexacttitleidentitiesagainstcatalogue includingclassicalGA versusnonrigidsoftassignwork, noassumededgesfromtopicalsimilarity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 23,
+      "notes": "ReadallA-Iincludingoptimizedalgorithm/everytheoremproof/GAcomparison/nodeadditionplots/sixpagesrelatedwork/datasetstatistics/qualitativefailure. Rootd0T1pathcenter-vs-trianglecounterexampletargetsTheorem2explicitinducedneighborhood,notcomputationtree; randomizedpracticalmethodexplicitlydropsTheorem2. Allsourcepagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dgmc-contribution",
+      "category": "contribution",
+      "statement": "Two-stagelearnedlocalmatchingandsynchronousfunctiontransfer/messagepassingrefinementwithsparsification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections2-3.4"
+        }
+      ]
+    },
+    {
+      "id": "dgmc-method",
+      "category": "method",
+      "statement": "PracticalrandomfunctionsdropTheorem2androwsoftmaxdropscolumnconstraints; fixedtopksupportcapsrecall; noexactQAP/convergenceguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            17
+          ],
+          "locator": "Theorems1-2/scaling/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "dgmc-local-gap",
+      "category": "limitation",
+      "statement": "PrintedT-hopinducedneighborhoodconverseisstrongerthanT-roundrootvisibility, asrootedthree-nodepathversustrianglecounterexampleshows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            17
+          ],
+          "locator": "DefinitionG[S],Theorem2andAppendixC; curatorcounterexampleexplicit"
+        }
+      ]
+    },
+    {
+      "id": "dgmc-results",
+      "category": "experiment",
+      "statement": "Versionv1visual/knowledgegraphsusetask-specificprotocols;meanPascal73.0withcategorynegatives,Willowfinetuning andsparseDBP15KunchangedHits10support.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            22,
+            23
+          ],
+          "locator": "Tables1-4/Section4 anddataset/qualitativeappendices"
+        }
+      ]
+    },
+    {
+      "id": "dgmc-scope",
+      "category": "classification",
+      "statement": "Separatevisual/geometric/entitymodels, samegraphcorrespondencenativefamily; noidenticalmodelcrossunrelatedoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Tasktrainingandarchitecturesections"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "theory_crosscheck",
+      "source_url": "https://arxiv.org/pdf/2001.09621v1",
+      "locator": "Root independently read p4 Theorem2 and p17 AppendixC and confirmed Gs[N_T(i)]/adjacency submatrix induced-graph statement; verified T=1 P3-center versus K3, S=I, same one-hot root/neighbor inputs counterexample to local sufficiency only, not all-node global or empirical claim."
+    },
+    {
+      "field": "identity",
+      "source_url": "https://iclr.cc/virtual_2020/poster_HyeJf1HKvS.html",
+      "locator": "OfficialICLR2020title/fiveauthorsmatchesPDFv1p1TUDortmund/NNAISENSE; fullarxivv1January27,2020versionpinnedfreshPDFsha41a7888e...matcheslocal"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://iclr.cc/virtual_2020/poster_HyeJf1HKvS.html",
+      "locator": "HTMLmeta citation_publication_date content=2020/04; formalmonthdistinctfromarxivsubmission2020-01-27"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=HyeJf1HKvS",
+      "locator": "Normalforum/API/API2verification403,officialICLRposter/completearxivv1all23pagesA-Iread; authorcodeloadZIPrecursiveinventorynoadditionalPDF/ZIPscienceattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/rusty1s/deep-graph-matching-consensus",
+      "locator": "Officialpaperdirectlink,README/actualcoreDGMCandallfourtaskexamplesinspected; normalGitHubAPIratelimited,publicauthorcodeloadarchiveinventoryusedandcached"
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2001.09621",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-01-27; title on abstract page: Deep Graph Matching Consensus. This date is preprint history, not formal publication. Cached research/full-text-review/deep-graph-matching-consensus/arxiv.html."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall23versionpinnedauthorpagesincludingA-I/allproofs/references/figures/tables; freshPDFidentityhashmatchedandmanualscientificattachmentinventorycomplete.",
+    "VerifiedformalICLRmonthfromofficialHTMLmeta, separatedarxivdate; inspectedactualdense/sparseauthorcodeandtaskexamples.",
+    "Restrictedrandomfeature/rowsoftmax/topkguarantees, exactness/monotonicityandtasktransfer; documentedlocalinducedneighborhoodTheorem2counterexampleandversion-specificnegativecases."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "81760241077c2353029cb4d97cb011da3838d6a83fedb718e59c83bbacdcc3ca"
+}

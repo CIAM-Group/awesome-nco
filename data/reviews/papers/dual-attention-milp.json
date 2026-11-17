@@ -1,0 +1,529 @@
+{
+  "version": 1,
+  "paper_id": "dual-attention-milp",
+  "note_path": "specialist/dual-attention-milp.md",
+  "baseline_note_sha256": "e63131549baae54957b1a936d2d29746c6494e901e9ad70a61285b8c1fb930c1",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26bl/huang26bl.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26bl/huang26bl.pdf",
+      "local_path": "research/import-272/nco-fb0a733c31.pdf",
+      "sha256": "8f69e9e8b916cab59cd10ac5fc08df2308cdcf1f11a95c3e194617f683a6e1ee",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read title6authors/institutions, proposedarchitectureforinstance/variable/stateheadsratherthanonejointcheckpoint, kernelselfattentionapproximationandlinearcomplexityvsquadraticsoftmax."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read sparsecoefficientawarecrossattn/parallelselfcrossfusionandthreeheadtypes, randomfeaturesonfoldableMILPs, perelement400/100training/labelsbudget, PaS/ApolloqualitynegativevsGurobi despitebetterBGNN, errorrateimprovpercentnotmorecorrectabsolute."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allbranchaccuracy/nodes/40instances5seeds, depthandgradientattributionempiricalanalysis(notexpressivitytheorem), advancedarchitectureTables6-8includingIPMCC/errorrateandOPTFMWAexceptions/separatebaselinevalues."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read completebibliography; allactualtitle/author/yearidentities, additionalOPTfm/GNNexpressivity/capacity andjournalHEMversionneedprimarylineage; notbroadtopics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allA1-4 calibrationhistograms(abstainformalcalibrationclaim),ablationMIPLIB215/240exclusionsandper-sourceOODclassificationonly, mixednegativeWA-MSE/CAerrorrate; 2-3.4xinferencelatency; rawfeaturesandC1tinygeneration."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullrawfeatures,C1foldable6-cyclevstwo3-cycleswithallzeroobjective(randomfeatures), C2nativeformulations/largedimensions andC3branchinstancegeneration; tinyobjectiveMSEpartlyzero-objectivetestscope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read completeC3CFL/MISformulations, PG/PIdefinitions(BKVnotprovenopt), Ealltraining/radius/depth/hidden/hardware/tunedadvancedarchitectureparameters. Noexistenceofunreadappendix. Specifichyperparamsdifferpermethodanddataset."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Final strict-citation identity reread: bodyWang2024cutcontrol citation, notWang2023HEM."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh completebibliography reread confirms only ten-author TPAMI2024 extension, no independent ICLR2023HEM; substantive journal extension is separate formal article, so lineage cannot create direct citation edge."
+    }
+  ],
+  "claims": [
+    {
+      "id": "da-contribution",
+      "category": "contribution",
+      "statement": "Parallel positive-kernel within-type and sparse coefficient-aware cross-type attention supports three independently trained MILP prediction heads.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1-3.2/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "da-method",
+      "category": "method",
+      "statement": "Linear-in-node/edge-size kernel and sparse attention; binary predictions guide classical PaS/Apollo and branching, rather than certified neural optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            20
+          ],
+          "locator": "Complexity/three heads/search configuration"
+        }
+      ]
+    },
+    {
+      "id": "da-experiment",
+      "category": "experiment",
+      "statement": "BGNN-relative gains coexist with classical/OPTFM/IP and OOD metric exceptions; reference BKV, solve limits, tree nodes and inference timing separated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            14,
+            15,
+            20
+          ],
+          "locator": "Tables1-13/19-20"
+        }
+      ]
+    },
+    {
+      "id": "da-classification",
+      "category": "classification",
+      "statement": "Specialist constructive with separate task/dataset neural models; same pretrained MIS/CA/WA checkpoints transfer to MIPLIB classification only, without cross-task solver evidence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            14,
+            20
+          ],
+          "locator": "Sections4.1-4.3/AppendixA.3/E"
+        }
+      ]
+    },
+    {
+      "id": "da-limits",
+      "category": "limitation",
+      "statement": "Foldable synthetic objectives are all zero; empirical attribution/histogram plots are not general expressivity or calibration theorems.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13,
+            16,
+            17
+          ],
+          "locator": "Figures3-5/AppendixC.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bl.html",
+      "locator": "Title/six authors/PMLR306 pp47939-47959; PDFp1 Shandong/Eindhoven/MIT affiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bl.html",
+      "locator": "Official HTML citation_publication_date2026/09/29; venue year2026 independently."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bl.html",
+      "locator": "Manual PMLR PDF/OpenReview links, ordinary fBAMvSNH8N API403; all21 integrated pages A-E read. ICML2026 event62600 links62600.png, 4306213bytes, fully read/viewed; repo5774753byte ZIP inventory no PDF/TeX/notebook."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/hpx2024/Dual-Attention",
+      "locator": "Three task readmes, kernel/sparse attention code, element 2_train.py current defaults1e-4/batch1/8 accumulation vs Table17 and evaluation precomputed predictions/1000s solver time inspected."
+    },
+    {
+      "field": "citation exclusion: separate journal extension",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26bl/huang26bl.pdf#page=12",
+      "locator": "Fresh recheck formalbodyp1 and completebibliographypp10–12: soleWang2024entry has10authors, titleLearningtoCutviaHierarchicalSequence/SetModelforEfficientMixed-IntegerProgramming,TPAMI46(12)9697–9713,DOI10.1109/TPAMI.2024.3432716. No independent8authorICLR2023HEMentry. Journalarxiv2404.12638v1p2earlier-version/HEM++statement confirms distinct expanded publication, not actual citation ofICLR2023. Removed erroneous hem-cut-selection edge; no new article created. Supersedes earlier lineage-only mapping."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2601.04509",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2026-01-08; title on abstract page: A General Neural Backbone for Mixed-Integer Linear Optimization via Dual Attention. This date is preprint history, not formal publication. Cached research/full-text-review/dual-attention-milp/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dual-attention-milp",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            11,
+            20
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "conpas",
+      "reference_label": "Huang et al. (2024)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Song and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "hrl-aug-branching",
+      "reference_label": "Zhang et al. (2024)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "learn-remove-cuts",
+      "reference_label": "Puigdemont et al. (2024)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Puigdemont and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "optfm",
+      "reference_label": "Yuan et al. (2025)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            12,
+            21
+          ],
+          "locator": "Explicit in-text citation Yuan and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            11,
+            20
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "gnn-branching-capacity",
+      "reference_label": "Chen et al. (2024)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "gnn-milp-expressivity",
+      "reference_label": "Chen et al. (2023)",
+      "description": "Explicit body citation and actual matching bibliography title/authors/year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "reference_label": "Feng & Yang, 2025",
+      "description": "Introduction cites SORREL among neural branching approaches; exact two-author AAAI2025 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "learning-to-stop-cut-generation-for-efficient-mixed-integer-linear-programming",
+      "reference_label": "Ling et al., 2024",
+      "description": "Introduction cites learned stopping of cut generation among cutting-plane controls; exact three-author AAAI2024 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "Khalil et al., 2022",
+      "description": "Introduction cites MIP-GNN among learned primal/solver heuristics; exact AAAI2022 title/byline/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "dual-attention-milp",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al., 2021",
+      "description": "Introduction cites TreeGate among branching policies; exact AAAI2021 search-tree parameterization entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read all21 formal pages/AppendicesA-E and official scientific poster; corrected actual linearized/sparse attention cost, separate-model scope, relative-error interpretation and BKV/timing limitations; preserved negative metrics and16 explicit version-aware citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final direct-citation rule removed DualAttention→ICLR2023HEM: actual source cites only distinct ten-author TPAMI2024extension. Previous lineage-only resolution is superseded; no new paper added.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e187c55a4750fd5cd349b5fdfe1d61cbd18f656da44776c33c933ba8d35d86fe"
+}

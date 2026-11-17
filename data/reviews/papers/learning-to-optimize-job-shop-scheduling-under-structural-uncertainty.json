@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+  "note_path": "specialist/learning-to-optimize-job-shop-scheduling-under-structural-uncertainty.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "9c2f774808771ae513441ad31f94d6fe0f797e2e9610e90fcee697a56ca7e697",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2601.21389v1",
+      "retrieval_url": "https://arxiv.org/pdf/2601.21389v1",
+      "version": "Identified arXiv2601.21389v1 submitted2026-01-29,9pagesincludingfullReferences; allactualread, noarticle-identifiedseparatescientificsupplement. FormaleligibilityAAAI40(43)2026-03-14 independentlychecked; formalPDFchallenge520, notassertedbyteidentical.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-b0b27d3444/arxiv.pdf",
+      "sha256": "52571075deed9535c0b3a6a7793aa6060a5c25d016676cc3a69c11c425b37ad8",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read title/full5authors/affiliations, abstract and credit-assignmentFig1, completeintroduction/relatedwork and probabilisticDAG jobroute formulation with exogenous realizationomega."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullFrameworkFig2, MDP shrinkactivegraph/exogenousroute outcomes, eligible-operation dispatch; rewardEq2 telescope statement, AAC replay/hindsightcritic and Eq3. Noted terminalboundequalityneedsabsolutecompletiontime accountingdespite remaininggraph description; no theoremproofpresent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read UPM100scenarios/heuristicmax(joblength,machineworkload), inducingpointattentionEq4-5 andAlgorithm1; full12configurationexperimentalprotocol,50instancesx50evalruns, worst20percentCVaR, separate12models,V100/3GCN72/3MLP; completeTable1 all6configurations and interpretation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTable2 largeinstance Avg/CVaR, fullTable3 ablations andtext, completeConclusion/Acknowledgments/References throughlastZhaoentry. Noappendix/scientificsupp/code link in9pagearticle. Printedsmallgapmean1.94 differsfromunweighted6Gaprows2.0983; largebestfoundnotcertifiedoptimal."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Exogenous routebranching introduces noisyreturncredit andmotivates hindsightcritic withoutrevealingactualfuture toonlineactor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "AAC hindsightreplay plus scenarioriskattention UPM for uncertainroute JSS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Contributions/Fig2/Eqs2–5/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Actor originalstochasticstate, critic deterministicrealizedroutes, action eligibleoperation; maxjob/workloadprior biases inducingpointattention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1–4.4; Eqs2–5"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Twelveseparatelytrainedconfigurations,50testinstancesx50randomruns, worst20percentCVaR, CPsmallmedium versusbestfoundlarge; allTables1–3read.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Section5.1–5.3/Tables1–3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Explicitseparatemodelper12configuration, specializeduncertainJSSconstructivedispatch notcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6
+          ],
+          "locator": "Actionparagraph; ImplementationDetailsfirstsentence"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Noformalvarianceorconvergencetheorem; rewardterminalboundrequiresabsolutecompletionaccounting;printedgaprowmean2.10versusprose1.94notreconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Eq2 andterminalstatement; Eq3/AAC; Table1/prosemainresults"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full9pagesincluding3figures3tablesandallreferences, noidentifiedscientificsupplementorcodepointer inarticle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Entirearticle and ReferencesendZhao"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2601.21389v1",
+      "locator": "PDFp1: RuiZhang/JianweiNiu/XuefengLiu/ShaojieTang/JingYuan,5affiliationblocks; indexedprimarybyline independentlyagrees."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40973",
+      "locator": "Primarysearchindexed Published2026-03-14,AAAI40(43),36509–36517; centralcachecrossref.json published-online same. ActualHTTP520challenge saved separately, notregisteredasPDF."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2601.21389",
+      "locator": "Owncachearxiv.html primarycanonical/title, SubmissionHistory[v1]Thu29Jan2026 08:25:07UTC. Identified9pagev1 scientificfullsource <=2026-11-16cutoff."
+    },
+    {
+      "field": "scope, problem, paradigm",
+      "source_url": "https://arxiv.org/pdf/2601.21389v1",
+      "locator": "p6 ImplementationDetails explicitlyseparatespecializedmodelper12configuration; p2 jobDAGexogenousroutes, p3eligibleoperationdispatch. Specialistconstructive."
+    },
+    {
+      "field": "supplements, code availability",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/40973",
+      "locator": "ManualindexedpublisherDownloadsPDFonly;actualpage/PDFHTTP520. Full9pagesnoAppendix/supp/codepointer; arxivprimarynoGithubauthorlink. Exacttitle+UP-AAC Github/code/supplementqueriesyieldednoauthoridentifiedscientificattachment/repo; noexplicitmissingPDF inbody. All9registeredpagesactualread, noadditionalartifactclaim. Ownsource-check.json recordsboundedsearchandoutcome."
+    },
+    {
+      "field": "figure, numerical crosscheck",
+      "source_url": "https://arxiv.org/pdf/2601.21389v1",
+      "locator": "Visualconference163-keypages.jpg pp3/4/6/7 includesFig2/3,Eqs2/3,Tables1–3; originalFig2clipRect(53,55,560,351) p3 publicframework.png independentlyviewed. Table1 sixprintedgapmean2.098333333333333 versusprose1.94; no rawdatarebenchmark."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "fast-approximations-for-job-shop-scheduling-a-lagrangian-dual-deep-learning-method",
+      "reference_label": "Kotary, Fioretto, and Van Hentenryck (2022)",
+      "description": "Places Lagrangian-dual deep learning among non-DRL deterministic scheduling approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp8 exacttitle/authorsidentity; "
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay and Grimm (2024a)",
+      "description": "Discusses self-improvement without replacement as an alternative learning paradigm in deterministic scheduling background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp8 exacttitle/authorsidentity; "
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "l2s-jssp",
+      "reference_label": "Zhang et al. (2022)",
+      "description": "Discusses learned improvement heuristics as prior deterministic scheduling work, distinct from UP-AAC dispatch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp9 exacttitle/authorsidentity; "
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Attributes graph-based constructive scheduling, the ordinary AC baseline and lower-bound reward shaping to prior learning-to-dispatch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            9
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp9 exacttitle/authorsidentity; Section4.1 rewardEq2 p4alsoexplicitZhang2020."
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "neural-combinatorial-optimization-for-stochastic-flexible-job-shop-scheduling-problems",
+      "reference_label": "Smit et al. (2025)",
+      "description": "Discusses sampled-scenario uncertainty representations for stochastic flexible JSS as parameter-uncertainty prior work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp8 exacttitle/authorsidentity; "
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-job-shop-scheduling-under-structural-uncertainty",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini et al. (2024)",
+      "description": "Lists self-labeling JSS among self-supervised deterministic scheduling paradigms.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Section2 RelatedWork explicitauthor/year; fullReferencesp8 exacttitle/authorsidentity; "
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pendingbyline/task/method/results withfull9pagereading.",
+    "Retainedspecialistconstructive on explicit12separatemodelstatement.",
+    "Separatedarxivv1 2026-01-29 fromformal2026-03-14.",
+    "Qualified hindsighttraininginformation, CPversusbestfoundgapreference, missingbudget/code, rewardaccountingdefinition andprintedgapaggregation.",
+    "AddedoriginalFigure2 and7body+bibverifiedinternalreferences.",
+    "User-authorized deferral: supported citation evidence preserved in conference163 deferral record; target omitted from active internal graph."
+  ],
+  "reviewed_note_sha256": "7b413b78f08ef207967d794dc4665c82089fddfff1d99edf774a55c511fa87d7"
+}

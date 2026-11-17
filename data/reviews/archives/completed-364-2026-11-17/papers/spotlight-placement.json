@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "paper_id": "spotlight-placement",
+  "note_path": "specialist/spotlight-placement.md",
+  "baseline_note_sha256": "33cf492ecc66157befb20eac09e2453f9951b2d275db2158959ab770686a4ad8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v80/gao18a/gao18a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v80/gao18a/gao18a.pdf",
+      "local_path": "research/import-272/nco-11c5c0a463.pdf",
+      "sha256": "7ca4666160ea0bfa9d563f957f7c6332dfbd1d6808a3f7ba2109a425d791d5f0",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement0",
+      "url": "https://proceedings.mlr.press/v80/gao18a/gao18a-supp.zip",
+      "retrieval_url": "https://proceedings.mlr.press/v80/gao18a/gao18a-supp.zip",
+      "archive_member": "appendix.pdf",
+      "version": "publisher-linked ZIP scientific supplement PDF",
+      "local_path": "research/full-text-review/spotlight-placement/supplement-0.pdf",
+      "sha256": "08f9adfe4c6160a5de324bf601f2ffdae20e5dbb0a9b0292fcd639178484e640",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formalICML2018identity,affiliationsandmotivation;placementMDP/tree,terminalruntime reward,movingbaseline,Qvalue definition andone-stage surrogateF9."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read Theorems1-2 andpracticalapproximation explicitlydroppingepsilon1,replacingmaxKL/unknowncoefficients; finiteSGA10stepsnot exactMMmaximization. Read RNNarchitecture andCIFARbenchmarksetup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 9,
+      "notes": "Read manualprefixgrouping926to86,5workers,20000placements500minutes; CIFAR100ksteps87percentaccuracy70minvsPG60.9percent ratio,4GPU58vs95minutes;NMT/RNNLMTable1 andNMT12000step12.5vs16hours;allprofilingandbibliographyentries."
+    },
+    {
+      "source_id": "supplement0",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read everyappendixpage: Theorem1couplingproofA1-A10,smallalphaapproximationandinvalidKL-to-mismatchidentification;Theorem2exactminorization-maximizationassumption;allrefs. ZIPinventoryincludesoneactualscientificPDFpluscodeandMacresourceforks."
+    }
+  ],
+  "claims": [
+    {
+      "id": "spotlight-contribution",
+      "category": "contribution",
+      "statement": "A multistage placementMDP and KL-penalty repeated gradientupdates improve finitebudget recurrent placementsearch empirically.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "MDP,Theorems1–2,Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "spotlight-method",
+      "category": "method",
+      "statement": "Practicalobjective dropsunknownQchange and substitutes empiricalKLpenalties andfinitegradientsteps; no inherited exactMMguarantee or globalplacementcertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section3.5 andpracticalobjective14–15"
+        }
+      ]
+    },
+    {
+      "id": "spotlight-experiment",
+      "category": "experiment",
+      "statement": "CIFAR70minutes is60.9percentofGRLtime rather than60.9percentreduction; searchcost isseparate; additionalNMTdeployment12.5vs16hours.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections5.3–5.6"
+        }
+      ]
+    },
+    {
+      "id": "spotlight-scope",
+      "category": "classification",
+      "statement": "Separate recurrentsearches optimize one operation-placement task; no unchanged-modelcross-native-task transfer shown.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            8
+          ],
+          "locator": "Implementation,grouping,andotherbenchmarksearches"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v80/gao18a.html",
+      "locator": "Title,threeauthororder,ICML2018,PMLR80:1676–1684 matchpublisherPDFp1;TorontoandUESTCaffiliationsverified"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v80/gh-pages/_posts/2018-07-03-gao18a.md",
+      "locator": "Explicitdate/issued2018-07-03,notJuly10–15conferenceperiod"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v80/gao18a/gao18a-supp.zip",
+      "locator": "ManualpublisherSupplementaryZIPlink;53entries,soleactualscientificPDFappendix.pdf3pages withA/Bproofs+refs;Macresourcefork._appendix.pdfisnotPDF; allscientificpagesread"
+    },
+    {
+      "field": "code",
+      "source_url": "https://proceedings.mlr.press/v80/gao18a/gao18a-supp.zip",
+      "locator": "OfficialZIPcodes/ containsCIFARsimulator/distributedtrainingandPG/PPOcontrollerfiles; inspectedPPO/PGmodelsetup/loss andclusterconfig;legacyTFcontrib/Python2,noout-of-boxexecutionclaimed"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "spotlight-placement",
+      "cited": "rl-device-placement",
+      "reference_label": "Mirhoseini et al. (2017)",
+      "description": "Explicit recurrent PG predecessor and GRL baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Explicit in-text citation Mirhoseini and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "spotlight-placement",
+      "cited": "hierarchical-device-placement",
+      "reference_label": "Mirhoseini et al. (2018)",
+      "description": "Explicit learned-grouping placement predecessor; orthogonal algorithm discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Explicit in-text citation Mirhoseini and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added officialcodeartifact andmissingthree-pagePDFsupplement;readbothproofsinfull.",
+    "Corrected60.9percentoftimevsreduction,documentedsearchoverhead andadditionalbenchmarks.",
+    "SeparatedidealtheoryfrompracticalapproximationsandidentifiedprintedKL/couplingproofissue;2exactcitationrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b10ab8429ec5a25a73a0b8ff5aa89501d11457d6b8b9a28c2d368d7145291305"
+}

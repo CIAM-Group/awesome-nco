@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "paper_id": "deepweave-accelerating-job-completion-time-with-deep-reinforcement-learning-based-cofl",
+  "note_path": "specialist/deepweave-accelerating-job-completion-time-with-deep-reinforcement-learning-based-cofl.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "0c1c195c5db34b1572738e3081387cb5d5beb3e9106c60ea106413449dfa801f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2020/0458.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2020/0458.pdf",
+      "version": "Official IJCAI2020 formal7p3314-3320 completebody/algorithms/results/references, no separately named scienceattachment.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-4dd132189b/publisher.pdf",
+      "sha256": "fec006c1a81dd1c58f73c3c1cb2f14ea6a465d8f81c16761b7925c344768c01e",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Actually read all introduction/related work/problem definitions and network model through policy gradient/state/action/reward; job nodes computation, edges coflows; objective sums individual transmission durations despite JCT wording; reward sign not specified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Actually read full Algorithm1, graph descendant aggregation/two-layer f,g and job summary, fixed maximum-size padded policy head; PolicyConverter and all Algorithm2 port scheduling; simulation hardware, 60000 iterations and four baselines/TPC-DS protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Actually read all deadline/architecture ablations, conclusion/acknowledgments and complete two-column references. Twenty GGen DAGs per size, deadlines manually tuned, 50 ports; Fig6 calls method Autoflow. Full Mao2019 Decima bib checked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "DAG dependencies motivate job-aware rather than independently optimized coflows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/model"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Graph and job embeddings feed a padded fixed-head priority policy and classical port converter.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figures3/4/Algorithms1/2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Policy gradient baseline and Adam.001/60000iterations, printed reward sign and episode reset unspecified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Policygradient/Algorithm1/Simulation"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "TPCDScriticalpaths4-7 and synthetic20DAGs/size4-64with tuneddeadlines50ports; reported1.7ratio conditional simulation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Figures5-7"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Sumcoflowdurations not generaljoblastfinish, fixedmaxpolicyinput and reward/protocol ambiguities limitinterpretation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Model/Algorithm1/padding/results"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "One native DAGcoflowscheduling task with priority construction, not sharedcrossproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Fullmodel/action/converter"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Complete7p includes references with CoflowSim not identified authorsolverimplementation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Wholeformalarticleandcompletebibliography"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://www.ijcai.org/proceedings/2020/0458.pdf",
+      "locator": "Formal p1 six-author byline, Guo BIT and remaining five NDSC; Guo corresponding."
+    },
+    {
+      "field": "date",
+      "source_url": "https://www.ijcai.org/proceedings/2020/458",
+      "locator": "Saved primary publisher BibTeX month7 year2020 and Crossref published-print[[2020,7]] agree; creationJuly8 not formalday."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://www.ijcai.org/proceedings/2020/458",
+      "locator": "Manual all7formalpages and primarypublisher/Guoauthorentry links inspected: formalPDF plus cited coflowsim only, no explicitly missing independent scientificsupp. Exacttitlearxiv/authorcode searches identify no samepaperarxiv or officialsolverrepo; different later DeepWeave/networkpapers excluded."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://www.ijcai.org/proceedings/2020/458",
+      "locator": "CoflowSim github is cited simulator only; no official DeepWeave release/checkpoint identified. No implementation or experiments executed."
+    },
+    {
+      "field": "visual and protocol checks",
+      "source_url": "https://www.ijcai.org/proceedings/2020/0458.pdf#page=3",
+      "locator": "Actually viewed renderedformal3-6 architecture/Alg1/2/formulas/Figs5-7; Fig6labelAutoflow vsbodyDeepWeave, p3sumCi vsJCT retained. OriginalFig3crop50,49,298,150."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deepweave-accelerating-job-completion-time-with-deep-reinforcement-learning-based-cofl",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "Mao et al. (2019)",
+      "description": "Borrows Decima short-episode training and descendant graph aggregation for coflow priorities.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7
+          ],
+          "locator": "Explicit Decima/episode p3 and GNN p4; full Learning Scheduling Algorithms for Data Processing Clusters SIGCOMM2019pp270-288 bibp7."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithall7formalpages/refs read and actualfigures/algorithmsvisuallychecked.",
+    "Keptspecialistconstructive and printedobjective/reward/episode/legend ambiguities; no fabricatedimplementationlink.",
+    "Verified sixauthors/affiliations/formalmonth and one literal Decima citation."
+  ],
+  "reviewed_note_sha256": "9f396a2b1303209683b9416771b70e49b47401c760a670e9e32f979f2281a6f7"
+}

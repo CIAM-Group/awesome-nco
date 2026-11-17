@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-match-features-with-seeded-graph-matching-network",
+  "note_path": "specialist/learning-to-match-features-with-seeded-graph-matching-network.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "ad84967ed62b9d01a279b595d9bd280f70cf699901eb14460deb62d8a49e16cf",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Match_Features_With_Seeded_Graph_Matching_Network_ICCV_2021_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Match_Features_With_Seeded_Graph_Matching_Network_ICCV_2021_paper.pdf",
+      "version": "FormalCVFICCV2021ten-page6301–6310eight-authorcopy;allmain/66refsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-668e45d404/publisher.pdf",
+      "sha256": "bb63ea03bf5ab7d892589327f14dcb48782616d0f3278a4c94b2a0d52c14ceae",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/supplemental/Chen_Learning_To_Match_ICCV_2021_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/ICCV2021/supplemental/Chen_Learning_To_Match_ICCV_2021_supplemental.pdf",
+      "version": "OfficialCVFsix-pagescientificappendixA–E,allimplementation/design/noise/grid/SfM/qual/7refsread.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-668e45d404/supplement.pdf",
+      "sha256": "1152369647782ca41ef6b0452c1752e5600d74f0a0329fddfb9894a3009e4734",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readcompletepp1?3 8HKUST/Tsinghuaauthors;seeded sparseGNNattention NKvsdenseN??butfullassignmentlaterstilldense;seedpartialcorrespondences NNratio/NMS,coordinateMLP+localdescriptor,6blocknetworkthenreseed3refinement;seednotfullincumbent,localposecontinuousdownstreamnotnewnativeoptimizationtask."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Completepp4?5 weightedpool/seedfilter/unpool QKV+inlierweight;6+3blocks,4heads,Sinkhorn dustbin dense correlation andconfidence.2,mutualtopkpartialreseednotNNcompleteincumbentediting;GL3Dsupervisedmatches+unmatchedlabels+epipolarinliers,Adam1e-4weight250,128seeds/1ktraingradientdetachfirst140k. NKcomplexityforattentionnotfulldensematching."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Allpp6?8read fullTables1?6/Fig4?5:SGMvsretrainedvsreleasedSuperGlue distinctGL3DvsMegaDepth training;YFCCRoot81.48<82.26andSP80.45<84.37official;ScanSP48.32<51.86. FMKITTIdeclines/ContextAachen75.5<77.6;precision/mainmetricsnotallSOTA. At10knoSinkhorn3.18/.47?6.77x,with4.39/1.58?2.78x;N?seed/finalSinkhornremains. 4kSIFTTable6iteration10vs100timings114.81vs284.66, filter18?21msfasterbutlowerAUC;ablationfullM.S.17.08<17.12no reseed. Nooptimizationcertificate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All66bibliography entries pp9?10 read:DGMC13,PCA53actualcatalogue;SuperGlue35notpresentcatalogue? fullcandidatecomparison;restlocaldescriptors/geometry,notCOtargetsfrommereapplication. ACNe43/44sameexternalpaper duplicate refs notdoubleedge."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Allsupp1?2 readAdata400kGL3Dpairsgeometryfilteroverlap.1?.5angle6?60/GTmutualreproj<3unmatch>10exclude<50GT;900kAdam decay300k/140kdetach;MNNratioNMSradius.01meanpairdist;reseed10Sinkhornfinal100. PythonOpenCVFMBenchvsoriginalMatlabhigheraccuracyexplicit;learnedseedprecision51.22vs39.24butAUC20 81.09<81.48;DiffPool69.68ISA70.03lowernotuniversalarchitectureproof."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Allsupp3?4 readtrainingcurveempiricalnotconvtheorem;seedgridtestYFCC tuningexplicit;noiseexperimentusesGTselectedseedinlierfractionnotunlabelledseedguarantee. SfMAlamo2915images8kRootSIFT10SinkhornGTX1080:943registered/276240points vs916/223950butmeanreproj1.10px>.95SG/.58NN,matching5h37vs42h34 butNN1h13faster;total7h56vs44h6NN2h22. Differentcontinuous3Dreconstructiondownstreamnotgeneralistdiscretesolver."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Allsupp5?6read/viewfulladditionalqualmatchingFigure7and7refs;noadditionalinternalcitationtargets. Whole6p supplementalA?Ecomplete,visualqual/noisedemos/plotsandalltablesactuallyviewed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sgm-contrib",
+      "category": "contribution",
+      "statement": "Seedbottleneck sparseattention with pooling/filtering/weightedunpoolingandpartialreseed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure2/Eqs2–14"
+        }
+      ]
+    },
+    {
+      "id": "sgm-method",
+      "category": "method",
+      "statement": "GL3Dsupervisedmatching,6+3blocks,Sinkhorndustbinscoresandconfidencethreshold;partialseednotcompleteincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections3.1–3.6"
+        }
+      ]
+    },
+    {
+      "id": "sgm-results",
+      "category": "experiment",
+      "statement": "Retained official/retrainedSuperGlue anddescriptor-specificnegativecases;10k6.8xexcludesSinkhorn,2.8xincludes.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Tables1–6/Figure5"
+        }
+      ]
+    },
+    {
+      "id": "sgm-supp",
+      "category": "experiment",
+      "statement": "GT-controlledseednoisetest/YFCCseedgrid,SfM943imagesbut1.10pxworsereprojection;timeboundariesseparate.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "SupplementTables1–2/Figures3–6"
+        }
+      ]
+    },
+    {
+      "id": "sgm-limit",
+      "category": "limitation",
+      "statement": "Sparsityonlyattention,notfullN²assignment;noneuraloptimalityguarantee;metric/trainingprotocolsdiffer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Complexity/assignment/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "sgm-class",
+      "category": "classification",
+      "statement": "Specialistconstructiveimagecorrespondence;partialreseedandcontinuouspose/SfMdonotdemonstratecross-nativeCOorNNincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            7
+          ],
+          "locator": "Methodology/visual-localization pipeline"
+        }
+      ]
+    },
+    {
+      "id": "sgm-repro",
+      "category": "reproducibility",
+      "statement": "All10main+6supp scientificpages/fullrefsread;85memberarchiveandREADME/necessarydecoderread.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "MainReferences/officialrepo"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/ICCV48922.2021.00624",
+      "locator": "Cachedexact8author/title Crossrefpublished-print2021-10month;formalbylineHKUST/Tsinghua. CVF6301–6310vsdeposited6281–6290recorded."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2108.08771",
+      "locator": "Cachedcanonicalarxivv1history2021-08-19;separateformalOctober2021month."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/supplemental/Chen_Learning_To_Match_ICCV_2021_supplemental.pdf",
+      "locator": "OfficialCVF6p scientificappendixallA–E/formulas/tables/plots/qual/7refsread. Complete85memberofficialrepo52a1ebebb33b4ba952f95d239d25e600b5b8d989 noPDFZIPipynbscience;fullREADMEread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Match_Features_With_Seeded_Graph_Matching_Network_ICCV_2021_paper.pdf",
+      "locator": "OriginalFig2wholecaptionp3/6303Rect40,65,572,252at2xpublicphysicalasset/actualview. Mainpp3–8andsupp2–5keymath/alltables/plots/qual/SfMrenderedviewed."
+    },
+    {
+      "field": "code/metrics",
+      "source_url": "https://github.com/vdvchen/SGMNet",
+      "locator": "sgmnet/match_model.py160–220andcomponents/matchers.py48–55confirmpartialseeding/Sinkhorn+thresholdmutualdecode;fullREADMEshowsapproxvs exactYFCCAUC.818/.719,notinterchangedwithsuppgridexactmetric."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_Learning_To_Match_Features_With_Seeded_Graph_Matching_Network_ICCV_2021_paper.pdf",
+      "locator": "66main+7supprefsread;DGMC13/PCA53actualtargets. SuperGlueexternalnotinventedcatalogue;duplicateACNe43/44notdoubleedges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-match-features-with-seeded-graph-matching-network",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "13",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[13]"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-match-features-with-seeded-graph-matching-network",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "53",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[53]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftaftercomplete10formal+6scientificsuppread.",
+    "Distinguishedpartialseeding/decoderfromcompleteincumbenteditingandcontinuousgeometrydownstream.",
+    "SeparatedSinkhornexcluded/includedtimingsandapprox/exactAUCdefinitions;retainedaccuracy/SfMnegativecases.",
+    "RecordedGT-controlledseedexperimentandYFCCseed-counttuningwithtransparentprotocolscope."
+  ],
+  "reviewed_note_sha256": "203616ac13b0738e59a17a7532401365776d83211088e80f2b0041fde7464b70"
+}

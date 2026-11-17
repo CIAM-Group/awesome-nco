@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "paper_id": "predict-and-search",
+  "note_path": "specialist/predict-and-search.md",
+  "baseline_note_sha256": "d5e562468ea09e8af329058a4ff9eeb574276668af9aff8ea04048e2a6daa4fd",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2302.05636v4",
+      "version": "arXiv v4, 2023-03-06; accepted ICLR2023 header, exact freshly downloaded bytes match cache",
+      "retrieval_url": "https://arxiv.org/pdf/2302.05636v4",
+      "local_path": "research/import-272/nco-361ddbd497.pdf",
+      "sha256": "52397e5a34a02e5dc6102633705890feb165237f5d883c545fa8dd6d8b013ad9",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exact arXivv4 2023-03-06 acceptedICLR2023 title/eightauthors/affiliations, binary-domain restriction, graph framework and trust-region background."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read weighted feasible-solution energies, factorized Bernoulli marginal BCE derivation, empirical closeness hypothesis, single-neighborhood search and exact set-inclusion Proposition1 with all assumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all evaluation definitions/protocols, main results/negative GurobiIP and tiedIS, BKS not certificate, adapted NeuralDiving comparison scope and disabledNNVpresolve."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read entire bibliography and manually matched five exact catalogue identities, checked additional Ding/Nair/Khalil works without substituting absent entries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Read integratedAppendicesA–G: data collection, all perturbation/fixing plots, original model features, benchmark dimensions and task/solver-specific radius settings; key equations/tables visually checked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ps-contribution",
+      "category": "contribution",
+      "statement": "Objective-weighted feasible-solution marginal learning plus one-shot Hamming neighborhood MILP search replaces brittle fixing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Section3 and Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "ps-guarantee",
+      "category": "method",
+      "statement": "Proposition1 compares exact optima of nested feasible regions under same partial assignment, not finite-time dominance, original global optimality or guaranteed feasible neighborhoods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Proposition1 and its set-containment proof"
+        }
+      ]
+    },
+    {
+      "id": "ps-results",
+      "category": "experiment",
+      "statement": "Mean task-level absolute-gap reductions51.1%/9.9% depend on BKS incumbent references; GurobiIP degrades9.5%, IS ties and neural-diving comparison only two tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Metrics,Table1,Section5.2"
+        }
+      ]
+    },
+    {
+      "id": "ps-specialist",
+      "category": "classification",
+      "statement": "Per-task trained predictors and task/solver-specific neighborhoods; transfer of a common unchanged cross-task model not demonstrated; binary discrete variables only.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            9,
+            14
+          ],
+          "locator": "Section2.1,training,datasetlimits,AppendixG"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://arxiv.org/abs/2302.05636v4",
+      "locator": "Explicitv4 date2023-03-06,PDFp1acceptedICLR2023title/eightauthors/allaffiliations, DongZhang capitalization corrected; freshv4bytes SHA matchescache"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://iclr.cc/virtual/2023/poster/11194",
+      "locator": "Official2023acceptedlisting exacttitle plus acceptedheader; formalpublicationyear2023, firstarxivdate2023-02-11 and v4revision distinguished"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=pHMpgT5xWaE",
+      "locator": "Manual forum and normalapi/api2 challenge403, no bypass;14pversion has integratedA–G and all scientificcontent referenced inbody; officialconference and authorrepo recursiveinventory only README/dataset.md, no extra scientificdocument identified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/sribdcn/Predict-and-Search_MILP_method",
+      "locator": "Explicitpaperp2authorURL;README/datasetread, per-tasktrain/testweights, currentGRBscript indentation/edgefeatures/solverlimit manually inspected"
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2302.05636",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-02-11; title on abstract page: A GNN-Guided Predict-and-Search Framework for Mixed-Integer Linear Programming. This date is preprint history, not formal publication. Cached research/full-text-review/predict-and-search/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "predict-and-search",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body citation and exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "predict-and-search",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body citation and exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "predict-and-search",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit body citation and exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "predict-and-search",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit body citation and exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "predict-and-search",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicit body citation and exact bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            11
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all14 explicit-v4 pages and integratedappendices; confirmed primary byte identity and formal qualification independently.",
+    "Corrected theorem assumptions/global-optimality overstatement and retained GurobiIP negative/tiedIS, BKS metric and limited baseline scope.",
+    "Corrected author capitalization; manually verified code and documented current repository reproduction differences."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f2fb86c7116ed92d99eae29c2148d2d7d2a80190632e048254d0b4e1750a7e71"
+}

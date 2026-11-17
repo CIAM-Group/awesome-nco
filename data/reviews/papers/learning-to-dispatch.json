@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-dispatch",
+  "note_path": "specialist/learning-to-dispatch.md",
+  "baseline_note_sha256": "ba89ce50bd8fa4138323b22044658931b4c1a04a844939b623891ed1c94d2269",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Paper.pdf",
+      "local_path": "research/import-272/nco-107ea238e9.pdf",
+      "sha256": "4939851e2ec9df4bf6cd45b3979e730091055a003f220dff434add658341d5fe",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/learning-to-dispatch/supplement.pdf",
+      "sha256": "a0af7e093348dc60cd1536479469fee7a489b7fe7a7bbcac51e3c6723a62dbc4",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read sixauthors/affiliations/formalNeurIPS2020 identity; deterministic standardnonpreemptiveJSSPmakespan;disjunctivegraphMDP andeligibleoperationdispatch; exactrelatedworkscopeversusother schedulingproblems."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completionLB rewardtelescoping,earliestslotdispatch,2featuredirectedGINsparseaddingarcapproximation,globalmeanpool/actionmask,PPOarchitecture/hyperparams10kiterations4actorsandcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allmainTables1-4,OR-Tools3600sreference/notalwaysoptimal,publicUBs/opt-rates distinction,runtimeslowerheuristicsbutworsePDRtimes;large-sizeandDMUtransferconditions;broaderimpact/limits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read every50bibliographyentry;11exactinternalcataloguematchesincludingWu1912.05784earliertitle;rejectedunrelatedauthorscheduling/clusterworks."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fullPPOpseudocode,criticprintedadvantagetargetinconsistencyversusofficialcodeMSEreturntarget,allfourPDRformulasandTableS1Ta01-30."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allTa31-50,all30transferrowsS2,DMUtrainingTableS3andfirst20transferrowsS4;negativeindividualcasesandUBasterisks retained."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read remainingDMUS4all20rows,trainingtime0.95-20.3hlistandninecurves/processingranges;visuallyinspectedPPO,mainreward/tableandtrainingfigures."
+    }
+  ],
+  "claims": [
+    {
+      "id": "l2d-contribution",
+      "category": "contribution",
+      "statement": "DirectedGIN/PPO learns eligible-operationpriorities withvariable-size sharedparametersandclassicalscheduleconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "l2d-method",
+      "category": "method",
+      "statement": "Lowerbound-differencerewardtelescopes toconstantminusmakespan atgamma1; sparsegraphomitsunresolvedmachineconflicts andPPOlearnswithoutoptimaldemonstrations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Reward,addingarcstrategy,PPO"
+        }
+      ]
+    },
+    {
+      "id": "l2d-results",
+      "category": "experiment",
+      "statement": "BetteraggregatefourPDRmakespans come withslowerinference; OptRate isreferencestatus,notneuraloptimality, andsupplementcontainsindividualfailurecases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1–4 andreferenceprotocol"
+        }
+      ]
+    },
+    {
+      "id": "l2d-scope",
+      "category": "classification",
+      "statement": "Demonstratedtransferchangesinstancesize/processingdistributionwithinJSSP; flow/open/dynamicextensionsarefuturework,notsharedtaskdemonstrations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Remark,futureworkandexperimenttasks"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.neurips.cc/paper/2020/hash/11958dfee29b6709f48a9ba0387a2431-Abstract.html",
+      "locator": "Title/NeurIPS2020verified;PDFp1sixauthorsandNTU/Shandong/NUS/SIMTechA*STARaffiliations;ChiXuorderconfirmedPDFandREADMEversuslandingXuChi"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Supplemental.pdf",
+      "locator": "ManualpublisherSupplementallinkto6pPDFsameauthors/title;PPO,all4per-instancetablesand9trainingcurvesfullyread;noadditionalscientificsourceidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/zcaicaros/L2D",
+      "locator": "ExactpaperfootnoteoldURLredirectverified;READMEofficialtitle/sixauthors/PyTorch1.6/Gym0.17.3;PPOcriticreturntargetandpermissibleLSinsertioninspected"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "pointer-networks",
+      "reference_label": "[12] Vinyals et al. (2015)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [12] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "rl-vrp",
+      "reference_label": "[13] Nazari et al. (2018)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [13] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "attention-model",
+      "reference_label": "[14] Kool et al. (2019)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [14] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[15] Wu et al. (2019), arXiv:1912.05784",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [15] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "learning-to-improve",
+      "reference_label": "[16] Lu et al. (2020)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[18] Khalil et al. (2017)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation [18] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[19] Li et al. (2018)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [19] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "neurosat",
+      "reference_label": "[20] Selsam et al. (2019)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [20] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[21] Amizadeh et al. (2019)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [21] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[22] Yolcu and Poczos (2019)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [22] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "neurewriter",
+      "reference_label": "[24] Chen and Tian (2019)",
+      "description": "Explicit related-work citation; matched exacttitle/authors orarXividentity ratherthan taskoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [24] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "deepweave-accelerating-job-completion-time-with-deep-reinforcement-learning-based-cofl",
+      "reference_label": "[27]",
+      "description": "Explicit GNN/RL distributed-computation scheduling comparison; full six-author DeepWeave IJCAI2020 entry matches target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: [27]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [27]"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-dispatch",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "[26]",
+      "description": "Cloud task-DAG scheduling comparison distinguishes JSSP/disjunctivegraphs; full five-author Decima SIGCOMM2019 title/pages270?288.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: [26]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [26]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "CorrectedChiXuauthororderandcurrentofficialcodetarget.",
+    "Documentedreferencequality/OptRatemeaning,inferencetimeandtrainingcost,individualnegativecases,andJSSP-onlytransfer.",
+    "Readall18scientificpageswithformulas/figuresand11exactcitationedges;source/codepseudocodedifferencesqualified.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0bdce844522cfa0e08760e78de31811e518349b65447b7aed9766f5a0582ba16"
+}

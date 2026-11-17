@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "paper_id": "seedgnn",
+  "note_path": "specialist/seedgnn.md",
+  "baseline_note_sha256": "7e5ed4d19ff3636d2284be12117cc8f1c2ac309f07e86833b318af9883204d38",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/yu23h/yu23h.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/yu23h/yu23h.pdf",
+      "local_path": "research/import-272/nco-42c2796259.pdf",
+      "sha256": "e019771b2e0097bc614b979eb4c49ae7dc48edafe13b15d22ca3786ee35f3395",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Readseededinjectivecorrespondence/supervisedtrain-graphlabels,testfewseeds, binarypairwiseencoding, witnesscountingKronecker/sparsematrixaggregation andMLP architecture. SparseO(n1n2dmean)perchannelstillquadraticpairstorage; differentgraphsizesnotarbitrarynativeoptimizationtasks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 10,
+      "notes": "ReadHungarianconfidence-mask/percolation concatenation, all-layerbinarycrossentropy, simplified2layerERtheoreticalcomparisonandbetafirst-passcondition; sixlayeractualmodeltrainedmixedER100+FacebookwithfullGT and12hCPU, zero-shotSHREC/Willowrefinement, exactTables1-2 andnegativebottlecase; completefirstreferencepage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 22,
+      "notes": "Readallremainingreferences and integratedAppendicesA-G, fullLemmaB1/TheoremB2-B3derivations, idealized1vs1/nconfidenceassumption andbinomialapproximation, allcomplexity/scalability/runtimecomparability/splits, ablationtrainingdistributionandlayerwisewitnessheatmaps, limitations/privacy. Sixlayerempiricalmodelnotcoveredunconditionallybytwo-layerERcomparison."
+    }
+  ],
+  "claims": [
+    {
+      "id": "seed-contribution",
+      "category": "contribution",
+      "statement": "Pairwisewitnessaggregation andHungarianfilteredconfidencepercolationlearnseededmatchingwithcrossgraphtransfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1/3/4"
+        }
+      ]
+    },
+    {
+      "id": "seed-theory",
+      "category": "method",
+      "statement": "Theorem5.1issimplifiedtwo-layercorrelatedERsufficientconditioncomparisonwithbeta/Lipschitzassumptions andB2idealized1versus1/nconfidence; notsixlayerunconditionalrecovery.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Section5 andcompleteAppendixBproof"
+        }
+      ]
+    },
+    {
+      "id": "seed-results",
+      "category": "experiment",
+      "statement": "FullGTmixedtraining,testfewseeds; SHREC43.1%, Willowcombined98.9%withbottlenegative;141.5snotfastest andruntimeexcludesofflinetraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            16,
+            17
+          ],
+          "locator": "Section6/Tables1-3 andAppendixC"
+        }
+      ]
+    },
+    {
+      "id": "seed-scope",
+      "category": "classification",
+      "statement": "Samegraphcorrespondencemodeltransferacrossgraphsizes/types; noothernativeoptimizationtaskdemonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            9
+          ],
+          "locator": "Problemdefinition/trainingtransferprotocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v202/yu23h.html",
+      "locator": "Officialtitle/threeauthors/ICML2023PMLR202:40390-40411;PDFp1PurdueECE/DukeFuquaconfirmed"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v202/gh-pages/_posts/2023-07-03-yu23h.md",
+      "locator": "Explicitdateandissueddate-parts2023-07-03"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/yu23h.html",
+      "locator": "ManualRelatedMaterial/rawextrasempty; all22pcontainsintegratedA-Gread;normalOpenReviewAPI/API2id=sag7iLqPvC403,officialreporecursivetreecheckednoadditionalPDF/ZIPscientificattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Leron33/SeedGNN",
+      "locator": "Paperp7directauthorlink; README/corearchitecture/loss/train/GMAlgorithms/TestShrec16/TestFacebook/TestWillowchecked; publishedprotocolversuscurrentimplementationdifferencesexplicit"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "seedgnn",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "ExplicitDGMCarchitecture/baselinepipeline andexactbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            8,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "seedgnn",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2019)",
+      "description": "ExactchannelindependentHungarianattentiontitle/fourauthors; bibliographyyear2019aliasofICLR2020work,notnewpaper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "seedgnn",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "Yu et al. (2021c)",
+      "description": "ExplicitDLGMrelatedwork/Table2 andexactICMLpages12187-12197bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall22publisherpagesincludingeveryA-Gproof/figure/table/reference andmanuallycheckedscientificsupplementinventory.",
+    "Verifiedformalissueddate andofficialcode; exactDLGM/CIEaliasesmanuallymatchedbeyondreferencehelper.",
+    "Qualifiedtwo-layerERtheory/idealconfidence/binomialselectionassumptions; preservedfulltrainlabels/testfewseeds, runtimebudget/negatives andcurrentcodeprotocoldivergence."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "78a754b6ba2e70591fc68e45b0aa0266a6e5b4f9a0326bb2c5f942937e3f0ad0"
+}

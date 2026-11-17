@@ -1,0 +1,498 @@
+{
+  "version": 1,
+  "paper_id": "mamba-branching",
+  "note_path": "generalist/mamba-branching.md",
+  "baseline_note_sha256": "215ace0ff99d4e4311e72af63e188514e79c5661df25875e28ae16111a831796",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b2f56a345fe0ce337df3bdfb31e2b350-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b2f56a345fe0ce337df3bdfb31e2b350-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-1ee66fbd5f.pdf",
+      "sha256": "6506076ac1193c7a8cdec8d8ec82c7e98d32325bc6a43b89c26bf9065b8fdcc5",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal threeauthors/CASUCAS identity, allintroductionrelated/preliminaries, sequentialpolicyoverparameterized25candidate61treefeatures, exactclassicalbranchingvsheuristics distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullcontrastiveanchor/maxpoolcosinecriterion, candidate+actiontokenserializedvisitedhistory and sharedstepPE, relpscost teacherautoregression/rollout vsSBteacher; MILPS19/8MILPL25/73 datasets andcostmetrics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTables1-3/Figures2-6, hybridrelpscostroot, knownoptimalcutoff/primalheuristicsoff, easycostnegativevsrelpscost/difficultPDIpositive, variedtraininghorizons99vs9 evaluation24, ablationcontexts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read conclusion/reproduction/completebibliographyfirstthreepages, authorstatedexpertlabelcostlimitation andactualprimarybibidentities nottopicmatching."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read completefinalbibliography andAppendixA assumptions/linearFembedding argument; positivecollinear2alpha/alpha withzeroepsilon yieldscosinetie despiteexactF/distinctembeddings, so strictmarginisdesigntargetnotentailed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read allSSM/selectivearchitecture/background, teacherexperimentcompatibilityTable4, completehardbenchmarkselectionand19-rowTable5selected8, fourcriteriaexcludeinfeasibleandlarge/lowbranchinstances; baselinejustifications."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read fullhyperparameters99train24history+current, allpathmemory/runtimeandstatisticalprotocol. Friedmannodesp.2862 notsig, easytimeTreeGateposthocp.071287, difficultPDIvsrelpscostp.11434 notsig despiteaggregatepositive."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read completewinlossquartilesandFriedmanConoverTables11-16, r-prefixhardselectionnotrandomproof,9selected/outcomes6wins; InfoNCE/tripletCLcomparison and LLMdisclosure. Table15actualmethodmappingpreferredoverprose."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read allrprefixscreening17instances/9selected andperinstancePDInegativecases, CLlosstable, MILPSfull19/8 andMILPL25training instance manifest incl duplicated/swapped dimensions andnames sourceversionnotassumedcorrect."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "Read entire57easy/16difficult manifests, exactnativeinstanceIDs nursesched/radiation/mining/rail etc; someTable21crosslistdimensionsswapped soverifymetadataagainstprimary ratherthanblindreuse. All29formalpagesnowread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "mb-contribution",
+      "category": "contribution",
+      "statement": "Contrastively pretrained TreeGate plus Mamba autoregressive candidate/action-history model learns a shared heterogeneous MILP branching component.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.2/4/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "mb-method",
+      "category": "method",
+      "statement": "Reliable pseudocost teacher,100-step training/25-state inference and optional relpscostroot operate within SCIP; exactness is classicalsearch conditional.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            19,
+            20
+          ],
+          "locator": "Sections4.3/5.1/F/Table6-8"
+        }
+      ]
+    },
+    {
+      "id": "mb-experiment",
+      "category": "experiment",
+      "statement": "Controlled knownoptcutoff/heuristicsoff gains over neural aggregates coexist with easyrelpscostnegative, individual losses and nonsignificant PDIvsrelpscostp.11434.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            21,
+            23,
+            24,
+            25
+          ],
+          "locator": "Table1/5.1.3/G/Tables11-18"
+        }
+      ]
+    },
+    {
+      "id": "mb-classification",
+      "category": "classification",
+      "statement": "Generalist constructive sharedMILPL neuralbranchcomponent, actualunitcal_7/nurseschedtestnativeapps andsinglecheckpointloading; separateS/auxSCnotoneuniversaldecoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            17,
+            28,
+            29
+          ],
+          "locator": "MILPLprotocol/Tables22-23 plus officialMIPLIBapplicationidentity/evaluate_all178-245,366-379; rootapproved"
+        }
+      ]
+    },
+    {
+      "id": "mb-theory",
+      "category": "limitation",
+      "statement": "Printed strictcosine margin does not follow from assumed distinctinformative linearqualityembeddings:2alpha/alphazero-noisecounterexamplecos1tie.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            15
+          ],
+          "locator": "Proposition1/AppendixA; root independently verified scopedcounterexample"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b2f56a345fe0ce337df3bdfb31e2b350-Abstract-Conference.html",
+      "locator": "Title/three authors/CASUCAS p1, formal ICLR2026."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b2f56a345fe0ce337df3bdfb31e2b350-Abstract-Conference.html",
+      "locator": "HTML citation_publication_date2026-04-20."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b2f56a345fe0ce337df3bdfb31e2b350-Abstract-Conference.html",
+      "locator": "Manual publisher actions linkZIP76718766bytes/1911members, code/data/logs noPDF/TeX/ipynb/images; bothtextdocsfullyread. Author17962510byteZIP noextra scientific docs; ICLR2026event10007964 scientificPNG436398bytes fullyread/viewed; ordinaryORiQKzHeLDrNAPI403."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/doctor-watson626/Mamba-Branching/",
+      "locator": "Full archives inventoried; model/loss/evaluation/history/solver inspected; nine sharedsourcefilesbyte-identicalpublisher, evaluate_printdiff; noREADME/env/checkpoints; absoluteexternaldatapaths."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://miplib.zib.de/instance_details_unitcal_7.html",
+      "locator": "Official description California seven-day unitcommitment; matchespaperTable22p28; sameMILPLcheckpointpair evaluate_all178-245,366-379."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://miplib.zib.de/instance_details_nursesched-medium-hint03.html",
+      "locator": "Official INRC2010 nurse scheduling description; matchesTable23p29, sameMILPLtestmodel; notmereheterogeneoussyntaxinference."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "mamba-branching",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "btbs-lns",
+      "reference_label": "Yuan et al. (2025)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit in-text citation Yuan and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "conpas",
+      "reference_label": "Huang et al. (2024)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            11,
+            17,
+            18
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "gs4co",
+      "reference_label": "Kuang et al. (2024b)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Kuang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            11
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "symb4co",
+      "reference_label": "Kuang et al. (2024a)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit in-text citation Kuang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "trgnn-node-selection",
+      "reference_label": "Zhang et al. (2025)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Explicit body citation and full matching bibliography identity/version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "Khalil et al., 2022",
+      "description": "Primal solution-prediction discussion cites exact Khalil/Morris/Lodi AAAI2022 MIP-GNN article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Actual body citation Khalil et al., 2022 on PDF pp[2]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Primal solution-prediction discussion cites exact Khalil/Morris/Lodi AAAI2022 MIP-GNN article."
+        }
+      ]
+    },
+    {
+      "citing": "mamba-branching",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al., 2021",
+      "description": "TreeGate/parameterized B&B discussion cites exact four-author AAAI2021 title and DOI16512.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            14
+          ],
+          "locator": "Actual body citation Zarpellon et al., 2021 on PDF pp[1, 2]; full bibliography entry on pp[14]. Title and author identity matched to the target reading record, independently of topic similarity. TreeGate/parameterized B&B discussion cites exact four-author AAAI2021 title and DOI16512."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall29formalpages/A-J plusofficialscientificposterandZIPtextdocs/code; rootapprovedgeneralistmigrationfromactualsamecheckpointunitcommitment/nurserosteringevidence; qualifiedcutoff/PDI/statistics andstrictcosineproof;15exactcitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8572f2bb086ded4ea8821efcb552e18917ef2933be8caa6b517f2e0390fe9681"
+}

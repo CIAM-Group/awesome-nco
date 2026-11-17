@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "paper_id": "pointerformer",
+  "note_path": "specialist/pointerformer.md",
+  "baseline_note_sha256": "c5231c554f731173035b05dda501dd1a22e77a8509cb106fffcc8494a2916615",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2304.09407",
+      "retrieval_url": "https://arxiv.org/pdf/2304.09407",
+      "version": "arXiv2304.09407v1,19April2023acceptedAAAI2023authorcopy;complete10pagesincludingappendixread.",
+      "local_path": "research/full-text-review/pointerformer/paper.pdf",
+      "sha256": "c6f8071435974924e60e1f61ded5a3e7f937a9a016c3ce25985b3d613b0f6073",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh8authorsHUST/MSRA,title/introfullrelatedcitations,EuclideanTSPconstructiveMDP/reinforce,reversibleencoderand24featureaugmentation;angularfeatureextractionneedsvisualnotliteralatanh."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "FreshFigure1/reversibleformulas, enhancedquerysumgraph+partialnormalizedN+endpointcontext, Hpointerlogitavgnotparallelcityactions,explicitdistanceprior, printedvariance-normalizedREINFORCE, 100kepochseparatesizemodels/hardware/memory, officialcodefootnote."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "FreshallTables1-4syntheticcounts10k/128anddatasetsruntimes,TSPLIBgroupgapsandall49?rowcosts,ablationCclipplots/39winnerbar,conclusion/fullrefsandappendixallrouteexamples. Full10pagesread;sourceAMgapandrd100LCPinconsistenciesnoted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "architecture",
+      "category": "contribution",
+      "statement": "Reversible6layerencoder+averaged8pointerheadlogits andenhancedpartialroutecontext constructonecityperstep.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure1 Encoder/Decoder"
+        }
+      ]
+    },
+    {
+      "id": "augmentation",
+      "category": "method",
+      "statement": "24pernodefeaturesconcatenate8coordinateangleviews differs8instanceinferenceaugmentation; nearest-edgepriorandsharedbaselineREINFORCE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Decoder Eq6-7"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "experiment",
+      "statement": "10k20/50/100versus128200/500datasettime,separateModelNtrained100kper epoch;V100onevsfour largertraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Experimentalsetup Table1"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "49TSPLIBinstances51-1002 allappendixread;Model200notuniformlybetterandstill18.20%largestgroup, POMOstrongersmallest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10
+          ],
+          "locator": "Table2/4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SeparateTSPsizecheckpoints, autoregressivefreshconstruction notneuralincumbentimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Problemformulation/approach ModelN"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v37i7.25982",
+      "locator": "ManualpublisherindexedpageandCrossrefpublished-online2023-06-26,title8authors37(7)8132-8140;PDFHUST/MSRA."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2304.09407",
+      "locator": "Manualhistoryuniquev1April19,2023 acceptedAAAI2023comment."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/25982",
+      "locator": "Directpublisherpagebotdenial;indexedpublisherrecordonlyPDF. Authorv1complete10pagesincluding49rowappendixand4examplesread;allreferencedappendixpresent. OfficialREADME/treeinspectednoextrasciencedoc. Noinspectionclaimofinaccessibleattachments."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Pointerformer/Pointerformer",
+      "locator": "PDFp6footnote1directofficialURL;fullREADMEread, relevantutils.py/train.py/eval.py/config.yaml inspected. Codeatan(y/x), populationstd+1e-8vsprintedvariance, default8Ngreedycandidates documented."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2304.09407v1#page=4",
+      "locator": "OriginalFigure1cropRect(155,53,465,234)5x, completeencoder/decoder/sum/softmax/arrows;memory,formula,alltables/appendixexamplesvisualchecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2304.09407",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-04-19; title on abstract page: Pointerformer: Deep Reinforced Multi-Pointer Transformer for the Traveling Salesman Problem. This date is preprint history, not formal publication. Cached research/full-text-review/pointerformer/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "pointerformer",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "attention-model",
+      "reference_label": "Kool2018asprinted",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022CPAIOR",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    },
+    {
+      "citing": "pointerformer",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021a/bduplicaterefconsolidated",
+      "description": "Explicitauthor-yearcitationandmatchingreference;Fu2021a/bduplicateconsolidated andactualprintedolderversionretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitauthor-yearintext."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matchingcompletebibliographyentry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RestoredabstractfootnoteofficialimplementationURLandproperformalonlineJun26date,removedgenericacceptance.",
+    "Correctedmulti-pointermeaning=scoringheadavgnotmultiplecities,addedreversibleactivationrecompute/partialroutequery/distanceprior.",
+    "Separated24featureconcatenationfrom8Ninferencebudget;sourceangularformulaandvariancevsreleasedstdcodeexplicit.",
+    "Addedactualseparateper-sizeconstructionmodels and10k/128datasetsruntimes/CPUimportcaveats.",
+    "All49TSPLIBrowsread, qualifiedlargest18%gaps/Model200failures/smallPOMOwin, sourceAMgapandLCPcosttyposnotpropagated.",
+    "CompleteFigure1cropandappendix/manualsupplementinventoryrecorded."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6b2f6d04c411e30a78992faee2a7b735542c60aafc1c1f26cd8432e207795ead"
+}

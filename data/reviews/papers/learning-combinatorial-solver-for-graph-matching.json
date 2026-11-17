@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "paper_id": "learning-combinatorial-solver-for-graph-matching",
+  "note_path": "specialist/learning-combinatorial-solver-for-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "2118dad2e5b99bc196bc15a9eaa33272d1c326d38ddb4d7f3830764d6fca82ce",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Learning_Combinatorial_Solver_for_Graph_Matching_CVPR_2020_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Learning_Combinatorial_Solver_for_Graph_Matching_CVPR_2020_paper.pdf",
+      "version": "FormalCVFCVPR2020ten-page7568–7577six-authorPDF;allmain/38refsandkeyvisualsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-aedc1a1fbe/publisher.pdf",
+      "sha256": "66832c39c73aab100a59b3b5cc4170dbed719a470b77f20fde85426a12fabc89",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readcompletepp1?3sixBJTU/HiScene/StonyBrookauthors;unifiedassignmentgraphnodeclassificationinsteadfixedLAP/spectral;softscores+supervised1to1lossnotyetharddecoderguarantee;actualprimaryPDFURLresolvedCVFrelativehref;fullQAPnotationnotglobalNNoptimality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Allpp4?5readassignmentnodes/edgesconcatrawgeometrynoCNN;encoderMLP/convolution/decoder2classsoftlabels;formalexplicitgreedymaxactivationpostprocessingclaimed1to1?notHungarian. Needofficialcodecheckexactgroupexclusion. KstackconvssoftrepresentationsnotcompleteincumbentNNedits;inputgraphconstructionoutsidenetwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Allpp6?8read 10independentMLPedge/nodeconvs endpointHadamard+sumaggregate;Lperm2classCE plus Lcon computedargmaxy,ordinarygradientszerothroughargmax(notassumeddifferentiable). Geometryonly. Synthetic200ktraintwo-sidedoutliers500testpairs,CMU300krandomsame111frametrainnotheldoutscene;Willow94.9meanDuck86.2<PCA93.5;Pascal68.5classesworsePCAcat67.4>60.3/horse68.9>64.4. SomepeerresultsquotedfromPCA. Noablation/runtimeuncertaintyguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All38referencesformalpp9?10read;actualPCA27anddeepGM33onlycatalogueidentities;otherclassicalmatching/GNNfoundationsnotunrelatedCOtarget. Noindependentsuppnamedfullmain/CVFonlyPDF. OfficialsourceZIPoriginalhostSSLchainerror/www3+authorgithub404checked,unknowncodecontentsnotclaimedread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "lcs-contrib",
+      "category": "contribution",
+      "statement": "Assignmentgraphnodeclassificationunifieslearnedrepresentationandcorrespondencescoring.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Figure2/Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "lcs-method",
+      "category": "method",
+      "statement": "Geometryonly10stageHadamardedge/sumnodemessagepassing+MLPclassifier,describedgreedy/maxactivationtestdecode.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Eqs3–15/Section4.1"
+        }
+      ]
+    },
+    {
+      "id": "lcs-results",
+      "category": "experiment",
+      "statement": "Willow94.9/Pascal68.5withDuck/cat/horse/dognegativecases;CMUsame-sequence/syntheticprotocolconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables1–2/Figures3–4"
+        }
+      ]
+    },
+    {
+      "id": "lcs-limit",
+      "category": "limitation",
+      "statement": "Printedargmaxconstraintpenaltypiecewiseconstantunderordinarydifferentiation,nospecifiedsurrogate;noQAPoptimalityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Eqs13–15"
+        }
+      ]
+    },
+    {
+      "id": "lcs-class",
+      "category": "classification",
+      "statement": "SpecialistconstructiveNNsoftnodeclassification+describedharddecode;nocrossnativecommoncheckpointorNNcompleteincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Methodology/dataset-specifictraining"
+        }
+      ]
+    },
+    {
+      "id": "lcs-repro",
+      "category": "reproducibility",
+      "statement": "All10formalpages/38refsandkeyvisualsread;codearchiveunavailableexplicitlynotclaimedinspected.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9,
+            10
+          ],
+          "locator": "AuthorarchiveURL/References"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR42600.2020.00759",
+      "locator": "Cachedexact6author/titleCrossrefpublished-print2020-06;formalbylineBJTU/HiScene/StonyBrook. CVF7568–7577vsdeposited7565–7574transparent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_Learning_Combinatorial_Solver_for_Graph_Matching_CVPR_2020_paper.html",
+      "locator": "CVFonlymainPDF;full10p noexplicitmissingscientificappendix. Authorpublicationlistingpaper+code/data1.7G only;exacttitlesupp/arxivsearchnoidentifiedadditional science. Originalcodecertificatechainerror/www3andhaibinlinggithub404—contentsnotclaimedread,noexplicitunreadscienceattachmentidentified."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Learning_Combinatorial_Solver_for_Graph_Matching_CVPR_2020_paper.pdf",
+      "locator": "OriginalFig2wholecaptionPDFp5/7572Rect40,65,572,254at2xphysicalpublicasset/actualview;pp5–8keyloss/updateformulas/tables/curvesrenderedviewed."
+    },
+    {
+      "field": "code/gradient-boundary",
+      "source_url": "https://www.cs.stonybrook.edu/~hling/code/LearningGraphMatching.zip",
+      "locator": "Code-attempts.json exacthostSSLError andauthoraliases404;noREADME/archive/decodercheckclaimed. Formalrenderedp6Eq13argmax→14constraint,ordinarypiecewiseconstant/noidentifiedsurrogate. Keepauthordescribedgreedyandcuratorgradientlimitationseparatefromunavailableimplementation."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Learning_Combinatorial_Solver_for_Graph_Matching_CVPR_2020_paper.pdf",
+      "locator": "Full38refsp9–10read;PCA27/deepGM33actualcatalogueidentities,2edges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-combinatorial-solver-for-graph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "27",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[27]"
+        }
+      ]
+    },
+    {
+      "citing": "learning-combinatorial-solver-for-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "33",
+      "description": "Directactualmainbibliographyfull-title/bylineidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[33]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafterall10formalpages/38refsread.",
+    "Keptgeometry-onlymodelanddescribedgreedydecoderwithoutinventedHungarian orcheckedunavailablecode.",
+    "Documentedprintedargmaxgradientboundarywithoutassuminghistoricimplementationorinvalidatingexperiments.",
+    "Retainedclassnegativecases/quotedcomparators/CMUwithinsequenceprotocol/noquantifiedspeedclaim."
+  ],
+  "reviewed_note_sha256": "c6ce0e49cf4dc62e0c64ea56aa1ed338bd7b52dbdf459e0b3e268af731270c62"
+}

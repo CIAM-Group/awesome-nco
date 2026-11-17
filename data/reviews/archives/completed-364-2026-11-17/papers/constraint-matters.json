@@ -1,0 +1,441 @@
+{
+  "version": 1,
+  "paper_id": "constraint-matters",
+  "note_path": "specialist/constraint-matters.md",
+  "baseline_note_sha256": "373b56304ebffe7f21d6d573f5daaa92b3b2107e3b8519ae6c9fff30b29cc6ab",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/25dd41a34a3fee27ca94ebd34186d22c-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/25dd41a34a3fee27ca94ebd34186d22c-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-79a3f3a697.pdf",
+      "sha256": "2fa7d0202cd2ee2691400d1c402bae38ffbdef44fc4bd96ef13bd75a7bbb5e46",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal12authors, abstract/relatedwork, binaryMILP and tightconstraint/equalityreduction definitions. Non-tight-at-one-optimum is not globally redundant; will inspect propositions and feasibility repair before assessment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read abstract-type graph with pretrained text features, instance GNN, cross-attention and gated type-node updates; oracle tight fixing can slow solving per motivation table."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Read 10-type local-strength ranking, explicit decoupling assumption/entropy claim, Big-M selected-tight indicator budget plus variable trust region, printed focal loss sign and claimed noisy-prediction guarantee; need appendix/code qualify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Read allmainbenchmarkmetrics/tables/realworldscenarios: 800secondbudget, 3600secondBKS,51.06gapimprovement/17.47PDI notwalltime; heterogeneousMIPLIB excluded for absentsemantics."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read conclusion/reproduction codepromise and first2fullbibpages, including duplicatedDing2020a/b samepaper and 2024arxivFMIP lineage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainder bibliography, LLMJSONgeneration disclosure, uniform-local entropy proof and setpack/cover counting. Entropy Eq16difference orientation vsEq17–18 needs rendered verification; no solver-runtime theorem follows."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read full strength derivations inclb~sqrt(n) lowerbound improperly promotedtoTheta(1/sqrt(n)); Gaussian/equality-band approximations need lattice/CLT conditions; training labels50time-limitedGurobisolutions notnecessarilyoptimum; dataset/CAformalization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read exactMVC/MIS/WAformulations,T5base/LLMgeneratedJSONtypefeatures,separatePSbinarytrustregion, TCPmin5selectionbounds. No sharednativecheckpoint claimyet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Read TCP/JUDGE pseudocode actualearlyreturns, complexity/features/variablepositionencoding, task-specifichyperparameters and oraclecombinationselection; BKS updatedtoourssolutions onMIS/MVC, loggapfloor1e-6."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "Read allhyperparameter/incorrectfixing/presolveandtextembeddingablations. N/Ainfeasibilityat20-30%errors; presolveMVCnegativePDIandTable3/12baselinepresolvemismatch; ACC100GNN64.31>ours64.30."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 27,
+      "notes": "Read finaltextencoder/trainingcost/decouplingstatistics/limitations; assumptionempiricalfractions7.4-100% variable and largeWD, noformalglobalfeasibility/runtime guarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "constraint-method",
+      "category": "method",
+      "statement": "Task-specific two-level graph/text/category representation predicts variables and selected tight inequalities; indicator exception budget plus binary trust region restrict classical solving.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            19,
+            20,
+            22
+          ],
+          "locator": "Sections3–4/Eq12–14/AppendixC/G"
+        }
+      ]
+    },
+    {
+      "id": "constraint-labels",
+      "category": "contribution",
+      "statement": "Local feasible-set shrinkage motivates heuristic critical-type labels; uniformity/decoupling does not imply a solver-runtime guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            15,
+            16,
+            17,
+            21,
+            26,
+            27
+          ],
+          "locator": "Prop3/B.1–B.2/Algorithms1–2/H.7"
+        }
+      ]
+    },
+    {
+      "id": "constraint-experiments",
+      "category": "experiment",
+      "statement": "Reported51.06%gapabs/17.47%PDI improvements against learned baselines under800secondbudgets, with endogenous BKS and presolve/error/accuracy exceptions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            18,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Tables3–16/Section5.2/H"
+        }
+      ]
+    },
+    {
+      "id": "constraint-classification",
+      "category": "classification",
+      "statement": "Specialist constructive: each native family has task-specific model/head/type mapping; predicts restricted formulation before complete primal solution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            18,
+            22
+          ],
+          "locator": "Native datasets and parameters; actual release TaskName/checkpoint evidence metadata"
+        }
+      ]
+    },
+    {
+      "id": "constraint-limits",
+      "category": "limitation",
+      "statement": "Noise budgets do not guarantee feasibility or optimality retention; entropy sign and b~sqrt(n) count-asymptotic statements are limited/incorrect as printed, distinct from empirical efficacy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7,
+            15,
+            16,
+            24,
+            27
+          ],
+          "locator": "Eq12–18/B.2.3/Table11/limitations; curator counterexamples explicitly separated"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/25dd41a34a3fee27ca94ebd34186d22c-Abstract-Conference.html",
+      "locator": "FormalPDFp1 twelveauthors/JiajunLi propercapitalization, SoutheastUniversity andHuaweiNoahsArkLab."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/25dd41a34a3fee27ca94ebd34186d22c-Abstract-Conference.html",
+      "locator": "HTMLcitation_publication_date2026-04-20; venueICLR2026."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/25dd41a34a3fee27ca94ebd34186d22c-Abstract-Conference.html",
+      "locator": "ManualpublisherZIP34230bytes/13membersallcode,noPDF/TeX/ipynb/images. All27formalpagesA–Iread. AuthorZIP3995439bytes/32membersREADME+2scientificPNGsread,noextraPDF/TeX/ipynb. ICLRevent10006774scientificposter1334932bytesread; ORvqNg2Vl8o1 identified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Liwow/Constraint_Matters",
+      "locator": "FullREADME/inventory andactualTaskNametraining/model load, localT5path/categoricalfeatures, focalhelpernegativebothterms versusprintedEq13+, defaultfocalFalse/200epochs/detachedlossnormalization, nativeindicatorbudget andSCIP/Gurobientries inspected."
+    },
+    {
+      "field": "classification",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/25dd41a34a3fee27ca94ebd34186d22c-Supplemental-Conference.zip",
+      "locator": "model_train.pyTaskNameCA/train_task/checkpointperfamily, model_test_GRB.pyTaskName-specificGNNPolicy; noverifiedsharednativepolicy."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "constraint-matters",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            13
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "conpas",
+      "reference_label": "Huang et al. (2024a)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            8,
+            12,
+            18,
+            20
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "gnn-gbdt-ip",
+      "reference_label": "Ye et al. (2023)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "Explicit in-text citation Ye and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "l2dive",
+      "reference_label": "Paulus & Krause (2023)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "Explicit in-text citation Paulus and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "predict-and-search",
+      "reference_label": "Han et al. (2023)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7,
+            8,
+            12,
+            20
+          ],
+          "locator": "Explicit in-text citation Han and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "symilo",
+      "reference_label": "Chen et al. (2024)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "l2p-mip",
+      "reference_label": "Liu et al. (2024)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "constraint-matters",
+      "cited": "gnn-milp-expressivity",
+      "reference_label": "Chen et al. (2023)",
+      "description": "Actual author-year in-text reference and matching full bibliography; no substitute identity for absent papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh27formalpages/A–IplusofficialposterandreposcientificPNGsread; twoZIPsinventoried; authorscapitalizedandcodeURLadded; qualifiedPDIvswalltime/BKS/presolve/predictionnoiseandprintedmathratherthanunconditionalguarantees;12explicitrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "afdc7f0672cab9c5cd3f0989c97349a5b90b0fea9c0a0a08bda7481d6979c818"
+}

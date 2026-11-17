@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "paper_id": "deep-latent-graph-matching",
+  "note_path": "specialist/deep-latent-graph-matching.md",
+  "baseline_note_sha256": "c6eba1218e865975bc42b5650bea052dbb22c2def81a8d12291ee78982b16cea",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v139/yu21d/yu21d.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v139/yu21d/yu21d.pdf",
+      "local_path": "research/import-272/nco-6bcd174845.pdf",
+      "sha256": "fef04681c056d753f44fcb286f62bb8e963c864c8e04765f674ace47f6204be3",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.mlr.press/v139/yu21d/yu21d-supp.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v139/yu21d/yu21d-supp.pdf",
+      "version": "publisher-linked five-page scientific supplement",
+      "local_path": "research/full-text-review/deep-latent-graph-matching/supplement.pdf",
+      "sha256": "280995f47ece79357720294704d67f3e8c7b4525d0d8e738fde86db10caeb311",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 8,
+      "notes": "Read problem, BBGM/SplineCNN backbone, latent deterministic/generative graphs, all losses, straight-through estimator, factorized variational/EM interpretation and training; full main tables1-4 including adverse categories, Willow transfer versus fine-tuning and SPair split. Printed Gaussian versus uniform reparameterization requires source/code crosscheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read all ablations, sample-size16 accuracy/training-cost8-9x versusBBGM, testtime qualitative only, complete references and aliases."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Read all A.1-A.5, holistic figure, full spline kernel/ELBO Jensen equality derivation and qualitative tables8-9; generic EM and deterministic local convergence assertions do not establish biased-neural surrogate convergence."
+    }
+  ],
+  "claims": [
+    {
+      "id": "dlgm-topology",
+      "category": "contribution",
+      "statement": "Learn deterministic or stochastic latent graph topology with matching/locality/consistency objectives on top of BBGM.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections1/3; Equations5-20 and alternating Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "dlgm-guarantees",
+      "category": "method",
+      "statement": "Jensen posterior-equality derivation does not establish globalQAP or actual biased-neural EM convergence; printed Gaussian versus uniform noise is inconsistent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Eq6 reparameterization text; straight-through; proposal/alternating updates"
+        }
+      ]
+    },
+    {
+      "id": "dlgm-results",
+      "category": "experiment",
+      "statement": "VOC83.8 versus80.1 is3.7percentagepoints; F1/inlieraccuracy distinct, categorynegatives and16sample8-9xtrainingcost retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1-7 and Section4.4cost"
+        }
+      ]
+    },
+    {
+      "id": "dlgm-scope",
+      "category": "classification",
+      "statement": "Supervised keypoint visual correspondence, datasettransfer and fine-tuning within same native task.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            8
+          ],
+          "locator": "Footnote2, Sections4.1-4.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/yu21d.html",
+      "locator": "Officialtitle,fourauthors,ICML2021PMLR139:12187-12197; PDFp1ASU/SJTU matches; publisher main11p/supp5p identitychecked"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v139/gh-pages/_posts/2021-07-01-yu21d.md",
+      "locator": "Rawpublisherdate2021-07-01 and issued date-parts2021,7,1 explicitly verified; distinctfromBibTeXconferenceJuly18-24"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/yu21d.html",
+      "locator": "ManuallycheckedRelatedMaterial and rawextras: mainPDF plusone5pSupplementaryPDF,allA.1-A.5includingqualitativeTables8-9read; coauthorpublicationlistinglinks paperonly; nofurther scientificattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://runzhong.wang/",
+      "locator": "CoauthorDLGMpublicationentrypaperonly, neighboringpublicationshavedistinctcodelinks; publisherandtargetedofficialrepositorysearchnoexactDLGMimplementationidentified"
+    },
+    {
+      "field": "citation_audit",
+      "source_url": "https://proceedings.mlr.press/v139/yu21d/yu21d.pdf",
+      "locator": "Fresh full bibliography pages[11] plus actual body pages[1, 3, 4, 5, 7]: Pogancic/Paulus/Musil/Martius/Rolinek and exact ICLR2020 black-box differentiation title match target; distinct Rolinek2020 ECCV graph-matching entry is not conflated."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicit channel-independent/Hungarian-attention citation and exacttitle/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "Explicit DGMC framework/baseline citation and exact bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            10
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "attention-model",
+      "reference_label": "Kool & Welling (2018)",
+      "description": "Explicit related-work body citation; earlier title Attention solves your TSP, exactarxiv1803.08475 matches establishedpublishedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic et al. (2020)",
+      "description": "Pogancic/Paulus/Musil/Martius/Rolinek and exact ICLR2020 black-box differentiation title match target; distinct Rolinek2020 ECCV graph-matching entry is not conflated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Pogancic and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "Rolínek et al. 2020",
+      "description": "Core BBGM baseline and unchanged pipeline when latent-topology module removed; exact ECCV2020 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Rolínek et al. 2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Rolínek et al. 2020"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "deep-graphical-feature-learning-for-the-feature-matching-problem",
+      "reference_label": "Zhang and Lee 2019",
+      "description": "Fixed k-nearest topology and geometric learning background; exact ICCV2019 Deep Graphical Feature Learning title/authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zhang and Lee 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zhang and Lee 2019"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al. 2019",
+      "description": "Graph embedding/permutation loss/PCA baseline explicitly cited; exact ICCV2019 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Wang et al. 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Wang et al. 2019"
+        }
+      ]
+    },
+    {
+      "citing": "deep-latent-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir and Sminchisescu 2018",
+      "description": "Seminal VGG16/spectral deep-GM and experimental GMN baseline; exact CVPR2018 two-author identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zanfir and Sminchisescu 2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zanfir and Sminchisescu 2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all11main+5supplementpagesincludingproofs/references/qualitativeimages; checkedkeytables/mathvisually.",
+    "Verifiedpublisherissueddate and manuallyinventoriedscientificattachments andauthorcodeavailability.",
+    "Replacedgenericclaimswithprecisemetrics/protocols/negativecategories/trainingcost; restrictedELBO/EMclaimstotheirassumptions anddocumentedprintednoise/algorithm/protocolambiguities.",
+    "Follow-up complete bibliography audit restored explicit citation to blackbox-backprop; identity checked, no inferred topic edge.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "05e933f66f5fea5f6220a4e181eb82d6ded338d71c22f664d0ee6b0850d0e45b"
+}

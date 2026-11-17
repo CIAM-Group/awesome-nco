@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "paper_id": "rlcg",
+  "note_path": "specialist/rlcg.md",
+  "baseline_note_sha256": "3de5b7210ae99526a3b9929d34c24ce4c8ddad95d9edfafec760d61ed2ab9938",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/3ecfe5c632afb7d96a2337b18ff99b1f-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/3ecfe5c632afb7d96a2337b18ff99b1f-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c23e2b09a1.pdf",
+      "sha256": "73f5851ee4b22a284f269543a944863f2dee1615eb3015b7cbe1df2014e6358c",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/3ecfe5c632afb7d96a2337b18ff99b1f-Supplemental-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/3ecfe5c632afb7d96a2337b18ff99b1f-Supplemental-Conference.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/rlcg/supplement.pdf",
+      "sha256": "c4b8b17d5ee7d342975da314b1f035528de63e70132a397c096624b373fd5802",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read identity, LP-relaxation scope versus branch-and-price, CG sequential-control motivation, actual related-work citations and cutting-stock column formulation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read pricing/CG equations, graph state/action/reward, exact-solver dependence, DQN training and algorithm, baseline and inclusive runtime definitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read full CSP/VRPTW splits, curriculum/hyperparameter search and all results/curve captions, noting separate task training and VRPTW partial shared-base instances."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read concluding single-column and LP-only limitations, prospective branch-and-price extension and entire bibliography identities."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read checklist and full curriculum ablation/training curves/validation procedure and initial hyperparameter description."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all31 hyperparameter configurations, ratio-direction conflict, solution pool10/feature normalization/network/batch settings, exact hardware/software, graph convolutions and CSP split table."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read entire curriculum/features and detailed mean/std results and per-instance table, including early-stopping objective differences and negative time examples."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read all remaining per-instance CSP/VRPTW result rows and final plots, including slower/worse cases, repeated instance IDs and objective-quality differences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "category": "contribution",
+      "statement": "RL column selection models future CG effects with curricula and bipartite graph states.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Contributions and Section4"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "category": "method",
+      "statement": "DQN selects one pricing-pool column, with classical master/pricing and task-specific curricula.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9
+          ],
+          "locator": "Section4 and separate native-task training"
+        }
+      ]
+    },
+    {
+      "id": "e1",
+      "category": "experiment",
+      "statement": "Reported LP iteration/runtime gains coexist with early-stop final-objective differences and negative instances.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Section5; detailed corroborating supplementH–K"
+        }
+      ]
+    },
+    {
+      "id": "l1",
+      "category": "limitation",
+      "statement": "Integer branch-and-price is future work and exact CG assumptions do not automatically apply to early stopping.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit LP-only scope and conclusion"
+        }
+      ]
+    },
+    {
+      "id": "cl1",
+      "category": "classification",
+      "statement": "Specialist constructive solver control: independently trained CSP/VRPTW policies with common hyperparameters, no full incumbent neural edits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            9,
+            10
+          ],
+          "locator": "Separate curricula/training and future integer extension"
+        }
+      ]
+    },
+    {
+      "id": "e2",
+      "category": "experiment",
+      "statement": "CSP early stopping gives differing objectives and saved detailed negatives rather than universal exact-optimum speedups.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "AppendicesH–K/Tables6–7"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/3ecfe5c632afb7d96a2337b18ff99b1f-Abstract-Conference.html",
+      "locator": "HTML citation publication2022-12-06, volume35/pages9633–9644/DOI0700; formalp1 full author spellings"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/3ecfe5c632afb7d96a2337b18ff99b1f-Abstract-Conference.html",
+      "locator": "Manually followed publisher Supplemental link, read all12pages; full1197-entry author-group repo tree, README and notebook narrative/results inspected, no additional scientific PDF/TeX; scientific results in notebook saved outputs explicitly checked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rlcg",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. [2019]",
+      "description": "Bipartite LP representation and learning baseline",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rlcg",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. [2017]",
+      "description": "RL graph construction predecessor",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rlcg",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. [2016]",
+      "description": "Explicit arXiv precursor citation",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rlcg",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. [2020]",
+      "description": "Related RL cutting-plane control",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full main/supplement audit clarifies LP-only scope, early stopping/quality, separate task models and formal/current-code inconsistencies; restored full formal author names and code provenance."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "955574015d16c6f3290cd0c3c1584125c71078652e7a010c0d8e7992ceb74804"
+}

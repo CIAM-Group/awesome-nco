@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "paper_id": "mapf-gpt-imitation-learning-for-multi-agent-pathfinding-at-scale",
+  "note_path": "generalist/mapf-gpt-imitation-learning-for-multi-agent-pathfinding-at-scale.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "8c347bd8ffac701d9703e4b9312ac6011481e41087212bc7273de618141343fb",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2409.00134v5",
+      "retrieval_url": "https://arxiv.org/pdf/2409.00134v5",
+      "version": "arXiv2409.00134v5 Apr8,2025,12pages including fullAppendicesA-F and correctedSCRIMP evaluationfootnote; formalAAAI2025 identitymatched",
+      "local_path": "research/full-text-review/mapf-gpt-imitation-learning-for-multi-agent-pathfinding-at-scale/reading-candidate.pdf",
+      "sha256": "a7146300701c7993f93666bbd7403ee248b96b47dd855bf9625cead8b890c082",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Allactualpp1-4complete read: identity/fourauthors/taskdefinition/classicstay-at-targetMAPF/expertdatageneration/ILandtokenization. Sharedagentpolicy isnotalonegeneralist evidence; needactualclassicvs lifelongzero-shot distinction fromp7. 3.75Msmall17-21squareinstances/LaCAM10sec/onebillionfilteredpairs, no exact-optimal expertclaim. FullFig1/Fig2visualread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Allactualpp5-8read:67tokenvocabulary/256context/121costtogotokens/up13agents/5historytokens/greedyaction, noncausaltransformer notlanguageautoregression. Table1allablations/Table2lifelongthroughput/runtime/allmainresults andrefsstart. Actualv5p6footnotecorrectsSCRIMPtechnicalerrorafterconference; noformalbyteidentityclaim. ClassicalMAPF6Mzero-shotreusedunchangedforlifelong(newgoals/throughputobjective); tuned90Mdatasetdifferentcheckpoint. Preserve highdensitySCRIMP andallTable2negativecomparators."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Allactualpp9-12completebibliography and fullAppendicesA-F read; everyresulttable/plot/map/all3contactimagesactuallyviewed. 85M243h4H100,6M50h2A100,2M12hH100; dataset258GB/100hexpertgeneration/~3percentfailedexcluded. Runtime single3080Ti/allagentsnextaction5seeds. Nooptimal/completion guarantee; noC2Gablationsevere/better noAH/noGoalnegatives.117entryofficialtree/noextrascientificPDF/TeX/notebook,fullREADMEread. Citationcandidatecheckerreturnsnone and fullbib checked, no currentcatalogue target identityestablished. No training/modeldeserialization."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Large-scale imitation learning for decentralizedMAPF coordination.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Billionpairdataset/tokenization/noncausaltransformer/classicandlifelongevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Method/results"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Costtogomap/greedydirection/agenthistory tokens to five sampledactions via behaviorcloning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Tokenization/Equations1-2"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Same6Mcheckpointzero-shotclassicMAPF→lifelongMAPF withnewgoal/throughput objective; limitedgeneralistconstructive, fine-tunedcheckpointseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7
+          ],
+          "locator": "Classictask/Table2zero-shot"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Correctedv5SCRIMPcomparisons, highdensityWarehouseandlifelongnegatives, ablationsshowcompleteinputnotuniformlybest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10,
+            11,
+            12
+          ],
+          "locator": "Footnote2/Tables1-2/Figures3-5/Table6"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Nooptimality/completionguarantee; expertquality/cost-to-gofeatures/computeanddatadependence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            10,
+            11
+          ],
+          "locator": "Ablations/AppendicesB-E"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Fullv5andA-Fread, actualhistoryandDOImetadata, pinnedcodeinventorywithoutbenchmarkexecution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            6,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Sourcefootnote/fullreferences/appendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and version history",
+      "source_url": "https://doi.org/10.1609/aaai.v39i22.34477",
+      "locator": "Exactfourauthors/AAAI2025 pp23126-23134 pubApr11; actualarxivhistoryv1Aug29,2024/v5Apr8,2025. v5p6footnote explicitlycorrectsSCRIMPerrorafterconference, notformalbyteidentity."
+    },
+    {
+      "field": "supplements scientific coverage and source inventory",
+      "source_url": "https://arxiv.org/pdf/2409.00134v5",
+      "locator": "All12pactualread/fullbibliography/AppendicesA-F/all3contactimages/alltablesfigures inspected.117entry pinnedtree/noadditionalPDF/TeX/notebook, fullREADMEread; no arbitrarymodeldeserialization/training/benchmarks."
+    },
+    {
+      "field": "classification and original figure",
+      "source_url": "https://arxiv.org/pdf/2409.00134v5#page=7",
+      "locator": "ClassicfixedgoalMAPF→lifelongnewgoals/throughput Table2original6Mzero-shot distinctfinetuned90Mmodel, limitedactualsamecheckpointtransfer supports generalistconstructive. OriginalFig1p4crop52,50,561,347at3x fullcaptionviewed. Fullbibscan no exactcurrentcataloguetarget."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read full corrected v5 and all science appendices; disclosed formal-version correction.",
+    "Classified limited generalist reuse across classical/lifelongMAPF using actualzero-shotcheckpoint evidence.",
+    "Retained highdensitySCRIMP/lifelongthroughput/ablation negativecases and preprocessing/trainingcost boundaries.",
+    "Added original experttrainingFigure1; no invented internalbibliographicmatches."
+  ],
+  "reviewed_note_sha256": "3b9c897bd67acf96a95dcb5bb61c0326211eb00edd5fca9ad8291d818311b64c"
+}

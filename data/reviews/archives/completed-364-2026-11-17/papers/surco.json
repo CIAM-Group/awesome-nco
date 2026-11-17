@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "paper_id": "surco",
+  "note_path": "specialist/surco.md",
+  "baseline_note_sha256": "a3a7585451ecbfcfa95ce8c662ea245dc57abdbd78d71780d0b8f73455cf4b32",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/ferber23a/ferber23a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/ferber23a/ferber23a.pdf",
+      "local_path": "research/import-272/nco-f451a625a1.pdf",
+      "sha256": "39d1091cc7bfa1a9bcc80ad140d58be1406125552a4732a25913046af8c4c2f5",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readall7authors4affils/frontmatter/fullintro/Assumption2.1differentiablecostandpartialsaccessible/SOdescription/zeroEq2-4/priorlambdaEq5. Solvergradientwrappersapproxnotliteraltrueargmingradient;learningcostfoutofscope. Explicitnonlinearsolutioninteriorlimitation/feasibilityconditionalcorrectinneroracle,notglobaloptimality."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readfullpriorlambda->infinity/hybrid/methodcomparison/δcoverLemma4.2/4.3volumeNNbound/Thm4.4 disconnectedoutputs infiniteL. Mainp5illustrativetriangleincludesoriginandpositive squaredobjective so literalglobalminimum0notstatedswitch;pendingappendix. DLRMsharding50train50test10-604devices5GB,LPbackpropSCIPintegertest/costestimatornotreal latency;fullFig2/3captions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readfullphotonicscrossbrushbinarymanufacturability4tasks25train25test200steps1270/1290nm40nm/Fig4-5;stochasticroute5x5normalindependentlengthsumassumption25graphs3deadlinesBellmanFordblackbox/SCIP1snone30minalltimeout/nooptimalref;improvements4.5/6.5/8.5reportedpercentnotrecomputedpoints. Fullrelatedwork(convergencefuturework)andconclusion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "ReadcompletebibliographyAchterberg-Rolinekthroughp12;potentialexactSATNet/MIPaaL/blackbox/AM/S2V/RLVRP/delegate/gcntrees/neuraldivingbodyreferences. SeparateImplicitMLE/differentiableconvexnotexistingcatalogunlessmatchedlater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "ReadallremainingrefsWang-ZhouandfullAppendixA3proofsNNcover/volumelower/disconnectedimage. Thm4.4conclusionvalidcontinuousimageargumentthoughprintedproofusespathconnected/Lipschitzcurveunstated. Mainp5triangleoriginillustrationmismatchparentnotified;do notclaimformaldisconnectedimage theoremfalse."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 19,
+      "notes": "ReadfullBsetups/4A100cluster/latencyestimator200iter/trainingperdomain6-63min/8hphotonicseparatecoefficientCNNandbackprop2solveapprox;allAlgorithms1-4DfailedbaselinesTables4-5counterexamplegreedyfeasiblepackingstall. All19pagesread;metricsfeasibilityvsMLaccuracyseparate,allrefschecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Nonlinearcostsovercombinatorialconstraintsneedlinear-oraclebridge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Fullintro/Assumption2.1"
+        }
+      ]
+    },
+    {
+      "id": "variants",
+      "category": "contribution",
+      "statement": "Zero/prior/hybridseparateofflinevsperinstancecostandgradientrequirements,notjointdomaincheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            16,
+            17
+          ],
+          "locator": "Equations2-7/Algorithms1-4/fullarchitectures"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialistmethodframeworkwithdomain-specificsolvers/models,notuniversalcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            16
+          ],
+          "locator": "Allthreedomainprotocols"
+        }
+      ]
+    },
+    {
+      "id": "oracle",
+      "category": "method",
+      "statement": "Differentiablecostandpartialsrequired;solvergradientapproxwrappers/relaxations;LPshardingtrainingvsSCIPintegertest;blackboxphotonic/path.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            7,
+            8,
+            16,
+            17
+          ],
+          "locator": "Actualoracle/trainingtestdifference"
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "FiniteLdelta-cover1NNintuitionanddisconnectedimageL∞notnetworkconvergenceguarantee;printed2Doriginexampledoesnotdemonstrateswitch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            15
+          ],
+          "locator": "Completeproofs/curatorlocalexample"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "DLRM10-60tables4devices50/50estimatedlatency;4photonic25/25familieszero/prior/hybridbudgetdifferences;5x5route25drawsSCIPtimeoutnotopt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            16,
+            18,
+            19
+          ],
+          "locator": "Allmainfigs/Appendixsettings/failedbaselineTables4-5"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Vertexrestriction/nointeriornonlinearoptguarantee/gradientcostproxy/inferenceadaptation/runtimeboundaries andcurrentcodeversionlimits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            18,
+            19
+          ],
+          "locator": "Authorlimits/fullprotocol/currentcodemetadata"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Full19pA-D/refs/visual/API/project/repo/codechecked,noexperimentrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Actual logs/manualmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.mlr.press/v202/ferber23a.html",
+      "locator": "PMLR202:10034-10052exact7authors4affilsUSC/Rice/Meta/Anthropic;officialAaronMFerberretainedvsPDFAaronFerber. HTMLcitation_publication_date2023/07/03confirmed."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/ferber23a.html",
+      "locator": "ManualpublisherRelatedMaterialPDF/OpenReviewonly,noseparateSupplement. Full19pA-Dintegratedscienceallread. OpenReviewforumsSwN4NrzZrnotesv1/v2both403cached. Projecthttps://sites.google.com/usc.edu/surco/GETredirectGoogleDrivesigninHTMLcached,noaccessibleattachedscience. Officialrepo21filesnoPDFZIPvideo;noexplicitmissingdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v202/ferber23a/ferber23a.pdf",
+      "locator": "Formal19pSHA39d1091cc7bfa1a9bcc80ad140d58be1406125552a4732a25913046af8c4c2f5all1-19read. Visual3/5/6/15proof/method/latency and7/8/16/18applicationplots fullreferences10-14."
+    },
+    {
+      "field": "theory_scope",
+      "source_url": "https://proceedings.mlr.press/v202/ferber23a.html",
+      "locator": "4.2/4.3/A1-A2Lipschitz1NNcoverconditions/volumecoverlowernotallneurallearningbound;Thm4.4finiteLcontinuousimagecannotincreasecomponentsvalid. Mainp5originintriangle f=(x1cosy+x2siny)^2 >=0 origin0all y,positivec alsoorigin;notstatedtwovertexswitch,localillustrativemismatchonly. Noformalglobalconvergencetheoremasserted."
+    },
+    {
+      "field": "code_url,version_limits",
+      "source_url": "https://github.com/facebookresearch/SurCo",
+      "locator": "OfficialMeta repoidentifiedbyexactauthor/title/projectcrosslink;commit5825a906915d87e99ea2272cb015803d153a5fc6 recursive21files. FullREADMEand409line nonlinear_shortest_path/solve_surco.pyread. Defaultsgrid10/meanU(.1,.2) vsformal5/U(.1,1);photoniccodeabsentREADMEsectioncopiespathcommands;shardingREADMEmainlyDreamShardpipeline,notclaimcompletepaperreproduction."
+    },
+    {
+      "field": "current_scip_baseline",
+      "source_url": "https://pyscipopt.readthedocs.io/en/v6.2.1/api/model.html",
+      "locator": "Currentcodecreatesobjective_var=m.addVar(vtype=C,name=objective)no lb;officialModel.addVardefaultlb=0confirmedprimarydocs. Printed/codez=(T-sumµ)/sqrt(sumvariance),tightT=.9LET=>allpositiveµs-tpathnumeratorsnegative,so nonnegativeaux excludesoriginalfeasiblepaths. Currentno-solutionbranch usesresultbeforecurrentassignment. Code-pathobservationnotclaimpublishedFigure7usedthisversion;solvernotexecuted."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://proceedings.mlr.press/v202/ferber23a.html",
+      "locator": "Fullbodyallrefspp10-14read;8exactexistingIDsmanualmatches,automaticonlyDreamShard. NoMIPaaL/OptNet/ImplicitMLE/NGMexistingcatalogtitle,noextraedges;sharingdifferentiableoraclearchitecturealoneinsufficient."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "surco",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic et al. (2019)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicitbodyp2;fullrefp12: Pogancic et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicitbodyp9;fullrefp11: Kool et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicitbodyp9;fullrefp11: Khalil et al. (2017)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicitbodyp1;fullrefp11: Li et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicitbodyp2;fullrefp11: Li et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "Explicitbodyp9;fullrefp12: Nazari et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            13
+          ],
+          "locator": "Explicitbodyp8;fullrefp13: Wang et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "surco",
+      "cited": "dreamshard",
+      "reference_label": "Zha et al. (2022b)",
+      "description": "ExplicitrelatedNCOmethod/oracleorlatency-model/baselinereference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            14
+          ],
+          "locator": "Explicitbodyp5;fullrefp14: Zha et al. (2022b)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "AddedverifiedofficialcodeURLwhilequalifyingincompletepublicpipeline/currentdefaults/baselinebugs.",
+    "Distinguishedthreevariantbudgets/separatemodels/LPgradientvsintegerinference/costestimatorvsruntime.",
+    "LimitedtheorytoLipschitzcoverintuition,recordedprintedoriginexamplemismatchwithoutrefutinggeneralstatement.",
+    "Full19pagesA-D/8visualpages/API/refsread8exactcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c8fda17756ad5ce0274b5ec0c1e9757e9933b3245353560bb3c3ead169570075"
+}

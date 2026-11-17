@@ -1,0 +1,421 @@
+{
+  "version": 1,
+  "paper_id": "contrastive-sat",
+  "note_path": "studies/contrastive-sat.md",
+  "baseline_note_sha256": "3c7760047ab364eeb734d104098bc21e419bcda24324be45acc82de98b1b9bc8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v162/duan22b/duan22b.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v162/duan22b/duan22b.pdf",
+      "local_path": "research/import-272/nco-6becf137ed.pdf",
+      "sha256": "3c187b28b5ca978ac3dd596121f0d6526e596ebf5c6c18fefe4441bba9e2276c",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 16,
+      "notes": "Read all16publisherpages incl completebibliography andAppendicesA-I, all augmentation semantics/examples, NeuroSAT recurrence, data/hyperparameters, entiretables/figurecaptions andCryptoMiniSatdecisionstepvalidation. Tracked100traininglabels vs extra validationlabels and 10perclass/20total targettransferlabels."
+    }
+  ],
+  "claims": [
+    {
+      "id": "augmentation",
+      "category": "contribution",
+      "statement": "Empirical study finds bounded satisfiability-preserving augmentations outperform tested graphlabelagnostictransformations; type/order/strength remain important.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4-6, LPAdefinition, Figure3 and Tables1-2"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "Two augmentedLIG+views, NeuroSAT26round/128features meanpool, SimCLRprojection; frozen logisticprobe or supervisedfinetuning follows unlabeledpretraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            12
+          ],
+          "locator": "Framework/encoderprotocol and AppendixB completerecurrence"
+        }
+      ]
+    },
+    {
+      "id": "bounded-transform",
+      "category": "method",
+      "statement": "CRadds impliedresolvents, VEeliminatesfewfixedvariables; preservesSATlabel, not fullunrestrictedsolving or identicalassignmentspace.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            12
+          ],
+          "locator": "Section5.2 and AppendixA examples; bounded1-4variable/10-20percentresolvent discussion"
+        }
+      ]
+    },
+    {
+      "id": "initial-results",
+      "category": "experiment",
+      "statement": "BestLPApairaccuracies95.1/93.3/86.0/96.9 onSR10/PR10/DP20/PS20 greatlyexceedtestedLAAresults; manyindividualLPAsareweak.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Figure3, Tables1-2 and composition/orderablation"
+        }
+      ]
+    },
+    {
+      "id": "label-budget",
+      "category": "experiment",
+      "statement": "Reports100traininglabelsmatching10000traininglabelsupervisedbaselines with3trialmean/standarderror, while extra500probevalidation and200earlystoppinglabelsareused.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            16
+          ],
+          "locator": "Section6 linearprotocol, Section7 comparison andFigures5/10"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "10-shottransfermeans10SAT+10UNSATtargetlabels20total; source/targetdependentcrossgeneratorandsizetransfersfavorSSLgenerally.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15
+          ],
+          "locator": "Section7.3, Figure6 andAppendixG/Figure9"
+        }
+      ]
+    },
+    {
+      "id": "supp-controls",
+      "category": "experiment",
+      "statement": "AdditionalGCN/VICRegchecks andCryptoMiniSatdecisionstepstatistics support limitedempiricalclaims, not proofallformulasremain equallyhard.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "locator": "AppendicesE/F/I Tables4-6"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SAT/UNSATrepresentation/predictionanalysis, notcompleteSATsolver or sharedMILP/SATcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            8
+          ],
+          "locator": "Statedscientificstudy, predictionprotocolandfutureMILPsuggestion"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Generated10-40variableSATdatasetsandfiniteboundedaugmentations do notestablishgeneralindustrialsolving, formalreasoning, certificate orsolverspeedup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Completegeneratorparameters, transfer/experimental scope and appendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.mlr.press/v162/duan22b.html",
+      "locator": "Manually opened officialPMLR162record: exact5authors andICML2022pages5627-5642, bibliography month17-23Jul. PublisherPDFp1 affiliationsToronto/Vector/ETHZurich checked. ReplacedunsupportedJune28publicationdaywith2022-07 precision; retainedcanonicalpublisherauthorforms."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v162/duan22b.html",
+      "locator": "CompleteofficialPMLRRelatedMaterialmanuallychecked: DownloadPDFonly, no separatescientificsupplement. All16publisherpagesread includingcompletebibliographyandAppendicesA-I; extraarchitecture/loss/readout/data/decisionstepresultsintegrated. Twocontactsheetsvisuallycheckedarchitecture, augmentationexamples, tablesandfigures."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/h4duan/contrastive-sat",
+      "locator": "ExactcodeURLexplicit inpublisherabstract/PDFp1 andpublicrepositorymanuallyopened; contains src/scripts/data_sgen andbriefREADME. No experimentrerun claimed."
+    },
+    {
+      "field": "citation identity",
+      "source_url": "https://arxiv.org/abs/1909.11830",
+      "locator": "Bodyp2 andbibliographyp10citeKurin2019ImprovingSATSolverHeuristicswithGraphNetworksandReinforcementLearning, abs1909.11830. Manuallyopenedprimaryarxividentity: samefourauthors, currentv2camera-readyNeurIPS2020titlematchesexistinggraph-q-sat. Samearxivworkidentityconfirmeddespitetitlechange; nootherdistinctSATpaperconflated."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v162/duan22b.html",
+      "locator": "Identity-matched publisher citation_publication_date=2022-06-28; cached evidence research/full-text-review/contrastive-sat/supplement-landing.html. Conference edition year 2022 is retained; author-site conference dates/preprint dates are separate."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "contrastive-sat",
+      "cited": "attention-model",
+      "reference_label": "Kool, Van Hoof and Welling (2018), arXiv:1803.08475",
+      "description": "Cites neural routing reinforcement learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Kool, Van Hoof and Welling (2018), arXiv:1803.08475"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi, Laurent and Bresson (2019), arXiv:1906.01227",
+      "description": "Cites supervised graph-convolutional TSP optimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Joshi, Laurent and Bresson (2019), arXiv:1906.01227"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias and Loukas (2020)",
+      "description": "Contrasts problem-dependent unsupervised graph-objective learning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Karalias and Loukas (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019), arXiv:1906.01629",
+      "description": "Cites learnedMILPbranching fromexpertimitation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp9: Gasse et al. (2019), arXiv:1906.01629"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017), arXiv:1704.01665 asprinted",
+      "description": "Cites graphreinforcementlearning; referenceusesarxivfirstauthorformDai for sameexistingwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp9: Dai et al. (2017), arXiv:1704.01665 asprinted"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018 asprinted)",
+      "description": "UsesNeuroSATarchitecture andSRgenerator; primarybackbone notmeresimilarity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Selsam et al. (2018 asprinted)"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu and Poczos (2019)",
+      "description": "CitesREINFORCEtrainingofSATlocalsearchheuristics.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Yolcu and Poczos (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "rl-qbf",
+      "reference_label": "Lederman et al. (2020)",
+      "description": "CitesreinforcementlearningbranchingforquantifiedBooleanformulas.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Lederman et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh, Matusevych and Weimer (2019a)",
+      "description": "CitesdifferentiableunsupervisedCircuitSAT, separatelyfromdistinctPDP2019bpaper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp9: Amizadeh, Matusevych and Weimer (2019a)"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "graph-q-sat",
+      "reference_label": "Kurin et al. (2019), Improving SAT Solver Heuristics with Graph Networks and Reinforcement Learning, abs/1909.11830",
+      "description": "CitesDQNforSAT; exactarxividentityconfirmedwithrenamedNeurIPS2020Graph-Q-SATpaper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp2; matchingfullbibliographyentryPDFp10: Kurin et al. (2019), Improving SAT Solver Heuristics with Graph Networks and Reinforcement Learning, abs/1909.11830"
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "learning-branching-heuristics-for-propositional-model-counting",
+      "reference_label": "Vaezipoor et al., 2021",
+      "description": "RL-related-work paragraph explicitly names evolutionary training for #SAT; full seven-author AAAI2021 identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Actual body citation Vaezipoor et al., 2021 on PDF pp[2]; full bibliography entry on pp[10]. Title and author identity matched to the target reading record, independently of topic similarity. RL-related-work paragraph explicitly names evolutionary training for #SAT; full seven-author AAAI2021 identity."
+        }
+      ]
+    },
+    {
+      "citing": "contrastive-sat",
+      "cited": "learning-to-solve-np-complete-problems-a-graph-neural-network-for-decision-tsp",
+      "reference_label": "Prates et al., 2019",
+      "description": "Supervised CO related work explicitly names Decision-TSP authors; exact five-author AAAI2019 bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Actual body citation Prates et al., 2019 on PDF pp[2]; full bibliography entry on pp[10]. Title and author identity matched to the target reading record, independently of topic similarity. Supervised CO related work explicitly names Decision-TSP authors; exact five-author AAAI2019 bibliography."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedfouraugmentationsemanticsandboundedcomplexity, exactNeuroSAT/contrastive/downstreamprotocols.",
+    "Addedactualdatasetmetrics, composition/orderlimits andgenerator-specificcrossdomainevidence; labelpreservationnotuniversallysufficient.",
+    "Qualified100timesfewertraininglabelswithadditionalvalidationlabelsand10-shotas20targetlabels.",
+    "KeptSATpredictionanalysisclassification, no solver/scope migration, noaddedMILPempiricalevidence.",
+    "Correctedpublicationdateprecisionandrecorded10exactinternalcitationsincludingprimaryverifiedGraph-Q-SATtitlechange.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1d5228584ddd4bbcf9062af9f6d0424c52f3dea6e914e4739f8bbcc0ac4c3fe3"
+}

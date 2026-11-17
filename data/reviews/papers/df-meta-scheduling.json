@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "paper_id": "df-meta-scheduling",
+  "note_path": "specialist/df-meta-scheduling.md",
+  "baseline_note_sha256": "dc1d35c62a4b61714bf5dcc3d16c4ab3c97f2b257cde295ca2baeaaba827ed1e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b21fb19109734d351faf54b19ac8b3b7-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2026 publisher16-page PDF with integratedscientificAppendicesA-F/references;publication2026-04-20",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/b21fb19109734d351faf54b19ac8b3b7-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8b27e20c97.pdf",
+      "sha256": "a8dec799191c84e0504249785914fe3de6b0a89646e936b681444bad5ac2e10b",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read fullintro/related/prelim/Alg1NES/4start. ActualFJSPDANIEL+JSP SLIMseparatesolverarchitectureweights;Nativefamily2specialist unlesssharedcheckpointnoneexpected. Derivative-freeinner+outerES estimates smoothedfitnessgradient notglobalguarantee; formalassumptionsvsblackbox adaptationneedreadrest. IncludesnonRLJSPfeature portability notnonneural."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completeEq1-6/Alg2-3/metaES/GPUmechanism. PracticalusesFOMAMLfirstorderEq4, notexactAlg3nestedmetagrad/higherorder. MCaverageestmeanobjective,bestLtargetsbestofLdistributionnotunbiasedmeanestimator. ESsmoothedobjectivegradientnotclassicalderivativeNN;GPUinferenceonlynobackprop neuralforward. Noformalglobaloptguarantee despitephrasingstrongglobalsearch. Needexactfitnessnormalizations/populations/budget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullGPUFig2/exp5.1-5.3/allTables1-5/Fig3. 200epochsB20K3mu100sigma.2alpha beta.05L20meanL100best;test10adapstepsnotmatchedtrajectorycompute. DirectDANIELseconds vsDFminutes. Main'outperformsall'onlylearningnotCP. Table1SD240x10greedy ours2.55m slower EAS2.53m;Table5oursvsFOMAMLqualitybetterbuttimeworsemostlargeshapes/allS notuniversalfaster. GPU0.5vsCPU9.8 etcpopulationstepnotwholetraining. 30/40x10closest20x10weights,publicSD110x5/15x10 separate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read full10efficiency/conclusion/ack/allbibliography10-12. RuntimeTable4oneforwardevaluating100populationon16CPUthreads vsGPU,nottraining/wholeinference. AuthorackDFslowerthanGradientgenerally. FullrefsactualtargetslatentVAE/fastT2T/metasage/unsupmeta/SLIM etcneedmanualmatcher;spellingyearpreprintvariantschecknoinferrededges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Read fullAppendA-F/allTables6-13/2GanttCharts. SD1 op.8m1.2m/mean1-20,SD2mops1-99. Large50x20/100x20finiteCPrefs;AS/EASOOMonlyhardwareconfig,noinherentimpossibility. TrainingDF2.1/4.5/7.2/11.2h vsFOMAML1.5/2.9/3.7/5.5 andmemory1.3/1.6/2.0/2.2vs.9/1/1/1.2. JSPdifferentSPNmodeltrained3000fixedinstances(sixshapes500)10DFepochs20SPN,notSLIMoriginal30kclaim;128samples. Tables11-13meanstdnoindependenttrainingseedcount/significancetestidentified. Gantt536→459singlerepresentative notallinstancesidleeliminated. All16pagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Per-instanceadaptationneedsinitializationtrainedforadaptationinsteadaveragepolicyortest-onlyAS/EAS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4
+          ],
+          "locator": "Introduction/metalearningobjective"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Firstorderderivativefreeinstance-meta/MCaverage-bestfitness/populationGPU withseparateDANIEL-FJSP/SPN-JSPstudies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            14,
+            15
+          ],
+          "locator": "Algorithms1-3/Eq1-6/AppendD"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive neuralpolicyparameteradaptation, separateFJSP/JSPmodels andgreedy/samplingmetacheckpoints,nosharednativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            14
+          ],
+          "locator": "Tasks/architectures/trainingidentity"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Gaussian-smoothedobjectivegradientMC,practicalFOMAMLEq4ratherthanfullnestedAlg3,MCbestLdifferenttargetfrommean,nooptimalityproof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            13
+          ],
+          "locator": "Allcentralmath/Alg1-3/exactsettings"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "All13tables5figures/twotasks,actualreferencegaps/neuralqualityadvantageswithcomputeexceptions,DFtraining1.5-2xcost andonepopulationforwardGPUcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "CompleteexperimentalcontentA-F"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Equal10updatesnotmatchrolloutcompute;currentstandardizednegativefitness/antitheticAdam/clipping/finalinnergradient/datasetrefresh20/ftsigma.04/best11iterates vsprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            13,
+            14,
+            15
+          ],
+          "locator": "Fullreleasecorecode, practicalapproximationnotfullmetaidentity"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All16pA-F/fullrefs11visualallfigures/tables;7162filerepo16FJSPmeta+16baselines/JSPcodeabsent;publisher/APIsnoneexternalscience13realcitations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Source/reading/visual/codeevidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b21fb19109734d351faf54b19ac8b3b7-Abstract-Conference.html",
+      "locator": "PublisherHTMLcitationdate2026-04-20/7authors/ICLR2026/pages109624-109639;PDF1ShenzhenResearchInstituteShandongUniversity/Xiaomi/Eindhoven/ZhongguancunAcademy."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b21fb19109734d351faf54b19ac8b3b7-Abstract-Conference.html",
+      "locator": "ManualpublisherHTMLPaperonly;integratedall16p/A-Fread. OpenReviewXcCqRcHzJ3APIv1/v2403. RepothreePDFpathsduplicatesexternalBehnkeGeiger2012benchmarkreport,notDFMETAappendix,noZIP. Noexplicitmissingscientificdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b21fb19109734d351faf54b19ac8b3b7-Abstract-Conference.html",
+      "locator": "Completeformal16p SHAa8dec799191c84e0504249785914fe3de6b0a89646e936b681444bad5ac2e10b.11visualpages3/4/5/6/7/8/9/13/14/15/16all5figures13tablescentralES/metaequationsandAlgorithms1-3."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/calmQ/DF-META",
+      "locator": "Commit251f80567d3773af2be8cf38d56e961b1da6e4477162files32weights=16FJSPmeta8AS8EAS. FullREADME/params/Optimizer/train309/finetune245/META39/popmodel179/mastermodel169read. JSP/SPNcode/weightsabsent. Currenttrainantitheticstandardizednegativefitness/Adamclipping/-10to10;finalinnerdirectionasouter,refresh20andzero-shotvalidation. fine_tunehardcodessigma.04/eval0-10best11snapshots/11populationsplusunusedlastupdate. NoNNrerun."
+    },
+    {
+      "field": "theory,scope,statistics,citations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/b21fb19109734d351faf54b19ac8b3b7-Abstract-Conference.html",
+      "locator": "Smoothedfitnessidentityrequiresintegrableobjective/noformalglobalguarantee; practicalfirstorderEq4notfullAlg3. MCbestLexpectedminimumtargetdifferentmeanfitness. NativeFJSP/JSPseparatemodels;stepbudgetnotrollouts;allmeanstdnoindependenttrainseedcount/significancetestidentified.13body+bibIDs;pointer-networksfalsecandidategenericarchitecturewithoutfullVinyalsreferenceexcluded."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3Qiu et al. (2022);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2021b)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2Hottung et al. (2021b);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "fast-t2t",
+      "reference_label": "Li et al. (2024b)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3Li et al. (2024b);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "gumbeldore",
+      "reference_label": "Pirnay & Grimm (2024a)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2Pirnay & Grimm (2024a);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "l2s-jssp",
+      "reference_label": "Zhang et al. (2024a)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Zhang et al. (2024a);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung et al. (2021a)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "BodyPDF3Hottung et al. (2021a);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1Zhang et al. (2020);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "meta-egn",
+      "reference_label": "Wang & Li (2023)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Wang & Li (2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "meta-sage",
+      "reference_label": "Son et al. (2023)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3Son et al. (2023);fullbibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2Bello et al. (2016);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "BodyPDF4Zhou et al. (2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini et al. (2024)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "BodyPDF2Corsini et al. (2024);fullbibliographyPDF10."
+        }
+      ]
+    },
+    {
+      "citing": "df-meta-scheduling",
+      "cited": "t2t",
+      "reference_label": "Li et al. (2023)",
+      "description": "Explicit body reference and full bibliography title/authors; preprint/year/title variants manually checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3Li et al. (2023);fullbibliographyPDF11."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ExpandedactualfirstorderES/MCobjective/GPUmethodandspecialistseparatenativearchitectures.",
+    "Recordedall16pagesA-F/13tables5figures/13realcitationswithnegativecompute/classicalcomparisons, notguaranteedglobaladaptation.",
+    "Readfullreleasecoreanddocumentedpracticalfitness/optimizer/clipping/refresh/validation/testsigma/bestiterate/JSPartifactdifferences."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a43bd8ed647e06b67c4f4e69d2c58e34de2f4fe15341b5eaa915940d5a475037"
+}

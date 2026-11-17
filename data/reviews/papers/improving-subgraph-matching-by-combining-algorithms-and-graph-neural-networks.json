@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "paper_id": "improving-subgraph-matching-by-combining-algorithms-and-graph-neural-networks",
+  "note_path": "specialist/improving-subgraph-matching-by-combining-algorithms-and-graph-neural-networks.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "a44a12af1599c0022a7a48c833afb75e1366aff2267c5ea6abd7c28e2657624e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/abs/2507.20226v2",
+      "retrieval_url": "https://arxiv.org/abs/2507.20226v2",
+      "version": "arXiv2507.20226v2,17December2025,12pageswithall92referencesandAppendicesA1–A5;fulltitle/eightauthors/DOImatchKDD2025record;notclaimedbyteidenticaltoformalpublication.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-0d5f28e387/arxiv-v2.pdf",
+      "sha256": "57cc7407215e3479682c63f65eb24980731bbff1ab7687d5260cf9876e5c1c46",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readcompletev2pp1–3 all8authors/affiliations/DOI/KDDcitation/Zenodoavailability,fullintro/relatedworkandformaldirectedvertex/edgelabeledhomomorphismdecisionSHP. Mappingnoninjective andpreservesedgesonly;isomorphismdefinitioninpaperisinduced. AlgorithmicDualSimnecessarycandidatefilternotexactsufficient; practicalT2 notconvergedfixpoint. HFrameaimapproxdecision/pivotcandidatefilter, nothardone-to-onealignment; theoreticalgeneralizationbound tochecknext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readcompletepp4–6 DualSimpseudocode/HGINpivotdecision/framework, directedrelation/root-awaremessagepassing/setdedup/cycleconditions, absL2normalization/orderthresholdM, fullEq8loss/complexityandexpressivityTheorems4.1–4.3/proofs. Needdistinguishidealizationvsactualtrainednetwork and theoreticalfullDualSimvspracticalT2. NonnegativeunitnormalizedembeddingscoordinatewiseorderatM0impliesequality; positive.01thresholdpracticalapproxnotgeneralhomomorphismcertificate. ReciprocalMSGdifferenceclaimedlossrequiresproofhypotheseschecklater."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Readcompletepp7–9 RademacherTheorem4.4boundedweightsstatement,20kpairs/1:3positive-negative/Neo4jlabelconfirmation/80-10-10split,CPUexactvsGPUHGIN30secbudgetandallTables1–8. Accuracyclassificationnotcertifiedmatch; hybridPJ F1.832/.835dropsfrom1 whilefaster. GeneralizationTable6synthetic→real.821/.892/.874/.872/.853/.824 contradictproseabove.860onall andintrodatasetassociation; useactualtablerows. Defaultthreshold.1 not.01. NooverallmainSOTAclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Readcompletepp10–12 all92bibliographicentriesandallA1–A5includingexpressivityproofs/finite-labelstarargument/generic5stepoutlineRademacherproofexplicitlydetailsomitted,55queryvertexcomplexexamplecost0.074svsPJ6.279s. ActualcatalogueedgesD2Match51andNeuSubgraphRetrieval58confirmed; allappendixsciencecovered,arxivv2source12pcomplete. ZenodoofficialartifactZIP MD5b0d919b38d439cac40356ad69a99f5efverifiedallmembersnoPDF/docsupp; currenttreeuntruncatedlikewisenoextra sciencePDF."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hframe-contribution",
+      "category": "contribution",
+      "statement": "DualSimandHGINcombineforapproximatepivotconditionednoninjectivehomomorphismdecision.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections2–3/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "hframe-method",
+      "category": "method",
+      "statement": "HGINroot/relation/direction/setawareembeddingsfeedorderdiscrepancythreshold;notexplicithardmatchingdecoder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Section3/Equations1–8"
+        }
+      ]
+    },
+    {
+      "id": "hframe-results",
+      "category": "experiment",
+      "statement": "Table7HFrame+PJlosesF1from1to.832/.835;Table6actualsynthetictransfer.821–.892differsfromabove.860prose.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables1–8andExp4/6"
+        }
+      ]
+    },
+    {
+      "id": "hframe-classification",
+      "category": "classification",
+      "statement": "Specialistconstructivedecision/filtercomponent,nocompleteincumbentneuraleditandnocrossnativecheckpointdemonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            9
+          ],
+          "locator": "SHPdefinition/pivotdecision/application"
+        }
+      ]
+    },
+    {
+      "id": "hframe-theory-limits",
+      "category": "limitation",
+      "statement": "PrintedTheorem4.4hasboundednormassumptionsbutA4onlyoutline;constantshiftdoesnotalterLipschitzandreciprocalgaprequiresseparationnotgivenbyuppernormbounds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            12
+          ],
+          "locator": "RenderedNormalization/Eq8/Thm4.4/AppendixA4;curatorconditions"
+        }
+      ]
+    },
+    {
+      "id": "hframe-repro",
+      "category": "reproducibility",
+      "statement": "PaperexplicitlylinksZenodo15572826softwarearchive;archiveinventoryandcodescope/configdifferencespreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "KDDAvailabilityLink;actualprimaryartifactrecordandcodeinventory"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1145/3711896.3737006",
+      "locator": "Cachedpublisherdepositexacttitle/eightauthors/affiliations and published-online2025-08-03;readv2p1bylinematches. FormalACMaccess403,arxivusedexplicitly."
+    },
+    {
+      "field": "date/arxiv version",
+      "source_url": "https://arxiv.org/abs/2507.20226",
+      "locator": "Cachedprimaryarxiv.htmlhistoryv1July27,2025/v2December17,2025;registeredv2actual12pages,notclaimedbyte-identicaltoformalproceedings."
+    },
+    {
+      "field": "supplements/archive inventory",
+      "source_url": "https://zenodo.org/api/records/15572826",
+      "locator": "Officialavailabilitylinkpaperp1;cachedmetadatafileZIP2186935bytes,MD5b0d919b38d439cac40356ad69a99f5efmatches;all22memberslistedcode/README/license/deps/examplebins,noPDF/sciencedoc. AllintegratedAppendicesA1–A5read;currentGitHubuntruncatedtreeSHA dc09f0f69fc610b7e4db7874d229a27cf8bd21b6hasnoextraPDF/ZIP."
+    },
+    {
+      "field": "code/configuration differences",
+      "source_url": "https://doi.org/10.5281/zenodo.15572826",
+      "locator": "Actualarchivedv1model.py388–421optionalabs/nonneg+margin_loss+reciprocalparameter-normgap;nofinalunitL2inforward/trainer. config103/117/1184layers/1.0/.5vsreadpaper5/1.5/.1;train174requiresrawgraph.dglnotbundledexamplebins. Distinctconfigurationevidence,notclaimformalruninvalid."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/abs/2507.20226v2",
+      "locator": "OriginalFig3andcompletecaptionp5cropRect50,81,562,2334x;public/paper-assets/improving-subgraph-matching-by-combining-algorithms-and-graph-neural-networks/framework.png176970bytesexistsandactualview_imagechecked. Keyrenderedpages5–9/12reviewed."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://arxiv.org/abs/2507.20226v2",
+      "locator": "Complete92bibliographypp10–11read;D2Match51andInterpretableNeuralSubgraphMatching58actualtitle/byline/venueidentity;all527cataloguematchedandmanuallychecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "improving-subgraph-matching-by-combining-algorithms-and-graph-neural-networks",
+      "cited": "d2match",
+      "reference_label": "[51]",
+      "description": "ExplicitLiu/Zhang/Sun/Yang/YangICML2023D2Matchtitleandprimaryidentity;learnedbaselineanddatasamplingsource.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            8,
+            10
+          ],
+          "locator": "Relatedwork/Section5baselines/Table1;bib51p10"
+        }
+      ]
+    },
+    {
+      "citing": "improving-subgraph-matching-by-combining-algorithms-and-graph-neural-networks",
+      "cited": "interpretable-neural-subgraph-matching-for-graph-retrieval",
+      "reference_label": "[58]",
+      "description": "ExplicitRoy/Velugoti/Chakrabarti/DeAAAI2022InterpretableNeuralSubgraphMatchingforGraphRetrievaltitleinMLrelatedwork.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Relatedworkp2;bib58p10"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacetaskplaceholderwithdirectednoninjectivehomomorphismdecision,notone-to-onealignment.",
+    "PreserveF1lossinexactPJhybrid;donotdescribeneuralfilterassafeexactpruning.",
+    "UseTable6datasets/valuesratherthanconflictingprose;qualifyCPU/GPUandaccuracy/runtimecomparison.",
+    "Distinguishprintedtheoryconditions/proofoutlinefromempiricalclaimsandarchivedconfiguration;nooptimizationguaranteeinferred."
+  ],
+  "reviewed_note_sha256": "5466f6f05b78ea92bac2c2b87c378c275db51a470471f532633b5732e6c30ebc"
+}

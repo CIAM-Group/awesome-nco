@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "paper_id": "graph-q-sat",
+  "note_path": "generalist/graph-q-sat.md",
+  "baseline_note_sha256": "c6bda71aa91a9628767923a486c0e5f2a898cb951d90b8f8ff3798d0407d5ca0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/6d70cb65d15211726dcce4c0e971e21c-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/6d70cb65d15211726dcce4c0e971e21c-Paper.pdf",
+      "local_path": "research/import-272/nco-9a29c8b096.pdf",
+      "sha256": "09e0f2cbdfe395e952cd8e0e8b5815f7ace6c02e002782e6a63967c0056b8797",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/6d70cb65d15211726dcce4c0e971e21c-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/6d70cb65d15211726dcce4c0e971e21c-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/graph-q-sat/supplement.pdf",
+      "sha256": "6ed6643ed369fbf5e34a3873790de64eae7a9474166b4552347e816fc947d9f5",
+      "pages": 6,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read motivation, formal MiniSat CDCL completeness and VSIDS warmup, DQN target equations and dynamic GNN state graph foundations; distinguish exact hostsolver from heuristic policy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read actual partiallyobserved residualgraph state, twoactionsperunassignedvariable, DQN minimalfeatures negative-stepreward, MRIR exactdefinition and five-run selection; shared SAT50model zero-shot coloring and fallbackVSIDS budget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Figure3fallback decision and Figure4one-instance training studies, Tables3–4 allnegativezero-shotcoloring rows and separatecolortraining, complete relatedwork and limitations/conclusion; modernindustrial speednotestablished."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 14,
+      "notes": "Read broaderimpact/disclosures and all48bibliographyentries, manuallymatchedcitedcataloguetargets includingalternateSAT/QBFtitles."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read walltimecactus plots and conditional scaling argument, inference benchmark, encodeprocessdecodeFigure7, exactSAT800/100/100splits and coloring train/modelselection exclusions, propagationplots and actionpseudocode."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read allTable5hyperparameters, completeDQNAlgorithm2 and supplementarybibliography; note maintext1000batchvalidationversuspseudocode1000envsteps discrepancy, test500modelcallsdefault and timing10calls."
+    }
+  ],
+  "claims": [
+    {
+      "id": "host",
+      "category": "contribution",
+      "statement": "GraphQSat changes branching inside complete MiniSat; observed state is explicitly partially observable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4
+          ],
+          "locator": "Sections1,3"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "One shared SAT50 policy transfers to coloring decision encodings, with regressions on largest sets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8
+          ],
+          "locator": "Section4.2.3Table3"
+        }
+      ]
+    },
+    {
+      "id": "metric",
+      "category": "experiment",
+      "statement": "MRIR counts solver decisions and five-run average medians, distinct from walltime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section3.3Tables1–2"
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "category": "experiment",
+      "statement": "Ten neural calls yield measured walltime gains only on the studied250variable sets; scaling argument is conditional.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "AppendixAFigure5"
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "category": "reproducibility",
+      "statement": "Full model/data/hyperparameter settings include500defaulttestcalls and fourmessage rounds.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "AppendixCTable5Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "category": "method",
+      "statement": "Encode-process-decode GNN outputs two Q-values per unassigned variable, trained with DQN step penalties and bounded neural calls before VSIDS fallback.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.1–3.3 and4.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/6d70cb65d15211726dcce4c0e971e21c-Abstract.html",
+      "locator": "Title/authors and NeurIPS2020volume33officiallisting; publisherpaperp1"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/6d70cb65d15211726dcce4c0e971e21c-Paper.pdf",
+      "locator": "Section4.2.3/Table3 sameSAT50modelzero-shotcoloringdecision versus separatelytrainedTable4"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/6d70cb65d15211726dcce4c0e971e21c-Abstract.html",
+      "locator": "ManuallycheckedSupplemental linkto6pagePDF, allAppendicesA–Cincludingfigures/hyperparameters/pseudocode/referencesread"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/NVIDIA/GraphQSat",
+      "locator": "Paperp5authorlink and repositoryREADMEtitle/train/evaluation/modifiedMiniSat"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-q-sat",
+      "cited": "neurosat",
+      "reference_label": "[39]",
+      "description": "SAT graph representation and direct solver contrast.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            7,
+            8,
+            13,
+            14
+          ],
+          "locator": "Explicit in-text citation [39] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[2]",
+      "description": "CircuitSAT direct differentiable solver related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation [2] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[48]",
+      "description": "Incomplete stochastic-local-search reinforcement-learning contrast.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            14
+          ],
+          "locator": "Explicit in-text citation [48] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "rl-qbf",
+      "reference_label": "[26]",
+      "description": "GNN policy-gradient QBF branching precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12
+          ],
+          "locator": "Explicit in-text citation [26] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "pointer-networks",
+      "reference_label": "[43]",
+      "description": "Supervised combinatorial neural-solving precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            14
+          ],
+          "locator": "Explicit in-text citation [43] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[5]",
+      "description": "RL combinatorial optimization precedent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation [5] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "graph-q-sat",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[24]",
+      "description": "GNN Qlearning heuristic architecture comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            12
+          ],
+          "locator": "Explicit in-text citation [24] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced brief note with fully read14+6page source-grounded explanation.",
+    "Generalist scope limited to demonstrated shared SAT50-to-coloringdecision transfer; movednote and retainedID.",
+    "Separated MRIR from walltime, included negative transfers and10-call timing budget.",
+    "Recorded partial observability, hostsolver completeness and validation-frequency discrepancy."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "cac02cc6f9483857af2ca335b52ed187de163d43ef145b85b47f92b6ffdab90a"
+}

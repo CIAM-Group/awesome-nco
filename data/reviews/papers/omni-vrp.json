@@ -1,0 +1,788 @@
+{
+  "version": 1,
+  "paper_id": "omni-vrp",
+  "note_path": "specialist/omni-vrp.md",
+  "baseline_note_sha256": "83d22d6f76215256afae841ea629fa6c5d183de320e872d8324acd731d8d409c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/zhou23o/zhou23o.pdf",
+      "retrieval_url": "https://proceedings.mlr.press/v202/zhou23o/zhou23o.pdf",
+      "version": "OfficialPMLRICML2023complete21pagepublicationPDF, allAppendicesA-E andbibliographyfreshlyread",
+      "local_path": "research/full-text-review/omni-vrp/paper.pdf",
+      "sha256": "1e19e3767966f440ed193ab47be938f76ee6326c1c175bff110525e816c571fb",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh fullformalPMLR21pagecopyintro/affiliations/fullrelatedwork/taskdefinition; taskT(n,d) is size+distribution notnativeproblemtype; genericmeta-trainingMAML/POMO and L2D adaptation, scopependingrestofpaper."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "ReadcompleteFig1/Algorithm1/weightedMAML gradients/adaptivehierarchicalsize+gapdistribution scheduler, LKH3fixedvalidationmaxtrials100, inferencezeroshotvsfewshotdistinctadaptdata vsactiveinstanceMLP; two-stageSOthenFO rationale notglobalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Read fulltraining32Minstances across341size/distribution tasks, B=K1, defaultfirst50kSOthenFOto250k vsbaseline500k, population/POMO8aug, separateTSP/CVRPmemtime2.5d17GB/3d25GB vsfull5d53GB/6d71GB; completeTable1allrowsincloursTSPdistributionnotuniformlybetter; 1kextraadapt data distinct from1ktest, runtimestotal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "FreshcompleteTables2-3everyentry andadaptFigure3, largeTSP1000R14.3%FS6.5h vszero19.36%.8h; CVRPgapHGSnotcertopt; separateL2Dsupervisedsubproblemselection meta instance, authorlimitations/scalability andcompleteinitialrefs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh complete remainingbibliography everyentry, workshopversions/distinctnoncatalogueworks notforcedmatches; BQGeneralizablearXivalias andDIFUSCOidentifybyexacttitle/author/arXiv."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FreshAppendixA allSGDTaylor/ReptileK1joint/K>1expansions, authoradmitsnontrivialAdamRLextension empiricalgradient-signcosines notconvergenceproof; fullFigure4 andBUniform/GM/rotationprocedure/Fig5a-f."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "FreshBexplosion/CVRPdemands1..9,Qceil30+n/5/31x11=341; fullPOMOAlgorithm2 andD.1hardwareA10080GB vs32CPUcores classical; LKH3max10k/10runs test distinct100trial scheduler; AMDKD3teacher6.4M each+student12.8M=32M; MetaPOMOfixedbeta.9 K50 andfullTable4tuning."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Readevery23TSPLIB/19SetX/35XMLTable5-7 rows andEASone200iterationLay/Emb bestn<=750; someEASworseownbasefl417/p654/u724, XML4000_2153ours52.24vsMeta14.78 andlargeXMLheuristicHGSreferencesnotoptimum. XMLscaled30instancesgeneratednotoriginal100benchmark."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "FreshfullD4Tables8-9optimizer/normalization andD5L2Dseparate regression10cases each8columns withnegativeexceptionsd7n1000 andcluster1000; E9hV10032GBimprovementmetatraining vsPOMOhigher, Table11sevenSetPcases.EASfine-tunes solvesobservedsmallcases, no generaloptimalguarantee; allsources21pages nowfreshlyread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Simultaneous instance-size and coordinate-distribution transfer rather than one fixed trainingclass.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/taskdefinition"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "WeightedMAMLmeta-training, hierarchicalsize/gap scheduler andinitialSOthenFOapproximation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Contributions/method/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "TaskT(n,d), fixedLKHreferences, B=K1,50kSO/250kmeta, zeroshot/fewshot/EASdistinct, L2Dseparateimprovementvariant.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            20
+          ],
+          "locator": "Task/model/inferenceandD5"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "32Mmatchedinstancesnotcomputetime, oneA100vs32CPUcores,1ktesttotalruntimes8augplusdistinctadaptdata; large/benchmarknegativeexamplesand6taskL2D10cases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Allmainandappendixtables"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Training/memory/scalability andlimiteddistributioncoverage; empiricalSGDgradientcomparisonsnotAdamRLconvergence guarantee, heuristicCVRPgaps.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13,
+            16,
+            18,
+            20,
+            21
+          ],
+          "locator": "Authorslimitations/A/E"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist; nativeTSP/CVRPseparateparameters. PrimaryPOMOconstructive; L2Dseparateimprovementinstantiation notPOMOrepair-stagehybrid; noVRPTWexperiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            9,
+            20
+          ],
+          "locator": "Actual taskdefinition andtwoindependentbase models"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations, publication",
+      "source_url": "https://proceedings.mlr.press/v202/zhou23o.html",
+      "locator": "PDFp1fiveauthors/fouraffiliations; officialHTMLcitation_publication_date2023/07/03, restoredallaffiliations andremovedcalendaracceptance."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2305.19587",
+      "locator": "arXivprimaryhistoryv1Wed31May2023 retained; publisherreadingcopy21pages."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/zhou23o.html",
+      "locator": "Publisherpage linkscomplete21pagePDFonly, fullA-Eread. OfficialREADMEscientificposter inspectedall4tiles coveringentire4000x2667image; SHA256=274da2e541abe0b6e3f98b1b9233ac69476e33d9fe1cc6d7c06a9b7480d912fb. Local research/full-text-review/omni-vrp/poster.png. No extraPDFpagesinvented; rawdata/code notclaimedfulltextread."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/RoyalSkye/Omni-VRP",
+      "locator": "READMEandTSP/CVRPtrain.py configs checked; defaultmeta_method=maml vsreportedapproxmaml_fomaml, separatecheckpointpaths. L2DREADMEprotocol nohierarchicalscheduler andFOunstable; officialcheckpointoutdatedwarning."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.mlr.press/v202/zhou23o/zhou23o.pdf#page=4",
+      "locator": "OriginalFigure1completecrop[52,70,545,286]at3x andmethod/mathcontactsheet, entireposterread."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2305.19587",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-05-31; title on abstract page: Towards Omni-generalizable Neural Methods for Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/omni-vrp/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "omni-vrp",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            9
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            6,
+            7,
+            11,
+            15
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "Ma et al. (2019)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al. (2021a)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022a)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al. (2020)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2020)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "dact",
+      "reference_label": "Ma et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021b)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al. (2022)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al. (2020)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            20
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            20
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11,
+            20
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            9,
+            11,
+            20
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "tam",
+      "reference_label": "Hou et al. (2023)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al. (2022)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al. (2022)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al. (2022)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            10,
+            17,
+            21
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al. (2023)",
+      "description": "Explicit named predecessor, baseline, related method or reused base solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            19
+          ],
+          "locator": "Named in-text citation and exact-title bibliography; BQ older Generalizable title matches arXiv2301.03313 version chain."
+        }
+      ]
+    },
+    {
+      "citing": "omni-vrp",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "Zhang et al., 2022",
+      "description": "Distribution-generalization related work cites exact four-author AAAI2022 hardness-adaptive curriculum article.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Actual body citation Zhang et al., 2022 on PDF pp[1]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Distribution-generalization related work cites exact four-author AAAI2022 hardness-adaptive curriculum article."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshlyreadall21publisherpages/fullA-E/references/all11tables andfivefigures, pluscompleteofficialposter.",
+    "CorrectedunsupportedVRPTWtagandaddedactualTSP; retainedspecialistwithnativevsdistributiontaskdistinction.",
+    "ReplacedinventedPOMO+improvementpipelinewithactualmeta-learning andseparateL2D variant, primaryparadigmconstructive.",
+    "Addedverifiedformalpublicationdate/fouraffiliationsandremovedconferencecalendaracceptance.",
+    "Qualified32Mvscompute,hardware,adaptationdata/timing, baselineexceptions/largegaps/heuristicreferences anddifferentL2Ddesign.",
+    "Recordedcodeconfigurationandcheckpointlimitations and32exactinternalcitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "57118caa4031c41035430fac21ab0fa0fa2b53ac9405efb9c28a5b66af7e1b0c"
+}

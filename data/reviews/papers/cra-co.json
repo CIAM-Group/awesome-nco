@@ -1,0 +1,533 @@
+{
+  "version": 1,
+  "paper_id": "cra-co",
+  "note_path": "specialist/cra-co.md",
+  "baseline_note_sha256": "7889aed9ca26c4c9ef11454af3665da15ea6de3dbdb350c98f53ffb5a6a73747",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/54191f424e9013fc1d7b923f6e45dff4-Paper-Conference.pdf",
+      "version": "CompleteformalNeurIPS2024proceedingsPDF,28pages with fullscientificAppendicesA-F/checklist/references;December16,2024",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/54191f424e9013fc1d7b923f6e45dff4-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-08ec365efc.pdf",
+      "sha256": "29e651cc629432adfb2508f22e940a7cd46f9b6ae71dfb031b47189b59486ed2",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read authorFujitsu/UTokyo/motivation/binaryconstraints/penaltyrelaxation/ULdefinition. Actualinstance-specificfreshoptimization nohistoryofotherinstances, notpretrainedcrossnativecheckpoint. Roundingfree/discreteconvergenceclaim needsfiniteimplementationcheck. Penaltyequivalenceassumptionslambda sufficientlylarge notautomaticeverylambda."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read TypeIvsII and bounded-objectiveTheorem3.1, evenalpha penalty and gamma direction. ActualPhi=1-(2p-1)^alpha concave (negativegamma convexcontribution). Claimfinitegamma convexforallboundedobjective anduniquehalf needproof;alpha4 smooth concavequadratic counterexamplepossible. Directperinstanceweights notinferencegeneralist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Read entirepage6again plus7-8ensuringnooutertruncation; annealsgamma -20/-6 epsilon.001/alpha2; actual0.5projection statedbutoutputsreportFP32binary notliteralnooperation. SingleinstancelearningAdamW1e-4WD.01upto50k/stop. Table1all8rows/5graphseeds ratioagainsttheorynotcertifiedeachgraph; high-degreePI-GNNzerosandCRA0.924. EntropyCEprintednegativeentropy signoppositePhi note ifneeded."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read allresults/DBMformula27instances50x50/cost anddiversitypenalties/pq25or5%; Table2all7Gsetrows ratiosbestknownnotexactcert, G49/G50ties classicalnotstrictallwin. RuntimeexponentsN1.4/N1.7empiricalnotgenericbound. FullrefsstartinclBello/Neurewriter/SAT/localSATexact identities. Actualprojection0.5existsandfeasibilityempiricallynopenalties observednotuniversalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Read everyremainingbib andBproofalllemmas. B14derivativesomitpowersforalpha>2; signconcavitycorrectbutuniformcurvatureincorrect. Alpha4 l=-(p-.5)^2,gamma=-g keepscurvature-2atcenter forallfiniteg; minimizersapproachhalfbutnotfiniteconvexity. TheoremglobalargminasymptoticnotfiniteNNtraining. Positiveendpointminimizerconclusionneedscontinuitybeyondmerelybounded; remainqualifiedassumption, nofalsewholemethodclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read B5negativeentropycorollary (signoppositepolynomialPhi), Pottsconceptnotexperiments, fullD/EGNNandformulations,F1starts. Dmain50kvsappendix100kepochs, dimensionsN^.8vscode sqrtN needactualinspect. Fiveinitseedsbest perinstance +5graphseeds distinct; ApRtheorytypical orbestknown, notcertifiedfinite-instance. F1stabilityanalysisfutureexplicit, zero-outputfirstgradientclaimformalMISgrad=-1not0 inp;finiteNNsaturationmayexplain notobjective stationary."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 20,
+      "notes": "Read fullF1Figure7/F2 Table3 benchmark (CRA isfarbelowiSCOquality/speed onER notuniversalSOTA), Tables4/5all16+8rows,TSPLIBF4nowexplicitadditionalTSP taskwilladdnativeproblemwithoutgeneralism, gammaablationF5. F2PQQAtextappearscopyartifact, fourconfigsnotTable3actualCRAoneuse; do notassignPQQAresults toCRA. MaxCutfinitegraphboundsnotcertified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 23,
+      "notes": "Read all35additionalGsetrows and4TSPLIBTable7allcurvevalues/3seeds. TSPnotallApR>.9 (gr96.81-.90/ulysses.88-.92 etc), typoopt55209/PI.736±1.21 notinfervalidpreciseaggregate. AddTSPtometadata/supportseparatetaskneurodynamicstill. F6alpha2besttestedMIS/MaxCut; fullremainingchecklistbegin."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 26,
+      "notes": "Read fullchecklistopenassets/setup/significance/compute/ethics/impacts; claimsGPUAppendixE butactualEprovidedformulations/GNNnotnamedGPUmodel, reproductiondetails incomplete. Stillno scientificseparatePDF supplement18code/notebookmembers registeredmanualnoPDF. FullnotebookcurrentandZIPcellsreadwithoutputs tocompletecomparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "Completed all28pages inclallrefs/AppendicesA-F/Tables1-7/Figs1-9/checklist. Release+ZIPnotebookall16cellsandall4streamoutputs read;outputsidentical,ZIPcheckpointfilesbyteidenticaltooriginalduplicates;codefull137+72+41read,ZIPdifferencesonlyimportpaths. No embeddedimageoutputs hidden. Need12visualpagesandmath/codecoefficientcuratorarithmetic beforefinalnote."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Instance-specific continuous neural optimization faces plateaus and threshold-sensitive fractional outputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1-3/TypeIIscope"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Annealed even-power output penalty plus limited global-minimizer theory and graph/matching/additionalTSP experiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            14,
+            15,
+            19,
+            20,
+            21
+          ],
+          "locator": "Theorem3.1/B1-B5 and AppendixF4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Fresh per-instance NN/embedding optimization, multiple restarts; specialist neurodynamic, no cross-native sharedcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            7,
+            15,
+            16,
+            19
+          ],
+          "locator": "ExplicitTypeII definition/native tasks and trainsettings"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Negative-to-positivegamma schedule/alpha2/AdamW; actual0.5projection and empiricalFP32binary ratherthanliteralno discretization; finiteNNoptimizationnotglobalargmin proof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            14,
+            15
+          ],
+          "locator": "Section3.2/5.1/D/codefullinspection"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "RRG graph5seeds/best5NNinitializations/metricdenominators retained; Gsetties/ERiSCOunderperformance/additionalTSPLIB4cases and uncertainty ambiguity; runtimesnotuniformspeedup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            15,
+            16,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "locator": "All7tables/Figs1-9 and detailed protocols"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Finitealpha4counterexample limits convexification not centerlimit/actualresults; printednegativeentropy sign/oppositeextrema and releasedwarmstart/stop/Qcoefficient differences distinguished.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Curatorrecompute_scope.py; fullsource/notebook vsprinted claims"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All28p/scientificappendices/allrefs12visual;18entrycode-onlyZIP andcurrent7files/full16cellnotebooks+outputs read;15identityedges andnoneuralrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "locator": "Complete reading logs/ZIPsamecode comparison/current source"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54191f424e9013fc1d7b923f6e45dff4-Abstract-Conference.html",
+      "locator": "OneauthorYumaIchikawa;PDF1FujitsuLimitedandUTokyoBasicScience. HTMLcitation_publication_date2024-12-16;DOI10.52202/079017-1495."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54191f424e9013fc1d7b923f6e45dff4-Abstract-Conference.html",
+      "locator": "PublisherZIP34641bytes SHAa2d595eb1085d864b07b7f163ad1e0f3d527139d71888c2a51132ed6de6bc873,18entries/code+ipynb+pyc/duplicatecheckpoints/noPDF. FullscientificintegratedA-Fandcode/notebookread; allcheckpointcopiesbyteidentical. CurrentandZIPallnotebookoutputsidentical. OpenReviewykACV1IhjDv1/v2notes403; no explicitly missing scientificdoc."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54191f424e9013fc1d7b923f6e45dff4-Abstract-Conference.html",
+      "locator": "Formal28p SHA29e651cc629432adfb2508f22e940a7cd46f9b6ae71dfb031b47189b59486ed2. Visual5/6/8/9/10/14/15/18/19/20/21/22, allkeyfigures/theory/tableschecked; fullchecklistreferencesread."
+    },
+    {
+      "field": "code_url,release scope",
+      "source_url": "https://github.com/Yuma-Ichikawa/CRA4CO",
+      "locator": "Commitfec02862f542b441d8d1643ab996474b2c1843d67files; fullREADMErequirements/GNN137/utils72/instance41/notebook16cellsandalloutputsread. ZIPsourceonlyimportmain-vs-srcdiff; outputsidentical. DemoPI→CRAsamemodelwithoutreset;stoppingchange-notabsolutePhi;Qoffdiagdouble/densematrix; tolerance1e-4/sqrtN vssomeprintedsettings. No fullbenchmarkdrivers;no neuralrerun."
+    },
+    {
+      "field": "curator theory and isolated code checks",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54191f424e9013fc1d7b923f6e45dff4-Abstract-Conference.html",
+      "locator": "Executedrecompute_scope.py: alpha4l=-y²/gamma=-g→r=-y²+16gy4-g, curvature-2forallfiniteg,minimaapproachhalf. Parentindependentlyconfirmedalgebra. CorrectPhi2derivativehaspowers; B5negativeentropyhasoppositeextrema. IsolatedoriginalQbuildersoneedgeproduceenergy2at11 vsprinted0; notassertactualpaperexperimentsinvalid."
+    },
+    {
+      "field": "problems,scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/54191f424e9013fc1d7b923f6e45dff4-Abstract-Conference.html",
+      "locator": "AddedRouting/TSPfromactualF4Table7pp19-21 fourTSPLIBinstances; no generalistmigrationbecausefreshperinstanceoptimization. CurrentQQAsuccessorREADMEcapabilitiesnotattributedtothis2024paper. All15relationsrequireactualbody+fullbib, notfutureREADMEcitations."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cra-co",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.(2022)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            13
+          ],
+          "locator": "BodyPDF18 explicit Qiu et al.(2022); fullreferencePDF13."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.(2019)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1 explicit Joshi et al.(2019); fullreferencePDF10."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas(2020)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Karalias & Loukas(2020); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al.(2019)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Gasse et al.(2019); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al.(2021)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "BodyPDF1 explicit Hudson et al.(2021); fullreferencePDF10."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al.(2017)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Khalil et al.(2017); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "meta-egn",
+      "reference_label": "Wang & Li(2023)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2 explicit Wang & Li(2023); fullreferencePDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.(2016)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Bello et al.(2016); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian(2019)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Chen & Tian(2019); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Wang et al.(2022)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2 explicit Wang et al.(2022); fullreferencePDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.(2018)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Nazari et al.(2018); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski et al.(2024)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12
+          ],
+          "locator": "BodyPDF6 explicit Sanokowski et al.(2024); fullreferencePDF12."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al.(2018)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Amizadeh et al.(2018); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al.(2018)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Selsam et al.(2018); fullreferencePDF11."
+        }
+      ]
+    },
+    {
+      "citing": "cra-co",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu & Poczos(2019)",
+      "description": "Explicit background/method/comparator citation; complete title/authors checked, year/preprint aliases preserve same work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1 explicit Yolcu & Poczos(2019); fullreferencePDF11."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "AddedactualAppendixF4TSPcoverage whilepreservingspecialistper-instance neurodynamicclassification.",
+    "Replacedliteralroundingfree/globalconvexityguarantees with actualprojection/finite-optimization/limit distinctions.",
+    "PreservedERsamplingbaselineunderperformance/Gsetties/metricreferenceandTSPLIBambiguities;notuniformSOTA.",
+    "Readall28pages/18ZIPmemberscode+fullnotebooks/current7filerelease;isolatedQbuilderchecksandfiniteconvexity arithmeticrecorded."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "18992ffcf5d678da0be56758cf6bb9755daf389a75090a0d8b772866a62f16b8"
+}

@@ -1,0 +1,710 @@
+{
+  "version": 1,
+  "paper_id": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+  "note_path": "specialist/agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "b77fb97952a1154222dc52067441f20645283818d18bce8abd3b4d71e98fa935",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2606.19185",
+      "retrieval_url": "https://arxiv.org/pdf/2606.19185",
+      "version": "Actual arXiv2606.19185v1 dated2026-06-17,12pages; fullmain/bibliography/AppendicesA–Cread. FormalKDD2026DOI independentlyverified, noformalPDFbytecomparisonclaimed.",
+      "local_path": "research/full-text-review/agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net/paper.pdf",
+      "sha256": "3684d9c28e1147760500877de13da631a3ec7f55d5e92c39e08cdbefb58e1bb0",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readactualarxivv1stamp2026-06-17/KDDformattedfirst2pages fullbylineFloridaState/SMU,BolinworkatSMU,Yushuncorresponding;intro/contrib/notationalTSP/generalizeddiffusiondefinitions. GeometricTSPonly, graphdiffusionnotgenerativedenoising; sameworddiffusionnotDIFUSCOequivalence."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadMixScore/Eq1–8/anisotropicspaces/diffusion/edgeheatmapandFigure1. Eq3printedMnotM^k allsummandsidentical;sigmaprosetrendoppositeexp(-d/sigma); inspectactualrecursivecodebeforeinterpretingimplementedmulti-hop. Staticheatmap+classicalMCTSdoesnotitselfestablishneuralincumbentimprovement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadSL/ULobjectives/searchtopk,Theorem4.3statement/definitions/proofappendixdirection andcompleteTable1/setup/results. NegativeLKHgapvsConcordeisreferenceinconsistencynotbeatingtrueoptimum. AGDN-SLworseDIFUSCOat500/1000 and200/500MCTSspeedtradeoffs; runtimeonlyNNinferenceclaimneedsappendixprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadallTable2crosssize/Table3distributions/Fig2topology/Fig3efficiency/Table4TSPLib/relatedwork. AGDNslower200/500inferencevsGCNdespitebroadclaim,Cluster1000gap2.17worseGCN2.10. TSPLibonly3instancesnotglobalSOTAevidence;MCTSstaticheatmapclassificationpendingactualsearchpipeline."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullconclusion/ackandcomplete74entrybibliography acrossbothpages;sourceprintedNeurIPS36/2024yearerrorspreservecitedversions. HNCS/lessismore/softdist/newWangdiffusionsolver/RADAR/AGFNcandidatesneedexplicitbodyreferencechecknotbibonlyautomaticedges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read Appendix A full proof, B1-B5 preprocessing/SL-vs-UL architecture/removal of anisotropy/training/CPU32-thread search, C1-C4 all robustness tables 5-8. Proof assumes shared orthonormal eigenbasis and first-mode contraction without deriving it from stated two directional steps; signed higher-mode bound also needs care. Appendix UL removes anisotropic spaces and aggregator. Broad-baseline runtime prose 0.97 seconds is NN inference whereas NeuroLKH decoding1183 seconds, not equal total-solver budget."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "MixScore directional multi-hop graph feature propagation predicts Euclidean TSP edge heatmaps for MCTS; graph feature diffusion not generative denoising.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Introduction/Figure1/Sections3.1–3.5"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "SL dual-space MixScore/aggregation differs UL AppendixB removal; printedEq3 repeatsMH whereas actual code uses recursive filtered propagation; actual MCTS randomtour→2opt→heatmapguided incumbent kopt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            11
+          ],
+          "locator": "Method/AppendixB; independent actual source inspection"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Main/supp tables show gains and negative cases; Time explicitly NNinference not total MCTS; 32CPUworkers; negative reference gap/unit inconsistency retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            11,
+            12
+          ],
+          "locator": "Setup/Tables1–8/Figures2–3"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Theorem4.3 AppendixA uses unestablished common orthonormal spectral representation/first-mode contraction; no universal guarantee endorsed. Current code singleton softmax makes learned affinity identically1; isolated actual component checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            11
+          ],
+          "locator": "PrintedEquations2–3/Definition4.1–4.2/Theorem4.3/fullproof; actual source/codecheck"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "EuclideanTSP-specific separate SL/UL/size models; actual public search initializes complete random tours then neuralheatmap-guided incumbentmoves: specialist/improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            11
+          ],
+          "locator": "Taskscope/search specification and code"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actual12pagearxivv1 including allscienceAppendicesA–C fullyread; manual Zenodo ZIP/GitHub/authorlink inventory, keysource/componentcheck and originalfullFigure1 viewed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Full actualreading/sourceinventory/canonical DOI resource"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://doi.org/10.1145/3770855.3817789",
+      "locator": "Publisher-deposited Crossref 4authors/FSU+SMU/pp4173–4184, online2026-08-08print08-09; actualPDFp1samebyline, ShenworkdoneSMU/Dongcorrespond. Formaleligibility separate from arxivreadingcopy."
+    },
+    {
+      "field": "arxiv v1/date",
+      "source_url": "https://arxiv.org/abs/2606.19185v1",
+      "locator": "Savedprimaryarxiv-history.html firstpostWed17Jun2026 15:24:37UTC; actualPDFstamp2606.19185v1/12pages includingAppendicesA–C."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://doi.org/10.5281/zenodo.20496880",
+      "locator": "ActualZenodoAPI resolvesrecord20497158 softwarev1.0.1; full116409295byteZIP/206members inventoriedMD5verified8b63fcac98c9515e9c0554482d619990. NootherPDF/TeXscience beyond3README(allread). GitHub205entries matchingrootSHA82590be. AuthorpublicationsSlideslinkactuallyself-pageplaceholder. All12PDFpages inclproof/reproducibility/supprobustnessread."
+    },
+    {
+      "field": "classification/code snapshot",
+      "source_url": "https://github.com/LabRAI/AGDN",
+      "locator": "ActualTSP_Init.h randomcompletepermutation, TSP_Markov_Decision.h random→2opt→MCTS/restarts, MCTSweightsneuralpriorguideincumbentkopt; noindependentneuralconstruction. SingleEuclideanTSP andseparateSL/UL/sizeconfigs. specialist/improvement."
+    },
+    {
+      "field": "code/theory boundary",
+      "source_url": "https://github.com/LabRAI/AGDN",
+      "locator": "Actualsupervised/models/agd.py Linear(...,1)→Softmax(-1) makesones. ExecutedactualAGDLayer_Node.prop_T savedcomponentJSON, changedinputmaxdiff0,rowstochastic3nodeT→Tirowsum2. PublicULtrainimportsabsentdiffusion_agdn/diffusion_model/diffusion_gpr; availdiffusion_agd stilldualspace vsAppendixB. Noteallrelease-specificnotfullresultrefutation."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2606.19185v1#page=3",
+      "locator": "ActualoriginalcompleteFigure1p3Rect50,78,562,280@4x atomicPNGandview. Theory/frameworkp3/4/5/11andallmain/supptablepages6/7/8/12renderedandviewed."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2606.19185v1",
+      "locator": "22explicitbody/table+fullbibmatchededges. DEITSPprimaryarxiv2501.13767andSMU10543confirmall10authors/title/formalDOI10.1145/3690624.3709343. UncatalogedHBGFN/NAR4TSPnotforcededges. NoedgesremoveddeferredIDs."
+    },
+    {
+      "field": "final citation identity:pomo",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+      "locator": "AGDN [40] is split across paper p9 bottom and p10 top: exact six authors, full POMO title, NeurIPS33(2020),21188?21198. Bodyp1 explicitly cites[40]."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "agfn",
+      "reference_label": "[73]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [73]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [73] identity agfn"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem",
+      "reference_label": "[58]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitbody/table [58]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [58] identity an-efficient-diffusion-based-non-autoregressive-solver-for-traveling-salesman-problem"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "att-gcn",
+      "reference_label": "[22]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [22]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [22] identity att-gcn"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "attention-model",
+      "reference_label": "[38]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [38]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [38] identity attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "bq-nco",
+      "reference_label": "[18]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicitbody/table [18]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [18] identity bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "difusco",
+      "reference_label": "[53]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [53]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [53] identity difusco"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "dimes",
+      "reference_label": "[50]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [50]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [50] identity dimes"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[35]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [35]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [35] identity efficient-graph-convnet-tsp"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "elg",
+      "reference_label": "[23]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitbody/table [23]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [23] identity elg"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "emnh",
+      "reference_label": "[12]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [12]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [12] identity emnh"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "hncs",
+      "reference_label": "[27]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicitbody/table [27]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [27] identity hncs"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "invit",
+      "reference_label": "[21]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [21]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [21] identity invit"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "lehd",
+      "reference_label": "[45]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [45]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [45] identity lehd"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "less-is-more",
+      "reference_label": "[44]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [44]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [44] identity less-is-more"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "neurolkh",
+      "reference_label": "[64]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [64]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [64] identity neurolkh"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "pointerformer",
+      "reference_label": "[34]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitbody/table [34]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [34] identity pointerformer"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "pomo",
+      "reference_label": "[40]",
+      "description": "AGDN [40] is split across paper p9 bottom and p10 top: exact six authors, full POMO title, NeurIPS33(2020),21188?21198. Bodyp1 explicitly cites[40].",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Reread explicit body citation context: [40]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Reread complete reference including split continuation; AGDN [40] is split across paper p9 bottom and p10 top: exact six authors, full POMO title, NeurIPS33(2020),21188?21198. Bodyp1 explicitly cites[40]."
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "t2t",
+      "reference_label": "[43]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Explicitbody/table [43]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [43] identity t2t"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "utsp",
+      "reference_label": "[47]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicitbody/table [47]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [47] identity utsp"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "radar",
+      "reference_label": "[69]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [69]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [69] identity radar"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "reld",
+      "reference_label": "[33]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitbody/table [33]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Fullbibliography [33] identity reld"
+        }
+      ]
+    },
+    {
+      "citing": "agdn-learning-to-solve-traveling-salesman-problem-with-anisotropic-graph-diffusion-net",
+      "cited": "softdist",
+      "reference_label": "[62]",
+      "description": "Explicit in-text/table citation and matching complete bibliography. Preserve printed cited version/year: AM2018arxiv, INViT2024arxiv, ELG2023arxiv, GCN2019arxiv, LessIsMore2024arxiv; bibliography NeurIPSvolume/year discrepancies not future formal recasting. DEITSP10authors independently matched primary arxiv2501.13767/SMU10543.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicitbody/table [62]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Fullbibliography [62] identity softdist"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaceallpendingbyline/task/date/sourcefields withactualfullsourceandformalpublicationevidence.",
+    "Specialist/improvement followsactualrandomcompleteinitializationandheatmapguidedincumbentsearch, notstaticheatmapalone.",
+    "Readall12pagesincludingfullproofandAppendixB/C; formalPDFnotclaimedbyte-compared.",
+    "SeparateULremovedanisotropyfrommainSLdesign; retainprintedEq3/kernel/theorygapsandcodecomponentdefectwithscope.",
+    "Reportinference-onlytimes,negativecases/referencegap/runtimeunitinconsistenciesandselected3TSPLibscope.",
+    "ManualactualZenodoZIP/GitHub/authorSlidesinventory; fulloriginalFigure1viewed;22explicitcitationswithprimaryDEITSPidentity."
+  ],
+  "reviewed_note_sha256": "3e1f40bad5b43256ae65eface4d8beb5d0fbb3fc13bedb046cafbf03613b9b8a"
+}

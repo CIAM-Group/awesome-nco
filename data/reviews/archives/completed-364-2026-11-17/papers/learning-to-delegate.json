@@ -1,0 +1,460 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-delegate",
+  "note_path": "specialist/learning-to-delegate.md",
+  "baseline_note_sha256": "de2f95cfa8b5e8f93dc35b6445e27205661b3c0d78b1b8de493f258510caad2e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/learning-to-delegate/paper.pdf",
+      "sha256": "5d5fda376646d8aebff6a041a50172bfbb05b469e9c72b1daae91af961d4b603",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Supplemental.pdf",
+      "version": "Publisher scientific supplementary PDF, complete Appendix A.1-A.6, nineteen pages",
+      "local_path": "research/full-text-review/learning-to-delegate/supplement.pdf",
+      "sha256": "16635a41ef38d62f62cb48d16bd048d2af24e153a26faccbc0eb1171a8003e10",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh MIT title block, problem definitions, full related work and six-panel spatial subproblem framework; scalability speedup claims require budget checking."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh exact whole-route kNN candidate construction and hill-climbing rejection/masking, cost regression not direct improvement regression, Huber loss and model inputs; training/CPU-only evaluation protocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh exact quality-target speedup definition, all uniform results, clustered/mixed gains, no-finetuning transfer and uniform-to-Belgium failure; CVRPTW and VRPMPD."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh HGS 103x/198x and Random77x/152x comparisons, scope/future work, social impact and references1-37."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Fresh references38-53 and full checklist; all matching internal citations identified."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh actual uniform training only500/1000, 10-sector initialization, 500-step subsolver, D30 labels, six-layer architecture; batch-size discrepancy table512 vs prose2048 recorded."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Fresh full clustered/mixed split6000, retrained100-city NeuRewriter baseline, original Belgium30k vs actual subsampled2000/reset demands, time-window problem details and figures."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Fresh CVRPTW/VRPMPD generation and constraints, k5 subproblems, late-budget degradation; full classification alternative with GAT, KL soft labels and separate-size training."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Fresh classifier/regressor comparison and k5/k10 asymptotic tradeoff; HGS initialization offset, solver-specific labels and1-second subsolver budget."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Fresh HGS final-quality counterexamples atN500, nonconvergence at2000/3000; weaker initialization definitions and no-finetuning transfer; complete Figure18 caption."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Fresh full Figure19-21 captions and simpler model definitions, handcrafted33 summary features and validation MSE limitations; graph pages queued for visual inspection."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "Fresh simpler-architecture outcome and complete applicability discussion; all diagrams/tables and Figure9-22 scientific plots manually inspected in five rendered sheets."
+    }
+  ],
+  "claims": [
+    {
+      "id": "delegation",
+      "category": "contribution",
+      "statement": "Learn cost regression for selecting spatial k-nearest whole-route subproblems, solved by a black-box optimizer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections4-5, Algorithm1, Equation1-2"
+        }
+      ]
+    },
+    {
+      "id": "cost-target",
+      "category": "method",
+      "statement": "Regressor predicts new subsolution cost, not direct improvement; reject nonimproving repairs and cache unchanged candidates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section5"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Default k10 LKH labels actually train on500/1000, not2000; Table6batch512 conflicts with prose2048, official README uses2048.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "A.1-A.2, Tables3-6"
+        }
+      ]
+    },
+    {
+      "id": "speed",
+      "category": "experiment",
+      "statement": "95% target means fraction of baseline improvement; uniform7x/12x/15x and HGS103x/198x should be separated from Random gains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10
+          ],
+          "locator": "Metric definition, Table1 and6.6"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "Belgium instances subsampled to2000/reset demands; uniform predictor sometimes worse than random.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "A.3 Table7 Figure11"
+        }
+      ]
+    },
+    {
+      "id": "hgs",
+      "category": "experiment",
+      "statement": "HGS requires new labels and models, time-offset adjustment; strong500 final baseline and unconverged2000/3000 limit claims.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "A.5.3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Variant/distribution/subsolver-specific trained selectors improve complete incumbents; specialist improvement, not shared generalist checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            9,
+            10
+          ],
+          "locator": "Sections4,6.1,6.5,6.6"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institution",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf",
+      "locator": "Publisher title block page1: Sirui Li and Zhongxia Yan equal contribution, Cathy Wu, MIT."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html",
+      "locator": "Official article in Advances in Neural Information Processing Systems34, NeurIPS2021."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2107.04139",
+      "locator": "v1 8July2021, v2 28October2021."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/mit-wu-lab/learning-to-delegate",
+      "locator": "Main paper page10 explicit link, complete official README manually read including training n_batch2048 and solver timing."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html",
+      "locator": "Official publisher landing manually inspected: one Supplemental PDF, all19pagesA.1-A.6 freshly read. No extra scientific ZIP linked; author README10GB ZIP described as data/model/configuration archive."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf#page=3",
+      "locator": "Original Figure1 PDFpage3 Rect(155,65,522,258)points at4x, atomic PNG restores clipped bottom panels d-f and loop; visually checked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/learning-to-delegate/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2107.04139",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-07-08; title on abstract page: Learning to Delegate for Large-scale Vehicle Routing. This date is preprint history, not formal publication. Cached research/full-text-review/learning-to-delegate/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-delegate",
+      "cited": "learning-what-to-defer",
+      "reference_label": "[2] Ahn2020",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "neurewriter",
+      "reference_label": "[7] Chen2019",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[15] Hottung2020",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[18] Khalil2017",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "attention-model",
+      "reference_label": "[20] Kool2019",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            7,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "pomo",
+      "reference_label": "[21] Kwon2020",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10,
+            12
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "learning-to-improve",
+      "reference_label": "[27] Lu2020",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "rl-vrp",
+      "reference_label": "[29] Nazari2018",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "general-lns-ilp",
+      "reference_label": "[38] Song2020",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "pointer-networks",
+      "reference_label": "[50] Vinyals2015",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            13
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-delegate",
+      "cited": "rl-local-search-sat",
+      "reference_label": "[53] Yolcu2019",
+      "description": "Explicit numbered in-text related-work or method citation with matching printed bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            13
+          ],
+          "locator": "Explicit in-text citation and reference-list entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected regression target to subsolver cost and added actual uniform500/1000-only training, new HGS labels and batch-size source discrepancy.",
+    "Added missing mixed pickup/delivery task and exact CVRPTW constraints.",
+    "Qualified solver speedups by95% improvement target, Random gains, initialization adjustment and negative late-budget results.",
+    "Clarified Belgium2000-customer subsampling, capacity/demand changes and unfavorable uniform transfer.",
+    "Removed unsupported acceptance date and restored complete six-panel Figure1.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0c71755d0ab883bb674b0507bc6bec8427654c9aab2bc0ef5dfeb075667433aa"
+}

@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "paper_id": "transpath-learning-heuristics-for-grid-based-pathfinding-via-transformers",
+  "note_path": "specialist/transpath-learning-heuristics-for-grid-based-pathfinding-via-transformers.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "dfe997bae5eed5e26769c706049d4cda6facc6e08e4cd5a1a5ba591357a3074a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2212.11730v1",
+      "retrieval_url": "https://arxiv.org/pdf/2212.11730v1",
+      "version": "arXiv2212.11730v1 Dec22 2022,13p including scientific AppendicesA-C",
+      "local_path": "research/full-text-review/transpath-learning-heuristics-for-grid-based-pathfinding-via-transformers/reading-candidate.pdf",
+      "sha256": "9905d4a921ac10791d4cfc5d6a2a1091690a776789f43e38cea5be3f9b1ccfbc",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "All actual pp1-4 read: byline/acceptedAAAI2023 identity, full intro/related work/problem/search formulation/Alg1/CF and PPM distinct supervision. CF search has no solution-cost guarantee; focal retains octile admissible bound independent of learned secondary score. Separate models not shared checkpoints across native problems."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "All actual pp5-8 read: full architecture/losses/labels including Theta-star rasterized PPM and .95 corridors,640k instances/mirroredmap-groupdisjointsplit/testhardnessfilter,35epochs/A100/512batch,Tables1-2/allnumerics/timing caveat and full bibliography start. Expansion reduction is not direct endtoend speedup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 13,
+      "notes": "All actual pp9-13 read: complete bibliography plus full science AppendicesA-C/all4tables/Figs5-11 including OODnegativecost/expansion. All4contact sheets viewed. Pinned65membercodeZIP11.5MB/README/full5cell demonstration notebook source actually read; demo outputs inventoried not independently benchmarked, no extra PDF/TeX science appendix. Body+bib exact Li/Pogancic edges; no fabricated neural-Astar target."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Obstacle-aware guidance to reduce classical grid-search expansions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/background"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Correction-factor and PPM guidance plus supervised/attention/OOD evaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Method/results/appendices"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "CNN-transformer guidance: CF no bound, focal admissible primary bound retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithm1/heuristics"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate CF/PPM supervision/checkpoints, same grid problem, specialist constructive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Separate supervision and path construction"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Main FS cost100.24/exp26.36 percent vs OOD105.62/55.06; batch timings include separate GPU and CPU phases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            12
+          ],
+          "locator": "Tables1/4/runtime"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "No uniform speedup/CF guarantee; hard OOD maps and limited planar setting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Guarantee/timing/appendices"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full13p/bibliography/A-C read and pinned code science inventory checked without execution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Identity/references/appendices"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and history",
+      "source_url": "https://doi.org/10.1609/aaai.v37i10.26465",
+      "locator": "Exact four authors and AAAI2023 pp12436-12443; actual arxivv1 Dec22 2022; publication date independently checked against DOI."
+    },
+    {
+      "field": "supplements scientific coverage and inventory",
+      "source_url": "https://arxiv.org/pdf/2212.11730v1",
+      "locator": "Full13p refs/A-C/all4 contact sheets actually read/viewed;65member pinned ZIP/noPDFTeXextra;fullREADME+5cell demo source read; outputinventory not benchmark reproduction."
+    },
+    {
+      "field": "classification and original figure",
+      "source_url": "https://arxiv.org/pdf/2212.11730v1#page=4",
+      "locator": "CF and PPM separately supervised, grid path construction. OriginalFig2p5crop50,50,564,281at3x full caption viewed. Two exact body+fullbibliography internal targets."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "transpath-learning-heuristics-for-grid-based-pathfinding-via-transformers",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li, Chen, and Koltun 2018",
+      "description": "Related work on generic GCN combinatorial solving, contrasted with tailored grid search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            8
+          ],
+          "locator": "Related work/full title in bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "transpath-learning-heuristics-for-grid-based-pathfinding-via-transformers",
+      "cited": "blackbox-backprop",
+      "reference_label": "Pogancic et al. 2020",
+      "description": "Differentiable blackbox solvers discussed and contrasted with direct supervised guidance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            8
+          ],
+          "locator": "Related work/learning supervision/full bibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read complete arxiv science appendix and full bibliography.",
+    "Separated classical focal guarantee from unbounded CF predictor and empirical averages.",
+    "Retained negative OOD cost/expansion comparisons and batch timing conditions.",
+    "Recorded pinned code inventory and demonstrated source scope without executing weights."
+  ],
+  "reviewed_note_sha256": "c141a55586e3779d7c7d91d5e2ea96f88fae06fe4983f94c3dc7c8cf3a6d4393"
+}

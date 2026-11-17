@@ -1,0 +1,805 @@
+{
+  "version": 1,
+  "paper_id": "pomt-vrs",
+  "note_path": "generalist/pomt-vrs.md",
+  "baseline_note_sha256": "c79ec5eccc8016aedf873e9d6ff8c7372396402fab1e2715c58b97558dbe1fef",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/meng26m/meng26m.pdf",
+      "version": "Formal ICML2026 PMLR306 proceedings24pages, complete main/references/AppendicesA–D freshly read",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/meng26m/meng26m.pdf",
+      "local_path": "research/import-272/nco-b1816edd7c.pdf",
+      "sha256": "5c67211e07c93ea6ff4996aac970bb954bc0c4b36eac9ac5fbd7d3411a51429c",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1-3fullread4authorsDUT+KeyLab/TUE/SMU, ICML2026PMLR306. ConstructivepreferencePO+decoderPGBnotmultiobjectivepreferenceweights. 16nativeO/B/L/TW whereBstrictlinehaulbeforebackhaul. BTqualitativewithininstancehardcostranknotexternalhumanfeedback. Mainarchitectures/budgets/results/appendicespending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh4-6fullreadmainfig1/2captions; PGBsigmoidheadgatesoncontextafterconcat/stateanchorcurrentnode+dynamicproj/normFFresidual,notactualtopKpruningdespitesparseword. POallP2orderedpairsstrictrewardrank labels,onlywinnerlogsigmoidterm(noBCEnegative);diagonal/tieszero,withininstancecenteringdoesnotchangerank,alpha scaleloglikelihood. Notrewardfreecostmustcompute,notexternalpreferences/multiobjective. Classical10/20sinstance16CPUparallel, baselinesretrainedsamehardwareclaimed. Formula20costnotexpectedreturnobjectiveequivalentguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh7-9readentire16variantTable1/allTable2-4/main5-6. Trained16native(allID),30M300x100k,size50/100separateV10032GB,batch256,alpha.03; test1k8aug. MVMOEmean2.227/3.680→1.809/2.951, CaDA1.721/2.844→1.405/2.205. MoSESCaDAOVRP50(1.857<2.010),OVRPL50(1.846<2.004)stillbetter;params/timeruntimeCaDAfast3/13vsours4/17-20. CVRPLiboverall8.326meanbestbutlargest12.651worseRF12.253. OODMD16/MB8/MDMB8nativeweights0FT means34.807/7.770/43.827(50)39.812/10.936/51.281(100),notnearoptimum. OptionalEASandLoRAinferenceparameteradaptationnotNNincumbentoperatorparadigm;remainingDneedsfullread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 20,
+      "notes": "Fresh10-20fullreadallrefs10-13/A1-3/B1-2/C1-4. Actualshared16nativealltraining(30M)noneheldoutcombinationswithin16;32newMB/MDtestsseparatezero. Sigmoiddenseheadgatesnotexactzeros/topkpruneddecoder;POpositiveorderedstrictpairmean ties0. SourceC2noactualfinite-tempentropyderivation,alpha.08/.1collapsegap258.950 vs.03gap1.405;notunconditionallystable. SourceTable7AdamW vsmainAdam currentcodecheckongoing. SourceTWmainservicestartvsA3Eq29servicefinishlatestdiscrepancy. FullpaperrefsversionsGOALLearning→Learner/POCCOyear2026pubvsvenue2025matchtargetauthor/title, nofakeNewnode. LatestC4 prosew.o.Gate1.437/2.245 vsTable2 1.427/2.241 differencesretainpublishednotcorrectinvented."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Fresh21-24allfullreadseparatesinglepage21/22due24kcharreaderlimit,all100CVRPLibrowsandallEASTable10cells. 32/36/32binsactualprintedlastgapmeans4.561406/8.096194/12.654313 andall8.42366 vsreported4.561/7.865/12.651/all8.326;recomputeartifactpersistsallroundedrowsnotrerunbenchmark. NegativeX167ours5.380vsCaDA2.534/MoSES4.023;X766ours17.499vsMoSES10.462. EASfullminute/hourcost,LoRAfasterbut0.273vsEAS.144gapCVRP50,specificVRPBTW100EASObj15.768gap.926copied-lookingagainstref29.467 needsprinted-cellqualification noinventedcorrectednumber. Ddoesnotstateiterations/lr/LoRArank/projectiontarget;statesEASparams+LoRA bothupdated, cannotclaimformallymatchedbudget. All24formalpages/A-D nowcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Constraint-switch decoder capacity and reward-scale sensitivity motivate PGB and within-instance cost-ranking PO; still requires objectives.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/POcontext"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "PGBheadwisesigmoid/stateanchor/residualFFN plusstrictorderedcandidatepairlogsigmoidobjective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Figures1–2/Eqs10–21"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Shared16nativeconstructivepolicy; twoindependentbackbones/separatesizecheckpoints, zero-shot32newvariants;optionalinstanceparameterEASnotincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            8,
+            9,
+            14,
+            15,
+            16,
+            17,
+            18,
+            23
+          ],
+          "locator": "Architecture/tasksharing/scope"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "30Mreportedtraining,V10032GB,batch256alpha.03,mean1.405/2.205, largescaleRFbetter12.253vs12.651; newconstraintmeansstilllarge;EASseconds→minutes/hours.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "AllTables1–10"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Objective-dependentordinalPO/nooptimalityguarantee, temperaturessensitive,100displayedgapmean8.42366vsreported8.326, EASVRPBTW100cellinconsistent,releasebudget/TW/optimizerdifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            16,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Sourceconsistency/limits/releasecrosscheck"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructive viaonepolicy16nativevariants;EASadaptsmodulesandconstructsroutesratherthanNNeditingcompleteincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            8,
+            9,
+            23
+          ],
+          "locator": "Actualpipeline"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v306/meng26m.html",
+      "locator": "Formal4authors/DUT+KeyLab/TUE/SMU p1; PMLR306 pages88131–88154 citation_publication_date2026/09/29. Nootherfirstpublicdateinvented."
+    },
+    {
+      "field": "supplements and official material inventory",
+      "source_url": "https://icml.cc/virtual/2026/poster/60922",
+      "locator": "All24formalpages/references/A–D read, Figures1–2wholepagesandfullposter2698117bytesvisuallyread. Publishernoextraseparatesupplement;API403. GitHub80members273320bytesnoPDF/ipynb/ZIP/video; HFAPIrecursive495entries(4checkpoint/32NPZ/VRP-SOLdata/generators)noother scientificdocument/archive. Posterrepeatsmainmethods/results/ablations."
+    },
+    {
+      "field": "current implementation",
+      "source_url": "https://github.com/Regina921/PoMtVRS",
+      "locator": "VRP50trainer128–164/224–235positiveorderedpairloss=Eq20, AdamW57–61,decoderCaDA253–349scalarper-headsigmoid/dynamic5state/residualFFN,env231–242arrival<lateanddepotreturn read. VRP100runbatch64/config391steps differspaper256/100k;noEASorLoRAentrypointconfirmed."
+    },
+    {
+      "field": "reported table consistency",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/meng26m/meng26m.pdf#page=22",
+      "locator": "All100Table9rowgapsmanuallyread; research/full-text-review/pomt-vrs/displayed-table-recalculation.json exactrounded-rowextractionproduceslastmodelallmean8.42366vsreported8.326, RF8.42831matchesprinted8.428. Binnedrowdivisions32/36/32notassumedcustomer-countgroupsdueone-depotboundaryambiguity; noteonlyusesinvariantall100mean. Thisisprintedtablechecknotbenchmarkrerun."
+    },
+    {
+      "field": "source protocol discrepancies",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/meng26m/meng26m.pdf",
+      "locator": "MainAdamvsTable7/codeAdamW;Table2gate1.427/2.241vsTable8mean1.437/2.245;TWmainstart-vsAppendixEq29completionandcodearrivalcheck;Table10VRPBTW100EASObj15.768gap.926/ref29.467inconsistent. Preserveprintedvalues,noinventedcorrectedmeasurements. Dnoiterations/lr/LoRArank/targets,noformalmatchedcomputeproof."
+    },
+    {
+      "field": "citation_identity:goal",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/826aea2253363fe04e8c4991b2a8869e-Abstract-Conference.html",
+      "locator": "Formalp10sourceendsLearningnotLearner, exactlysame3authors/fullremainingtitle/ICLR2025; qualifiedtitletypo."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/meng26m/meng26m.pdf#page=4",
+      "locator": "SourceFigures1–2rendered/seen; originalFig1crop52,64,545,315fullarchitecture/caption visuallychecked, no syntheticdiagram."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "pomt-vrs",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "bopo",
+      "reference_label": "BOPO: Neural Combinatorial Optimization via Best-anchored and Objective-guided Preference Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "efficient-active-search",
+      "reference_label": "Efficient Active Search for Combinatorial Optimization Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "learning-to-improve",
+      "reference_label": "A Learning-based Iterative Method for Solving Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Neural Large Neighborhood Search for the Capacitated Vehicle Routing Problem",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "neurolkh",
+      "reference_label": "NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "pocco",
+      "reference_label": "Preference-Driven Multi-Objective Combinatorial Optimization with Conditional Computation",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "polynet",
+      "reference_label": "PolyNet: Learning Diverse Solution Strategies for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "preference-optimization-co",
+      "reference_label": "Preference Optimization for Combinatorial Optimization Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "reld",
+      "reference_label": "Rethinking Light Decoder-based Solvers for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "cada",
+      "reference_label": "CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "chain-of-context",
+      "reference_label": "Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "mixed-curvature",
+      "reference_label": "A Mixed-Curvature based Pre-training Paradigm for Multi-Task Vehicle Routing Solver",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "shield",
+      "reference_label": "SHIELD: Multi-task Multi-distribution Vehicle Routing Solver with Sparsity and Hierarchy",
+      "description": "Explicit formal bibliography identity manually matched by title/authors; cited preprint/publication years do not alter the verified venue year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 freshly read, exact-work titles/author lists; source POCCO2026 reflects issuance not NeurIPSvenue2025."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "goal",
+      "reference_label": "Drakulic/Michel/Andreoli, GOAL: A Generalist Combinatorial Optimization Agent Learning, ICLR2025",
+      "description": "Source final-word typo Learning versus verified formal Learner; identical three authors, remaining full title and ICLR2025 establish identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Exact3authorsDrakulic/Michel/Andreoli/fullGOALtitle/ICLR2025, not inferred from abbreviation."
+        }
+      ]
+    },
+    {
+      "citing": "pomt-vrs",
+      "cited": "eformer-an-effective-edge-based-transformer-for-vehicle-routing-problems",
+      "reference_label": "Meng et al. (2025b)",
+      "description": "Cites EFormer among stronger constructive routing representations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Relatedworkp2Meng2025b; fullsixauthorEFormerIJCAI25pp8582–8590entryp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Meng et al. (2025b); EFormer: An Effective Edge-based Transformer for Vehicle Routing Problems. Relatedworkp2Meng2025b; fullsixauthorEFormerIJCAI25pp8582–8590entryp12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall24formalpages/A–D/all100CVRPLibrows/allEAScells/wholeofficialposter.",
+    "Specifieddenseheadgating/stateanchor andexactstrictpositivepairlossratherthangenericPO/multiobjectivepreferences.",
+    "Separated16nativeall-tasktraining/32newzero-shotconstraints/sizebackbonecheckpoints/EASparameteradaptation.",
+    "PreservednegativeMoSES/real-instance/large-bin/ablationcellsandtrueinferencecosts.",
+    "Recomputedall100displayedgapsandqualifiedaggregate8.326vs8.424withoutclaimingbenchmarkrerun.",
+    "DocumentedEAScell/TW/optimizer/gateaverages/currentbatch64differencesandmissingsearchhyperparameters.",
+    "Inventoriedofficialsource/HFdataandmodels, added37explicitrelationsandoriginalFigure1.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "308894548814c46f156476c47df28a45cb29a0a05fc3a4e1f8dabd17ccbac752"
+}

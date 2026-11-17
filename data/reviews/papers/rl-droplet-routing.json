@@ -1,0 +1,230 @@
+{
+  "version": 1,
+  "paper_id": "rl-droplet-routing",
+  "note_path": "specialist/rl-droplet-routing.md",
+  "baseline_note_sha256": "3f833c85fa180a4b704006aa14d159df8386bbebc75ae00759d888de10dab555",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v119/liang20c/liang20c.pdf",
+      "version": "Formal ICML2020 PMLR11911pages allmain/references freshly read",
+      "retrieval_url": "http://proceedings.mlr.press/v119/liang20c/liang20c.pdf",
+      "local_path": "research/import-272/nco-d3d7a04160.pdf",
+      "sha256": "d85415684cb8cfff24873f80e2022f39ace2edd45afa70a3d203a9fabce90df7",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v119/liang20c/liang20c-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v119/liang20c/liang20c-supp.pdf",
+      "version": "Publisher-linked three-page scientific supplement, complete all4figures/tworeferences freshly read",
+      "local_path": "research/full-text-review/rl-droplet-routing/supplement.pdf",
+      "sha256": "20c22e661dac27303f9f48735f1432e394d5255765c9b7a0eafb8d24377079bb",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh1–2 6authors/DukeECE+NTHUCSaffils. PhysicalfabricatedDMFBnotclinicalsafetyvalidation; hiddenelectrodedegradationdynamicEWOD, masksconstraintsneednextMDP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh3–4 fourdirectionactions/currentRGBdropletgoaloccupiedops only; healthhiddennoexplicithealthmap, dynamicfeedbackCCDcontrolleronlinelearningneedcontinue. Transtationboundary/obstacle=stay; healthtau^floor(n/50),6e−1≤tau<1 latenthistorystate notRGBMarkovstrict."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 5,
+      "notes": "Fresh5fullBernoullisuccessfromCURRENTcellhealthnotdestination/rewards+1terminal+.5approach−.3stay−.8away; noformalclaimanypositiveguaranteesconvergenceaccepted. CNN32/64/64FC2564;8envPPOselection;trainingseparatechips25–1225electrodes."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Fresh6FULLRENDERreadduePDFover24000chartextlayeraxes/refusedCLI; wholepage6imageplusbodyclip complete. 20kGAMES/epoch50epochs~1Mgame;video says200k/800kepochs appearsunitconflict. 3models/7sizes healthytrainedthenonlineadaptondegradingtau10/50/90% electrodes. 4hour20gridhardwaremissing;earlyadaptslightlyworsevsstatic. Fig5/6/7fullcurvesvisual6view7next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Fresh8–9 allNuIPoperations/6x6fabricatedPCB36+8relaysPi3Bplus/camera1kHz200Vpp. 19routetasksoneelectroderow4col3emulated150Vppnotnaturallyagedbulkcohort. Thirdtaskfailurethenlateravoid. Noassayclinicalaccuracy/populationsuccessstats. Discussionmixingloopsroutecomposed/refsstart."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh10–11 allremainingbibliography, videoGDrivefolderexplicit1suM0_3GdL1r6_65dTjl_sA78POKi7hRK needcheck; nocatalogueinternalNCOrefsallhardware/RLbackgroundnofakeedge. Full11pagesreadincludingp6visual/clip."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Freshsupp1introandFig1 all5/10/15/20grid8?16curves visualnext; titleID3297matchesmain notseparatepaper. VideoGDriveexplicit."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 2,
+      "last_page": 3,
+      "notes": "Freshsupp2–3 allFig2–4/captions/ref2 fullread; 7sizePPOsweepbutdegradationplots5–30omit35,displaydistsmustvisualreadnumericnoinventtabulatedpercent. GDrivevideolinkHTTP404acquiredcannotreviewnotcounted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Latent electrode degradation can cause fixed droplet routes to fail.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Fig1–3"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Neural feedback routing, Gym degradation simulator and fabricated-chip NuIP demonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            8,
+            9
+          ],
+          "locator": "Contributions/Fig4/experiment"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Four direction constructive CNN/PPO with RGB partial observation and Bernoulli health-dependent transitions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "State/actions/reward/architecture"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Seven size-specific policies/three models each, degradation10/50/90%, early negative cases,19task6x6physicalexamplewith150Vppemulation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Figs5–9"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Hidden health means RGB not fully observed Markov; no universal optimality/fault/clinical guarantees or normalized runtime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "MDP assumptions/empirical protocol"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive per-size droplet path policies; no shared cross-problem checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Action semantics/training scope"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v119/liang20c.html",
+      "locator": "Formal6authors/DukeECE+NTHUCSaffiliations;publishermeta2020/11/21retained."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://proceedings.mlr.press/v119/liang20c/liang20c-supp.pdf",
+      "locator": "All11formal+3supppagesread/fullrefs;9mainfigs1table+4suppfigsvisuallychecked. Page6textlayertoolrefused>24kcharacters;fullrenderplusbodyclipread/checkpointed. Event6330/53759samepapernodownloadablesciencesupp;GDrive1suM0_3GdL1r6_65dTjl_sA78POKi7hRKreturns404notreviewed/notcounted.15tree/16ZIP917538BnoPDFnotebooknestedarchive/checkpoints;GIF22framesALLviewed/READMEfullread."
+    },
+    {
+      "field": "actual responsibility and evaluation",
+      "source_url": "https://proceedings.mlr.press/v119/liang20c/liang20c.pdf#page=7",
+      "locator": "PersizeCNNpolicyconstructsnorth/east/south/westpartialroute;3models7sizes/within-taskscope retainedspecialistconstructive. Healthythenonlineadapt/earlyworse/largercurvesoverlap. Fabricated6x6NuIP19tasksone150Vppemulatedfaultnotnaturallyagedcohort/allbioassays."
+    },
+    {
+      "field": "state reward and release comparison",
+      "source_url": "https://github.com/tcliang-tw/dmfb-env",
+      "locator": "Wholeenvironment/train.py/my_net.py/utils.pyread. RGBomitshealth/usage;originalmethodscheck1vs.2identicalobs. Healthresetstrict>50andfreezes>2bad vsformal50floor. BFSdistancevsManhattan,20ktimestepsvs20kgames,example1env64stepsdegraded vsselected8envhealthytrain;randomstarttypoqualified. NoPPOorbiophysicalreplay."
+    },
+    {
+      "field": "original figure and citation scan",
+      "source_url": "https://proceedings.mlr.press/v119/liang20c/liang20c.pdf#page=4",
+      "locator": "OriginalFig4crop52,57,546,205completebodycaptionviewed. Bothcompletebibliographies containnocatalogueinternalreferences;isolatednodevalid."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readcomplete11formal+3scientificsupppages/fullrefs;inspectedallfiguresandwhole22frameGIF.",
+    "ExpandedaffiliationsandaddedoriginalFigure4.",
+    "Qualifiedpartialobservations/onlineadaptation/persizetrainingratherthanuniversalhealthmaporzeroshotguarantees.",
+    "Recordednegativeearlyadaptation/overlaplargerarrays;scopedphysical19task6x6oneemulatedfault.",
+    "Readcode/defaults/health/rewarddifferencesandranoriginalselectedenvironmentmethods;explicitlynotPPO/biophysicalreproduction.",
+    "Documentedunavailable404authorvideoswithoutcountingasread;zeroverifiedinternalcitationsretained."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "33ef0cf9f9505e8d40054c046f32b382d020423df7865759c8a4eb23fff0024f"
+}

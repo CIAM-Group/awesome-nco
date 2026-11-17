@@ -1,0 +1,972 @@
+{
+  "version": 1,
+  "paper_id": "l2seg",
+  "note_path": "specialist/l2seg.md",
+  "baseline_note_sha256": "474528d5c8aee873cb24f534b59f13035511c70a40e09426a90bd676199f62fa",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f274af80a7a3aa9ed23ba6f7908470bc-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f274af80a7a3aa9ed23ba6f7908470bc-Paper-Conference.pdf",
+      "version": "Actual formal ICLR2026 37-page PDF, complete main/bibliography/scientific A-G fresh read; publisher identity/date matched.",
+      "local_path": "research/full-text-review/l2seg/paper.pdf",
+      "sha256": "6786a8c597b7f179a614eaadbc2743d24471425c936148f36dbc179a2f3533f0",
+      "pages": 37,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshformal37pagesICLR2026fourMITauthorsOuyang/Li/Ma/Wu, Ma corresponding. ActualFSTAfreeze stableincumbentedgesandaggregatehypernodes notgenericsegment-reordernet. L2SegNAR/AR/SYN encodergraph+route; weightedCElookaheadedgechange labels. ActualCVRPANDVRPTWmissingTWtag. Improvementlikely actuallearnedincumbentneighborhoodrestriction+solver; no neuralinitialconstruction. 2x7xspeedclaimneedsbudgetfulltables."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 6,
+      "notes": "Fresh3-6FSTAdefs/Theorem1/2 Fig2/3/4Eq1/2 allread. Hypernodesfreezeinternalincumbentsegments, depotincidentedgesalwaysunstable; conditionalfeasibilityandobjectiveorderpreservation WITHcorrectaggregation, notfullsearch-spaceequivalence/globalopt guarantee. NNARpseudo-insertion is dependencybridge ONLY notactualedgeinsert. Encoderroute-maskedtransformer+GATcurrentedges/kNN enhancedfeatures angular/internality; NARnodesigmoid;AR GRU deletion1/insertion4MHA/endtoken. Sharedarchitecture notnecessarilyweights; traininglookaheadBCEbinaryunstablenodes,ARDFS symmetricdifferencealternatingedge labels."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh7-8CE/SYNpipelineall Table1 rows. NAR weightedBCE, ARDFScomponents<=2routes weightedCE(paperlabelinsert/deletionindex inconsistency notblindformula). SYN2adjacentroutesproblem, threshold.6, kmeans3clustersNARunstable startsmaxprob,ARpseudoedgepredictunion;NARallincidentedges,ARallnodecluster. Main100largecapacity2kQ500/5kQ1000 testbudgets150/240perINSTANCE, Table1SYN improvementsLKH2.92/1.87%,LNS3.34/1.16,L2D.78/.50. 2x7xmeansreachesmatchedqualitycurve notallfixedtimewhole-run2x. Standard1000CVRP/100TW perN1000/2000/5000time150/240/300and120/240/600;borrowedmanybaselines vsrerun5."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FreshmainTables2-5/allfiganalysis. CVRP1kfullSYN-L2D41.23slightlyWORSEHGS41.20/NDS41.16;2k56.05vsHGS57.20/NDS56.11;5k121.87vs126.20. VRPTW87.25/163.74/333.4under2/4/10min bestdisplayed BUTSYN-LKH5k345.2worseHGS344.2. Negativegapheuristicref notopt. Table4NAR91.46Recall/51.79TNR44.02,AR74.39/54.0744.12 vsTable1NAR44.12/AR44.02 swappedobjectives sourceinconsistency. RandomFSTA40/60worse2k46.24/46.89vsLNS44.92. Labelcomparison10seedsnotallmaintablesuncertainty:stableedgeoverlap78.3HGS60s/85.1LKH1000 vsLKH3000. Actualpublicofficialcodefoundpaperp10 mit-wu-lab/learning-to-segment addcodeURL."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Freshcompletebib11-12Kool..Kimread. SILformalBoosting2025sevenauthors explicit plusold2024later, BQGeneralizableoldtitleformalidentityknown2301chain. leaderreward2024preprint identitylatercandidate. InVit2024,ROCO2023/adversarial2022,contrastivepredict/search2024&searchneighborhood2023 actualintext2 notautomaticuncatalog. OfficialreposingleREADMEtree0cfdb677bce29e8efdde5519fa28a594c1964403 CODEWILLRELEASESOON, no actualcode/checkpoints/supp; paperavailabilitypromiseconflictscurrentrelease notclaimsourceverified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Freshallbib13-14complete. Important HottungTierneyAI2022article103786independentjournalextension vsourNLNSECAI2020 notforcededge; authoronlysameinsufficient. SILformal2025+old2403.19561bothsameworkcuratorprecursor knownfullcomparison, ICAMexplicit2405.01906samehistoryeligibleedge(unlikeRADARgyTk). GFACS2403.07041titleexplicit;DualOpt2501.08565/HLP2502.08340/DRHGAAAI2025/HD&R2308.04639primaryIDscheckcandidates notalluncatalogassume. T2TduplicateLi2023a/b sameworkoneedgeversionsnotdouble. Appendixnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "FreshappendixTOC15+A1-A3/B1 start16read. StableformalrelativeONE nextbudgetedsolverinvocation notpermanenttrueglobaloptimaledge. FullCVRP/TWsumdistancecapacity/hardservicewindow. B1p16spatialdescriptionrouteboundariesSTABLE/interiorsunstable differsintuitiveintro wording; treatempiricalnotfixedrule. Oraclevisualonlylookahead cannotserveavailabletestlabel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Fresh B1.2-4 Table6 Fig8-9 read. Oracle39s vs SYN241 excludeslookaheadruntime explicitly notdeployablemethodspeed. OraclelabelsLKH buttableLNS/prosebackboneLKH mismatch notmerged. Ninetyrecall/TNR119s versus70/70_324s supportsclassificationtradeoff notgeneralbound. FSTA5steps restrictedsearch singletonallowed."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "FreshB1.4/5Alg1allaggregation formulas. Conditionalwarmstart/fixededgecapablebackboneHGSrequiresmodificationfuture. CVRPdualendpoints halfdemand forcededge;singlemakesasymmetricandfixesorientation. TWrecursiveaggregatedwindow/service adaptive1or2; VRPBsplitlinehaulbackhaulboundary required; 1VRPPDactually3hypernodes despitemainone/two. 1VRPPDprintedlastdemandDk-Dmax-Dmin appearsnonconserving sumDk-Dmin;proofnextchecknotblindendorsealltheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "FreshTable7fullfourvariantaggregations+B2CVRPproofEq4-8. Objectiveconstantoffset fixedsegments notsameabsolutevalue/fullunrestrictedsearch. CVRPdemandpreserved actualdualsum, fixededge/traversal orientationconditions. 1VRPPDTable7repeatsDk-Dmax-Dmin suspiciousnotOCR,needvisual. TWproofinductionallowswaitingcase later. Sourceone/twoheadlinebroaderthreePDspec."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "FreshTWproofp23-24allEq9-16/inductioncasesread. Fixedorientation service+travel cumulative andwaitingpiecewiseduration equality onlyassumptionsvalid, notedgefree/unrestrictedoptequivalence. SourceEq16middlecasesfirstconditiontlvsbarminorindextypo; avoidcopyformula blindly. Needfinaldualcase/PDnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "FreshB2fullremainingTWdualwaiting/VRPB/1VRPPDproofEq17-23/C1comparisonsread. PDendloadd_st+Dkassumedproofbutprintedthree demands sumDk-Dmin onp20/Table7 ->actual algebra inconsistency notvalidateallvariants. MainexperimentalonlyCVRP/TW, VRPB/PDtheorynotaddasevaluatedtasks. Conditionalconstantoffset/fixedinternaledges orientation notfullunrestrictedoptequivalence. LNSglobalonlyselectedneighborhood whencombined, evolutionarypreservationdifferent notharduniversalnoveltyassertion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "FreshC1-5/Table8allfeatures. ExplicitDRHGAAAI2025distinctlearnedrepairvsL2Seglearneddestroy existingIDconfirm. AddedTWwindow/servicefeatures, interiorityk5/15/40andpercent. C3maskendtokenDELETIONallowed/INSERTIONmasked conflictsmainp6 insertionallowedend;needrecordunresolvedimplementationbecausecodeplaceholder. LabelARconnectedcomponentsfilteredimprovementthreshold/acceptrate. InferencebatchedsingleNAR/ARperround; kmeansbatchnotcomplexityproof. D1LKHtimeconfigread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "FreshAlg2-5alllines. SYNactualNARONLYseedsARclusterthenunionARpredictions NOTunionallNARincidentedges;Figmergevisualmustnotmisdescribe. Alg3line14useslastseededgevariablevsbuiltunion likelytypo; formalintendedunionallcleartext/matchingAlg5. ARkmeansallnodescenternearest; NARmarksallincidentoriginalsolutionedges. DataNP/TIS/acceptfiltersnextD3."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 32,
+      "notes": "FreshD1-D4Table9allsettings. Classicalangular6vehicles*.95capacitythenLKHinitial, LNSrandom3adjacentroutes each1000LKHupdates; L2DpretrainthenL2Segtraineditslabels. Separatetype/scale data1000*40lookahead40ktransitionsNOTexactnumbertrainingpairs;30val. Adam200epochsB128, lr1e-3large/1e-4smallTWwpos9insert.8delete.2;d128TF2twoheadGNN2onehead. Table9alphaAC=0small/TW conflictsAlg2acceptprob =>noARlabels ifliteral; noavailablecodetoresolve. D4largeQ500says1kbutmain2k, reportmainsettingandtypo. SIL/NDSrerunV100othersborrowedmatchedCVRPinstances/TWdistribution only, notallidenticalhardware; empiricalfutureGPUclaimnotadopt."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 33,
+      "last_page": 34,
+      "notes": "FreshTable10modelsettings/E1-E3/Table11/12allrows. Test1000smallCVRP,100large/TW. CVRPLibsynthetic2k/5ktransfer gapsX6.9/XXL12.0 at600s vsUDCx2507.1/13.2 but240sX7.5worse7.1;reportedbaselineshardwarebudgetdiff. Sevencluster/skewdemandtestzero-shot gains1.23/.90/3.10/.82 range.82..3.10 notprose1.23lower;in-dist1.95/2.13/3.54/1.02. Sameproblemtypeweightsacrossdistributionnotgeneralist."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 35,
+      "last_page": 37,
+      "notes": "FreshE4-8/F/G allTables13-16/Fig12. FiveTESTseedsnotindependenttraining replication; SYNmeansstd .20/.34LKH .22/.35LNS .23/.34L2D canHIGHERthanbackbonenotuniformvarianceimprove. Predictedstableoverlap47.2to69.4%,unstable28.2to54.1 notcertconvergence. SYNoverhead7.2..9.6%tested1k5kpairbatches notfullNscalabilityproof. Trainingdata/NAR/AR costs6.3+max6.8/13.7=20h,2k32.8h,5k59.9h parallelgiven;10k6daysPROJECTIONnotmeasured. ALL37formalpages/scientificA-Gnowread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "fsta",
+      "category": "contribution",
+      "statement": "Learn unstable incumbent edges, freeze/compress stable segments and warm-start reduced solver. NAR globally identifiesnodes, AR local pseudoedges not actualrepair; SYN NARseeds then unionAR. Conditionalfixedsegmentfeasibility/constantoffset, notunrestrictedopt equivalence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "All formal FSTAproof/Alg1-5/architecture, PDformula sumDk-Dmin vsproofDk explicitlyqualified."
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "method",
+      "statement": "Supervisedlookahead1000instances40steps variablelabels;200epochsB128 Adam taskrates/weights,d1282+2layers/AR1+4. Classicalangular/LKHinitial; distincttype/scale/hostmodels and25/28inputs; codeunreleasedcannotresolvemask/accept/union inconsistencies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            37
+          ],
+          "locator": "Table8-10/16 fullpseudocode plusactualREADMEtreeonly1."
+        }
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "category": "experiment",
+      "statement": "CVRP/TW1k2k5k exactperinstancebudgets, largecapacity2k/5k2x7xmatchedqualitycurves notallruntime, negative1kHGS/NDS and5kSYN-LKHcases; pairedCVRPbutTWcommondistribution/mixedbaselinehardware.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            17,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "locator": "All16tables/12figures; CVRPLib240/600transfer andclustered/skew zero-shot.82-3.10gains;oraclelookaheadexcluded/fivetestseeds/7.2-9.6%overhead/training20/32.8/59.9parallelh."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistimprovement: learned neighborhood release acts on completeincumbent, classicalinitialconstructor; proposed NNnotnewinitialconstruction. CVRP/TW separateinputdims andtrainingtype/scalenosharedjointcheckpoint; VRPB/1VRPPDtheorynotmeasuredtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            19,
+            20,
+            21,
+            26,
+            31,
+            32,
+            33,
+            34
+          ],
+          "locator": "ActualmethodflowandD1-D4, broadframeworkapplicabilitynotgeneralist."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f274af80a7a3aa9ed23ba6f7908470bc-Abstract-Conference.html",
+      "locator": "ActualformalfirstpagefourMITauthors, Ma corresponding; publishercitation_publication_date2026-04-20. Actualarxivv1June22_2025/v2Sep26_2025; genericICLRJan25notificationnotactualacceptanceremoved."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f274af80a7a3aa9ed23ba6f7908470bc-Abstract-Conference.html",
+      "locator": "ActualpublisherPaperonlylink, forumfromofficialREADMEpN261iTKvrbrowserchallenge/API403 disclosed. Complete37formalpagesallnamedA-G/16tables12figuresread. Officialtree0cfdb677bce29e8efdde5519fa28a594c1964403oneREADMEfullread, nofurtherPDF/TEX/notebook/archive; noadditionalnamedmissing scientificmaterial."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/mit-wu-lab/learning-to-segment",
+      "locator": "Officialpaperp10URL+actualmit-wu-labREADMEtitle/authors/forum matched; observedtreehasONLYREADME andCodewillbereleasedsoon. Linkaddedbutnoactualimplementation/checkpointavailabilityorcodevalidationasserted."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f274af80a7a3aa9ed23ba6f7908470bc-Paper-Conference.pdf",
+      "locator": "OriginalfullFig2formalpage4Rect(125,80,490,262)4x; visuals4/5/9/21/26/29/32/37 verified;PDprintedminusDminnotOCR andacceptcoefficient0confirmed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2507.01037",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-06-22; title on abstract page: Learning to Segment for Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/l2seg/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "l2seg",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2018",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Kool et al.,2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference matching primary stable identity attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Huang et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity cl-lns"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Chalumeau et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity compass"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "conpas",
+      "reference_label": "Huang et al.,2024",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Huang et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity conpas"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "dact",
+      "reference_label": "Ma et al.,2021",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Ma et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity dact"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Sun & Yang,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity difusco"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "dimes",
+      "reference_label": "Qiu et al.,2022",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Qiu et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity dimes"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "drhg",
+      "reference_label": "Li et al.,2025",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            27
+          ],
+          "locator": "Explicit in-text Li et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity drhg"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.,2022",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity efficient-active-search"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "elg",
+      "reference_label": "Gao et al.,2024",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Gao et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity elg"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "gfacs",
+      "reference_label": "Kim et al.,2024; arXiv2403.07041",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim et al.,2024; arXiv2403.07041"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity gfacs"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "glop",
+      "reference_label": "Ye et al.,2024",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text Ye et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete reference matching primary stable identity glop"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "invit",
+      "reference_label": "Fang et al.,2024",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Fang et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity invit"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "l2r",
+      "reference_label": "Zhou et al.,2025a; arXiv2503.03137",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text Zhou et al.,2025a; arXiv2503.03137"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity l2r"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim et al.,2021",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity learning-collaborative-policies"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al.,2021",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference matching primary stable identity learning-to-delegate"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Luo et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity lehd"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "nds",
+      "reference_label": "Hottung et al.,2025",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity nds"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Ma et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity neuopt"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference matching primary stable identity pomo"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "rbg",
+      "reference_label": "Zong et al.,2022",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity rbg"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "sil",
+      "reference_label": "Luo et al.,2025 formal Boosting;2024 arXiv2403.19561 precursor",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text Luo et al.,2025 formal Boosting;2024 arXiv2403.19561 precursor"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference matching primary stable identity sil"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            31
+          ],
+          "locator": "SIL also explicitly cites2024 precursor; D2 explains earlier removed benchmark andformal2025counterpart."
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "t2t",
+      "reference_label": "Li et al.,2023a/2023b",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li et al.,2023a/2023b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete reference matching primary stable identity t2t"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "tam",
+      "reference_label": "Hou et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text Hou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference matching primary stable identity tam"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "udc",
+      "reference_label": "Zheng et al.,2024",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zheng et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity udc"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "utsp",
+      "reference_label": "Min et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Min et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity utsp"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity neuro-cross-exchange"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Geisler et al.,2022",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Geisler et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity adversarial-nco-generalization"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "roco",
+      "reference_label": "Lu et al.,2023",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Lu et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity roco"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023; old Generalizable title",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Drakulic et al.,2023; old Generalizable title"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference matching primary stable identity bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "l2seg",
+      "cited": "icam",
+      "reference_label": "Zhou et al.,2024; arXiv2405.01906",
+      "description": "Actual explicit in-text and matching full reference, actual citedpreprintyear/version preserved. BQoldGeneralizabletitleknownsame2301chain;SILformalBoostingandpreprintprecursornotarxivretitling;ICAMexplicit2405historynotunresolvedgyTk. DistinctAI2022journalnotforceECAI2020record.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text Zhou et al.,2024; arXiv2405.01906"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete reference matching primary stable identity icam"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh37formalpagesallscienceA-G/16tables12figures, completebib, actualpublisher/arxivhistory/authorREADMEonlyinventory.",
+    "AddedmissingVRPTWtask, preciselearnedunstableedgemasking/hypernodeaggregation+classicalreoptimizationnotgenericsegmentreorderingNN; classicalinitialization andspecificbackbones.",
+    "Separatedconditionalfixedsegmentconstantoffset/feasibilityfromglobalunrestrictedsearch orallvariantguarantees;PDprintedthree-demandnonconservingformulaexplicitlyidentifiedp20/21vsproof26.",
+    "SYNactualNARseedsARnotNARedgeunion, pseudo-insertionnotactualrepair, imitationlookaheadlabels200epochs40ktransitionsvariablepairs, taskinputdims/traininghostdistinct specialistimprovement.",
+    "Exactperinstancebudgets/largecapacityvsstandardtests/128batchtraining/parallel20..59.9h/data included;2x7xmatchedqualitynotallrunruntime;10kcostonlyprojection.",
+    "PreservedCVRP1kHGS/NDSandTW5kSYN-LKHnegativecases, mixedbaselinehardware/common-distributionTW,oraclecostexcluded/fiveTESTseedsnotindependenttrain/noallvarreduction.",
+    "Originalsourceaccept0/endtokenmask/Alg3union/Table4swappedAR-NARvalues/largecapacity1ktypoqualified; noavailablecodetoresolve ratherthaninventimplementation.",
+    "OfficialrepoaddedbutactualtreeONLYREADMEcodeunreleasednotpretendcompletedimplementation;publisherdateApr20_2026separateJune22_2025arxivv1/genericacceptremoved.",
+    "31confirmedinternalreferences includingoldBQ/ICAMsamearxiv/SILbothversions;independentAI2022expansionnotforced; originalfullFig2crop."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f83db267dc38ac206de52c249d7da5e983f2e147968df55982295ae172ec6c18"
+}

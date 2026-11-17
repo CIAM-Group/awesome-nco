@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-optimize-variational-quantum-circuits-to-solve-combinatorial-problems",
+  "note_path": "specialist/learning-to-optimize-variational-quantum-circuits-to-solve-combinatorial-problems.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "69c46e87c96e5dfc23b4480b4fd8e292361fed0ef06d7aa525fbfa65ad38b11e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1911.11071",
+      "retrieval_url": "https://arxiv.org/pdf/1911.11071",
+      "version": "arXiv1911.11071v1 Nov25 2019,10p includingDOElicensepage",
+      "local_path": "research/full-text-review/learning-to-optimize-variational-quantum-circuits-to-solve-combinatorial-problems/reading-candidate.pdf",
+      "sha256": "b80eb6de365acd319bf0f9791c4cd62c8da9314a73a73f74ecd4da4305d37f3d",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "pure-rl-companion",
+      "url": "https://arxiv.org/pdf/1911.04574",
+      "retrieval_url": "https://arxiv.org/pdf/1911.04574",
+      "version": "Distinct referencedauthorworkshop arXiv1911.04574v1 Nov11 2019,7p includingDOElicensepage",
+      "local_path": "research/full-text-review/learning-to-optimize-variational-quantum-circuits-to-solve-combinatorial-problems/pure-rl-companion.pdf",
+      "sha256": "7879ecb4caae9bdb9ebbb7191de09220814b60ecad87ae9907d5a20b09f591cf",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "formal",
+      "url": "https://cdn.aaai.org/ojs/5616/5616-13-8841-1-10-20200512.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/5616/5616-13-8841-1-10-20200512.pdf",
+      "version": "FormalAAAI2020 ninepages2367-2375",
+      "local_path": "research/full-text-review/learning-to-optimize-variational-quantum-circuits-to-solve-combinatorial-problems/formal.pdf",
+      "sha256": "62c3a70c24c8247d3100db5fffe79fc59d59987dcb0e9a6ed35b372ec19d0f2b",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "Actualall10arxivv1pagesread includingfullQAOAformulation/linearalgebra/7train94test/MLPPPOhistoryupdates/KDEderivation/allfigures/tables/fullbib/DOEnotice. All3originalcontacts/keymathviewed. Note printedMaxCutpositivespincoefficient sign issue andclipargumentorder; reportedexperimentalclaims not independentlycertified. RLmainresults hybridNM,30.15maximumKDEnotneuralRL."
+    },
+    {
+      "source_id": "pure-rl-companion",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Actualall7referencedworkshoparxiv1911.04574v1pagesread including21refs/DOEallnotice/trajectories/noisePPO/1train97test/pureRLvsRLNM192budget/fullFigures1-4. Allcorrespondingcontacts/mathfiguresviewed. PureRLp4 notuniformlybetterNM, RLNMmax8.61 fromearlierdifferentsetup notmergedwithAAAI7train94test/30.15KDE."
+    },
+    {
+      "source_id": "formal",
+      "first_page": 1,
+      "last_page": 9,
+      "notes": "Actualall9formalAAAIpagesread including5authoridentities/allQAOA/PPO/KDEequations/Table1Table2/Figs1-5/fullbibliography; allformalcontacts/keymath/formula/tableboxplotsactuallyviewed. QiskitAer noiselesshardwareerrors butmeasurementsamplingnoise; one-secondcalltime projectednotmeasureddevice. 10attempts192queries withRL96thenNM96; referencefoptlargestobservednotcertificate, separatebruteforceCopt. OriginalFig3plot/fullsubcaptionsandcaptionviewed. Noadditionalidentifiedscience/code; nocurrentexactinternalreferences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "AmortizeexpensiveQAOAparameteroptimization acrossgraphinstances.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "NeuralPPOparameterupdater andseparatenonneuralKDEsampling.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections4.1-4.2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "History4/two64hidden/continuousangleupdates; testedRL96plusNM96 notpureRL; KDEnotneural.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Architecture/training/budget"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SingleMaxCutnativeproblem withdepth-specificcontinuousQAOAparameters; noNNcompletecutincumbentediting/crossproblemtest.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            8
+          ],
+          "locator": "Formulation/setup/futurework"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "7train94test/10x192budget; KDE30.15vsneuralhybridmax5.59; largestobservedfopt vsseparateclassicalCopt.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Table1Table2/Figures4-5"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Noiselessdevicesimnotquantumadvantage; printedpositiveMaxCutspin/clip-orderdiscrepancies qualified,notinferhistoricalimplementation.",
+      "evidence": [
+        {
+          "source_id": "formal",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Equations3/7/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "ReadexplicitpureRLcompanion different1train97test,RLp4negative retained.",
+      "evidence": [
+        {
+          "source_id": "pure-rl-companion",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Completecompanion/workshopidentity/full21refs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and histories",
+      "source_url": "https://doi.org/10.1609/aaai.v34i03.5616",
+      "locator": "5authors/AAAI2020pp2367-2375/Apr3; mainarxivv1Nov25 2019 vsdistinctcompanionv1Nov11."
+    },
+    {
+      "field": "supplements requiredcompanion scientificcoverage",
+      "source_url": "https://arxiv.org/pdf/1911.11071v1",
+      "locator": "9formal+10arxivmain+7referencedpureRLworkshop pages allread/fullbibs/allcontacts/keymath/tables/plotsviewed. CompanionexplicitSection5ref fulfilled; noadditionalidentifiednecessaryscience/code. Noexecution."
+    },
+    {
+      "field": "classification metric attribution and figure",
+      "source_url": "https://cdn.aaai.org/ojs/5616/5616-13-8841-1-10-20200512.pdf#page=7",
+      "locator": "OnlyMaxCut/continuousQAOAupdates notcompletebinaryincumbents; neuralhybridmax5.59 separateKDE30.15. OriginalFig3p7crop50,200,565,380/allsubcaptions andcaptionactuallyviewed."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readformal/mainarxivandexplicitpureRLcompanioncompletely.",
+    "Separated neuralRLNM fromnonneuralKDE andbestobservedfopt fromclassicaloptimum.",
+    "Qualified noiselesssimulation/projectedhardwaretime/printedmathissues andsingleproblemtransfer."
+  ],
+  "reviewed_note_sha256": "c6b1f469dc9daf1725505c4fc55fa63282448fabebca5a33be01a870b296a7cc"
+}

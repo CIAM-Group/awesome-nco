@@ -1,0 +1,472 @@
+{
+  "version": 1,
+  "paper_id": "prompt-learning-for-generalized-vehicle-routing",
+  "note_path": "specialist/prompt-learning-for-generalized-vehicle-routing.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "f3777a60827a01bae85cd87f0243d4e18fd7cc82c54d62696f2839a0bd559239",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2024/0771.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2024/0771.pdf",
+      "version": "ActualformalIJCAI2024PDF9pages6976-6984allbody/equations/results/completebibliographyfullyread.",
+      "local_path": "research/full-text-review/prompt-learning-for-generalized-vehicle-routing/paper.pdf",
+      "sha256": "e2c5b2ac300160af73bc222267b088ef1c3dba69ddbd299fcffc62a239659ccf",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2405.12262",
+      "retrieval_url": "https://arxiv.org/pdf/2405.12262",
+      "version": "Actualarxiv2405.12262v1May20_2024,14pagesallmaintext/references/AppendixA/full115instanceresultsfullyread.",
+      "local_path": "research/full-text-review/prompt-learning-for-generalized-vehicle-routing/arxiv.pdf",
+      "sha256": "22e2263edde7968e81530638926a3cc4cfb4b1603c331c3caabd49b270c3f10c",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "dataset-figure",
+      "url": "https://github.com/FeiLiu36/PromptVRP/blob/main/Instances/CVRPLib.zip",
+      "retrieval_url": "https://github.com/FeiLiu36/PromptVRP/blob/main/Instances/CVRPLib.zip",
+      "version": "Actual1pageCVRPLib/Fig_cvrplib.pdfinsideofficialInstances/CVRPLib.zip;20labelledscatterexamplesfullyreadandvisuallyinspected.",
+      "local_path": "research/full-text-review/prompt-learning-for-generalized-vehicle-routing/Fig_cvrplib.pdf",
+      "sha256": "04fd1382746caf9f628cacb7110dbeeba09a0e58797e9d55ae6977bafbad8784",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "CVRPLib/Fig_cvrplib.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Readformal7bylineCityU/SUSTech/Huawei,ZhenkunWangQingfuZhangcorrespond. PromptVRPfrozenbaseencoderdecoder+trainablekeypromptpoolroutingnotLLMnaturalprompt. CrossdistributionCVRPnotnativecrossproblemgeneralist;constructiveendtoendARmain. Fullformalrelatedexplicitrefsnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadactualCVRPformulation/loss/frozenfeatureextractorbaseweights/fixedKmeanskeyslearnonlyprompts. SixlayerpreINpooledconcatstandardizedfeatures;128x341=43648keysamples/fourproblemsizegroupsNclusterseach/M=4N. Euclideannearestkeyselect,learnL*D*Etokens/layerconcatenatedpersistn+LDonlyfirstnoutputtodecoder.ARmaskedconstructiveCVRPnotLLM/incumbentedit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadTable1/2allrows/modelM16D5L6E128key768prompt3840frozen. Paperprompts341distributionscycle/B64/10000epochs1000instances/lr1e-3->1e-5/2.5d2080Ti11G;table1d25GBadjustednotmeasuredsamehardwarebaseline3dpretrainingexcluded. CVRP100basicPOMO2.18<singlePrompt2.57contradictbroadclaim,top8+augmoreinference12mvs89s200. HGS5/10/20sLKH5/10/60sper1000,boundedheuristicnotoptimum. OOD12 1k eachPromptavg3.10/aug1.72 vsMeta3.97/2.50Omni4.36/2.76."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTable3token1/5/10(size100moretokensslightlyworse)/Table4CVRPLIB115setsA/B/P/X/XML (XMLPrompt6.1>worsePOMO4.4/top8best3.4),top8avg2.5vs3.5. Fullallrefs8-9readBQoldGeneralizablearxiv2301.03313samechain;JoshiConstraintsjournalnotconference;formalDPDPCPAIOR2022/MetaPOMOECML2022vol2023notnewdifferentid. Newarxiv14pcontainsdetailedsuppfullreadnext."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Actuallyreadarxivv1pp1-3independentlyfromformal:7byline/affiliations/keypromptfixedbase/noLLM/cross-distributionCVRP/relatedbody+citedworks/sixlayerfeatureextractoraverageconcatenation. Contentalignsformalbutlayout/arxivfootnotedcodevary,notbyteidentityclaim."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Actuallyreadv1method/training/resultspp4-6:fixedkeysM16/frozenbase/768features3840prompt/5tokens6layers;greedydescriptionofRLmain/2.5d2080Ti1dadjusted25GB distinction;Tables1-2samequalifiedPOMO100betterbasic,top8inferencecostdistinct,HGSfiniteheuristicgap/OOD12variants. Noarxiv-onlyextraunreadclaim."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Actuallyreadv1pp7-9fulltokensize/CVRPLib115aggregate/promptfrequencies/conclusion/ack/allrefsplusarxiv-onlyBossek/Pessoa/Vaswaniappendixrefs,AppendixA.1startQKVscaledsoftmaxweightedvalues;versionsbibliographyadditionsnotclaimsamebytes. XMLsingleprompt6.1notbest/top8extraallocation."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "ReadAppendixA1attention8heads128/head16/6encoder/SHAclip10/visitedmaskfullformulas,A2fullFigure4architecture,A3training31sizes50:5:200x11geometries=341,demand1-9capacityceil(30+n/5),sequentialsize+geometryoneepoch/distribution. Fourkeygroupsseparatesizebinsnotjust4trainingsizes. A4POMOandPOMOmultiadditionalbaseline/Fig5OOD/Fig6CVRPLIBvignettesread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "ReadcompleteSetA27/SetB23/SetP23all73perinstancerowsanddiscussion. BaselinesA/B/P/Xlexfleetfirstnotpureminsum,negativeB51P55notbettertrueoptimum/objectiveprotocolmismatch. POMOMultiadditionalbaselinePavg4.2nearPrompt3.8/top82.7;individualPromptP76k4gap16>POMO7.4,top88.4stillworse;A/BmanyMeta/multibetter. Noallrowdominance."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 14,
+      "last_page": 14,
+      "notes": "Readallremaining42perinstancerowsX22+XML20andavg,115total27+23+23+22+20. XMLmultitrainPOMO3.7vsPrompt6.1/top83.4;singlePOMO4.4,individualmanyties/losses. Xlimited100-200despiteFigure6showinglarge979doesnotmeanlargecasequalitytest. Full14arxivpages/allappendixsciencecoveragecomplete."
+    },
+    {
+      "source_id": "dataset-figure",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Actuallyreadandrender/viewofficialZIPFig_cvrplib1page20scatterexamplesA/B/P/X/XML,duplicatesarxivFigure6scientificillustration;large480/979onlyvisualexample notnumeric115tableevaluation. Archive_memberpreserved;ZIPRAR20vrp+diractualtarinventorynoextraPDF."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Fixedbackbone/fixedkeyslearnedcontinuouspromptpoolforCVRPcross-distributionconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Method/architecture"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Sixlayers/pool16/fivetokens128/768features3840prompt/keyKmeans128x341,ARmaskedroutes;maintraininggreedydescriptionversusreleasedtrainmultinomialexplicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equations3-9/publicfreezeandtrainingbranch"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "2.5day2080Ti11GBvsadjusted1day25GB/prompttrainingnotbackbone;1000instances/tablefiniteHGS/LKHreference;top8+aug20012mvs89s/BASIC1002.18betterPrompt2.57.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1-4/protocol"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "115perinstancerows/negativegapsdifferentfleetfirstreferenceobjective/XMLsingle6.1worsePOMO4.4Multi3.7;Xonly100-200qualitynot979scatter;nouniversalquality/guarantee.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "locator": "AppendixA1-A4/Tables5-9"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructive:singleCVRPacrosssize/geometry/promptsnotcross-native-taskpolicy;frozenweightsatzeroshottest/multistartconstructnotlearnedincumbenteditor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Actualnativeproblem and inference"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "All9formal+14arxiv+1datasetillustrationfullyread;manual449entryofficialrepo/ZIP423nestedRARinventory/README/code;originalFigure4actualview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            8,
+            9
+          ],
+          "locator": "Formalmetadata/fullregisteredcoverage"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2024/771",
+      "locator": "Formalp1sevenauthors/CityU,SUSTech,Huawei/ZhenkunWangQingfuZhangcorrespond;publisherBibmonth8/Crossrefpublished-print2024-08/pages6976-6984agree."
+    },
+    {
+      "field": "arxiv/version",
+      "source_url": "https://arxiv.org/abs/2405.12262",
+      "locator": "Primarysavedhistoryonlyv1May20_2024 15:42:23UTC. Actual14pagev1fullreadmain+refs+AppendixA/detailed115rows;9formalpagesseparatelyreadnotbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/FeiLiu36/PromptVRP",
+      "locator": "Manual449entrytreeSHAe7390802544c250805f55bc27e598fc2612b8d10/fullREADME/releases[]/noPDFTeXnotebookoutsideZIP. ScientificAappendixactualarxiv9-14fullread. ActualZIP423inventory214vrp195sol9dirs1lnk1PDF1jpg1py1rar;1pageFig_cvrplibPDFregistered/read/view archive_member preserved;taractualnestedXML30.rar20vrp+dir/noadditionalproof. Nootherexplicitmissingmaterial."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/FeiLiu36/PromptVRP/tree/e7390802544c250805f55bc27e598fc2612b8d10",
+      "locator": "ActualTrainVRPTrainerloadpretrained/freezesencoderdecoder78-85;VRPModel168-182trainorsoftmaxmultinomial/otherwisegreedyargmax,notmaintraininggreedyliteral. Relevantpromptpoolandtraincodeacquired;noendtoendrunorwholeimplementationauditclaim."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://arxiv.org/pdf/2405.12262v1#page=11",
+      "locator": "OriginalFigure4p11Rect51,49,565,357@4xatomicPNGactualfullviewcaption;Figure1/2/3/allTables1-9/methodformulas/OODscatter/datasetPDFscattervisuallyinspected."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0771.pdf#page=8",
+      "locator": "Allformalbib8-9/arxivbib8-9+bodychecked.12exactcandidateidentities+BQ-NCOarxiv2301.03313oldGeneralizabletitleconfirmedexistingprimaryversionchain=13. AM/Bello/NLNSoldarxivcitedyearsqualified. Joshi2022Constraintsindependentjournalnotforce2019conference;Bi2210.07686/MetaPOMO/MultiViewUAIuncataloguednotforceedges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Bodyp1;Referencesp8 Fu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Bodyp1;Referencesp8 Kool et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al. (2022)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Bodyp2;Referencesp8 Kool et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al. (2023)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Bodyp1;Referencesp9 Pan et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Bodyp2;Referencesp8 Bello et al. (2016)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2019)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Bodyp2;Referencesp8 Hottung and Tierney (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Bodyp2;Referencesp8 Chen and Tian (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al. (2023)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Bodyp1;Referencesp9 Zhou et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9
+          ],
+          "locator": "Bodyp1;Referencesp9 Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Bodyp2;Referencesp8 Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Bodyp2;Referencesp9 Nazari et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al. (2022)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Bodyp1;Referencesp8 Jiang et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "prompt-learning-for-generalized-vehicle-routing",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al. (2023)",
+      "description": "Explicitbodycitationandmatchingfullbibliographyidentity;actualcitedpreprintyear/titleversionretainedwhereapplicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Bodyp1;Referencesp8 Drakulic et al. (2023)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingsevenauthors/affiliations/correspondence/formalAugust/v1May20metadata.",
+    "SpecialistconstructiveCVRPdespiteGeneralizedtitle;fixedkeysnotlearned/nonlanguageprompts/frozenbase andofflinepromptupdatesversustestzero-shot.",
+    "Actual341=31sizesx11geometries/fourkeysizegroupsnotfourtrainingsizes;16prompts/5tokens/sixlayersdetails.",
+    "Separate2.5day2080Ti/adjusted1day25GB/basepretrainingandtop8+aug12mvs89s;singlepromptdoesnotbeatbasic100POMO/XMLuniformly.",
+    "Record115rows/fleetfirstreferenceversusminsumnegativegapboundary/smallXnumericrange,actualtrainingmultinomialversustextgreedy.",
+    "All24registeredsourcepagesread/manualnestedarchivescienceinventory/fulloriginalFigure4view/13explicitbody+bibedges."
+  ],
+  "reviewed_note_sha256": "aaf92182873c9e494129da25c810e846c82a9fbf42af62ed4db9da9d4ed18699"
+}

@@ -1,0 +1,383 @@
+{
+  "version": 1,
+  "paper_id": "one-shot-dag-priorities",
+  "note_path": "specialist/one-shot-dag-priorities.md",
+  "baseline_note_sha256": "eb5005ef243405d9ee301bf1074356e0646546378c295dd043d65e7b4a6ee927",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openreview.net/pdf/20210ea69d6b5ccead90b146eeb53cf34ed79f34.pdf",
+      "version": "Complete21page ICLR2023conferenceversion including integratedA-H; registeredmirrorSHA andformalheaderchecked",
+      "retrieval_url": "https://lacuna.tiptreesystems.com/pdf/art_c03579b63671012c98bcde788077e093",
+      "local_path": "research/import-272/nco-8952c779b1.pdf",
+      "sha256": "fda10cd1f6b29832601fd5b7838d6571796ad169a1ec479191d876fcdc8ad737",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all7authorsQualcomm/first2equal/ICLRheader/fullintro/listfeasibility/homogeneousheteromachinefixedtypes/resourceconsumption/latentpriorityGumbeloncefullpermutation probabilityEq4correct. Separateapplicationsneedcheckpointtrainingcrosscheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullEq5-13/Alg1. UsestruefullpermutationPlackett-Luceprob understaticGumbel,so manytoone listdecode doesnotbyitselfbiaslatentREINFORCE (contrastcuratorDAG-CAIissue). Practicalbatchcoststd andlogitL2.001;binaryfixedstdlogitsrepresentationexampleproofpendingA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullrelatedwork/all4main tables/greedyS16/64/256/deploymentbudgets. ThreeJSSPsettings100train50testeachL2Dsamefinitegraphs differsorigonlinegenerator. TPC50CP-SAT8629.4 beatsS2568694.4;24hcapcomparisonnotoptimalityoutperformance. Realproprietary200-1000graphs/LPspeedupserialovermakespan(notmeasuredphysicalkernel runtime);sparse7k? pendingappend. Greedycanbe slowerthanfastSPT (JSSP50x20.049vs.008)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read entirebibliographyandAppendAproof(binarypopulationstdassumingdistinctlogits;equalcaseundefinedwithoutstabilizer)/Bnativemachineresources/CJSSPseed0. Finitefullpermutationlatentgradientcorrectconditionalabove. JSSPpercase100/50,resourceinputspertypevectorimplieschecktasktrainnotgeneralistbyappcount."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read TPC-H 50/10 train/test and graph generators, list/CP-SAT baseline formulations, 24h incumbents/only3 certified TPC50 and OOM150, restricted-data best-of-five-seed L2D baseline."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read Tables5-8 all entries; F task/size-specific training sets/checkpoints with best5/10seeds, N1000/2000, V100, duration/resource/type/critical-path+20 Laplacian features, Topoformer/logit regularization and G comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Read all G ablation Tables9-12 and H GA studies Tables13-15; GA100gens/pop1000 adds minutes for small/no gains, TPC50still CP incumbentbetter; all AppendixA-H complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Repeated neural encoding motivates one-shot priorities and list scheduling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/2/3.1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "One-shot full Gumbel priorities, stabilization and scheduling/search experiments.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Method/main Tables1-4/AppendG-H"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive; separate setting/distribution/size training rather than unchanged cross-native checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15,
+            16
+          ],
+          "locator": "AppendB/F.1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Full-permutation Eq10 supports latent REINFORCE despite many-to-one decoding; features/resources, cost standardization/logitL2; binary example distinct logits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            12,
+            16
+          ],
+          "locator": "Eq4-16/Alg1/A/B/F"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "All15tables; limited-data L2D; TPC50 CP8629.4 better thanS2568694.4; 24h incumbents/threecertificates/OOM150; modeled speedup/best5or10seeds/GA costs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Tables1-15/C-H"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Heuristic and sample cost, separate training/bestseeds/privategraphs/modeledhardware/finiteCPbudgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            14,
+            16,
+            20,
+            21
+          ],
+          "locator": "Protocols/limits"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete21pages/A-H/bib read/eightvisualpages; API403 cached; integratedappendix/no specifiedmissing science/no verifiedcode.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          "locator": "Sourceaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication,date",
+      "source_url": "https://openreview.net/forum?id=WL8FlAugqQ",
+      "locator": "PDF1 seven QualcommAIResearch authors first2equal; all21pageheaders ICLR2023. Author primary publications labels2022 same title/PDF; conflict recorded formalheadergoverns/noexactday."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=WL8FlAugqQ",
+      "locator": "IntegratedA-H pp12-21 allscientificcontent read. Manualforumchallenge/APIv1+v2forumqueries403 cached attachment-check.json. No explicit separate scientific appendix specified; author entry PDFonly/no verifiedcode."
+    },
+    {
+      "field": "version,figures",
+      "source_url": "https://openreview.net/pdf/20210ea69d6b5ccead90b146eeb53cf34ed79f34.pdf",
+      "locator": "Actual21p formalpublicmirror SHA fda10cd1f6b29832601fd5b7838d6571796ad169a1ec479191d876fcdc8ad737/allpagesread. Rendered4/5/6/12/8/9/16/20 Eq10fullPL/Alg1/binaryproof/results/GA."
+    },
+    {
+      "field": "scope,method,experiments,code_url",
+      "source_url": "https://openreview.net/forum?id=WL8FlAugqQ",
+      "locator": "F1p16 separate perJSSP/TPC/distribution/size datasets best5/10seeds; B12 capacities1,1,4/TPC6000. Eq10true fullpermutation. D14only3TPC50certificates/24h/OOM; H20-21GAcosts. Baselinecode/Pymoo notauthorimplementation; codeunverified."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019a)",
+      "description": "Explicit body citation with matching complete reference; L2D/PPO-BiHyb also experimental baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "Section4/5 author-year body and full References entry"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicit body citation with matching complete reference; L2D/PPO-BiHyb also experimental baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            10
+          ],
+          "locator": "Section4/5 author-year body and full References entry"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body citation with matching complete reference; L2D/PPO-BiHyb also experimental baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Section4/5 author-year body and full References entry"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Explicit body citation with matching complete reference; L2D/PPO-BiHyb also experimental baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Section4/5 author-year body and full References entry"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "ppo-bihyb",
+      "reference_label": "Wang et al. (2021)",
+      "description": "Explicit body citation with matching complete reference; L2D/PPO-BiHyb also experimental baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11
+          ],
+          "locator": "Section4/5 author-year body and full References entry"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "learning-scheduling-algorithms-for-data-processing-clusters",
+      "reference_label": "Mao et al. 2019",
+      "description": "DAG/data-center scheduling motivation and end-to-end scheduler comparison; exact Decima SIGCOMM2019 five-author entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Mao et al. 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Mao et al. 2019"
+        }
+      ]
+    },
+    {
+      "citing": "one-shot-dag-priorities",
+      "cited": "deepweave-accelerating-job-completion-time-with-deep-reinforcement-learning-based-cofl",
+      "reference_label": "Sun et al. 2021",
+      "description": "Datacenter scheduling related work; exact six-author DeepWeave title/pages3314?3320. Bibliography prints2021, while actual targetconference isIJCAI2020; retain as source year error, not a differentwork or futureconference assumption.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Actually read complete body citation paragraphs: Sun et al. 2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Sun et al. 2021"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced genericnote with full21page/A-H review and separate-checkpointscope.",
+    "Qualified CP24hincumbents/bestseeds/fixedbaseline data/modeledspeedup/searchcost; five truecitations/noinventedcode.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d80c08199470ad43d69bb686b9bcd02c49128defe213c35a4cc5078dd220744b"
+}

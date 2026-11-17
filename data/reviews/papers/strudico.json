@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "paper_id": "strudico",
+  "note_path": "specialist/strudico.md",
+  "baseline_note_sha256": "72e64f658f5c8d9801bcf77b583605924b397bcab8d2b533850e842d4ee98b8e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf",
+      "version": "Formal NeurIPS2025 proceedings28pages main/references/AppendicesA–G/fullchecklist freshly read",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-8d2cadd5e3.pdf",
+      "sha256": "49dd673fd7c456a49369f0b5f171360cd1650e354b3570520799179c4e1b7797",
+      "pages": 28,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh1–4allintro/relatedwork/Fig1. FourauthorssameNExCO4affiliations;TSP+MaximumIS(notmaximalambiguousabstract). Explicitfootnote guaranteeONLYforwardprocess,reverseusuallypostprocess. Mainmixedconstruct+ownobjective-gradientfreeincumbentrefine. Eq1distanceBCEmentionedthenEq3triangleinequalityinvalidforarbitrarycrossentropyneedpreciselimitnotwholemethodrefute."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh5–8fullAlg1–2/Eq4–6/Theorem3.1/InformalProp3.1/Tables1–3/Fig2. AbsorptionforwardexactQ;reversepredresampling+renoise onlysoftmonotonicnotguarantee. Per-variablethreshold vsjointdistributionrenormalizationtheoremneedAppendC. InitneuralGP+ownrewrite→mixedkept. Table2AM50obj5.679<Concorde5.688butpositivedrop.167inconsistent. Table3StruTs5TSP1kobj23.118with5.967%inconsistent;samplingFastobj23.287gap.419alsoinconsistent. Bothsuperioritymustquotequalify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Fresh9–12/Fig3/Tables4–6/MISresultsrefs1–32. MISKaMISlabelHeuristicsExactnotcertify;7/8othersnonstd references. Table6VAaloneworseall6,Uniform+CCSER16.522worse15.898,VA+CCSTSP1k.797vsTable3.996inconsistent. Transfer100→5002.96worseFast1.77,50→1k4.31worse3.46 etcnotuniversal;maskδ.8/perturb.2-.5specific. AllbenchsinglethreadB1unlesssampling4."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 16,
+      "notes": "Addfull13–16references33–47/A/B/Cstart freshlyread. AppendixBexplicitmainreverse notstrictfeasible/monotone andstepwisegreedy future. FullTheoremC1q>0wherep>0 excludespointmassoptqwithwrongpredsupport. Eq11/c−logZ/(1−Z) printed+ innegativebracketlooks signerror;continueproof17. Per-variablemask vsjointconditioningfactorsifindependent canequivalentnotautomaticallyfalse."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Fresh17–20exactCproofStep2–4 andAppendD/E/Fstart. Eq29correctdifference−(1-Z)Delta−logZ,Eq30correct−logZ=(1−Z)c,butEq31 wrongly−(1−Z)(Delta+c);actualconditionDelta>=c vsprinted>=−c. p=qBernoulli(.2),δ.5 retained{0}Z.8,Delta0,DKmask.223>0 vsprintednegative/slack0. AppendixCVRPactualmustadd,NAE200Tg3gap3.19>Sym2.86,allCOExpanderfaster. Tables7–9/TSPLIB29meanfirst4duplicated. TSP50/100Concorde,500/1kLKHheuristicrefs distinction. 1502K50/100 train,12GCNpendingp21,allzeroresultsnotcert."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Fresh21–24allFfinal/G/checklist1–7. 12GCN,timestepconditiontruevsNExCOagnostic;F4MISdim128blanket conflictsTable9RB256,specifyperdataset. AppendixGlabels/variableinstances/heuristicfinalfeasible limits. ChecklistNOpublicatwriting/currentcodeavailableandNOerrorbars,means128/1280notindependenttrainingseeds. Formalpublisherdate2026-04-23withedition2025retained."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 28,
+      "notes": "Freshall25–28completechecklist8–16/guidelines. Noextra scientific appendixbeyondA–G21pages+checklist22–28,all28formal nowread. Bothproof16/17highresimagesfullyviewedconfirmplusinsideEq11/31opposesEq29/30. Currentarchive2715members579.56MB7ckpts(includesTSP10knotpaperresult),TSP/MISonlynoCVRPcode needsqualifyreleasecoverage."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Absorbing noising retains meaningful forward solution subsets and seeks cheaper few-step gradient-free solving.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/related work/Fig1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Variable absorption, supervised consistency, confidence-constrained sampling and own objective-aware incumbent refinement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Algorithms1–2/Eqs4–6"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Timestep-conditioned task-specific12layer GCN, thresholded Bernoulli resampling and final decoding; reverse feasibility not guaranteed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            15,
+            20,
+            21
+          ],
+          "locator": "Algorithms1–3/AppendB/F"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "FourTSP sizes/twoMIS distributions plus additional CVRP/TSPLIB; all9tables and negative quality/runtime/transfer/ablation cases retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            18,
+            19,
+            20
+          ],
+          "locator": "Tables2–9/Figs2–9"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "AppendC exact KL expansion has a sign inconsistency; forward-only feasibility/informal convergence and printed numeric/release qualifications.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            15,
+            16,
+            17,
+            18,
+            21
+          ],
+          "locator": "Eq29–31/AppendB/C/G"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist mixed construction/improvement: separate task checkpoints, learned empty-start denoising and own learned incumbent rewrite.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            18,
+            20
+          ],
+          "locator": "Algorithms1–2/Table9"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity affiliations and publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6728fcf94660c59c938319a6833a6073-Abstract-Conference.html",
+      "locator": "Fourauthorsandfouraffiliationsformal p1; explicit publisher citation_publication_date2026-04-23,DOI2394,NeurIPSedition2025retained."
+    },
+    {
+      "field": "supplements complete scientific inventory",
+      "source_url": "https://neurips.cc/virtual/2025/poster/118241",
+      "locator": "All28formalpages/full47refs/A–G/checklistread;all9figures9tablesvisuallychecked. Whole1.781MBposter3tilesread;no separate scientificslides/supplement exposed. Untruncated2714tree/2715ZIP579.56MB/noPDFnotebooknestedarchive/twoREADMEread;sevenTSP/MISckpts noCVRP."
+    },
+    {
+      "field": "method classification and actual problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf#page=18",
+      "locator": "FormalAlg1constructs+Alg2ownNNincumbentrewrite→specialistmixed. AppendixDTable7actualCVRP50/100/200added. B mainreversefeasibilityexplicitlynotguaranteed/stepwisevariantfuture,posterstrongerwordingqualified."
+    },
+    {
+      "field": "theory direct formula checks",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf#page=17",
+      "locator": "Highrespp16–17confirmEq29−(1−Z)Delta−logZwithcpositive vsprintedEq11/31Delta+c. ExactBernoulli(.2)counterexample+metriccrossentropycheckexecutedandreproducibleboundary-checks.json;doesnotrefuteallweakerbound/empiricalresults."
+    },
+    {
+      "field": "experiments full budget and exceptions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf#page=8",
+      "locator": "Alltimesperinstance,B1/thread1unlesssampling4;TSPrefsConcorde50/100vsLKH500/1000;MISKaMISheuristic. Classicalquality,transfer100→500/1k,ablationVAalone/UniformCCSER,CVRPspeedandTSPLIBindividualnegativesretained. PrintedTables2/3/6/8inconsistenciesnotrepairedwithoutdata."
+    },
+    {
+      "field": "current release exact paths and source-expression tests",
+      "source_url": "https://github.com/yuuuuwang/StruDiCO",
+      "locator": "TSP/MISconsistencyfullread,scheduler/decoders/evaluator/scriptsread. TSPunion+confidence/randomstitchdecoderwithoutdistance!=formalobjectivegreedy;MISoldscalarargmaxexactASTtestcand[3,5]/old4score5select0score3,scopemulticandidateonly. .itemboundmethodbranchunusedfinalresampleandloggedgapconventionqualified. No NN benchmark/trainingreplay."
+    },
+    {
+      "field": "original figure and explicit citation coverage",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/6728fcf94660c59c938319a6833a6073-Paper-Conference.pdf#page=2",
+      "locator": "Figure1crop105,60,508,307fullcaptionviewed.21explicitbibliographymatchesincludingarxivGFlowNetnamevariantretainingcurrentformalmetadata."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "strudico",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "coexpander",
+      "reference_label": "COExpander: Adaptive Solution Expansion for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "diffuco",
+      "reference_label": "A Diffusion Model Framework for Unsupervised Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "gflownet-combopt",
+      "reference_label": "Let the Flows Tell:  Solving Graph Combinatorial Problems with GFlowNets",
+      "description": "Explicit Let the Flows Tell reference identified by title and arXiv2305.17010 lineage; historical third-author name differs from current formal target metadata, which is retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Learning a Latent Search Space for Routing Problems Using Variational Autoencoders",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Learning What to Defer for Maximum Independent Sets",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "unico",
+      "reference_label": "UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "What’s Wrong with Deep Learning in Tree Search for Combinatorial Optimization",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "ml4tspbench",
+      "reference_label": "Unify ML4TSP: Drawing Methodological Principles for TSP and Beyond from Streamlined Design Space of Learning and Search",
+      "description": "Explicit complete bibliography entry manually matched by title/authors; source/preprint year does not override formal target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References1–47 pp11–13, freshly read and identified."
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "reference_label": "[9]",
+      "description": "Supports solving/instancegeneration background with exactHardSATGEN KDD2023 title/nineauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: [9]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [9]"
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "dualopt-a-dual-divide-and-optimize-algorithm-for-the-large-scale-traveling-salesman-pr",
+      "reference_label": "[27]",
+      "description": "Explicit reference27 is five-author DualOpt AAAI2025 pp27178?27186. Body groups[26,27] with traditional heuristics/LKH; retain actual citation identity without endorsing that miscategorization of neural DualOpt.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actually read complete body citation paragraphs: [27]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [27]"
+        }
+      ]
+    },
+    {
+      "citing": "strudico",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "[16]",
+      "description": "ExplicitRL4COrepositorybenchmarkmention; actualarxiv2306.17100preprint cited2023, sameprimaryversionchain as KDD2025representative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4
+          ],
+          "locator": "Actually read complete body citation paragraphs: [16]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [16]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall28formalpages/full47refs/A–G/checklist/all9figures9tablesandwholeofficialposter.",
+    "ExpandedfouraffiliationsandfixedformalrecorddatewithoutchangingNeurIPS2025edition.",
+    "AddedactualCVRPAppendixDexperimentandretainedspecialistmixedscope.",
+    "Correctedreversefeasibilityclaim,recordedKLproofsign/errorconditionwithexactcounterexampleandqualifiedinformaltheory.",
+    "Addedresources/precisesteps/negativeclassical-neuralcomparisonsandprintedtableinconsistencies.",
+    "Reviewedreleaseinventory/code,executedlimitedoriginalMISassignment/branchandformulaexamples;recordedobjective-decoderandbudgetcoveragequalifications.",
+    "AddedoriginalFig1/fullcaptionand21explicitcitationedges.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a111510063b800b044bbc6b637e64ed3d6ae1eace3dacf5000a36a5a5685a9e0"
+}

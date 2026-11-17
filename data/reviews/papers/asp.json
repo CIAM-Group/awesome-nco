@@ -1,0 +1,525 @@
+{
+  "version": 1,
+  "paper_id": "asp",
+  "note_path": "specialist/asp.md",
+  "baseline_note_sha256": "39b552d9287d3a68b9cbfd785165727c7534c875752310d802223f2f4d1d38e9",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2303.00466",
+      "retrieval_url": "https://arxiv.org/pdf/2303.00466",
+      "version": "arXiv:2303.00466v1, 2023-03-01, 15 pages including Appendices A-F; authorized manuscript fallback, distinct from formal TPAMI2024 eligibility",
+      "local_path": "research/full-text-review/asp/paper.pdf",
+      "sha256": "7b729bec5140ad38902953586d0334284f6fd87b367c5cc81a62ff9d445128a8",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh restart read arxivv1 title/authors/three affiliations, contributions/related work; universal means scale/distribution rather than cross-task shared weights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read full game definitions, five listed routing tasks, DE PSRO solver-generator best responses and exact versus approximate oracle distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read PSA sampling mixture and full staircase Algorithm3; all five tasks, thresholds, per-task from-scratch training and reported RTX3090 costs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read full generated-data Table2 and TSPLIB Table3, test counts/capacities and prose-vs-table percentage inconsistencies; improvements are not uniform per scale."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 9,
+      "notes": "Read complete page9 via direct PyMuPDF text (6062 chars) after standard layout extraction exceeded safety cap; all53 CVRPLIB rows, Table4 averages and ablations, plus visually rendering figures."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read complete pages10-11 with direct compact PyMuPDF text after layout output cap: five-seed ablations, AM capacity changes, sample/time costs, landscape visualizations and conclusions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Read all references and AppendicesA/B derivations/configurations: AM9layers600epochs versus baseline3layers100epochs, POMO matched setting, all exact cited versions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Read complete compact text of pages14-15 including all AppendixB-F science, Table6 all rows, generalization/weakness distribution and every landscape axis/label; now inspect full raster rendering."
+    }
+  ],
+  "claims": [
+    {
+      "id": "asp",
+      "category": "contribution",
+      "statement": "Training combines adversarial PSRO distribution exploration and persistent adaptive size curriculum.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1-3 and Equations3-12"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "category": "method",
+      "statement": "RealNVP5layers, empirical finite game and selected per-task solver; separate AM/POMO problems trained from scratch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13
+          ],
+          "locator": "Sections4/5.1 AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Table2 actual values/prose percentage mismatches, 35TSPLIB/53CVRPLIB exceptions, AM9/600 versus3/100 capacity/budget difference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            13,
+            14
+          ],
+          "locator": "Tables2-6 AppendixB/C"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive: different tasks trained separately, selected constructive checkpoint per task across sizes; training refinement is not incumbent editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            13
+          ],
+          "locator": "Table1 and training-from-scratch statement; AppendixB"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date",
+      "source_url": "https://arxiv.org/abs/2303.00466",
+      "locator": "Actual v1 title page and arXiv history: March1,2023; five authors, CUHKShenzhen/CarnegieMellon/Peking institutions. Restored two missing institutions."
+    },
+    {
+      "field": "publication, acceptance",
+      "source_url": "https://doi.org/10.1109/TPAMI.2024.3352096",
+      "locator": "Crossref publisher record confirms TPAMI46(6), June2024,4102-4114. Removed unsupported year-only acceptance; no acceptance day inferred."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/LOGO-CUHKSZ/ASP",
+      "locator": "Publisher request returned202empty verification response, not claimed inspected. Actual arxivv1 includes A-F, all15pages fully read. Official445-member recursive tree and fullREADME manually checked, no PDF/ZIP scientific attachment; no explicit unread appendix pointer."
+    },
+    {
+      "field": "problems, scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2303.00466v1#page=6",
+      "locator": "Table1 covers TSP/CVRP/SDVRP/PCTSP/SPCTSP, all task/base configurations train from scratch; selected solver covers sizes within each task, no common task weights or incumbent editing."
+    },
+    {
+      "field": "code_url, training and inference budgets",
+      "source_url": "https://github.com/LOGO-CUHKSZ/ASP",
+      "locator": "Paper code provenance, fullREADME/config/savedargs and game_utils lines630-645 checked: inclusive100 endpoint, savedAM9/POMO6, POMOaug8, solver_param selectedcheckpoint; paper strictendpoint and changedAMbaseline noted."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2303.00466v1#page=4",
+      "locator": "Original Figure1 crop Rect(105,60,510,250),5x, directly from source; all tables/ablations/AppendixF landscape plots visually checked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2303.00466",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-03-01; title on abstract page: ASP: Learn a Universal Neural Solver!. This date is preprint history, not formal publication. Cached research/full-text-review/asp/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "asp",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "1",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "attention-model",
+      "reference_label": "2",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "3cited2021",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "4",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "pomo",
+      "reference_label": "5",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "pointer-networks",
+      "reference_label": "13",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "14ICLR2017workshop",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "learning-to-improve",
+      "reference_label": "17",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "att-gcn",
+      "reference_label": "18",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "48",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "49arxiv2019",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "latent-search-space-routing",
+      "reference_label": "50",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "rl-vrp",
+      "reference_label": "51",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "neurewriter",
+      "reference_label": "52",
+      "description": "Explicit numbered related-work/method/baseline citation plus matching bibliography in the actually read 2023 arXivv1, retaining the cited version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "asp",
+      "cited": "learning-to-solve-travelling-salesman-problem-with-hardness-adaptive-curriculum",
+      "reference_label": "[7] Zhang et al. (2022)",
+      "description": "Cites distribution-generation curriculum as related generalization work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read citation body context: Introp1newdistributions[6,7]; completeAAAI2022fourauthorHACentryp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: [7] Zhang et al. (2022); Learning to Solve Travelling Salesman Problem with Hardness-Adaptive Curriculum. Introp1newdistributions[6,7]; completeAAAI2022fourauthorHACentryp12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fully reread arxivv1 all15pages including scientific AppendicesA-F; formal publication independently verified with fallback provenance explicit.",
+    "Restored CUHKShenzhen and CarnegieMellon institutions and three missing actual routing tasks; removed unsupported acceptance field in favor of evidenced2024-06publication.",
+    "Replaced misleading test-time portfolio/adaptation summary with actual training-time DE/PSA and selected specialist constructive checkpoint.",
+    "Qualified AM9layer600epoch versus baseline3layer100epoch comparison, actual POMO separate task training, generator/oracle costs and code augmentation.",
+    "Preserved Table2 percentage/prose mismatches, small-scale regressions and public benchmark exceptions; no uniform improvements or optimality guarantees claimed.",
+    "Documented algorithm strictendpoint versus currentcode inclusiveendpoint and source-specific original Figure1;14 explicit citation edges.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b35594931a62a08cda92ddd93d1a302267908eb4b3872c00abac3a57c386dbdd"
+}

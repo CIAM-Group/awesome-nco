@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "paper_id": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+  "note_path": "specialist/learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "2d4b63a7a16bd6d5fb734918e2114eee8abe4ea1bed8c4e1dc420126a56b0038",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2210.17178",
+      "retrieval_url": "https://arxiv.org/pdf/2210.17178",
+      "version": "Identifiedarxiv2210.17178v2 dated2023-12-14,all12pagesmain/fullrefs/AppendicesA–Gactualread; v1primary2022-10-31 andformalAAAI2024-03-24 independentchecks.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-4fa471a982/arxiv.pdf",
+      "sha256": "6a5e42108a5d716e8dc2d98d8099c54817a2b3b94a3896a89dd4da62f2fa6880",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read formalmatchingbyline6authors/CUHKShenzhenMBZUAINUS andcompleteintro/motivation/relatedPFSSbackground; problemfixedmachineorder/matrixjobpermutation. NEHexpertqualityandPNRLheadline37%/6.8→1.3 totraceexperiment. ExplicitAppendArelatedworkreference pendingintegratedpages. Samejob/machineformulation notmulti-native."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read allnonpreemptivePFSSassumptions, AppendixBMIPreference, MDPscheduledlist/unselectedmask, GGCN20%nearestneighborjobdistances/nodeedgeupdatesEq1,first/last/meancontextEq2/MHA8headsEq3/tanh10maskedEq4. Figure2–4textandnetworkflowallread, fullscientificsparsification/decoderdetails preserved."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read Eq5/6maskedautoregressiveargmax andfullNEHexpertBCobjective. Sizeflexibleweightsbutmachineinputmfixedexplicit. AllTables1–4 checked:12800train20jobs/1000val,3seeds50epochs batch128 lr1e-4 decay.96, CPU4214/2080Ti. Synthetic6job-sizes vs10instancesperbenchmarksize; compareNEHgapnottheoptimum, totalruntimeacrossN3 notperinstance. ILinferenceslowerRL, NEHgenerallybetterqualityandfastsmallsets."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allFig5training/time/jobdifference andTable5ablations:365kvs976ktotaltrainingparams37%,12.4vs31sepoch,ILinference stillslower. ConditionalFforward symboliccomplexitynotliteralendtoendlinearnbecausegraphdense20%neighbors/MHA. AppendixD/E/F/Gnamed; allp8bibliographythroughRibas readinclbody+reference candidateidentity."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read completebibliographyremainder, AppendixAallMLCO/ILreferences, AppendixBvariables/fullMIP7–14(nootherproofpages), andCexactGurobi_vsNEHtable6n8/9/10test100realGamma; normaldistributionclippingandnewseparate12800train1000valDsetupfull. z immediatepredecessor/dummyandzeroprocessingallowance read; noassertnewMIPtheorem. Teacherheuristicnotcertifiedoptimum."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allAppendDNormalTable7/Fig6, E10machinesTable8/Fcomparativeaggregation9/normalization10/GseparatetrainedTSPGurobiexpertTable11. Allmeanmakespan/gaps/times complete: Normal1.3→.8 etc, m10gap11.1→4.6; TSPm2inputandGurobiteacher notsamePFSScheckpoint, scopeSpecialist. AllappendicesA–G nowread/noextraendpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "DirectNEHbehaviorcloningaddresseslongRLtrainingonPFSSandprocessing-profilegraphrelations.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "locator": "Introduction/4.1/4.3"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "GGCNencoder/maskedattentiondecoder andexpertBCwithjobcounttransfer,fullA–G extraexperiments.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Contributions/Eq1–6/completeappendices"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "20%nearest-jobfeaturegraph,GGCNgates,8headcontextattention/tanh10/uniquejobmask,teacherforcedNEHcrossentropy.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Eqs1–6/architecture"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "12800train20jobs/1000val/50epochs3seeds,1000or100testinstances,NEH-relative1.3vs6.8sixsyntheticm5conditions;benchmarkgapslarger andinferenceslowerRL.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            10,
+            11,
+            12
+          ],
+          "locator": "AllTables1–11/setup/AppendC–G"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Teacherrelativegapnotoptimum, parameter37%vsactor+critictrainingtotal, symbolicforwardfactorsdonotestablishlinearallcostcomplexity.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ],
+          "locator": "Neighborhood/attention/Table3/5/expertTable6"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructivejobpermutation, machineinputdimensionfixed; separateTSPexperttrainingnotunchangedcrossnativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            11,
+            12
+          ],
+          "locator": "MDP/sizegeneralization/AppendE/G"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Complete12pv2allrefs/A–G, official84filearchiveonecheckpoint andscriptconfigurationboundariesclearlydocumented.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Byline/appendixinventory/publiccode"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/pdf/2210.17178v2",
+      "locator": "p1complete6authorbyline:LongkangLiCUHKShenzhen+MBZUAI,SiyuanLiangNUS,remainingCUHKShenzhen; formalpublisherindexandCrossrefmatch."
+    },
+    {
+      "field": "venue, formal publication date",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/29998",
+      "locator": "FormalpublisherindexedPublished2024-03-24 andsavedCrossrefpublished-online2024-03-24; AAAI38(18)20185–20193DOI10.1609/aaai.v38i18.29998. Live520challengeHTMLnotregistered."
+    },
+    {
+      "field": "arxiv_url, date, source version",
+      "source_url": "https://arxiv.org/abs/2210.17178",
+      "locator": "Savedprimaryhistoryv1Mon31Oct202209:46:26UTC, v2Thu14Dec202317:59:55UTC; watermarkp1v2matches. Actualfirstdate2022-10-31 vsformal2024-03-24 separated; all12pagescompleteA–Gread, noformalbyteidentityclaim."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2210.17178v2#page=12",
+      "locator": "p5fixedminputembeddingreq,p6m5/m20separatetrain,p11m10experiment,p12TSPm2withGurobiteachertrain; singlePFSSnativeconstructivepermutation, noonecheckpointPFSS→TSP. Relevantcodeattention_model.py143machine-node-dim confirmsinputboundary."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/lokali/PFSS-IL/tree/fcb85fe67a744f06316680eb3f12c87415cb5147",
+      "locator": "ManualpublisherindexedDownloadssolearticlePDF; livechallengeunread. Completeidentifiedarxiv12pallA–G/scientifictables/refsread. Officialredirectlongkangli→lokali fullZIP107members84files, noPDF/video/nestedZIP;2frameworkJPGsamediagramsnotuniqueextraresult,1weightsinventoriednotreadpages. Allnamedappendicesintegrated, noexplicitmissingseparatesciencefile."
+    },
+    {
+      "field": "code availability and version",
+      "source_url": "https://github.com/lokali/PFSS-IL/tree/fcb85fe67a744f06316680eb3f12c87415cb5147",
+      "locator": "Primarycommit2023-12-18T01:57:05+04, complete4,533,715byteZIP inventory/hashes; README/alltrain&testscripts/argsJSON,train263–295BCandattention_model174–231NLL/inputdim143read. One4,431,193byteepoch54weightnotdeserialized; script55epochs/1280val/decay1/MAXlocalvsprinted50/1000/.96/MEANbest explicitlyqualified. Nohistoricalrun."
+    },
+    {
+      "field": "visual, claims and reference checks",
+      "source_url": "https://arxiv.org/pdf/2210.17178v2#page=4",
+      "locator": "Actualrender/view pp1/3/4/5/6/7/10/11/12 all6figs/11tables/MIPformula/architecture. OriginalFig4correctedfulllegendcrop52,198,559,299viewpass. GapNEHnotglobalopt; parameter365/(709+267)=37.4%trainingtotal, runtimeN3summed notperinstance, complexityforwardfactor n-dependent. Fullrefs8/9+AppendA9 manualidentitychecked6internaltargets."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals, Fortunato, and Jaitly (2015)",
+      "description": "Pointer-network predecessor and constructive sequence-to-permutation background.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            1,
+            2,
+            9
+          ],
+          "locator": "Body1/2andAppendA9; completePointerNetworksNeurIPS2015bibp9"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Cites graph-based CO background and graph-sparsification motivation, without sharing a trained model.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            3,
+            8,
+            9
+          ],
+          "locator": "Bodygraphencoderp3/AppendA9; fullNeurIPS2017referencep8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "attention-model",
+      "reference_label": "Kool, Van Hoof, and Welling (2018)",
+      "description": "Appendix A identifies attention-based routing background. The bibliographic year is the preprint-year variant of the catalogue ICLR2019 paper.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Fullauthors/title/ICLRreferencep8; explicitAppendAattention-modelbodyp9"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Cites tanh logit clipping in the attention decoder; literal bibliographic identity is the established neural combinatorial optimization paper.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            4,
+            8
+          ],
+          "locator": "Eq4context/clippingbodyp4; completeBelloetalreferencep8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Related-work background for GNN branching policies, not a PFSS module.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "AppendAexplicitbranchingbodyp9; exactNeurIPS2019bibliographyp8"
+        }
+      ]
+    },
+    {
+      "citing": "learning-to-optimize-permutation-flow-shop-scheduling-via-graph-based-imitation-learni",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Discusses replacing a recurrent encoder with element-wise projections in prior neural routing work.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "AppendAexplicitNazari discussionp9; fullVRP arxiv1802.04240entryp8identifiescataloguepaper"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingwithcomplete12pallrefs/A–G scientificreadingandofficialarchiveinventory.",
+    "Keptspecialistconstructive: explicitfixedm/jobcounttransfer andseparateTSPGurobiexperttraining.",
+    "QualifiedNEHgap/37%trainingparamcount/N3summedruntime/benchmarknegatives andsymboliccomplexity.",
+    "AddedfulloriginalFig4and6actualbody+bibidentityreferences, separatedformal/arxivdates/currentconfig."
+  ],
+  "reviewed_note_sha256": "cbcc867522f449301572ebd19303d1f6da2ff5538694aadc15751d224ce4a8bd"
+}

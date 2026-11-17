@@ -1,0 +1,678 @@
+{
+  "version": 1,
+  "paper_id": "coeks",
+  "note_path": "generalist/coeks.md",
+  "baseline_note_sha256": "806b7df49d0f4ba0c1ae36ffcff6948ef67449fc6d6fbe12c2328d463f1d00a7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4572bc2f514e627914cbe60d0398a2d1-Paper-Conference.pdf",
+      "version": "Formal ICLR2026 proceedings24pages, complete main/references/AppendicesA–F freshly read",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4572bc2f514e627914cbe60d0398a2d1-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-2e9d3797ed.pdf",
+      "sha256": "ec9191931381068f374aa4db4f1df8eff1d3f4a9cdf7cdfbd96e145a72dd7cd2",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1-3fullreadformal3authorsSYSUNUS, nativeconstraint-specificexpertscombinedwithsharedgeneralexpert, mutualknowledgesharingplussharedtransformation (latermethodreadconfirmsMSEloss). Constructivechosenexplicitnotediting incumbent. ConstraintsC/O/B/L/TW andnewMB;Bstrictlinehaul-before-backhaul. Claimed12pct/25pctrelativeimprovementsneedfulltables. Mainremaining/appendicespending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh4-6fullmethodread. Main5expertsC/O/B/L/TW, Csharedalwaysactive, taskmask→onlyactiveexpertsoftmaxcombiners; sharedrankbottleneckresidualfs. MDis=MSE(notKL):K2pair/K>2toexpertmean,alpha.01firstencoderlayer only. Frozenoldweights,newexpertaloneFTfornewbasicconstraints:notzero-shotnewconstraint. 7trainingtasksincludingOVRPL/30M300x100k, separateN50/100,RTX3090,greedy8aug1k/task,batch256/128,PyVRP/ORtools10/20s singlecore perinst. Eq1rewardcostgradient signprinted positive needsqualifierifmentioned."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh7-9readcompleteTables1-3/Figs3-4/mainresults. SevennativeIDmean1.751/2.646 vsReLD1.902/2.852;CaDA100VRPTW2.721<Co3.433andOVRPTW1.990<2.633. OODmean3.432/5.857 bestbutnotalltasks:N50VRPBLReLD4.130<4.387,VRPLTWCaDA2.514<2.949,OVRPLTWCaDA1.097<1.603 and100TWlosscells. NewMB100kFT10x10konlynewexpert+combiner/EALnotzeroshot;sharedinitialized+cnotuniformallcellsbestvsrandom+1.92vs1.97TW/1.57vs1.62OVRPMBTW. PrintedTable3refcol3/4potentialswapneedsvisual. Main7+9+8=24,newMD24extendedoverall48checkappendix."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 21,
+      "notes": "Fresh10-21fullreadallrefs10-13 andcompleteA/B/C/D/EtoE4intro. Main16tasks7trained9heldout,MBnew8thenMD24=48; mainconclusion24subsetnotall48zeroshot. AserviceU.15,.18/window.18,.2speed1,3depots. D16nativeallretrainednotmain7checkpoint, MBall8FTseparateprotocol. E14.6MmatchedparamsReLD5inferactivecountadjusted, OODVRPBLCo4.387>ReLD5_4.323negative. tSNEqualitative2Dnotproofnecessity. FullallTable5-8rowsread; MD9-12andlargereal13pending. MDisactualMSE confirmscorrectpreviouspreliminarylogKLmistake."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Fresh22-24fullreadallMDTables9-12/tSNEfig7-8/CVRPLIB13entire32rows/FLLM. MDzero-shotnoexpertadded exists,notonlyfinetune; MDCVRP38.174worseRF37.514,remainingmostlybetter. MDadapterFT8.928MDCVRP vs15.235ReLD. SourceTable9caption24but16columns,Table10other8. NoMDfine-tunedtrainingtasks/budgetspecifiedE3do notinventMBprotocolappliesMD. LargeSetX32mean10.832vsReLD11.590/RF14.931 butX5026.820worseRF4.149/ReLD5.557;X54818.933vsReLD14.326,negativemany. All24formalpages/A-Fcomplete. Currentrepo461members0scienceextras, codeMSE/gate/sourcefigure/posterchecksongoing."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Nativeconstraintcompositionsmotivate semanticexperts andsharedknowledge, notgenericMoEtaskinformationimpossibility.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Fiveconstraint-specificencoderexperts plusfirst-layerMSEdistillation andsharedresidualcombinertransform.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs2–8/Figure2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Capacityalwaysactive,taskmaskedsoftmaxcombinesconstraintFFNs,sixlayers128dim8heads512FF;POMOReLDconstructivepolicy,newexpertadaptationseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            17
+          ],
+          "locator": "Completearchitecture/Eqs9–21"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "30Mbaseinstances7native/9unseen;MB100kFT/MDzeroandadaptedseparate;mainmean1.751/2.646and3.432/5.857, largeSetX10.832withindividualnegativecases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            17,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "AllTables1–13"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Parametergrowth/taskselection/partialMDadaptationspecification/referenceandposterdiscrepancies; currentreleasecomputesallFFNexpertsbeforemaskweighting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "Limitations/sourcecomparisonscope"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Generalistconstructive actualshared7nativeVRPpolicy;distinctsize/backbone/all16/adaptedmodels andMDzero-shot areseparateprotocols.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            14,
+            15,
+            17,
+            18,
+            22,
+            23
+          ],
+          "locator": "Tasksharing/actionsemantics"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/4572bc2f514e627914cbe60d0398a2d1-Abstract-Conference.html",
+      "locator": "Formal3authorsSunYatsen/NUS p1; publishercitation_publication_date2026-04-20; primarytitle/venuechecked. Noarxividentity/earlierdateconfirmedafterprimarysearch, noinventedacceptance."
+    },
+    {
+      "field": "supplements and versions",
+      "source_url": "https://iclr.cc/virtual/2026/poster/10007700",
+      "locator": "All24formalpages main/references/A–F fullyread; publisherhasnoseparatesupplement. All8figuresrenderedseenandall13Tablesfullrowsread. Completeofficialposter3032010bytesread, differsK>2MSEsumvsformalmean. GitHub136536110bytearchive461membersnoPDF/ipynb/ZIP/video/slides; READMElinksnoexternalscience. API403notcountedinspected."
+    },
+    {
+      "field": "current implementation",
+      "source_url": "https://github.com/yuzikang0/CoEKS",
+      "locator": "FullTask.forward130–191,SharedGate/TaskSpecificGate,encoderactiveexperts63–83/CoElayer,CoEKSpolicydefaultsCoElocenc0,lossaggregationmodel,runconfigread. MSEcaseszeroK1,pairK2 via4*variance,K>2mean. LoopcomputesallFFNs beforemaskedsoftmaxoutput; rank16sharedgate; noexplicitfreezing/fine-tuningentrypointconfirmed."
+    },
+    {
+      "field": "classification and protocol boundary",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4572bc2f514e627914cbe60d0398a2d1-Paper-Conference.pdf",
+      "locator": "Main7native30M/9zero-combinations distinctfromall16retrain/MB100kFT+EAL/newexpert/MDseparatezero-and-FT experiments. MD0newexpertsTables9–10,andFT11–12budgetnotfullystated. NativeBstrictMBinterleaved,notpairedPDP. MatchedparamsReLD5notallcellswins."
+    },
+    {
+      "field": "citation_identity:shield",
+      "source_url": "https://proceedings.mlr.press/v267/goh25a.html",
+      "locator": "Formalreferencep11extra titlephrasein efficientlylayereddecoder andauthororderingchange; exactsixauthorsGoh/Cao/Ma/Zhou/Dupty/Lee,SHIELDcoretitle,ICML2025 identifytargetformalwork. SourceCaDAwrongvenue/GOALwrongyeardo notchangecatalogtargets."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/4572bc2f514e627914cbe60d0398a2d1-Paper-Conference.pdf#page=5",
+      "locator": "FormalFigure2crop105,57,506,301visuallycheckedwithentirecaption; allFigures1–8seen originalpages3/5/9/18/19/22/23."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "coeks",
+      "cited": "asp",
+      "reference_label": "ASP: Learn a Universal Neural Solver!",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "bopo",
+      "reference_label": "BOPO: Neural Combinatorial Optimization via Best-anchored and Objective-guided Preference Optimization",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "cross-problem-learning",
+      "reference_label": "Cross-Problem Learning for Solving Vehicle Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "dact",
+      "reference_label": "Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "emnh",
+      "reference_label": "Efficient Meta Neural Heuristic for Multi-Objective Combinatorial Optimization",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "gimf",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization via Graph-Image Multimodal Fusion",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "hncs",
+      "reference_label": "Hierarchical Neural Constructive Solver for Real-world TSP Scenarios",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "neat-weight-embedding",
+      "reference_label": "Rethinking Neural Multi-Objective Combinatorial Optimization via Neat Weight Embedding",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "nhde",
+      "reference_label": "Neural Multi-Objective Combinatorial Optimization with Diversity Enhancement",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "pip",
+      "reference_label": "Learning to Handle Complex Constraints for Vehicle Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "rbg",
+      "reference_label": "RBG: Hierarchically Solving Large-Scale Routing Problems in Logistic Systems via Reinforcement Learning",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "reld",
+      "reference_label": "Rethinking Light Decoder-based Solvers for Vehicle Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "cada",
+      "reference_label": "CaDA: Cross-Problem Routing Solver with Constraint-Aware Dual-Attention",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "goal",
+      "reference_label": "GOAL: A Generalist Combinatorial Optimization Agent Learner",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "mixed-curvature",
+      "reference_label": "A Mixed-Curvature based Pre-training Paradigm for Multi-Task Vehicle Routing Solver",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "mtpomo",
+      "reference_label": "Multi-Task Learning for Routing Problem with Cross-Problem Zero-Shot Generalization",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "routefinder",
+      "reference_label": "RouteFinder: Towards Foundation Models for Vehicle Routing Problems",
+      "description": "Explicit full formal reference entry; source venue/year inaccuracies do not overwrite verified target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete References pp10–13 manually read and matched by title/authors; source GOAL2024 and CaDAICLR2025 bibliographic errors qualified, RouteFinder2024 workshop precursor mapped to later formal representative."
+        }
+      ]
+    },
+    {
+      "citing": "coeks",
+      "cited": "shield",
+      "reference_label": "Goh et al. (2025), Shield: Multi-task multi-distribution vehicle routing solver with sparsity & hierarchy in efficiently layered decoder",
+      "description": "Source extends the title and changes author ordering; identical six authors, SHIELD prefix and ICML2025 uniquely match the verified formal paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Goh/Ma/Zhou/Cao/Dupty/Lee and fullSHIELDprefix/coretitle match target sixauthorformalPMLR267goh25a, not merely an acronym match."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall24formalpages/A–F/fullposter/allfiguresandtables; inventoriedallofficialsourcearchive.",
+    "Replacedgenericdescriptionwithactualfiveexperts/taskmaskedcombiners/rank16sharedtransform/first-layerMSE.",
+    "Separatednative7/9zero-combinations from16retrain,MB100kFT/EAL andMDzero/FT.",
+    "CorrectedoverbroaduniformsuperiorityclaimswithTW,VRPBL,shared-initializationandSetXnegativecells.",
+    "Qualifiedreferenceandposter-normalizationdiscrepancieswithoutinventedcorrectednumbers.",
+    "Documentedcurrentall-expertFFNevaluationandlackofconfirmedadaptationentrypoint.",
+    "Preservedtruepublication/institutions andrestoredoriginalformalFigure2with30explicitrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "84fbdf3b1599e07ed10f1860d895da51f70ffd26c74b421a92cbfdf98b8764e7"
+}

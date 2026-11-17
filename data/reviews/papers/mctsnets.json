@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "paper_id": "mctsnets",
+  "note_path": "specialist/mctsnets.md",
+  "baseline_note_sha256": "a210f36c34a189c4383f509d47982eb882974bd709ebe2097a98cd4db782d800",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v80/guez18a/guez18a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v80/guez18a/guez18a.pdf",
+      "local_path": "research/import-272/nco-09e04a89c7.pdf",
+      "sha256": "f9ce70ce1b3df3efaf2eb86fee4382293b8f073c33046164e1af9af38a9fa720",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v80/guez18a/guez18a-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v80/guez18a/guez18a-supp.pdf",
+      "version": "Publisher-linked complete two-page supplementary PDF, architectural choices, dataset, implementation, Figures 6-8",
+      "local_path": "research/full-text-review/mctsnets/supplement.pdf",
+      "sha256": "46817d0120706cbb2a78e7786edb1448659d69f2faab5a29c1ed089a0852670f",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exact8authorsDeepMindbyline, learnedtreevector memory/evaluation/backup/simulation/readout vsordinaryMCTSscalarfixedrules, discreteinternalselectionnotdifferentiable; deterministictransition+rewardmodel required, fullAlgorithms1-2."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read equations1-13/treegraph/memorygatedresidual/parentchild+prior logits; actual supervised desiredactions vsconceptualRLpossible. REINFORCE scoregradient Eq9/anytimelossdelta discount bias-variance; printedEq10/13signappearsinconsistentwithnegative-lossreward, pendingfullvisualcheck. Main25simcopy-modelcontrols, testsnottrainingRL."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allresults84+-1percent25simvsUCT~30%25sim/PUCT~65%,20xsimstatedrelativeUCTnotallMCTS;gatedMLPstability,discountbiasvariance,Figure5differenttrainbudgetsnotzeroshotswitch;discussiontruesimulator/supervisednottrainedRL."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read entire publisher2pageA1-3/B:10x10fourboxes symbolic4channels,250k distinctlevelteachertrajectories92%solved60steps/100cap+2500test,teacher~2000sim;128memoryconvarchitecture,TensorFlow32workersbatch1SGD5e-4;fullFigures6-8captionsdiagramstovisualcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read complete29itemreferencesAnthony-Weber, no exact existingcatalog matches (reference-candidates none); all10mainpagesdone."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Searchcomponenttrainingcanaccountforuseofevaluationsinsmall-budgetsearch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Intro/Relatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Vectornodememory/gatedresidualbackup/modulatedpolicy/anytimecreditassignment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithms1-2/Equations1-13"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialist constructiveSokobanactionplanner, actualsupervisedteacherlabels andtruesimulator,nosharedCOcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "locator": "Actualtrain/evalvsfutureRL"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "ConditionalpathautodiffplusREINFORCE,loss-deltadiscountbiasvariance;printedEq10/13lossgradient signmismatchlimitedcuratoranalysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Eq8/9versusR1=-loss andEq10/13, explicitBernoulliexample"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "25sim84+-1 vsUCT30/PUCT65,20xsimulationnotallruntime;copycontrols/gates/policy/discount anddifferenttrainingbudgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "CompleteFigures2-5/Sections4.1-4.4"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Trueknownsimulator,smallsymbolicSokoban/supervisedteacherdata,varianceanddiscountbias,nogeneralglobalguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Discussionandactualscope"
+        }
+      ]
+    },
+    {
+      "id": "supplement_setup",
+      "category": "method",
+      "statement": "Full250kteachertrajectories/2500test/10x10fourboxes/architecture32workersTensorFlowSGDsetup.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "CompleteSupplementA1-A3/BFigures6-8"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All10main+2suppread6visualpages/manualAPIandvideoaccesschecks,noofficialcodeverified/noexperimentrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "locator": "Full logsandmetadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.mlr.press/v80/guez18a.html",
+      "locator": "PMLR80:1822-1831exact8authorssingleDeepMindaffiliation;officialHTMLcitation_publication_date2018/07/03supports retaineddate. PDF accentsTheophane/Remi differplainofficialHTMLbutidentitysame."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v80/guez18a/guez18a-supp.pdf",
+      "locator": "ManualpublisherRelatedMaterialPaper+SupplementaryPDFonly. Formal2pSHA46817d0120706cbb2a78e7786edb1448659d69f2faab5a29c1ed089a0852670fallreadA1-A3/B/Figs6-8. APIv1/v2exacttitleboth403cached. Textp7qualitativeSokobandemo shortlinkhttps://goo.gl/2Bu8HD→Driveid0B8hmSuYkl6xuVE1Id25kZ2swUVU→Googleaccountsignin. Publicucdownloadalso200text/htmlsigninnotvideo;bothresolutionJSONcached. Videounavailable/unread/notcountedasreadsupp;parentapprovednoquantitativescienceblocker."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.mlr.press/v80/guez18a/guez18a.pdf",
+      "locator": "Publisher10pSHAf9ce70ce1b3df3efaf2eb86fee4382293b8f073c33046164e1af9af38a9fa720read1-10inclallrefs. Visualrestart-mainpp5/6/7/8 andsupp1/2 all viewed."
+    },
+    {
+      "field": "printed_gradient_sign",
+      "source_url": "https://proceedings.mlr.press/v80/guez18a.html",
+      "locator": "Eq8loss=E[-logp];Eq9minus scorelogp correct. p6defines rbar=-(loss_m-loss_m-1),R1=-lossM=logp butEq10/13positive scoreR appearslossgradientopposite. Bernoullia~p(theta),loss(a)=a,fixedconditionaloutputs: atp=.5 truelossgradient+.25 whileE[(a-p)(-a)]=-.25. Onlyprintedderivationsign,nopublicauthorimplementationtoassertactualexperimentaltrainingwrong. Actualdiscount<1isbiasedevenwithcorrectsign."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://deepmind.google/blog/deepmind-papers-at-icml-2018/",
+      "locator": "OfficialDeepMind2018publicationlistingexact8authors/titleabstractonly,nocode. Publisher/fullpaper/suppnocodelink. Searchfaameunier/MCTSnetthirdpartyPyTorch,notauthorTensorFlow,noofficialcodeURLadded."
+    },
+    {
+      "field": "citation_scan",
+      "source_url": "https://proceedings.mlr.press/v80/guez18a.html",
+      "locator": "Allmainreferencespp9-10read/manualtitlecomparison+reference-candidatesnone; noexactexisting364IDs. AlphaGo/Predictron/TreeQN/I2A/expertiterationnotcatalogueentries;donotcreatesimilarityedges. No selfcitationedge. SeparateSokobantasknotRubik/crossdomaincitationinference."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "CorrectedsupervisedteacherlearningversusfutureRL/ordinaryautodiffversusdiscreteREINFORCE.",
+    "Qualifiedsimulationcountbudgetcomparisons,separatetrainbudgetsandteacher92vsmodel84success.",
+    "Documentedprintedlossgradientsigninconsistencywithpreciseone-stepexample,notclaimactualexperimentwrong.",
+    "Readformal10+2supp/6keyvisualpages;demo inaccessibleexplicitlyunread,nocodeverified,zeroexactcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0ae563f276cbb7bf6ebd74c35260cb7153341dc7ca7a80cb057f7f824c1b5c8a"
+}

@@ -1,0 +1,885 @@
+{
+  "version": 1,
+  "paper_id": "constraint-tightness",
+  "note_path": "specialist/constraint-tightness.md",
+  "baseline_note_sha256": "df87952416af90020e9e9c1c1df79521be310618653d0cc3c4f88bb1d9c25151",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8fc784104e74f1b427865d30ad22931-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8fc784104e74f1b427865d30ad22931-Paper-Conference.pdf",
+      "version": "Actual official NeurIPS2025 final35-page proceedings PDF; all main/refs/checklist/AppendicesA-P freshly read.",
+      "local_path": "research/full-text-review/constraint-tightness/paper.pdf",
+      "sha256": "27b5691156d3138c853410ccdd3dda6ebd2c8981b0564e8305b0b81bcce304e8",
+      "pages": 35,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshfinal35page first2read authors4 institutionsSUSTech/TUe/NUS (oldSUSTechonlyincomplete). Tightnesscapacitydomainstudy+multi-experttrain, gapHGSHEURISTICnotgroundtruthcertopt. Table1POMO3.66->20.26/34.12 LEHD4.22->36.56/6.82 BQ3.25->18.02/8.16, differentC fixeddemands implyroutegranularitynotmeresizeshift. NojointCVRPTWweightsinferenceyet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullTable2all9models/sevenCread;greedybasicprotocol10kCVRP100each C10/50/100/200/300/400/500 coordsunitdemands1-9, pretrained100C50. Capacity500onlyexpectedtot500 notalwayssinglevehiclefeasible; requireactualsum<=C. AbsoluteCproxyrelativefixeddemand/size,AppendixJmoregeneraldefinitionreadlater. MVMoEtableavg17.24suspectarithmeticsee laterdon'tclaimindependentreconciledmean."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FullFigures1/2/3readand4.1-4.3: tightCVRPsimilarOVRPstructuralnotobjectiveequivalence(returncostdiff),looseCVRPnearTSPnotguaranteeC>=sum. POMOOVRPtrainedC10~1.9%vsCVRPtrainedC50bad (task+traincapacityconfound);TSP2.5%vsCVRPLEHD6.8. NewuniformCinrangeperinstancebetterperbatch,LEHDheavydec+expertlasthead afterLattention; gateinstance-levelneedformula next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fullgate/expertEq2-4read:DETERMINISTIConehotcapacityequalintervals3,NOTlearnedgate;Cmaxendpointstrictinequalityneedreleaseclampcheck. LEHD192d12headsq16FF512L6+3experts3layers supervised1mHGSlabelsCinteger10..50040epochb512Adam1e-4*.9epochRTX309024G. Tables3-5allread:ours1.86avgvsExistingBest5.13table(notprose3.71),midC50/100worse. VCTalone2.41MEMalone8.95base10.78 allbudgetscontrolreported. CVRPTWseparatePOMO robust11.58stillhighgap."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullCVRPTWseparatePOMO1000epochs10k=10mRL b64alphaUniform0..3 gate3fixedbins0..1/1..2/2..3;greedytestedalpha.2,.5,1,1.5,2,2.5,3,basealpha1 VCTworseat1butMEMimprovesVCTnotalwaysbeatsbase. RelatedpriorcapacitymetaC10/30/40+ICAM? fullbiblater. Formalconclusionuniformsample/adaptivefuture,scope2tasksnotuniversalCOP. References1-8readCada/L2R/URS2025actualpreprintentries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Fullbib9-50read. SILactualsixauthor2403.19561SelfImproved2024precursor->formalrepresentativecuratoridentityqualifiednotarxivretitle. BQformalEfficienttitlefine, ICAM2405.01906preprinttitleearly, MVMoE2405.01029. AdditionalCada/L2R/URS/UDC/ParetoImprover/L2CInsert/LLMsARSinfeasdiagMCTSAHD potentialcataloglookupcandidateonly. Fullrefsreadnotnewrelationwithoutbodymatch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Checklistfirst2pagesfullread claims/limitationsYes theoryNAexplicitmainlyempirical; reproducibilityYes/openaccessquestioncontinues. Noextra theoremassumption beyonddefinitionformulaspretendproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Checklistpages16-18allread:statisticalsignificanceNOexplicitmeansgapsnottrainingseedCI, computeYesbuttotaltraininglabelinghardwaretimeactualappendicesneedcheck. AssetlicenseclaimSectionPwillverifyexistsnotinvent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Completechecklistlast2pagesreadnewassetsNA/humansNA/LLMNA;irbtemplateTSPCVRPnotactualscopeevidence. Allchecklist14-20covered."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "FullA/Battentionformulas+Table6timing andCsimilarityEq10/Table7read:ours57.6sper10kset vsLEHD27s/BQ109.8/INViT156/POMO3, HGS4.5hCPUexplicitnotGPUcomparable. Similarityproductrelativecosterrors heuristicrepair/solverdependent notpropermetric/always0..1 theorem;groundtruthHGS/LKHnotcertopt. C10OVRP97.5/TSP25.5 vsC50074.1/98.2 structural empirical."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "FullC/DtransferrepairproceduresandEread:similarityhandcraftedCVRP-TSPgreedymerge/TSPcapacitysplits;OVRPdroplongerdepotedge+reverse whenvalid;TWsplitviolationsbidirection andCVRPmerge savingscapacity. Notidentitymappingorcostmetric, repairqualityaffectssimilarity. TWCVRPalpha5unseenexperiment96.3similaritynotjointmodelclaim. Instancelevelcapacitybeatsbatchall seven reported,mechanismoptimizerstabilityhypothesisnotmeasuredgradtheorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "FullTable9andF/G/Hfirstpage read. TWwidthalpha e'=max(e+delta,0),l'=l-delta,delta=(l-e)(1-alpha)/2. Printedservice s'=max(s/alpha,s) contradictsonlyrelaxwording(foralpha<1 increases), actualgeneratorcheckneeded. CVRPTWPOMOexpertsinENCODERnotdecoder. AppendixHexplorestoptwolearnedMoEbaseline NOTmainfixedgate;dontconfuse. CodeCVRPthresholds0/163/326 vsformalCmin10shifted173/336, endpointactualclosedrightnoCmaxhole."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "FullHsoftMoEloadbalance.01Table10top2avg2.17vshard1.86 butsoftbetterC10(1.48vs1.54)/C500(.83vs.87), notuniversalhardswitchwin. IactuallyVRPBTW+VRPBLTWexperimentsTable11separatePOMObaseORtoolsrefs, oursavg10.03/9.75vs20.91/17.70butalpha1worse9.34vs8.46/9.09vs8.29. Addactualbackhauls/durationtags,nojointweightsclaim. Jformalproposedtightnessreferencealgorithmcostdegradationnotfeasibleregionvolume,continuefullformula."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "FullJformula/read:logreferencecostratio normalizedbetweenunconstrainedandextreme, assumespositiveobjectives/nonzerodenominator andheuristicvaluesbracketed;notintrinsic0..1orcrossproblemuniversalscoreforallheuristics. KP200onlycalibrationillustration greedymaxvalue/objective signnormalizationnotnewtrainedknapsacksolver. NNdeterminismneedsfixedtie/init. Tightnessmaincapacityrange[.018,.837],TW[.072,.717]excludestrueextremesdespitewording."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 32,
+      "notes": "FullJTable12/KvehicleTable13/Lrange/Mruntime/Nstartread. TightnessNNnonmonotonicC300.029vsC400.032provesnotautomaticmonotonic;TWalpha1table.443 vsprose.418. HGSavgvehiclesC5001.44notalways1. Scope192CVRPLIBanalyzedroute-size2..27 onlyrangerepresentativenessnotmodelbenchmark. MEM2.41/0.67min->1.86/.96min ~43%extra runtime, economicalbenefitsauthorinterpretationnotmeasured."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 33,
+      "last_page": 35,
+      "notes": "AllremainingN/O/Psciencecomplete35pages: demandZipfP∝d^-1.5 mean~2.23 vs5, baselineonlydegradeatC50 exceptoverallLEHD9.62->7.98better,notoursrobustness demonstrated. KP200OactualPOMO/BQshiftcaseC2..50ORtoolsref,notproposedVCTMEMtrainedKP. All18tables+fullscientificA-Pandchecklistfreshlyread. Licensetableactualsourceslegalmetadataonlynoaddeduserlicense."
+    }
+  ],
+  "claims": [
+    {
+      "id": "varying",
+      "category": "contribution",
+      "statement": "Vary constraint values independently per instance; deterministic interval expert switch reduces fixed-capacity overfitting. Learned top-two MoE is only an ablation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Sections1-5/AppendicesE/H, full equations and all rows read."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "CVRP supervised LEHD192/12heads/6shared+3experts*3layers; separate POMO1000*10k RL time-window training with encoder experts. Heuristic-relative tightness/similarity, actual codegate/service formula differences qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            28,
+            29,
+            30,
+            31
+          ],
+          "locator": "Main methods/complete appendices, selected complete public functions and active mapping read; no optimality or universal metric claim."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Seven10k CVRP100 capacity sets, greedy main comparison, mean1.86 with worseC50/100 and43%MEM runtime overhead; CVRPTW11.58 and two additional variants10.03/9.75 with in-domain losses; KP and demand analyses are baseline diagnoses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            21,
+            25,
+            27,
+            28,
+            31,
+            32,
+            33,
+            34
+          ],
+          "locator": "Tables2-17 read/visual checks; table/prose average discrepancies documented, CPU vsGPU and heuristic references explicit."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive: separately trained CVRP and POMO time-window/constraint models, no shared checkpoint demonstrated across tasks; proposed neural actions construct solutions, no learned incumbent editing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9,
+            25,
+            27,
+            28,
+            34
+          ],
+          "locator": "Actual backbone/training protocols; KP diagnostic is not a proposed solver."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8fc784104e74f1b427865d30ad22931-Abstract-Conference.html",
+      "locator": "Actual formal page1 four authors/SUSTech/TUe/NUS; publisher proceeding NeurIPS38 2025 supportsyearonly. arxivabs2505.24627 historyv1 May30_2025, v3 Oct30_2025. GenericSep18acceptance removed."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8fc784104e74f1b427865d30ad22931-Abstract-Conference.html",
+      "locator": "Actual proceedingsHTMLcomplete35pagePDFonlyno separate supplement; allnamedA-P/main/refs/checklistread. OpenReview Lwn1rLB8t7 API403 actualrequest saved; no unseenattachments assertedchecked. Official180entrytreecontainsnoPDF/TEX/IPYNB/ZIP, no explicit missing scientific attachment in readpaper."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/CIAM-Group/Rethinking_Constraint_Tightness",
+      "locator": "Read selected complete modelgate/forward/loss/trainconfig, POMOSINGLEencoder/trainer, generation get_env active VRPTWEnv3 function. Document fixedCVRPbins0/163/326 vsformalshift, maxserviceformulavsconditionalminrelease, HGS/PyVRP heuristic reference boundary."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8fc784104e74f1b427865d30ad22931-Paper-Conference.pdf",
+      "locator": "Original completeFigure3 page6 cropRect(120,65,472,207)4x; formulas/gate/mainresults/extension tables allvisualchecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8fc784104e74f1b427865d30ad22931-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2026-04-23; cached evidence research/full-text-review/constraint-tightness/page-1.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2505.24627",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-05-30; title on abstract page: Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees. This date is preprint history, not formal publication. Cached research/full-text-review/constraint-tightness/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "constraint-tightness",
+      "cited": "cada",
+      "reference_label": "6",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[6] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference[6] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "l2r",
+      "reference_label": "7",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[7] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference[7] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "urs",
+      "reference_label": "8",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[8] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference[8] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "pomo",
+      "reference_label": "9",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text reference[9] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[9] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "udc",
+      "reference_label": "10",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[10] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[10] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "sil",
+      "reference_label": "11",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Reference11 is the six-author2024 Self-improved arxiv2403.19561 precursor, mapped to the formal SIL representative on the separately documented original-manuscript continuity comparison; not an arxiv retitle or claim to cite the future formal title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[11] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[11] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "reld",
+      "reference_label": "17",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text reference[17] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[17] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "attention-model",
+      "reference_label": "18",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text reference[18] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[18] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "bq-nco",
+      "reference_label": "19",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text reference[19] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[19] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "lehd",
+      "reference_label": "20",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actual in-text reference[20] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[20] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "22",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text reference[22] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[22] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "elg",
+      "reference_label": "23",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text reference[23] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[23] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "invit",
+      "reference_label": "24",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text reference[24] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[24] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "mtpomo",
+      "reference_label": "25",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text reference[25] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[25] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "mvmoe",
+      "reference_label": "26",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text reference[26] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[26] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "pointer-networks",
+      "reference_label": "27",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actual in-text reference[27] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference[27] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "28",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actual in-text reference[28] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[28] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "30",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[30] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[30] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "rl-vrp",
+      "reference_label": "31",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[31] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[31] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "step-wise-routing",
+      "reference_label": "33",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[33] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[33] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "efficient-active-search",
+      "reference_label": "34",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[34] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[34] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "sym-nco",
+      "reference_label": "35",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[35] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[35] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "36",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[36] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[36] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "pointerformer",
+      "reference_label": "37",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[37] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[37] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "omni-vrp",
+      "reference_label": "38",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[38] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[38] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "icam",
+      "reference_label": "40",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actual in-text reference[40] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[40] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "pip",
+      "reference_label": "48",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25
+          ],
+          "locator": "Actual in-text reference[48] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference[48] title/authors/version matched stable ID."
+        }
+      ]
+    },
+    {
+      "citing": "constraint-tightness",
+      "cited": "learning-to-delegate",
+      "reference_label": "49",
+      "description": "Explicit in-text numbered reference and matching full bibliography. Preserve actual cited title/year/version: ICAM2405.01906 earlytitle, MVMoE2405.01029, L2R2503.03137, URS2509.23413 and early2019 GCN/2016Bello preprints are not silently replaced by future publication metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            25
+          ],
+          "locator": "Actual in-text reference[49] including explicit printed reference range whereapplicable."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete reference[49] title/authors/version matched stable ID."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshread35officialpages mainrefschecklistA-P, originalFigure3 and all principal formulas/tables visuallychecked.",
+    "Replaced generic learnedgate description with actual fixedintervalswitch and separateCVRPdecoder/POMOencoder expert architectures.",
+    "Added missingTUe/NUSinstitutions, removed genericnotificationacceptanceday, retainedverifiedfirstarxivdate andformalyear.",
+    "Separated perproblemcheckpoints, extensionBTW/BLTW, baseline-onlyKP/demanddiagnoses andCVRPLIBrangeanalysis; specialistconstructiveretained.",
+    "Recorded exacttraining/test/time/hardwarebudget, in-domain losses, heuristicreference uncertifiedoptimality, runtimeoverhead and table/prose arithmeticdifferences.",
+    "Documented reference-dependenttightness/similarity assumptions/repairprocedures, capacity500notguaranteedsingletour, noindependentseedstats.",
+    "Compared actual active code: fixedbins0/163/326 vsformalshift and conditionalservicerelaxationmin vsprintedmax; no upstream code modified orbenchmarkrerun.",
+    "Added28actualmatchedcitations with qualifiedSILprecursor, earlypreprintversions preserved.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f0cf23543a3a407e536cc3f70d4c8b7ab967f82de84d98e1667d74e2a96bf2b3"
+}

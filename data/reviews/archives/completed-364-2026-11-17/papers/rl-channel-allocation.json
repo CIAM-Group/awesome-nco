@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "paper_id": "rl-channel-allocation",
+  "note_path": "specialist/rl-channel-allocation.md",
+  "baseline_note_sha256": "a1566579e28c7ce74d48e746bd2a64dd82181da763a30b3a7c305b78fc02f205",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/3948ead63a9f2944218de038d8934305-Paper.pdf",
+      "version": "Official NIPS1996 volume9 scanned proceedings,7pages974-980",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/3948ead63a9f2944218de038d8934305-Paper.pdf",
+      "local_path": "research/import-272/nco-8753b983b9.pdf",
+      "sha256": "6ef026c423066c4a154c0652aebefcd804f70c62ea68678cd8efc9cfeb752c20",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshpp1-3: Singh/BertsekasColoradoMIT, cellularreuseconstrainedcallservice; stateconfig+arrival/departure/handoff. Decisions assignment or SAMECELL rearrangement afterdeparture, alwaysacceptavailable, admissioncontrolonlyseparatepaper. Maxdiscountedongoingcallintegral, notjointdropblockweightedoptimizationdespiteintro. Approx4949states textmeans49^49 likely49cells49statespercell needvisualconfirm."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Freshpp4-7 all10references inclactualinternalCritesBartoNIPS8 andZhangDietterichNIPS8. TD0afterstatevaluegreedyarrivalfreechannel/departureatmostonecallreassignmentvsnone. Mainreported linear neural network withavailability-percell+packingcellchannelwithin4cellradius; nonlinearonlysmallwinsmuchtraining, centraltraininglocalinference.49cell7x7/70channelsreuse3 and20x1/24trafficpatterns120mean;duration3min,uniform150/200/350perhour. Onlinecumulativeblockingduringlearningnotheldoutfrozenzeroshot;FAoptimalinfinitearrival limit,relgapsdecreasewithload. Abstract49^49 vsmain70^49sourceestimatesinconsistent/exactstatecountnotused."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Dynamic channelreuse under stochasticdemand motivates approximateDPinstead offixedallocation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/policies"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "TD0valueallocation/rearrangement withlocalavailabilitypackingfeatures andFA/BDCLcomparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections2-3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Greedydeterministicafterstatevaluation forarrival andone samecell reassignmentvsnone,alwaysacceptavailable; mainfunctionapproximatorlinear.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "TDalgorithm andmainfeaturedefinition"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "49cells70channelsreuse3rates150/200/350;20x1/24channelsvariedpatterns120mean;duration3min, cumulativeblockingduringtrainingnotheldoutcheckpointtest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Figures2-3 andprotocol"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Highloadrelativeadvantage shrinks, nonlineartrainingexpensive,decentralizedtrainingfuture; source49^49vs70^49statecount inconsistent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sourcequalifications andexponents"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Bothlearnedarrivalassignment anddeparturelocalrearrangement justifyconstructive-improvement; specialistsameallocationtask.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Nativeeventactions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/3948ead63a9f2944218de038d8934305-Abstract.html",
+      "locator": "Officialmetadata SatinderP.Singh/DimitriP.Bertsekas;PDFp1Colorado/MIT."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/3948ead63a9f2944218de038d8934305-Abstract.html",
+      "locator": "OfficialNIPS1996volume9record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/hash/3948ead63a9f2944218de038d8934305-Abstract.html",
+      "locator": "ManualentrycheckBibtex/Metadata/Paper only; all7pagesread,noappendix/attachedscientificsupplement."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1996/file/3948ead63a9f2944218de038d8934305-Paper.pdf",
+      "locator": "Visuallycheckedexponents/BellmanTDformulae/Figures1-3andpatterns;no newasset."
+    },
+    {
+      "field": "citation_identity:time-delay-td-jobshop",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/4f16c818875d9fcb6867c7bdc89be7eb-Abstract.html",
+      "locator": "Source p7 gives Zhang W. and Dietterich T.G., 1996, High-performance job-shop scheduling with a time-delay TD(lambda) network, NIPS8. Target original p1 was independently rendered/read and the official NeurIPS1995 volume8 record matches. The proceedings print year differs from meeting year; broken PDF font extraction is not a missing citation."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rl-channel-allocation",
+      "cited": "rl-elevator-control",
+      "reference_label": "Crites and Barto (1996), NIPS8",
+      "description": "Cites neural elevator control as an earlier successful approximate dynamic-programming application.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Conclusion named priorcase study and matching exact-title bibliography entry; sourceprinted1996 vsconference1995."
+        }
+      ]
+    },
+    {
+      "citing": "rl-channel-allocation",
+      "cited": "time-delay-td-jobshop",
+      "reference_label": "Zhang and Dietterich (1996), NIPS8",
+      "description": "Cites the time-delay TD(lambda) job-shop scheduler as an earlier neural dynamic-programming application.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Conclusion named priorcase study and matching exact-title bibliography entry; sourceprinted1996 vsconference1995."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read7pages/10references andvisualequations/charts.",
+    "RestoredpublisherauthorPinitials.",
+    "Specifiedlinear mainmodel, exactfeatures, arrivalplusdepartureactions anddeferredadmissioncontrol.",
+    "Correctedconstructive-onlylabel toconstructive-improvement.",
+    "Separatedonlinelearningperformance fromfrozencheckpointgeneralization andrecordedstatecountdiscrepancy.",
+    "Confirmedtwooutgoingcitationsbyexacttitle despite1996bibliographyvs1995conferenceyears."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "a762ecea01e7fadffe347cfa20b7d78946395d37b827678fb98bccb5a0ca58ed"
+}

@@ -1,0 +1,448 @@
+{
+  "version": 1,
+  "paper_id": "learn-lns-ip",
+  "note_path": "specialist/learn-lns-ip.md",
+  "baseline_note_sha256": "24fc3d79d45496ef7bf37249f96e700968e2fdb995038e7811d4b64b51fd33e0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Paper.pdf",
+      "local_path": "research/import-272/nco-ffc0bba5c5.pdf",
+      "sha256": "5cc00c85c18aa7d9a0a2d1bcbc144d4c4fb13c4d97a8bbe9169ea12bed54da62",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Supplemental.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/learn-lns-ip/supplement.pdf",
+      "sha256": "f44e4fad00056af7e6435c30d22dbd1cb0a833ba91372f6e8f8f592a65919f31",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read MILPexternalLNSversusinternalbranchingmotivation, factorizedvariablemaskstateactiondesignandrelatedwork, formalIP/LNSdefinitions, generalinterfaceversusclaimedcrossproblem scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completeMDPobjectiveimprovementreward and idealizedsubIPargmin, conditionalBernoullifactorization/notarbitraryjoint,128dim2roundresidualGCN Tanh, globalQcritic vsnegativeperbitablation,clippingandempty/fullsubsetresampling."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allinstance/feature/trainingdetailsandTables1–4:100/20/50perfamily separatelytrained policies;200/500/1000sbudgets,2srepair, primalgapbestobservednotoptimum, SCIP1000swinsonSCandsomelargerclasses; Gurobifeaturechangesandseparatetraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read completeGurobiTable5 andMIPLIBactive-search-notzero-shot setup, explicitnooptimalityguarantee/specializedalgorithmlimits, acknowledgements andfirst18references withmanycataloguecandidates."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Read everyremaining48entryreference, mappedIP/LNS/routingcataloguecitations andnotedbibliographicerrorsareauthorsnotformalqualification evidence."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fullarchitectureFigureA1/trainingAlgorithm1, plusMSEgradientcriticprinted sign, semisharednegativeablationFigureA3 includingMISexception andfeatureextractiondescription."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Read allfeatures,shorttimeFTbaselinequalification, GurobiMIS20s andSC4inferiority, fullMIPLIBfiltered35instanceactiveadaptationprotocol/initial100s/1000strainbudget, everyA5row andnoticedaggregateclaims needmanualverification."
+    }
+  ],
+  "claims": [
+    {
+      "id": "factorization",
+      "category": "contribution",
+      "statement": "GNNparallelvariabledecisionsrepresentvariablecardinalitydestroy masks withoutenumeratingsubsets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4.1–4.3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "GlobalQcriticweightsfactorizedactorwhiletime-limitedIPrepairsmodifythenonneuralenvironment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7
+          ],
+          "locator": "Equation1andSections4.4,5"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "SeparateperfamilytrainingandGurobichangedfeaturescontrastMIPLIBinstance-specificactiveadaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9,
+            10
+          ],
+          "locator": "Section5trainingand5.3–5.4"
+        }
+      ]
+    },
+    {
+      "id": "metrics",
+      "category": "experiment",
+      "statement": "Primalgapisbest-observedreference, notoptimum; longSCIPbudgetswinselectedSCandlargerclasses.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables2–4metricdefinition"
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "category": "experiment",
+      "statement": "GurobiSC4learned177.66worsethanU/RLNS176.84/176.08 andMIPLIBrowns182contradictsaggregatebothsolverclaim.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "TablesA4–A5"
+        }
+      ]
+    },
+    {
+      "id": "pseudocode",
+      "category": "limitation",
+      "statement": "PrintedAlgorithm1criticupdateaddspositiveMSEgradient; optimizer signrequiresimplementationresolution.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Algorithm1line11"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/fc9e62695def29ccdb9eb3fed5b4c8c8-Abstract.html",
+      "locator": "PublisherNeurIPS2021volume34title/authors; mainp1"
+    },
+    {
+      "field": "scope",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Paper.pdf",
+      "locator": "p7For eachproblemtrainpolicy; p9Gurobichangesfeaturesandtraining; p10MIPLIBactiveinstanceadaptation"
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/fc9e62695def29ccdb9eb3fed5b4c8c8-Paper.pdf",
+      "locator": "Section5Table1SC/MIS/CA/MC; MISismaximumcardinalitynotmerelymaximal"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/fc9e62695def29ccdb9eb3fed5b4c8c8-Abstract.html",
+      "locator": "ManuallycheckedpublisherSupplementallinkto5pageAppendixA1–A8; everypage/table/algorithmread"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/WXY1427/Learn-LNS-policy",
+      "locator": "Paperp7authorlinkandreponamedNeurIPS2021paperwithtrainingtestinginstructions"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learn-lns-ip",
+      "cited": "pointer-networks",
+      "reference_label": "[4]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [4] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[5]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation [5] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[6]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10,
+            11
+          ],
+          "locator": "Explicit in-text citation [6] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "attention-model",
+      "reference_label": "[7]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [7] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[8]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [8] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "learning-to-dispatch",
+      "reference_label": "[11]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit in-text citation [11] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "neurewriter",
+      "reference_label": "[12]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [12] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[13]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [13] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "learning-to-improve",
+      "reference_label": "[14]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation [14] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[15]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [15] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "egate",
+      "reference_label": "[16]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation [16] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "gcnn-branching",
+      "reference_label": "[20]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation [20] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "general-lns-ilp",
+      "reference_label": "[21]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            7,
+            8,
+            12
+          ],
+          "locator": "Explicit in-text citation [21] and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "learn-lns-ip",
+      "cited": "learning-to-cut",
+      "reference_label": "[22]",
+      "description": "Explicit construction/improvement or learned-IP related work and, where applicable, implemented baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation [22] and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full13+5pageauditwithallappendixandMIPLIBrows.",
+    "SeparatedsubIPidealargminfromtime-limitedrepairs andbest-observedgapfromtrueoptimality.",
+    "Addednativefourtaskobjectivesandrestrictedsharedmodelclaims; MIPLIBisactiveadaptation.",
+    "IncludedSCIP/GurobinegativecasesandMIPLIBaggregate/hightlightingcontradiction.",
+    "Recordedcriticpseudocodesignspecificationandinitializationtimeaccounting."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "75edc51217ca2ac428577819e20129d5b87feec13a9c14de5cb31889394475a9"
+}

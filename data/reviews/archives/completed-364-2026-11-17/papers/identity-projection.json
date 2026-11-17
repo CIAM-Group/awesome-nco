@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "paper_id": "identity-projection",
+  "note_path": "studies/identity-projection.md",
+  "baseline_note_sha256": "1b3fde8ca48f919fb792e77d818ff750b85000a3c30a05e05bbe43095e486689",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2205.15213",
+      "version": "arXiv:2205.15213v3,17March2023,27pageswithintegratedscientificAppendicesA-D; identifiedbyPDFheaderandprimaryhistory",
+      "retrieval_url": "https://arxiv.org/pdf/2205.15213",
+      "local_path": "research/import-272/nco-993cdff809.pdf",
+      "sha256": "49635832b197acba98701dde2ac48e6e61f0b5a721e22976f1e25be37efe70f5",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 16,
+      "notes": "Readcomplete main1-9, reproducibilitystatement, allbibliographypages10-15 and firstSTEappendixpage16. Actualarxivv3Mar17,2023 identified. Tracked direct-cost/linearized-lossTheorem1, task-specificprojectionfailure, noisealpha hyperparameter, retrievalunderperformance and graphmatchingapproxsolverrequirements."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 27,
+      "notes": "Read allremainingSTEdiscussion, completedetailedsampler/matching/retrieval/TSP/Warcraftprotocols, everyruntime/resulttable, relaxationsclosedforms, entireC.3proof with explicit previoussolutiontiebreak and smallstep/directcost/linearizedloss assumptions, finalprojectionillustration. All27pagescomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "estimator",
+      "category": "contribution",
+      "statement": "Usesnegativeidentitybackwardforlinear-costfiniteargminlayer andnoextrabackwardsolvercall; nottrueclassicalderivative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "MaincontributionsandEquations1-5"
+        }
+      ]
+    },
+    {
+      "id": "theorem",
+      "category": "method",
+      "statement": "Theorem1isfirstswitchdirectcostlinearizedlossimprovement withsmallstep/exactargmin andprevioussolutiontiebreak, notglobalbackbonetraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            24,
+            25,
+            26
+          ],
+          "locator": "Theorem1andcompleteC.3Theorem2/Propositions1-3proof; tiebreakexplicitp24"
+        }
+      ]
+    },
+    {
+      "id": "projection",
+      "category": "method",
+      "statement": "Differentiatesinvariantcosttransforms: centering,nonzeronormnormalizationandcomposition; forwardinvarianceandrelaxationinterpretationqualifiedbydomain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            23,
+            24,
+            27
+          ],
+          "locator": "Equations7-15/27-34 andFigure9visuallychecked"
+        }
+      ]
+    },
+    {
+      "id": "noise",
+      "category": "method",
+      "statement": "BaseestimatorhasnoBB-lambda, butoptionalcostnoiseamplitudealphaexplicitlyhyperparameter; notanunconditionalmargincertificate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            21
+          ],
+          "locator": "Section3.6 discreteRademachersupport andalpha; AppendixB.4schedule"
+        }
+      ]
+    },
+    {
+      "id": "noise-curator",
+      "category": "limitation",
+      "statement": "Curatoranalysis: zeroLebesguemeasureboundarydoesnotimplyavoidanceunderdiscreteexperimentalnoise; 1Domega=alpha/2with±alpha/2hitszero withprobability1/2.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Section3.6literalcontinuousboundaryreasoningversusdiscretenoisesupport, visuallychecked; elementarytwooutcomecheck"
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "category": "experiment",
+      "statement": "ProjectionhelpsDVAEandBeerAdvocate; Aroma k10MSEtimes100 2.47±.11vs4.43±.09withoutprojection;10models/splits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            17,
+            18
+          ],
+          "locator": "Table1,fullB.1protocolandFigures3/5-7"
+        }
+      ]
+    },
+    {
+      "id": "matching",
+      "category": "experiment",
+      "statement": "UnnormalizedIdentitycompetitivewithBB butnormalizationmayharmIdentityinmatching; PascalVOCnoise1 gives79.6±.8vs80.1±.4.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            18,
+            19
+          ],
+          "locator": "Tables2/4 andfullB.2dual-block-coordinate-solverprotocol"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "category": "experiment",
+      "statement": "ProjectionhelpsbutIdentityremainsweakerthanBB: Pstdnoise.01Recall1 60.4±.5vs63.0±.5.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            19,
+            20,
+            21
+          ],
+          "locator": "MainexplicitunderperformanceandAppendixB.3Table5"
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "category": "experiment",
+      "statement": "TSPcorrupted-gradient/labeltestsfavorIdentityinreportedconditions;Warcraftappendixreportscostratio101.0vs100.9,notexactpathaccuracy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            20,
+            21,
+            22
+          ],
+          "locator": "Figure4,AppendixB.4-B.5Tables6-7 andexactmetricformula"
+        }
+      ]
+    },
+    {
+      "id": "runtime",
+      "category": "experiment",
+      "statement": "TSP10training53.1±2.5minvsBB84.6±.7;sampling/retrievalsimilar; noautomatic2xspeedup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            22,
+            23
+          ],
+          "locator": "AppendixB.6andTable8fulltrain/evalruntime"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Differentiationframeworkanalysiswithseparatetaskarchitectures/checkpoints,notsharedgeneralistsolverorproveglobalneuralconvergence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            7,
+            8,
+            9,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "locator": "Fullmethod/experimentandtaskprotocolscope"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://iclr.cc/virtual/2023/poster/10752",
+      "locator": "FoundexactposterfromofficialICLRDownloads2023, then fetchedpublisherposterHTTP200 andmanuallyreadtitle/sixauthors/posteraccept. ListingSubhamSahoo/MarinVlastelicaPogancicnamevariants match fullPDFp1SubhamSekharSahoo/MarinVlastelica; Cornell/MPI/Masaryk/CornellTechaffiliationschecked. Officialyear2023retained;addedactualstudiedtaskmetadatawithoutscopechange."
+    },
+    {
+      "field": "source version",
+      "source_url": "https://arxiv.org/abs/2205.15213",
+      "locator": "Primaryarxivhistorymanuallyopened:v1May30,2022;v3Mar17,2023. Cached27pagePDFheaderpositivelyidentifies2205.15213v3Mar17,2023andformalICLR2023header. All27pagesreadinclA-D;noformalbyteidentityclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=JZMR727O29",
+      "locator": "Forumverificationchallenge andbothlegacy/api2notes?forum=JZMR727O29attachmentmetadatachecksHTTP403savedinowncache. EveryexplicitscientificSupplA-Dreferenceisintegratedinthecomplete27pagearxivv3, allproofs/experiments/illustrationsread; noidentifiedmissingseparatescientificattachment. Threecontactsheetsvisuallycheckedkeyequations/proofs/metrics/noisesupportandallmajorresulttables."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/martius-lab/solver-differentiation-identity",
+      "locator": "ExactauthorcodeURLinPDFp1/p10andpublicrepositorymanuallyopened. CurrentpublicdirectoryREADME+oneDVAEipynb;READMEIdentitySubsetLayerexampleandrequirementsread. Doesnotindependentlyverifyclaimedall-experimentrelease; noteaccuratelyqualifies. Mainlatentlength20vsAppendixencoder20x20shapeambiguitydocumentednotguessed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2205.15213",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-05-30; title on abstract page: Backpropagation through Combinatorial Algorithms: Identity with Projection Works. This date is preprint history, not formal publication. Cached research/full-text-review/identity-projection/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "identity-projection",
+      "cited": "blackbox-backprop",
+      "reference_label": "Vlastelica et al. (2020)",
+      "description": "Directmethodcomparatorandupstreamtaskprotocols; correctreferenceidentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp1; exactfullbibliographyentryPDFp10: Vlastelica et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "identity-projection",
+      "cited": "comboptnet",
+      "reference_label": "Paulus et al. (2021)",
+      "description": "Citeslearninginteger-programconstraints inhybridarchitectures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "ExplicitbodycitationPDFp1; exactfullbibliographyentryPDFp10: Paulus et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "identity-projection",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "CitesdifferentiableSAT/Sudokulayers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp1; exactfullbibliographyentryPDFp11: Wang et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "identity-projection",
+      "cited": "neuro-algorithmic-policies",
+      "reference_label": "Vlastelica P., Rolinek andMartius (2021)",
+      "description": "Citeshybridneuro-algorithmicdataefficiency/generalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "ExplicitbodycitationPDFp1; exactfullbibliographyentryPDFp11: Vlastelica P., Rolinek andMartius (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "identity-projection",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017), ICLRWorkshopTrack",
+      "description": "CitesreinforcementlearningCOasanorthogonallearnedsolverapproach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp12: Bello et al. (2017), ICLRWorkshopTrack"
+        }
+      ]
+    },
+    {
+      "citing": "identity-projection",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Citesreinforcementlearningrouting amonglearnedalgorithmexamples.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "ExplicitbodycitationPDFp3; exactfullbibliographyentryPDFp13: Nazari et al. (2018)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedcorrectsurrogatesignandprojection/domainconditions, andlimitedTheorem1tofirstswitchdirectcostlinearizedlosswithtiebreak.",
+    "Separatedbasehyperparameterfreeclaimfromoptionalalphanoise; addedpreciseindependentdiscretenoiseboundaryqualification.",
+    "Replaceduniversalcompetitivenesswithtask-specificprojectioneffects/retrievalfailure, actualmetrics, corruption/noiseschedulesandruntimequalifications.",
+    "AddedWarcraftappendixandactualstudiedtaskmetadata; clarifiedcostratioversusexactaccuracyandseparatecheckpoints.",
+    "Confirmedactualarxivv3/formalICLRidentity and403APIchecks; qualifiedcurrentpubliccodecoverageanddocumentedDVAEshapetextambiguity.",
+    "Verified6exactinternalcitations;study/analysisretained, no migration."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6088ee2bb4e28290cd123d6d179a96c245d0c614cd6202ae60163c7758c90040"
+}

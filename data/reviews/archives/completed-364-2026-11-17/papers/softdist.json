@@ -1,0 +1,580 @@
+{
+  "version": 1,
+  "paper_id": "softdist",
+  "note_path": "studies/softdist.md",
+  "baseline_note_sha256": "c3bfb7a0868f8ab21f76402fc5051b23b71d003693f2001803221f3039269eb8",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/xia24f/xia24f.pdf",
+      "version": "publisher proceedings PDF",
+      "local_path": "research/softdist-original.pdf",
+      "sha256": "961dda090d6fa2f77017fec06cd9888d856c83e6fc46ad953e5dfbd5c41a3706",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart reading: complete position, introduction and related-work pages; independently inspected Figure 3 and the full current figure asset."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh restart reading: complete MCTS, distance-softmax and gap-ratio equations; temperature selection, benchmark provenance, timing and Table 1. Inspected equations and Table 1 visually."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh restart reading: complete Score/alternate-setting analyses, budget discussion, impact and first references page. Visually checked Tables 2-3 and plots."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Fresh restart reading: remaining references, both complete grid tables, Appendix B curves, full Appendix C core function and all Appendix D related work. Visually checked both appendix pages and curves."
+    }
+  ],
+  "claims": [
+    {
+      "id": "baseline",
+      "category": "contribution",
+      "statement": "SoftDist is a non-neural distance-softmax baseline with one tuned temperature.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Section 4 Equation 5; Figure 3"
+        }
+      ]
+    },
+    {
+      "id": "parameter-selection",
+      "category": "method",
+      "statement": "Coarse/refined grid search evaluates final MCTS tour cost; temperatures are chosen separately by size.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            11
+          ],
+          "locator": "Section 6.1; Appendix A Tables 4-5"
+        }
+      ]
+    },
+    {
+      "id": "score",
+      "category": "method",
+      "statement": "Score is LKH3 relative gap divided by MCTS relative gap, not a runtime speedup.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section 5.2 Equation 6"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "category": "experiment",
+      "statement": "SoftDist gaps are 1.44%, 2.20% and 3.13% under default MCTS settings, with separately reported heatmap and dataset-total search time.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table 1; metrics and hardware description"
+        }
+      ]
+    },
+    {
+      "id": "provenance",
+      "category": "reproducibility",
+      "statement": "Att-GCN/DIMES/UTSP use author-provided heatmaps; DIFUSCO is reproduced with disclosed code and heatmap limitations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Table 1 caption and markers"
+        }
+      ]
+    },
+    {
+      "id": "search-controls",
+      "category": "experiment",
+      "statement": "Alternative MCTS settings make a near-constant heatmap competitive; its entries are 1e-10 rather than exact zero.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            11,
+            12
+          ],
+          "locator": "Table 3 footnote; Figure 5"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "The official title identifies a position paper and SoftDist introduces no learned neural policy; classify as research analysis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            5,
+            8
+          ],
+          "locator": "Published title and baseline/position discussion"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "The critique is supported by specified large Euclidean TSP experiments; no general impossibility theorem for neural guidance is proved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            8
+          ],
+          "locator": "Surrogate-objective discussion; conclusion and future work"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, venue, publication month and pages",
+      "source_url": "https://proceedings.mlr.press/v235/xia24f.html",
+      "locator": "Official PMLR proceedings record and BibTeX, ICML 2024, July, pages 54178-54190"
+    },
+    {
+      "field": "institutions and figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/xia24f/xia24f.pdf",
+      "locator": "Publisher PDF page 1 affiliations; page 2 Figure 3, complete current asset visually checked"
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2406.03503",
+      "locator": "Submission history v1, 2 June 2024"
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/xyfffff/rethink_mcts_for_tsp",
+      "locator": "Publisher PDF page 1 code link; matching public author repository"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/xia24f.html",
+      "locator": "Manually opened official PMLR record in restart round on 2026-11-16: only Download PDF is listed, no separate supplementary attachment. Registered publisher PDF includes Appendices A-D on PDF pages 11-13, all read."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.mlr.press/v235/xia24f.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-07-08; cached evidence research/full-text-review/softdist/supplement-landing.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2406.03503",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-06-02; title on abstract page: Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems. This date is preprint history, not formal publication. Cached research/full-text-review/softdist/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "softdist",
+      "cited": "att-gcn",
+      "reference_label": "Fu et al. (2021)",
+      "description": "Reevaluates Att-GCN heatmaps under aligned MCTS and compares search budgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Fu et al. (2021)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Reevaluates graph-diffusion heatmaps with explicitly disclosed reproduction caveats.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Sun and Yang (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Reevaluates DIMES heatmaps and adopts its benchmark/thread settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Qiu et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "utsp",
+      "reference_label": "Min et al. (2023)",
+      "description": "Reevaluates UTSP heatmaps and investigates its alternate MCTS settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Min et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2019)",
+      "description": "Cites neural constructive routing and its data/LKH comparison conventions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Kool et al. (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2016), arXiv:1611.09940",
+      "description": "Cites the early actor-critic pointer policy; bibliography identifies its preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Bello et al. (2016), arXiv:1611.09940"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Discusses supervised Pointer Networks in the construction-method history.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Vinyals et al. (2015)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Cites local rewriting among improvement approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Chen and Tian (2019)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al. (2020)",
+      "description": "Cites iterative learned improvement in extended related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Lu et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al. (2019), arXiv:1906.01227",
+      "description": "Cites GCN edge-heatmap prediction and its use in Att-GCN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Joshi et al. (2019), arXiv:1906.01227"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Cites symmetry-based neural construction in extended related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Kim et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al. (2022), CPAIOR",
+      "description": "Cites neural heatmap-guided dynamic programming in the extended search discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Kool et al. (2022), CPAIOR"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Discusses constructive RL and reports inherited POMO-plus-active-search baseline rows.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            9,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "dact",
+      "reference_label": "Ma et al. (2021a,b), duplicate bibliography entries",
+      "description": "Cites dual-aspect learned improvement; duplicate year-suffix references map to one work ID.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Ma et al. (2021a,b), duplicate bibliography entries"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "neuopt",
+      "reference_label": "Ma et al. (2023)",
+      "description": "Cites flexible neural k-opt in the motivation for conventional-heuristic comparison.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            10
+          ],
+          "locator": "Main/appendix discussion and bibliography: Ma et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "hybrid-scattering-clique",
+      "reference_label": "Min et al. (2022)",
+      "description": "Cites hybrid geometric scattering as the neural backbone related to UTSP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Main/appendix discussion and bibliography: Min et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al. (2023)",
+      "description": "Discusses hierarchical decomposition and its solution-quality tradeoff.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Pan et al. (2023)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "glop",
+      "reference_label": "Ye et al. (2024)",
+      "description": "Discusses learned partition/local construction and decomposition tradeoffs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Ye et al. (2024)"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2021), TNNLS early-access citation",
+      "description": "Cites learned local-search improvement in extended related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            13
+          ],
+          "locator": "Main/appendix discussion and bibliography: Wu et al. (2021), TNNLS early-access citation"
+        }
+      ]
+    },
+    {
+      "citing": "softdist",
+      "cited": "diffusion-plug-and-play-priors",
+      "reference_label": "Graikos et al. (2022)",
+      "description": "Cites earlier diffusion TSP modeling when discussing DIFUSCO.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9
+          ],
+          "locator": "Main/appendix discussion and bibliography: Graikos et al. (2022)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly reread all 13 publisher pages, including complete references and Appendices A-D, rather than adopting the prior-round reading log.",
+    "Independently rechecked the existing detailed note, Score definition, reference-based gaps, dataset-total timing, controls and 20 explicit internal citations; no additional note changes were required.",
+    "Manually checked the official publisher record for separate scientific attachments; none listed.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "8339da9b1f44847e61d5dc192653b58d915274fe324ce5defabb695f99d16b3b"
+}

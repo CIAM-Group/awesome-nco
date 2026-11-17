@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "paper_id": "hypergraph-neural-networks-for-hypergraph-matching",
+  "note_path": "specialist/hypergraph-neural-networks-for-hypergraph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "f4557dc1f730697f5396a05b4536078af6680307cf2ef6ed3713ba58881e107a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Hypergraph_Neural_Networks_for_Hypergraph_Matching_ICCV_2021_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Hypergraph_Neural_Networks_for_Hypergraph_Matching_ICCV_2021_paper.pdf",
+      "version": "Formal CVFICCV2021 ten-page1266–1275three-author copy,allscience/45refsread,keyvisualsinspected.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-74aefd9bb3/publisher.pdf",
+      "sha256": "bc91e2e14d053b144beff0da6325384627f30c5e4cdd5414a9f15e2d81eb46d7",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "All pp1?3 read3SCUT/PengCheng/Guangdong/StonyBrookauthors;associationhypergraph nodeclassification not immediate discrete valid assignment,encoder/core/decoderHNN;directedhyperedge own tupleofsubsets definitiondistinctfromconventional;relatedlearningHGMjournal37 notoldconferencealias,firstclaimauthorqualified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "All pp4?5 read Kthorder assignment objective, associationnode pair construction, edge/node/global updates sum/mean/queryattentionreduction, recurrentencode-process-decode;Kfixedacrossinputgraphs,arbitrarysizesnotcrossnativegeneralist;row/colhyperedgesencodeconstraintsbutnotproofhardassignmentfeasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "All pp6?8 read 10recurrentcore steps; directedMLPsumvsundirectedmultiheadattention;rowsoftmaxnotcolumnconstraint Hungarian test;BCEAMSGrad. Geometriccoordinatesonly noCNN,3rdorderbenchmarks,TMpruned sampledhyperedges+6permaveraging;Willow96.8/85.2without/5outliers withWine93.3<BCAGM94.6;Pascal68bottle87.3<TM93.2;100runs synthetic vs1000pairs/class not independenttrainingseeds;CMU23uniformtrainingframes allsamegaptestpairs unclearstrictdisjointmanifest;printed Eq28positiveexponent/noiseN(sigma,1)needactualvisual/codeverification beforeinterpretation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "All45references pp8?10 read;actualDGMC12 BBGM30 Blackbox35 PCA36 LCS39 CIE41 GMN42 identities,NGM37distinctjournalextensionnotconferencealias. Noindependentsuppspecifiedinfullmain."
+    }
+  ],
+  "claims": [
+    {
+      "id": "hnn-contrib",
+      "category": "contribution",
+      "statement": "Associationhypergraph recurrentnetwork with row/columnhyperedges and higher-order geometric representation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Figures2–3/Eqs6–27"
+        }
+      ]
+    },
+    {
+      "id": "hnn-method",
+      "category": "method",
+      "statement": "10coresteps,rowsoftmax+BCEAMSGradtraining,Hungariantestprojection;coordinateonly3rdorderevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Sections5.3–6"
+        }
+      ]
+    },
+    {
+      "id": "hnn-results",
+      "category": "experiment",
+      "statement": "Willow96.8/85.2means andPascal68.0,withWine/bottleclassnegatives;CMU/syntheticprotocolconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables1–2/Figures4–5"
+        }
+      ]
+    },
+    {
+      "id": "hnn-limit",
+      "category": "limitation",
+      "statement": "Nohardhigher-orderoptimumguarantee;fixedK,sampledhyperedges,knownpointsandprotocol-specificgeneralization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Assignmentconstraints/footnote4/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "hnn-class",
+      "category": "classification",
+      "statement": "Specialist constructive recurrentsoftrepresentationthenHungariandiscreteprojection;notNNeditingcompletehardincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Encode-process-decode/Section5.4"
+        }
+      ]
+    },
+    {
+      "id": "hnn-repro",
+      "category": "reproducibility",
+      "statement": "All10formalpages/45refsread;full268memberofficialarchive/READMEandnecessaryharddecoder/affinitygeneratorinspected.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "References/officialrepository"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/ICCV48922.2021.00130",
+      "locator": "Cached exact3author/titleDOI published-print2021-10month;formalbylinep1. CVF1266–1275vsdeposited1246–1255 transparent;noidentifiedarxiv."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/html/Liao_Hypergraph_Neural_Networks_for_Hypergraph_Matching_ICCV_2021_paper.html",
+      "locator": "CVFonlymainPDF;authorprimary haibinling.github.io/publication-selected.htm paper+officialcodeonly;exacttitlesupp/arxivsearch noidentifiedextrascience. Full268memberarchive44732bc18d479295940056649518069c2586d743noPDFZIPipynb;entireREADMEread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Hypergraph_Neural_Networks_for_Hypergraph_Matching_ICCV_2021_paper.pdf",
+      "locator": "OriginalFig2fullcaptionPDFp2/1267Rect40,65,572,256at2xphysicalpublicasset/actualview;pp2/4/6/7/8formulas/decoder/tables/plotsrenderedinspected."
+    },
+    {
+      "field": "code/discrepancies",
+      "source_url": "https://github.com/xwliao/HNN-HM",
+      "locator": "utils/hungarian.py9–18/eval_hypergraph_matching.py39–54confirmlinearassignmentprojection. RenderedEq28positiveexponent vscreate_tensor.py47–50negative;printedN(sigma,1) vs _generate_point_sets zero-mean stdnormal*deformation;scope currentimplementation nothistoricalinvalidity."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/ICCV2021/papers/Liao_Hypergraph_Neural_Networks_for_Hypergraph_Matching_ICCV_2021_paper.pdf",
+      "locator": "Full45refsbegins p8/continues9–10read;7actualcatalogueidentities;NGM37distinctjournalextensionexcluded."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "12",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[12]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "30",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References[30]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "blackbox-backprop",
+      "reference_label": "35",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[35]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "36",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[36]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "39",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[39]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "cie-h",
+      "reference_label": "41",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[41]"
+        }
+      ]
+    },
+    {
+      "citing": "hypergraph-neural-networks-for-hypergraph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "42",
+      "description": "Directactualbibliography title/byline identity, notdifferent-titlejournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References[42]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending draft after all10formal pages/45references read.",
+    "Classified coordinate-only higher-order matching with actual Hungarian decoder, no universal/imageCNNclaim.",
+    "Retained class negatives/protocol caveats and exact printed-code affinity/noise differences.",
+    "Formalmonthonly,paginationvarianttransparentlyrecorded;distinctNGMjournalnotmerged."
+  ],
+  "reviewed_note_sha256": "0ef72154db3511eb1981b09ddc8a3bf665892724cd731ba9eb9b7355c9848547"
+}

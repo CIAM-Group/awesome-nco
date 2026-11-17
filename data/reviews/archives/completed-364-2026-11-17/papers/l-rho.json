@@ -1,0 +1,608 @@
+{
+  "version": 1,
+  "paper_id": "l-rho",
+  "note_path": "specialist/l-rho.md",
+  "baseline_note_sha256": "9c3cd9a163880e5e0e674853e89689cf54c2b028f100b472b38bc0161305f037",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/052e2404709e8df9dc38fbc7bfec5b80-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2025 publisher45-page PDF including references and scientificAppendicesA1-A7.6; publication2025-05-01",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/052e2404709e8df9dc38fbc7bfec5b80-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-80976cf143.pdf",
+      "sha256": "9a5f81b54f7add4559a81b102af0ee4dc1faaa38292652d6f107dc62839d5d5e",
+      "pages": 45,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read allintro/related/prelim/FJSP3objectives/makespanandoperationrelease/startdelays/tardiness/RHO HplanSexecuteTseconds/overlap. NeuralvariablefixingguidesCPsubproblemnotendtoenddispatch; currentconstructiveparadigmneedsactualtaxonomyscope. Variates/objectives/onlineoutcomesneedsharedcheckpointcheckbeforegeneralistmigration. Hoperationalwindowsnotfixedtimeinterval;Searlieststartsubset differentinputsortprecedence safetyneedAppendAlg."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completepipeline/oracleQhighestassignmentagreementnotbestcostselection/inputfeatureMLP/globalpool/weightedBCEloss. Assignmentfixonlynotstarttimes CPstilloptimizes sequencing; stochasticCPtimelimitsoraclelabelsrelativeheuristicnotglobaloracle. Trainseparatecanonical30/40/60opsjob,60→100. Variantsrelease/tardiness/noisyobs/machinebreakdownneedsharedcheckpoint. BaselinearbitrarysubsetoracleLNSnotcatalogedgeautomatic. ProposedmodelnotGNNdespitePyGdependencies."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTable1-2/Fig3/variants/theorynotation/Assumption1. Main1200L-RHO3011>DefaultLong3002 =>bestnotall. DRLgreedyfaster. Distribution/newobjective/observationnoise/eventbreakCPconstraints actual tested butwhichseparatetrainingpendingappend. Theoryexplicitlinearprob assumption p=b-mi/W validp reqb>=m etcnotonly0<=m,b<=1. PrintedFPR/FNRdenominatorsappearreversed (FP/fixed insteadnegative), needProp1/appendproof. Labeloracleagreementnotalloptimalassignments. wpos. FNfalsefracsuncertain."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read fullProp1/Fig4/conclusion/ack/refs11-12. PropusesusualFPdenominatornegative/FNpositive so p9printeddefinitionsswapped. First expectedFN formula needappend finitefloor sigmaW; theoretical countsnotdirectruntime/objectivebound. Assump0<=b,m<=1mustalsoensureprob i valid;firstmeanapprox dropsm/2. Noissueclaimuntilproofread. Referencecatalogincludeslearningdelegate,separatorconfig,LNSCL etc manualmustcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read complete refs13-14/AppendixTOC15. Allbibnowread;bodyWang2023cFJSPmislabelref2023cactualMILPcutselection, correctbodyyearintentDANIEL2023a notmakewrongedgefromtagalone. HGSnonneuralnotcatalogmaybeexcluded. A7theory39-45mustfullread. READMEfirst285readstill432linesunread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read A1allnotationTables3-4/A2completeAlg1-2. Planningorder k/njob orreleases; executeearliestSschedule sojobprecedencenonnegativepositive durations naturallysafe. Totalceil horizon last partial pseudofor|O|/S lacksrounding butcouldbeassume divisibleexperiments600,etc. OraclecomparisonomitscostQunrestrictedsolves deliberatelyTable4 =>notdeployableperformancebound. Needallfeaturesnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read A2Alg3/A3allfeature descriptions/Tables5-8exactcomplete. Featurelistsdifferperobjective+breakdown+noise=>notsharedfixedarchitecturewithoutadaption. Allfeaturestrainingmean/std. BaseMLPop15machine10;breakadds3opand4machine;delayfeaturecountsdifferent. Table6labelsMachinesprevstart/endoperationindexunclearprintedcopy errornotcore. Needp22Table9/noisyfeatures. Noautomaticgeneralist:explicitseparatefeatureinputs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read allTable9noise/Table10architecture/Table11training/A4complete/A5.1first. ExplicitperFJSPsetting450train20val100test10param,500epochs~500kgrad;dataoracleQ5 24-72h;param48-96h;train<12hV100,CP12CPU48AVX512nodes. READMEall717read:scenario-specifictrainnoise/breakfeatures, publicnoPDFZIP/no weights. Sourcecurrentexamples200epochsQ3ncpus3 vsformal500Q5ncpus12 criticalversions;notassumehistoricalinvalid. L-RHO remainsconstructivehybridRHO notdirectNNschedule. No generalistmigrationlikelyfeaturesandtrainseparate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Read fullnoise20%lateroperations±5clip3..30/trueexecutionrepair/Alg4-6/CPformalXvariables. BreakdownpseudocodeAlg4continuebeforei++caninfiniteonallmachine-down;Alg5iteratesinitializedemptyOstep notOplan, shouldnotimplementliterally. Needactualreleaseeventloopconfirmcorrect. Due-timesgenerateds+U0..30notautomaticallymonotoneasprelimassumes(noerrorforCPobjectiveitself). Per-scenariofeaturegeneration/separatetrainconfirmed. Allappendicesremaining28-45unread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 30,
+      "notes": "Read fullAlg7CPandAlg8boundaryconstraints/A5.3Fig5/LNSsetup. CPprintNoOverlapintervalsshouldbeoptionalpresenceactualreleasecheckneeded, releaseconstraintnotlistedAlg7butdefinitionincludes; don'ttreatpseudoascompleteimplementation. MainlabelWang2023cagainDANIELlinkwrqcccnotMILPcutpaper; citationedgeidentitymanualnotliteralkey. LNSneighborhoodsuppressedboundaries/warmstart/size20to50percentnewobjectivecentralidleflexibilitydifferentmakespanadvantage. Remaining31-45."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 33,
+      "notes": "Read A5.3fullARDLNS/OracleLNSK10/local-globalrandomchoice/A5.4all39grid/H/S/T/Tes/selection10%objectivebuckets/A5.5-6Table12-13. L-RHOusesOraclechosenparamsnotownneuralgrid,per-methodbestothers. Table1fixed80/30/60/3Tlong10s. Table13uncertaintytwoSEnotstd/CIassumptions. Allparamsearchlabels450instanceexpenseperconfig mustmention. HEMcandidateactualbibexistsbutbodyWang2023crefersDANIELFJSPwrongyearkey,donotbuildHEMedgewithoutactualcorrectbodymention."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 34,
+      "last_page": 36,
+      "notes": "Read fullTables14-17/A6.1-3/attentionablation. Direct600checkpointtransferDauzereoriginal+sampledaugmentationnotcrossproblem;12/16instancesafter4easyexcluded(originalnumberinprosethreegroups16inconsistent). L-RHOoriginal2185worseDefault2174/Warm2167butfaster65vs83/75. Table16mislabelsdelayshapes625/1225vsTable2actual600/1050. Attentionnew/overlapimprovesquality1504/1507vs1513butslower170/179vs126,notunqualifiedbestMLP. TPR/TNRproperusualdefinitionsreinforcep9swap. Allpages34-36actuallyread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 37,
+      "last_page": 39,
+      "notes": "Read fullattentionmapsFig8/Table18-19/Fig9/A7.1. DRL450vs20ktrainingcountcomparisonstilloraclelabelcomputebudgetnotmatched. LongerDefaultcanbetterquality:1200T120Tes60=2932vs3011ours(2809vs259s). DirectdurationTable19Default60/10=1109 vsTable1reported1099minor. Fig9empiricallineartrendnotexactgenerativeproof. RandomindependentBernoullikeepvsFirstearliestsequence;Oracleexcludeslookaheadcost."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 40,
+      "last_page": 42,
+      "notes": "Read allA7.2empiricalfit/A7.3Prop1Table20/A7.4qualitative. Table20equivalentFirstFNprints sigmaR insteadF, firstclosedformcorrectintegercount. ProofusesusualFP/(W-Efix),FN/Efix =>mainp9denominatorsswapped. Relationserrorcounts→runtime/objectiveexplicitqualitativecorrelationsnotprovedguarantees;underfixedbudgetmorefreecanworseincumbentbutnotexactoptimummonotonicbound. Linearfitontrainingoraclelabelsnotuniversalassumptionverified. Ratesignorem/2finitecorrectionexplicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 43,
+      "last_page": 45,
+      "notes": "Read completeFig10/A7.5allgeneral+linearproof/A7.6interpretation. CorrectFNsumk+1..W inTable20andp45; p44oneearlierlineprints k..W andsigmaRinTable20equivalentFirstFNistypo. Probabilisticcountrelationssumlinearityholdvalidp_i andintegerk; p44independencerandomlabelneededrandomsampleseparate. Countsnotfractions p45Efix≈.5/1shouldnormalizedfraction0/.5/1orcounts0/W. Boundedprintingissuesonlynoempiricalinvalidityclaim. All45PDFpagesnowread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "SuccessiveRHOwindowsrepeatstablemachineassignmentoptimization;learnfixsetforCPsubproblems.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/preliminaries/Section4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "OracletrainedMLPassignmentfixing/probabilisticcounts/actualFJSPobjectivesnoisebreakdownevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            23,
+            25,
+            26,
+            35,
+            36
+          ],
+          "locator": "Fullmethod/results/appendices"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SpecialistconstructivehybridCP-RHO;fiveinputlayouts/per-settingseparatetrain/600toDauzereand1200to2000sizetransfer notsharednativevariantcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            19,
+            20,
+            21,
+            22,
+            23,
+            35
+          ],
+          "locator": "RHOconstructsvsLNS/per-settingtrain/inputdims/directtransfer"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "MLP/globalpool/BCE.5/finiteCPlookaheadQmaximumagreementprinted;countanalysisvalidproblinearassumptionandintegerk notschedulequalityruntimeguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            10,
+            18,
+            19,
+            23,
+            39,
+            40,
+            41,
+            42,
+            44,
+            45
+          ],
+          "locator": "Section4/Alg1-8/Table20/A7allproofs"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "All10fig20tables includingDefaultLongbetter1200quality/Table15subsetworseoriginalquality/attentionbetterqualityslower/oraclelabelcost/39paramgrid/twoSE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            23,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            43
+          ],
+          "locator": "Allresultsandnegativecomparisons"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "FinitelabelCPreference,Oracleomitslookahead,printfalse-rates/Firstsigma/tailindex/pseudocodegaps;currentmakespanoraclebestobjective/4CPworkersvsformalmaxagreement/12;notempiricalinvalidity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9,
+            10,
+            17,
+            23,
+            25,
+            26,
+            28,
+            35,
+            36,
+            40,
+            41,
+            42,
+            44,
+            45
+          ],
+          "locator": "Curatorboundedprintingandcurrentreleaseevidence"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All45p/fullA1-A7.6/references32visualpages/60filereponoweightsnoscientificattachment/APIs403/fullREADMEandcorecodeinspection14truecatalogcitations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ],
+          "locator": "Completeaudit/source/code/supplements/relations"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/052e2404709e8df9dc38fbc7bfec5b80-Abstract-Conference.html",
+      "locator": "PublishercitationmetadataMay1,2025/4authors/pages1724-1768;PDF1MITaffiliations."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/052e2404709e8df9dc38fbc7bfec5b80-Abstract-Conference.html",
+      "locator": "ManualpublisherHTMLPaperonly/integratedall45pA1-A7.6read. OpenReviewnotesAPIsv1/v2Aly68Y5Es0both403cached. Official60filetreecommit9b44324e6ae00cd4c47d91cf2820ca6f337eadf2noPDFZIPorotherdeclaredscientificattachment;noexplicitmissingscientificdocument."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/052e2404709e8df9dc38fbc7bfec5b80-Abstract-Conference.html",
+      "locator": "Formal45pSHA9a5f81b54f7add4559a81b102af0ee4dc1faaa38292652d6f107dc62839d5d5e.32renderedpages4/5/6/7/8/9/10/16/17/18/19/20/21/22/23/25/26/28/29/30/32/33/34/35/36/37/38/39/41/43/44/45/all10fig20tablescentralproofs."
+    },
+    {
+      "field": "scope,method,statistics",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/052e2404709e8df9dc38fbc7bfec5b80-Abstract-Conference.html",
+      "locator": "Per-setting450train/20val/100test10parametersearch,500epochs/Q5/12CPworkers;fiveinputlayoutsTables5-10,feature-specificmodelsnotgeneralist;constructiveRHOcommitsoperations. DelayTables2/13/14twoSE,notindependenttrainingseeds. Table15exclude4easyinstances/direct600checkpointtransfer. LabelsfiniteCPlookaheadnottrueoptima;runtime/objectiveA7.4qualitative."
+    },
+    {
+      "field": "code_url,release",
+      "source_url": "https://github.com/mit-wu-lab/l-rho",
+      "locator": "Commit9b44324e6ae00cd4c47d91cf2820ca6f337eadf2full717README/requirements/full586linelearner;CPmain_common147-280/347-404,main49-104/178-286,breakdown166-278/319-405,delay208-281/455-494/593-636/641-721 inspected. Makespanoraclebestobjective399-402vsprintedmaxoverlap;delay490-492maxoverlap. Optionalintervalsreleaseboundsactual. CP4workersvsformal12. MeasuredCPwalltimeoptionfeaturemodeltimevsendtoend,Oracleexcludeslookahead. Nopretrainedweights/fullNNbenchmarkrerun."
+    },
+    {
+      "field": "curator-theory,citations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/052e2404709e8df9dc38fbc7bfec5b80-Abstract-Conference.html",
+      "locator": "p9FP/FNdenominatorreverse;p41FirstFNbottomsigmaRtypoforF;p44intermediatetailkvsnextcorrectk+1;closedformsvalidsumforintegerkandvalidp. Alg4p25continuebeforeincrement/Alg5p26emptyoutputloop differactualworkingselectioneventcode. CountsnotfractionsA7.6. 14body+bibcatalogidentityverified,HEMfalsebodyWang2023cFJSPDANIELidentitymismatchexcluded."
+    },
+    {
+      "field": "citation_identity:hem-cut-selection",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/052e2404709e8df9dc38fbc7bfec5b80-Paper-Conference.pdf",
+      "locator": "Finalmanualcandidateaudit: p3and30Wang2023c bodykey resolves to full8authorHEMrefp14/arxiv2302.00244 despiteFJSP/DANIEL context. Literal bibliographicedgeonly; explicitly notmethoddependency orreplacementDANIELedge. Rootreviewagreed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "l-rho",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Kool et al. (2018);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            12
+          ],
+          "locator": "BodyPDF7Huang et al. (2023);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "deepaco",
+      "reference_label": "Ye et al. (2024a)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Ye et al. (2024a);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al. (2024c)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Zhang et al. (2024c);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "glop",
+      "reference_label": "Ye et al. (2024b)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Ye et al. (2024b);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "l2s-jssp",
+      "reference_label": "Zhang et al. (2024a)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "BodyPDF3Zhang et al. (2024a);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Labassi et al. (2022);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "learn-configure-separators",
+      "reference_label": "Li et al. (2024)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Li et al. (2024);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2Li et al. (2021);fullbibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang et al. (2020)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "BodyPDF3Zhang et al. (2020);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "linsatnet",
+      "reference_label": "Wang et al. (2023b)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Wang et al. (2023b);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "neuopt",
+      "reference_label": "Ma et al. (2024)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "BodyPDF2Ma et al. (2024);fullbibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "rbg",
+      "reference_label": "Zong et al. (2022)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            14
+          ],
+          "locator": "BodyPDF2Zong et al. (2022);fullbibliographyPDF14."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit body citation and full bibliography identity; preprint/year/title variants manually reconciled.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "BodyPDF2Scavuzzo et al. (2022);fullbibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "l-rho",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023c)",
+      "description": "Literal bibliographic citation only: body pp3/30 labels a FJSP/DANIEL baseline Wang2023c, but the printed reference key resolves to the eight-author HEM MILP cut-selection paper/arxiv2302.00244 on p14. This is a reference-key/content misattribution and does not show that L-RHO uses HEM or authorize substituting an unmatched DANIEL citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14,
+            30
+          ],
+          "locator": "p3 explicitWang2023c in FJSPparagraph; p30DRLbaseline samekey plusFJSP-DRL footnote; p14completeeightauthor LearningcutselectionforMILPviahierarchicalsequencemodel arxiv2302.00244. Literal bib identity retained with misattribution qualification."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Completed45pageformaltext/AppendA1-A7.6/allfiguresandtables;scopeandconstructionhybriddistinguished.",
+    "Replacedgenericbenefitclaimswithactualbudgets/qualityexceptions/trainingcost/finiteoracleandtheoryassumptions.",
+    "Recordedboundedprintingissuesandcurrentreleaseoracle/CPU/thread/timingdifferences,14identityconfirmedcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2ea4afc5283c9733b366ffdee4d090e5c2e53dba2df88a3dadd4d822182777c2"
+}

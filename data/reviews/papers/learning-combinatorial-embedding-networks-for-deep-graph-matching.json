@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "paper_id": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+  "note_path": "specialist/learning-combinatorial-embedding-networks-for-deep-graph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "cfec07748777d3325e0a6ee372216d7c24be76326d99249a2789d8068ed12d18",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Learning_Combinatorial_Embedding_Networks_for_Deep_Graph_Matching_ICCV_2019_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Learning_Combinatorial_Embedding_Networks_for_Deep_Graph_Matching_ICCV_2019_paper.pdf",
+      "version": "OfficialCVFICCV2019ten-page3056–3065 three-author paper.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-138324ff3c/publisher.pdf",
+      "sha256": "123a23d6dbe90c8eee04e1347d2527531d517316a376a46c4a8bb85c2518dcf4",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Wang_Learning_Combinatorial_Embedding_ICCV_2019_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Wang_Learning_Combinatorial_Embedding_ICCV_2019_supplemental.pdf",
+      "version": "OfficialCVFone-page FurtherDiscussions scientificsupp complete algorithm and negativeiterativedesign explanation.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-138324ff3c/supplement.pdf",
+      "sha256": "49eb31071536cb4400a1d876abab03f30a3e9c88c04416e2f5f2c3e07d873d73",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Allpp1–3read threeSJTUauthors, learned intra/crossgraph affinities+permutationBCE/Sinkhorn;QPbackground not exactQAPsolver;sharedfeature/GNNvariableN classgeneralization same nativeGM. BodyactualotherCOcitation need fullbib identity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "All pp4–6 read sharedVGG4_2/5_1,mean-neighbor+selfGNN;intermediateSinkhornsoftcrossaggregate concatlinear;bilinear expaffinity tau .linear learned objective, finalSinkhorn thenHungarian;BCEpermvsdisplacementconvexcancellationexample not universaltheorem. EqualNallnodescorrespond evaluation;GMNreimplementation/HARGmodifiedknownGTcandidates fairness."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Allpp7–8read Pascalfiltered7020/1682equalNallmatched graph candidates;PCA63.8/PIA63/OL61.6/GMN55.3/GMNPL57.9 categorynegative;Willow5separatecategories VOCpretrainexcludeoverlapfinetune100/76.7/84/93.5/96.9;18pairssec trainingdual2080Ti notinference. Confusiondiag65.4all52.4 notcrossnative;sequentialablation63.8->41.9;iterdesign63.1/61.3/...46.2worseunstable."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Full1p scientificsuppread alternativeiterativecrossgraphAlgo1 intermediate softS/initzero/lastfeaturesfeedback;degradation/stabilityhypothesisnotproof. ClassicalHungarianonlyafterfinalsoft notNNcompleteincumbentedit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Full48refspp9–10read explicitGMN45;Kool18earlyAttentionSolvesYourTSP arxiv1803.08475 sameidentifier canonical target check;DeepPermNet33TPAMIVisualPermutationLearning differenttitlejournalextension notalias;Mena26workshopSinkhornNetworks vsGumbelSinkhornformal distinct title/venue do not infer. Coloring16/Nowak30 checkcatalogue."
+    }
+  ],
+  "claims": [
+    {
+      "id": "pca-contribution",
+      "category": "contribution",
+      "statement": "Learned intra/crossgraph embeddings+permutationBCE and Sinkhorn/Hungarian matching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Figure1/Sections3.1–3.6"
+        }
+      ]
+    },
+    {
+      "id": "pca-method",
+      "category": "method",
+      "statement": "Softcrossgraphfeatureexchange, learned linear-score relaxation not originalQAPoptimality;hardHungarian only final.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithm1/Equations9–19"
+        }
+      ]
+    },
+    {
+      "id": "pca-results",
+      "category": "experiment",
+      "statement": "Pascal63.8 vsPIA63/GMN55.3 with classnegative;Willow VOCvsfinetuned separate;18pair/sec istraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables2–4"
+        }
+      ]
+    },
+    {
+      "id": "pca-supp",
+      "category": "experiment",
+      "statement": "Iterative alternative63.1to46.2 vsstandard63.8 and training instability;complete algorithm supplied.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "FullscientificsuppAlgorithm1"
+        }
+      ]
+    },
+    {
+      "id": "pca-class",
+      "category": "classification",
+      "statement": "Specialistconstructive;crosscategory sameGMnative,softfeatures notNNcompleteincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "locator": "Algorithm1/equalNprotocol/crosscategorymatrix"
+        }
+      ]
+    },
+    {
+      "id": "pca-limit",
+      "category": "limitation",
+      "statement": "Knowncandidates/fullcorrespondence evaluation,nonuniformablation gains and no arbitraryQAPcertification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections3.7/4.1–4.5"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/ICCV.2019.00315",
+      "locator": "Cached exact3author/title DOI print2019-10;CVFbylineSJTUformal3056–3065."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/1904.00597",
+      "locator": "Cachedprimaryv1 1April2019/v3 26September2019;science formalCVFcopy."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Learning_Combinatorial_Embedding_Networks_for_Deep_Graph_Matching_ICCV_2019_paper.html",
+      "locator": "Officialscience1p supplementalPDFdownload/read/rendered. OrdinaryYouTubepresentation listed separately notcountedscientificpages. Primaryarxivlinksrepo;293memberpinnedThinkMatchZIPnoPDF/ZIP/ipynb."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Thinklab-SJTU/PCA-GM",
+      "locator": "Canonicalarxivlink ThinklabPCA-GM redirectsThinkMatch;gitHEAD9f669cb22916f3e06c214f058daa5ac349bd7e15,fullroot/PCAreadmes+models/PCA/model.pyandhungarian.py read. Distinctjournalextension explicitlyseparate."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content_ICCV_2019/papers/Wang_Learning_Combinatorial_Embedding_Networks_for_Deep_Graph_Matching_ICCV_2019_paper.pdf",
+      "locator": "OriginalFig1fullcaptionp2Rect45,69,557,311at2xphysicalview;mainpp2/4/5/6/7/8andwhole1psup rendered."
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://arxiv.org/abs/1803.08475v1",
+      "locator": "Actualref18 AttentionSolvesYourTSP twoauthor2018arxiv1803.08475 vsformalstableAttentionModelsamecanonicalhistory,primaryv1cached;ref45actualGMN. Ref33TPAMIVisualPermutationLearning and26workshopSinkhorn notaliaseddifferenttitleconference."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "45",
+      "description": "ActualCVPR2018title/byline bibliographyreference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "References45"
+        }
+      ]
+    },
+    {
+      "citing": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "cited": "attention-model",
+      "reference_label": "18",
+      "description": "Actualearlytwoauthor2018 AttentionSolvesYourTSP arxiv1803.08475;primarycanonicalv1continuity with stable formal representative, not claim cited later finaltitle.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "References18;primaryarxiv1803.08475v1"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Full10formal+1sciencepage/48refs read;allkeyvisuals/originalfigurechecked.",
+    "Separatedsoftfeatureexchange/finalHungarian and learnedlinearobjective from neuralincumbentimprovement/exactQAP.",
+    "Preserved iterativedesignfailure,classnegatives,nestedablations,filteredprotocol and trainingthroughput meaning.",
+    "Distinguished currentThinkMatch/IPCAjournal from2019conference and directcitationidentity from lineage."
+  ],
+  "reviewed_note_sha256": "b7505b79e09630d489dd237da45a17eff7090ece0bec8ab965d5f7db159f5ce7"
+}

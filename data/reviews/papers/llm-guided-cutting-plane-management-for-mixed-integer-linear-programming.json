@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "paper_id": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+  "note_path": "generalist/llm-guided-cutting-plane-management-for-mixed-integer-linear-programming.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "f7939af6548c79643ca354f14aea81c9c0a315af22a879bc883c343b83728626",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2026/0736.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2026/0736.pdf",
+      "version": "Formal publisherIJCAI2026 AI4Tech9pagePDF, DOI10.24963/ijcai.2026/736, complete main/references actualread; month primary conflict2026-08/2026-09 retainedyear2026.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-ad3c1aff72/publisher.pdf",
+      "sha256": "6d8a6d298ffc6ca08e981801278692639bdaa38cfca044030263240867804ed1",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "author-extended",
+      "url": "https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management/blob/5ca8e9d844927610e93c2d1bcc076ed2313d9f95/paper/LLM-guidedCutting-planeManagementforMixed-integerLinearProgramming.pdf",
+      "retrieval_url": "https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management/blob/5ca8e9d844927610e93c2d1bcc076ed2313d9f95/paper/LLM-guidedCutting-planeManagementforMixed-integerLinearProgramming.pdf",
+      "version": "Official author repository12pageextendedPDF atcommit5ca8e9d844927610e93c2d1bcc076ed2313d9f95 dated2026-05-27, allmain/references/AppendicesA–C actualread; distinctreferenceflow notassumedbyteidenticalformal.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-ad3c1aff72/repo/paper/LLM-guidedCutting-planeManagementforMixed-integerLinearProgramming.pdf",
+      "sha256": "fda79a64914bedaeb8ca3ac1baadc6246b52acfaf31bc7fefe2ad9b37bff331e",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read formalIJCAIAI4Techbyline3authors2institutions,abstract/formulationEq1/Fig1separatorvariation,fullintro/2.1MILPlearningrelatedwork/2.2LLMoptimizationfirstpart; distinguishseparatorconfig+executablecutheuristics versusLLMdirectcuts."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read remaining2.2LLMrelatedwork, completeFig2, B&C/separator/cutdefinitions Eqs1–2; one-timeinstanceLLMconfigsixcontrolsEqs3–4, online stage-historyfeedback codegeneratorEq5, boundaryLLMconfig/code vsclassicalSCIPvalidcutgenerator."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read runtimeLLMrepositorysemanticmatchEq6vsEq5generation, allTable1/2/3numbers,5benchdimensions andQwen/Claudetask-dependentselection,300sSCIP8.0,code/onlineappendixpointer,baseline/metrics/protocol; Table2smalldefault6.78/211.43betterthanours6.95/220.14, Table1zero-gapdifferentprimalvaluesunderexplained, configurationinferenceexcludedfromreportedruntime10trials."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read fullruntime/ablation/cutvisualizationsFig3–5, conclusionandall42Referencesincludingpage8–9splitJiang2025b. RuntimeconfigurationpreprocessingLLMexcluded, onlineLLMnearlyhalfruntime/noadvantage; Eq6curatedheuristicswitchingatstage. Onlineappendixexplicitgithub discovered12pageauthorPDF toreadall."
+    },
+    {
+      "source_id": "author-extended",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read authorversionfirst2pages in full; sameformalbyline/scientificintro/relatedwork, p1addsAppendixAconfigurationpointer."
+    },
+    {
+      "source_id": "author-extended",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read completeauthorversionmodeldiagram/relatedwork/definitions and6parameterCoT plusonlinefeedbackgenerationEq5; additionLandDoig2010refandAppendixB1promptpointer distinctfromformal notassumedbyteidentical."
+    },
+    {
+      "source_id": "author-extended",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read completeextendedTables1–3andall5.1–5.5text; confirmsdifferentLLMselectionpertask, runtimeexcludesone-timeconfiguration, onlineAppendixB2/Cpointers. SmallSCDefaultbeatsOursbothprimalmetrics; formalconsistencynotassumed."
+    },
+    {
+      "source_id": "author-extended",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allauthor7–9runtimeFig3/ablationFig4/illustrativeFig5,conclusion,acknowledgmentandallreferenceentriesonpages8–9; finalZhengrefcontinuesp10,notmissing."
+    },
+    {
+      "source_id": "author-extended",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read finalZhengreference andallscientificAppendicesA–C,5separatorconfig(A/Dsameprintedcombo),300s5repetitions, fullFigure6CoTJSONprompts andFigure7exampleclasscodes, Table4all7LLMx5tasks. Fig7timeheuristiccomputesnselect5/3butreturn10ignoresvariable; CtextGPTonlyfeasiblecontradictsGrokfinite268.18. Table4MIK-4.52e4vsformalTable1-4516.60 differsscale. Sourceboundariesqualifiednotassumedexperimentinvalidity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Separator choices and cut rules depend on MILP family/stage; pretrained LLM guidance targets configuration and cut selection, not proof of new inequalities.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction; Fig.2 and definitions"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "LLM separator configuration and history-aware heuristic selection, empirically evaluated without an approximation/convergence claim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Eqs.3–6 and results"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Six configuration controls; Eq.5 conceptual code generation versus Eq.6 practical semantic repository matching, executed inside SCIP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Fig.2; Eqs.3–6"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Five families, SCIP8/300s; task-dependent headline backend; baseline wins exist; ten-trial runtime excludes initial configuration cost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1–3; Fig.3"
+        }
+      ]
+    },
+    {
+      "id": "appendix",
+      "category": "limitation",
+      "statement": "Appendix printed code ignores calculated time-dependent nselect; backend Table4 has scale/nan/CORLAT interpretation inconsistencies.",
+      "evidence": [
+        {
+          "source_id": "author-extended",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "locator": "Appendices A–C, Figures6–7 and Table4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Each pretrained backend is evaluated across five native MILP families without task-specific fine-tuning, unlike the task-selected main table; generalist constructive role.",
+      "evidence": [
+        {
+          "source_id": "author-extended",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Appendix C/Table4"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Small set covering loses both metrics; zero-gap differing primal values and nan conventions need aligned per-instance/objective accounting; no general dominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Tables1–2/captions"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Formal nine pages plus complete author twelve pages/AppendicesA–C, all references and scientific attachment inventory read; pinned code has a different direct-index/one-call workflow.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Full formal paper and explicit online appendix/repository pointer"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://ijcai.org/proceedings/2026/0736.pdf",
+      "locator": "Formalp1 exact title/byline Zetao Zheng,Zhe Wang,Jie Shao; UESTC and Sichuan Artificial Intelligence Research Institute. Author extendedp1 agrees."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://ijcai.org/proceedings/2026/736",
+      "locator": "Formalfooter AI4Tech special track IJCAI2026 pp6617–6625 DOI10.24963/ijcai.2026/736. Publisher primary BibTeX month=8 vs Crossref published-print2026-09 (own crossref.json); unresolved same-level month conflict=>date2026 year precision. Crossref created2026-09-16 is not publication date; event2025 field not used."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management/blob/5ca8e9d844927610e93c2d1bcc076ed2313d9f95/paper/LLM-guidedCutting-planeManagementforMixed-integerLinearProgramming.pdf",
+      "locator": "Authorp12 Table4 every listed LLM backend evaluated acrossSC/MIS/MK/MIK/CORLAT without task-specific neural fine-tuning; formalp5 headlineQwen/Claude selected perproblem distinguished. LLM controls classical cut construction rather than neural incumbent editing; generalist constructive."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management/tree/5ca8e9d844927610e93c2d1bcc076ed2313d9f95",
+      "locator": "Manual publisher links plus completeZIP8members/5files: README/main.py/tools.py/12p scientificPDF/paper_previewPNG; no otherPDF/video/nestedscientificarchive. Formal9p andauthor12p inclallA–C+refs fullyread; preview viewed; important method/results/prompt figures rendered/checked. Source references online appendix atauthorrepo, fully covered; no separate missing scientific companion identified."
+    },
+    {
+      "field": "code availability, source version",
+      "source_url": "https://github.com/BeeeeenWANG/LLM-guided-cutting-plane-management/tree/5ca8e9d844927610e93c2d1bcc076ed2313d9f95",
+      "locator": "Pinned primarycommit2026-05-27, complete1219992byteZIP inventoried/fileSHA saved. Actual code criticalLLM/config/callback/baseline paths read; missing externalutils, blankAPI/modelconfig/localdatasetpaths; no model training/SCIPbenchmark/APIexecution. Sourcecheck and isolatedASTboundarycheck preserved; no claim to historical benchmark reproduction."
+    },
+    {
+      "field": "figure and reporting crosscheck",
+      "source_url": "https://ijcai.org/proceedings/2026/0736.pdf",
+      "locator": "OriginalFig2croppedformalPDFp3 andactualviewed; formalpp3/5/6/7plusauthorpp11/12rendered. MainTable1/backend/sharedTable4 scopes differ; smallSCnegative, runtimeconfigurationexclusion, Table4scale/nan exceptions documented."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Related-work attribution to learning-based solver components; its exact bibliography is the graph-convolutional branching paper, not evidence that this method reuses its cut selector.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicitly discusses hierarchical learned cut selection and evaluates HEM as a baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "learn-configure-separators",
+      "reference_label": "Li et al. (2023)",
+      "description": "Discusses learned separator configuration in branch and cut as related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al. (2021)",
+      "description": "Cites neural branching-policy background in solver learning; not a claimed implementation dependency.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit attribution in the multiple-knapsack benchmark-generation discussion.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Discusses reinforcement-learning cut selection as related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    },
+    {
+      "citing": "llm-guided-cutting-plane-management-for-mixed-integer-linear-programming",
+      "cited": "llm-co-solver",
+      "reference_label": "Jiang et al. (2025b)",
+      "description": "Literal bibliographic citation: the paragraph calls this LLM4Solver and describes program-space evolution/diving, but the complete referenced authors/title identify LLMCoSolver; this edge records the citation and its misattribution, not reuse of that described method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            8,
+            9
+          ],
+          "locator": "Explicit body attribution at listed main-text page(s); complete Referencespp8–9 exact authors/title, including cross-page Jiang2025b identity."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending placeholder with actual formal9p and author12p scientific evidence.",
+    "Migrated specialist to generalist on AppendixC same-backend cross-five-native-MILP evaluation; kept task-dependent headline backend selection explicit.",
+    "Recorded formaldate2026 atyearprecision for publisherAugust/CrossrefSeptember conflict.",
+    "Separated proposed six-control/library workflow from available frequency/direct-index one-call implementation and missinghelper; preserved negative quality/runtime cases.",
+    "Added original framework and seven verified literal body+bibliography citations, including explicit LLMCoSolver attribution mismatch."
+  ],
+  "reviewed_note_sha256": "37b9c720b73409a5b12c17a5b3bd33015cbe6887f247cdc67bfd98667720eb06"
+}

@@ -868,6 +868,7 @@ select:focus-visible {
 .paper-card__footer {
   margin-top: 1rem;
   padding-top: 0.8rem;
+  padding-right: 1.6rem;
   border-top: 1px solid var(--line);
 }
 
@@ -1153,6 +1154,8 @@ select:focus-visible {
 
 .related-paper-card {
   display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 1rem;
   border: 1px solid var(--line);
   background: rgba(252, 251, 248, 0.72);
@@ -1434,7 +1437,10 @@ select:focus-visible {
   gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
 }
+
+.relation-row > * { min-width: 0; }
 
 .relation-kind {
   display: flex;
@@ -1775,7 +1781,7 @@ select:focus-visible {
   }
 
   .relation-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.4rem;
   }
 
@@ -1815,3 +1821,14 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Research studies share the collection layout with a distinct accent. */
+.review-notice { padding: 1rem 1.2rem; border-left: 3px solid #b28a42; background: #f4efe5; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.7; overflow-wrap: anywhere; }
+.review-notice--verified { border-left-color: #58765b; background: #edf1e9; }
+.scope-panel--study::before { background: #58765b; }
+.relation-legend .node-key--study { background: #58765b; }
+.scope-chip--study { color: #58765b; }
+.timeline-paper-card--study, .paper-card--study { border-top-color: #58765b; }
+.paper-detail--study, .collection-page--study { --scope-accent: #58765b; }
+.scope-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+@media (max-width: 600px) { .primary-nav { flex-wrap: wrap; } }

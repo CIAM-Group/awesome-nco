@@ -1,0 +1,827 @@
+{
+  "version": 1,
+  "paper_id": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+  "note_path": "specialist/learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "8ff70d0cc2e6beb555ae9fc0314cd32d202fb190419eee553502aee18bd04b17",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2026/0686.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2026/0686.pdf",
+      "version": "OfficialIJCAI2026ninepagePDFpp6166–6174fullyreadincludingcompletebibliography",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-9b6b46f72e/publisher.pdf",
+      "sha256": "83d93685752541480fda2158cfd32d90c3fc337548cc5e6a31baed994d341788",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "arxiv",
+      "url": "https://arxiv.org/pdf/2605.19975",
+      "retrieval_url": "https://arxiv.org/pdf/2605.19975",
+      "version": "Actual arXiv2605.19975v1 dated2026-05-19 twelvepagesfullyread inclcompletebody/bibliography/allscientificAppendicesA–C",
+      "local_path": "research/full-text-review/learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi/arxiv.pdf",
+      "sha256": "5491c732072f329b3047f478df662c401549b60209f477a7f6ff36799f473605",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read formal4-authorTUe/NTU/Astarbyline,YaoxinWucorresponding,intro/contributions/allrelatedworkandVRPdefinitions. MnLPdiscardableauxtrainingnotinferencebeamplanning; sameframeworkTSP/CVRPdoesnotyetprovejointcheckpoint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read LEHDSL/partialtrajectory setup, allMnLPencoder/depth/headEq6–12andshrinkingfeasibleset. Actualauxteacher-forcingusesfutureGTnodeembedding, nottest-timefutureoracle; task-specificTSP/CVRPheadsandcapacityinputsneedseparateweightsinterpretation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read fulltrainingAlg1/loss13–15/setup and completeTable1/T2 allcells/mainanalysis. K4gamma.2/.1,W5alpha3,TSP150/CVRP15epochs1Mlabels/taskbatch1024,H100. CVRP200MnLP20.819worseLEHD20.809contradictsconsistentclaim;TSP1000DGL23.739beatsMnLP23.779;RRCdistinctlongbudget,500CVRPRRC100time6.6slooksreportingerrorpreserve."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allTable3/4,weightplotdiscussion,versatilityandconclusion pluscomplete2pagebibliography. TSPLib500–1k andCVRPLibA/PregressversusLEHD,overallaveragesimprove. FormalPDFall9pagescomplete;actualscientificappendixstillarxivonly. ReferencesformalSILBoostingsevenauthors,NeuroCROSSformal2023titlevariant,AM2019."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshreadarxivv1byline/date2026-05-19andallfirst2pages:intro/relatedwork/VRPdefinitionsmatchingformal, noidentifiableofficialcodeanchor."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FreshreadallLEHDpartialSL/auxarchitecture,shrinkmask/head/mathmatchingformal. AuxiliaryfutureGTconditioningtrainingonly, noaddedinferenceoracle."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Readactualarxivtraining/algorithmandallmainTable1/2cells distinctgreedy/RRCbudgets andnegativecasesmatchingformal. HGSlabelsareheuristicreferencesnotcertifiedCVRPoptima; source terminologyoptimalisqualified."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allrealbenchmarktable/weightandsharingablations/conclusionandfirstbibpage. ActualcodefoundviaexactprimaryGitHubsearchSummer142857/MnLP, codeinventorynotyetread."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read remainderfullbibandAppendixAattention/FFNformula,Brotation/explosiongeneration,CfirstRRCandcomputeparagraphs. RRCsmallCVRPnegativecasesexplicitlyacknowledged; fullCtablesnextpage."
+    },
+    {
+      "source_id": "arxiv",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read fullC scientificTables5–8/curves:smallCVRPRRC1000worse;compute23.5→33min and55.3→58.8MBambiguousmemorycaption;warmupallcells; SILTSP1000/5000/10000 modestgaps1.95→1.89,3.17→3.09,4.05→3.47. All12arxivand9formalpagesnowfullyread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Training-only causal future-node auxiliary heads/losses enrich supervised routing policy with unchanged base inference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "locator": "MnLParchitecture/loss/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Teacher-forced depthchaining/task-specificTSP-CVRPheads/feasiblemasks, printedwarmup and auxiliarydiscard at inference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equations4–15/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "Separate1MTSP100/CVRP100labels,150/15epochs,batch1024,H100,K4;tests10k100/128larger,totalruntimes andgreedy/RRC budgets.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Setup/Table1 andallmainresults"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "experiment",
+      "statement": "FullscientificappendixA–Cdefinesmutations/RRCmatchednegatives/trainingcost/depth/warmup/SIL1000–10000 modestgains.",
+      "evidence": [
+        {
+          "source_id": "arxiv",
+          "pdf_pages": [
+            10,
+            11,
+            12
+          ],
+          "locator": "AllAppendicesA–C/Tables5–8/Figures3–5"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "limitation",
+      "statement": "CVRP200/TSPLib500–1k/CVRPLibA-P andsmallCVRPRRCregress; heuristicreference/ambiguousmemory/anomalousruntime/currentreleasegaps requirequalification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Actualnegativecells/mainlimitations versus genericclaims"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "classification",
+      "statement": "SeparateTSP/CVRPweights andcoretrainingaugmentation support specialistconstructive;optionalborrowedLEHDRRCprotocolseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Taskheads/trainschedules/test-onlyRRC"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "category": "reproducibility",
+      "statement": "Formal4authors/bothactualsourcesall21pages/officialrepo2checkpointsandcomponent-onlychecks; nofullreproductionclaimed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            8,
+            9
+          ],
+          "locator": "Byline/scienceappendixdirections/fullbib; externalprimaryrepo/metadataevidence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://ijcai.org/proceedings/2026/686",
+      "locator": "FormalPDFp1+HTMLmetadata4authorsTUe/NTU/Astar,YaoxinWucorresponding;DOI10.24963/ijcai.2026/686 pp6166–6174. OfficialpublisherBibTeXmonth8cachedpublisher-bibtex.txt vsCrossrefpublished-print2026-09;HTMLyear2026. Retainyearprecisiononprimaryconflict."
+    },
+    {
+      "field": "arxiv/date/version",
+      "source_url": "https://arxiv.org/abs/2605.19975",
+      "locator": "Actualsavedprimaryhistoryonlyv1Tue19May2026 15:19:59UTC;actualPDFv1stamp/all12pagesread. Bothformal9andv112samebyline/method/tableidentity;notformalbyteidentityassertion."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://ijcai.org/proceedings/2026/686",
+      "locator": "ManuallyparsedpublisherHTMLPDF/BibTeXonly. FormalmainexplicitAppendicesA–C directions; allactualarxiv12pagesreadinclallscientificTables5–8/Figures3–5. Officialauthorrepo23entrytree18filescode2ptcheckpoints/READMErequirements,noextraPDF/ZIP. DataexplicitLEHDlinksnotadditionalpaperattachments."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/Summer142857/MnLP",
+      "locator": "ExacttitleGitHubsearchresults andofficialREADMEfulltitle/fourauthorbib. TreeSHAb067d4db3ba1f45e9cb352d92d24c2c27b5bddbd,createdMay11pushedAug14beforecutoff. SeparateTSP/CVRPtrainconfigs/checkpoints; actualtestbranchesbypassauxforward. Coreconstructiveauxtraining;borrowedoptionalLEHDRRCseparateprotocol."
+    },
+    {
+      "field": "release loss/mask/warmup component checks",
+      "source_url": "https://github.com/Summer142857/MnLP",
+      "locator": "ActualTSPModelhelperpost-softmaxreturnpassedF.cross_entropy, sameCVRPprobabilityreturn; notprinted-logptarget. Actualdepth4maskonlyselected0/1leaves2/3positive, recordedcomponent-check.json. ASTexactTSPwarmupe1–5(.12,.24,.36,.48,.60),e6.2vsCVRP(.00667,.01333,.02,.02667),e5.1;notprintedmin(1,e/15). IsolatedCPUonlynoquality/trainingreproduction."
+    },
+    {
+      "field": "negative results/budget qualifiers",
+      "source_url": "https://ijcai.org/proceedings/2026/0686.pdf",
+      "locator": "Formalp6CVRP20020.819>LEHD20.809/TSP1000DGL23.739<MnLP23.779; p7TSPLib500–1k15.597>8.729/CVRPLibA-Pnegative. Arxivp11sameRRC1000smallCVRPworse,training23.5→33min withmemory55.3→58.8ambiguouscaption. Table1CVRP500RRC1006.6s anomalousnotrewritten."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://ijcai.org/proceedings/2026/0686.pdf",
+      "locator": "OriginalFigure1PDFp4Rect62,53,550,281@4xatomicactualviewcomplete. Formalp4/6/7andarxiv10/11/12actuallyrendered/viewedfiguresformulasallscientifictables/plots;all21registeredsourcepagesread."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://ijcai.org/proceedings/2026/0686.pdf",
+      "locator": "25supportedbody+bibedges; actualSRTfulltitlewrappedp8–9manualcheckwithprimaryPMLRkim24o,notmissedbycandidatefailure. SILformalBoostingsevenauthors/DARformalIEEE/RouteFinderformal9authors explicitlycited. DGLsourceomitsoneauthorbutexactprimarytitlematches. UncatalogedCAMP/SADABL/ViTSP/Jiang2023ensemble/Jiang2024textwork/NGSnotforcedtootherIDs."
+    },
+    {
+      "field": "final citation identity:symmetric-replay-training",
+      "source_url": "https://proceedings.mlr.press/v235/kim24o.html",
+      "locator": "Exact four-author HyeonahKim/MinsuKim/SungsooAhn/JinkyooPark ICML2024 entry is split between formalp8 bottom/p9 top. Full title matches PMLR kim24o; bodyp2 explicitly cites Kim2024 for sample-efficiency background."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "asp",
+      "reference_label": "Wang et al.,2024",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Wang et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity asp"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2019",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Kool et al.,2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "bopo",
+      "reference_label": "Liao et al.,2025",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Liao et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity bopo"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Drakulic et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "dar",
+      "reference_label": "Wang et al.,2025 formal IEEE",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Wang et al.,2025 formal IEEE"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity dar"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "dgl",
+      "reference_label": "Xiao et al.,2025",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata. SourcefullbibliographyomitsXuanWu; sameexactformalIJCAI2025titleandnineotherauthorsmatchesverifiedten-authortarget, noassertionthatcitedbylineiscomplete.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Xiao et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity dgl"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.,2022",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity efficient-active-search"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "elg",
+      "reference_label": "Gao et al.,2024",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Gao et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity elg"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "fer",
+      "reference_label": "Li et al.,2024",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity fer"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "invit",
+      "reference_label": "Fang et al.,2024",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Fang et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity invit"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al.,2021 early online as printed",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Wu et al.,2021 early online as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity learning-improvement-heuristics"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Luo et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity lehd"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "nds",
+      "reference_label": "Hottung et al.,2025b",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Hottung et al.,2025b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity nds"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.,2023",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zhou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity omni-vrp"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Vinyals et al.,2015"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity pointer-networks"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "polynet",
+      "reference_label": "Hottung et al.,2025a",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Hottung et al.,2025a"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity polynet"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit in-text Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity pomo"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng et al.,2023",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Cheng et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity select-and-optimize"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "sil",
+      "reference_label": "Luo et al.,2025 Boosting formal seven-author paper",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Luo et al.,2025 Boosting formal seven-author paper"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity sil"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "llm-co-solver",
+      "reference_label": "Jiang et al.,2025",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Jiang et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity llm-co-solver"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "mixed-curvature",
+      "reference_label": "Liu et al.,2025",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Liu et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete bibliography identity mixed-curvature"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al.,2023 formal Learning to CROSS exchange",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata. FormalICLR2023title/threeauthorsmatchesverifiedprimaryOpenReviewZcnzsHC10Y; noforceddifferentjournalextension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim et al.,2023 formal Learning to CROSS exchange"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity neuro-cross-exchange"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "reld",
+      "reference_label": "Huang et al.,2025",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Huang et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity reld"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "routefinder",
+      "reference_label": "Berto et al.,2025 formal TMLR nine-author paper",
+      "description": "Explicit body citation plus complete matching bibliography title/authors; source year preserved independently of target formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Berto et al.,2025 formal TMLR nine-author paper"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Complete bibliography identity routefinder"
+        }
+      ]
+    },
+    {
+      "citing": "learning-with-foresight-enhancing-neural-routing-policy-via-multi-node-lookahead-predi",
+      "cited": "symmetric-replay-training",
+      "reference_label": "Kim et al.,2024",
+      "description": "Exact four-author HyeonahKim/MinsuKim/SungsooAhn/JinkyooPark ICML2024 entry is split between formalp8 bottom/p9 top. Full title matches PMLR kim24o; bodyp2 explicitly cites Kim2024 for sample-efficiency background.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Reread explicit body citation context: Kim et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Reread complete reference including split continuation; Exact four-author HyeonahKim/MinsuKim/SungsooAhn/JinkyooPark ICML2024 entry is split between formalp8 bottom/p9 top. Full title matches PMLR kim24o; bodyp2 explicitly cites Kim2024 for sample-efficiency background."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingfieldsafterallformal9+arxiv12pagesandscience/code/originalimage/fullbibreview.",
+    "Keep specialistconstructive onseparateTSP/CVRPweights andtraining-onlynewheads; optionalborrowedRRCdistinct.",
+    "Precise1Mlabels/150M-15Mpresentations/head/taskweights/testcounts/totalruntime/RRCbudgets;HGSnotcertifiedoptimum.",
+    "QualifyconsistencyclaimswithactualCVRP200/TSPLib500–1k/CVRPLibA-P/smallCVRPRRCnegatives.",
+    "Recordtrainingoverhead/ambiguousmemory/anomalousruntime, actualCEprobability/mask/warmupdiscrepancieswithcomponent-onlychecknotpaper-tableinvalidityclaim.",
+    "VerifiedofficialcodeURLand2checkpoints;noSILreleasebranch/fullreproductionclaimed. OriginalFigure1/25explicitcitations withSRTwrapandDGLbylinecaveat."
+  ],
+  "reviewed_note_sha256": "58f66fe8f3ad99297efd0f23fcb27df6d1241d543f126abf0ea026dcef530ff4"
+}

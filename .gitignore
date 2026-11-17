@@ -1,7 +1,34 @@
+# Dependencies and generated build output
 node_modules/
 dist/
-src/generated/
+/src/generated/
+*.tsbuildinfo
+
+# Test reports and screenshots
 playwright-report/
 test-results/
-tests/artifacts/
+/tests/artifacts/
+
+# Local paper downloads, review tools, and caches
+/research/
+/addpapers/
+/data/reviews/archive/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Cached figures for deferred papers; remove the matching rule when restoring a note
+/public/paper-assets/erl-mpp-evolutionary-reinforcement-learning-with-multi-head-puzzle-perception-for-solv/
+/public/paper-assets/one4many-stablepacker-an-efficient-deep-reinforcement-learning-framework-for-the-3d-bi/
+
+# Local environment, editor, and operating-system files
+.env
+.env.*
+!.env.example
+!.env.sample
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db
+Desktop.ini
+*.log

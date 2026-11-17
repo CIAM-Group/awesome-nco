@@ -1,0 +1,366 @@
+{
+  "version": 1,
+  "paper_id": "neures",
+  "note_path": "specialist/neures.md",
+  "baseline_note_sha256": "86423ef1e563577aff76c2fe97279212aa1b7172013d7c966005e9fb4d38eaed",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf",
+      "version": "NeurIPS2024 publisher24page integratedmain+A-E+checklist",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-855629a220.pdf",
+      "sha256": "2238cc1c749bd0f2c2c191f4fcaa584fa75df2c6e8a3e93008d04aee5c81f92a",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Fresh fourCISPAauthors, proofnotclassifySAT, parallelassignment/resolution soundcertificate checks/timeoutnotverdict; completeclausespooldynamicGNN vsstaticlocal; Casc attentionsequential, Fullquadraticmaskedresolvablepairs, Anchvariablefirst compressedparitygrid allEqs1-2."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 9,
+      "notes": "Fresh anchoredEq3, dualpos/negliteraldecoder test/trainpositiveonly, BooleForceSR10-40teacherforcing unsatNLL/satBCE gamma.99 laterweights;128dim Adam5e-5->0 batch1 50epoch6daysA100; allTables1-4 proofconditionedtimeout4xteacher/sat2V,8kunsat10ktest,16khybrid98.2% certificates not91.65prediction, boottraining31.85total vs33.51reducedproofavg, fanouttopkprunefinalproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Fresh conclusion explicitnotindustrialsolvercompetitive; fullbibliography1-49, SAT/genericrelatedworkactualcitations refs37formalproofnotautomaticsolvermustmatchfrozenroster only."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 18,
+      "notes": "Fresh refs50-52, AppendixAexplicitbipartitetwophase messagepassing, Banchoredconnectivitylemma/proofbothcases noresolutioncompletenessclaim; Cnonbootprooftrain17.82/test18.29% shorten total3.07/3.15%, Dactualruntime28.7msvsteacher4.5ms, E479104vs478976params sameembedder; Fig7proofvisualpending;checklist1-3 complete."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Fresh checklist3-10full; no errorbars duecompute explicit; publiccode/dataclaim contrasted currentREADMEdataignored; formalresultsNA despiteappendixconnectivitylemma no newnumericalscience."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Fresh remainderfullchecklist11-15, nohumans/IRB, historicalassetpromises, all24publisherpagesA-E andchecklist complete. GitHubtreeonlyREADME/noextraPDFZIP andnodatafiles matchescurrentREADMEreproductionlimit."
+    }
+  ],
+  "claims": [
+    {
+      "id": "certificate",
+      "category": "contribution",
+      "statement": "ParallelSATassignment/UNSATresolutionconstruction with checkedcertificates anddynamicsharedGNN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            6
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "attention",
+      "category": "method",
+      "statement": "Casc/fullmaskedquadratic/variableanchoredselectors, dynamicupdates, dualassignmentviews.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15
+          ],
+          "locator": "Sections4.2-4.4 AppendixA/B"
+        }
+      ]
+    },
+    {
+      "id": "bootstrap",
+      "category": "method",
+      "statement": "Offlineverifiedshorterproofreplace target notinferenceNNadaptation; fanoutpruneancestors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            16,
+            17
+          ],
+          "locator": "Sections5-8 AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "category": "experiment",
+      "statement": "8kunsat/16khybrid 6daysA100, countvsrichsupervision,31.85%stepsnotformulas, proofconditional means, classicaloverallfaster.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            16,
+            20
+          ],
+          "locator": "Tables1-6 Figure5 checklist7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructivepartialproof/assignmentcertificategeneration; trainingexpertiterationnotdeploymentincumbentimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            8,
+            9
+          ],
+          "locator": "Section4.1/6.2/8"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html",
+      "locator": "Manualpublisher/titlepage4CISPAauthors; publication2024yearprecision, priorDec16day unsupported."
+    },
+    {
+      "field": "date, arxiv_url",
+      "source_url": "https://arxiv.org/abs/2402.08365",
+      "locator": "Manualhistoryv1Feb13,2024 v2May29/v3Nov10; actualformalPDFread, arxivhistoryusedonlyprovenance."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html",
+      "locator": "Manualpublisher integrated24pagePDF/noextrascientificattachment; allA-E/checklist/Fig7proofread; officialGitHubtree onlyREADME/noPDFZIPadditional science."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Oschart/NeuRes",
+      "locator": "ExactauthorofficialREADMEall148lines read, flags/defaultlr vs paper, unpinnedrequirements; currenttree nodatafiles andREADMErequestsdata/generatedsplits, notclaimedfullyreproduced."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf#page=3",
+      "locator": "OriginalFigure1 cropRect(110,65,490,218)5x; mainformula/attention/table/bigsizecurve/proofexample17 visuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2024-12-16; cached evidence research/full-text-review/neures/supplement-landing.html. Conference edition year 2024 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/56a225639da77e8f7c0409f6d5ba996b-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2024-12-16; primary cachedHTML research/full-text-review/neures/supplement-landing.html; citation_title=['Learning Better Representations From Less Data For Propositional Satisfiability']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2402.08365",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-02-13; title on abstract page: Learning Better Representations From Less Data For Propositional Satisfiability. This date is preprint history, not formal publication. Cached research/full-text-review/neures/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neures",
+      "cited": "circuit-sat-neural",
+      "reference_label": "1",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "7ICLR2017workshop",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "28",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "attention-model",
+      "reference_label": "30",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "rl-qbf",
+      "reference_label": "32",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "neurosat",
+      "reference_label": "43",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "neures",
+      "cited": "pointer-networks",
+      "reference_label": "46",
+      "description": "Explicit numbered citation in text and exact matching reference; actual Bello ICLR2017 workshop track retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicit numbered in-text citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching numbered bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedtemplatewithallselectors/GNN/certificates/supervisedandbootstrapmethod.",
+    "Separatedformulacount/dataefficiency vs richproofsupervision/offline6daycompute.",
+    "Qualified31.85%aggregateproofsteps, proofconditionalmeans, certifiedvclassification andteacherdependenttimeouts.",
+    "Retainedclassicalteacherfasteroverall, largeformula failures, noerrorbars andcurrentdatamissingreproductionlimit.",
+    "Restoredactualpreprintdate/arxivhistory, publicationyearprecision andoriginalFigure1.",
+    "Rebuilt7explicitcitations; noforcedmappeduncollectedSAT/formalprovingpapers.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f7d1010fe99a472c941f841528a1f171b06c89934c2af8ab70c4391fc13a7f5c"
+}

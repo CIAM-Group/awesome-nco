@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "paper_id": "gumbeldore",
+  "note_path": "specialist/gumbeldore.md",
+  "baseline_note_sha256": "12e01f45ba94b7f6ee5497dd911841b8f5cb14ce8d6904be1eafaf7d42cf6ca3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2403.15180",
+      "retrieval_url": "https://arxiv.org/pdf/2403.15180",
+      "version": "Actuallyreadarxiv2403.15180v2June11_2024,30pagesTMLR06/2024publicationheaderandA-Eappendices;authorfallbackauthorized,nobyteidentityclaim.",
+      "local_path": "research/full-text-review/gumbeldore/paper.pdf",
+      "sha256": "18e9c0285628bea9b3f0e96ac5789682c21b382a30ac9248024574822f9fa553",
+      "pages": 30,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshactualarxiv2403.15180v2Jun11_2024TMLR06/2024header30pages2authorsTUMStraubing+HSWTnotoldDKFZ,includesJSSPnotonlyrouting,trainingSBSwithoutreplacementpseudoexpertadvantagetriechangesnotnetworkinferencesearch,Toppschedule."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullrelatedworkGDselflabelvsCorsiniJSSP/baselines,fullfinitefeasiblesequenceMDPassumptionandtrainloopbestpolicyrolloutpseudoexpertdatasetclearonlywhenvalidationgreedyimproveselseexpands;notincumbentrouteeditsandnofinetuningtestweights."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadAlgorithm1SBSGumbelTopkconditioning/roundtrieprobmassremovalincludingFig1numbersBDG.11removalroot.89B.09BD.03,constantperroundbeamnotwholetriememory;exactconditionaladvantageEq1-2theoreticalmonotonicexpectationunderexactvaluespendingproof/practicalestimation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadactualbiasedconsistentnormalizedSBSestimator/globaladvantagepracticalEq6vsconditionalexactEq1proofofEq1notfiniteheuristicmonotonicguarantee;triesupdatecachedlogitsnotmodelweights,removeleaves/cumulativeadvantages,Topplinear0.95to1afterearlyepochs,min<.9prematurecollapse."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullBQ9layerreimplementationseparatetask100trainedSL1mexpertConcorde/HGSvsSI1000new/epoch128samples4x32sigma.3/3,1000x1024partialbatchesepochs~2.2kTSP2.7kCVRP,Table1timesTOTALall10k100nodeor128larger,CVRP1000GDbeam5.57worseSL2.49andWOR5.87(notbroadparity),greedy8.33vs5.30,referenceHGSincumbent."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "FullJSSPsequencejobsnextoperationearliestfeasiblemodel3pairsjob/machineattn,d64heads8FF256;train100epochs512instancesrandom15x10/15/20,1284x32sigma.05pmin.95after50;Taillard8sizesup100x20BKSgaps,timesTOTALgroupparallel,5samplingrepetitionsnottrainingseeds;CPsat1hperinstancebetterqualitybutmanyhoursgroups,beamcanworsenandWOR13.6vsGD13.8at30x20exception."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FullFigure3all8panelsvisuallater20samplingrepsSEnottrainingseed,routing100instancesandTaillardJSSP,pmin/sigmaablation,limitationssigmatuningtriememorygrows;GomokupaperAppendixC4toyindeedpresentnotjustnewcode,willreadandlabelauxiliarygame. BibA-CreadincludingCOMPASS2024printedNeurIPS36(notfuturecitationassumption),SPNarxiv2401.11849."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "ReadfullbibDCosta2opt/LatentHottungICLR2020/NLNSECAI2020/EAS/BQ/Joshi2020preprint/LCPSymNCO/DPDP/DACT/POMOSPnallactualyears,scopeedgeslateractualIDs."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "ReadremainingallreferencesPBCS2023/PtrNet/Wu2021TNNLS/MDAM/L2D2020/L2SICLR2024exact/CSCWDnotqualifyingIDs,fullbiblioendp18."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "ReadAfullGumbelmax/topkSBSsubtreeconditioningEq7-9,Eq9middleexpressionomitslogsumtypobutstatedcorrectlogprobidentity;Bsinglelogitexactadvantagelemmaandproofrenormalizationpositivepi/conditionals,notpracticalunbiasedclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "ReadentireLemma/PropositionBproofinductionexactconditionalexpectationsforonepathpositiveadvantageandrenormalization;noformalguaranteeforactualglobalfiniteSBSWOR+nucleus;C1TheoryGDestimatedlocalsmostlyzeroatdeepnodes,Figure4k16/32/64tenrepeatsSE,mainactualGDempiricallybetterCVRPJSSP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "ReadC2LEHDtrainvariantTable3GDgreedy1000gap3.30vsSL3.34/RL4.52notBQfig;C3constantp.8Tables4-5CVRP500/1000beam5121.40/3.85beatsGD5121.88/4.76evenifGDbeatsSBS,mainJSSPgrowingpminvsappendixconstantpnotidenticalresults. C4full9x9Gomokutoyfixedblackbotv1all81starts10repetitions320samplesGD10x32sigma5noTopP60.2vs47.7epoch(~20.8%fewerepochsnotwalltimespeedup),trainingwinnerlabelsnotmincost."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "FullDhardware2RTXA5000/16Rayworkers,sigmatuneWOR20epochsgrid0..5notparameterfree;TSPBQpreprintd1289layers/ReZero8headsFF512partial4..100CE1024x1000AdamSL1e-4GD2e-4clip1/sampling1000x128~1minute;CVRPdemands1..9capacities50/80/100/250,2vectordepotbit representationnotSILprecursoridentityexample(specificdifferentsequence)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "CriticalD3CVRPactuallyd19212heads9layersvsTSP1288,nearest250testactions;SItraincapacitiesuniform40..100unlikeSLfixed50,sortsubtoursascendingremainingcap;D4fullscheduleearliestappendmaxjob/machavailpreservestailproperty,Fig5Gantt/featuretime100scalingandrelativeavail."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "ReadD4fullJSSP7layers(3pairs+final),sinusoidal+ALiBijobmask/ReZero/machinemask/finishedjobs,Figure6allcomponents;D4trainfirstsize10x15contradictsmain15x10mustpreserveambiguity;EfullSPNconcurrency256WRvsGD128WORplusdynamicdataset/bestpolicy. All30pagescompleted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "selfimitation",
+      "category": "contribution",
+      "statement": "BestvalidationpolicygeneratestrajectoriespseudoexpertCEtraining,clearonlyonimprovementotherwiseappend;nooptimaltraininglabels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithm1."
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "category": "method",
+      "statement": "SBSWORtriemassremovalestimatedglobaladvantagelogits/growingnucleus;exactconditionaladvantageproofdoesnotguaranteepracticalheuristic;networkweightsfixedwithinsampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            19,
+            20,
+            21,
+            22
+          ],
+          "locator": "Equations1-6/Algorithms1-2/AppendicesA-B/C1."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Routingseparate100trainedTSP/CVRPwith128samples4x32,SIcapacity40-100/cvrp1000gapdeficit;JSSP7layers3sizes100epochs/Taillardup100x20,groupnotperinstancetimes;samplingrepsnottrainingseeds;Gomokutoy47.7vs60.2epochsqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "locator": "Tables1-5/Figures3-6/AppendicesC-D."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "SpecialistconstructiveseparatetasknetworksTSP/CVRP/JSSP,noincumbentsolutionedits;cachedtriedistributionchangesnotneuralimprovementparadigm.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            11,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "locator": "Constructivesequenceformalizationandtask-specificnetworks."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://arxiv.org/abs/2403.15180",
+      "locator": "Actualv2June11_2024title2authorsTUMStraubing+HSWTp1,headerTMLR06/2024/arxivjournalreferenceFeaturedconfirmformalmonth;v1March22_2024firstdate;removedunsupportedDKFZaffiliation/acceptancemonthtreatedpublication."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=agT8ojoH0X",
+      "locator": "ManualOpenReviewHTMLbrowserchallenge/API403noaccessclaim;actuallyidentifiedpublicationarxivv2all30pagescontainsA-Eallsciencefullyread,noexplicitunavailableextra. Official99entryuntruncatedtreecontainsnoPDFZIPTEXscience;graphicalabstractinspected."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/grimmlab/gumbeldore",
+      "locator": "README/dataREADME/taskconfigsandselectedincrementalSBS/workerread;actualtriemasssubtract/cumulativeadvantagebiasednormalizedestimator/toppschedule;currentCPU/100routingepochs/gradientclip0/pmin1/CVRPcap50notformaltrainingmanifest;JSSPconfig15x10clarifiesp29firstsizetypo,optionalactive_searchunusedpaper."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2403.15180v2#page=8",
+      "locator": "CompleteoriginalFigure2Rect(69,75,542,177)5x;formulas/proof/plots/Gantt/jobmachineframeworkvisuallychecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2403.15180",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-03-22; title on abstract page: Self-Improvement for Neural Combinatorial Optimization: Sample without Replacement, but Improvement. This date is preprint history, not formal publication. Cached research/full-text-review/gumbeldore/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gumbeldore",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2020",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "lehd",
+      "reference_label": "Luo2023",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "attention-model",
+      "reference_label": "Kool2019b",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn2020",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2020ECAI",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "dact",
+      "reference_label": "Ma2021",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2021asprinted",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "l2s-jssp",
+      "reference_label": "Zhang2024",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn2024NeurIPS36asprinted",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "compass",
+      "reference_label": "Chalumeau2024NeurIPS36asprinted",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "gumbeldore",
+      "cited": "slim-job-shop",
+      "reference_label": "Corsini2024arxiv2401.11849",
+      "description": "Explicitintextauthor-yearplusmatchingactualbib;printed2024labelsforNeurIPS36andearlierarxivversionspreserved,notfuturepublicationinferred;noncatalogSBS/PBCS/Park/ScheduleNetnotforced.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualintextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actualbibfullmatchingtitle/authors/version."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshall30actualv2pagesTMLRpublicationidentified+A-Escience/proof/Gomokutoy;officialattachmentchallenge/API403honestfallback/99entrytreechecked.",
+    "CorrectedTUMStraubing+HSWTaffiliationsnotDKFZ,publicationJune2024monthratherthanunsupportedacceptanceinference,retainedMarch22firstdate.",
+    "AddedactualJSSPtask/familyandauxiliaryGomokudescription;specialistconstructivebecauseindependentnetworksandtrielogitadaptationnotincumbentedits.",
+    "Detailedbiasednormalizedestimator/globaladvantageapproximationvsactualexactconditionalpolicyimprovementproposition,noheuristicmonotonicityclaim.",
+    "Explicittraining1284x32candidatebudgets/thousandsroutingepochs/taskdims/siCVRPcapacity40-100difference/2GPU16workers;currentdefaults100CPU/p1/clip0/cap50notpublishedmanifest.",
+    "NeutralresultsCVRP1kGDworseSL,CPsatstrongerJSSPlargebudget,beamcanworsen/samplingconstantvsgrowingnucleusprotocols,seedsversussamplingrepeats/groupTOTALtimes.",
+    "NotedJSSP15x10v10x15texttypoandconfigclarifier;originalFigure2fullcropand27explicitcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0bcffd40bc3922c65d60176a6b83919f7e61909a26e2308cbd1923af5ff07bf4"
+}

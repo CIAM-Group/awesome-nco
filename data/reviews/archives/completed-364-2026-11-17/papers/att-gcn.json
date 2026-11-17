@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "paper_id": "att-gcn",
+  "note_path": "specialist/att-gcn.md",
+  "baseline_note_sha256": "e557f1796acbf7a9421131036ff69a30dce78aa1b18d5e4fbe1667b759dcfb92",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/16916/16916-13-20410-1-2-20210518.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/16916/16916-13-20410-1-2-20210518.pdf",
+      "version": "AAAI 2021 publisher PDF, proceedings pages 7474-7482",
+      "local_path": "research/full-text-review/att-gcn/paper.pdf",
+      "sha256": "ee7e49628c3f108257c889db4b74db06aa195fb4679692db2d30899838344f46",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "full-version",
+      "url": "https://raw.githubusercontent.com/Spider-scnu/TSP/master/Generalize%20a%20Small%20Pre-trained%20Model%20to%20Arbitrarily%20Large%20TSP%20Instances%20---%20Full%20version.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/Spider-scnu/TSP/master/Generalize%20a%20Small%20Pre-trained%20Model%20to%20Arbitrarily%20Large%20TSP%20Instances%20---%20Full%20version.pdf",
+      "version": "Author repository full version explicitly referenced by publisher paper",
+      "local_path": "research/full-text-review/att-gcn/full-version.pdf",
+      "sha256": "d1d846328a2053e32885eb41d782e149d9e88eb5db2facc058a3f94d6231a35b",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh complete contributions/related work, formal affiliations, conversion-based MCTS distinction and full-version architecture reference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh coverage-balanced kNN sampling, isotropic conversion, merged heatmap probabilities and filtering; complete-tour k-opt action representation and MCTS initialization."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh UCB-like edge potentials, simulation stopping, restarts, W/Q updates, search budget and full experiments prose including baseline limitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all full result Tables 1-4 and 35 references; confirmed extra ninth publisher page is bibliography, not architecture appendix."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh author full-version opening pages, checked title identity, contributions, related work and formal appendix link."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh full-version graph sampling/converting/merging and complete-tour action representation; consistent with publisher main."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh full-version complete sampling/update equations and reported dataset/time protocols, crosschecked with publisher."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all full-version Tables 1-4 and complete bibliography; verified timing and Concorde approximation footnotes."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Fresh unique scientific appendix architecture, 30-layer 300-dim attention residual GCN, focal loss, Adam 0.01, batch500, exact training times and compact k-opt example."
+    },
+    {
+      "source_id": "full-version",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Fresh full compact k-opt worked-example figure, all appendix bibliography and complete baseline-training table."
+    }
+  ],
+  "claims": [
+    {
+      "id": "heatmap",
+      "category": "contribution",
+      "statement": "Coverage-balanced kNN subgraphs are normalized isotropically and edge probabilities averaged; no iterative subtour merging.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Building and Merging Heat Maps, Equations 1-2"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "category": "method",
+      "statement": "30 layers, 300 features, focal loss, Adam .01, batch500 and two small models.",
+      "evidence": [
+        {
+          "source_id": "full-version",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "Appendix Sections 1.1-1.5"
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "category": "method",
+      "statement": "States are complete tours; variable-k exchanges and adaptive W/Q search do not update GCN weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "States and actions, Equations 3-6"
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "category": "experiment",
+      "statement": "10n/40n milliseconds, m20/m50, all result times cover datasets; 10000-city gap 4.3902% is relative to LKH3.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Parameters, Tables 1-4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "TSP-specific pretrained networks guide incumbent conversion search, hence specialist improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Contribution contrast with constructive MCTS; complete-tour states"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://cdn.aaai.org/ojs/16916/16916-13-20410-1-2-20210518.pdf",
+      "locator": "Publisher page 1 title block, three authors, AIRS and CUHK Shenzhen affiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v35i8.16916",
+      "locator": "Publisher-deposited metadata: published-online 2021-05-18, pages7474-7482, AAAI2021."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2012.10658",
+      "locator": "v1 19 December 2020, v2 24 February 2021."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/Spider-scnu/TSP",
+      "locator": "Publisher OJS bot-blocked; main paper footnote1 explicitly links author repository full version. Manually inspected recursive repository inventory and README, obtained and read all13 pages of the named Full version PDF including unique Appendix pp10-13. Other ZIPs named data/heatmap are data artifacts; no other scientific PDF attachment present."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://cdn.aaai.org/ojs/16916/16916-13-20410-1-2-20210518.pdf#page=3",
+      "locator": "Original complete Figure1 pipeline crop Rect(40,40,300,160) at5x from publisher PDF page3, atomic PNG and visual inspection."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2012.10658",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-12-19; title on abstract page: Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances. This date is preprint history, not formal publication. Cached research/full-text-review/att-gcn/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "att-gcn",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi, Laurent, and Bresson (2019)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            7,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "attention-model",
+      "reference_label": "Kool, van Hoof, and Welling (2019)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon et al. (2018)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu, Zhang, and Yang (2020)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2020), cited arXiv1912.05784",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            9
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals, Fortunato, and Jaitly (2015)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            9
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    },
+    {
+      "citing": "att-gcn",
+      "cited": "gnn-mcts-tsp",
+      "reference_label": "Xing and Tu (2020)",
+      "description": "Explicit author-year in-text citation and corresponding printed reference version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            9
+          ],
+          "locator": "Main text related work/experiment discussion plus bibliography"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected first arXiv date and removed unsupported acceptance date; added exact publisher publication date and missing AIRS affiliation.",
+    "Replaced erroneous iterative tour/subtour merging with once-built overlapping heatmap and complete-tour k-opt search.",
+    "Read missing author-linked architecture appendix and added exact training details.",
+    "Removed unsupported TSPLIB claim, clarified dataset timing and heuristic-reference gap at10000.",
+    "Added original complete pipeline figure."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0d2ec5a041f7ef666cd45139733320ae28fb1214188873228aad75f9e56d2aa7"
+}

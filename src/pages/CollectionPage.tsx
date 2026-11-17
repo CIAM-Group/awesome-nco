@@ -8,6 +8,7 @@ import {
   filtersFromSearchParams,
   papersForScope,
   paradigmLabels,
+  paperTypeLabels,
   scopeDescriptions,
   scopeLabels,
   timelineYear,
@@ -32,7 +33,7 @@ export function CollectionPage({ scope }: CollectionPageProps) {
 
   function updateFilter(key: string, value: string) {
     const typedKey = key as keyof PaperFilters
-    const keyMap: Record<keyof PaperFilters, string> = { query: 'q', scope: 'scope', paradigm: 'paradigm', family: 'family', year: 'year' }
+    const keyMap: Record<keyof PaperFilters, string> = { query: 'q', scope: 'scope', paradigm: 'paradigm', family: 'family', year: 'year', type: 'type', inclusion: 'inclusion' }
     const next = new URLSearchParams(searchParams)
     if (value === '' || value === 'all') next.delete(keyMap[typedKey])
     else next.set(keyMap[typedKey], value)
@@ -43,12 +44,12 @@ export function CollectionPage({ scope }: CollectionPageProps) {
     <div className={`collection-page collection-page--${scope}`}>
       <PageMeta title={scopeLabels[scope]} description={scopeDescriptions[scope]} />
       <header className="collection-heading page-shell">
-        <p className="eyebrow">{scope === 'specialist' ? 'Single-problem training' : 'Cross-problem models'}</p>
+        <p className="eyebrow">{scope === 'study' ? 'Evidence, theory and evaluation' : scope === 'specialist' ? 'Single-problem training' : 'Cross-problem models'}</p>
         <h1>{scopeLabels[scope]}</h1>
         <p>{scopeDescriptions[scope]}</p>
         <div className="collection-heading__links">
-          <a href={`https://github.com/CIAM-Group/awesome-nco/blob/main/${scope}/README.md`} target="_blank" rel="noreferrer">Read the inclusion criteria</a>
-          <Link to={scope === 'specialist' ? '/generalist' : '/specialist'}>Compare with {scope === 'specialist' ? 'generalist' : 'specialist'} solvers</Link>
+          <a href={`https://github.com/CIAM-Group/awesome-nco/blob/main/README.md#${scope === 'study' ? 'research-studies' : `${scope}-solvers`}`} target="_blank" rel="noreferrer">Read the inclusion criteria</a>
+          <Link to={scope === 'study' ? '/papers' : scope === 'specialist' ? '/generalist' : '/specialist'}>{scope === 'study' ? 'Browse all papers' : `Compare with ${scope === 'specialist' ? 'generalist' : 'specialist'} solvers`}</Link>
         </div>
       </header>
 
@@ -57,8 +58,8 @@ export function CollectionPage({ scope }: CollectionPageProps) {
           query={filters.query}
           selects={[
             {
-              key: 'paradigm', label: 'Paradigm', value: filters.paradigm,
-              options: [{ value: 'all', label: 'All paradigms' }, ...Object.entries(paradigmLabels).map(([value, label]) => ({ value, label }))],
+              key: scope === 'study' ? 'type' : 'paradigm', label: scope === 'study' ? 'Paper type' : 'Paradigm', value: scope === 'study' ? (filters.type ?? 'all') : filters.paradigm,
+              options: [{ value: 'all', label: scope === 'study' ? 'All paper types' : 'All paradigms' }, ...Object.entries(scope === 'study' ? paperTypeLabels : paradigmLabels).filter(([key]) => scope !== 'study' || key !== 'solver').map(([value, label]) => ({ value, label }))],
             },
             {
               key: 'family', label: 'Problem family', value: filters.family,

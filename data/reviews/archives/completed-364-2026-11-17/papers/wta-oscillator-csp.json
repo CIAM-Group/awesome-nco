@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "paper_id": "wta-oscillator-csp",
+  "note_path": "specialist/wta-oscillator-csp.md",
+  "baseline_note_sha256": "eed745420f77097ced3fbd4d803e8a457cac01308703a7dc07a24b8b0c77207b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2013/file/d1f255a373a3cef72e03aa9d980c7eca-Paper.pdf",
+      "version": "Official NIPS2013 volume26 proceedings PDF,9pages",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2013/file/d1f255a373a3cef72e03aa9d980c7eca-Paper.pdf",
+      "local_path": "research/import-272/nco-7763a8f0d4.pdf",
+      "sha256": "c4f1a79359c82265ce4ce6d080ecca3f5c340694cefc3b992c2ebaf124e8c858",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Freshpp1-3: Mostafa/LorenzKMuellerwithumlaut/Indiveri UZH+ETH, rateLTUcontinuous neuralpopulations, coupled3WTAlimitcycle binaryvariable, BCMlikeboundedplasticityonlineoscillation notdatasettraining. Noexogenousnoiseclaimed, localoptimaescapeviaoscillatoryeffectiveconnectivity, generalMAXCSPabstractclaimneedboundedtosimulations; nohardwareimplementationyet."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Freshpp4-6:limitcycleA/B bottomselected withphase-sensitivity,WA/WBplasticity;couplingsbottomencodebinaryconstraints,middle/toppreventphaselock;higherarityviahighercardaux (XOR4states). Tenbinary/nineternaryCSPfixedoneinstance2solutions,1000randomweightinitialtrialsallconsistent,mean646median436AVERAGEvariablecycles notms/runtime;externalone-stateoscillator influencesonevariablephase-dependently nothardclamp. Explanatoryescape/noisefreeclaims empiricalnotgeneralmathbound,phase-locksmallnetworkspossible."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Freshpp7-9 all26references. TwoinconsistentIsinglikeCSPs energy-time exponentialfitsAVERAGEperenergylevel only; sameenergy2systematicbimodality/degree1 andallviolatedstatesnevervisited, noanalyticBoltzmannexplanation. Discussion17node4colorplentifulsolutionsqualitativefasterthan10vartoy;notlargebenchmark/exponentialtimeproof. Analyticframeworkandfullneuromorphichardwarefuture,noneoptimality/runtimeguarantee. LorenzKMullerumlautconfirmedbyline. Noappendix/extraattachmentpointer."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Oscillatoryeffectiveconnectivity aimsavoidstaticattractors/globalnoiseannealcontrol andacceptnewevidence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "MultistableWTAoscillatorvariables,pairwise/auxiliaryconstraints andthree simulationbehaviors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Architecture/results"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "LTUrateequation andBCMlikeplasticity;bottomwinnerlimitcycle;phasecoupling/higharityauxiliary;externaloscillatorevidencenothardclamp.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations1-2/Figures1-3"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Single10binary9ternary2solutionCSP1000initializationsallsolve,mean646median436averagecycles;2inconsistentIsingexamples+qualitative17node4coloring.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections3-4"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Equalenergybimodality/unvisitedfiniteenergystates andnoanalyticexponentialfit;phase-lockpossibility,no generalconvergence/runtime/powerbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8
+          ],
+          "locator": "Sourcequalifications/Figure5/discussion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "HanddesignedcontinuousneurodynamicCSPsolver;localplasticitynotsharedtrainedmultitaskmodel,graphcoloringactualextraexample.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            8
+          ],
+          "locator": "Architecture/discussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2013/file/d1f255a373a3cef72e03aa9d980c7eca-Paper.pdf",
+      "locator": "VisiblePDFp1LorenzK.Müller,UZH+ETH; officialHTMLhasmalformedLorenz.KMueller."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2013/hash/d1f255a373a3cef72e03aa9d980c7eca-Abstract.html",
+      "locator": "OfficialNIPS2013volume26record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2013/hash/d1f255a373a3cef72e03aa9d980c7eca-Abstract.html",
+      "locator": "ManualofficialentryBibtex/Metadata/Paper/Reviewsonly;noSupplemental;all9pagesread noappendix/scientificattachmentpointer."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2013/file/d1f255a373a3cef72e03aa9d980c7eca-Paper.pdf#page=3",
+      "locator": "CompleteoriginalFigure1crop[100,65,535,447]PDFpointsat3x,allpanels/captionvisuallychecked."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly readall9pages/26references andvisuallycheckeddynamics/results.",
+    "CorrectedLorenzK.Müller andaddedactualgraphcoloringexampletags.",
+    "Specifiedlocalplasticity/phase-dependentauxiliaryconstraintandevidencemechanisms.",
+    "Replacedgeneralglobal-optimality/samplingimpressions withactualsingle-instance1000trialprotocol,cyclesandexplicitunequalenergysamplinglimitations.",
+    "AddedcompleteoriginalFigure1withpage/crop provenance;hardwareandanalyticalframeworkremainfuturework."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "2831b7ed6c7b924f5e603f42c25efbcbe78ec42cd8f16648584a12219be94805"
+}

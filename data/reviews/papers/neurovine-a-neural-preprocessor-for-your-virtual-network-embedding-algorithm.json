@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "paper_id": "neurovine-a-neural-preprocessor-for-your-virtual-network-embedding-algorithm",
+  "note_path": "specialist/neurovine-a-neural-preprocessor-for-your-virtual-network-embedding-algorithm.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "c5707db69e5632a247ccc3215e7a69598b8f907138e45569a3e19d48d0188039",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://schmiste.github.io/infocom18neuro.pdf",
+      "retrieval_url": "https://schmiste.github.io/infocom18neuro.pdf",
+      "version": "Author-hosted9-page INFOCOM2018 conference manuscript, complete main/bibliography; identity established by six authors/title/DOI publication records",
+      "local_path": "research/conference-163-2026-11-17/neurovine-author.pdf",
+      "sha256": "95fbab8c43394c92068c3c7b6d2d93c884295fb348028eb4ce51fc53fb7bdade",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://schmiste.github.io/infocom18neuro-slides.pdf",
+      "retrieval_url": "https://schmiste.github.io/infocom18neuro-slides.pdf",
+      "version": "Author-hosted20-page INFOCOM2018 paper-specific slide deck, all pages and visual elements read",
+      "local_path": "research/full-text-review/neurovine-a-neural-preprocessor-for-your-virtual-network-embedding-algorithm/slides.pdf",
+      "sha256": "2994edceff1902869e5a88cda844b50ffce3a3af81e502bf1b4a2d04018c9a9f",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh full PDF1-2: six authors/TUM,NokiaBellLabs,Vienna; VNE CPU+bandwidth/injective node map/unsplittable link paths; Hopfield neural preprocessor reduces substrate then classical5VNE algorithms. No training. Eq5leak/tanh and Eq7quadratic energy may need finite-parameter qualification; read rest before any counterexample claim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Fresh full PDF3-4: Algorithm1 filters V<.5, NeuroViNE substrate-only Hopfield preprocessing then downstream classical mapping; beta7 gamma3 alpha10; const/factor/inverse node-count targets soft not exact; clamping server/switch distinction and full-substrate fallback fordatacenters. T/I equations14-17 cardinality penalty; RKstep.1 heuristic. Read complete math and qualifications; Eq9needs visual fraction check."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Fresh full PDF5-6 inclAlgorithm2RK3randominitialU/finiteiterationstop; critical node mapping uses reduced subgraph BUT links use originalfullsubstrate (not induced-only routing); at least10runs/setting2500VNR, five classicalbaselines and30sSDP cap; ER100p.11,BA m1-10,28TopologyZoo incl709nodes,FT/BC andtwoVNRgenerators. AR/revenue/RCR definitions, smallconstant k5 harmsAR73percent despiteefficiency metric; noallmetricdominance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh allPDF7-9 completed including29 fullreferences: k25RCR+18pct withTRslightlylower,k50RCR+9pct; factor2mayundershootnodes,chosen2.5; randomAR/TRnegativecases vsrealTopologyZoo gains; datacenterRCR+10pctFT/+7pctBC withARalready.95-.98; SDP30s cap includesHFmodelsetup andlarge speedupsnotglobaloptimumcertificate. FullFig7runtimeCI95pct and all29refs read; noapparentcataloguefullreference, PointerNetworksonlyfuturementionwithoutbib. All9mainpagesread,noappendix inPDF."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 10,
+      "notes": "ReadcompleteauthorSlides1-10andvisuallyallcorrespondingpages: same6authors/3affiliations; nolearning/training; energyandpipelineoverview. Slide7claimsLyapunov/local(global)convergencebutnotproof originalVNE/globalguarantee. Slide8explicitwe do notsolveVNEdirectly; allfiguresanddisplayedmathread."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 11,
+      "last_page": 20,
+      "notes": "ReadcompleteauthorSlides11-20andvisuallyallpages: node/path/cardinalityenergyconstruction; example diagram;14budget/metrics,15callsISP750nodeswhilemain709,16DCAR/RCR,17runtimeplots,18completeotherworkrefs,19futurework20closing. All5contactgroupsviewed. Noaddedscientificappendix orcodepathin20slides."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Restrict candidate substrate nodes to reduce conventional VNE resource/time cost.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/VNE constraints"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Hopfield node preselection, three cardinality preferences and data-center clamping/fallback.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Algorithms1/2 and SecIII"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "No-training recurrent energy dynamics select candidate nodes; downstream links use full substrate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Eq5–18/SectionIII-H"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Atleast10runs,2500requests,random/28real/DCsubstrates,negativeacceptancecases,30sSDPcap and metric-specific gains.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "SectionIV/Figs3–7"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Softcounts/heuristicobjective andfiniteRKdo notcertifyoriginalVNE/globaloptimum;genericprintedenergycounterexample isseparatelyqualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            9
+          ],
+          "locator": "Eq5–7/targetcardinality/negativecases/runtimecap"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist neurodynamic VNE preprocessing; no learned multitask shared checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Neuralresponsibility/trainingabsence"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and formal publication",
+      "source_url": "https://doi.org/10.1109/INFOCOM.2018.8486263",
+      "locator": "Crossref exacttitle/6authors/pages405-413/publishedprint2018-04; author INFOCOM publication entry confirmsApril2018/mainconference. October18 DOIcreation isnotpublication."
+    },
+    {
+      "field": "supplements and companion inventory",
+      "source_url": "https://schmiste.github.io/",
+      "locator": "ExactNeuroViNEentrymanuallycheckedlinksinfocom18neuro.pdf andinfocom18neuro-slides.pdf only; all9+20pagesactualread/checkpointed. All7mainfigures/2algorithms andall20slidesactualvisualchecked; noexplicitmissingappendixidentified, no hiddenpublisherattachmentsclaimedread. Noofficialpaper-specificcodeURLidentified."
+    },
+    {
+      "field": "classification and precise neural responsibility",
+      "source_url": "https://schmiste.github.io/infocom18neuro.pdf#page=5",
+      "locator": "Handconfiguredno-trainingHopfield recurrentpreselection⇒specialist/neurodynamic;SecIII-Hnodemapreducedsubstrate/linkmapfullnetwork;DCclamping/fallback. NotmultitaskcheckpointorNNcompleteVNE."
+    },
+    {
+      "field": "negative cases theory and numerical scope",
+      "source_url": "https://schmiste.github.io/infocom18neuro.pdf#page=2",
+      "locator": "Eq5–7genericone-neuronT0I.1U2unitgainleak=>E_dot.0067118>0 (boundary-check.json); no fullVNEcounterbenchmark. Eq9actualprintedBmax−Bij/Bmaxvisuallyreadp3;softcountsackp4/7;slide15vsmain709/750qualified."
+    },
+    {
+      "field": "original image",
+      "source_url": "https://schmiste.github.io/infocom18neuro.pdf#page=3",
+      "locator": "OriginalFigure2crop47,45,302,174 at5x, actualpublicfileandcompletecaptionviewed."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedallpendingfieldswithcomplete9pmanuscript+20pauthor-slideevidence.",
+    "Verifiedsixauthors/printedaffiliations/April2018formalmetadata,separatingDOIcreationdate.",
+    "Classifiedspecialistneurodynamicandclarifiednode-onlyrestriction/full-substratepathrouting.",
+    "RecordednegativeAR/TRcases,softcount/fallback,30ssolvercapandnoVNEglobalguarantee.",
+    "AddedoriginalcompleteFigure2; nofalsePointerNetworksedge.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged."
+  ],
+  "reviewed_note_sha256": "a64f07ba750b60f1b951e5a4f2e518bc3321c35479820d9b59a6bef6e3f17120"
+}

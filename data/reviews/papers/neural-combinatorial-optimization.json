@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "paper_id": "neural-combinatorial-optimization",
+  "note_path": "specialist/neural-combinatorial-optimization.md",
+  "baseline_note_sha256": "403a2e746d328caadb89ead6153abf2c7e5ce6bcb591b189a14a236bb7ae4320",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1611.09940v3",
+      "retrieval_url": "https://arxiv.org/pdf/1611.09940",
+      "version": "arXiv:1611.09940v3, 12 January 2017; header says under review at ICLR 2017",
+      "local_path": "research/full-text-review/neural-combinatorial-optimization/paper.pdf",
+      "sha256": "edb7ba67b9f332c7d2116b9bca64a52deb56c414e9e7dfe6e21d4d45287475d2",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "workshop",
+      "url": "https://bengio.abracadoudou.com/publications/pdf/bello_2017_iclr_workshop.pdf",
+      "retrieval_url": "https://bengio.abracadoudou.com/publications/pdf/bello_2017_iclr_workshop.pdf",
+      "version": "Author-hosted published ICLR2017 Workshop Track paper,5pages includingAppendix6.1-6.5; linkedfromcoauthorpublicationarchive",
+      "local_path": "research/full-text-review/neural-combinatorial-optimization/workshop.pdf",
+      "sha256": "10321aa502af765ed54749c6b206a87e4d3dc2365faa887150b53a04efe90c9c",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh arXivv3 read: problem/repeated-instance motivation, RLpretraining vs active search vs combined protocol; full historical relatedwork, sequencefactorization and variableinputsize pointerarchitecture. Separate formaleligibility is workshop reference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh reading full pointer/critic networks, REINFORCE and criticMSE objective, asynchronous training, both pseudocode algorithms, temperature-controlled fixedsampling, per-instance active-search movingbaseline and inputshuffle."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh full Tables1-4, uniform1000instance testsets, 10kvalidation, greedy16models, 1.28million sampling and10kAS updates, independentAS100k/200kupdates, hardware/timing discrepancy and guidedlocal-search superiority; startSection6 feasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh full knapsack formulation/stopping phrase, all Table5 optima/greedy results, penalty/lookahead futurework, conclusion and complete first2bibliography pages; no universal feasibility guarantee inferred."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fresh read full remainingbibliography and all AppendixA: attention/glimpse/repeatedglimpse finding, temperature/clipping, complete Table6 strongOR-Tools metaheuristic budgets and sampletour caption/results."
+    },
+    {
+      "source_id": "workshop",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh author-hostedWorkshop2017pages1-3read: title/header/authors, shortenedpointer/criticdescription, fullsearchbudgets, Table1andLKH50trials. TSPonlymain; appendix6.x follows onpages4-5, readinthenextsegment."
+    },
+    {
+      "source_id": "workshop",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read completeworkshopbibliography and allAppendix6.1-6.5 (present onpages4-5): hyperparameters,maskedpointing/glimpse,exploration,sampletours andfullcombinedmetaheuristictable. This correctspreviouscheckpointpresumptionthatAppendixabsent. WorkshophasnoKNAPexperimentorfullarxivcriticdetail."
+    }
+  ],
+  "claims": [
+    {
+      "id": "objective",
+      "category": "contribution",
+      "statement": "The policy is optimized for sampled objective costs instead of supervised tour likelihood.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section 4 Equations 3-6"
+        }
+      ]
+    },
+    {
+      "id": "policy",
+      "category": "method",
+      "statement": "A masked LSTM pointer decoder constructs feasible TSP tours; a glimpse supplies additional attention computation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            14
+          ],
+          "locator": "Section 3; Appendix A.1"
+        }
+      ]
+    },
+    {
+      "id": "adaptation",
+      "category": "method",
+      "statement": "Active search updates parameters on one test instance using a moving-average baseline, and can start from pretrained or random parameters.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Section 4.1 Algorithm 2"
+        }
+      ]
+    },
+    {
+      "id": "quality-budget",
+      "category": "experiment",
+      "statement": "TSP100 greedy length 8.30 and pretrained-AS length 7.83 use very different budgets; the AS 1280000-sample budget is reported as 12000 seconds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables 2-4"
+        }
+      ]
+    },
+    {
+      "id": "knapsack",
+      "category": "experiment",
+      "statement": "The authors report all tested knapsack instances solved optimally by active search after 5000 updates; no general exactness theorem is given.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Section 6.1 Table 5"
+        }
+      ]
+    },
+    {
+      "id": "constraints",
+      "category": "limitation",
+      "statement": "Simple masking cannot decide feasibility for every problem; time windows and penalties are discussed as challenges/future work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Section 6"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Framework adaptation to knapsack is not evidence for one jointly trained TSP/knapsack checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Sections 6 and 6.1"
+        }
+      ]
+    },
+    {
+      "id": "implementation",
+      "category": "reproducibility",
+      "statement": "The reviewed manuscript promises TensorFlow code but gives no author-maintained learned-policy repository link.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            11,
+            12,
+            13
+          ],
+          "locator": "Section 5.1; bibliography"
+        }
+      ]
+    },
+    {
+      "id": "workshop-difference",
+      "category": "reproducibility",
+      "statement": "The author-hosted five-page Workshop Track paper includes its own appendix and TSP tables, while the longer arXiv has additional critic/knapsack material; these are distinct identified versions.",
+      "evidence": [
+        {
+          "source_id": "workshop",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Workshop header, Sections2-4 and entireAppendix6.1-6.5"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8,
+            10
+          ],
+          "locator": "Additional detailedcritic, greedy timingTable3 and knapsackSection6.1"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations, venue, publication",
+      "source_url": "https://bengio.abracadoudou.com/publications/pdf/bello_2017_iclr_workshop.pdf",
+      "locator": "Author-hosted PDFp1, Workshop Track ICLR2017; same title/authors, GoogleBrain, equalcontribution first2."
+    },
+    {
+      "field": "publication provenance",
+      "source_url": "https://bengio.abracadoudou.com/samy.html",
+      "locator": "2017publication1 explicitly labels Workshop Track and links samePDF/OpenReviewidBk9mxlSFx."
+    },
+    {
+      "field": "date and arxiv version",
+      "source_url": "https://arxiv.org/abs/1611.09940",
+      "locator": "v1 29Nov2016, v3 12Jan2017; all15pages freshlyread; underreview header is versionmetadata, not exclusionfrom scientificreading."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://bengio.abracadoudou.com/publications/pdf/bello_2017_iclr_workshop.pdf",
+      "locator": "Five-pageWorkshop includes allAppendix6.1-6.5 onp4-5; 15-pagearxivincludes allAppendixA onp14-15. OpenReview attachment fields403, no extra scientific attachment explicitly missing from read material; unknown fields not falsely inventoried."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/1611.09940v3#page=4",
+      "locator": "CompleteoriginalFigure1pointerdiagram visuallycrosschecked; notpresentasarchitecturefigure inshortWorkshop."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1611.09940",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2016-11-29; title on abstract page: Neural Combinatorial Optimization with Reinforcement Learning. This date is preprint history, not formal publication. Cached research/full-text-review/neural-combinatorial-optimization/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-combinatorial-optimization",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015b)",
+      "description": "The manuscript explicitly adopts and discusses the Pointer Network architecture, changing its principal training objective from supervised imitation to policy gradients.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            13
+          ],
+          "locator": "Sections 2-4; Figure 1; bibliography Vinyals et al. 2015b"
+        },
+        {
+          "source_id": "workshop",
+          "pdf_pages": [
+            2,
+            4
+          ],
+          "locator": "Sections2-3 and bibliographyVinyals2015"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly reread all15arxivpages and all5author-hostedWorkshop pages includingbothcompleteappendices.",
+    "Recovered author-linkedpublicationPDF atcurrentpublicationpath; resolvedtrack/identityfromprimarysources.",
+    "Explicitly separated shortWorkshop TSPpaper from longerarxivcritic/knapsack/timingdetails; removedobsoleteversioncorrespondenceblocker underuseracceptedreadingpolicy.",
+    "Confirmed allsearchbudgets, hardwareunits andstrongguidedlocal-searchcounterexample; no universalexactknapsackguarantee.",
+    "PreservedstableIDand referencecollection; PointerNetworks is theonlyidentity-matchedinternalcitation."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "53276c98eb2475cb1ec1d2e2c82300070b801bc1ecd0f35061098e6d5f595411"
+}

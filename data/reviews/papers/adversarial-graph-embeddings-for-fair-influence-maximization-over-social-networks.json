@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "paper_id": "adversarial-graph-embeddings-for-fair-influence-maximization-over-social-networks",
+  "note_path": "specialist/adversarial-graph-embeddings-for-fair-influence-maximization-over-social-networks.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "3ba73e7607e88b61e00ff417978da349964a386c8cd829878d879a6919934d8c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://ijcai.org/proceedings/2020/0594.pdf",
+      "retrieval_url": "https://ijcai.org/proceedings/2020/0594.pdf",
+      "version": "Formal IJCAI2020 CompSust/HumanWellbeing special-track seven-page proceedings paper, complete main/references/allfigures read",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-3c469e7e59/publisher.pdf",
+      "sha256": "fa07dd316b2056fb862cc89c52e5677b4b024bd42092253e315446d2fca0aa67",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Read complete7formalpages/fullreferences/all5figures/2algorithms; renderedallpagesin2contactimages andoriginalFig1completecropviewed. Fairinfluence = groupnormalizedcascadecoverage, graph-specificdenseautoencoder+attributeadversary thenclassicalkmeans+groupawareseedselection, nofairness/optimalityguarantee fromlatentmatching. Riceoriginal1205butactualagefiltered441(97/344),pIC.01;synthetic500(150/350)pIC.03; seedbudgets4-40,4clusters chosenbyfairness. MainFig3/4supporthigherminorityreach/competitivebutnotuniversallyequalinfluence;2attributesFig5 disparity/timeonly. MainAlgorithm2k=|S|vsprose4cluster+s selectionnotation mismatch. ReadrepoREADME and bothnotebookcellinventories pluscorearchitectures/loss/selection/configcells; singleattrflippedlabelBCEweight10/multiweight2 differsprintedcriticdifference; actualsubgroup1centroidnearests vsprose+scentroids. Reponotebooksnoimageoutputs; noadditionalPDF/zip scientificsupp. Official270spresentation exists/metadataentrychecked, notclaimedreadorPDFpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Groupnormalizedinfluencereach differsfromtotalsize orbalancedseeds.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/FairIMdefinition"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Adversarialgraphrepresentation plusclassicalgroupawareclusteringseedselection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Contributions/Algorithms1-2"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Denseadjacencyautoencoder withattributeadversaries andnormal/fairseedselection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Methodology/NormalEmbedding/FairEmbedding"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Graph-specificneuralpreprocessingforseedsetconstruction;notlearnedincumbentrewrite/crossproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Methods/experiments"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "ActualRiceage-filtered441nodes andsynthetic500; IC.01/.03;qualitativefairness/totalreach/timefigures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Dataset/Figures3-5"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Heuristiclatentdistributionmatching andapproxreconstruction do notcertifycascadefairness/invertibility;limiteddisplayedbenchmarks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Intuition/selection/data/results"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Fullformal7p andsourcecodefootnoteprovideownnotebooks; explicitversion/configurationdifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            6,
+            7
+          ],
+          "locator": "Codefootnote/results/fullbibliography"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication and arxiv history",
+      "source_url": "https://ijcai.org/proceedings/2020/bibtex/594",
+      "locator": "Exact6authors/6institutionsPDFp1, firsttwoequalcontribution; SpecialCompSusttrack4306-4312 DOI594,officialmonth7year2020. Actualarxiv2005.04074historyv1May8/v2May11 exacttitle/sixauthors."
+    },
+    {
+      "field": "supplements scientific inventory",
+      "source_url": "https://github.com/redfox-codder/fair_influen_max/tree/5d9905e681ddfae079ccc630ec79fee31c3161de",
+      "locator": "Formal7pfulltext/fullrefs/all5fig/2algorithmsactualread+visuallychecked; noexplicitmissingappendix; authorURLAhmadreza401 redirectsrepositoryID249620794 toredfox-codder. Full8entrytree2notebooks/2data/README/gitignore,noextraPDF/archive; notebooksallcellinventories/outputs inspected,selectedarchitecture/loss/seed/trainingcellsread. OfficialJSONVideo270sHLSentryaccessiblesavedmetadata, presentationnotclaimedreadornumericalsource."
+    },
+    {
+      "field": "implementation distinction and selection",
+      "source_url": "https://github.com/redfox-codder/fair_influen_max/blob/5d9905e681ddfae079ccc630ec79fee31c3161de/codes/Model.ipynb",
+      "locator": "Encoder120/60/30decoder60/120/N; classifier25/15/6/1 withdropout; flippedlabelBCEadversaryweight10vsMulti2,notprintedDdifference. get_seedsreclustereachsubgrouponecentroidnearestallocateds; sourcepretrain_disc40 vsREADME50, joint500 vsREADME300. No claimwholetrainingrerun."
+    },
+    {
+      "field": "original figure",
+      "source_url": "https://ijcai.org/proceedings/2020/0594.pdf#page=3",
+      "locator": "OriginalFig1crop48,45,565,2972.5x publicimageactualviewed/fullcaption."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readcompleteformal7pallscientifictext/fullreferences/figures/algorithms.",
+    "Addedactualsixauthorbyline/publicationtrack/dateandpreprinthistory.",
+    "Classifiedspecialistconstructive neuralrepresentation+classicalseedselection, andreportedactual441-nodefilteredbenchmark.",
+    "Qualifiedlatentfairness/invertibilityclaims;documentedpaper-code/READMEsettings andoriginalFig1;nofabricatededges.",
+    "Copyedited prose spacing and leading-zero decimals; source identities, data values, classifications and citation evidence unchanged."
+  ],
+  "reviewed_note_sha256": "f35569b8f28afc54d7e7e23c0f4de57449ab91f95cdd225f0a95c6b46f52bfae"
+}

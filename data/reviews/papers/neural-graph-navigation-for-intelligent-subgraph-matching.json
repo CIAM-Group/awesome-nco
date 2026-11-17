@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "paper_id": "neural-graph-navigation-for-intelligent-subgraph-matching",
+  "note_path": "specialist/neural-graph-navigation-for-intelligent-subgraph-matching.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "b30dde96be3593aa3c5220560efecb0249073b55d501e88208ed890122acf9c4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/abs/2511.17939v1",
+      "retrieval_url": "https://arxiv.org/abs/2511.17939v1",
+      "version": "arXiv2511.17939v1,22November2025,15pages including complete bibliography and integrated technicalappendix; nineauthor primary identity checked, not asserted formalbyteidentity.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-692e6fe97d/arxiv-v1.pdf",
+      "sha256": "8e73956f79eb385d948fb8cd725f1b6fad7a7b4339f859cb16235340877fb36b",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://github.com/Ying-Yuchen/NeuGN/blob/5fde722d4969895ede16668f148a198f7cfe097f/NeuGN_APPENDIX.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/Ying-Yuchen/NeuGN/5fde722d4969895ede16668f148a198f7cfe097f/NeuGN_APPENDIX.pdf",
+      "version": "Author-repository7page anonymous technicalappendix at5fde722d4969895ede16668f148a198f7cfe097f; linkedbyformalPDF; independently fullyread, layout differs from arxiv appendix.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-692e6fe97d/NeuGN_APPENDIX.pdf",
+      "sha256": "883bcd5fbeed9b24b080af669bf9fd137e489cf92a02e07a3f2bd0d9c60c893d",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full title/byline/affiliations and pp1–3 introduction, related work, labeled undirected non-induced injective subgraph definition, Algorithm1 sorting-only neural candidate order inside complete enumeration, GCN query encoding, global navigator and Euler-guided masked sequence construction. No neural pruning completeness claim assumed beyond underlying exact enumerator."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full node-ID vocabulary/position+query-signal Transformer, self-supervised masked-node CE training, sorting-only candidate ranking and batching; six labeled data graphs, 200 size20 query defaults/navigationdepth10, median FMS Table2 and component ablations Table3. Table2 maximum98.2% is across-method average denseWikiCS reduction, not every setting or wallclock; graph-specific vocabulary and pergraph training require specialist scope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read complete pp7–9 including Figures4–5 distributions/depth, Table4 sizes8/16/24/32 and Table5 one-second MPS (GQL gains17–52.4%, CECI9.2–37.7% on fourgraphs, depth16/query32), conclusion/acknowledgments and all main references. Kept search-step vs time-bounded throughput claims distinct; no optimality/complexity improvement theorem inferred."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read final bibliography and complete appendixA soundness/completeness proof requiring fixed query order/candidate generation, order-robust safe pruning A1 and full bijective permutation A2, finite exhaustive search. Read appendixB1–B5 enumeration pseudocode, polynomial query Eulerization, modulo64 index range, graph-sampled self-supervised data and start of masked generation. No theorem that neural policy reduces worst-case search or time-budget completeness."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read full remaining masked-generation example and AppendixC/D dataset descriptions, pergraph1000epoch random-walk5–19 induced-query training, model dims/hardware, Table6 batch vs amortized latency, Table7 per-epoch times and Table8 one-second results. Training cost19300min for1000YouTube epochs follows reported19.30min/epoch; no heldout-data-graph transfer. Authors explicitly limit unchanged search tree and vocabulary scalability; output softmax omission safe only if full affine logits ranking retained."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Independently read repository anonymous technical appendix pp1–3 (not page-identical to integrated arxiv appendix): full A1/A2 completeness argument, pseudocode Algorithm1, Eulerization/cyclic reindex details, FigureS1/S2 captions and complete preprocessing plus first masked-generation step. Repository currently contains only appendix+README despite statement sourcecode accompanies supplement."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Independently read all repository appendix pp4–7 including full generation example, data/architecture/hardware, TablesS1–S3, training/per-query latency caveats, unchanged-search-tree limitation/future tokenization, and all complete supplementary bibliography. Same core scientific content as arxiv integrated appendix, but separate7page layout read in full rather than assumed identical. Key main Algorithm1/Fig1/Table2/proofA and timings Tables6/7 visually checked from rendered pp3/4/6/7/10/14; figure crop actualviewed."
+    }
+  ],
+  "claims": [
+    {
+      "id": "neugn-contribution",
+      "category": "contribution",
+      "statement": "Neural candidate-ordering plugin combines queryGCN and node-ID Transformer without neural pruning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Method;Figures1–3;Algorithms1/2"
+        }
+      ]
+    },
+    {
+      "id": "neugn-method",
+      "category": "method",
+      "statement": "Exactness preservation requires sound complete base algorithm, order-robust safe pruning and full candidate permutations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "AppendixA A1/A2 and Theorem1"
+        }
+      ]
+    },
+    {
+      "id": "neugn-experiment",
+      "category": "experiment",
+      "statement": "Headline98.2% is denseWikiCS across-baseline average medianFMS reduction; timed throughput results use distinct one-second protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            14,
+            15
+          ],
+          "locator": "Tables2/4/5/6/7/8;AppendixC.3"
+        }
+      ]
+    },
+    {
+      "id": "neugn-classification",
+      "category": "classification",
+      "statement": "Specialist constructive search component uses graph-specific node vocabularies and pergraph training; reorders partial-map expansion, not complete incumbent neural edits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14
+          ],
+          "locator": "Node Identity Encoding;ImplementationSettings"
+        }
+      ]
+    },
+    {
+      "id": "neugn-limitations",
+      "category": "limitation",
+      "statement": "Search-tree size remains essentially unchanged; finite randomwalk anchor sampling does not exhaust all structural motifs, and batch-amortized latency is not total query time.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "locator": "AppendixC.3/D.1"
+        }
+      ]
+    },
+    {
+      "id": "neugn-repro",
+      "category": "reproducibility",
+      "statement": "Repository scientific appendix says code is supplied, but inspected untruncated publictree contains only README and scientificPDF.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            7
+          ],
+          "locator": "Appendixintro/C.2/C.3/D and complete supplementary references"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/institutions/identity",
+      "source_url": "https://arxiv.org/abs/2511.17939v1",
+      "locator": "ReadPDFp1 nineauthors and numbered affiliations; officialAAAI DOIrecord and formalPDF indexed by publisher agree."
+    },
+    {
+      "field": "publication.date",
+      "source_url": "https://api.crossref.org/works/10.1609/aaai.v40i19.38654",
+      "locator": "Identity-matched title/nineauthors; publisher-deposited published-online and published date-parts2026-03-14;volume40 issue19 pages16181–16189. Cached crossref.json."
+    },
+    {
+      "field": "date/arxiv_url",
+      "source_url": "https://arxiv.org/abs/2511.17939",
+      "locator": "Cached primary arxiv.html submissionhistory/v1 and readPDFp1:22November2025; formalpublication date kept separate."
+    },
+    {
+      "field": "supplements/code inventory",
+      "source_url": "https://api.github.com/repos/Ying-Yuchen/NeuGN/git/trees/5fde722d4969895ede16668f148a198f7cfe097f?recursive=1",
+      "locator": "Cached completeuntruncatedtree SHA5fde722d4969895ede16668f148a198f7cfe097f:exactlyREADME.md+NeuGN_APPENDIX.pdf; all7scientificappendixpages read independently. FormalPDFpublicAppendixlink corroborates authorrepo; eventURL404. No publicimplementation/codearchive found, code_url omitted."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/abs/2511.17939v1",
+      "locator": "OriginalFig1+caption p3 cropRect323,89,562,239 at4x; actual public/paper-assets/neural-graph-navigation-for-intelligent-subgraph-matching/framework.png exists and actualview_image inspected."
+    },
+    {
+      "field": "citation scan",
+      "source_url": "https://arxiv.org/abs/2511.17939v1",
+      "locator": "Complete mainbibpp8–10 and supplementarybibpp6–7 read; exact normalized cataloguetitle scan produced0candidates; manually inspected named references not other527stableentries."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replace all pending byline/task/summary/date placeholders from actual full reading.",
+    "Distinguish FMS reduction from time-bounded MPS, batch latency from amortized item latency and completeness from speed/optimality guarantee.",
+    "Omit code_url because repository is appendix-only at inspectedcommit; retain explicit source-availability limitation."
+  ],
+  "reviewed_note_sha256": "934f4d5b4a11ab6ba96390c80e5c6a5c46ee9c3242b36445d53e3cc73e5fd5c4"
+}

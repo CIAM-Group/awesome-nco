@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "paper_id": "brick-by-brick",
+  "note_path": "specialist/brick-by-brick.md",
+  "baseline_note_sha256": "013db83eb2d789005f23f7a3eaae04468ac15c67d593941101e645f8b0af2b71",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2d4027d6df9c0256b8d4474ce88f8c88-Paper.pdf",
+      "version": "Complete formalNeurIPS2021 13-page publisherpaper includingfull44references",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2d4027d6df9c0256b8d4474ce88f8c88-Paper.pdf",
+      "local_path": "research/import-272/nco-7d33f9ded9.pdf",
+      "sha256": "f9b35ca8e204723e6e8873064e0198556e3e29d9f1dab75d584642d7d73e7a3f",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2d4027d6df9c0256b8d4474ce88f8c88-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/2d4027d6df9c0256b8d4474ce88f8c88-Supplemental.pdf",
+      "version": "Complete publisher-linkedNeurIPS2021 nine-page scientificsupplement S1-S6/alltables/figures/fourreferences",
+      "local_path": "research/full-text-review/brick-by-brick/supplement.pdf",
+      "sha256": "105bf11ee7f0449c75ed9fecb120ae1086f0762499b51e0b763e7a002577376e",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all introduction/table1/problem definition, pivot+offset92 action factorization, 2x4brick assumptions and nooverlap/discreteattachment constraints. Image-conditioned 3Dconstruction with volumetric reward; learned validity alone notcertifiedfeasibility. Needexactgamma/reward/searchlimitations allsupplement."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read full graph state/transition/step reward gated deltaIoU, separate pivot/offset GNNs and pretrained validity predictor, PPO/value head and 3seedplots. Ground-truth target volume used for training reward despite image-only policyinput; learned validity falsepositives terminateepisode, notguaranteedfeasibility. GatedIoU not automaticallytelescopingfinalIoU."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all scenarios/splits/baselines and qualitative limitations. Class-specific MNIST models,800/200 randomlyassembled,ModelNetselected3classes. BOgetsoracle3Dtargetatbothtrain/test, B3 imageinput buttrainingrewardtargetvolume;BOslightlybetterrandomtask;GNN~MLPthere. Validity200ktrain1-20 vs30ktest1-30,notperfect. 3seedaverage. Ambiguous3views cannotidentifyhiddenleg geometry."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read full relatedwork/conclusion/acknowledgments and all44bibliographyentries. No methodoptimality/convergence theorem, proposed task/empirics. Distinguish general graphgeneration citations from existing catalogue IDs. Need9page separate science supplement fullyread."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all S1/S2/S3start, groundtruthvaliditytime>20s100bricks/10runs±1.96stdnotSE, exact .5threshold precisionrecall, targetoraclebrickbudget and offset6/16/32 across3scenarios, gamma.5MNIST/table hyperparams, BO5init10acquisitionstepsperconstructionstep, supervisedbaselineonlyrandom task."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all architecture/other hyperparameters and curves1-9/ModelNetmonitor/table/featureablation/authorlimitations+impacts. Explicit Nmax45/70 paddedfixedpivothead despitevaryingcurrentactions, dimensions64/192 gamma.75otherbenchmarks. All independent class models and3seedsnotshared-taskgeneralist. Ambiguous3viewinverseproblem acknowledged."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all architecturetableCNN/MLPheads/feature dims, completequalitativeMNISTgrid and all4supplementrefs. PointerNetworks explicit suggestedalternative not implemented. Scientificsources13+9pagesallcovered;no theoreticalglobal solverguarantee."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Partialimageconditioned combinatorialconnectednonoverlapconstruction needslongsequenceand validity handling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/task"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Pivotoffsetgraphactorcritic/targetCNN/transferablepretrainedvalidityfilter/new3scenarioevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Complete method and experiments"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive separateMNISTclass/scenariomodels;validitymodule reuse notsharednativecheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Figure4explicitclassseparatetrainandbenchmarks"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "2x4axisbricks/GNNfactorizedactions/PPO/gateddeltaIoUusestrainingvolume and targetbudget;predictedinvalidsurvivals terminate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "State/action/transition/reward/PPO"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "3seedreturncurves/oracleBOvsimagepolicy/randomtaskBOnotbeaten/200kvs30kvaliditydata/testoffsetPR.9125/.9661/nonunique3views.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Mainfigures/results;fullsupplementempirics also read"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Finitepaddedhead45/70,subsets6/16/32;3viewambiguity/errorfulvalidity;currentMNISTreleasedrewardnotprintedgateddeltaIoU,localoriginalfunctiononly.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Supplementcompleteconditions/limitations and boundedcodecheck"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "13+9pagescomplete/15visualallfigures/tables/official85filesnocheckpointsordatasets/API403;onePointerbibedge/noNNrerun.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Separate fullscientificsupplementallsections/refsandpublisher/codeinspection"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,publication,date",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "FormalNeurIPS2021vol34pp5745-5757sevenauthors/equalfirstChungKim/PDF1POSTECH,Guelph,Vector,POSCO. Exactpublisherdateonlyyear2021verified;unsupportedDecember6removed."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "Manualpublisherlinks Paper/Reviews/Supplemental9p registeredscientificPDF andcompletelyreadS1-S6/tablesS1-S6/figS1-S7/full4refs. APIv1/v2c1p817YZAx6403cached. Repo85filesnoPDFZIP,nostatedadditionalscientificattachment."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "Main13pSHAf9b35ca8e204723e6e8873064e0198556e3e29d9f1dab75d584642d7d73e7a3f+supp9pSHA105bf11ee7f0449c75ed9fecb120ae1086f0762499b51e0b763e7a002577376e. All22p read/full44+4refs. Renderedandviewedmain2/4/5/6/7/8/9,supp1/2/3/4/5/6/7/8=15pages/allfigstablescentralmath."
+    },
+    {
+      "field": "scope,reward,statistics",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "MainFigure4class-specificweights;separaterepresentations/actionoffset6/16/32,Nmax45/70Supp4. Pretrainedvalidityreusenotneuralnativeproblemsharing=>specialist. Rewardgroundtruthvolume/budgetknown;discount.5/.75+gate notterminalIoUtelescopingguarantee. 3seedsconstruction;GTvaliditytiming10repeats±1.96stdnotSE. TableS2pretrainedoffset.9125/.9661notperfectnoruniformbestrecall."
+    },
+    {
+      "field": "code_url,release,current-reward-check",
+      "source_url": "https://github.com/POSTECH-CVLab/Brick-by-Brick",
+      "locator": "OfficialREADME underconstruction;commitb000f98f04c17d6f59bb4f0144b997583c479e2a85files/no benchmarkdatasets/modelcheckpoints/PDFZIP. FullREADME/deps/shell;envNoMask1-75,135-178,293-320,354-401;maskmodel121-162/selectedmodelmask/graph/loss/checkpointsections. MNISTscriptnsteps32/ent.02vsformal512/.01. Environmentcalculate_rewardoriginalASTexecutedrecompute_current_reward.py/json:16targetinitial8correctadd8correct=>release1.0vsprinted.5;sourceSHAb74dbdafd05f91de48a6da4c6a1646428a8e0c5db47d803fefd116637176686a. NoNNrerun/not historicalcurveinvalidation;disjointsplitindicesdonotinferleakagefromtrainfoldername. No completeModelNetpipelineidentified."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/brick-by-brick/publisher.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/2d4027d6df9c0256b8d4474ce88f8c88-Abstract.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2021-12-06; primary cachedHTML research/full-text-review/brick-by-brick/publisher.html; citation_title=['Brick-by-Brick: Combinatorial Construction with Deep Reinforcement Learning']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "brick-by-brick",
+      "cited": "pointer-networks",
+      "reference_label": "[4] Vinyals et al. (2015)",
+      "description": "Explicitly suggested as an alternative pivot head if mask information is unavailable; not the implemented method.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            9
+          ],
+          "locator": "SupplementS3.4bodyPointerNetworks[4]p4;fullreferencep9."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedfull13+9scientificpages/allfigures/tables/bothbibliographies and oneexplicitcataloguereference.",
+    "Bounded class-specificconstruction/finitehead/actions/rewardoracle/validity errorsandempiricalcounterexamples.",
+    "Verified officialcodewithcurrentreward/configurationdifferences;removedunsupporteddateprecision.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "5c347f9b8165a5b117f46e463483b1f4892eeca7d8031afde1f76e6edfa7db98"
+}

@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "paper_id": "d2match",
+  "note_path": "specialist/d2match.md",
+  "baseline_note_sha256": "0ac18f3a4e11e022f440c816f8876b786147a4b867fa8496a1483b49eb5cc73c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/liu23ba/liu23ba.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/liu23ba/liu23ba.pdf",
+      "local_path": "research/import-272/nco-ce4a742fe0.pdf",
+      "sha256": "492764fa2c15a6cddba70873619e62798f64fbcb21255639fe9751aabf670c97",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Readallmotivation/formalinducedsubgraphdefinition andindicatorWLsubtrees, Hallcondition andTheorems4.1-4.2. Mainexplicitnecessaryonlycriterion, notpolynomialexactNPcompletealgorithm; printedSAQST=ATgenerallynotinducedmatchingconstraint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "ReadsampledHalltestsandaggregationTheorem4.3; finiteKnecessaryfilterdoesnotcertifyperfectmatching; chordlesscycleaugmentation/inducedconsistency andcomplexityfixedquery/augmentedgraphcost; allmetrics/tables/syntheticdensityprotocols. MainTable4mixesCO10scompletionwithclassifieraccuracy, MutagQSI.16sversusD2Match1.04negative."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 19,
+      "notes": "Readallremainingmain/reference/integratedA.1-A.10pages, everyproof/algorithm/softenedindicator/loss, allTables5-14/largegraphdatasetstatistics/cyclecost/runtime/60stimeoutcomparison. Necessaryonlysubtreefilter+sampledHallandtwofinalcounttestsdonotcertifyglobalinjectivemapping; learnedthresholdsweakenlogicalguarantee. Readcycle17.9vs10.3cost andlargeFirstmm60%classifieraccuracy."
+    }
+  ],
+  "claims": [
+    {
+      "id": "d2-contribution",
+      "category": "contribution",
+      "statement": "WLsubtreenecessaryfilter andsampledHallaggregation combinewithlearnedsubgraphdecisionandchordlesscycleaugmentation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3-4/Theorems4.1-4.4"
+        }
+      ]
+    },
+    {
+      "id": "d2-method",
+      "category": "method",
+      "statement": "Subgraphcontainmentimpliessubtreecontainmentonly; finiteHallsubsetchecksandfinaltwocounttestspluslearnedsigmoidsdo notcertifygloballyconsistentinjectivemapping.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Theorem4.1necessarydirection,completeproofs andpracticalCheckAssign"
+        }
+      ]
+    },
+    {
+      "id": "d2-results",
+      "category": "experiment",
+      "statement": "Accuracyisgraphpairclassification,notexactsolver10s/60scompletion; hardFirstmm86.4, separateenlargedFirstmm60%, negativespeedcasesandcyclecostretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            17,
+            18,
+            19
+          ],
+          "locator": "Tables1-14 andtimeoutcomparisons"
+        }
+      ]
+    },
+    {
+      "id": "d2-scope",
+      "category": "classification",
+      "statement": "Separatelytraineddatasetclassifiersforsameinducedsubgraphmatchingdecision; noactualcommonmodelacrossdifferentnativeoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            16,
+            18
+          ],
+          "locator": "Problemdefinition,traininganddatasetprotocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v202/liu23ba.html",
+      "locator": "Officialtitle/fiveauthors/ICML2023PMLR202:22454-22472; PDFp1TsinghuaShenzhen/IDEAconfirmed"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v202/gh-pages/_posts/2023-07-03-liu23ba.md",
+      "locator": "Explicitdateandissued date-parts2023-07-03"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/liu23ba.html",
+      "locator": "ManualRelatedMaterial/rawextrasempty;all19pagesincludesA.1-A.10read; normalORAPI/API2id=zodnrsrsO7both403; officialrecursivecodetreenoadditionalPDF/ZIPscientificattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/XuanzhouLiu/D2Match-ICML23",
+      "locator": "AppendixA.3directauthorlink; actualmodel/generator/dataset/cycle/config/maininspecteddespiteREADMEreleasesoon; duplicatecount anduncertifiednegativefallbackdocumented"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "d2match",
+      "cited": "interpretable-neural-subgraph-matching-for-graph-retrieval",
+      "reference_label": "Roy et al., 2022",
+      "description": "Related work describes Sinkhorn edge matching; exact four-author AAAI2022 ISONET title/pages/issue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Actual body citation Roy et al., 2022 on PDF pp[2]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Related work describes Sinkhorn edge matching; exact four-author AAAI2022 ISONET title/pages/issue."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall19publisherpagesincludingcompleteA.1-A.10proofs/tables/visuals/references andmanuallycheckednoidentifiedextraattachment.",
+    "Verifiedofficialissueddate/code andinspectedcurrentmodel/data-generation/cycle/entrypointdetails.",
+    "Replacedunqualifiedpolynomial/exact/lineartimeinterpretationswithnecessary-onlyfinite-samplingfixed-queryconditions; distinguishedclassificationaccuracyfromexactsolvercompletionandretainednegativecases/reproductionlimits.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ba51bf2088f90a766e10964341c607523c6a3f4207f2c23a5670b9b7d32d31b7"
+}

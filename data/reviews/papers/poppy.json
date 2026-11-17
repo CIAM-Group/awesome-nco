@@ -1,0 +1,722 @@
+{
+  "version": 1,
+  "paper_id": "poppy",
+  "note_path": "specialist/poppy.md",
+  "baseline_note_sha256": "8c1ff4383a4ef8fc7bc7e6c45820dee496a77c108fddd19772e531e3a1b8d451",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Paper-Conference.pdf",
+      "version": "NeurIPS2023 integrated25page main+A-G",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-019eb23b28.pdf",
+      "sha256": "66894b1e695833fbe736d7896c7a7310c2d43e92f0dca870f7bc3756616412da",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Supplemental-Conference.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Supplemental-Conference.zip",
+      "version": "PublisherZIP9page line-numbered earlierappendix A-E; separateLKH-reference tables, fullread",
+      "local_path": "research/full-text-review/poppy/publisher-appendix.pdf",
+      "sha256": "83cad698805842589261826dd4b1068db331ef7af355d41af47d918ddec4b1e2",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "poppy_neurips_23/Poppy_appendix.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Freshformal5authors includes Clementaccent andThomasDBarrett corrections; InstaDeepImperial correct, Poppyexplicitconstructive sharedencoder/lightdecoderpopulation; allrelatedworkMDAMdiversityKLvsbestobjective, fulltoyexample assumptions notgeneralguarantee, REINFORCEbaseline/probtrajectory."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh objective expectedmax and exactgradientwinnersecondbestbaseline, actualmainPOMObaseline distinct; no strictdiversityguarantee, stage1pretraincloneKphase2, sharedencoder/lightdecoders, TSP4.5M5days+400k1-4daysv3-8TPU. FullTables1/2 actualCVRP1.06vs1.31nottextfactor2; TSPAttGCN.037<.07 notallRLwins. JSSP/KP1600samples."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "FreshKP/JSSPtable3 allcosts/time/1600vs8000samples, KPstrictbetter34.3vsnonworse99.95 ambiguity; caps32futurecollapse; allrefsfirstthroughSilver including citedDIMES2023 erroneousyearpreservednotfutureinvent. SupplementalZIP exists toinspect."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Fresh restrefs/allappendixTOC, Alg2exactupdatesencoder+decoder andPstartingpoints eachwinner, parametercounts1.29M1vs2.77M16/4.35M32, offlinetaskbudgets5+4/7+5/1+3/1+3daysTPU, B1gradientproofthroughscorefunction/controlvariate completefirsthalf. CodeREADMEfreeze/randominit differs formal clone/updateexplicitnotmerge."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Fresh restBgradientproof eachagentbaselinezero, CmainPOMObaseline distincttheoremsecondbest and CVRPAppendixC usesLKHreference vs mainHGS; D200x8xN trajectoriesnoNNtuning, JSSP8000; Earchitecture6layers1288heads P50layernorm maskinversion, populationallcontributeno guarantee. Tables5-10allread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 25,
+      "notes": "Fresh E2CVRPdemand1..9normalizedD50/55/60 capacity1P100, KPcapacity25P100 directpopulationpretrainingexception; JSSPseparateactorcritic allNsimultaneousdistribution/horizon1250penalty2500; allF8plots referenceLKHnotHGS, GTSP1000 severe71.7%gap39min vsDIMES2.46%5h. All25integratedpagesread."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "FreshZIPline-numberedolder9pageappendix A/Bgradientfull Csampling Dproblems; sameclonesjointupdateAlg2, nointegratedbaselineimpact/G additions; CVRPtable6 usesLKHnotHGSnegativegapsnotoptimum. EmbeddedREADMEfullyread cloning/jointtrain matchesformal vs currentREADMEconflict."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 5,
+      "last_page": 9,
+      "notes": "Fresh allZIP9pages complete: D1populationgraphs/routeexamples, D2capacity,D3KPstageexception,D4JSSPactorcritic/horizon,Eall8pareto panels LKHreference; earlierline-numberedappendixnoCbaselineimpact/G1000 butnotmissingintegratedscience. All34registeredpages read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "population",
+      "category": "contribution",
+      "statement": "Expectedbestpopulation objective performance-induceddiversity notguaranteed.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Sections1/3"
+        }
+      ]
+    },
+    {
+      "id": "gradient",
+      "category": "method",
+      "statement": "Exactwinner/runnerupgradientproof butmainusesPOMObaseline andPstartsAlg2jointencoder/winnerdecoderupdate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            15,
+            16,
+            17
+          ],
+          "locator": "Theorem1 AppendixB/C Algorithm2"
+        }
+      ]
+    },
+    {
+      "id": "architectures",
+      "category": "method",
+      "statement": "Task-specificsharedencoders withinpopulation,6layer128routing/KP,separateJSSPactorcritic;KPpretrainexception.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "AppendixE"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TPUdays/params, matchedpopulationvsensemble, HGS/LKHreference distinction, AttGCNbetterquality, TSP1000largegap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15,
+            17,
+            18,
+            19,
+            24,
+            25
+          ],
+          "locator": "Tables1-11"
+        }
+      ]
+    },
+    {
+      "id": "versions",
+      "category": "reproducibility",
+      "statement": "ZIP earlier nine-page scientific appendix fullyread; LKH-reference values distinguished.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "ArchivedappendixA-E; codeREADME separatelymanuallychecked."
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive separate task models, samplebestcomplete notincumbentediting/weightadaptation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            18,
+            23
+          ],
+          "locator": "Sections3/4 AppendixD/E"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/97b983c974551153d20ddfabb62a5203-Abstract-Conference.html",
+      "locator": "Publisher/titlepage5authors2institutions; repairedClementaccent; actualPDFThomasDBarrettvsHTMLTom alias, publication2023yearprecision."
+    },
+    {
+      "field": "date, arxiv_url",
+      "source_url": "https://arxiv.org/abs/2210.03475",
+      "locator": "Manualhistoryv1Oct7,2022 oldPopulationBasedtitle ->v2Nov13,2023 formalWinnerTakesItAllsamearxivchain confirmed; actualreadpublisherPDF."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Supplemental-Conference.zip",
+      "locator": "Manualpublisherlink4ZIP fetched4,076,679bytes inventory56members, onePDF9pages fullyread/nootherPDFnestedZIP. ItsA-Epriorline-numbered tablesdifferentLKHreference; integrated25pageA-Gfullyread. ArchivedREADMEfullread."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/instadeepai/poppy",
+      "locator": "Officialexactformaltitle primaryREADMEfullread; currentrandominit/frozenencoderinstruction differsformal/archivedREADMEclonejointtrain. Distinctmethodsnotconflated."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/97b983c974551153d20ddfabb62a5203-Paper-Conference.pdf#page=6",
+      "locator": "OriginalFigure2 Rect(120,74,490,171)5x; visuallegendsharedencoderorange, winnersorange/frozenotherheads, allmain/appendixtables/proof/pareto checks."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/97b983c974551153d20ddfabb62a5203-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/poppy/supplement-landing.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/97b983c974551153d20ddfabb62a5203-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2023-12-15; primary cachedHTML research/full-text-review/poppy/supplement-landing.html; citation_title=['Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2210.03475",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2022-10-07; title on abstract page: Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/poppy/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "poppy",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2021arxiv",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "dimes",
+      "reference_label": "Qiu cited2023",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            24
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung2021",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2021",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-to-dispatch",
+      "reference_label": "Zhang2020",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu2020",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "HottungTierney2020ECAI",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "neurewriter",
+      "reference_label": "ChenTian2019",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "poppy",
+      "cited": "sym-nco",
+      "reference_label": "Kim2022",
+      "description": "Explicit author-year text/table citation and matching reference; actual cited year retained, including Qiu bibliography2023 label.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit author-year text/table citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "RepairedClementunicode and actualThomasDBarretttitlepageauthor; addedofficialcode and2022preprintfirstdate/versionchain.",
+    "Detailedexpectedmaxgradient/mainPOMObaseline distinction, jointsharedencodertraining, taskseparatecheckpoints andKPexception.",
+    "AddedTPU/offlineparameters/allcandidatebudgets, HGSvsLKH reference differences.",
+    "QualifiedAttGCNbetterTSPgap,CVRPnotfactor2,andTSP100071.7%transferfailure insteadbroadSOTA.",
+    "FullZIPscience9pages plus25integratedpages read, olderappendix/reference/codeworkflow differences documented.",
+    "OriginalFigure2 restored and21explicitinternalcitations rebuilt.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "30b0062f1f9d8b05104d96fa2aed6422f7f20ac1791de11b7673daf538dc6af5"
+}

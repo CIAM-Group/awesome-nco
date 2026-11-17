@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "paper_id": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+  "note_path": "studies/hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "1b9037ee66d280a9c49d98ca8625c6f93c361c145402c43f3258e6dee07dde93",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2302.02104v3",
+      "retrieval_url": "https://arxiv.org/pdf/2302.02104v3",
+      "version": "Identifiedarxiv2302.02104v3 Feb8 2024 complete12p inclall50refs/AppendA.1-A.5/B.1-B.2/C.1-C.4 actuallyread;formalKDD2023eligibilityindependent,notformalPDFbytecomparison.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-1b77a1111f/paper.pdf",
+      "sha256": "503e8f0f7801c39da7a6e001248f47b3c79906138e1c36b44cb87e934a21d686",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Actuallyread full9authorbyline/affiliations/abstract/intro/allrelatedwork/splitmergeanalysis andPCAclaim/communityVIGcoregraphconstruction. ExplicitgeneratornotSATsolver,existingcorepluscommunitycontrol; per-datasetmodels notuniversalcheckpoint."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Actuallyread completecontrolledsplitting/corepermutation/flipping/postprocessing/newvariableweakening/in-crosscommunitymerging,allEq1-7/probabilityMarkovassumption andtwoGNNtraining/BCE/GCN/SAGEdefinitions;visualFigures4-7checked."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Actuallyread alldatasets/size/runtime/statisticsprotocol/baselines/resultsTables1-5/structuralcontrol/solverrankingandhardness/fivetimesaugmentation/Glucose49configs/CaDiCaLHEBO1000slimit/conclusion/complete50references. Notuniformbeststructuralcells;140.7relativetuninggainnotruntime reduction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Actuallyread allAppendA.1-A.5/B.1-B.2/C.1-C.4including3layer32dim200epochs.001/100candidates/alphas/corepreparationandthresholdsolverpostprocess/GPUsettings/fulllearningcurves/graphvisuals/completeTables6-8. Table8lec6rankingmismatchvsTable3all100%;Glucoselec6both1200censorednotexactequalhardness. Allkeytables/formulasvisuallyrendered."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "IndustrialSATgeneratorsneedmatchstructureandhardness;oversplittingPCAisempiricalhypothesisnotuniversalproof.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/splitmergeanalysis"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Core/communitycontrolledtwostagemerginggeneratorwithclassicalthresholdpostprocessanddownstreamtuning.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Method/Experiments/AppendA"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Two3layer32dimGNNs200epochs.001,100candidates/perdatasettraining/core-retain-and-solveradjust.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            11
+          ],
+          "locator": "GCN/SAGE/BCE/setup/A1-A4"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "38.5structure/88.4runtimeerrorrelativeheadline;22.19/15.03classicalsolvertuninggain,notdirectSATsolverperformance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            12
+          ],
+          "locator": "Tables1-8"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Nonuniformstructuralcells/runtimethresholdcost/capped1200lec6/rankingTable8lec6mismatchvs100percentTable3.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            11,
+            12
+          ],
+          "locator": "Tables2-8/AppendA4"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Instancegeneratorandclassicalsolvertuningstudy,notsatisfyingassignment/searchneuralCOsolver;studybenchmarkgrouping.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            9
+          ],
+          "locator": "ExplicitRemark2.2/pipeline/tuning"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Readall12v3pages/full50refs/integratedAppendA-C,officialcodeversionboundariesnotrerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "locator": "Wholeidentifiedv3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2302.02104v3",
+      "locator": "v3p1 nineauthorsSJTU/HuaweiNoahsArk;YanSJTUCS/MoEKeyLabcorresponding. FormalCrossrefandprimaryauthorKDDentrysame9authoridentity."
+    },
+    {
+      "field": "date and arxiv version",
+      "source_url": "https://arxiv.org/abs/2302.02104",
+      "locator": "Savedprimaryhistoryv1Feb4 2023/v2Feb11 2023withdrawn/v3Feb8 2024restoredfull12pactualreadingcopy. FormalCrossrefonlineAug4 2023/printAug6,onlinechosenasexplicitfirstpublished;notclaimv2withdrawalformalwithdrawal."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://yangco-le.github.io/publications/",
+      "locator": "ManualexactprimaryauthorentryformalHTML/PDF/codeonly;formalHTML/PDF403logged. Fullidentifiedv3includesallnamedAppendA-C12p andallscientificmaterialread. Officialrepo87members67filesnoscientificPDF/TeX/video/archive. Mirrorvalid12pbyteidenticalSHA503e8f0f7801c39da7a6e001248f47b3c79906138e1c36b44cb87e934a21d686,notdoublecounted. Noexplicitmissingindependentscientificsupp."
+    },
+    {
+      "field": "scope",
+      "source_url": "https://arxiv.org/pdf/2302.02104v3#page=3",
+      "locator": "Remark2.2explicitindustrialinstancegeneration+classicalsolvertuningprotocol,notneuralassignmentprediction orsearch;separatemodelforeachdatasetp7. Cataloguestudy/benchmarkindicatesgenerationrole."
+    },
+    {
+      "field": "code availability",
+      "source_url": "https://github.com/Thinklab-SJTU/HardSATGEN/tree/fd029777b1cba60a557f9de3754ab0f085a58ed4",
+      "locator": "PinnedJune16 2023completeinventory87/67,8CNFs/nocheckpoints/privateLECnotpresent. FullREADME;remove_core.sh1-63;invokedattach_new_lit330-361andentry392-394checked. Firstcall--add_varthenreuseaux,thresholdcallsclassicalCaDiCaL/DRAT;README12gridvsarticle49. Noexecution/rerun."
+    },
+    {
+      "field": "visual/result crosscheck",
+      "source_url": "https://arxiv.org/pdf/2302.02104v3#page=12",
+      "locator": "Actuallyviewedrender4/5/6/8/9/11/12;cleanFig6crop50,84,560,181viewed. Table8lec6printedHardS2S1S3vsGTS1S2S3contradictsTable3all100%,notchoosebackboneonbehalfauthors. Table7lec6cap1200notexactequalhardness. Table2nonuniformbestcells/140.7relativegainlimitsretained."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "cited": "linsatnet",
+      "reference_label": "[45] Wang et al. (2023)",
+      "description": "Cites learning-based combinatorial optimization context.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Bodyp3learningCO[20,23,45];fullLinSATNetICML2023title/authorsbib[45]p10."
+        }
+      ]
+    },
+    {
+      "citing": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "cited": "circuit-sat-neural",
+      "reference_label": "[1] Amizadeh et al. (2018)",
+      "description": "Positions neural Circuit-SAT solving as distinct from the industrial instance-generation task.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Bodyp1endtoend[1,41,44]andp3;fullLearningToSolveCircuitSATICLRbib[1]p10."
+        }
+      ]
+    },
+    {
+      "citing": "hardsatgen-understanding-the-difficulty-of-hard-sat-formula-generation-and-a-strong-st",
+      "cited": "neurosat",
+      "reference_label": "[44] Selsam et al. (2019)",
+      "description": "Discusses end-to-end neural SAT solvers as a related but separate task.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Bodyp1andp3[1,41,44];fullLearningSATfromSingleBitSupervisionICLR2019bib[44]p10."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall12identifiedv3pages/full50refs/integratedA-C andkeyscientificvisuals.",
+    "Migratedspecialisttostudybenchmarkasneuralinstancegeneratormethod,notneuralSATsolver;keptclassicalcore/threshold/tuningcostandnegative/resultsinconsistencies.",
+    "Verified9authors/formalonlinevsprint/arxivv1/v2withdraw-v3restoredhistory,officialpinnedcode/versionlimits and3literalactiveedges."
+  ],
+  "reviewed_note_sha256": "3689e8baff32a3eb66e3fa547af4fa1ee0973e465f9ec3d9429393a8e9b902fd"
+}

@@ -1,0 +1,385 @@
+{
+  "version": 1,
+  "paper_id": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+  "note_path": "specialist/appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "ff409618edd06c989415b72f225da872797bb092ac3f757b70360ba8f1f431d5",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Appearance_and_Structure_Aware_Robust_Deep_Visual_Graph_Matching_Attack_CVPR_2022_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Appearance_and_Structure_Aware_Robust_Deep_Visual_Graph_Matching_Attack_CVPR_2022_paper.pdf",
+      "version": "OfficialCVF10pagefinalCVPR2022copy15263–15272fourSJTUauthors/full59refsread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-7382dcd569/publisher.pdf",
+      "sha256": "8dbd892fc570847537224a1e0886c52eac40a62469be936f23360cf76811341e",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Ren_Appearance_and_Structure_CVPR_2022_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Ren_Appearance_and_Structure_CVPR_2022_supplemental.pdf",
+      "version": "OfficialCVF3pageanonymousreviewwatermarkedattachmentexacttitleA–G/5referencesallread.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-7382dcd569/supplement.pdf",
+      "sha256": "b0e35cacf35181d31674d9d1e54ae786857ee774b76fcd74bbca3359c1be5b75",
+      "pages": 3,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readallmainpp1?3:4SJT UauthorsofficialRobustMatch;visualGMattackpixelandcoordinateDelaunaylocality;AAR/ATdefenseonNGMv2;QAPbinarybijectionanddoublystochasticrelaxationdefined,notoptimalityguarantee;white/blackboxthreatmodels."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Readmainpp4?5allAlg1/AAR Eqs4?8:PGDpixel8/255locality8within256imageandDelaunayreconstruction;appearance-similargroupmisclassificationpositiveGT/negativeconfusableentriesofR,correctrowszero,AAR?sumR*S;trainingregularizernotneuralincumbentsearch."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 8,
+      "notes": "Readallmainpp6?8includingAlg2,HungarianandDFSgroupsGTlabeltrained,BCE+AAR?1.5burnin5. Pascal7020/1682;NGMclean80.4PGD50combo21.46;configs81.15/79.74/72.56clean53.79/62.11/69.60strongattacktradeoff;blackboxBBGM44.27vs64.66white. Willowtransfer90.37vs83.22butfullytrained98.20. Table4overalldoesnotmatchdisplayed7columnarithmetic,do notreuse71.92summary. Adaptive69.1vs69.6empiricalnotcert."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readall59referencespp9?10:DGMC/QCDGM/IDRGM/BBGM/PCA/LCS/CIE/DLGM/GMN/deepgraphical/IA-GMexplicit. IPCAjournal43/NGMjournal44differenttitleextensionsnotconferencealiases. IDRGMactiveboundaryreferencevalididentity."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "All3scienceappendixpagesreadincludingreviewwatermark:PGD20/50/CW/MI-FGSMempiricalevaluation,PCAcleandropsAAR60.85vs64.78whilelocality66.17;randomboth80.43vsbaseline80.4notallrandomhurts;node/edgevulnerability,oneextrabackwardconfigs1/2notmeasureduniversalruntime;10additionalqualitativepairsandall5refs,step2/255and2."
+    }
+  ],
+  "claims": [
+    {
+      "id": "asar-contribution",
+      "category": "contribution",
+      "statement": "VSattackandAARadversarialtrainingforneuralvisualmatching.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1–5/Algorithms1–2"
+        }
+      ]
+    },
+    {
+      "id": "asar-method",
+      "category": "method",
+      "statement": "Boundedpixel/keypointPGDwithDelaunayrebuild;GTHungarianconfusiongroupsandBCE+1.5AARtraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs3–10/Figure4"
+        }
+      ]
+    },
+    {
+      "id": "asar-results",
+      "category": "experiment",
+      "statement": "Configs81.15/79.74/72.56clean53.79/62.11/69.60PGD50combo;tradeoffs/blackboxandWillowtransferretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables2–5"
+        }
+      ]
+    },
+    {
+      "id": "asar-limits",
+      "category": "limitation",
+      "statement": "Finiteempiricalattacktestsnotcertifiedworstcaserobustness;Table4overallmismatchandcrossarchitecturecleanregression.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables2/4/adaptivetest;formalTable4config1displayedmean69.64vs71.92"
+        }
+      ]
+    },
+    {
+      "id": "asar-class",
+      "category": "classification",
+      "statement": "Specialistconstructiveneuralmatchingdefense;PGDtrainingnotNNcompleteincumbentediting.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6
+          ],
+          "locator": "Pipeline/Figure2/Figure4Hungarian"
+        }
+      ]
+    },
+    {
+      "id": "asar-repro",
+      "category": "reproducibility",
+      "statement": "All13scientificpagesandbibliographiesread;official120memberarchive/README/necessarydecoderpathchecked.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "FullAppendixA–G"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52688.2022.01483",
+      "locator": "CachedCrossrefexacttitle/fourauthorspublished2022-06monthonly;CVF10p15263–15272mainbylineSJTU."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/supplemental/Ren_Appearance_and_Structure_CVPR_2022_supplemental.pdf",
+      "locator": "OfficialCVF3pageexplicitattachmentexacttitleanonymousreviewwatermark;allscience/5refsread.120memberofficialarchivecommit27f9f47b7d96d760b5a2c37cb6a60eb269b2d69fnoPDF/ZIP/ipynb;completeREADMEread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Appearance_and_Structure_Aware_Robust_Deep_Visual_Graph_Matching_Attack_CVPR_2022_paper.pdf",
+      "locator": "OriginalFig2completecaptionformalPDFp4/15266Rect40,30,572,225at3xpublicassetexistsandactualview;main3–8supp1–2allkeymath/tables/qualitativepanelsrendered."
+    },
+    {
+      "field": "code/classification",
+      "source_url": "https://github.com/Thinklab-SJTU/RobustMatch",
+      "locator": "Officialmodels/NGM/model_v2.py191–198SinkhornandHungarian,src/loss_func.py439ffHungarianforAAR;READMEthreeconfigs/blackbox/pretrainedlinks.Noexperimentrerun."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Appearance_and_Structure_Aware_Robust_Deep_Visual_Graph_Matching_Attack_CVPR_2022_paper.pdf",
+      "locator": "All59main+5suppreferenceentriesread;12actualstablecatalogueidentities;distinctTPAMI[43/44]notmergedtodifferentconferencepapers."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "[16]",
+      "description": "Actualbibliographyidentity[16]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [16]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "[17]",
+      "description": "Actualbibliographyidentity[17]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "MainReferences [17]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "idr-gm",
+      "reference_label": "[33]",
+      "description": "Actualbibliographyidentity[33]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [33]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "[34]",
+      "description": "Actualbibliographyidentity[34]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [34]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "[42]",
+      "description": "Actualbibliographyidentity[42]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [42]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "[45]",
+      "description": "Actualbibliographyidentity[45]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [45]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "cie-h",
+      "reference_label": "[48]",
+      "description": "Actualbibliographyidentity[48]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [48]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-latent-graph-matching",
+      "reference_label": "[49]",
+      "description": "Actualbibliographyidentity[49]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [49]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "[51]",
+      "description": "Actualbibliographyidentity[51]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [51]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "deep-graphical-feature-learning-for-the-feature-matching-problem",
+      "reference_label": "[55]",
+      "description": "Actualbibliographyidentity[55]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [55]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "adversarial-graph-matching",
+      "reference_label": "[56]",
+      "description": "Actualbibliographyidentity[56]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [56]"
+        }
+      ]
+    },
+    {
+      "citing": "appearance-and-structure-aware-robust-deep-visual-graph-matching-attack-defense-and-be",
+      "cited": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "reference_label": "[57]",
+      "description": "Actualbibliographyidentity[57]fulltitle/bylineverified;differentjournalextensionnotmerged.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "MainReferences [57]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingdraftafterall13sciencepagesread.",
+    "Retainedcleanrobustnessandcrossarchitecturenegatives;empiricalnotcertifiedguarantees.",
+    "RecordedTable4overall/individualcellinconsistencieswithoutinvalidatingallresults.",
+    "Excludedseparatelytitledjournalextensionsfromconferencecitationtargets.",
+    "Final whole-catalogue internal-link audit corrected migrated target paths: adversarial-graph-matching.md -> ../studies/adversarial-graph-matching.md"
+  ],
+  "reviewed_note_sha256": "d38002416826cae25ef36d6e0fdf50556c918c4b16c8466f12a55b3e4ea12b94"
+}

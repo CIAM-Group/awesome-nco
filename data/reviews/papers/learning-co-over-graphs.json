@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "paper_id": "learning-co-over-graphs",
+  "note_path": "specialist/learning-co-over-graphs.md",
+  "baseline_note_sha256": "74232dc1ce8f8b4411e9a2ff44f4cad6c50673ee7575e4f2485ae80d8209cd9e",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/learning-co-over-graphs/paper.pdf",
+      "sha256": "f8f37b959287bc1196cca8756a79e16128988e0b40e270ad5084e37bed2d3968",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://papers.nips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Supplemental.zip",
+      "retrieval_url": "https://papers.nips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Supplemental.zip",
+      "version": "publisher supplementary archive PDF member: nips_2017-appendix.pdf",
+      "local_path": "research/full-text-review/learning-co-over-graphs/supplement.pdf",
+      "sha256": "d1f96e56e76be81bd758bab15bd77e6003537bfd6fee89f7a135f04c4c605737",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true,
+      "archive_member": "nips_2017-appendix.pdf"
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart reading: related work; omitted SCP task; MemeTracker MVC and SCP construction; physics maxcut rows; TSPLIB active search protocol and all38 instance rows."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read all synthetic generation and ratio reference cutoffs, complete TablesD1-D6 generalization matrices, plotting descriptions and reward/discount setup; SCP referenceLP comparison included."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh read SCP generalization matrices including non-monotonic extrapolation, problem-specific embedding depths and n-step settings, signed TSP reward explanation and convergence/time-comparison definitions."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read time-quality CPLEX comparison design and full TablesD10-D11, numbers of feasible matches, censored additional times and visualization conditions."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Read all solution-visualization interpretation and PN-AC reimplementation detail: SVD rank8 for graph inputs, moving-average baseline, insertion also applied to PN-AC, variable-size evaluation versus original fixed-size results; all remaining figures captions read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh publisher main reading: authors/equal contribution, industrial repeated-instance motivation, exact learning task, manually supplied problem distribution/helper/termination/objective and generic greedy skeleton for three main tasks."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read complete S2V and Q equations, graph/node pooling, synchronous message passing, exact TSP cheapest insertion helper, n-step fitted Q replay algorithm and problem-specific RL table; later supplement qualifies reward and depth choices."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh main results read: size/distribution generation, KNN10 TSP embedding, rank8 SVD PN-AC variant,100validation/1000tests, one-hour possibly nonoptimal references, complete Tables2-3, GPU/CPU timing limitation, synthetic greedy inference and supplementary active-search exception."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read all38 bibliography entries; only Bello[6] and Pointer Networks[37] match existing paper identities, explicit discussion found in mainp2 and PN-AC protocols. Rejected different QBF2007 and Zhang/Dietterich2000 titles versus repository newer/different papers."
+    }
+  ],
+  "claims": [
+    {
+      "id": "skeleton",
+      "category": "contribution",
+      "statement": "Learns greedy node evaluation using graph embedding and fitted Q-learning, with problem distribution/helper/cost/stopping supplied.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "insertion",
+      "category": "method",
+      "statement": "TSP uses cheapest-position insertion; Q-head combines pooled graph embedding and candidate node embedding.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Sections2-3, equations3-4"
+        }
+      ]
+    },
+    {
+      "id": "hyperparameters",
+      "category": "method",
+      "statement": "Task-specific message-passing depths5/3/4/5 and n-step5/1/1/2; TSP reward/discount differ from simple conceptual reward.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "D.5 and TableD.9"
+        }
+      ]
+    },
+    {
+      "id": "four-tasks",
+      "category": "experiment",
+      "statement": "SCP is a fourth evaluated task with bipartite representation and realistic LP-based counterexample.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            3,
+            4
+          ],
+          "locator": "AppendicesB,C.4"
+        }
+      ]
+    },
+    {
+      "id": "synthetic",
+      "category": "experiment",
+      "statement": "100validation/1000test instances, one-hour possibly nonoptimal references and task-specific size ranges; BA/cluster transfer ratios1.0062,1.0038,1.1065.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section5 and Table2"
+        }
+      ]
+    },
+    {
+      "id": "scp-transfer",
+      "category": "limitation",
+      "statement": "Size transfer is distribution-sensitive; SCP0.1 train100-200/test1000-1200 ratio2.5055.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5,
+            7
+          ],
+          "locator": "TablesD.1-D.8"
+        }
+      ]
+    },
+    {
+      "id": "active-search",
+      "category": "experiment",
+      "statement": "TSPLIB38instances51-318 uses per-instance active search with no upfront training, distinct from synthetic frozen greedy inference.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "C.3 and TableC.2"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            9
+          ],
+          "locator": "Section5 and Table3"
+        }
+      ]
+    },
+    {
+      "id": "reference-metric",
+      "category": "limitation",
+      "statement": "Printed symmetric ratio definition conflicts with below1 discussion and TableD.4; references may be nonoptimal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Sections5.1-5.3"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "TableD.4"
+        }
+      ]
+    },
+    {
+      "id": "pnac",
+      "category": "reproducibility",
+      "statement": "PN-AC reimplementation has rank8SVD inputs, moving-average baseline and insertion helper with variable-size settings.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "D.11"
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "category": "reproducibility",
+      "statement": "Author code explicitly linked by paper footnote4; GPU timing differs from CPU baselines.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Section5 footnote4 and hardware caveat"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive framework: task-specific learned Q-functions inside problem-specific helpers, no jointly shared multi-problem checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            7
+          ],
+          "locator": "Problem definitions, task table and training setup"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "D.4-D.6 task-specific configuration"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations, venue",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Paper.pdf",
+      "locator": "Publisher mainPDF p1; PDF order differs from landing; first2equal contribution."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html",
+      "locator": "Official NIPS2017 proceedings entry; no paper-specific acceptance date established."
+    },
+    {
+      "field": "first arXiv date",
+      "source_url": "https://arxiv.org/abs/1704.01665",
+      "locator": "v1 5Apr2017; reading copy is official2017 main+supp, not implicitly arxivv4."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://papers.nips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Supplemental.zip",
+      "locator": "Downloaded officialZIP and inspected all members: sole scientific PDF nips_2017-appendix.pdf,13pages, fully read. No other members."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2017/file/d9896106ca98d3d05b8cbdf4fd8b13a1-Paper.pdf#page=2",
+      "locator": "Complete Figure1 fresh crop at PDFpoints[108,70,500,214],4x; previousasset cut bottom labels. Visually crosschecked against full page."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/Hanjun-Dai/graph_comb_opt",
+      "locator": "Mainp7footnote4 and authorrepositoryREADME; build/train/eval and experimentaldata described."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1704.01665",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2017-04-05; title on abstract page: Learning Combinatorial Optimization Algorithms over Graphs. This date is preprint history, not formal publication. Cached research/full-text-review/learning-co-over-graphs/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "learning-co-over-graphs",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[6] Bello et al. (2016)",
+      "description": "Discusses and reimplements the pointer-network actor-critic approach; also uses its active-search idea for TSPLIB.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            7,
+            10
+          ],
+          "locator": "Main discussion, PN-AC baseline and bibliography[6]"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "TSPLIB active search and PN-AC reimplementation"
+        }
+      ]
+    },
+    {
+      "citing": "learning-co-over-graphs",
+      "cited": "pointer-networks",
+      "reference_label": "[37] Vinyals et al. (2015)",
+      "description": "Cites pointer networks as an earlier sequence-based neural combinatorial optimization architecture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Section1 discussion and bibliography[37]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh round reread all11main+13supplement pages; inspected sole-member publisherZIP.",
+    "Added omittedSCP metadata and its LP-based counterexample; distinguished task-specific policies from generalist training.",
+    "Specified cheapest insertion, task-specific embedding/reward settings, PN-AC implementation and exact experimental budget.",
+    "Separated TSPLIB active search from frozen greedy synthetic inference; qualified selectedinstances and one-hour reference gaps.",
+    "Disclosed ratio-definition and PDF-versus-landing author-order discrepancies; removed unsupported acceptance day.",
+    "Replaced bottom-clipped framework crop with complete original Figure1 and checked source/page provenance.",
+    "Recorded only2identity-matched explicit citations; rejected differentQBF/scheduling references."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "59509f1a9cfe72f37d286ce80f0c5c5bc2d9b0e0eadd722ec1a85e7300411658"
+}

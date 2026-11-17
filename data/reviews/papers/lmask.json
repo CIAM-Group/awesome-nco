@@ -1,0 +1,740 @@
+{
+  "version": 1,
+  "paper_id": "lmask",
+  "note_path": "specialist/lmask.md",
+  "baseline_note_sha256": "219da2970977eae5d264868210e2c70440786a713501e593ad0a8cb845908be4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ade039c1db0391106a3375bd2feb310a-Paper-Conference.pdf",
+      "version": "Actual official ICLR2026 final31page PDF; freshlyreadmainrefs/completeAppendicesA-H, allproofs/results/figures.",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ade039c1db0391106a3375bd2feb310a-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-c1694d4fb5.pdf",
+      "sha256": "89a85a9e356db4cce7faead8fb20f1e758cbc8e19725c1e477dde748dbd9558d",
+      "pages": 31,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshformal31page first2read all4authorsaffilsPKU/CAS/UPenn, normalizeWu capitalization. Lazybacktrackingconstructivemaskingnotincumbentedit; modelsTSPTW/DLactualspecific. Fullhistoryembeddingbudgetpenaltyclaimtheoryneedsassumptionfullproofauditlater. Priorcanonicalcitationsreadbodyall refs later."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadunifiedCfeasibleroutes/Gibbslowtemplimitfinitefeasiblepositivegap assumptions; KL formulaextractiongarbledneedvisual p3-4. Potentialsetexactnextnodehasfeasiblecompletion; lazyoverestimateinitializedlookahead,emptybacktrackremovebadprefix. Budgetexhaustrelaxallunvisitedpermitsinfeasiblecompletepath. Formaloptimallimitnotfinitelearnedpolicyguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "CompleteAlgorithm1: backtrackwhile r<=R includesoneextra beyondbudgetliteral; emptysetremoveactualfailedaction, lookaheadSSL/TSLneverexcludevalidcompletion required. RIEcappedlocalcountonehot+globalbudgetbit—notfullhistory. Training l1violationpenalty+entropy, smallbudgetnotalwaysfeasible. Prop4.1 feasibleinstance+INFINITEbudget guarantee/nonzeroallfeasible, nofinitebudgetclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FullAssump4.2KLexpressivityc/lambda globaloptimalparameter; Theorem4.3 bound term sqrt(c/(2lambda)) worsenssmalllambda so noarbitraryfinite-policyoptimalityconvergence. AllTables1-2rowsread:8D4greedy8solutions notPOMO100start;100hardTWours0Inst/0Sol .21gap18s vsPIP16.68Inst .37gap28s;100hardDL.26Inst/.80Sol4.34gap15svsPIP21.65Inst12.87gap20s. Gapsaveragedintersectionfeasible, objdifferentownfeasiblesubset. CPUclassicvsGPUneural, heuristicrefsnotopt."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullTable3realDumasbenchmark20/40/60/80 actualsubsetcountsappendixlater;0infeas4groupsgap.7/1/4.3/3.5,baselinefailures. Figures2-4alltextreadneedvisual: RIE2.31->1.68gap/.14->.05Sol;entropyλ0/.005/.01/.05 gaps3.67/3.33/3.11/7.38 nonmonotonic. Backtrackbudgetlinear measuredparticularsetupnotworstcase polynomial guarantee. MainconclusionoptimalitywordinglimitedbyAssump/infinitebudget."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Fullbibliographyreadall3pages: BelloactualICML2017workshop, AMprints2018, BQGeneralizableoldtitlepreservedformalEfficientidentitysamework; CaDA2024preprint2412.00346. Peng2020ISICAconferenceDynamicAttention notautomaticmaptojournalDynamicAM—checktitlesactual. VSR-LKH2023KBSmaybeoutsidecatalog. RL4CO/RouteFinderworkshopactualcitationversiondoNOTclaimfutureformal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "A/Bfullformulationsread:TSPTWwaiting+servicecumulative deadlines;TSPDLPICKUPcumulativeloadAFTERportvisit notdeliveryremainingload. Penaltysumlateness/excessdraft notjustcount. EntropyregularizedPGadvPsi-b+λlogpθ reliescorrectsampledistribution/loglikelihood;backtrackinginducedpathdistributionchecknext. CVRPalwaysdepot feasibilityconditionalindividualdemand<=capacitynotuniversal."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "FullAlgorithm2/Bsharedmeanbaseline/Cattentionencoderdecoder:6layer?notyetconfig, staticcoordsTWorqD, dynamiccurrenttime/load, RIEsmalllocalcount+budgetstatusnotexactfulltrace. Explicitmaskedcrossattn+outputcontinued. Policygradimplementationmaynotincludefailedbranchlikelihood, mustavoidclaimexactunbiasedgradientunderbacktrackwithoutcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "FullproofD1/D2readthrough14:feasibleinfinitebudget/SsubsetShat andexactlast-stepchecks,softmaxpositivevalidedges; supportallfeasible viafirstsuccessfulpathnotnecessarilyexactterminalpθafterhistory. D2Pinsker+Markov+xe^-x/λ monotonicforx>=λ, requiresdelta>0andoptimalparameterassumption, boundnottrainingconvergence. PRINTED decoder Softmax(C*tanh(z+M))wouldleakmaskedprobabilitysince-tanh∞finite;inspectactualreleaseandvisualformula beforeassert."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "CompletedD2+datageneration:hardTWplantedrandomfeasibletourcoords0..50w100normalization, easy/mediumcoords0..100expected55(n+1)width.5-.75/.1-.2 noformalexplicitplantedfeasibleguarantee. DLunitdemands,75/90%restrictingportsregenerateviasortdraftfeasible PropositionE1conditiononlyactualunitdemandsetting (notgeneralqsortingguarantee). CPU32coresPyVRP20/50sinstance,LKH10000trials1run;neuralA800batch2500,8D4. Random64samplesdifferentbudget. SSLchecksANYremainingnodeviolation→empty;TSLtentativeeachcandidate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "FullTables4-5readbudgetsTW50/100easy100/150medium100/200hard200/300;DL150all. 128emb8heads6encoderFF512RIE7dim,50/100samplesfree-start(trainmulti-sample notforceddifferentstarts),b512/64,256k/100kinstancesperepoch,1000epochmax=256m/100m nominalpermodel,AdamW3e-4/1e-4rho1. Table5omitsentropyλ/trainbacktrackexactconfigcheck. Full16heatmapcombosreadRIEdisabled,trainBTnotuniversallybest/samplingbadNoBTSSL100infeas. E4honestfailuredependspolicyalignmentandlateerrorcorrectiondepth/branchcount."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "FullE4two19customerDLexamplesallheatmaplabels/captionsread:latebadstep14correctwith100 vs earlybadstep9stillfails10konly11kfeasible. SmallerShat-Sdoesnotguaranteecheapersearch; explicitadverseexampleagainstuniversalruntimeclaim. Needvisualheatmapsp24/25."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 27,
+      "notes": "FullE5-8Tables6-9read:rho.5unstable7.1Solgap3.97vsrho1.19Sol2.52;scheduled.5*1.01^tmax2 gap2.48Inst0notexactallSol. TWwidth20/60/200transferfixedtrained50w100 zero8candidateInst/Sol butgap2.99w200. TW500128instancesbudget600avg16secondsINSTANCE notwhole,0/.53gapvsPyVRP4mCPU32cores,LKH13m2.33Inst nooptimalcert. Exact500checkpointtrainingprovenancenotstatedheredoNOTclaim100→500zeroshot. ReLDbackbonebettergapall10butTW100easySol.01→.02slightlyworse andtimehigher;notuniversalfeasibilitywin."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 28,
+      "last_page": 29,
+      "notes": "FullTables10/11allrowsread24/80/240samplingvs8greedy: notall samplingimprovesgap e.geasyTW100S3 3.31>3.11 mediumTW50S3 2.13>1.73; Table10mediumgreedy1.73/.06vsMain1.68/.04 mismatchnote. More samples notmathematicallycauseshigherproportionfailure, stochasticpolicyvsgreedydistributionchange. Stability10INFERENCEseeds nottrainingindependentCI. Realbenchmark PIP/PIP-DborrowedfromBiD7becauseownreplicationinaccurate—notclaimrerunall."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 30,
+      "last_page": 31,
+      "notes": "All31freshreadcompletedAppendicesA-H,FCPU/trainingandGlicenseHLLM. Table12all54rowsread20+20+5+9;row n20w80.002Opt353butown338gap0/PIP3472.66 internallyinconsistent. RealbenchmarkPIPborrowedpublishednotrerun. CPU32LMask3.2-5.6m/11.4-12.4mwholetest,training4.2/7.8daysvsPIP4.7/28.4,PIP-D3.6/12.2 (LMask50slowerPIPD). Lookaheadindexoptimizationconfoundnotpurebacktrackingtime. TableR5mentionedactuallyTable14notmissingappendix. G/HfullreadLLMwritingonly."
+    }
+  ],
+  "claims": [
+    {
+      "id": "lazy",
+      "category": "contribution",
+      "statement": "Lazy overestimate masks with prefixbacktracking, cappedrefinementembedding andviolationpenalizedentropytraining; boundedbudget canfail.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "FullAlgorithm1/2 andAppendicesA-C, actualmask/code/loss/budgetdifferencesqualified."
+        }
+      ]
+    },
+    {
+      "id": "theory",
+      "category": "method",
+      "statement": "Infinitebudgetfeasibleinstance/SsubsetShat/exactfinalcheck validity; KLexpressivity/globaloptimumassumption forGibbstail+sqrt(c/(2lambda)), nofinitepolicyoptimalityconvergenceorpolynomialsearchguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            6,
+            7,
+            18,
+            19,
+            20,
+            23,
+            24,
+            25
+          ],
+          "locator": "CompleteDproofs/Assumption4.2/Theorem4.3; actual19customer11kbacktrackfailurecase."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "SeparateTSPTW/TSPDL50/100 tenregimes8D4greedy, mainconditionalgapfeasibility/runtimes;54Dumasborrowedbaselines, widthtransfer,128hard500budget60016secondsPERINSTANCE,24/80/240sampling andinference-onlyseedstability.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "locator": "All15tables/8figures read, numbers/protocol/deadendnegativecasesandtableinconsistenciesqualified."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistconstructive: neuralprefixforward/backtrackingnotcompleteincumbentediting;separatetasksizehardnesscheckpointsmain, optionalexternalclassicalDumassearchnotnewneuralimprover.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            14,
+            17,
+            22,
+            26,
+            27
+          ],
+          "locator": "Actualgenerativepolicyandseparatemodel/configurationprotocol,500trainingprovenanceuncleardoNOTassertzeroshot."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/ade039c1db0391106a3375bd2feb310a-Abstract-Conference.html",
+      "locator": "Actualformalpage1TianyouLi/HaijunZou/JiayuanWu/ZaiwenWen,PKU/CAS/UPenn; actualHTMLcitation_publication_date2026-04-20verifiedsupportsday."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/ade039c1db0391106a3375bd2feb310a-Abstract-Conference.html",
+      "locator": "ActualpublisherpagePaperonlynosupplement; full31includesallnamedA-Hfreshread.404entryofficialauthortree containsnoPDF/TEX/IPYNB/ZIP;7PNGopenedandmatchedpaperframework/curves/ablation/decodingvisualization. Noexplicitmissingseparatescientificattachment."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/optsuite/LMask",
+      "locator": "Fullselecteddecodecore/TWlookahead/backtracking/loss/modules/configs/drivers/generation/requirementsread. Maskoutsidevsinsideclip, testabortvstrainingrelax, magnitudecountcombinedpenalty, defaultmainvsRIEconfigs/plainotherpolicies,49/99customersandrawhardcoords100vsformal50, GPLv3vsstatedMITallqualified;noexecutedbenchmark."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ade039c1db0391106a3375bd2feb310a-Paper-Conference.pdf",
+      "locator": "OriginalcompleteFigure1PDFpage6rect(136,80,476,321)4x includesbothpanels, allsciencecurves/failurevisuals/importantformulasvisualchecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2505.17938",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-05-23; title on abstract page: LMask: Learn to Solve Constrained Routing Problems with Lazy Masking. This date is preprint history, not formal publication. Cached research/full-text-review/lmask/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "lmask",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al.,2015",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Vinyals et al.,2015."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Completebibliography Vinyals et al.,2015 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2017",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Bello et al.,2017."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Bello et al.,2017 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.,2018",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Nazari et al.,2018."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Nazari et al.,2018 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2018",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Kool et al.,2018."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Kool et al.,2018 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "dynamic-am",
+      "reference_label": "Peng et al.,2020",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Peng et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Peng et al.,2020 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Luo et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Luo et al.,2023 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Kwon et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Kwon et al.,2020 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.,2022",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Kim et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Kim et al.,2022 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung et al.,2022",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Hottung et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Hottung et al.,2022 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al.,2022",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Choo et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Choo et al.,2022 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al.,2024",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Zhou et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Completebibliography Zhou et al.,2024 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "routefinder",
+      "reference_label": "Berto et al.,2024",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Berto et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Berto et al.,2024 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "cada",
+      "reference_label": "Li et al.,2024",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Li et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Li et al.,2024 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi et al.,2019",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Joshi et al.,2019."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Joshi et al.,2019 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2023",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Drakulic et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Drakulic et al.,2023 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al.,2022",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Kool et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Kool et al.,2022 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.,2023",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Ma et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Ma et al.,2023 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "pip",
+      "reference_label": "Bi et al.,2024",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Bi et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Bi et al.,2024 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski et al.,2023",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actualintext Sanokowski et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Completebibliography Sanokowski et al.,2023 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "practical-vrp-joint-learning",
+      "reference_label": "Duan et al.,2020",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actualintext Duan et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Completebibliography Duan et al.,2020 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "reld",
+      "reference_label": "Huang et al.,2025",
+      "description": "Explicit printed in-textauthor-year plus matchingfullreference. Preserve actualearlyversion: AM2018,Bello2017ICMLworkshop,Joshi2019preprint,CaDA2412.00346(2024),RouteFinderICML2024workshopprecursor; BQGeneralizableoldtitlematchedsameBQworknotforcedfuturetitle. PengISICA2020matchesexistingreferenceIDdynamic-am actualconference, notassertedIEEEjournal. OtheruncataloguedMCPG/VNA/lookahead/VSRpapersnotforcedintoIDs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actualintext Huang et al.,2025."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Completebibliography Huang et al.,2025 title/authors/versionmatched."
+        }
+      ]
+    },
+    {
+      "citing": "lmask",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al., 2023",
+      "description": "Appendix implementation states reliance on RL4CO; exact same-title arxiv2306.17100 bibliography with expanded byline maps to canonical formal benchmark identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            22
+          ],
+          "locator": "Actual body citation Berto et al., 2023 on PDF pp[22]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix implementation states reliance on RL4CO; exact same-title arxiv2306.17100 bibliography with expanded byline maps to canonical formal benchmark identity."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh31formalpages/A-Hcompleteproofs15tables8figures, officialpublisher+404tree/7assetschecked, originalFigure1integrated.",
+    "Expandedlazymasking/SSLTSL/RIE/penalty andexplicitinfinitebudget/KLglobaloptimumassumptions; nofinitepolicyoptimality/convergenceclaim.",
+    "CorrectactualTSPDLpickupaftervisit/unitdemandboundary, prefixbacktrackconstructive vsincumbentmove andseparatescope.",
+    "Added exactmultisampletrainingceiling/budgets/eightgreedycandidates/CPUvsGPU/classicalresources, conditionalfeasiblesubsetmetrics andremainingDLfailures.",
+    "Recorded54Dumasrows/baselinesborrowedpublication, inference-onlyseedstability, 500scalabilityuncleartrainingprovenance and16secperinstance, negativesamplingcases/11kbacktrackfailure.",
+    "ActualpublisherpublicationdayverifiedauthorWunormalized; no firstpreprintdayinvented.",
+    "Disclosed printedmaskinsideclipvsactualhardmaskafterclip, trainrelaxvstestabort/combinedpenalty/defaultmainnonlazyvsRIEconfiguration/testpolicychoices; rawhardcoorddistributionandnodescountboundaries.",
+    "Recorded sourceGPLv3vsMITpromise andtableinconsistencies neutrally;21explicitmatchedcitations preservingearlyversions.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b03000b216d090925be762ea90feb6014c548f8647c79a9a67281a78040954f7"
+}

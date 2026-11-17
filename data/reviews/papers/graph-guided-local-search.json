@@ -1,0 +1,426 @@
+{
+  "version": 1,
+  "paper_id": "graph-guided-local-search",
+  "note_path": "specialist/graph-guided-local-search.md",
+  "baseline_note_sha256": "c5eff657e6640baaee2a24b52538bb28b0e8b7b8f3eabad14baf8488f0a41869",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2110.05291",
+      "retrieval_url": "https://arxiv.org/pdf/2110.05291",
+      "version": "Actual read arXiv2110.05291v3,4April2022,20pagesincludingAppendicesA-D; arxivfallback, formalICLR2022independent.",
+      "local_path": "research/full-text-review/graph-guided-local-search/paper.pdf",
+      "sha256": "86587887d2e5cbf26ade5ef882394b21cbb34bb3f7eb5174257acbbca844c1d8",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshv3readtitle/4authors,CambridgeandUPenn affiliations,globalregret/linegraphcontribution,matchedtimeclaims andrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read full regret/LS/GLS preliminaries, original-distance optimization versus penalized perturbation phases and pipeline; explicit methodscopeTSPonly."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read exact globalregret forcededgeoptimumratio, linegraphcounts128dim8head nonsharedlayers, learnedregretconstructor and GLSrelocate/2opt perturbation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all unboundedtime/Table1 and10seconds protocol, includedfeatures/model/init costs and oneinstancebatching, existinglearnedbaseline comparisons versusstrongclassic, correctedJoshibugcontext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read all10secondsgap/successrates, limitationssupervisedlabel/memory/generalizationand fullfirstreferencepage."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allremainingbibliography withactualcitedversions, noforcingfutureformalvenues."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read entireAppendixA+Listing1:ConcordeunforcedbutLKH3100trials10runsforcededgelabels,100k/sizetraining,100epochs/earlystop,CPU/P100runtime andJoshiinvalidtourfix."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read completeAppendixBaxes/captions allParetoandtimequalitycurves; data/model/initoverheadexplicit andclassical/learningfrontsseparated."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "Read all generalization time curves and every TSPLIB table row with rotated table visual confirmation:29instances50-200nodes,10repeats,actual unequal solver budgets,mean1.529%10.420s versus1.725%31.766s."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read all additionalfeature definitions/computation costs,100LatinHypercube35epochmodelGPsensitivity,Figure6andTable5 fullablation; differenthyperparams,top5notclearfinalimprovement. Visually checkedall scientificfigures/tables/formulae pp4-6,8-9,13,15-20."
+    }
+  ],
+  "claims": [
+    {
+      "id": "regret",
+      "category": "contribution",
+      "statement": "LinegraphGNNpredictsglobalforced-edgecostregret toinitializeandguideGLS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Figure1 Equations4-9"
+        }
+      ]
+    },
+    {
+      "id": "labels",
+      "category": "method",
+      "statement": "Concordeunforcedoptima but forcededgeLKH3with100trials10runs empiricallyvalidatednotcertified; staticGNNguidance,20successfulperturbmoves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            13
+          ],
+          "locator": "Section4.3 AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "budgets",
+      "category": "experiment",
+      "statement": "Fixed10secondsincludesGNN/features/init;selectedlearnedbaselinegains, classicaldominance,successraterankreversal anddifferentfeatureablationbudgets qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            18,
+            19,
+            20
+          ],
+          "locator": "Tables1-5,Figures3-6"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistconstructive-improvement: newlylearnedregret directlyselectsaddededgesingreedyinitialtourandguidesincumbentGLS; authors explicitlyadaptbothstages,noisolatingablation/sharedcross-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            6,
+            20
+          ],
+          "locator": "Section4.3explicitinitialsolutionandperturbationadaptation;Table5combinedregretscoreablation"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, date, publication",
+      "source_url": "https://arxiv.org/abs/2110.05291",
+      "locator": "Landinghistoryv1Oct11,2021/v3Apr4,2022 andfourauthors;officialauthorREADMEcitesICLR2022OpenReviewar92oEosBIg. Removedunsupportedgenericnotificationday; retainedyearonlyformalpublication."
+    },
+    {
+      "field": "institutions",
+      "source_url": "https://arxiv.org/pdf/2110.05291v3#page=1",
+      "locator": "TitlepageCambridgeandMatthewMalenciaUniversityofPennsylvania;restoremissingUPenn."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/proroklab/gnngls",
+      "locator": "AuthorprimaryREADMEexacttitle/OpenReviewcitation andactual3037membermastertree; priorProrokLab/gnn-guided-local-search404corrected. ReadREADME/search/test/generation/trainingpaths."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://openreview.net/forum?id=ar92oEosBIg",
+      "locator": "Manualforumverification/API403logged. Actualarxivv3complete20pagescontainsallA-DscientificappendicesandListing1,allread. Inspectedofficialmasterrecursivetree3037members/README,noadditionalPDFZIPscientificmaterialfound;donotclaimunobtainedOpenReviewattachmentsread."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2110.05291v3#page=4",
+      "locator": "OriginalFigure1 fullpipeline/caption directlycroppedRect(105,595,510,751),5x; visuallycheckedscientificmainandappendixfigures/tables/formulae."
+    },
+    {
+      "field": "scope, paradigm, problems",
+      "source_url": "https://arxiv.org/pdf/2110.05291v3#page=6",
+      "locator": "OnlyEuclideanTSPexperiment; staticneuralregrets initializegreedyandguideincumbentGLS2opt/relocate;cross-taskadaptabilityonlyproposal."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2110.05291",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-10-11; title on abstract page: Graph Neural Network Guided Local Search for the Traveling Salesperson Problem. This date is preprint history, not formal publication. Cached research/full-text-review/graph-guided-local-search/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015arxiv",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "attention-model",
+      "reference_label": "Kool2018arxiv",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "pomo",
+      "reference_label": "Kwon2021",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2021",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai2017",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-guided-local-search",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu2020",
+      "description": "Explicit author-year related-work citation and matching actual bibliography; cited preprint year preserved where applicable.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section2 explicit author-year intextcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshread20pagesincludingA-Dandvisuallycheckedallscientificpanels.",
+    "RestoredUPenn,corrected404codeURLtoauthorproroklab/gnngls,removedunsupportednotificationacceptancedate.",
+    "CorrectedforcededgetraininglabelsfromConcordetoLKH3100trials10runs;notalllabelsprovenexact.",
+    "Correctedimprovementtoconstructive-improvement:Section4.3explicitlyadaptsbothinitialtourconstructionandGLSwithnewlearnedregret;staticnonautoregressivescorescanstillconstruct. Noisolatedinit/penaltyablation.",
+    "Expandedstaticlinegraphregretarchitecture,scoregreedyinitialization,GLS2opt/relocatephases,20successfulperturbationsandcode30functionversus20entrypointdefault.",
+    "Qualified10secondbudget,offlinecost,Joshibaselineinvalidtourfix,POMO/Fucopiedunequalbudgetrows,classicdominanceandsuccessratereversal.",
+    "Readall29TSPLIBrows/transfercurvesand100featuremodelssensitivity;differentablationtrainingresultsseparated.",
+    "OriginalFigure1cropand10explicitreferenceedges,actualpreprintversionskept;manualarxivscientificappendixinventoryandOpenReviewaccessprovenance."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1a50be6c9ce7270025e499584f7c3d198f8ffb18ee4f5053ca0784c245e02e8a"
+}

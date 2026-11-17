@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "paper_id": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+  "note_path": "specialist/a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "197618345541e5d1c97310ef2ada5f0238149534ae0ccd8854d8f585896e8acb",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://www.ijcai.org/proceedings/2024/0218.pdf",
+      "retrieval_url": "https://www.ijcai.org/proceedings/2024/0218.pdf",
+      "version": "ActualformalIJCAI2024PDF9pages1970-1978allmaintext/equations/figures/results/completebibliographyfullyread.",
+      "local_path": "research/full-text-review/a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona/paper.pdf",
+      "sha256": "b190de0f1feb6937f594e604f1c328e36a9e6bb4cd95c6bbd70787faeb30784b",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://github.com/xyfffff/NCG-for-2L-CVRP/blob/main/Supplementary%20Material.pdf",
+      "retrieval_url": "https://github.com/xyfffff/NCG-for-2L-CVRP/blob/main/Supplementary%20Material.pdf",
+      "version": "ActualofficialauthorrepositorySupplementaryMaterialPDF5pagesA-C/full57runtime+57iterationrows/hyperparameters/loss/ablations/referencesfullyread.",
+      "local_path": "research/full-text-review/a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona/Supplementary Material.pdf",
+      "sha256": "deb7563f24b691bfc1dc7db04b6eec8b3219bf6932b75732264b98cfb46f3607",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "ReadformalIJCAI9p1970-1978twoauthorsNanjinglab/1QBInformationTechnologies(printed21QBsup2notIOB),Zhangcorrespond. NCGlearnsLIFO2DpackingfeasibilityclassifiernotARVRPgenerator;classicalexactBPCwithcorrectivefalsepositivecut/falsenegativechecks,95%classifiernotexactoracle. Formalsummary29.79medianandoneopeninstancefulldetailsnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadfullsetpartitioningexactKvehicles/customeronce/weight/2DnonoverlapfixedorientationLIFO,pricingreducedcostresourcesandLTriebaseline. NCGpredictedpositivebypasscheckerbutbasispositivecheckedfalsepositivecut;negativeexactcheckedavoidingfalsenegativeloss,exactnesscomesfromcompletehostchecksnot95%classifier. Attentionwithinunordereditems+GRUacrossorderedcustomers/normalizedw,h."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadfullattentionLN/residual/GRUperitemorderedcustomer/shufflewithinonlydataaugmentationnotarchitecturalinvariance. SyntheticpackingfromdistinctCVRP/VRPTWruns;benchmarkPC2-4<=50excludePC1/5. ExactprimarycomparisonLPnotintegerBPCeveryrow. Gap=(TSOTA-TNCG)/TNCG so29.79medianmeans1.2979ratio/22.95%baselinefractionnot29.79reduction. TrainEPYC64/A100CPUtesti5sameC++Torch;falsepositivecutsincreaseiterations;PC2worst9.38,PC4best99.22."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTable1open2l-cvrp2304opt1068/49544.6s vsSOTA1066.78LB1069UB69948.96memoryterminationnotidenticaltimeout. Table2TPR94.08TNR96.80overall/PC2TPR84.26/notuniformmetricsfullbeatsallPC3TNRw/oaugment96.69>95.83. Fullallrefs8-9readinclChiRL4CG/ShenMLPH/Yuanarxiv2023distinctfutureformalidentitycheck. Nootherformalappendixbeyondauthor5psupp."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "ReadsuppAallrandom/cluster/mixedcoordinates/TWdiametergeneration/PC2-5itemsdimensions/vehiclemaxbinandCVRP;Bfull57runtime rows19eachPC2-4.8negativeimprovements(4PC2/3PC3/1PC4),explicit1802SOTA209.80vsNCG272.98;notuniversalruntimegain. Large99.22gapdenomNCGnot99%baselinereduction."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 5,
+      "notes": "Readall57CGiterationrows(noallincrease,manylower/ties),C1h16/4heads/2MHA/1GRU/B512Adam1e-4augmentation10,C2weightedBCEpositivecoefficientprintedpos/neg,C3explicitMLP/Transformerablations andall4refs. Full5scientificsuppcomplete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Attention/GRULIFOpackingfeasibilityscreeninsideclassicalCGwithexactcorrection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Figures1-2/method"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Predictednegativesexactchecked/masterbasispositivesexactchecked+falsepositivecut;twoMHA/GRUordereditems/intracustomerpermutationaugmentationnotarchitecturalinvariance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Exactcorrection/architecture"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "LPcomparison57PC2-4<=50customers/metricdenominatorNCG29.79=>1.2979ratio;separateopen2304opt1068/49544.6sbaselineLB1066.78UB1069memoryabort69948.96.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Metric/Tables1-2"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "8of57slower/correctioniterationsheterogeneous;fullnotbestPC3TNR;fixedorientationLIFO/hostexactness/binarydistribution/noindependentreproduction.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "SupplementTables2-4"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "Specialistconstructivelearning-assistedclassicalcolumnconstruction;NNonlyfeasibilityclassificationnotARtourconstructionorincumbentneuraledit,nojointnativeproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Actuallearnedaction/host"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "9formal+5officialsuppfullyread/manual15entryrepo/2README/ZIPinventory/nobonusunreadscience/Drivebinaryinventory/originalFigure2actualview.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            8,
+            9
+          ],
+          "locator": "Formalversion/bibliography/manualsources"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors/affiliations/publication",
+      "source_url": "https://www.ijcai.org/proceedings/2024/218",
+      "locator": "Formalp1YifanXia/XiangyiZhang/Nanjinglab/1QBInformationTechnologies,superscript2notcompanyIOB,Zhangcorrespond. PublisherBibTeXmonth8/Crossrefpublished-print2024-08/pages1970-1978agree."
+    },
+    {
+      "field": "arxiv/version",
+      "source_url": "https://arxiv.org/abs/2406.12454",
+      "locator": "Savedprimaryhistoryonlyv1Jun18_2024 09:58:29UTC. Actualscientificreadformal9pagesnotclaimarxivread;frontdatev1vsformalmonthindependent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/xyfffff/NCG-for-2L-CVRP",
+      "locator": "Manual15entrytreeSHA13a50ee3b065726ff65b3aa8ec9cb0761b29d5ba/2fullREADMEs/releases[];explicitSupplementaryMaterialPDF5pregistered/fullread. ZIP108797namesinventory84,121tr/24,673output/1csv/2dirs/nopdftexmdipynbzip. Twoipynbsnoscienceoutputs. AuthorDrivevisibleexecutable/model/config/DLL/csv/VRPinstancesnotunreadproof;nootherpromisedscientificmaterial."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/xyfffff/NCG-for-2L-CVRP/tree/13a50ee3b065726ff65b3aa8ec9cb0761b29d5ba",
+      "locator": "Relevantmodel/traincode/readmereplicationh16/heads4/MHA2/GRU1/epochs10000seed1234/multiply10/B512. TrainBCEWithLogitsLoss/Adam;binaryhostsourceunavailableinrepo,Driveexecutablemanualinventorynotexecuted;READMEbranch_boundfalse=CGnotBPC."
+    },
+    {
+      "field": "figure/visual",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0218.pdf#page=5",
+      "locator": "OriginalFigure2p5Rect48,50,565,278@4xatomicPNGfullcaptionviewed;Figure1exactcorrection/Figs3-5/allmainandsupplementTables1-4/formulasvisuallychecked."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://www.ijcai.org/proceedings/2024/0218.pdf#page=8",
+      "locator": "Allfullbib8-9andbodyread:AM(Kool2018printyearbutuniquetitle/bylineICLR2019),POMO2020,SymNCO2022,Chi2022RLCGexact. OtherShen2022pricing/Yuan2023multicolumnarxivnoactiveexactcatalogueidnotforcemap."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;printedAMyear2018qualifiedagainstuniqueformalrepresentative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Bodyp5;Referencesp8 Kool et al. (2018)"
+        }
+      ]
+    },
+    {
+      "citing": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+      "cited": "pomo",
+      "reference_label": "Kwon et al. (2020)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;printedAMyear2018qualifiedagainstuniqueformalrepresentative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Bodyp5;Referencesp8 Kwon et al. (2020)"
+        }
+      ]
+    },
+    {
+      "citing": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+      "cited": "rlcg",
+      "reference_label": "Chi et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;printedAMyear2018qualifiedagainstuniqueformalrepresentative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            8
+          ],
+          "locator": "Bodyp1;Referencesp8 Chi et al. (2022)"
+        }
+      ]
+    },
+    {
+      "citing": "a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al. (2022)",
+      "description": "Explicitbodycitationwithmatchingfulltitle/bylinebibliography;printedAMyear2018qualifiedagainstuniqueformalrepresentative.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "Bodyp5;Referencesp8 Kim et al. (2022)"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacependingbyline/affiliations/formalmonthandv1date/actualcode+suppmetadata.",
+    "CorrectNNactionfeasibilityclassifierandexactclassicalCG/BPCboundary;specialistconstructivelearning-assistedhostnotNNincumbentediting.",
+    "Clarify29.79denominatorNCG=>1.2979ratio22.95baselinefraction/eightnegative57LPtests;CGiterationsnotallincrease.",
+    "Separateintegeropeninstance1068/49544.6sfromLPtables/baseline1066.78-1069memoryabortandTPR/TNRnotuniversalaccuracy.",
+    "Full14scientificpages/readmes/datasetZIPandDriveinventory/originalcompleteFigure2actualview/4body+bibrelations."
+  ],
+  "reviewed_note_sha256": "afbb1593429e81ee63a3b9dca7ff6b88ec58f71c93c61ed4f2d81711385c8836"
+}

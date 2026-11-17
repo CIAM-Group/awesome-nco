@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "paper_id": "rgm",
+  "note_path": "specialist/rgm.md",
+  "baseline_note_sha256": "43de291c4eef9c4ca1fb613f5dac20bd19be6e072360033dac457fe430905321",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2012.08950v5",
+      "version": "arXiv:2012.08950v5, 2023-03-01; accepted ICLR2023 manuscript with complete AppendixA",
+      "retrieval_url": "https://arxiv.org/pdf/2012.08950v5",
+      "local_path": "research/import-272/nco-56c3fb6f0e.pdf",
+      "sha256": "3b332db7bdff59cbc844df87dc87787773f30e037df95675c536d171f362924d",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Read v5 title/affiliations and full introduction/related work/formulation; association-graph D3QN state/action/reward, conflict-removal revocation, known-inlier count alternative and regularized objective introduced; dense association graph scaling noted."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 15,
+      "notes": "Read quadratic-fitting approximation/sign discrepancy, all main results with IC/AR and supervised imitation distinctions, all references, A.1 limitations and Algorithm1 stopping/reward; QAP gap and latency not universal dominance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 25,
+      "notes": "Read all A.2-A.4 architecture/replay/training/split/metrics/synthetic/generalization/seed/revocation/RL ablations and limitations. Visual front-end is supervised BBGM; QAP categories separately trained and crossclass tested, slower inference; objective/F1 mismatch and printed Eq7 sign documented."
+    }
+  ],
+  "claims": [
+    {
+      "id": "rgm-contribution",
+      "category": "contribution",
+      "statement": "Learn association-graph sequential backend with conflict-removal revocation and cardinality-affinity regularization plus optional known inlier count.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections1/4"
+        }
+      ]
+    },
+    {
+      "id": "rgm-method",
+      "category": "method",
+      "statement": "D3QN with prioritized replay; regularization approximate, printed Eq7 b sign conflicts with definition; partial feasibility not global optimality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            15,
+            16,
+            17
+          ],
+          "locator": "Equation7/Algorithm1/A.2"
+        }
+      ]
+    },
+    {
+      "id": "rgm-experiments",
+      "category": "experiment",
+      "statement": "AR/IC distinctions, supervised visual front-end and imitation variant, category training split, nonuniversal F1/gap improvements and slower75.53s inference explicit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25
+          ],
+          "locator": "Tables1-8/A.3-A.4"
+        }
+      ]
+    },
+    {
+      "id": "rgm-classification",
+      "category": "classification",
+      "statement": "Native graph correspondence/QAP instances trained per visual/QAP class with crossclass tests, no demonstrated unchanged weights across identified native unrelated optimization tasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            19,
+            20,
+            22,
+            23
+          ],
+          "locator": "A.3.4-A.4.3"
+        }
+      ]
+    },
+    {
+      "id": "rgm-limit",
+      "category": "limitation",
+      "statement": "Affinity/F1 mismatch, fixed supervised front-end and costly revocation are explicit limits; empirical score correlation not universal semantic guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            14,
+            17,
+            18,
+            24,
+            25
+          ],
+          "locator": "Figure4/A.1/A.2.4/A.4.8"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://iclr.cc/virtual/2023/poster/12157",
+      "locator": "Official poster title/authors and formal OpenReviewQjQibO3scV_; PDFv5 p1 six-author order and five affiliations read; arxiv metadata order differs, note follows accepted manuscript."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://iclr.cc/virtual/2023/poster/12157",
+      "locator": "Official ICLR2023 poster confirms formal venue/year; no exact publication day inferred from event. Arxiv2012.08950v5 submitted2023-03-01; first submission2020-12-16; fresh pinned PDF SHA3b332db7...matches cached."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://iclr.cc/virtual/2023/poster/12157",
+      "locator": "Manually inspected official poster/OpenReview links, normal forum/API2 verification403, all25arxivv5 pages includingA.1-A.4.8 and public author ZIP full inventory; no additional scientific PDF/ZIP attachment identified."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/Thinklab-SJTU/RGM",
+      "locator": "Author-linked master ZIP inventoried; README/neural model/environment/utils fit+gm_solver/training+beam evaluation inspected. Normal main branch404, actual master used. Release is Willow caches/checkpoint and code, no extra scientific attachment."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2012.08950",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2020-12-16; title on abstract page: Revocable Deep Reinforcement Learning with Affinity Regularization for Outlier-Robust Graph Matching. This date is preprint history, not formal publication. Cached research/full-text-review/rgm/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "rgm",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020a/b)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10,
+            14
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "gann",
+      "reference_label": "Wang et al. (2020b)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "glsearch",
+      "reference_label": "Bai et al. (2021)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Bai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian (2019)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            10,
+            18,
+            24
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al. (2018)",
+      "description": "Explicit author-year body citation and exact bibliography work; no substitution of related graph matching papers.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Nazari and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "deep-graph-matching-under-quadratic-constraint",
+      "reference_label": "Gao et al. (2021)",
+      "description": "Lists quadratic-constraint deep graph matching among supervised front-end approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Gao2021 bodyp2; full CVPR2021 Gao/Wang/Xue/Yu/Xia pp5069–5078 bibp10."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Gao et al. (2021); Deep Graph Matching Under Quadratic Constraint. Gao2021 bodyp2; full CVPR2021 Gao/Wang/Xue/Yu/Xia pp5069–5078 bibp10."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "exploratory-combinatorial-optimization-with-reinforcement-learning",
+      "reference_label": "Barrett et al. (2020)",
+      "description": "Compares the revocable-action framework with ECO-DQN.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            18
+          ],
+          "locator": "Actually read citation body context: Bodyp6 andAppendA.2.4p18 explicitly nameECO-DQN; fullAAAI2020 Barrett/Clements/Foerster/Lvovsky titlebibp10."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Barrett et al. (2020); Exploratory Combinatorial Optimization with Reinforcement Learning. Bodyp6 andAppendA.2.4p18 explicitly nameECO-DQN; fullAAAI2020 Barrett/Clements/Foerster/Lvovsky titlebibp10."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "Rolínek et al. (2020)",
+      "description": "Includes BBGM as an experimental graph-matching baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Actually read citation body context: Tablep8 explicitly BBGM/Rolinek2020; fullECCV2020sixauthor titlepp407–424bibp11. Accentextractionnormalized,notdifferentpaper."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Rolínek et al. (2020); Deep Graph Matching via Blackbox Differentiation of Combinatorial Solvers. Tablep8 explicitly BBGM/Rolinek2020; fullECCV2020sixauthor titlepp407–424bibp11. Accentextractionnormalized,notdifferentpaper."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "reference_label": "Wang et al. (2021b)",
+      "description": "Discusses dynamic embedding as an acceleration unavailable under its revocable environment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17
+          ],
+          "locator": "Actually read citation body context: AppendA.2.4p17 explicitdynamicembeddingWang2021b; fullGEDCVPR2021Wang/Zhang/Yu/Yan/Yang pp5241–5250bibp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Wang et al. (2021b); Combinatorial Learning of Graph Edit Distance via Dynamic Embedding. AppendA.2.4p17 explicitdynamicembeddingWang2021b; fullGEDCVPR2021Wang/Zhang/Yu/Yan/Yang pp5241–5250bibp12."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "learning-combinatorial-solver-for-graph-matching",
+      "reference_label": "Wang et al. (2020c)",
+      "description": "Contrasts association-graph combinatorial selection with feature-learning approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read citation body context: Bodyp3Wang2020cLawlerQAP; fullLCSCVPR2020TaoWang/HeLiu/YidongLi/etc pp7568–7577bibp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Wang et al. (2020c); Learning Combinatorial Solver for Graph Matching. Bodyp3Wang2020cLawlerQAP; fullLCSCVPR2020TaoWang/HeLiu/YidongLi/etc pp7568–7577bibp12."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al. (2019b)",
+      "description": "Cites combinatorial embedding networks as learned graph-matching features.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Actually read citation body context: Bodyintroduction/relatedworkWang2019b; fullICCV2019RunzhongWang/Yan/Yang pp3056–3065bibp12."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Wang et al. (2019b); Learning Combinatorial Embedding Networks for Deep Graph Matching. Bodyintroduction/relatedworkWang2019b; fullICCV2019RunzhongWang/Yan/Yang pp3056–3065bibp12."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "ia-gm-a-deep-bidirectional-learning-method-for-graph-matching",
+      "reference_label": "Zhao et al. (2021)",
+      "description": "Lists IA-GM among supervised deep graph-matching approaches.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read citation body context: Bodyp2Zhao2021; completeIA-GMAAAI35pp3474–3482bibp13. CitingbibfirstKai vsformalKaixuan; exacttitle/coauthors/venue/pagesidentifytarget."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Zhao et al. (2021); IA-GM: A Deep Bidirectional Learning Method for Graph Matching. Bodyp2Zhao2021; completeIA-GMAAAI35pp3474–3482bibp13. CitingbibfirstKai vsformalKaixuan; exacttitle/coauthors/venue/pagesidentifytarget."
+        }
+      ]
+    },
+    {
+      "citing": "rgm",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir et al. (2018)",
+      "description": "Cites the early visual graph-matching feature-learning method.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read citation body context: Bodyp1CNNfront-end/Zanfir2018; completeDeepLearningGraphMatchingCVPR2018pp2684–2693bibp13. CitingChristianvsformalCristiansurnamevariationdoesnotchangedocumentidentity."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Zanfir et al. (2018); Deep Learning of Graph Matching. Bodyp1CNNfront-end/Zanfir2018; completeDeepLearningGraphMatchingCVPR2018pp2684–2693bibp13. CitingChristianvsformalCristiansurnamevariationdoesnotchangedocumentidentity."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read all25version-pinned pages and completeAppendixA; verified fresh SHA, official venue/year, science supplement discovery and actual author code.",
+    "Separated reward-label-free backend from supervised BBGM features and imitation variant, maintained IC/AR metric and timing conditions with negative results.",
+    "Documented approximate regularization/sign discrepancy, dense association cost and public code versus paper settings; restored8exact evidence citations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0d0da759224bae13f322868c4d88d2120d2799e9576e746557679b352b005e03"
+}

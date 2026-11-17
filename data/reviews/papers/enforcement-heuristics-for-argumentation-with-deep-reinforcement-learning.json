@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "paper_id": "enforcement-heuristics-for-argumentation-with-deep-reinforcement-learning",
+  "note_path": "specialist/enforcement-heuristics-for-argumentation-with-deep-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "710cb8a0e7b8f3b9631b36ba251852c909116080935c6f808c8af5db7e1e0a9c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://cdn.aaai.org/ojs/20497/20497-13-24510-1-2-20220628.pdf",
+      "retrieval_url": "https://cdn.aaai.org/ojs/20497/20497-13-24510-1-2-20220628.pdf",
+      "version": "FormalAAAI2022publisherCDN9p pages5573-5581 published2022-06-28, fullmain/definitions/equations/experiments/references",
+      "local_path": "research/full-text-review/enforcement-heuristics-for-argumentation-with-deep-reinforcement-learning/publisher.pdf",
+      "sha256": "84302f735c0776c60a89a94943e3240e7280341bab1f5501321476b57ede0014",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Actualreadfullpp1-3 introduction/allargumentationsemantics/enforcementdefinitions/examples/complexityandclassicalsolvers. Fixedarguments/semantics, changesattackstructureminHamming. Differentstrict/nonstrict/credulous/scepticalnativevariants: architecturegeneralnotactualsamecheckpoint. CompleteexistingAF graph-edits, notmerelypredictingargumentacceptance. Formalbyline2authors/NetherlandsPolice/Utrecht/Tilburg."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Actualreadfullpp4-6 MDP/rewards/EGNNallformulas/aggregators/trainingdataset/Table1 andresults. Actionsallorderedpairsflips, originalAF->modifiedAF withverifiedtarget; terminal0else-1 printed. Completegraphrepresentationexisting/counterattack/flippedfeatures,mean/max/min/stdaggregation. Trainsmodelspertask/semantics persetup+README. Train3-9nodes validate10/test10/20/50,15min+edgeactioncap. EGNN50strictprf945/1000 andsceptstable998; credstable4.515ratio notallnearoptimal; nopublishedexactratiofornewvariants."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Actualreadfullpp7-9 Figure3 runtime/10kAF20experiment/hardwarecaution/discussion/conclusion/completebibliography. Do notinferoptimalityfromsimilarstepcountsnewtaskswithoutreference. Full3contactimages/all3figures/Table1viewed; Fig2taskillustrationfullcaptioncroppedactualview. Official1761member27MBZIP inventoried/READMEfullread;23PDFs arevendor probo2015/OpenWBO/solverdocs, notpaperuniqueappendix (probo firstpageidentitychecked). No additionalpaper-specificscientificsupp identified. Entireenforcement_env.py read, graphflip/historyandverifierconfirm; actualrelease -1/n² nonterminalreward differsprinted-1, codeconfigversionqualified. Data/modelsnotexecuted/deserialized."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Learn graph edits for minimum-change dynamic argumentation withsymbolicverification.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/definitions/MDP"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Task-aware EGNNedgeQvalues andcombinedstatisticalaggregation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Model/Equations2-4/NeighbourhoodAggregation"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Completeattackgraph edits guidedbyDQN; taskandsemantics-specifictraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "MDP/ExperimentalSetup"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Neuralattackflipsoncompleteexistingframework; specialistimprovementwithoutsharedcrossvariantcheckpointdemonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            7
+          ],
+          "locator": "State/actiondefinitions/setup/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Solvedcoveragegains coexist with50node945/998solved ratherthan1000 andlarge4.515/2.515editratios.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Table1/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Symbolicverificationstillrequired; missingexactreferencecannotcertifynearoptimality; implementation/hardwarecautions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "MDP/Results/Efficiency"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Formal9p completearticlewithpaperlinkedcodeandexplicitbaseline/runtimeconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Codefootnote/Experiments/fullreferences"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity formal publication affiliations",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/view/20497",
+      "locator": "FormalpublisherCDN9p5573-5581read; exactDOI10.1609/aaai.v36i5.20497 deposit2authors/date2022-06-28; NetherlandPolice/Utrecht/Tilburg actualp1. Noidentifiedsamearxiv; useformaldate."
+    },
+    {
+      "field": "supplements and code inventory",
+      "source_url": "https://github.com/DennisCraandijk/DL-abstract-argumentation/tree/23955a08a1cfef72c67d9bac307720d25a9ecab6",
+      "locator": "All9p main/refsread, noexplicitindependentpaper-sciencesupp.1761member27MBZIP includes23vendorPDFs (probo2015firstpageidentitychecked/OpenWBO/SATsolverdocs), notownscientificsupplement. READMEfullandcompleteenforcement_env.pyread; task/semanticscommandsseparate, rewardrelease-1/maxstepsvsprinted-1. No benchmarkexecution/deserialization."
+    },
+    {
+      "field": "classification evidence negative cases original figure",
+      "source_url": "https://cdn.aaai.org/ojs/20497/20497-13-24510-1-2-20220628.pdf#page=6",
+      "locator": "CompleteAFflipnotstaticclassification, revisitingallowedsoimprovement; noactualjointcheckpointonlysharedarchitecture. Table1conditionalratios50Credstb4.515,Strictprf2.515/945solved,Sceptstb998. Newvariantsnocertifiedratios. All3contacts/figures/tableviewed;Fig2crop49,39,302,1624x fullcaptionactualview."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "enforcement-heuristics-for-argumentation-with-deep-reinforcement-learning",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.2019",
+      "description": "Cited for the caution about implementation/hardware in runtime comparisons, not as an enforcement backbone; exact three-authorICLR2019 bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Efficiency actualbodycitation andfullmatchingreference"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Completedall9formalpages andidentifiedvendorPDFsnotownmissingappendix.",
+    "Setactual2author/date/orgmetadata andtask-specific specialistgraph-edit improvement classification.",
+    "Retainedsymbolicverificationdependence, conditionalmetric/negativecases andcodeversionrewardnormalization.",
+    "AddedoriginaltaskFigure2 andoneactualruntime-cautioncitationedge."
+  ],
+  "reviewed_note_sha256": "b88f31976e765b52845b14952e4f3710ccd607073540f6e096ede74bce4ac6bc"
+}

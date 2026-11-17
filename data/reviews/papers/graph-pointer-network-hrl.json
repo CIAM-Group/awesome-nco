@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "paper_id": "graph-pointer-network-hrl",
+  "note_path": "specialist/graph-pointer-network-hrl.md",
+  "baseline_note_sha256": "05e3f6bde5fd147fdc35fc0557b328c3c6a78aabf472290898ae5133e730232a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/1911.04936",
+      "retrieval_url": "https://arxiv.org/pdf/1911.04936",
+      "version": "arXiv1911.04936v1 2019-11-12,8pages complete; actual reading version and AAAI2020 workshop reference eligibility distinguished",
+      "local_path": "research/full-text-review/graph-pointer-network-hrl/paper.pdf",
+      "sha256": "b7937403ed59b24ed615d3d7dab1548694d24516376167918991fcc7ae546faa",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read fresh arxivv1 title/authors/two affiliations, TSP formulation, prior work and hierarchical state-action latent framework."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read exact central-self-critic and bottom-up frozen lower policies, graph embedding equations/relative vector context, hierarchical soft logits and three128dim layers."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read complete experiments and tables, TSP50earlystop10epochs, neural versus external2opt split, synthetic windows/TSPTW training and apparent printed lateness sign discrepancy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read public TSPLIB result, vector/earlystop ablations and all bibliography; all8pages complete, no appendices."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gpn",
+      "category": "contribution",
+      "statement": "Pointer construction with context embeddings and relative coordinates; layer-wise hierarchy uses soft lower-policy prior.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Contributions, Algorithm1 and Figures2/3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Three128dim graph-embedding layers; central critic versus TSPTW baseline; frozen lower network and separate task models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations4-13 and training schedules"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Whole1000case timing, different transfer schedules, external2opt, residual public gaps and TSPTW empirical feasibility qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables1-6 and Figures4-8"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive neural policy; hierarchy combines logits during route construction, optional external2opt not learned incumbent edits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithm1 Section4.2 and GPN versus GPN+2opt distinctions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date",
+      "source_url": "https://arxiv.org/abs/1911.04936",
+      "locator": "v1titlepage 2019-11-12 fiveauthors, Columbia primary and DroriCornell dual affiliation; retained actual institutions."
+    },
+    {
+      "field": "publication, inclusion, acceptance",
+      "source_url": "https://deep-learning-graphs.bitbucket.io/dlg-aaai20/",
+      "locator": "Manually checked exact title/authors PosterSpotlight entry in AAAI2020DLGworkshop and authorREADME; outside maintrackcriteria. Removed generic calendar2019-12-06acceptance, year-only workshoppublication2020."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/qiang-ma/graph-pointer-network",
+      "locator": "All8scientific pages fully read, no appendix/missing scientificmaterial pointer; official30membertree and fullREADME/workshoppage inspected, no PDFZIP scientificsupplement."
+    },
+    {
+      "field": "code_url, formula and objective discrepancies",
+      "source_url": "https://github.com/qiang-ma/graph-pointer-network",
+      "locator": "Inspected smallGPN plus larger-test notebook, low/hightraining and fullsampling/greedytesters and ORToolsbaseline: nodewiselinear context, Eq12reversedlateness, completiontimeversussumarrival, independentmincost/minpenalty acrosssamples, differentdepot/shuffle/averaging/limitdefaults."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/1911.04936v1#page=4",
+      "locator": "Original Figure3 Rect(305,400,552,570),5x, showingactualsoftlogitprior hierarchy; all algorithms/formulas/tables/plots visuallychecked."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/1911.04936",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2019-11-12; title on abstract page: Combinatorial Optimization by Graph Pointer Networks and Hierarchical Reinforcement Learning. This date is preprint history, not formal publication. Cached research/full-text-review/graph-pointer-network-hrl/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "2ICLR2017workshop",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "9arxiv2019",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "10",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "attention-model",
+      "reference_label": "12",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "16",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "rl-vrp",
+      "reference_label": "20",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    },
+    {
+      "citing": "graph-pointer-network-hrl",
+      "cited": "pointer-networks",
+      "reference_label": "25",
+      "description": "Explicit numbered in-text citation with matching actual bibliography; cited preprint/workshop version is retained rather than a future formal venue.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit numbered citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8
+          ],
+          "locator": "Matching bibliography authors/title/year."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh complete8page reading with workshop eligibility and version separate; unsupported calendar acceptance replaced by evidenced workshop publicationyear.",
+    "Clarified soft lower-policy logits/frozen layerwise training, separate constructive tasks and classical2opt budget.",
+    "Qualified neural transfer training10epochs versus100epochs, whole1000case times and stronger classical baselines/publicresidualgap.",
+    "Documented Eq12penaltysign and Eq11objective/code mismatch, separate samplecost/feasibility minima and unmatched baseline protocols.",
+    "Clarified actual small/large codebranch graph/context/clipping behavior; no hardfeasibility or messagepassing invariance guarantee.",
+    "Original Figure3 and seven explicit source-version citation edges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e71d98f3df6a429ed23c5912cedb478f41f30a12f69dd3b49196edacd2c40fd9"
+}

@@ -1,89 +1,83 @@
 ---
 id: learning-heuristic
 short_title: Learning Heuristic
-title: "Learning Heuristics for the TSP by Policy Gradient"
+title: Learning Heuristics for the TSP by Policy Gradient
 authors:
-  - Michel Deudon
-  - Pierre Cournut
-  - Alexandre Lacoste
-  - Yossiri Adulyasak
-  - Louis-Martin Rousseau
+- Michel Deudon
+- Pierre Cournut
+- Alexandre Lacoste
+- Yossiri Adulyasak
+- Louis-Martin Rousseau
 year: 2018
-date: 2018-06-26
-acceptance:
-  date: "2018"
-  source_url: "https://doi.org/10.1007/978-3-319-93031-2_12"
+date: '2018-06-08'
 venue: CPAIOR
 paper_url: https://doi.org/10.1007/978-3-319-93031-2_12
-code_url: https://github.com/MichelDeudon/encode-attend-navigate
 institutions:
-  - Polytechnique Montreal
-  - Element AI
-  - HEC Montreal
-  - CIRRELT
+- Polytechnique (France)
+- Element AI
+- HEC Montréal
+- Polytechnique Montréal
 scope: specialist
 paradigm: constructive
 problem_families:
-  - Routing
+- Routing
 problems:
-  - Traveling Salesman Problem
-summary: This paper learns a policy-gradient TSP heuristic with an attention-only encoder-decoder, an explicit critic baseline, and optional 2-opt post-processing.
+- Traveling Salesman Problem
+summary: An attention-only REINFORCE policy uses three-action context and optional classical 2-opt; size-50-to-100
+  transfer is demonstrated, with size-100 quality below the listed OR-Tools and sampled pointer baselines.
 figure:
   path: paper-assets/learning-heuristic/framework.png
-  alt: Attention-only neural encoder and pointer-style neural decoder used by the learned TSP heuristic.
-  caption: 'Appendix Figures 1–2: Neural encoder and neural decoder used by the learned heuristic.'
-  source_url: https://hanalog.polymtl.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf
+  alt: Complete original attention encoder and illustrative pointer decoder, including encoder input and both appendix
+    captions.
+  caption: 'Appendix Figures 1-2: Encoder and adapted decoder illustrations; Equation 3 specifies the three-action
+    query.'
+  source_url: https://stage.hanalog.ca/wp-content/uploads/2018/11/cpaior-learning-heuristics-6.pdf#page=12
+inclusion: reference
+inclusion_reason: CPAIOR is outside the approved main-conference and journal inclusion list.
+publication:
+  date: '2018-06-08'
+  source_url: https://link.springer.com/chapter/10.1007/978-3-319-93031-2_12
 ---
 
 # Learning Heuristics for the TSP by Policy Gradient
 
-> **TL;DR:** This paper learns a policy-gradient TSP heuristic with an attention-only encoder-decoder, an explicit critic baseline, and optional 2-opt post-processing.
+> **TL;DR:** An attention-only policy constructs TSP tours from three-step context, then optional classical 2-opt improves the best sampled tour. Size-50 training transfers to size 100, but the reported size-100 hybrid is weaker than OR-Tools and the sampled pointer-network baseline.
 
 ## Motivation
 
-The paper starts from the observation that many practical TSP heuristics still rely on hand-crafted logic, while supervised neural approaches depend on expensive optimal labels. It asks whether a reinforcement-learning policy can learn a useful construction heuristic directly, and whether a lightweight local search step can make that learned heuristic competitive with strong OR baselines.
+The paper replaces the LSTM-based pointer-policy architecture with attention and combines learned construction with a simple classical improvement heuristic. It studies two-dimensional Euclidean TSP, rather than demonstrating the proposed framework on several native optimization tasks (PDF pp. 1-3).
 
 ## Contributions
 
-- Proposes an attention-based encoder-decoder for TSP that removes the LSTM encoder used in earlier policy-gradient routing models.
-- Uses a custom critic as a baseline for REINFORCE, rather than relying on the exact setup from prior pointer-network work.
-- Adds a simple 2-opt post-processing step to improve sampled tours.
-- Shows that the learned heuristic is competitive with OR-Tools and can get close to optimal on 2D Euclidean TSP instances.
+- Uses a self-attention set encoder and a decoder that explicitly retains only recent actions.
+- Trains by REINFORCE with a learned critic baseline, without optimal-tour supervision.
+- Tests sampling, optional 2-opt and size-50-to-100 transfer.
 
 ## Methodology
 
-1. Input cities are represented by 2D coordinates, and PCA is applied to centered coordinates for rotation invariance.
-2. The encoder maps each city to an embedding using stacked multi-head self-attention and feed-forward layers.
-3. The decoder keeps only the last three visited cities instead of an LSTM state, which forms the query for the next action.
-4. A pointing mechanism scores unvisited cities, masking those already in the tour and clipping logits to stabilize training.
-5. The policy is trained with REINFORCE and a learned critic baseline to reduce gradient variance.
-6. At inference time, multiple samples can be drawn and the best tour can be improved further with 2-opt.
+Centered coordinates undergo PCA, intended to reduce orientation dependence. The encoder uses three residual attention/feedforward stacks, sixteen heads, 128-dimensional embeddings and a 512-wide feedforward inner layer. Equation 3 forms a query from the last three selected city embeddings rather than a recurrent state. A pointer-style scorer, visited-city exclusions and temperature-controlled sampling generate the tour. The critic uses the same encoder type, a zero-query glimpse and two fully connected layers; it learns tour length by MSE (PDF pp. 4-7).
+
+REINFORCE minimizes expected tour length using the critic to reduce variance. Training uses on-the-fly unit-square instances, batch size 256 and 20,000 Adam steps, reported as about two hours on two Tesla K80 GPUs. Inference samples 128 tours and applies classical 2-opt to the best when requested. This remains **constructive** under the collection's neural-stage taxonomy: 2-opt is not a learned improvement policy (PDF pp. 6-8).
 
 ## Experiments
 
-- **Problems:** 2D Euclidean TSP at sizes 20, 50, and 100.
-- **Baselines:** OR-Tools, Christofides, Concorde, the Pointer Network trained with policy gradient, and the paper's own model with and without 2-opt.
-- **Metrics:** Average tour length and runtime.
-- **Main finding:** The learned policy is competitive with classical heuristics, and the 2-opt hybrid closes most of the remaining gap, especially on the Euclidean benchmark instances reported in the paper.
+Each test size, 20/50/100, has 1,000 random instances. Size-100 results use the size-50-trained model. Table 1 reports model/model+2opt/Concorde lengths of 3.84/3.82/3.82, 5.81/5.77/5.68 and 8.85/8.16/7.77. Equality after two-decimal rounding at size 20 does not establish that every instance is solved optimally (PDF pp. 7-8).
+
+The hybrid beats the listed OR-Tools mean at size 50 (5.77 vs 5.80), but loses at size 100 (8.16 vs 7.99). The sampled pointer baseline is also better at size 100 (8.05). Thus neither transfer nor 2-opt establishes universal heuristic superiority. LKH is said to be close to Concorde and is omitted from the quality table (PDF pp. 7-8).
+
+For size 50, reported average times are 0.05/0.14/0.02 seconds for CPU Concorde/LKH/OR-Tools, versus 0.30/0.06 seconds for single-GPU pointer/model inference. The headline fivefold speedup concerns the pointer comparison; the model is slower than the displayed OR-Tools time. Different hardware and an unseparated incremental 2-opt cost limit broader timing conclusions. Inference temperatures are 2.4 for size 20 and 1.2 for 50/100 (PDF pp. 7-8).
 
 ## Limitations
 
-Author-reported constraints and curator observations are separated to keep interpretation transparent.
+Training and testing use a restricted synthetic distribution, and no global-optimality guarantee is established. PCA preprocessing, inference sample count and classical postprocessing matter to the results. Size transfer within TSP does not make this a generalist model.
 
-### Reported by the Authors
-
-- The paper is focused on the 2D Euclidean TSP, so it does not demonstrate direct transfer to constrained or non-Euclidean routing variants.
-- The method still benefits from 2-opt at inference time, so the strongest results are not from pure one-shot construction alone.
-- The model is trained and evaluated on fixed benchmark sizes, with transfer to TSP100 shown by pretraining on TSP50 rather than by a single universal model.
-
-### Curator Notes
-
-- The critic is part of the training setup, so the note should not be read as a pure actor-only policy-gradient method.
-- The improvement from 2-opt comes with extra inference cost, so quality comparisons should respect the decoding budget.
-- The result is still specialist under this repository's taxonomy because the model is trained for TSP rather than reused across different combinatorial problems.
+**Printed specification caveats:** Equation 4 sets visited logits to minus infinity, but literal substitution into Equation 5's tanh clipping makes them finite `-C`, hence nonzero under softmax. Exact exclusion requires an additional mask after clipping or equivalent filtering. This qualifies the printed formula composition, not an assertion that the reported experiments used an invalid implementation. Figure 2 is an adapted schematic containing two recent actions and a global vector, while Equation 3 explicitly specifies three recent embeddings; the equation is the method description used here. The unavailable code prevents checking those implementation details (PDF pp. 5,12; curator analysis).
 
 ## Reproducibility
 
-- **Official implementation:** [MichelDeudon/encode-attend-navigate](https://github.com/MichelDeudon/encode-attend-navigate)
-- **Checkpoints:** Not mentioned in the paper excerpt; repository should be checked separately.
-- **Main paper references:** Sections 3-5, Table 1, and the appendix figures.
+- **Read source:** all thirteen pages of the author/lab-hosted manuscript, including all 25 references and the complete appendix/three figures. The formal Springer HTML appendix was also read and its literature review/figure descriptions checked. The typeset chapter spans twelve pages; byte identity or an explicit revision date for the thirteen-page copy is not claimed.
+- **Publication:** CPAIOR 2018, pages 170-181, first online **2018-06-08** per Springer, rather than the conference-start date. The unsupported acceptance field is removed. This remains a reference because CPAIOR is outside the agreed main venue list.
+- **Affiliations:** Polytechnique (France), Element AI, HEC Montréal and Polytechnique Montréal. CIRRELT appears in acknowledgments, rather than as a byline affiliation.
+- **Figures:** complete original appendix Figures 1-2 are extracted from PDF page 12, restoring the previously cropped encoder input/captions. Figure 3's before/after tours were also checked.
+- **Code:** the article/publisher identify `MichelDeudon/encode-attend-navigate`; GitHub, its repository API and contents API all returned 404 during this review. The current Code button is removed, while this historical release attribution is retained. Experiments were not rerun.
+- **Supplements and relations:** the full manuscript includes the scientific appendix, and the publisher's appendix is accessible in HTML; no further scientific attachment was identified. Exact references identify Bello's NCO paper, S2V and Pointer Networks. AAAI 2016 learning-to-branch is not substituted by the different 2019 GCNN branching paper.

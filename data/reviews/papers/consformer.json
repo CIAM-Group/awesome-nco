@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "paper_id": "consformer",
+  "note_path": "specialist/consformer.md",
+  "baseline_note_sha256": "3da01ea3f426f25ebdc0fce1ba7f37f7a56e409de8b3a4f3d39ca7478f436827",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/xu25q/xu25q.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/xu25q/xu25q.pdf",
+      "local_path": "research/import-272/nco-9a07a9777f.pdf",
+      "sha256": "bf177ecc4e73722b4be1ed6753a56c343692d409c1d01998285001ecc78c4134",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://xuwil.github.io/resources/icml25-poster.pdf",
+      "version": "Author-linked ICML2025 poster",
+      "local_path": "research/full-text-review/consformer/icml25-poster.pdf",
+      "sha256": "a2f997be3bcca838c342a515123df2150d274cab899971cde8ecc5c771dc8782",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://xuwil.github.io/resources/icml25-slides.pdf",
+      "version": "Author-linked ICML2025 slides",
+      "local_path": "research/full-text-review/consformer/icml25-slides.pdf",
+      "sha256": "1a302c8c8235236cf637a4ca21d04f7c798649bb592b92a34b9f50e0a0ca4909",
+      "pages": 14,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster-qr-arxiv-v2",
+      "url": "https://arxiv.org/pdf/2502.15794v2",
+      "version": "arXiv2502.15794v2 dated June9,2025 via poster/slides QR",
+      "local_path": "research/full-text-review/consformer/poster-qr-arxiv-v2.pdf",
+      "sha256": "fbc1039c106c422f566139c660501f33b56234b9e42312fe2f67770a9dec3a92",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal identity, introduction, complete related-work scope, CSP setup, and separate iterative model examples."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read input/value/position/selected-set encodings, attention, Gumbel outputs, differentiable constraint table and iterative deployment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read all four task protocols, baseline tables, subset/position ablations, explicit fixed-constraint/SAT limitation and conclusion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read acknowledgments and all bibliography entries, matching internal catalogue titles/authors individually."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all numerical penalty examples, full CP formulations, graph generator selection and nurse ID/OOD configurations (printed identically)."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 19,
+      "notes": "Read all hyperparameter/Gumbel-temperature/multistart/additional classical baseline/penalty and direct-SGD appendices D–I."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 14,
+      "notes": "Read every author-linked slide, then rendered/visually checked all14 including figure-only slides2/4/5/9/12/13 and the final paper link; same ICML identity and method/results, no separate new scientific experiment."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read full author-linked poster and rendered full page, checking constraint diagrams/model/results and paper/code links."
+    },
+    {
+      "source_id": "poster-qr-arxiv-v2",
+      "first_page": 2,
+      "last_page": 19,
+      "notes": "Coverage via already fully read formal pages2–19, each full text and RGB rendered pixel exactly equal; file and per-page text/pixel hashes plus1:1 mapping in qr-version-page-equivalence.json. Not an independent second reading."
+    },
+    {
+      "source_id": "poster-qr-arxiv-v2",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Independently read first page, version2502.15794v2June9,2025andformalICMLidentity;18remainingpagesprovedidenticalcoveredseparately."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cf-contribution",
+      "category": "contribution",
+      "statement": "Single-step self-supervised Transformer refines complete CSP candidates through categorical/absolute/relative/subset encodings and constraint penalties.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3.1–3.4"
+        }
+      ]
+    },
+    {
+      "id": "cf-method",
+      "category": "method",
+      "statement": "One-step random assignment training/iterative discrete refinement; task-specific models and selected subsets; soft zero penalties are not general argmax feasibility certificates.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            13,
+            16,
+            19
+          ],
+          "locator": "Table1/7/8/Eq1–5/AppendixH"
+        }
+      ]
+    },
+    {
+      "id": "cf-experiment",
+      "category": "experiment",
+      "statement": "Positive Sudoku/coloring transfer and MaxCut scaling qualified by ORTools/ANYCSP negatives, simple nurse task and identical printed ID/OOD parameters; Gumbel/multistart not uniformly dominant.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Tables2–12/Figure3/AppendicesC–I"
+        }
+      ]
+    },
+    {
+      "id": "cf-classification",
+      "category": "classification",
+      "statement": "Specialist improvement: separately trained task/color-count models edit complete candidates; common framework not demonstrated shared cross-native checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            16
+          ],
+          "locator": "Section4.2/Table8"
+        }
+      ]
+    },
+    {
+      "id": "cf-limit",
+      "category": "limitation",
+      "statement": "Fixed implicit constraint structure cannot encode arbitrary parametric SAT clauses; more iterations not guaranteed termination/monotone feasibility, nurse OOD not established by identical printed settings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            15,
+            19
+          ],
+          "locator": "Section5/AppendicesC2/H"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v267/xu25q.html",
+      "locator": "FormalPDFp1YudongW.Xu/WenhaoLi/ScottSanner/EliasB.Khalil; Toronto/Vector, SCALEAIResearchChairnotindependentinstitution."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v267/xu25q.html",
+      "locator": "OfficialHTMLcitation_publication_date2025/10/06;PMLR267pp69432–69450."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://xuwil.github.io/",
+      "locator": "ManualpublisherHTML19pagesintegratedA–I/noextrassupp;assetAPI404;normalORIQN6ID0snTAPI403nobypass. Authorposter1page/slides14pagesfullread+render, QRarxiv2502.15794v2June9,2025p1read/pages2–19exactfulltext+RGBpixelSHAproof andtransparentdeduplicatedcoverage; repo20membersREADMEonlyscientificdoc/noPDFTeXnotebook."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/khalil-research/ConsFormer",
+      "locator": "840369B20memberZIP;READMEexplicitICML2025andCPAIOR2026,corecurrentsoftrecurrence/hardFalse/nurseloss/selectionbytest_loaderdifferencesdocumentedwithoutclaimingformalexperimentidentity."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "consformer",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2019)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals et al. (2015)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Vinyals and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "recurrent-transformer-csp",
+      "reference_label": "Yang et al. (2023)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            12
+          ],
+          "locator": "Explicit in-text citation Yang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "rl-local-search-sat",
+      "reference_label": "Yolcu & Póczos (2019)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Yolcu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al. (2022)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas (2020)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "ucom2",
+      "reference_label": "Bu et al. (2024)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Bu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "neural-set-function-extensions",
+      "reference_label": "Karalias et al. (2022)",
+      "description": "Explicit related-work/method citation and complete author/title/year bibliography confirmed; candidate matching alone not used.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Karalias and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "consformer",
+      "cited": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "reference_label": "Tönshoff et al., 2023",
+      "description": "Unlabeled constraint-solving/dataset/baseline discussion explicitly names ANYCSP; exact four-author IJCAI2023 DOI476 identity, with diacritic extraction checked.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            7,
+            8,
+            12,
+            15
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "All19formalpages/AppendicesA–I/refs/tablesread;poster1+slides14pagesfullread/rendered;QRarxivfirstpageread+18proventextpixelidenticalpagescoveredtransparently;10actualedges. Formalfullnamesrestored,negativebaselines/temperature/multistart/nurseOODandsoftzeropenaltyqualificationretained,current2026repochangesnotattributedtoformal2025runs.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d95544efd3b479301e05ba00ceb9f081b4d55d8b130ac01e13188fb4fedb3fdd"
+}

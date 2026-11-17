@@ -1,0 +1,491 @@
+{
+  "version": 1,
+  "paper_id": "gimf",
+  "note_path": "specialist/gimf.md",
+  "baseline_note_sha256": "bec8dd77aee046994e68172f94c07b815a6788198a515e3a7795620429957605",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/546888acdf5dd477333d6ebb88ff72bf-Paper-Conference.pdf",
+      "version": "Complete formal ICLR2025 conference20page article with scientific AppendicesA-I;publisherMay1,2025",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/546888acdf5dd477333d6ebb88ff72bf-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-988ed13abf.pdf",
+      "sha256": "7e631f65aa2e846506176f12aa2635c59c582238cbfaa5aa698ed3af81bdd450",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read4authorsSYSU/SMU/TUE,graph-imageframeworkPSAR+MSB2backbones;imageisderivedfromsamecoordinatesnotextrameasurements/information. Single/unifiedmodelsmeanweights/sizeswithin native task. POMO scalarizationdefinition noexactglobalguarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read imageconstructionTSPoccupancychannels,CVRPcoord-demand/KPvalue-weightpixels. Derivedimagesquantizedsameinput/noplusindependentdata;collisionsambiguity/proposedfloorWx+1endpointat1 outsideW printed needscode. PSARsideceil(10sqrt(n)/w)*w rho~.01notexact,MLPpatchcoords2→128. L6Lprime3two10bottleneckcrossattentionstillwithinselfquadratic. GIMFConCNHmixedsize vsPonPMOCOper-size notsinglecheckpoint2backbones."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "ReadallTables1/2rows andFig3. 20Mtrainingbatch64patch16/lr1e-4exceptKP1e-5,101/105weights. HVgapGIMFCAugnottruePF;EMNHCVRP/KPexceptions andLKHHVbetter. In-distributionmultimodaltypesnotstatisticallysignificant;VCAOODworseCNH;PSARcritical testedn150/200,notgeneralproof. 200instanceruntimeGIMFC21mBiTSP100,2.9hTriTSP100Aug excludestraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read Table3allOODresults/Fig4/5 values+allConclusion+refsA-L. GIMFCn200.7325vsCNH.7292/LKH.749;GIMFCaug.7362 vs.7343/.749;constrainttransfer notstudied. PSARablationVSA.7274/GIMF.7116 without vs.7293/.7325 with. Explicit problem-specific imagecost/generalizationlimits,otherMOCOimageopenproblem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainingcompletebibliographyN-Z+A/Bmodelspecificobjective/features/generation/capacityandgraphtransformerarchitecture. Candidate15exactIDscheckbodypages1/2/3/10. Problemdepheterogeneous pixelinput no universalgeometry guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "ReadallC/D/E/F/G/Hfirstsection/Fig6allvalues/Table4/5. GIMFCretainsCNHdualweightattention+sizeawaredecoder/PusesMLPhyperdecoderparameters. Taskcontext/maskdifferences;HVrefnorm,augmentation8CVRP8^MTSPnoneKP. Hfusionlayers3bestOODbutLprime2/3tieIDrounding;allscientificsettings captured."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "Read everyHhyperparamcurve/ITable6allrows/modelcapacitymatched d80GIMFsmall/200baselineslarge, notexactequalparametersnorallstrictwin. Pointestimatesn100.7039-.7040tiny/noSEcurvesnotstatisticalgeneral. All20pagesA-I/fullrefsread. VisualFigs1-8mainandappendchecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Derivedimageoffersspatialinductivebiasnotindependentnewobservations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Intro/Fig1/imageformula"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "PSARapproxstablepixeldensity/learnedpatchpositions/MSBbidirectionalfusion2backbones.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Eq1-4/Fig2"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Nativeproblem/backbonesseparatemodels;GIMFCmixedsize/GIMFPsize-specific;multitasktransferfuture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            10,
+            16,
+            17
+          ],
+          "locator": "Protocol/conclusion/AppD"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Sixlayerthreefusiontenbottleneck16patches/TSPoccupancyCVRPdemandKPweightimages/dualattentionvshypernetwork/REINFORCE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            15,
+            16,
+            17
+          ],
+          "locator": "Completeformulas1-18/AppsA-D"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "200instanceHVgapsGIMFCAugnotoptimal/EMNHandLKHexceptions/OOD150200/KroAB/MSBPSAR/hyperparam/modelsizeallconditions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            18,
+            19,
+            20
+          ],
+          "locator": "AllTables1-6/Figs3-8"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Problem-specificimages/extraresources/finiteWSnoexactPF/rastercollisionsboundary/PSARnoqualitytheorem.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            10,
+            19,
+            20
+          ],
+          "locator": "Authorlimitations+qualifiedrepresentation/conditionalclaims"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "20pagesA-Irefs10visual141repo16checkpoints/noscientificattachment/actualselectedcode/noexp rerun.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Fullreadinglogs/sourcecache/metadata"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/546888acdf5dd477333d6ebb88ff72bf-Abstract-Conference.html",
+      "locator": "Publisher4authorsICLR2025/HTMLcitation_publication_date2025-05-01;PDFp1SYSU/SMU/TUE+SYSUlabaffiliations."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/546888acdf5dd477333d6ebb88ff72bf-Abstract-Conference.html",
+      "locator": "ManualpublisherPaper/Bibtexonlynootherscience. Complete20pA-I/fullrefsread;OpenReview4sJ2FYE65UAPIv1/v2both403cached. Official141-filetreenoPDFZIP/scientificattachment,fullREADMEchecked."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/546888acdf5dd477333d6ebb88ff72bf-Abstract-Conference.html",
+      "locator": "Formal20pSHA7e631f65aa2e846506176f12aa2635c59c582238cbfaa5aa698ed3af81bdd450;visual2/4/5/6/8/9/10/18/19/20allfiguresandmajorresulttables."
+    },
+    {
+      "field": "code_url,scope",
+      "source_url": "https://github.com/bill-cjb/GIMF",
+      "locator": "Commit5ce8c80a53f10ce1b8aea276930c1d7e0c833d4b141files16namedcheckpointsseparatenative/backbone. FullREADME/config125/env159;model1-210and226-355of509selectedread. TSPzero-basedfloorimageindexusesWexceptsingletonKroABW-1,actualendpointconventionqualified. Noexp rerun."
+    },
+    {
+      "field": "metrics and assumptions",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/546888acdf5dd477333d6ebb88ff72bf-Abstract-Conference.html",
+      "locator": "HVreferenceGIMFCAugnottruePF;allmodelsWS101/105weights/200instances;GPUtimesexclude20Mtraining. Aug8CVRP8^MTSPnoneKP. MSBavoidscrossmodalfullattentionbutwithinmodalselfattention remains;PSARdensityapprox .01 notguaranteedoptimality/generalization."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gimf",
+      "cited": "asp",
+      "reference_label": "Wang et al.(2024)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1explicitWang et al.(2024);completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.(2019)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1explicitKool et al.(2019);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.(2023)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1explicitDrakulic et al.(2023);completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.(2023)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "BodyPDF1explicitChalumeau et al.(2023);completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "emnh",
+      "reference_label": "Chen et al.(2023a)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "BodyPDF2explicitChen et al.(2023a);completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "graph-moip",
+      "reference_label": "Wu et al.(2022)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "BodyPDF3explicitWu et al.(2022);completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "hncs",
+      "reference_label": "Goh et al.(2024)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1explicitGoh et al.(2024);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "meta-sage",
+      "reference_label": "Son et al.(2023)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            13
+          ],
+          "locator": "BodyPDF1explicitSon et al.(2023);completebibliographyPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "ncs",
+      "reference_label": "Kong et al.(2024)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1explicitKong et al.(2024);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "nhde",
+      "reference_label": "Chen et al.(2023b)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "BodyPDF3explicitChen et al.(2023b);completebibliographyPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "pareto-set-learning",
+      "reference_label": "Lin et al.(2022)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitLin et al.(2022);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.(2020)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "BodyPDF2explicitKwon et al.(2020);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al.(2023)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1explicitGrinsztajn et al.(2023);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al.(2024)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "BodyPDF1explicitLiu et al.(2024);completebibliographyPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "gimf",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al.(2024)",
+      "description": "Explicit neural CO background, MOCO backbone/predecessor or future native-transfer direction; exact full-reference identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "BodyPDF10explicitZhou et al.(2024);completebibliographyPDF14."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ExpandedPSAR/imageformula/MSB/backboneconditioningandnative-taskboundaries.",
+    "CorrectedindependentnewinformationnotionandHVoptimalityinterpretation;capturedEMNH/LKHexceptions/augmentationcost/modelsizeconditions.",
+    "All20formalA-Ipages/10visual/scientificattachmentinventorycomplete;currentTSPboundaryimplementationqualified."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ed9f6994684b6043a97007325062dc4f52fa49c4a37128705aa76e2ae31588d0"
+}

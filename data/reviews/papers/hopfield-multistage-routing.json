@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "paper_id": "hopfield-multistage-routing",
+  "note_path": "specialist/hopfield-multistage-routing.md",
+  "baseline_note_sha256": "147ab37cb12ed528d0885e5ddfa9f08162f148de3eac537cabacf8e73bd320d3",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/f3f27a324736617f20abbf2ffd806f6d-Paper.pdf",
+      "version": "Official NIPS1991 volume4 scanned proceedings,8pages722-729",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/f3f27a324736617f20abbf2ffd806f6d-Paper.pdf",
+      "local_path": "research/import-272/nco-763f7f435c.pdf",
+      "sha256": "e73a7dab3a8f75c4a2872d9a7b13cb3c8658698251c254715ca40cf38628ceff",
+      "pages": 8,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Fresh pp1-4 read including title affiliations Princeton/NEC; synchronous shared-memory RMIN establishes max nonconflicting requested routes; exact route database exponential oracle vs fixed-order greedy, neural structure fixed per physical RMIN, only biases per message; three-dimensional legal-array constraints. Not vehicle routing and no learned policy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Fresh read pp5-8 all10refs. Continuous symmetric-weight Hopfield three-dimensional array, four energy terms; fixed tau1,A=C=D3,B6. Table1 three small RMINs M1-8, exact/greedy enumerate ALL sets but neural samples1000, so apparent beating exact is nonpaired sampling. Negative RMIN1 M8 3.78 neural vs4.10 greedy and4.33 oracle; RMIN3 exact missing M>=5. No measured timing advantage, analog parallel speed speculative; poor large-RMIN scaling acknowledged. Visually checked full equations and table."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Maximize simultaneous requested communication connections per cycle under bus conflicts; exhaustive search is expensive.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction and comparator sections"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "3D legal-array constraints mapped to fixed symmetric Hopfield weights and message-dependent biases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Section4 equations6-12"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Digitally simulated continuous sigmoid dynamics; tau1 A=C=D3 B6 empirically chosen; network structure fixed perRMIN, no training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Section4 and parameter footnote"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "Three smallRMINs; exact/greedy enumerate all admissible message sets but neural samples1000. Apparent neural gains over oracle are sampling variation; mixed greedy comparison and missing exact large cases.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Table1 and protocol paragraph"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Poor large-network scaling acknowledged; analog parallel speed is hoped for, not measured here.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Scaling paragraph and conclusion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Communication-network routing, hand-derived energy, no shared learned multi-task solver.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Problem definition and weights"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/f3f27a324736617f20abbf2ffd806f6d-Paper.pdf",
+      "locator": "Title page1: MarkW.Goudreau/C.LeeGiles, Princeton/NEC."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/hash/f3f27a324736617f20abbf2ffd806f6d-Abstract.html",
+      "locator": "Official NIPS1991 volume4 entry."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/hash/f3f27a324736617f20abbf2ffd806f6d-Abstract.html",
+      "locator": "Manually checked official entry links Bibtex/Metadata/Paper; full8pages contain no appendix or attached scientific supplement."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1991/file/f3f27a324736617f20abbf2ffd806f6d-Paper.pdf",
+      "locator": "Full scanned equations/Table1 and Figures1-2 checked; no new figure asset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read8pages and10references.",
+    "Restored full author names.",
+    "Specified actual communication-routing objective, fixed-weight dynamics and selected parameter values.",
+    "Corrected unmatched exact/greedy vs neural sampling and recorded negative comparisons.",
+    "Separated speculative analog speed from measured results; added scaling limits."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "15700246e45f6bafa386d557a5ae2797a07c1f9923caf6d5f57a0d420dba237b"
+}

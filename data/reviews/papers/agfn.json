@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "paper_id": "agfn",
+  "note_path": "specialist/agfn.md",
+  "baseline_note_sha256": "5feaeb318676cf79b9d6301f85cda6b3da5fcace2c7981bb20dc92498d451045",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b210c387381713a14a4f5a607aff3520-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b210c387381713a14a4f5a607aff3520-Paper-Conference.pdf",
+      "version": "Actual official ICLR2025 final15-page PDF, all main/references/AppendicesA-C freshly read; landing, author code tree/vendor archive and selected science code inspected.",
+      "local_path": "research/full-text-review/agfn/paper.pdf",
+      "sha256": "f0138646e3f0d078a4b0d00385be4be1b44343b9824782286a35fc591cac1140",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshofficial15page first2read institutionsSMU+SIMTechAstarNOTNTU, officialcodeexplicitZHANG-NI/AGFN missingoldmetadata. CoreconstructiveGFlowNettrajectorybalance (notflowmatching) alternatediscriminator labelsoriginalvsclassicalLSimprovedsolutions,hybridgreedy/samplingdecoder. SeparateCVRP/TSPmodels checkbudgetsnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FullGeneratorsectionread:static sparsekNNgraph20later, residualgatednodeedgeGNNmeanaggregationSiLU+BNsigmoidhe atmapnotnormalprob itself, maskedrenormalizedsampling. Reward negative-log=(1-discriminatorscore)+length-minusbatchmean;TBnotflowmatching, learnedlogZ+PB detailsappendix. Diversitynotguaranteedglobaloptimal/neuralGNNnotuniversallylowercomplexity."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FullFigure1/discriminatorsquarederrorlabelsLStruevsrawfalse, genericdestruction-reconstructiontopKLS trainingONLY, inferencegeneratoralone. HybridateachdecisionPsample/.95greedy, P.05N100test vsN20puretraining,4:1generator:discriminator. CVRP200/500/1000demands1-9 C50all,128testeach; k=V/4meansedgecountquadraticfixedfractionnotasymptoticallylinear. TeslaV10032G+Xeon6148."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FullTables1-2allrowsandcomparisonread. Perinstance runtime,referenceLKH100trialsheuristicnotopt. AGFN100CVRP2008.41%worsePOMO1.20/GANCO3.97;1000AGFN1.65%vsPOMO46/GANCO10 butLKH1000negative5.48better. TSPAGFN10050015.28%/100017.39%notnearopt;size-trained1000notbest500-trainedCVRP/TSPoftenbetter. NoLSinbaselineinclGFACS intentionally,so notfullGFACSmethodbenchmark. Someprosepercent99.87notmatchingtabulatedcostdon'tpropagate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "FullTable3realworld+Figure2/3read:TSPLIBAGFN27.36%CVRPLIB17.95% aggregate,128sets? instancedetailsappendixCmaybe. Figureshybridimprovessampling/greedytested;LSvsLKHtraininglabelsCVRP200similar,nonadversarialweakeronlytestedtrainingcurve notglobalproof. Authorlimitation200nodequalitylower/generatorqualityandfuturebroadercomparators."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Fullbibfirst2pagesread actualCOMPASS/Neurewriter/SGBS/RGLS/GFACS(arxiv2024samechain)/AM/DPDP/POMO/MatNet/HeterogeneousPD/GCNguidedtree/L2I/LEHD/NeuOpt/Nazari. Joshi2020actuallyrethinkinggeneralizationnotefficientGCN;identityseparate. Hottungprinted2021latentsearchactual2020same title noted."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Fullremainingbib/AppendixA-Ccomplete:TBbackground/finitelearnednotexactrewardguarantee;P.05choiceCVRP1000P.03actually1.58better1.65,notuniversallybest. LargeCVRP2000/3000128each5000/1000064each,LKH1000trial30minlimitno5k/10krefs soqualitygapunknownthere;50007.13snot14.60all. GFACS200pretrainednot100scopeexplicit."
+    }
+  ],
+  "claims": [
+    {
+      "id": "adversarial",
+      "category": "contribution",
+      "statement": "GFlowNet constructive generator plus training-only search-refined discriminator and per-decision greedy/sampling mixture.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections1-3/Figure1/TB Eq4, not flow-matching."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Static gated edge heatmap, centered length/discriminator reward, trajectory balance with forward/backward/sourceflow; separate training search, no inference local search/parameterupdate. Fixedfraction nearestneighbors remain quadratic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            14
+          ],
+          "locator": "Sections3/AppendixA; actual release selected functions confirm operational differences and k=N//5 vsN/4."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "N20puretraining/N100P.05test, fixedcapacity50,100trainedtransferquality200weaker, mainLKH100heuristicreference vslargeLKH1000 andmissing5k10kgaps, disabledbaselineLS/singlehardware;13.95/17.39TSPgaps not globalSOTA.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            14,
+            15
+          ],
+          "locator": "Complete Tables1-6/Figures2-3 all scientific material read; comparisons/percentage wording restricted."
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "Specialistconstructive remains, hybrid refers to actiondecoding not neuralimprovement; traininglabelsearch notinferenceincumbentedit, separateTSP/CVRP100/200/500/1000weights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            15
+          ],
+          "locator": "Sections3.3-3.4/size-trained resulttables and authorcheckpointtree."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b210c387381713a14a4f5a607aff3520-Abstract-Conference.html",
+      "locator": "Formal15page titlepage4authors SMU andSIMTechAstar notNTU; officialHTML citation_publication_date2025-05-01. arxivabs2503.01931v1first2025-03-03; genericICLRnotification acceptance removed."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b210c387381713a14a4f5a607aff3520-Abstract-Conference.html",
+      "locator": "ActualpublisherHTMLonlyPaper/BibtexnoSupplemental; guessedZIP404. OpenReviewtBom4xOW1H API403 disclosed, no claimreadunknownattachments. CompletefinalA-C all15pagesread,noexplicitmissingmaterial. Author43entrytree noPDFTEXIPYNB;HGSvendorZIP27membersmanuallyinventory/noextradocumentorimage."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/ZHANG-NI/AGFN",
+      "locator": "Actualpaper/READMEexplicitlinkconfirmed; read generator/netd active discriminator, fullrewardtrainingloop, hybriddecoder, graphfeature/demand/capacity/backwardfactor andpositiveLS selectedfunctions; checkpoints/testfiles exist, kN//5releasevsN/4paper andtrainingdefaults notconflated."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b210c387381713a14a4f5a607aff3520-Paper-Conference.pdf",
+      "locator": "Original completeFigure1 PDFpage5 cropRect(114,84,493,187)4x; originalpage/keysciencevisualinspected."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2503.01931",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2025-03-03; title on abstract page: Adversarial Generative Flow Network for Solving Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/agfn/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "agfn",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2023",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Luo et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Luo et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2019",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Kool et al.,2019."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Kool et al.,2019."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Kwon et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Kwon et al.,2020."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al.,2021",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Kwon et al.,2021."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Kwon et al.,2021."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin et al.,2021a",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Xin et al.,2021a."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Xin et al.,2021a."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "step-wise-routing",
+      "reference_label": "Xin et al.,2020",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Xin et al.,2020."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Xin et al.,2020."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "compass",
+      "reference_label": "Chalumeau et al.,2023",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Chalumeau et al.,2023."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Chalumeau et al.,2023."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al.,2022",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Choo et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Choo et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.,2024",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Ye et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Ye et al.,2024."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Hudson et al.,2022",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Hudson et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Hudson et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al.,2022",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Kool et al.,2022."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Kool et al.,2022."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al.,2018",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Li et al.,2018."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Li et al.,2018."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "neurewriter",
+      "reference_label": "Chen & Tian,2019",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Chen & Tian,2019."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Chen & Tian,2019."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al.,2019",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Lu et al.,2019."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Lu et al.,2019."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Hottung et al.,2021",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Hottung et al.,2021."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Hottung et al.,2021."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.,2023/2024",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Zhang et al.,2023/2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Zhang et al.,2023/2024."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "gflownet-scheduling",
+      "reference_label": "Zhang et al.",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Zhang et al.."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Zhang et al.."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "gfacs",
+      "reference_label": "Kim et al.,2024b",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text citation Kim et al.,2024b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actual complete title/author/version reference Kim et al.,2024b."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al.,2021b",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text citation Xin et al.,2021b."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual complete title/author/version reference Xin et al.,2021b."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "neuopt",
+      "reference_label": "Ma et al.,2024",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Explicit in-text citation Ma et al.,2024."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Ma et al.,2024."
+        }
+      ]
+    },
+    {
+      "citing": "agfn",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.,2018",
+      "description": "Actual explicit cited occurrence plus matching complete bibliography. Preserve printed early/mistyped years (Hottung2021 title actuallyformal2020, NeuOpt/DeepACO printed2024, GFACS citedarxiv2403.07041v2024 precursor not presumedfutureAISTATS2025). DuplicateZhang2023/2024 identicalLetFlows references collapse toone stableID. Noncatalog GANCO/LS-GFN/PD/covering/rethinking-generalization are not forced to other titles.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text citation Nazari et al.,2018."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actual complete title/author/version reference Nazari et al.,2018."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh all15officialpages/scientificA-C, actualpublishernoscienceextra, author43tree/HGS27ZIPinventory andselectedfullcode functions.",
+    "CorrectedNTUtoSMU+SIMTechAstar, restoredexplicitofficialcodeURL, removedgenericacceptance, retainedverifiedfirstarxivMar3andpublicationMay1.",
+    "CorrectedflowmatchingtoTB, centeredlength/discriminatorscore/staticheatmap andtraining-onlyLS, specialistconstructive/inferencehybridactionsnotincumbentimprovement.",
+    "Documented20training/100testP.05/4to1,sizescapacity50, perinstanceruntimeLKHheuristicreference andfullyqualifiedlimitedbaselineprotocol.",
+    "Addednegative200transfercases, substantialTSPgaps,size-trainednonmonotonicity, realworld17.95/27.36aggregates,5k/10kunknownqualityreference and7.13vs14.60timeclarity.",
+    "Qualifiedquadraticsparsity, releaseN//5/demandinputvsformalcoords, netdactivevsunusedLSTM, defaultofflinebudgetsnotvalidatedrun;21actualstableIDcitations andoriginalFigure1."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "f2eb12162d9328c51a65f3a14e78ef379a6504f842318873c218e583ee1000ef"
+}

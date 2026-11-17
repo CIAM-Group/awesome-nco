@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "paper_id": "cl-lns",
+  "note_path": "specialist/cl-lns.md",
+  "baseline_note_sha256": "4bf70aa64958b906f34c6df14528e003a44e7b2a08f27dd68b08a18d56392bd2",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/huang23g/huang23g.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/huang23g/huang23g.pdf",
+      "local_path": "research/import-272/nco-c046cfe7a5.pdf",
+      "sha256": "0c19d3c4f319315790add320bfbc15506bff6e7249ba29b516cda0ba2cdc2d90",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://taoanhuang.github.io/files/ICML_poster_CL_LNS.pdf",
+      "retrieval_url": "https://taoanhuang.github.io/files/ICML_poster_CL_LNS.pdf",
+      "version": "Author ICML2023 poster linked from official project iframe",
+      "local_path": "research/full-text-review/cl-lns/poster.pdf",
+      "sha256": "e24766cb000382f8a86046a01a873be264539fdfd46493d39d7e0e24642adeca",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read binaryILP/LNS/localbranching exact-versus-finiteexpert context, contrastivepositive/negative motivation andrelatedwork; frontendformalidentity andpublisherdateverified."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullcontrastivedatacollectionboundedLBhourbestfoundnotguaranteedoptimum, positivehalfimprovement/negative.05threshold, GAT/topkhybridselection, separatetaskmodels, metrics/Table2negativeMISLRANDOM."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read fullhardware/train/testbudgets andexpert/neighborhood comparison, explicitseparatetasktraining, unreproducedRL-LNSCA andsurvivalnegativeSCL; ablationconditions andperiterationisnottimecomparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read LB3600seciterationversus2-120secneural table, fullablationnegativeMVCgap andfuturecrossdomain/optimalitylimits; readbibliographythroughK/Lidentities."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 14,
+      "notes": "Read remainingentirebibliographyplusappendixAallLNSheuristicdistinctions andnativeCOrelatedwork, startGATformulas/selfattentionarchitecture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 17,
+      "notes": "Read allGATequations/features andbinaryMVC/MIS/SC/CAformulations, hyperparamsearch/ILbaselinechanges, appendix8approachesandmetricvirtualbest definitions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "Read completeAppendixplots7-10andcaptions/all8approaches gap/survival/objective/tiedbest metrics; keyplotrenderpending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 20,
+      "notes": "Read fullvirtualbestplot and15/30minutesmalltables; trackaveragesandvariabilitynotseedCIs, perportfoliofinitebestknownreferences."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "Read allremainingTables7-12/all8approaches everycutoff; confirmedMISRANDOM60mingap.11betterthanCL.12, CAL15/30minLBRelaxqualitybetter, RL15minPIbetter, finalCLPIbestnotuniversalquality."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read fullauthorposter includingtraininggraph/InfoNCEloss/topkandadaptivek/resultsand5references; overlapwithofficialmainappendix, noadditionalunreadscientificpages."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cllns-contribution",
+      "category": "contribution",
+      "statement": "PositiveintermediateLBneighborhoodsandnegativeperturbations traincontrastiveGATdestructionwithSCIPrepair.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1-4.4/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "cllns-method",
+      "category": "method",
+      "statement": "BinaryILPincumbentimprovement, boundedonehourLBlabelsnotcertifiedoptimal, topkadaptivehalfvariablesandfallbacksampling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            7,
+            15,
+            16,
+            17
+          ],
+          "locator": "LBcollection/deployment/formulations/budgets"
+        }
+      ]
+    },
+    {
+      "id": "cllns-experiment",
+      "category": "experiment",
+      "statement": "All8finalPIbestbutMISLRANDOMgapbetter, earlierCALnegativecases andofflinecosts qualifybroadanytimeclaim.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9,
+            21,
+            22
+          ],
+          "locator": "Table2/Figure5/Tables9-12"
+        }
+      ]
+    },
+    {
+      "id": "cllns-limitation",
+      "category": "limitation",
+      "statement": "PrintedPGdenominatorlacksabsolutevaluesdespitenegativeobjectives; recorddefinitiondiscrepancyandreportedvalueswithoutinvalidatingtables.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            15,
+            16,
+            22
+          ],
+          "locator": "Renderedp6metricformula/binarynegativeformulations/results"
+        }
+      ]
+    },
+    {
+      "id": "cllns-classification",
+      "category": "classification",
+      "statement": "Eachnativeproblemseparatelytrainedandcrossdomainfuturework, sharedILPformatnotsharedweights.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            9
+          ],
+          "locator": "Baseline/trainingparagraphandConclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v202/huang23g.html",
+      "locator": "PublisherHTMLtitle/authors/pages13869-13890 andPDFp1USC/MetaFAIR/Anthropic."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v202/huang23g.html",
+      "locator": "Officialcitation_publication_date2023/07/03."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://taoanhuang.github.io/project/LNS_ILP",
+      "locator": "ManuallycheckedpublisherdownloadlinksandprojectHTML: integrated22pageA-Ecomplete; liveiframeICML_poster_CL_LNS.pdf1pagefetched/read/registered; commentedplaceholderstatic/pdfs/supplementary_material.pdf404notliveextra; full199MBrepoZIPinventoryhasnoadditionalPDF/zip/texscience."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/facebookresearch/CL-LNS",
+      "locator": "OfficialprojectCodebutton;README+NTXentpositive/negativefilters/GAT/greedy/adaptive/SAMPLEindependentBernoullireleasechecked, nothistoricalresultsreproduction."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cl-lns",
+      "cited": "neurolkh",
+      "reference_label": "Xin et al. (2021)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Xin and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "attention-model",
+      "reference_label": "Kool et al. (2018)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Kool and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Li et al. (2018)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            4,
+            10,
+            15
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Song and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learn-lns-ip",
+      "reference_label": "Wu et al. (2021)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            12
+          ],
+          "locator": "Explicit in-text citation Wu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "neurewriter",
+      "reference_label": "Chen and Tian (2019)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al. (2020)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Lu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung and Tierney (2020)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Hottung and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li et al. (2021b)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Li and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learning-to-cut",
+      "reference_label": "Tang et al. (2020)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit in-text citation Tang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "contrastive-sat",
+      "reference_label": "Duan et al. (2022)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Duan and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            12
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "circuit-sat-neural",
+      "reference_label": "Amizadeh et al. (2018)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            14
+          ],
+          "locator": "Explicit in-text citation Amizadeh and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al. (2018)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Selsam and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017a)",
+      "description": "Explicitauthor-yearbodycitationandexactmatchingbibliographytitle/author; referencedpreprintyearretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "learning-to-search-in-local-branching",
+      "reference_label": "Liu et al., 2022",
+      "description": "Local branching related work explicitly describes tuning its time limit/neighborhood size; exact three-author AAAI2022 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            12
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "cl-lns",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al., 2021",
+      "description": "B&B related work cites learned variable selection; exact four-author TreeGate AAAI2021 title/pages.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall22proceedingspages/fullA-Eandlinked1pageauthorposter, completepublisher/project/repoinventory.",
+    "Qualifiedboundedexpertlabels, nativepertaskmodels, offlinecosts andfinal/earlycutoffnegativecases; recordedrenderedPGformuladifference.",
+    "Addedofficialcodeand18explicitcataloguerelations; distinguishedreleaseSAMPLEfrompaperfixedcardinalitydescription.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "fde5b0221813433fef2792eae17e78a29f4f8fbc71733bdb1ce4e01df2b1b8a1"
+}

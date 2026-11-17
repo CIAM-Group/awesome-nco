@@ -1,0 +1,705 @@
+{
+  "version": 1,
+  "paper_id": "neural-solver-selection",
+  "note_path": "specialist/neural-solver-selection.md",
+  "baseline_note_sha256": "abe1387dbeadb282556c76de68c80ff78830140e6dc80c85862f62f0aa2c6568",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gao25l/gao25l.pdf",
+      "version": "Formal ICML2025/PMLR26722pages fullmain/references/AppendicesA1–12 freshlyread",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gao25l/gao25l.pdf",
+      "local_path": "research/import-272/nco-22e8800354.pdf",
+      "sha256": "268c7ca6fbf0e26b92037777bfbff6ce1d0542cb890b9b2ee840964f3cb300e0",
+      "pages": 22,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all three pages/Figure1;4authors NJU NationalKeyLabNovelSoftware+SchoolAI;instance-specific heterogeneous portfolio vs samearchitecture ensembles;actualTSP/CVRP,separatefeatureadaptation;notproofNFL explainsbenchmark winners."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read graphattention/hierarchicaltop80%poolmeanmaxsum, fixedsolverindexMLP, CEvsPlackettLuce listwiseloss, greedy/top2/rejection/topP.10k×8train/1000test,N50-500train/1002real/2000append;7TSP5CVRP reducedpool;bestknownreference notalloptimum;includeall solver runtime andselection."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Tables1–3/Figure3 and all exploratorysolverfeature/readouts/futurework. Rankingtop2CVRP4.82 vsclassification4.81,notuniversalrankingdominance;manualCVRPLIB6.35 worsebest6.10,attentionCVRP5.30betterhierarchical5.31;newsolver top1regression. Runtime-aware learnedsearch and jointzoofinetune arefutureonly."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 16,
+      "notes": "Read allreferences pp10–13 in full andA1–6 pp14–16;allcomponentdata/distribution/hyperparams/rawlists. 5seedsmeanSD/1000validation/50Adam1e-4. Portfolio9→7TSP6→5CVRP;noOmniTSPafterprune. PrintedA(si)=gap(S)-gap(Sminus)<0sign inconsistentwithpositive.01threshold:checkreleasebeforequalify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 19,
+      "notes": "Read allA7–A10/Fig4/5 Tables6–9;hierarchicalCVRP5.31>w/o5.30;7msselectorvs1.296ssolver and2m30epoch. Greedytop1only35–62%notoracle;newsolverrepresentationtop1regression;2000nodepoolwithGLOP/UDC2.955vsbest3.562but13.713vs5.274seconds."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 22,
+      "notes": "Read allsixnodepoolingillustrationscaptionandcompleteTables10–11 allrowsobjectives/gaps/times. TSPT2T1001.71/5001.98vsTable1best1.58, BQ1.61vs1.40 timingdifferencesnotmerged. Entire22formalpages/references/A1–A12 read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Instance-specific solver complementarity motivates dynamic heterogeneous portfolio selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/Figure1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Hierarchical representation, classification/listwise ranking and greedy/topk/rejection/topp portfolio strategies with exploratorynewsolverfeatures.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "SeparateTSP/CVRP supervisedselectors rank offlinecosts, learned80%nodepooling, fixed7/5solveridentities; no learned completeincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            14,
+            15
+          ],
+          "locator": "Architecture and actual constituentprotocol"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "10Ktrain×8/1Kvalidation/test,5seedmeanSD;positivequalitytradeoffs and explicitcosts on foursets plus2000TSP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            15,
+            17,
+            18,
+            19,
+            21,
+            22
+          ],
+          "locator": "Complete11tables/6figures"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Staticpoolandobjective-onlysupervision;runtime/newsolverfeatures remainlimited;sourcepruningsign doesnotfollowbestofpoolgapmonotonicity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            9,
+            15,
+            17,
+            18,
+            19
+          ],
+          "locator": "Discussion/ablation/pruningdefinition"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive portfolioselector, separate taskweights; selection rather thanneuralincumbentimprovement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            14,
+            15
+          ],
+          "locator": "Actual learnedoperation andseparate taskpooldefinitions"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.mlr.press/v267/gao25l.html",
+      "locator": "Formal22pages ChengruiGao/HaopuShang equalcontrib,KeXue/ChaoQian;NJU NationalKeyLab+SchoolAI. Explicitcitation_publication_date2025/10/06retained,conference13–19Julyseparated."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://icml.cc/virtual/2025/poster/44604",
+      "locator": "Full22pageformal/refs/A1–12/all11tables6figsread;wholeofficial1.816MBposter3tilesread. PublishermainPDF/ORonly,eventposteronly;tree122untruncated/ZIP123members83.84MBnoPDFnotebooknestedarchive. OneREADME/fullcorepy/config/scriptsread;two selectorweights and8datadirs/performancefilesinventoried."
+    },
+    {
+      "field": "paradigm and scope",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gao25l/gao25l.pdf#page=5",
+      "locator": "Task-specific inputs/pools/checkpoints7/5;modelonlyscores solvers,notcompleteincumbent-conditionedmove. Changeconstructive-improvement→constructive;classical2optandT2Tconstituentsearchseparatelydescribed."
+    },
+    {
+      "field": "precise metrics and negative cases",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gao25l/gao25l.pdf#page=7",
+      "locator": "MainTable1rankCVRP4.82,class4.81;0.88/.71percentagepoints;top2times2.56/1.90/2.48/2.56 vsbest1.45/.24/1.74/1.31. HierCVRP5.31worsethanattention5.30;manualCVRPLIB6.35worsebest6.10;newsolver top1negative;2000TSP2.955/13.713vs3.562/5.274."
+    },
+    {
+      "field": "release boundaries and exact limited checks",
+      "source_url": "https://github.com/lamda-bbo/neural-solver-selection",
+      "locator": "Entiremodel/loss/trainer/dataset/utils/generator/processlabel/configread. ExactoriginalEncoder_h returnsfinalgraph_emb notgraph_emb_hsum;actualsmallTorchforwardverifieddelta5.030. OriginalASTtopploopscore(.6,.3,.1),p.8selectstale[0]mass.6vscover[0,1]. Sourcecaptures release-boundary-checks.json,notcheckpointbenchmarkreplay. FormalA3pruningsigngapS−gapSminusnonpositivevspositive.01;nohiddenexecutionassumed."
+    },
+    {
+      "field": "original figure and citation identity",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/gao25l/gao25l.pdf#page=2",
+      "locator": "Allsixfigures/11tablesvisuallyread;Fig1fullcaptioncrop30,45,565,265seen;29edges28exacttitle+ICAMexplicit6author2405.01906precursoridentitymanuallymatched."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neural-solver-selection",
+      "cited": "asp",
+      "reference_label": "ASP: Learn a Universal Neural Solver!",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "dact",
+      "reference_label": "Learning to Iteratively Solve Routing Problems with Dual-Aspect Collaborative Transformer",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "deepaco",
+      "reference_label": "DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "diffuco",
+      "reference_label": "A Diffusion Model Framework for Unsupervised Neural Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "elg",
+      "reference_label": "Towards Generalizable Neural Solvers for Vehicle Routing Problems via Ensemble with Transferrable Local Policy",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "hncs",
+      "reference_label": "Hierarchical Neural Constructive Solver for Real-world TSP Scenarios",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "invit",
+      "reference_label": "INViT: A Generalizable Routing Problem Solver with Invariant Nested View Transformer",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Learning Combinatorial Optimization Algorithms over Graphs",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Learning Collaborative Policies to Solve NP-hard Routing Problems",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Matrix Encoding Networks for Neural Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Neural Combinatorial Optimization with Reinforcement Learning",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "omni-vrp",
+      "reference_label": "Towards Omni-generalizable Neural Methods for Vehicle Routing Problems",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "poppy",
+      "reference_label": "Winner Takes It All: Training Performant RL Populations for Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "rl-vrp",
+      "reference_label": "Reinforcement Learning for Solving the Vehicle Routing Problem",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "routing-dro",
+      "reference_label": "Learning to Solve Routing Problems via Distributionally Robust Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "mvmoe",
+      "reference_label": "MVMoE: Multi-Task Vehicle Routing Solver with Mixture-of-Experts",
+      "description": "Explicit bibliography entry manually matched by full title/authors; preprint or erroneous reference year does not replace audited target metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete references pp10–13, manually read and matched."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "icam",
+      "reference_label": "Zhou et al.(2024a). Instance-conditioned adaptation for large-scale generalization of neural combinatorial optimization.",
+      "description": "Explicit six-author preprint reference; catalogue ICAM links the same arXiv2405.01906 and six authors under its later formal routing-solver title.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "ZhouC/LinX/WangZ/TongX/YuanM/ZhangQ 2024a;arXiv2405.01906, same exact preprint identifier as target."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al. (2024)",
+      "description": "Suggests extending RL4CO to support a neural solver zoo.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Actually read citation body context: Discussionp9unifiedplatformRL4CO; fullmulti-authorpreprintbibp10arxiv2306.17100. SameprimaryarxivexplicitrelatedKDDDOI3711896.3737433;preprintyearretained."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Berto et al. (2024); RL4CO: An Extensive Reinforcement Learning for Combinatorial Optimization Benchmark. Discussionp9unifiedplatformRL4CO; fullmulti-authorpreprintbibp10arxiv2306.17100. SameprimaryarxivexplicitrelatedKDDDOI3711896.3737433;preprintyearretained."
+        }
+      ]
+    },
+    {
+      "citing": "neural-solver-selection",
+      "cited": "prompt-learning-for-generalized-vehicle-routing",
+      "reference_label": "Liu et al. (2024)",
+      "description": "Discusses prompt learning as a route to generalization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actually read citation body context: Bodyp3promptlearningLiu2024; completeIJCAI2024sevenauthorpp6976–6984entryp11."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliographic entry and checked target primary identity: Liu et al. (2024); Prompt Learning for Generalized Vehicle Routing. Bodyp3promptlearningLiu2024; completeIJCAI2024sevenauthorpp6976–6984entryp11."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read22formalpages/allreferences/A1–12,officialposter,all6figures/11tables andcompleteauthormaterialinventory.",
+    "Retained separateTSP/CVRPspecialists;changed constructive-improvement→constructive foractuallearnedselectionoperation.",
+    "Expanded exactpool/training/budget/percentagepoint/runtime andnegativecases.",
+    "Verifiedoriginalreleasefinal-readout andstale-prefix top-p differences withlimitedactualcodeexecution.",
+    "Documentedprintedpruningsign,sourcegeneratordefaults andofflineperformance-recordtimingwithoutclaiminghistoricaltablesinvalid.",
+    "Added29explicitmatchedcitationedges andoriginalFigure1.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "7c51af7736aa475f563714b106865fb7192dac8db711a728486508d48e5faefb"
+}

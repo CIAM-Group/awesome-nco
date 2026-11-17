@@ -1,0 +1,567 @@
+{
+  "version": 1,
+  "paper_id": "sc-milp",
+  "note_path": "specialist/sc-milp.md",
+  "baseline_note_sha256": "5135879b59a8888bec953a19062f82ceeb96ef73b34f5ec4cea9693502cff959",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/lu26v/lu26v.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/lu26v/lu26v.pdf",
+      "local_path": "research/import-272/nco-93cfe20029.pdf",
+      "sha256": "5a5aab9e35fed7695ac5047993ac8ec30297f69875772d3d8791fa945ac1b8be",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formal identity/three Beihang authors and all introduction/related/preliminaries, grouping Kmeans by feature distribution and upstream strong-branch-label augmentation claims."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read fullFigure1/method definitions: sign/shift transformed MILPs and redundant rows vs noisy objective/constraint/dual augmentations retaining labels without guarantee; distance-monotone sigmoid-softplus contrastive weights and supervised CE."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Read inference top5 neural shortlist then actual SB upstream basedcandidate fraction.8, downstream direct; all Table1 values/3600 timeout capped times andwins, noted nodecount exceptions and no policy-only runtime comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 9,
+      "notes": "Read Tables2-5 all comparisons, ablations easy hybrid negative5.99vs5.95, real six separatelytrained tasks and future crossMILPtype explicitly; TGAT auction71.4>ours66.4 top1 andGCNNCFLtop5 better despite broad bestaccuracyprose."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read complete bibliography pages10-11, exact source titles/author identities incl preexisting main corpus HEM2023/journal2024, symbolicpolicies, contrastivepredictsearch, treeMDP; candidate helper only supplementary."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 12,
+      "last_page": 13,
+      "notes": "Read finalbibliography and AppendixA MMDpermutationp.003, 100k labelhours31.94/16.72/108.63/70.45 andaugmentation~30%; all costandframeworksections; claim distributionconsistencyofperturbedlabelsneedlimitedscope."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Read exactB&B/SBdefinition(sum gain), AppendixB true explicit component citations, C1 signedpermutation-integer/blockcontinuous generaltransform and C2 mapping/objectiveconstant proof. Need distinguish paired optimalLP point vs arbitrarytie choices."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "Read complete SB proof relies pairedLPoptimizers/branchbounddifferences, generalized substitutiontheorem withsignedintegerpermutation, grouping fixedafteroneKmeanssortedbyminimumdepth, all solver/group/rawgraph features."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "Read all LT featuretable/fractionality/reducedcost derivations; displayedpositive-dualslack preservation invalidaswritten T=-1,s=1->-1, while properboundconescanpreservepairedrowmultipliers. No claimfeasiblesetequivalencefalse."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "Read fullRCfeatureconstruction, perturbvariancecalibrated50samples>=95%labelagreement(.05), 3600SCIP7/rootcuts/no-restart, realdatasetdims andnode-weightedaccuracyaggregation. RCclaimredundantrowcannottight false whenbothsummedrowsactive; table/proseone-sidedboundflags differ."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "Read allfinalablationsTables10-13/temperature/backbonetests andefficiency:3.2%batch25.5%epochextra, HBSextraearlySBcost<10%sourceclaim notindependentlyrerun; tablebackbonegeneralizationnotsharedweights."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sc-contribution",
+      "category": "contribution",
+      "statement": "Feature-based fixed training strata, upstream augmentation and distance-aware contrastive learning improve a GCNN branching component.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            17
+          ],
+          "locator": "Sections4/D.1"
+        }
+      ]
+    },
+    {
+      "id": "sc-method",
+      "category": "method",
+      "statement": "Neural top5 candidates undergo real strong branching upstream; affine/redundant equivalence and noisy retained-label augmentation have distinct guarantees.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            15,
+            16,
+            20
+          ],
+          "locator": "Definitions4.1-4.6/Section4.5/AppendixC/E.1"
+        }
+      ]
+    },
+    {
+      "id": "sc-experiment",
+      "category": "experiment",
+      "statement": "All12 generated capped-time means improve but TGAT auctionaccuracy, GCNNCFLtop5, treecounts andeasyhybridablation are exceptions to broader claims.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            22,
+            23
+          ],
+          "locator": "Tables1-5/10-13"
+        }
+      ]
+    },
+    {
+      "id": "sc-classification",
+      "category": "classification",
+      "statement": "Per-family trained branching component is specialist constructive; cross-MILP-type shared model explicitly future work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            9,
+            14
+          ],
+          "locator": "Sections5.1/6/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "sc-limits",
+      "category": "limitation",
+      "statement": "Displayed Ts nonnegative dual slack preservation and redundant-row cannot-be-tight statements fail as written; constrain exact feature guarantees, not empirical results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18,
+            19,
+            20
+          ],
+          "locator": "AppendixD.2.2/D.2.3; explicit curator scalar/sign and simultaneous-active-row examples"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/lu26v.html",
+      "locator": "Title/three authors/Beihang p1, PMLR306 pp81323-81345."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/lu26v.html",
+      "locator": "HTML citation_publication_date2026/09/29."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/lu26v.html",
+      "locator": "Manual publisher PDF/ORonly; API LDNH3sQtMW ordinary403; all23 main+integratedA-Fpagesread. ICML2026event64655 noPoster/Slides/PDFmedia links beyondOR. AuthorrepoHTML/API/archiveall404; noextra scientific attachmentdiscovered."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/lutk3029/SC-MILP",
+      "locator": "Explicit official PDFp7 code link; ordinary GitHub HTML/API/codeload-main returned404 on2026-11-17. No code/checkpoints read or rerun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sc-milp",
+      "cited": "apollo-milp",
+      "reference_label": "Liu et al. (2025)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Liu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "bbmdp",
+      "reference_label": "Strang et al. (2025)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            11
+          ],
+          "locator": "Explicit in-text citation Strang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "cambranch",
+      "reference_label": "Lin et al. (2024)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Explicit in-text citation Lin and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "cl-lns",
+      "reference_label": "Huang et al. (2023)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "conpas",
+      "reference_label": "Huang et al. (2024)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10,
+            14
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            14,
+            17,
+            23
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Song and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "gs4co",
+      "reference_label": "Kuang et al. (2024b)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Kuang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "hem-cut-selection",
+      "reference_label": "Wang et al. (2023)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            6,
+            7,
+            8,
+            10
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "learn-compare-bb-nodes",
+      "reference_label": "Labassi et al. (2022)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Explicit in-text citation Labassi and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "symb4co",
+      "reference_label": "Kuang et al. (2024a)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            7,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Kuang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "trgnn-node-selection",
+      "reference_label": "Zhang et al. (2025)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            14
+          ],
+          "locator": "Explicit in-text citation Zhang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "gnn-branching-capacity",
+      "reference_label": "Chen et al. (2024)",
+      "description": "Explicit in-text and matching bibliography identity, including AppendixB component citations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "sorrel-suboptimal-demonstration-guided-reinforcement-learning-for-learning-to-branch",
+      "reference_label": "Feng & Yang, 2025",
+      "description": "RL branching related work explicitly discusses SORREL and search-trajectory learning; exact AAAI2025 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+      "reference_label": "Guo et al., 2025",
+      "description": "Introduction cites the WWW2025 facility-location solver among optimization applications; exact title/byline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "mip-gnn-a-data-driven-framework-for-guiding-combinatorial-solvers",
+      "reference_label": "Khalil et al., 2022",
+      "description": "Neural branching/solver-guidance related work cites MIP-GNN; exact Khalil/Morris/Lodi AAAI2022 entry. Edge records citation, not endorsement of its characterization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "learning-to-stop-cut-generation-for-efficient-mixed-integer-linear-programming",
+      "reference_label": "Ling et al., 2024",
+      "description": "Appendix related work cites learning when to stop cut generation among cutting-plane learning; exact AAAI2024 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            14
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    },
+    {
+      "citing": "sc-milp",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al., 2021",
+      "description": "Branching representation/baseline discussion explicitly names TreeGate; exact AAAI2021 search-tree parameterization entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3,
+            6,
+            11
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall23formalpages/A-F, inspected allproof/feature/resulttables; distinguished hybridSB cost, exactvsnoisyaugmentations, nodeweightedaccuracy andnegativecases; localizeddual-slack/redundanttightfeatureissues; recordedunavailableauthorcode and15truecitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge.",
+    "Final prose inspection repaired citation-count wording after catalogue expansion; no scientific quantities or source-reading coverage changed."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "97eeb56efb0604c20fb3a0ac66a4f7c0384539dbb6d2dc1c6ae840e6e351216a"
+}

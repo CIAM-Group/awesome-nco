@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "paper_id": "solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers",
+  "note_path": "specialist/solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "baseline_note_sha256": "ac56b653c45b78db584c979f7732950dd4e4bc0fc94a60968f6177458b3e627c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Solving_Masked_Jigsaw_Puzzles_with_Diffusion_Vision_Transformers_CVPR_2024_paper.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Solving_Masked_Jigsaw_Puzzles_with_Diffusion_Vision_Transformers_CVPR_2024_paper.pdf",
+      "version": "OfficialCVFCVPR2024accepted10pagePDF23009–23018,exactfiveauthorbyline;allmainand36bibentriesread.",
+      "local_path": "research/conference-163-2026-11-17/cache/nco-bd2cb0e00c/publisher.pdf",
+      "sha256": "00a4f1a732f063671d95a7238ad7913fa8d2b30da62da33467e13454eaff5cc5",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Liu_Solving_Masked_Jigsaw_CVPR_2024_supplemental.pdf",
+      "retrieval_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Liu_Solving_Masked_Jigsaw_CVPR_2024_supplemental.pdf",
+      "version": "OfficialCVF5pageSupplementaryMaterialSections6–8/Tables6–9/Figures8–13;allsciencepagesread/rendered,includingharddecoderandbaselinebudgets.",
+      "local_path": "research/conference-163-2026-11-17/graphs/nco-bd2cb0e00c/supp.pdf",
+      "sha256": "8fe221087f1c40d2b4b4c9182864fd33c8a637ec7fe28f6c877720c79b8e3c9f",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read complete5authorNortheastern/Qualcommbyline, problem2Dpatch+temporalclippermutations, allrelatedwork and formulationjointconditionalPEgeneration/inpainting."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readnoiseobjective,imageDiTvsmodifiedvideoUNet/latentVAE,1D16/2D32sin/cosPE,all6named datasets/splits,metricsandimagepreprocessing/strictpuzzle-vs-piece distinction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all mainTables1?5fullrows,maskedimageerosionresults,150piececomparison,JPwLEGtable71.3piece(notprosepuzzle),alltemporalnegativecasesandanchor/hardwareunknownspeedcomparison,Fig7/conclusion."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read all36references;actualinternalidentitymatchingtofollow,notgeneralbackbonecitationsadded."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full supplement6?7.1 diffusion/attention/equivarianceformulas,DiT12x76812headhyperparams/300epochbatch256,collision-freegreedyPEdecoderexplicitusedpositionremoval,videoVAE/UNet."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read all remaining scientificsup7.2?8,250kstepbatch32lr1e-4/datasettemporaldownsampling/max25%missing/lossweights. BaselineTables8/9inclJ-VAD2000epochs>10pieces,allvideo inpaintingFigures11/12/13 andtemporalupsamplingexample."
+    }
+  ],
+  "claims": [
+    {
+      "id": "jpdvt-contribution",
+      "category": "contribution",
+      "statement": "Conditional positional-encoding diffusion permits permutation recovery and joint missing-content synthesis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections2–3/Figure3"
+        }
+      ]
+    },
+    {
+      "id": "jpdvt-method",
+      "category": "method",
+      "statement": "SeparateimageDiT/videoUNet;hardgreedydecoderconsumesdistinctlegalPEs;notneuraleditingcompleteincumbent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Main3.2/4.3;Supplement7.1decoder"
+        },
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Section7.1 Predicted position encodings: L2 nearest available encoding and removal of used candidates."
+        }
+      ]
+    },
+    {
+      "id": "jpdvt-results",
+      "category": "experiment",
+      "statement": "ImageNet68.7puzzle/83.3piece;JPwLEG71.3isTable4piecelevel despiteprosepuzzleclaim;negativeSTPtemporalcomparisonsretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables1–5/fullrows"
+        }
+      ]
+    },
+    {
+      "id": "jpdvt-classification",
+      "category": "classification",
+      "statement": "Specialistconstructive:separatearchitectures/checkpoints/datasets/puzzlesettings;continuousPEgenerationthenhardassignment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            8
+          ],
+          "locator": "Main3.2/4.3/4.4 separate training statements"
+        }
+      ]
+    },
+    {
+      "id": "jpdvt-limit",
+      "category": "limitation",
+      "statement": "Selfattentionpermutationequivarianceisnotcorrectness;currentfixedslotPEandminforward/reverseNKDarequalifiedimplementationdifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            8
+          ],
+          "locator": "PrintedKendalldefinition/anchoredprotocol;currentmodels250/videosample270–282"
+        }
+      ]
+    },
+    {
+      "id": "jpdvt-repro",
+      "category": "reproducibility",
+      "statement": "Allscientificsupread;explicitgreedyL2candidate-removaldecoder differsfrompublicimage8dim/L1finitepenalty;repositoryunderorganizationandnoinspectablecheckpointrelease.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Supplement6–8;officialrepoREADME/tree/releases"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity/authors/institutions/publication.date",
+      "source_url": "https://api.crossref.org/works/10.1109/CVPR52733.2024.02171",
+      "locator": "Cached crossref-query.json exacttitle/fiveauthors/NortheasternandQualcommaffiliations/DOI;IEEE published-print/issued2024-06-16;formalPDF10p23009–23018 matching byline. Asterisk fundingfootnote not differenttitle."
+    },
+    {
+      "field": "date/arxiv",
+      "source_url": "https://arxiv.org/abs/2404.07292",
+      "locator": "Cachedprimaryarxiv.htmlhistoryv1Wed10Apr2024 18:40:23UTC,matching5authors/title."
+    },
+    {
+      "field": "supplements/inventory",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/supplemental/Liu_Solving_Masked_Jigsaw_CVPR_2024_supplemental.pdf",
+      "locator": "OfficialCVFscientificsupp5p/allSections6–8read,hyperparameterTables6–9andallFigures8–13rendered. Completeuntruncatedrepotreeae5f8f73a1f31e49a821584c66a9a9a58661dd91onlyREADMEandimage/videoPythonfiles, noadditionalPDF/ZIP/ipynb;READMEread, releasesAPIempty."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Solving_Masked_Jigsaw_Puzzles_with_Diffusion_Vision_Transformers_CVPR_2024_paper.pdf",
+      "locator": "OriginalFig3+completecaptionformalPDFp3 cropRect40,65,572,3153x;public/paper-assets/solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers/framework.png489674bytes exists andactualview_image checked. Keymain4/5/7/8 andall5supppagesrendered."
+    },
+    {
+      "field": "code/protocol/metric differences",
+      "source_url": "https://github.com/JinyangMarkLiu/JPDVT",
+      "locator": "SHAae5f8f73a1f31e49a821584c66a9a9a58661dd91. image_model/sample.py64/70–78/103:8dim/manhattan/finite2024penalty;models250fixedpos_embed. video_sample185–187fixfirstframe,197hardcode12missing,243–282greedy,maskedsubsetsortingandminforward/reverseNKD. READMEunderorganization/testingblank/releasesnone;historicaltableimplementationnotestablished."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Liu_Solving_Masked_Jigsaw_Puzzles_with_Diffusion_Vision_Transformers_CVPR_2024_paper.pdf",
+      "locator": "Full36bibliographyentriespp9–10read;2actualcatalogueidentities[3]/[24]. Otherpuzzleclassical/TIP/backboneentriesoutsidecurrent527 remainexternal;noapproximateidentityedges."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers",
+      "cited": "solving-jigsaw-puzzles-with-eroded-boundaries",
+      "reference_label": "[3]",
+      "description": "Direct Bridger etal.CVPR2020 eroded-boundary puzzle solver citation and150piece baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference3"
+        }
+      ]
+    },
+    {
+      "citing": "solving-masked-jigsaw-puzzles-with-diffusion-vision-transformers",
+      "cited": "siamese-discriminant-deep-reinforcement-learning-for-solving-jigsaw-puzzles-with-large",
+      "reference_label": "[24]",
+      "description": "Direct Song etal.AAAI2023 SD2RL citation andJPwLEGbaseline/protocol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reference24"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced pending metadata with formal identity/dates and actualsourcegrounded6sections.",
+    "Restricted unifieddesign claim to separate trained models and constructivePEthenharddecode.",
+    "Corrected JPwLEG71.3metric toTable4piecelevel;retainedtemporalnegativecasesandpipelineinput/budgetdifferences.",
+    "Disclosedcurrentrepositorymissingrelease/metric/distance/encodingdifferences withoutassumingformalrunsinvalid.",
+    "All15PDFpagesreadandkeyoriginalfigureschecked;2actualreferenceedges."
+  ],
+  "reviewed_note_sha256": "af2399aff517edc0a6e81d01255c26ae8ea2d9df4437d2d0baca7c52bdc64064"
+}

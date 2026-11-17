@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "paper_id": "neuro-algorithmic-policies",
+  "note_path": "specialist/neuro-algorithmic-policies.md",
+  "baseline_note_sha256": "c0350f056035f0c24ce18ab980b8b02bb66cc61c8861fec9f915467f2c5c103b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v139/vlastelica21a/vlastelica21a.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v139/vlastelica21a/vlastelica21a.pdf",
+      "local_path": "research/import-272/nco-c26230eab0.pdf",
+      "sha256": "89bd0c8f9de9fdf98009a9381f301a266c2735bd61382c53804f455729e25d22",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v139/vlastelica21a/vlastelica21a-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v139/vlastelica21a/vlastelica21a-supp.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/neuro-algorithmic-policies/supplement.pdf",
+      "sha256": "cfca5e3cf15e35c8d437eedb079260d5daf6a3ae901b9fbb5db64fabc063c942",
+      "pages": 4,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read threeauthorMPIidentityandformalICML2021header; ILvisualcontrolwithTDSPsolverratherthanlearnedgraphheuristic,relatedsolverlayers,ddgcMDPassumptionsandcmaxminusrewardcostmapping."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read factorizedaction-independentenvironmentassumptions,timeexpandedTDSP,vertexcostinnerproduct,perturbedsolverinterpolationgradient,marginandtwoResNetcost/startgoalarchitecture;ILHammingandCEtraining,localgoals/MPC."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allfiveenvironmentresults andNAPstaroracleendpointbaseline,200M PPOsteps,DrACbestvariantselection;LEAPERDrACsuccessadvantage,shorterpathconditionalanalysis,horizonsandChaserrewardvsgoalsuccess."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read discussion fixedknowntopology/fiveactionlimitations,acknowledgements andallreferences;exactinternalBlackboxBackprop andSATNetmatches;rejectedotherplanning/predictoptimizeworksmissingfromcatalogue."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read completeexpertgeneration/seedtestsplit,modifiedLEAPERdynamics,Chaser1algorithm+2humantrajectorysourcesandcountdiscrepancy,allResNet/endpointtrainingarchitecturesandhyperparameters/epochformula."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read PPO/DrAC3seedtrainingdetails,dataaccessqualification,alladditionalrelatedworkandfiguresS1/S2,marginablationmeans/variancesandrefs;manualsupplement/codeinventorychecked."
+    }
+  ],
+  "claims": [
+    {
+      "id": "nap-contribution",
+      "category": "contribution",
+      "statement": "Predictlatenttime-dependentcosts/endpointsfromimagesandcomposewithanexactclassicalTDSPsolverforrecedinghorizonILpolicy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections3–5,Figure1"
+        }
+      ]
+    },
+    {
+      "id": "nap-method",
+      "category": "method",
+      "statement": "RestrictedfactorizedMDPassumptions/knowntopologyandblackboxinterpolationgradient do notguaranteeoptimallearnedcontrol.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            9
+          ],
+          "locator": "Sections3–4andDiscussion"
+        }
+      ]
+    },
+    {
+      "id": "nap-results",
+      "category": "experiment",
+      "statement": "Low-dataMaze/Crashgeneralizationbenefits coexistwithDrACbetterLeapersuccess;shorterpathconditionalmetricsandprivilegedNAPstarareseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8
+          ],
+          "locator": "Figures4–7,Section6.5"
+        }
+      ]
+    },
+    {
+      "id": "nap-scope",
+      "category": "classification",
+      "statement": "MultipleenvironmentstrainseparatemodelsusingoneTDSPplanninginterface;nodemonstratedunchangedcross-native-taskweights.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Environment-specifictraininghyperparametersanddatasets"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/vlastelica21a.html",
+      "locator": "FormalICML2021title/3authors/PMLR13910575–10585;PDFRolínekdiacriticandMPITübingenaffiliationverified"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v139/gh-pages/_posts/2021-07-01-vlastelica21a.md",
+      "locator": "Explicitdate/issued2021-07-01,distinctJuly18–24eventperiod"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/vlastelica21a.html",
+      "locator": "ManualRelatedMaterialsolevlastelica21a-supp.pdf4pages;allA–Hscience,plots/refsread;matchingtitleand3authors"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/martius-lab/NAP",
+      "locator": "Paperp1projectpageexactlink;authorrepoAPIdefaultmastertreeandREADMEchecked;onlywebsitefiles,noimplementationidentified;notaddedascode_url"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neuro-algorithmic-policies",
+      "cited": "blackbox-backprop",
+      "reference_label": "Vlastelica et al. (2020)",
+      "description": "Explicit differentiable-solver framework used for the TDSP interpolation backward pass.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Vlastelica and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neuro-algorithmic-policies",
+      "cited": "satnet",
+      "reference_label": "Wang et al. (2019)",
+      "description": "Explicit logical-satisfiability solver-layer predecessor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            11
+          ],
+          "locator": "Explicit in-text citation Wang and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "QualifiedrestrictedMDP/exactsolver/interpolationgradientversuslearnedcontroloptimality,andseparateenvironmenttransfer.",
+    "Includedexpertdataaccess,privilegedNAPstar,DrACLeapersuccesscounterexample,andChaserdemonstrationcountinconsistency.",
+    "Readall15scientificpages;verifiedprojectrepoiswebsiteonlyratherthanimplementation;2exactcitationrelations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "bb5bb2d5d02969a3de364423db6f36e82d339e175415429809ed7ac1fe876263"
+}

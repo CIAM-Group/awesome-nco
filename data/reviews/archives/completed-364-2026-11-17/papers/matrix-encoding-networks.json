@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "paper_id": "matrix-encoding-networks",
+  "note_path": "specialist/matrix-encoding-networks.md",
+  "baseline_note_sha256": "3c51a384afcbc97f7e9efccf15f6cb4838e18fca7ce345974f3672d206cdec8b",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/matrix-encoding-networks/paper.pdf",
+      "sha256": "ca372dae15fd3116cb7a7b779036459f8c92813cc88cfaff7c3559b07da500a3",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Supplemental.pdf",
+      "version": "publisher scientific supplementary PDF, AppendicesA-J",
+      "local_path": "research/full-text-review/matrix-encoding-networks/supplement.pdf",
+      "sha256": "1fad8bc0fc2c99635a30c390886d5f7df1b790bbd7022c29d60d4741a09def0b",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh introduction, allrelatedwork andtwo-taskscope, weightedbipartiterepresentation anddual crossattentionformulation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh mixed-scoreattention, randomizedinitialrepresentations, ATSPdecoder/training andTable4.1; notedFF516asprinted."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh CPLEXtimeouts/partialoptimality, synthetic3stage4machineFFSPdecoding/training andTable5.2absolutegaps; hardwaretimedivisionby8."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh conclusion, acknowledgments, all41references; scientificsupplementneededforexplicitcitations37-41."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh multiplematrix/sequentialupdate/randomidentifier/singlefunctionvariants, allablationtableandtmatgeneration/MIPvariables."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh ATSPMIPconstraints, LKHsettings, augmentationvssampling, EuclideanTSPcomparisons, graphqueryomission andtrainingcurves."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fresh FFSPMIPconstraintsG8-G16andinterpretations, allGA/PSOrepresentation/hyperparameters, size-transferprotocol."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Fresh allgeneralizationandone-instanceTablesH1/I1, explicitEAScitation41, completeprocessingmatrices and visuallyinspectedATSP/FFSPdiagramsJ1-J2."
+    }
+  ],
+  "claims": [
+    {
+      "id": "mixed",
+      "category": "contribution",
+      "statement": "Dualcrossattention mixes eachinternalcompatibility andmatrixentry withper-headMLP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "locator": "Section3 Equations3.1-3.2 Figure2"
+        }
+      ]
+    },
+    {
+      "id": "updates",
+      "category": "method",
+      "statement": "ParallelFA/FBis mainarchitecture; sequentialupdate is optionalalternative, not mainmodeldefinition.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "AppendixA2"
+        }
+      ]
+    },
+    {
+      "id": "atsp",
+      "category": "method",
+      "statement": "ATSPuses5layers256dimensions16heads, POMOallstartsampling andrandomidentifieraugmentation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Section4;Table4.1"
+        }
+      ]
+    },
+    {
+      "id": "ffsp",
+      "category": "method",
+      "statement": "Three4-machine-stageFFSPusesseparate3layerstageencoders/decoders, skipaction and24machine-orderPOMOtrajectories.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Section5"
+        }
+      ]
+    },
+    {
+      "id": "atsp-result",
+      "category": "experiment",
+      "statement": "ATSP100x128gap.93percent relativeCPLEXobtainedreference; LKH3reported0.00percent andfastertime.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Table4.1 andCPLEXcertificationrates"
+        }
+      ]
+    },
+    {
+      "id": "ffsp-result",
+      "category": "experiment",
+      "statement": "FFSP100x128makespan89.7; unaugmented91.5difference1.8absolute units; notoptimalitypercent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Table5.2 andgapdefinition"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "category": "experiment",
+      "statement": "MainheuristicCPUtimes are dividedbyeight; totaltestsettime excludesloading anduses singleGPUbatchedMatNet.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            9
+          ],
+          "locator": "Timeaccountingparagraphs"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "FFSP100trainedat1000jobsmakespan803.2versusSJF847; configuration/distribution otherwise retained.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "AppendixHTableH1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "ATSPandFFSPuse separate task-specific construction systems; architecturalreuse doesnotestablish jointcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            8
+          ],
+          "locator": "Task-specifictraining/configurations"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Paper.pdf",
+      "locator": "PublisherPDFp1titleblock, sixauthors, SamsungSDS."
+    },
+    {
+      "field": "publication year, venue",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/29539ed932d32f1c56324cded92c07c2-Abstract.html",
+      "locator": "OfficialNeurIPS2021article record."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2106.11113",
+      "locator": "arxivv1 submitted21June2021, v2 revised26October2021."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/yd-kwon/MatNet",
+      "locator": "Mainp10footnote7; authorsREADME manuallyread."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/29539ed932d32f1c56324cded92c07c2-Abstract.html",
+      "locator": "Manualofficiallandinginspection2026-11-16 foundsoleSupplementalPDF; all11pagesAppendicesA-Jread. NoadditionalZIP/scientificattachmentlinked."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/29539ed932d32f1c56324cded92c07c2-Paper.pdf#page=4",
+      "locator": "OriginalFigure2 onPDFp4 cropRect(105,55,510,270)points rendered4x; completebothpanels/matrixinputs. Atomicallyreplacedpriorclippedassetandvisuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/29539ed932d32f1c56324cded92c07c2-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/matrix-encoding-networks/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2106.11113",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-06-21; title on abstract page: Matrix Encoding Networks for Neural Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/matrix-encoding-networks/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "neurewriter",
+      "reference_label": "[4] asprinted inpublisherbibliography",
+      "description": "Hybridlocalrewritingrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[5] asprinted inpublisherbibliography",
+      "description": "Hybridlearnedneighborhoodrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "learning-to-improve",
+      "reference_label": "[6] asprinted inpublisherbibliography",
+      "description": "Hybriditerativeheuristicrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[7] asprinted inpublisherbibliography",
+      "description": "GNNencoderrelatedwork andEuclideanTSPcomparison",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "pomo",
+      "reference_label": "[8] asprinted inpublisherbibliography",
+      "description": "POMOtraining/augmentationfoundation",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            8,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "pointer-networks",
+      "reference_label": "[9] asprinted inpublisherbibliography",
+      "description": "RNNencoderpredecessor",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[11] asprinted inpublisherbibliography",
+      "description": "BelloRLpointerpredecessor; printedICLRWorkshop2017",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "rl-vrp",
+      "reference_label": "[12] asprinted inpublisherbibliography",
+      "description": "Droppingrecurrentencoderrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[15] asprinted inpublisherbibliography",
+      "description": "Graphconvolution/tree-searchrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "gcomb",
+      "reference_label": "[17] asprinted inpublisherbibliography",
+      "description": "BillionedgeGCNrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "erdos-goes-neural",
+      "reference_label": "[18] asprinted inpublisherbibliography",
+      "description": "UnsupervisedGNNrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "attention-model",
+      "reference_label": "[21] asprinted inpublisherbibliography",
+      "description": "Encoderanddecoderfoundation",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6,
+            12
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "gcnn-branching",
+      "reference_label": "[22] asprinted inpublisherbibliography",
+      "description": "ConstraintvariablebipartiteMIPencoderrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "marvin",
+      "reference_label": "[25] asprinted inpublisherbibliography",
+      "description": "Mixingexternalandinternalattentionscoresrelatedwork",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            12
+          ],
+          "locator": "Explicit numberedtextcitation and matchingreference"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[37] EuclideanTSPGCN-BSbaseline; bibliographyidentifiesINFORMS2019session, notlaterpublication.",
+      "description": "EuclideanTSPGCN-BSbaseline; bibliographyidentifiesINFORMS2019session, notlaterpublication.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "AppendixDTableD1"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[39] EuclideanTSPlearnedimprovementbaseline; printed2021journalreference.",
+      "description": "EuclideanTSPlearnedimprovementbaseline; printed2021journalreference.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "AppendixDTableD1"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliographyentry"
+        }
+      ]
+    },
+    {
+      "citing": "matrix-encoding-networks",
+      "cited": "efficient-active-search",
+      "reference_label": "[41] One-instanceinferencetechniqueexample; bibliographyprintsICLR2022despite2021citingpaper, preservedasobserved.",
+      "description": "One-instanceinferencetechniqueexample; bibliographyprintsICLR2022despite2021citingpaper, preservedasobserved.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "AppendixIfootnote41"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matchingbibliographyentry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Correctedmainparallelupdateversusoptionalsequentialvariant.",
+    "AddedmissingEuclideanTSPexperimentandallAppendixA-Jmethods/budgets/limitations.",
+    "CorrectedFFSPabsolutegaps, partiallycertifiedCPLEXreference andCPUtime/8accounting; retainedunfavorableLKH/POMObaselines.",
+    "Removedunsupportedacceptancedate; replacedclippedoriginalFigure2assetwithcompletecrop.",
+    "Recorded17explicitcitations, including supplement-onlyreferences andobservedanomalousprinted2022label.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ec39f33d496d2ec3b30953ea0f6370214e082214173e2de2e8bfca2eae4f34ad"
+}

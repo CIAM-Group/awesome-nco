@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "paper_id": "diffged",
+  "note_path": "specialist/diffged.md",
+  "baseline_note_sha256": "6c1e87c093149c4a6a92c6964ce3012dab149d7dcfdafbfb53e6022342d57b9a",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26bi/huang26bi.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/huang26bi/huang26bi.pdf",
+      "local_path": "research/import-272/nco-3210fa9d5f.pdf",
+      "sha256": "7033bc8c6b81cca9acbd9a8bb6fca8917f7954f1f4b1c14eb6704125a9cf345c",
+      "pages": 20,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 6,
+      "notes": "Read GED operation/modelscope, independentdiffusioncandidategeneration, bitflipcategoricalforward/reverseposterior/acceleratedsteps, GIN+AGNN pairdenoiser andgreedyinjectiveeditpaths. BCEprintedmissingminus noted; stochasticitydoesnotproveglobaloptimum,greedynotmaximumweightassignment."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 12,
+      "notes": "Read all main metrics, cross-train-test/intra-test/leakage-free tables, candidatebudget/diversity/speed comparisons and completebibliography.100%Linuxfalls86.1inleakagefreeintratest; greedyweaknessk1 andfasterMATA*/Hungarian negatives retained; needlabelprovenanceAppendixC."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 20,
+      "notes": "Read all AppendicesA-F/algorithms/AGNN/full datasetlabelconstruction/budgets/ablation/newdatasets/LLMbaseline/futurelimits. LargeIMDBlabels randomedit upperboundapproximate; noleakLinux86.1, ZINC70.8, GrailIMDBbetter, VAE/no-diffIMDBlowerMAE. PrintedAlgorithm1deletionconditionopposite prose requirescodecheck."
+    }
+  ],
+  "claims": [
+    {
+      "id": "diffged-contribution",
+      "category": "contribution",
+      "statement": "Conditional discrete diffusion generates multiple graphmatch matrices then greedy injections/editpaths for best feasible GED upperbound.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            13,
+            14,
+            15
+          ],
+          "locator": "Sections1-5/Algorithms1-2/AppendicesA-B"
+        }
+      ]
+    },
+    {
+      "id": "diffged-method",
+      "category": "method",
+      "statement": "Bitflip categoricalposterior with stochastic tenstep reverse inference; GIN/AGNNdenoiser, supervisedBCE, k100 greedy feasible notoptimal assignment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            14,
+            15,
+            16
+          ],
+          "locator": "Equations1-3/architecture/pseudocode/configuration"
+        }
+      ]
+    },
+    {
+      "id": "diffged-experiment",
+      "category": "experiment",
+      "statement": "Main Linux100% referencematch becomes86.1% leakagefreeintratest; largeIMDBreferences approximateeditupperbounds; negativeVAE/one-shot/GRAIL cases and budgetconditioned times retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Tables1-8/AppendicesC-E"
+        }
+      ]
+    },
+    {
+      "id": "diffged-limit",
+      "category": "limitation",
+      "statement": "NoGEDcertificate or universal95% accuracy; printed BCEsign/editdeletion inconsistencies separated from correct inspectedcore; densemultiplematrixcost and offlinecost retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            14,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Equation1/Algorithm1/labelconstruction/limitations"
+        }
+      ]
+    },
+    {
+      "id": "diffged-classification",
+      "category": "classification",
+      "statement": "Dataset-specific neuralGED models, no demonstration of unchangedweights solving distinctnativeoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            16,
+            17,
+            19
+          ],
+          "locator": "Experimentaltrainingprotocol/parameters/additionaldatasets"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bi.html",
+      "locator": "Officialtitle/sixauthors/volume306/pages47851-47870 match20pagepublisherPDF; UNSW/UTS/ZhejiangGongshang/SJTU affiliations checked."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bi.html",
+      "locator": "OfficialHTMLcitation_publication_date2026/09/29 and mlresearch/v306 gh-pages _posts/2026-09-29-huang26bi.md issued[2026,9,29], independentofJulyconferenceevent."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v306/huang26bi.html",
+      "locator": "Manually inspectedpublisherHTMLandrawpublicationrecord extras[]; integrated20pageAppendicesA-F allread. FullofficialauthorZIPinventory contains code/data/checkpoints/results andnoextraPDF/scientificdocument."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/piupiupiuu/DiffGED",
+      "locator": "Officialpaperlink; downloadedauthorarchive and readREADME, models.py/loss_fn.py/trainer.pydecodingandcost/param_parser.py; trueBCEandadjacencydifference differfromprintedtypos; nofullreproductionclaim."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "diffged",
+      "cited": "difusco",
+      "reference_label": "Sun and Yang (2023)",
+      "description": "Explicit body citation and exact title/author bibliography identity, preserving cited-version year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            12,
+            13
+          ],
+          "locator": "Explicit in-text citation Sun and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "dimes",
+      "reference_label": "Qiu et al. (2022)",
+      "description": "Explicit body citation and exact title/author bibliography identity, preserving cited-version year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            11
+          ],
+          "locator": "Explicit in-text citation Qiu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "graph-matching-benchmark-position",
+      "reference_label": "Roy et al. (2025)",
+      "description": "Explicit body citation and exact title/author bibliography identity, preserving cited-version year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Roy and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "gedranker",
+      "reference_label": "Huang et al. (2025)",
+      "description": "Explicit body citation and exact title/author bibliography identity, preserving cited-version year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            17
+          ],
+          "locator": "Explicit in-text citation Huang and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "gelato",
+      "reference_label": "Pellizzoni et al. (2025)",
+      "description": "Explicit body citation and exact title/author bibliography identity, preserving cited-version year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            19
+          ],
+          "locator": "Explicit in-text citation Pellizzoni and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "graph-context-attention-networks-for-size-varied-deep-graph-matching",
+      "reference_label": "Jiang et al., 2022b",
+      "description": "Appendix graph-matching related work explicitly cites exact five-author CVPR2022 GCAN paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            13
+          ],
+          "locator": "Actual body citation Jiang et al., 2022b on PDF pp[13]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Appendix graph-matching related work explicitly cites exact five-author CVPR2022 GCAN paper."
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "deep-learning-of-partial-graph-matching-via-differentiable-top-k",
+      "reference_label": "Wang et al., 2023",
+      "description": "Same appendix image-feature matching discussion cites exact five-author CVPR2023 partial matching/top-k paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            13
+          ],
+          "locator": "Actual body citation Wang et al., 2023 on PDF pp[13]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. Same appendix image-feature matching discussion cites exact five-author CVPR2023 partial matching/top-k paper."
+        }
+      ]
+    },
+    {
+      "citing": "diffged",
+      "cited": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "reference_label": "Wang et al., 2021",
+      "description": "GED edit-path/learned-search discussion cites exact five-author CVPR2021 combinatorial GED dynamic-embedding paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Actual body citation Wang et al., 2021 on PDF pp[3]; full bibliography entry on pp[12]. Title and author identity matched to the target reading record, independently of topic similarity. GED edit-path/learned-search discussion cites exact five-author CVPR2021 combinatorial GED dynamic-embedding paper."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall20pages/fullreferences/AppendicesA-F andmanuallycheckedpublisher/authorarchiveattachments.",
+    "Distinguishedapproximatelargegraphlabels/referenceequality fromexactGED; keptleakagefreeLinux86.1%, ZINC70.8% andnegativequality/timecases.",
+    "Correctedoptimizationoverclaims, separatedprintedBCE/edge-deletiontyposfromactualcode and extraction-only fromendtoendtiming; restored5explicitcataloguecitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e2cd79e2a5b465aad4eba2f0909e521e48254423963f01b43950e24fa1e14a6c"
+}

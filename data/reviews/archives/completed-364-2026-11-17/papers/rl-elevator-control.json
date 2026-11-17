@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "paper_id": "rl-elevator-control",
+  "note_path": "specialist/rl-elevator-control.md",
+  "baseline_note_sha256": "34280fd9e0b3fdd476fb0bf45f17e90e70715400861aedd0a5c177d7c9127f16",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/390e982518a50e280d8e2b535462ec1f-Paper.pdf",
+      "version": "Official NIPS1995 volume8 scanned proceedings,7pages1017-1023",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/390e982518a50e280d8e2b535462ec1f-Paper.pdf",
+      "local_path": "research/import-272/nco-7cc11c30c4.pdf",
+      "sha256": "c593706de88baefeb54710958cfe1ca9e8ee5e2096b38825b4e1936e5fd0ebf2",
+      "pages": 7,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh pp1-3 read: Crites/Barto UMass,10storeys4cars simulated downpeakPoissontraffic+0-10%interfloor,continuous asynchronouspartialobservability. Hardpassengeractionconstraints+3handheuristics reducechoices STOP/CONTINUE not freeglobaldispatch; objective squaredwaiting, continuous discount integrals; omniscient vs onlinequeuecost estimation. Omitted extractedtable/equations requirevisualcheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 7,
+      "notes": "Freshpp4-7 all8refs. EventQlearningfeedforward47inputs20sigmoid2linear inclbias, sharedRLpvsseparatenetsRLdglobalcost noexplicitotheractions, Boltzmanntraining,discountbeta.01LR.01/.001.60k simhours4days100MIPS each,30hourtestaverages. DownonlyRLd wait14.7/sq313/system41.7;2uppaxmin tailFIM.50%vsRLd1.40% despitebetternormalmetrics,4upRLp/dtradeoffs. Addeduptrafficforcedalluphallstops,notunrestrictedzeroshot. No optimalpolicy/certification ordeployedtests."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Continuous-time partiallyobserved stochasticmulticar elevatorcontrol makesexhaustiveDPimpractical.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3
+          ],
+          "locator": "Introduction/system"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "DiscreteeventQlearningwith sharedvsseparatenetworks, onlinecostestimation andtraffictransfercomparisons.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Algorithm/results"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Handrulesleaveessentiallystop/continue,47input20hidden2linear network,minimumQbootstrapwithexpelapseddiscount,beta.01LR.01/.001.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Actionconstraints,visibleQtarget,network"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "60ksimhours4days100MIPS/30houraverages;down-onlyRLd14.7wait/313sq/41.7system/.07%tail;2up FIM.50%tailbetterRLd1.40%;addedupcallsforcedstops.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7
+          ],
+          "locator": "Tables2-4 andtraining/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Onebuildingfiniteprofiles, unknownoptimalpolicy, reportedmetrictradeoffs andlargesimtraining; discountedreturnvsSquaredWaitevaluation distinction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Objective/algorithm/tables;curatorqualification"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistelevatordispatchdecisioncomponent,no crossnativeproblemsharedmodeldemonstration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            6
+          ],
+          "locator": "System/actions anddemandtransfer"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "authors, affiliations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/390e982518a50e280d8e2b535462ec1f-Paper.pdf",
+      "locator": "PDFp1RobertH.Crites/AndrewG.Barto andUMassAmherst."
+    },
+    {
+      "field": "publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/390e982518a50e280d8e2b535462ec1f-Abstract.html",
+      "locator": "OfficialNIPS1995volume8record."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/hash/390e982518a50e280d8e2b535462ec1f-Abstract.html",
+      "locator": "ManuallyinspectedentryBibtex/Metadata/Paper only; complete7pagesnoappendix/attachedscience."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/1995/file/390e982518a50e280d8e2b535462ec1f-Paper.pdf",
+      "locator": "VisualcheckedPDFpp2-6 tables1-4,continuousdiscount/cost/Qtargetformulae; no newasset."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshly read7pages/8references andvisualtables/math.",
+    "RestoredauthorH/Gmiddleinitials.",
+    "Specifiedactualstopcontinueactionspace,ruleconstraints,47-20-2architecture,onlinevsomniscientcost.",
+    "Recorded60ksimhours/fourdaystraining and30hourtests.",
+    "Qualifieduptrafficforcedcallstops andFIMtailwaitcounterexample ratherthanuniversalmetricvictory."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "98bf88b35759ee8330db5ef04d1591c2bb97017e4787187caf7dc01a70ff727c"
+}

@@ -1,0 +1,649 @@
+{
+  "version": 1,
+  "paper_id": "deep-policy-dynamic-programming",
+  "note_path": "specialist/deep-policy-dynamic-programming.md",
+  "baseline_note_sha256": "9102fc2cc7ac40a0538dfcb25829a7acd771bbdb0687a32e0de340059e0bbfaf",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2102.11756v2",
+      "retrieval_url": "https://arxiv.org/pdf/2102.11756",
+      "version": "arXiv v2, 2 December 2021; all 21 pages including Appendices A-B read; formal publication metadata and extra model appendix separately checked on Springer.",
+      "local_path": "research/full-text-review/deep-policy-dynamic-programming/paper.pdf",
+      "sha256": "436ade1876f100035f5274f9c23949967810bb18422f7b0c9434cb2693fe343e",
+      "pages": 21,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh title/authors/institutions, TSP/CVRP/TSPTW actualscope, heatmap-and-DPframework, exactdominancevsrestrictedbeam, allrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 9,
+      "notes": "Fresh full reading of DP state/action/dominance and heat+potential formulas; TSP/CVRP/TSPTW adaptations; sparse edges and training; all Table 1-3 values, reference denominators, hardware and dataset limits."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 17,
+      "notes": "Fresh full reading all three ablations, limits/scaling/teacher-solutions/heuristic potential, complete 67-item references, and Appendix A beam trace/bitmasks/dominance grouping."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 21,
+      "notes": "Fresh all Appendix A remaining dominance/Pareto diagrams, streaming-topB inconsistency footnote, GPU overhead; Appendix B directed model and harder TSPTW generation/heuristic teacher."
+    }
+  ],
+  "claims": [
+    {
+      "id": "framework",
+      "category": "contribution",
+      "statement": "Single supervised heatmap evaluation guides restricted DP, with exact state/resource dominance and heuristic top-B selection.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5
+          ],
+          "locator": "Sections 1, 3, 3.1"
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "category": "method",
+      "statement": "TSP cost dominance; CVRP cost/capacity Pareto dominance and direct/via-depot actions; single-vehicle TSPTW cost/time dominance.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Sections 3.1-3.3"
+        }
+      ]
+    },
+    {
+      "id": "heat",
+      "category": "method",
+      "statement": "Heat plus manually designed remaining potential; threshold 1e-5 and via-depot heat factor 0.1; no finite-beam optimality guarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections 3.1-3.4"
+        }
+      ]
+    },
+    {
+      "id": "teacher",
+      "category": "method",
+      "statement": "CVRP uses LKH teachers; TSPTW uses cost-based heuristic DP beam 1M and directional edge parameters; task-specific models.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            21
+          ],
+          "locator": "Sections 3.3, 4.2, Appendix B"
+        }
+      ]
+    },
+    {
+      "id": "tables",
+      "category": "experiment",
+      "statement": "Table 1-3 dataset totals distinguish heatmap/search; TSP Concorde, CVRP HGS, TSPTW GVNS denominators and hardware limits.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Tables 1-3 and surrounding protocol"
+        }
+      ]
+    },
+    {
+      "id": "ablation",
+      "category": "experiment",
+      "statement": "100 CVRP validation examples isolate neural heat, potential, dominance, beam width and sparsity; HGS remains stronger.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10,
+            11
+          ],
+          "locator": "Figure 3 and Section 5"
+        }
+      ]
+    },
+    {
+      "id": "implementation",
+      "category": "method",
+      "statement": "CPU O(Bn) backtracking trace; grouped resource dominance; streaming score-bound pruning can slightly alter results.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "Appendix A, including footnote 13"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist constructive: separate problem models produce routes by incremental DP state expansion; no per-instance neural adaptation/incumbent moves.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections 3-4"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://arxiv.org/pdf/2102.11756v2",
+      "locator": "PDF page 1 author list and UvA/ORTEC affiliations; matches formal Springer authors."
+    },
+    {
+      "field": "publication, venue",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-031-08011-1_14",
+      "locator": "Manually inspected first-online/published 10 June 2022, CPAIOR2022 LNCS13292 pp190-213; removed unsupported acceptance year."
+    },
+    {
+      "field": "date, version",
+      "source_url": "https://arxiv.org/abs/2102.11756",
+      "locator": "First submission 23 February 2021; actual cached/read v2 2 December 2021, 21 pages."
+    },
+    {
+      "field": "problems, classification",
+      "source_url": "https://arxiv.org/pdf/2102.11756v2",
+      "locator": "Sections3.1-3.3 explicitly TSP, CVRP and single-vehicle TSPTW; constructive task-specific heatmap/DP methods."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/wouterkool/dpdp",
+      "locator": "Paper p7 footnote4; manually read full README training, downloads, all tasks and implementation timing/checkpointing caveats."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://link.springer.com/chapter/10.1007/978-3-031-08011-1_14",
+      "locator": "Manually inspected publisher page/link inventory: no standalone supplementary attachment. Complete online Appendix1 including added self-contained GNN, directed TSPTW and dataset generation, plus Appendix2 implementation, fully read. Complete author arXiv v2 Appendices A-B also read. No explicitly referenced scientific material remains missing."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://arxiv.org/pdf/2102.11756v2#page=3",
+      "locator": "Visually inspected original Figures2-4/formula/Table1-3 renders. Replaced clipped framework with full original Figure2 crop PDFp3 Rect(76,99,522,240),4x; atomic PNG replacement and visual check."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2102.11756",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-02-23; title on abstract page: Deep Policy Dynamic Programming for Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/deep-policy-dynamic-programming/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[5] Bello2016 arXiv",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "neurewriter",
+      "reference_label": "[7] Chen2019 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "learning-heuristic",
+      "reference_label": "[13] Deudon2018 CPAIOR",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "att-gcn",
+      "reference_label": "[17] Fu2020 arXiv:2012.10658",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "egate",
+      "reference_label": "[18] Gao2020 arXiv:2002.08539",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "gcnn-branching",
+      "reference_label": "[19] Gasse NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[25] Hottung2021 ICLR",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[26] Hottung2019 arXiv",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[27] Joshi2019 arXiv",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "[29] Kim2021 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "attention-model",
+      "reference_label": "[31] Kool2019 ICLR",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            13
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "pomo",
+      "reference_label": "[32] Kwon2020 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "learning-to-delegate",
+      "reference_label": "[36] Li2021 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "[37] Li2018 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "learning-to-improve",
+      "reference_label": "[38] Lu2020 ICLR",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "graph-pointer-network-hrl",
+      "reference_label": "[39] Ma2019 arXiv",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "dact",
+      "reference_label": "[40] Ma2021 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "rl-vrp",
+      "reference_label": "[45] Nazari2018 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            14
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "dynamic-am",
+      "reference_label": "[49] Peng ISICA2019 as printed in read preprint",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "pointer-networks",
+      "reference_label": "[61] Vinyals2015 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            15
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[63] Wu2019 arXiv:1912.05784",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            16
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "step-wise-routing",
+      "reference_label": "[64] Xin2020 TII",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            16
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "neurolkh",
+      "reference_label": "[65] Xin2021 NeurIPS",
+      "description": "Explicit in-text numbered citation, checked against matching reference in actual read arXiv v2; cited version preserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            16
+          ],
+          "locator": "In-text numbered citation and complete matching bibliography entry."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "combining-reinforcement-learning-and-constraint-programming-for-combinatorial-optimiza",
+      "reference_label": "[6]",
+      "description": "Explicit RL-guided TSPTW comparison, inherited 100-instance generator and Appendix discussion; exact five-author arXiv2006.01610. Current target includes later formal third task; cited precursor remains 2020.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            4,
+            9,
+            11,
+            12,
+            21
+          ],
+          "locator": "Actual complete body context and full exact bibliography entry inspected; cited work/version and any source terminology error explicitly qualified."
+        }
+      ]
+    },
+    {
+      "citing": "deep-policy-dynamic-programming",
+      "cited": "deep-neural-network-approximated-dynamic-programming-for-combinatorial-optimization",
+      "reference_label": "[66]",
+      "description": "Introduction and machine-learning/dynamic-programming related work explicitly cite exact Xu/Panwar/Kodialam/Lakshman AAAI34 pages1684?1691 work; not a title-only similarity with DPDP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            3
+          ],
+          "locator": "Actually read complete body citation paragraphs: [66]"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            16
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: [66]"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Corrected multi-vehicle VRPTW to single-vehicle TSPTW in metadata and detailed note.",
+    "Replaced acceptance-year inference with publisher-supported first publication 2022-06-10.",
+    "Added exact teacher/training, heat/potential, resource dominance, finite-beam/sparse graph caveats and streaming-bound inconsistency.",
+    "Replaced generic experiments with complete table protocols, HGS/GVNS versus optimum denominators and dataset-total runtimes.",
+    "Read additional published online GNN appendix absent from self-contained arXiv description and disclosed version used for numerical tables.",
+    "Replaced bottom-clipped Figure2 asset with complete original crop; checked images and tables visually.",
+    "Final manual residual citation review: restored newly available CP–RL target or checked exact body/bibliography identity; no title-only edge.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "57e4778cf638f6c55421a16e89ca7bb532dc90b0a05bbe2dd939db3fb261baa7"
+}

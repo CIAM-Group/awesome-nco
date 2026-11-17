@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "paper_id": "sigma-matching",
+  "note_path": "specialist/sigma-matching.md",
+  "baseline_note_sha256": "015e72b8b5eacbb541d62652b36dc32ea16593b2313b297be9a6fea8f167b831",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v139/liu21i/liu21i.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v139/liu21i/liu21i.pdf",
+      "local_path": "research/import-272/nco-4d8210476b.pdf",
+      "sha256": "28bbbbd17f83e4387f6660c45bb4785fb4a34f6208dee42c20b0d63688c4d071",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Read full motivation, partialmatching/dummyconstraints, QAPversussupervisedobjectives, perturbation/Sinkhornbiasedreparameterization and blockpermutationcollapse, GNNscores/refinementweight. MappingBSCbottomrightmaynonzerodespiteEq1zero; inspectimplementation."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "ReadfullrefinementselectionwithMonteCarloexpectationandstopgradient; decodermaxscoreHungarian versusmarginalMAPquestion; allthree taskbackbones/protocols, commonunsupervisedpairtraining andRDM8/1/1split, mainTables1-4 andnegativecasesincludingwithoutdummy76.5>full76.2."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "ReadBBGMprotocolfine-tuneversusfrozenVGG16distinction, Table5, allconclusion/limitations andcompletebibliography. NoappendixinthemainPDF."
+    }
+  ],
+  "claims": [
+    {
+      "id": "sigma-contribution",
+      "category": "contribution",
+      "statement": "Stochasticpartialmatchingdistribution,dummynodes andsharedwithin-taskrefinement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections1-4, Equations1-17"
+        }
+      ]
+    },
+    {
+      "id": "sigma-method",
+      "category": "method",
+      "statement": "GumbelSinkhornbiasedrelaxation andMonteCarloretentiondo notguaranteefinaldiscrete/trueexpectedimprovement; Hungarianexactforlinearscoresonly.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Sections4.1-4.3/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "sigma-results",
+      "category": "experiment",
+      "statement": "Threedistinctbackbones/protocols; noisySIGMAstrongercorrectnessbutoftenslowerthanSGWL; visualwithoutdummy76.5exceedsfull76.2 andBBGMfine-tunedprotocolseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables1-5 and fulltaskprotocols"
+        }
+      ]
+    },
+    {
+      "id": "sigma-specialist",
+      "category": "classification",
+      "statement": "SeparateGIN/RGCN/SplineCNNmodels for nativegraphcorrespondenceapplications; nosharedmodeldemonstrationacrossunrelatedoptimizationtasks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Sections5.1-5.3"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/liu21i.html",
+      "locator": "ICML2021PMLR139:6815-6825fourauthors; PDFp1Li-PingLiu/MichaelC.Hughespunctuation andTuftsdepartmentsverified"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v139/gh-pages/_posts/2021-07-01-liu21i.md",
+      "locator": "Explicitdateandissued date-parts2021-07-01; distinctconferenceJuly18-24"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/liu21i.html",
+      "locator": "ManualRelatedMaterialonlymainPDF/rawextrasempty; all11pagesread; officialtufts-ml/sigmarecursivetreecheckednoPDF/ZIPscienceattachment, onlycode/data/showcasePNG"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/tufts-ml/sigma",
+      "locator": "OfficialTuftsrepoREADMEexactICMLtitle andcoauthorSohaHassounSoftwarelinkconfirms; allthreecoremodels/train/functions/samplersinspected; KEGGdataunreleased; accepted-onlyloss andimage-rowargmaxdifferencesrecorded"
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sigma-matching",
+      "cited": "gumbel-sinkhorn",
+      "reference_label": "Mena et al. (2018)",
+      "description": "Explicit Gumbel-Sinkhorn distribution citation and exact title/arxiv1802.08665.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            10
+          ],
+          "locator": "Explicit in-text citation Mena and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "ExplicitCIEbaseline/relatedwork andexactchannelindependentHungarianattentionreference.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            11
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "deep-graph-matching-consensus",
+      "reference_label": "Fey et al. (2020)",
+      "description": "ExplicitDGMCrefinement/baseline andexactbibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            7,
+            8,
+            9
+          ],
+          "locator": "Explicit in-text citation Fey and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "deep-graph-matching-via-blackbox-differentiation-of-combinatorial-solvers",
+      "reference_label": "Rolínek et al., 2020",
+      "description": "GNN graph-matching related work directly cites Rolínek et al.; exact six-author ECCV2020 BBGM bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            10
+          ],
+          "locator": "Actual body citation Rolínek et al., 2020 on PDF pp[2]; full bibliography entry on pp[10]. Title and author identity matched to the target reading record, independently of topic similarity. GNN graph-matching related work directly cites Rolínek et al.; exact six-author ECCV2020 BBGM bibliography."
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al., 2019a",
+      "description": "Learning-based/GNN matching discussion cites exact three-author ICCV2019 PCA paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Actual body citation Wang et al., 2019a on PDF pp[1, 2]; full bibliography entry on pp[10]. Title and author identity matched to the target reading record, independently of topic similarity. Learning-based/GNN matching discussion cites exact three-author ICCV2019 PCA paper."
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir and Sminchisescu, 2018",
+      "description": "Learning-based graph matching discussion cites the exact CVPR2018 GMN title and two authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Actual body citation Zanfir and Sminchisescu, 2018 on PDF pp[1, 2]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Learning-based graph matching discussion cites the exact CVPR2018 GMN title and two authors."
+        }
+      ]
+    },
+    {
+      "citing": "sigma-matching",
+      "cited": "learning-for-graph-matching-and-related-combinatorial-optimization-problems",
+      "reference_label": "Yan et al., 2020",
+      "description": "Related-work survey discussion directly cites exact Yan/Yang/Hancock IJCAI2020 survey.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Actual body citation Yan et al., 2020 on PDF pp[2]; full bibliography entry on pp[11]. Title and author identity matched to the target reading record, independently of topic similarity. Related-work survey discussion directly cites exact Yan/Yang/Hancock IJCAI2020 survey."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall11publisherpages,allreferences/figures/tables andmanuallyverifiednoadditionalscientificsupplement.",
+    "Addedverifiedofficialcode andPDFauthornameformat; inspectedallthreeexperimentimplementations andunreleasedKEGGdatarestriction.",
+    "QualifiedMonteCarlomonotonicity/marginalMAP/Hungarianclaims, dummycellnotation, metrics/protocoldifferences andnegativeruntime/category/ablationcases.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "e2aa305c3a6f40c22f833f48ccbd9fed7892611519712defbc3bcbd2c149ff34"
+}

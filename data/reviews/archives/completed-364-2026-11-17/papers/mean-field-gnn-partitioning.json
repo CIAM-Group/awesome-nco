@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "paper_id": "mean-field-gnn-partitioning",
+  "note_path": "studies/mean-field-gnn-partitioning.md",
+  "baseline_note_sha256": "ff426383d123288edb392f8d154bc66e8253d5e35358650d382d5022adf80986",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/f6e794a75c5d51de081dbefa224304f9-Paper.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/f6e794a75c5d51de081dbefa224304f9-Paper.pdf",
+      "local_path": "research/import-272/nco-58029e3b8c.pdf",
+      "sha256": "b327464c8a6012f31e5c953fb01e47eb59fec89f7f3747da086eeae8aa50f1a1",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/f6e794a75c5d51de081dbefa224304f9-Supplemental.zip",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/f6e794a75c5d51de081dbefa224304f9-Supplemental.zip",
+      "archive_member": "sbmgnn_ supplementary.pdf",
+      "version": "officialNeurIPS2018 five-page scientific supplement identified by exacttitle/authors; AppendixA derivation and AppendixB extraexperiments",
+      "local_path": "research/full-text-review/mean-field-gnn-partitioning/sbmgnn_ supplementary.pdf",
+      "sha256": "1be903f5c94bc8a19b7cd081622980c12c3fc6cce788004020ea30fa96f0bacd",
+      "pages": 5,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 11,
+      "notes": "Read complete11pages incl entire42reference bibliography, mean-field approximation assumptions, exactSBMinferencevsoptimization distinction, NMIlabels, all experiment protocols and actual limits."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 5,
+      "notes": "Read complete5-page scientificsupplement, all derivation Eqs1-20, both explicit mean-field closure approximations/Jensen caveat, all extra readout experiments and bothreferences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "task",
+      "category": "classification",
+      "statement": "Studies planted-label inference in sparse symmetric equal-size2groupSBM, explicitly not arbitrary graph-partitioning objective minimization.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Mainp2 exact task distinction; Section3.1 SBM assumptions"
+        }
+      ]
+    },
+    {
+      "id": "closure",
+      "category": "contribution",
+      "statement": "Derives approximate dynamical mean-field covariance closure for random-weight minimalGNN and estimates its detectability limit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "Section3.2 Equation7 and explicit not-exact-closure qualification"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "category": "method",
+      "statement": "Random independent Gaussian feature transforms at eachlayer, largeD withD/Nsmall and stationarydepth; adjacency message passing with tanh numerical choice.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Equations1-7; bias omission and largewidth assumptions"
+        }
+      ]
+    },
+    {
+      "id": "approximations",
+      "category": "method",
+      "statement": "Supplement explicitly uses average-exponential replacement and groupaveragephi≈phiofgroupmean; discusses Jensen and smallfluctuation/locallinearity conditions.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Full AppendixA derivation Eqs6-20 and statedtwoapproximations"
+        }
+      ]
+    },
+    {
+      "id": "nmi",
+      "category": "method",
+      "statement": "NMI readout loss uses known plantedtraininglabels while removing global labelpermutation ambiguity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "locator": "Section4 Equations8-11 and P_sigma,sigmahat defined using plantedgroups"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "UntrainedD100/T100,30samples and c8threshold≈.33 agree qualitatively with estimated transition; trained residual/BNmodels improve overlap but have similar tested boundary.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Figures2-4 and completeSections5.1-5.2"
+        }
+      ]
+    },
+    {
+      "id": "readout",
+      "category": "experiment",
+      "statement": "Clusteringtanh(XT) substantially improves untrainedoverlap and narrows observed trainedcomparison; finite-sizeeffects remain.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            4,
+            5
+          ],
+          "locator": "AppendixB and completeFigures1-2"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "No universal GNN/nonlearning hardness theorem or stateoftheartSBMclaim; minimalmodel, asymptotic approximations and readout sensitivity limit conclusions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section5 implementationdependence and Section6 discussion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/f6e794a75c5d51de081dbefa224304f9-Abstract.html",
+      "locator": "Manually opened officialNeurIPS2018 record. Exactthreeauthors and fullpublisherPDFp1 AIST/TokyoInstituteofTechnology affiliations checked. Official2018yearretained; addedCommunityDetection problemmetadata matching exact plantedtask."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/f6e794a75c5d51de081dbefa224304f9-Supplemental.zip",
+      "locator": "Manually followed officialSupplementallink and downloadedZIP; completeinventoryhasexactlyone scientificPDF sbmgnn_ supplementary.pdf,5pages. RegisteredsourceSHA/pagecount and readall5pages including detailed derivation, twoexplicitclosureapproximations, full extraexperiments and bothreferences. Main11pages/all42references alsoread; twofreshcontactsheetsvisuallychecked."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/hash/f6e794a75c5d51de081dbefa224304f9-Abstract.html",
+      "locator": "No implementationURL in complete main/supplement or officiallanding; ZIP containsPDFonly. Chainer3.2.0/defaultAdam mentioned in mainp7, but no releasedcode inferred."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expanded exactSBMplantedinference scope rather than generic objectiveoptimization.",
+    "Documented approximateclosure with bothsupplemental assumptions andJensenqualification; avoidedcallingestimatedboundary universalrigoroustheorem.",
+    "ExplainedlabeldependentNMItraining, exactreportedarchitecture/data/depth and essentialtanhreadoutbaseline.",
+    "AddedCommunityDetection metadata and keptstudy/theory, no scope migration; no exact internalcitationtargets amongexisting364."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "30797570a21d20c86ce7425fd00f1b7bc98c67480ea0e2c86ce69781db185d44"
+}

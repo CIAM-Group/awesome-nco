@@ -1,0 +1,825 @@
+{
+  "version": 1,
+  "paper_id": "dpn",
+  "note_path": "specialist/dpn.md",
+  "baseline_note_sha256": "1699cef74a5204f7f1ae2af8c207382c7500945006968c7e831a37468f5a15f0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zheng24m/zheng24m.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zheng24m/zheng24m.pdf",
+      "version": "Actual formal PMLR235 ICML2024 34-page publisher PDF, complete main/bibliography/scientific A-G fresh read.",
+      "local_path": "research/full-text-review/dpn/paper.pdf",
+      "sha256": "fcbffaf572b7d6dbdd4841874c2431c4cf84e4e5b8388eb318b8074da75506c2",
+      "pages": 34,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "rebuttal",
+      "url": "https://raw.githubusercontent.com/CIAM-Group/NCO_code/main/single_objective/DPN-minmaxVRP-master/Rebuttal_OpenReview.pdf",
+      "retrieval_url": "https://raw.githubusercontent.com/CIAM-Group/NCO_code/main/single_objective/DPN-minmaxVRP-master/Rebuttal_OpenReview.pdf",
+      "local_path": "research/full-text-review/dpn/Rebuttal_OpenReview.pdf",
+      "sha256": "3403d14ff00883790425941947863fbc61d84408e73329d28dcdf398d7408f35",
+      "pages": 27,
+      "version": "Actual author-released 27-page OpenReview forum ar174skI9u export printed 2024-06-25, containing full scientific rebuttal and actual May2 decision; all pages fresh read.",
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalPMLR235ICML202434pagesactualsixauthors equalfirstZhiZhengShunyuYao,missingCityU/Huaweiaffils. Actual4tasksminmaxmTSP,mPDP,MDVRP,FMDVRP notonlymTSP. Old2independentpoliciespartition/navigationwrong:singleautoregressivepolicy withdecoupledfeatureblocksP&Nencoder,routebyrouteconstruct. APSagentpermutationKrollouts anddepot-awareRotationPE new. Singlemodelmeaningagents/routesnotnecessarilysharedcrossproblemweightsneedfulltrain."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "FreshEq1-9/fullFig2methodsetupread. TerminalrewardnegativeMAXrouteEuclidean, fullrouteonebyonecustomerordepotchoices; noexternalpartitionthenTSPteacher. Encoderparallelstreamssubfunctionsonepolicy withagentdepotcoordinate+MPE. Navigationcustomer-onlyselfattn/ReZeroalphas; partitionagentcustomerattention/sharpnext. Eq5claimed equivalentmaxE vsactualEmaxnotgeneral interchange theorem; useactualterminalrewardnotstrongmathguarantee. All4tasksrouteconstraintsneedAppendixB.1/B/C."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "FreshEq10-19/APSfull/table1_2allrowsread. Sharpattentiondropssqrt(d)temperature STILLsoft mixture nothardassignment/enforcesexclusive partition onlymaskdecoding. APSKagentpermutation sharedmeanobjective baseline, ordinalagentroute relabeloptimalinvariant notdistributionequiv guarantee. RotationPEcomplexprojectiondepot*exp(iindex/1000...) notglobalcoordinateD4augmentation. NegativecasesmTSP100M10DPNplain .4377worseET.4153,8aug.1671slightlyworseET.1652;classicalHGA/LKHbettermostmTSP. mPDPzeroGapBESTDPNreference notoptcertificate;ORtools hugegap dependsmodeling/budget. LARGE Table2allhasF=finetunemustnotclaimzero-shot1000.100setswholebudgetTablestime perwhole vsinstancecheckprose next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Fulltrain/results/Table3/4allrowsread. ActualK60train M2..10 random sixencoder8heads128FF512 Adamweightdecayprintedβ1 unusualcheckcode;3daysTSP1005daysPDP100V100S, K16test*D4aug8=128candidate. LargeF tuned200/500 then500checkpointtests1k, NOT100trainedzero-shot1k. Distincttaskscaletrainseparate. MDVRPextra2depotattnstructure Dtrain2..10 test6for50/8for100;Ffine-tunesfixedD notincumbentsearch. NegativeFMDVRP100CE/NCEbetterthanDPNandF atallM;F50M7worse1.1649vsbase1.1619. BaselinesunavailablecopiedNCE/CE/ETsample provenance. MDPsemanticfourvariantsnextB."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Freshconclusionimpact/refsArkin..Maall2bibpagesread. AuthorlimitationnotdirectgeneralVRP C7future. ExplicitBelloformalworkshop2017referenceentry existingreferencecollectionstable qualifiescitationbutdoesnotpromoteeligibility. NCErefKim2022aactualICLR2023sourceprintedwrongyear preserve. BQ/LEHDNeurIPS36printed2024electronicvsedition2023retain. ELG2023arxiv,attention2018,pointerformer2023,routingDRO2022allneedactualAppendixAmentions notbibononly. TAMrefHou.. starts9 ends10sameidentity. splitnet/formalAMARLnotcatalog?candidate later."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "FreshcompletebibrestMahmoudi..Zong12read. EqTransformerformal2024, DAR2024oldpreprint,encodingsRegretRGLS2024, RBG2022,GLOP2024,Omni2023, L2Iformal2022journalDOI. DuplicateRoFormer2023/2024sameworknotcatalog likelynotedge. IndependentmultiobjectiveWangTCYB2023/ParetoImproverTITS2023notcatalogifnoexactmatch avoidforce. AllbibliographycompleteactualintextAppendixA tocheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FreshAppendixAallrelated andB1fullMDP/Eq20/Fig4read. Explicitone-stageDPNNOTtwo-stageNNdecomposition, actualoldnotecontradictedverbatim. DirectcitationsnowbodyAppendixA allTAM/RBG/H-TSP/GLOP/AM/LEHD/ELG/RGLS/sym/BQ/NCE. APSchangesonlydepotboundarynextagent order randomshuffles100times describednotexhaustiveM!,K60/16rollouts repeatedpossible. Depotroutestart/end constraintsB2next."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "FreshB2/B3completeformalconstraintEq21-42read. mTSPoneclosedrouteperagent samefixedsingledepot visitedcustomerexactonce. mPDPpairedN/2customers pickupbeforeownpairedDelivery andsameagentroute, NOcapacityconstraint/testtimewindow implied. Eq41strictbilinear (u_p-1)(u_d-1)>0 notliteralMILP andposition1looksambiguous; don'tclaimformalMILPvalidated; actualmasksreadlater. Abstractpartition assumesoptimalTSPsubsolver onlyconceptualEq30 NOTactualtestoracle orseparatepolicy."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 18,
+      "notes": "FreshfullB4/B5allEq43-72read. MDVRProutechoosesstartdepot andMUSTreturnSAME;FMDVRPcanendANYdepot doesn'treturnstartedge notclosedTSPdistance; uncapa/no demands. Qdepotagentassignnotationcanemptyvehicle route constraintatmost etcactualmasks check. Noautomaticonecheckpointall4scopebecausemulti-depotextraarchitecture vssingle/PDPspecialpair features."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 20,
+      "notes": "FreshC1-C3fullEq73-78/Fig5read. Encoderallrelation O((N+M+1)²d) ->O((N²+2NM)d) removesagentagentattention notlinear/no overalldecodingcomplexitydrop theorem. C2decodercontextglobal+agent/currentnode/remainingagentcustomerfractions/maxcurrentroute/depotdistance stats, C50. Finalheuristicalpha_d exp(normalizeddistance) signtrainable(notfixednegative), printedmaskmultiplication∞ shorthandactualcodeneedcheck. C3mPDP heterogeneouscustomerattention +separatepickupdeliveryprojection meansnotjustidenticalmTSPcheckpoint/taskshared. PDPcontextpairededge lowerboundsfeaturesadditionalhandcraft."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 22,
+      "notes": "Fresh C4 Eq79-95 Fig6 actual multi-depot architecture 3 partition relations depotcustomer/agentdepot/agentcustomer, dummy depot trainable input for RotationPE. Distinct architecture from single depot; feasibility masks MD/FMD vary, not shared all-four checkpoint. MHSA remains soft attention despite authors assignment interpretation. Initial random depot query, longest nearest-depot distance context. C5 explanatory angle-based rotation motivation not exact instance-adaptation theorem."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 23,
+      "last_page": 24,
+      "notes": "Fresh C5-C7/Eq96 and D1/2 Table5 allrows: explicit SIXTEEN separate task/scale/fine-tune models, definitively specialist. 50/100 fourtasks each500epochs256000instances/epoch=128m presentations permodel; K60rollouts additional. 200FT20*64000=1.28m;500FT20*16000=.32m from100; multi-depotF20*128000=2.56m withTable5D8 even50 vs mainTable4D6 conflict keep explicit. β1 is learning-rate decay Table5 notweight-decay despite maintext wording. Rotationrealpaircos/sin1000base, depotconditional notsimpleangularfixed. C7 authorlimitsfixedMminmax notuniversalCVRP."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 26,
+      "notes": "Fresh D2/3 E1-3 Tables6-9 complete. FormalTable6singleV100S100nodeTSP91.7h,PDP93.3h,multi105h; main3day/5dayrough differs. SetI usesSPECIAL200FT M3..20 notnormal10..20, DPN128candidateavg5.36%gap vsET10.26/classicalHGA.07 andindividual20.89%kroA200M3. mTSPLib bestof50+100models selection avg2.81%vsET4.60/HGA.06. Crossdistributions200alreadyFT:RotationDPNbeatsone-runHGA butGaussian/Explosionoftenclassicalbetter; notuniversalzero-shotall-distributionclaim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 27,
+      "last_page": 28,
+      "notes": "Fresh E4-6 Tables10/11 Fig8/9 all science. 100k support is DIFFERENT100-node-from-scratch NO-NAVIGATION architecture O(NM)space, originalO(N(N+M))only10kV100S. ten100kM500instanceswhole2h objective4.2078 noheuristicbound; baselinesdefaulttimeout5days notproofsuperiorquality. Fulloriginal10knot100k. Table11TSP10 gains tiny .0005vsnoPN yetPDP3.2706to2.6949. Depotgrid10000M10actualheatmap1runHGA, cornersoriginalSPEbetterrelative thanmiddle; Rotationreducesgapnotexactequivariance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 29,
+      "last_page": 30,
+      "notes": "Fresh E7 Table12 andFpage30captions/objective labelsread. 100trainedzero-shot200actuallyreported2.0227/1.9670/1.9648,FT1e-5improves1.9993/1.9640/1.9628;FT+LP2.1064M10worse. QualifyzeroshotvsFmain. Fig11/12randomillustrations noaggregateproof actualDPNcanworseLKH. Renderforroutegeometryfollowup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 31,
+      "last_page": 32,
+      "notes": "FreshF13-18routefigcaptions/objective labelsallread pendingvisualgeometry. PDP50/100examplesDPNlongest3.49248/2.66969 vsET5.05288/3.46609 notstats. Figure16captionFMDVRPdespiteprecedingMDsection and duplicatesFig18exactvalues;retainformaltaskdefinitionsratherthantreatallcaptionsconsistent. FMDdifferentstartendvisualnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 33,
+      "last_page": 34,
+      "notes": "FreshF19/20andGlicensesallread. ImportantauthorstatesMULTIDEPOTTable4baselinesdifferenttestsetsnotaccurate, mustnotclaimcontrolledranking. VisualbaselinesNCE/ORtoolsdigitizedPIXELcoordinates unavailablecode objectiveinconsistent. LKHMAXTRIALS10000,MAXCANDIDATES6,RUNS10nohardtime;HGA10runs100setsbut1run10kdepotgrid/crossdistribution. ET50/200provided,100trained,500PDPFTauthors;ETsamplebudgetunknown. Fullformal1-34nowread scientificA-Gincluded."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "FreshauthorarchivedOpenReview2024Jun25pages1-3 identityfulltitle/sixauthorsforumar174skI9u;camera-readycheckboxallappendicesinsidepublishedPDFandexternalattachmentsnotPMLRvisible. ActualpaperdecisionMAY2_2024acceptposter preservedfromauthenticdecision (notgenericMay1). ScientificauthorsApril5summarymentionsfifthmCVRPexperimentCommonConcern1 upcoming; unifiednetwork/losspartitionnavigationexplicitlycontradictsoldnoteindependentpolicies; generalVRPextensionlimited notpromoteuniversal."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "FreshrebuttalsCommonConcerns1-3full. NEWfifthtaskminmaxmCVRP20/30M3128instancesDPN2.0272/2.2248 whole<1s,reportedbaselinescopiednotcontrolledsame-code comparison. Notinfinalformal4tasks norreleasedtaskcode yet; maytagclearlysupp-onlypreliminarytask notformalheadline. Crossdistribution/mTSPLib/100kresultsduplicateformalbut ETmTSPLib5.06%herevsfinal4.60 qualifyuseformal. RebuttalmisstatementGaussianoutperformsHGA contradicted1.5181vs1.5063; doNOTadopt. 100kvariantretrainedno-navconfirmed."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresharchivedforumrefs andiPLgreview/replies7-9allread. Scientificduplicatecapacityexperimentcomplete20/30M3, formalclaimscope4tasknot5joint. Explicitoriginalquadraticspace10klimit/modifiedno-nav100kfromscratch repeated. Revieweropinionsnotindependentempiricalproof; noextraexternalnamedscienceattachment."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Freshforum10-12review/P1eu/rebuttalallrows. NO-navvariantnotcompetitive100..1000explicit, tradeoffkeep. SupplementnaiveDPN200/500tableTSP2.0175/2.0074M10/30 butFlabelomittedpossible notassumezeroshot becausepaperfinalzeroshootTable12different2.0381with8aug. Mainfinaluseitsownsettings; reviewerinaccurateparallel wording notmethodauthority (paperactuallysequential)."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "FreshrebuttalAPSscience13-15alltablesread. Additionalrewardvariance/agentorderbiasempiricaltables noformalunbiasedgradientproof: wordbias usedobjectiveordergap. FixednaturalorderDPN2.2693vsnoAPS2.2625TSPM5actuallyslightlyworse,randomorder3.4260vs2.2696supportsrobustnessnotallpointwisebetter. Tablelabels2varianceboth16thoughproseone8aug ambiguous. Decoder-onlyKpermutationsshareoneencoderembeddings, batch1memory118.59vs236.49MBTSP146.03vs318.09PDP; nooverallfactor2runtimeguarantee. SourceextraresultsnotmainTable3."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresharchived16-18fullrefs/reviews/authoranswers. FormalTable6training91.7/93.3/105hconfirmedreviewerreply, copiedcrossdistallnineMcasesrechecked. Noextraunobtainednamedscience. Reviewsratings/opinionsonlynotnewquantitativeevidence."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Freshrebuttal19-21allsciencebaseablation250epochs:1000vs10000TSPM5/7/10 2.2384/2.0177/1.9530vs2.2363/2.0155/1.9528;PDP3.5520/3.0582/2.7105vs3.5705/3.0723/2.7207. Sourcehalftraining onlynotgeneralinsensitivityproof. APSconnectionsPOMOsolution/MatNetorder/SymNCOproblem explicitmatchingrefs20. Reviewerwrongtwo-stagepartitionreadingwVP5notadopt;actualauthorreplynext."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Freshauthorclarification22-24single-stageendtoendONEpolicy directcompleteconstruction explicitnotTAMtwoindependentnetworks. AddedGNNDisPN/SplitNetborrowedcosttable notcontrolledhardware; DPN2.2314/1.9532/1.9993. Repeatedcapacity20/30M3128andexplicitlargedecisionspaceFMD100negative limitation. MainstreamminsumCVRP/CVRPTWnotdemonstrated; capacitysuppminMAXdoesnotcontradict."
+    },
+    {
+      "source_id": "rebuttal",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Freshremaining25-27allreferences/authordiscussionandfooterread completesALL27rebuttalpages. Identityar174skI9u/June25_2024printedauthorconsoleexport; actualMay2decisionacceptancevalid. Unifiedloss/encoderone-stageconstructivemethodrepeated; nofurthermissingnamedscience. MainstreamuniversalVRPfuturework notsharedcheckpoint generalist."
+    }
+  ],
+  "claims": [
+    {
+      "id": "architecture",
+      "category": "contribution",
+      "statement": "Single-stage autoregressive policy, decoupled representations inside P&N; navigation/customer and partition/agent attention; APS K60 and depot-aware rotation, not independent partition/navigation policies.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            13,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "locator": "Sections1-3 AppendixA/C; full figure2/6/7 and equations; source confirms soft sharp attention and source/formula discrepancies."
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "category": "method",
+      "statement": "Four minmax task states with distinct architectures/checkpoints; sixteen train/FT settings, 128m presentations each scratch model, K60, 128candidate strongest inference. Fourtask constrained longest-route objectives; only supplemental small mCVRP capacity test.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            14,
+            15,
+            16,
+            17,
+            18,
+            20,
+            21,
+            22,
+            24,
+            25
+          ],
+          "locator": "All formal B/C/D equations/Table5-6; supplemental fifth-task evidence separately below."
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "All13formal tables/20figures reviewed: quality depends budget, genuine zero-shot200 separate from200/500FT,1kuses500FT. 100kseparatelytrained no-nav only10instances2h noqualitybound. Multi-depot baseline datasets mismatch explicitlyAppendixG, pixel-recovered examples, negativefine-tunecases retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "locator": "All formal Tables1-13/Figs1-20, matchedbudget/memory/runtime/reference caveats."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialistconstructive: singlemodel means allagents notalltasks; 16 distinct task/scale/FT models andtaskarchitecturevariants, no proposed neuralcompleteincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            13,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "locator": "A explicitlyone-stage vs two-stage; D1explicit16models, C3heterogeneousPDP,C4multi-depot; source separatecommands."
+        }
+      ]
+    },
+    {
+      "id": "rebuttal-science",
+      "category": "experiment",
+      "statement": "Fully read official27-page scientific rebuttal: small capacitated20/30M3128instances2.0272/2.2248, borrowed baselines; APS empiricalorder/variance/batch1memory and250epochbasecomparison. Actual acceptanceMay2; single-stageclarification. No universalgradientproof orsamecheckpointasserted.",
+      "evidence": [
+        {
+          "source_id": "rebuttal",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Complete all27pages actual scientifictables/references/decision; onlynewmeasurementsseparatedfromformal."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, date, publication, acceptance",
+      "source_url": "https://proceedings.mlr.press/v235/zheng24m.html",
+      "locator": "Actual34pagePMLRpublisheridentity p1sixauthors equalfirstZheng/Yao;SUSTech+CityUHK+Huawei; actualcitation_publication_date2024/07/08. ArchivedofficialdecisionMay2_2024 p2notgenericnotification."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v235/zheng24m.html",
+      "locator": "ActualPMLRPaper/OpenReviewlinks inspected; liveforumchallenge/API403. AllnamedA-Gincludedandread34formalpages. OfficialDPN51entrytree manualinventory identifiesextra27-pageRebuttal_OpenReview.pdf, registeredandALLread; archivedforumcamera-readyappendicesincludedcheckbox. data.zip33membersdataonly,noextraPDF/TEX/notebook/archives; pretrainedDrive labelledweights."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/CIAM-Group/NCO_code/tree/main/single_objective/DPN-minmaxVRP-master",
+      "locator": "Actual DPN subtree415cf60292b23fcc1ebb607d6ef116c470f29b36 README/copiedETheading; inspectedtrain.py APSmakespancostmeanK60/minimize, run_tsp Adam noexplicitweightdecay LRdecay1, 3problemencoders, positional_encoding sin/cos swappedvsEq96, decodernegative-normalizeddistnotexpEq76, PDPmaskdeliveryslice+1. OptionalftcontextMLPseparatefrombestformalFT. Noexecution/trainingclaim."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zheng24m/zheng24m.pdf",
+      "locator": "OriginalcompleteFigure2formalpage4Rect(56,69,552,183)4x. Keyformal4/5/20/21/23/24/30-33andrebuttal14/19renderedvisualinspection."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2405.17272",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2024-05-27; title on abstract page: DPN: Decoupling Partition and Navigation for Neural Solvers of Min-max Vehicle Routing Problems. This date is preprint history, not formal publication. Cached research/full-text-review/dpn/arxiv.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "dpn",
+      "cited": "attention-model",
+      "reference_label": "Kool et al.,2018",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Kool et al.,2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2024",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Drakulic et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "dact",
+      "reference_label": "Ma et al.,2021",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Ma et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target dact"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "elg",
+      "reference_label": "Gao et al.,2023a; arXiv2308.14104",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Gao et al.,2023a; arXiv2308.14104"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target elg"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "glop",
+      "reference_label": "Ye et al.,2024",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Ye et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target glop"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "h-tsp",
+      "reference_label": "Pan et al.,2023",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Pan et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target h-tsp"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Wu et al.,2022",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Wu et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target learning-improvement-heuristics"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "lehd",
+      "reference_label": "Luo et al.,2024; NeurIPS36",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Luo et al.,2024; NeurIPS36"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target lehd"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "matrix-encoding-networks",
+      "reference_label": "Kwon et al.,2021",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Actual in-text Kwon et al.,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target matrix-encoding-networks"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2017",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20
+          ],
+          "locator": "Actual in-text Bello et al.,2017"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target neural-combinatorial-optimization"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou et al.,2023",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Actual in-text Zhou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target omni-vrp"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "pointerformer",
+      "reference_label": "Jin et al.,2023",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Jin et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target pointerformer"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Actual in-text Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target pomo"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "rbg",
+      "reference_label": "Zong et al.,2022",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target rbg"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari et al.,2018",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actual in-text Nazari et al.,2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target rl-vrp"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "routing-dro",
+      "reference_label": "Jiang et al.,2022",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Jiang et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target routing-dro"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.,2022b; arXiv2205.13209",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Actual in-text Kim et al.,2022b; arXiv2205.13209"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target sym-nco"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "tam",
+      "reference_label": "Hou et al.,2023",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Hou et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target tam"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Hou/Yang/Su/Wang/Deng full reference starts p9 and ends p10 with complete title, ICLR2023 and exact OpenReview6ZajpxqTlQ; p13 explicitly TAM/Hou2023. Reviewer/rebuttal alternate2022label is not formalpublicationyear."
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim et al.,2022a; printed ICLR11 year2022",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actual in-text Kim et al.,2022a; printed ICLR11 year2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target neuro-cross-exchange"
+        }
+      ]
+    },
+    {
+      "citing": "dpn",
+      "cited": "dar",
+      "reference_label": "Wang et al.,2024; arXiv2401.06979",
+      "description": "Actual explicit author/year in-text plus complete bib identity; actual cited preprint/printed year retained, not retroactively future formal year. Uncatalogued EquityTransformer/SplitNet/Sun2024regret notforced. DAR2401.06979samepreprintprecursor independently read withformal15pageextension earlier; no cross-workmerge.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            20
+          ],
+          "locator": "Actual in-text Wang et al.,2024; arXiv2401.06979"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete reference title/authors/version corresponding to stable target dar"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh all34formal+27officialscientificrebuttal pages, allnamedA-G andextraresults/refs/actualdecision;51tree/dataZIP33manualinventory.",
+    "Removed falseindependentpartitionandnavigationpolicies: singleautoregressivepolicydecoupledrepresentations;16distincttrainedmodels specialistconstructive retained.",
+    "AddedmissingmPDP/MDVRP/FMDVRP plusclearlysupp-onlypreliminaryminmaxcapacitated20/30task, preciseconstraints andlongestrouteobjective.",
+    "Corrected128m scratchtrainingpresentations, K60train/8x16testwhole100settimes,200/500FT and500to1k, true200zeroshotandbenchmarkbestmodelselection.",
+    "100kseparatelytrainedno-navO(NM)space teninstances2htotal noqualityreference; densefullencoderonly10kV100S, nooveralllinearruntimeclaim.",
+    "PreservedmTSPclassicalandmatchedneuralnegativecases/FMDfinetunedegradation, multi-depotdifferentdatasetexplicitnotcontrolled, pixelbaselineobjectivecaveat, all13tables20figures.",
+    "Published2024-07-08fromactualpublishermeta;actualarchiveddecision2024-05-02replacesgenericMay1; CityUHK/Huaweiaffils/equalfirstnamescorrected.",
+    "ActualcodeAPSpositivecostloss, LRdecay1notweightdecay1;RPEsin-cosreversed/negative-normalizeddistancevsprintedexp/PDPfirstdeliverycheckslicereproducibilitydifferences honestlyrecorded, no rerunclaim.",
+    "20 explicitinternalreferences confirmed, citedversionspreserved, originalfullFig2cropreplacesgenericfigure."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "194168c3c98fb10fcc8f1902ff09d67aa29bdd61dd3bcb23a3e1b4007897cb00"
+}

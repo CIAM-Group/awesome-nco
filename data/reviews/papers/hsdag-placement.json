@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "paper_id": "hsdag-placement",
+  "note_path": "specialist/hsdag-placement.md",
+  "baseline_note_sha256": "dedc543e7f74fcf15e125f31a8b00ca920dfb81fdeb2356933271c6119e1b7d9",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/94bd1b8c906494bada774096bd0fdd73-Paper-Conference.pdf",
+      "version": "FormalNeurIPS2024publisher25pagePDFallA-H/checklist/full33referencesread;sourceidentity/versionconfirmed",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/94bd1b8c906494bada774096bd0fdd73-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-9a8b6ee13b.pdf",
+      "sha256": "f31e6c377f77849e7c455e7dd7c39e5319573e084fcd10e3cb8698d719b6062a",
+      "pages": 25,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read all12authoraffilsfirst5equal/PDFtitleHSDAGnativeplacement/pipelinefeaturescoarsenjointgrouperencoderwithOpenVINO. Newcheckpointsper3modelneededactualsharingpending. SmallerOpenVINOgraphnotoptimizationallfineopsunchanged. Headline58.2/60.24needrawdefinitionscheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read completepipelineFig1/featureEq3-5(fractal/logdistance/topologicalPE/outputshape)/GCNEq6/edgeMLPsigmoidEq7/hardhighestedgegroupEq9. DirectedGCNnormalizationformalgivenA asym notsym. Dynamicunfixedgroupcount discreteargmax issuegradientneedsactualnextcode;don'tautoclaimendtoendallmodulesgradient."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Eq10-14/hardware/fullTables1-3/allablation. RealOpenVINO2023.3.0CPU12900K/UHD770/Flex17064GB;728/396/1009opgraphs. TableSpeedupis(1-l/lCPU)latencyreduction,notthroughputgain:BER58.2%. GPU-only.00277vsHSDAG.00267small3.61%latencygain. Latency10runslast5avg,noindependentseedCI. AllstructfeaturesablationResNetties. HardGPNpartitiondiscretegradientpendingcode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read full5tables/downstreamsanity/simple3examples/BERTembeddingMSEnotbenchmarkaccuracycert;runtimeTable5NNplacementoptimizationsearch2454/1047/2765sec notcomplexityproof. LimitationsiGPUNOTUSED despite3deviceslisted;actualCPU+dGPU/CPUalsolearnedpolicyandruntime/thermalnotcontrolled/baselinesreimplemented. All33refsfullyread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read allAcode/Brelated/CgenericMPNN/Dthreebenchmark/EAlg1andOpenVINOintro. Allfull33refsconfirmedbody/refs. Hardcoarseningendtoend claim must actualGPNAlg2/code weightedscorepath ratherthanassumezeroargmaxgrad. Placementrepeatedpermodeltargetactualnozero-shotNNdemonstration. Alg1returnoptimal meansbestsearchednotproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read completeGPNAlg2/OpenVINOallF/Gcolocationchain/HTable6:actualnumdevices2/hidden128/2MLP2GCN2parse/lr1e-4/100episodes20steps4updates/dropout.2parse0. FullscienceappendA-Hallread. GPNdiscreteparsing+scoreweightedpoolmayprovidegrad mustcodecheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read fullchecklistclaims/theoryNA/repro/code/statisticalYes actualjustificationrepeatmeasurementsnotCI;fullrepeat2selfsettingnotindependenttrainingseedcertainty."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 25,
+      "notes": "Read allremainingchecklistcompute/impact/licensing/assets/IRBto25. All25pagesA-Hscience+refs+checklistactualfullyread;noadditionalPDFin318entrypublisherZIP(inclnestedPlaceto)."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "SmallerOpenVINODAGs+jointgrouperencoder reduceplacementsearchcost/modelstructureloss.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/framework"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Five-stageHSDAG/GPNvariablegroups/structuralfeaturevariants/threeNNworkloadbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Fullmethod"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive nativeoperationplacement,eachgraphhardwareoptimizednosharedmulti-problemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            7,
+            8,
+            10
+          ],
+          "locator": "Problem/empiricalscope"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "OpenVINOcolocation/featureGPNhardparsing+continuousscoregating/clusterMLPdevice/inverselatencybufferPG;actual2CPUdGPUdevices.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            15,
+            16,
+            17,
+            18
+          ],
+          "locator": "Alleqs/algorithms/hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "All6tables2figuresread;BERT2.67vsCPU6.38ms58.15%latencyreduction/GPU2.77only3.61%;10last5avgnotseedCI;ResNetstructablatesame7.66;limiteddownstreamchecks.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            17,
+            18,
+            20,
+            21
+          ],
+          "locator": "Completeempiricalobservations"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Hardware3graphscope/thermalCPUcontention/noiGPU/baselinesadapted/currentmainfeaturesandconfigdifferandhomogeneousplacements1e10originalmethodexecutionnotfullbenchmark.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            10,
+            15,
+            18
+          ],
+          "locator": "Paper-scopecorrectedbyreleaseaudit"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All25pagesA-H/ref/checklist/8visual/318entrynestedZIPnoPDF/API403/23filecode/core4same/localoriginalearlyreturn/noNNhardwaretest.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "locator": "Completeaudit"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date,publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/94bd1b8c906494bada774096bd0fdd73-Abstract-Conference.html",
+      "locator": "Publisher12authorsformalorderincludingMihaiCapotă(first5equalPDF1);USC/Meta/CiscoOutshift/IntelLabs inclUSCCompass;citation_publication_date2024-12-16/NeurIPS37conference2024/DOI10.52202/079017-2597."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/94bd1b8c906494bada774096bd0fdd73-Abstract-Conference.html",
+      "locator": "ManualpublisherSupplementZIPrecursive318entriesinclPlacetoOpenVINOZIPandduplicateexpandedfolder/AppleDoubleexcluded;SHA26c6ebb9d93601a13a38bd1555761622da27fee468d4810537da11b23a0c3b1b/no scientificPDF/video. FullscienceA-Hintegratedreadall25. PublisherREADME/baselineREADMEsactuallyread. OpenReviewv1/v2exacttitlequeries403cached;noexplicitmissingappendix."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/94bd1b8c906494bada774096bd0fdd73-Abstract-Conference.html",
+      "locator": "Actualformal25pSHAf31e6c377f77849e7c455e7dd7c39e5319573e084fcd10e3cb8698d719b6062a/allpageslogged. 8visual4/6/7/9/10/15/17/18 pipeline/GPNformulas/2figures/all6tables/keyloss/hyperparams."
+    },
+    {
+      "field": "scope,metrics,statistics",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/94bd1b8c906494bada774096bd0fdd73-Abstract-Conference.html",
+      "locator": "Actualnumdevices2perTable6/Limitations10iGPUexcluded;CPU12900K+dGPUFlex17064GBOpenVINO2023.3.0. Separate3graphsoptimized;58.2%Table2computes1-.00267/.00638latencyreductionnotthroughput,vsGPU1-.00267/.00277=3.61%. 10runslast5mean,checklistrepeatatleast2selfsetupnotidentifiedindependentseedsorCI. Table3structResNettie7.66. Table5runtimesempiricalnotasymptotictheorem."
+    },
+    {
+      "field": "code_url,release,localcheck",
+      "source_url": "https://github.com/hping666/HSDAG",
+      "locator": "Commit9d5caf7770cd50f975e014d19920873c112df09523filesnoPDF/checkpoint,READMEread;coremodel101/layer249/config33allread/mainfeatures271-404/PPO405-483/train531-750read. All4exactnormalizedmatchpublisher. GPNadj symmetrizes andscore/linkcountcontinuousgating=>notallgradzeroargmax. Activefeaturesoptype+IDshape/fractalcomment;configlr.00125episodesK5vsformal.0001100K4. Originalsim_runtime453-483allzero/allone returns1e10exactexecutedwithminimalCorestub;SHA2d758ec243d28fd8b37cab77e912d83aca32dcb4150560d56a52135f012a7c18/recompute_release.py,json. NoOpenVINOPyG/torch_sparseinstalled/fullbenchmarknotrun."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "hsdag-placement",
+      "cited": "placeto",
+      "reference_label": "[1]",
+      "description": "Explicit baseline/related-work body citation and matching full bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            11,
+            13
+          ],
+          "locator": "Body/mainbaselineorrelatedwork[1];fullreferenceonPDF11or12."
+        }
+      ]
+    },
+    {
+      "citing": "hsdag-placement",
+      "cited": "hierarchical-device-placement",
+      "reference_label": "[21]",
+      "description": "Explicit baseline/related-work body citation and matching full bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12,
+            13
+          ],
+          "locator": "Body/mainbaselineorrelatedwork[21];fullreferenceonPDF11or12."
+        }
+      ]
+    },
+    {
+      "citing": "hsdag-placement",
+      "cited": "rl-device-placement",
+      "reference_label": "[22]",
+      "description": "Explicit baseline/related-work body citation and matching full bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            12,
+            13
+          ],
+          "locator": "Body/mainbaselineorrelatedwork[22];fullreferenceonPDF11or12."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Expandedall25pagesA-H/sixEnglishsections/actual2devices/rawmetricmeanings/3realrelationedges.",
+    "Qualified58.2%CPUlatencyreference/statisticalscope/downstreamsanityclaims;documentedcurrentpublisherandGitHubidenticalcorefeature/config/grouperexecutiondifferences.",
+    "Verifiedactualhomogeneousplacementearlyreturnwithoriginalmethod/minimalstub;notfullhardwarevalidation."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "6805bf29e0f02b913185c4f35a9756405b9af041f4b081470c142379caf3f633"
+}

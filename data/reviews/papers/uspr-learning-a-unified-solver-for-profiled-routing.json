@@ -1,0 +1,1097 @@
+{
+  "version": 1,
+  "paper_id": "uspr-learning-a-unified-solver-for-profiled-routing",
+  "note_path": "specialist/uspr-learning-a-unified-solver-for-profiled-routing.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "baseline_note_sha256": "cfb6ed34eb02c08ac3ca5cc25dcfc794cfacf82c553e562e6248fc327187f8e9",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2505.05119",
+      "retrieval_url": "https://arxiv.org/pdf/2505.05119",
+      "version": "Actual arXiv2505.05119v2 dated2025-08-25,16pages fullyread incl fullbibliography and supplementaryformulations/configurations/tables; formalAAAI2026 identity checked independently; no formal-byte-identity claim",
+      "local_path": "research/full-text-review/uspr-learning-a-unified-solver-for-profiled-routing/paper.pdf",
+      "sha256": "71f4ce531955609163161e8f4952b688920269fc65387cfc25857a581360e463",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresharxiv2505.05119v2Aug25_2025actual16pages sixauthorsHua/BertoequalKAISTOMELETAI4CO, FORMALAAAIbylineaddsRadicalNumericsnotthisversionneedseparatepublishermetadata. Currentactualv2profiledVRPsinglemodelgeneralizesprofiledistributions notautomaticallygeneralistnativeproblemscheckallscience. FrameworkPE/MHPA/PSR(contribmistypesPAR) construction noincumbentmoves. Codeai4co/uspr; formalreadfallbackequivalentnotassertbytes/bylineidentical."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read the complete PVRP/MDP formulation and profile/weight embeddings, four attention relations and conflict resolution; Figure 2 still requires direct visual inspection."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read PSR Eq5, constructive parallel decoder and REINFORCE, training/test budgets and Tables1–2. Explicit one checkpoint varies alpha/profile constraints rather than automatically multiple native tasks; Eq5 profile sign and nonfinite handling need code/visual comparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read full Tables3–5, alpha visualization explanation and conclusions/limitations. Table3 N1000/M30,50,70 differs protocol prose N500/M15,25,35; neural gaps remain14.15/19.35 percent to HGS, so conclusion matching/exceeding classical requires qualification. PVRPLib adds synthetic profiles to CVRPLib."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read complete two-page bibliography; note duplicate POPPY year entries and printed NeurIPS36/year mismatches, and preserve actual cited preprint titles/years when constructing supported edges."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read final bibliography and supplementary PVRP definition/constraints and state formulation. Printed MILP lacks explicit x-y linking, depot connectivity/subtour constraints and explicit hard-profile restrictions; flow conservation alone does not imply single depot-connected tour. Qualify this printed formulation without assuming decoder infeasibility."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read complete MDP action/reward/termination, synthetic profile and angular-zone generation and additional experimental protocol. Depot return resets capacity whereas printed MILP bounds total demand per vehicle, so distinguish MDP implementation from incomplete displayed program. Main and supplementary test-scale prose differs Table3."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "Read all Table6 hyperparameters, Table7 asset licenses and Tables8–9 medium/large results. N200 and500 sampled gaps12.03/12.97 percent to HGS; no claim of beating the HGS reference. All16 arxiv v2 pages now fully read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "1",
+      "category": "contribution",
+      "statement": "Profile embeddings, four-way profiled attention and score reshaping condition a shared PVRP constructor.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "locator": "Contributions/Figure2/PE/MHPA/PSR"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "category": "method",
+      "statement": "Parallel vehicle pointers, priority conflict handling and capacity-reset MDP construct new routes; REINFORCE with symmetry baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            12,
+            13
+          ],
+          "locator": "Policy/decoder/equations/complete supplementary MDP"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "category": "experiment",
+      "statement": "10M training presentations, specified100epoch model;1280 samples/test instances,128 larger test; actual neural/classical gaps and nested ablations.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            14,
+            15,
+            16
+          ],
+          "locator": "Tables1–9 and all experimental setup/budget paragraphs"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "category": "limitation",
+      "statement": "Residual HGS gaps, synthetic profiles, dense memory, incomplete displayed MILP and unresolved PSR sign/nonfinite/profile semantics and grid/count mismatch.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7,
+            8,
+            12,
+            13,
+            14,
+            16
+          ],
+          "locator": "Equation5 versus preference meaning; constraints2a–d; Table2 versus nine-value alpha grid; author memory limitation"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "category": "classification",
+      "statement": "A single policy varies profiles/alpha within PVRP and constructs routes from partial state; no evidence of multi-native-task joint solver or neural incumbent rewrite.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            5,
+            6,
+            12,
+            13,
+            14
+          ],
+          "locator": "UnifiedPVRP motivation and actual train/test tasks"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "category": "reproducibility",
+      "statement": "Actual v2 includes all science; formal six-author byline differs in affiliation; linked official repository currently lacks implementation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "locator": "Read byline and all supplementary material; external primary metadata/API inventory recorded separately"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "formal authors/affiliations/publication",
+      "source_url": "https://ojs.aaai.org/index.php/AAAI/article/download/41025/44986",
+      "locator": "Official indexed firstpage sixauthors,Hua/Berto equal; formalKAIST/RadicalNumerics/OMELET. Actualarxivv2p1hasKAIST/OMELET+AI4COcommunity instead. PrimaryCrossrefformal-crossref.json:DOI10.1609/aaai.v40i43.41025,publication2026-03-14,pages36973–36981. FormalPDFnotclaimedfullyretrieved."
+    },
+    {
+      "field": "arxiv version/date",
+      "source_url": "https://arxiv.org/abs/2505.05119",
+      "locator": "Saved primaryarxiv-history.html: v1Thu8May2025 10:42:57UTC;v2Mon25Aug2025 07:02:36UTC. ActuallyreadPDFp1stampv2,16pagesincludingallsuppscience."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/ai4co/uspr",
+      "locator": "Manual officialpublisherissue725index: USPR41025hasPDFonly. FormalindexedPDFexplicitlylinksarxivextendedversion. ActuallyreadALL16v2pages includingfullbib11andSupplementary12–16. GitHubmainrecursive treeonlyLICENSE;branchonlymain,notags/releases, noextraPDF/ZIP/scientificattachmentidentified. OJS520HTMLnotregistered/read."
+    },
+    {
+      "field": "classification/code",
+      "source_url": "https://github.com/ai4co/uspr",
+      "locator": "ActualtreeSHA95cef9fff6be8c73e4c840c91dde0e4833cc2bc2hasLICENSEonly; noimplementation/checkpointsclaimed. PDFtrainvariesalpha/profilesinonePVRPmodel, actualnative-taskmulticheckpointunificationnotestablished, specialistconstructive."
+    },
+    {
+      "field": "figure/visuals",
+      "source_url": "https://arxiv.org/pdf/2505.05119v2",
+      "locator": "OriginalfullFigure2PDFp4Rect46,48,563,302at4xatomic; actualimageviewed. OriginalPDFpp3/4/5/6/7/12/15/16rendered/viewed keyformulas/allresulttables; all16textpagesread."
+    },
+    {
+      "field": "formulation/reporting limitations",
+      "source_url": "https://arxiv.org/pdf/2505.05119v2",
+      "locator": "p12printedconstraintsunlinkedx-yandflowalonefailsconnectivity,p13capacityresetdiffersglobalMILP. p5Eq5subtractlog(dist+p)withhigherpositivepundesirableandsign/nonfiniteundefined; noactualcodeavailabletoreconcile. p6ninealphagridvaluesversusTable2tenmodels; p6/14scale500differsp7Table3N1000. Reportlocalinconsistencieswithoutdenyingallresults."
+    },
+    {
+      "field": "citation identities",
+      "source_url": "https://arxiv.org/pdf/2505.05119v2",
+      "locator": "38explicitbody/fullbibmatchededges; duplicatePOPPYyearsonetarget. PrimaryCrossrefETfiveauthors/RL4COformalDOIplusofficialshorterREADMEbib independentlyconfirmed. RRNCO/RouteFindersameprimaryarxivchains, citedversionnamespreserved. NoncatalogPARCO/CAMP/2DPtr/NGS/Bdeir/Pirnay/etc notforcedontootherIDs."
+    },
+    {
+      "field": "final citation identity:goal",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/826aea2253363fe04e8c4991b2a8869e-Abstract-Conference.html",
+      "locator": "USPR bibliography prints Agent Learning rather than formal Agent Learner. Exact DarkoDrakulic/SofiaMichel/Jean-MarcAndreoli, GOAL acronym, ICLR2025 and multi-task bodyp2 identify the same primary work. This is a printed terminal-word variant, not evidence of an independently established title-change history."
+    },
+    {
+      "field": "final citation identity:shield",
+      "source_url": "https://proceedings.mlr.press/v267/goh25a.html",
+      "locator": "USPR bibliography expands SHIELD with & Hierarchy in Efficiently Layered Decoder and permutes Cao/Ma/Zhou order. Same six named authors, distinctive SHIELD acronym/base title, ICML2025 and bodyp2 multi-task context identify PMLR goh25a. Preserve printed bibliography variant; do not describe it as verified arXiv retitling."
+    },
+    {
+      "field": "final citation identity:t2t",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/9c93b3cd3bc60c0fe7b0c2d74a2da966-Abstract-Conference.html",
+      "locator": "Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication."
+    },
+    {
+      "field": "final citation identity:l2seg",
+      "source_url": "https://arxiv.org/abs/2507.01037v1",
+      "locator": "USPR prints Learning to Segment for Capacitated Vehicle Routing Problems(2025), exact four authors Ouyang/Li/Ma/Wu. The identified primary arXiv2507.01037v1(22Jun2025) and later ICLR2026 share these authors and distinctive L2Seg/FSTA work; v1 primary title itself is Learning to Segment for Vehicle Routing Problems. Preserve Capacitated as source bibliography variant, not claim arXiv changed that title. Bodyp2 explicitly places Ouyang2025 among iterative route-refinement methods."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "agfn",
+      "reference_label": "Zhang et al.,2025",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zhang et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors agfn"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "attention-model",
+      "reference_label": "Kool/Van Hoof/Welling,2018 preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kool/Van Hoof/Welling,2018 preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors attention-model"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic et al.,2024 as printed",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Printed2024/NeurIPS36 reference identifies the exact author/title2023 conference work, not a different2024 paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Drakulic et al.,2024 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors bq-nco"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool et al.,2022",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kool et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors deep-policy-dynamic-programming"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "deepaco",
+      "reference_label": "Ye et al.,2023",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Ye et al.,2023"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors deepaco"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang,2024 as printed",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Printed2024/NeurIPS36 reference identifies the exact author/title2023 conference work, not a different2024 paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Sun & Yang,2024 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors difusco"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "dpn",
+      "reference_label": "Zheng et al.,2024",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zheng et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full bibliography title/authors dpn"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung/Kwon/Tierney,2022",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung/Kwon/Tierney,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors efficient-active-search"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "equity-transformer-solving-np-hard-min-max-routing-problems-as-sequential-generation-w",
+      "reference_label": "Son et al.,2024",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Independently checked primaryCrossref DOI10.1609/aaai.v38i18.30007 exacttitle/allfiveauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Son et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors equity-transformer-solving-np-hard-min-max-routing-problems-as-sequential-generation-w"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "gfacs",
+      "reference_label": "Kim et al.,2024 preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim et al.,2024 preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors gfacs"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li/Yan/Wu,2021",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li/Yan/Wu,2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors learning-to-delegate"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "mapdp",
+      "reference_label": "Zong et al.,2022",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zong et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full bibliography title/authors mapdp"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "nds",
+      "reference_label": "Hottung/Wong-Chung/Tierney,2025",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung/Wong-Chung/Tierney,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors nds"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "neuopt",
+      "reference_label": "Ma/Cao/Chee,2024 as printed",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Printed2024/NeurIPS36 reference identifies the exact author/title2023 conference work, not a different2024 paper.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Ma/Cao/Chee,2024 as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors neuopt"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al.,2016 preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Bello et al.,2016 preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors neural-combinatorial-optimization"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung & Tierney,2020 ECAI",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung & Tierney,2020 ECAI"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors neural-large-neighborhood-search"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "pip",
+      "reference_label": "Bi et al.,2024 preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Bi et al.,2024 preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors pip"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals/Fortunato/Jaitly,2015",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Vinyals/Fortunato/Jaitly,2015"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors pointer-networks"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "polynet",
+      "reference_label": "Hottung/Mahajan/Tierney,2025",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Hottung/Mahajan/Tierney,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors polynet"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "pomo",
+      "reference_label": "Kwon et al.,2020",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kwon et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors pomo"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "poppy",
+      "reference_label": "Grinsztajn et al.,2023/2024 duplicate bibliography",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Grinsztajn et al.,2023/2024 duplicate bibliography"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors poppy"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "practical-vrp-joint-learning",
+      "reference_label": "Duan et al.,2020",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Duan et al.,2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors practical-vrp-joint-learning"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark",
+      "reference_label": "Berto et al.,2025 cited shorter author list",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. PrimaryCrossref DOI10.1145/3711896.3737433 and officialai4co/rl4co READMEcitation identify samebenchmark; source authorlist matches shorter official repository citation, notallformal33authors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Berto et al.,2025 cited shorter author list"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors rl4co-an-extensive-reinforcement-learning-for-combinatorial-optimization-benchmark"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo et al.,2022",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Choo et al.,2022"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors simulation-guided-beam-search"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "sym-nco",
+      "reference_label": "Kim/Park/Park,2022b",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Kim/Park/Park,2022b"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors sym-nco"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "cada",
+      "reference_label": "Li et al.,2024a preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li et al.,2024a preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors cada"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "mtpomo",
+      "reference_label": "Liu et al.,2024a",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Liu et al.,2024a"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors mtpomo"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "mvmoe",
+      "reference_label": "Zhou et al.,2024",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Zhou et al.,2024"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Full bibliography title/authors mvmoe"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "reld",
+      "reference_label": "Huang et al.,2025 preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Huang et al.,2025 preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors reld"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "routefinder",
+      "reference_label": "Berto et al.,2024b workshop/eight-author version",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Eight-author2024workshop/preprint is confirmed primary arXiv2406.15007v1; later formal title belongs to the same arXiv version chain.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Berto et al.,2024b workshop/eight-author version"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors routefinder"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "ml4tspbench",
+      "reference_label": "Li et al.,2025",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Li et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors ml4tspbench"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "goal",
+      "reference_label": "Drakulic/Michel/Andreoli,2025",
+      "description": "USPR bibliography prints Agent Learning rather than formal Agent Learner. Exact DarkoDrakulic/SofiaMichel/Jean-MarcAndreoli, GOAL acronym, ICLR2025 and multi-task bodyp2 identify the same primary work. This is a printed terminal-word variant, not evidence of an independently established title-change history.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Reread explicit body citation context: Drakulic/Michel/Andreoli,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reread complete reference including split continuation; USPR bibliography prints Agent Learning rather than formal Agent Learner. Exact DarkoDrakulic/SofiaMichel/Jean-MarcAndreoli, GOAL acronym, ICLR2025 and multi-task bodyp2 identify the same primary work. This is a printed terminal-word variant, not evidence of an independently established title-change history."
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "shield",
+      "reference_label": "Goh et al.,2025",
+      "description": "USPR bibliography expands SHIELD with & Hierarchy in Efficiently Layered Decoder and permutes Cao/Ma/Zhou order. Same six named authors, distinctive SHIELD acronym/base title, ICML2025 and bodyp2 multi-task context identify PMLR goh25a. Preserve printed bibliography variant; do not describe it as verified arXiv retitling.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Reread explicit body citation context: Goh et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Reread complete reference including split continuation; USPR bibliography expands SHIELD with & Hierarchy in Efficiently Layered Decoder and permutes Cao/Ma/Zhou order. Same six named authors, distinctive SHIELD acronym/base title, ICML2025 and bodyp2 multi-task context identify PMLR goh25a. Preserve printed bibliography variant; do not describe it as verified arXiv retitling."
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "t2t",
+      "reference_label": "Li et al.,2024b as printed",
+      "description": "Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Reread explicit body citation context: Li et al.,2024b as printed"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reread complete reference including split continuation; Source omits T2T prefix and prints2024/NeurIPS36; exact YangLi/JinpeiGuo/RunzhongWang/JunchiYan and unique Distribution Learning...Gradient Search title identify the formal NeurIPS2023 T2T work. Printed year is retained as source bibliography discrepancy, not a separate2024 publication."
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "l2seg",
+      "reference_label": "Ouyang et al.,2025",
+      "description": "USPR prints Learning to Segment for Capacitated Vehicle Routing Problems(2025), exact four authors Ouyang/Li/Ma/Wu. The identified primary arXiv2507.01037v1(22Jun2025) and later ICLR2026 share these authors and distinctive L2Seg/FSTA work; v1 primary title itself is Learning to Segment for Vehicle Routing Problems. Preserve Capacitated as source bibliography variant, not claim arXiv changed that title. Bodyp2 explicitly places Ouyang2025 among iterative route-refinement methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Reread explicit body citation context: Ouyang et al.,2025"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Reread complete reference including split continuation; USPR prints Learning to Segment for Capacitated Vehicle Routing Problems(2025), exact four authors Ouyang/Li/Ma/Wu. The identified primary arXiv2507.01037v1(22Jun2025) and later ICLR2026 share these authors and distinctive L2Seg/FSTA work; v1 primary title itself is Learning to Segment for Vehicle Routing Problems. Preserve Capacitated as source bibliography variant, not claim arXiv changed that title. Bodyp2 explicitly places Ouyang2025 among iterative route-refinement methods."
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "rrnco",
+      "reference_label": "Son et al.,2025 Neural Combinatorial Optimization for Real-World Routing",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Same arXiv2503.16159 primary version chain: source cites old six-author2025 title; formal seven-author2026 representative retains stable ID, not an independent journal extension.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text Son et al.,2025 Neural Combinatorial Optimization for Real-World Routing"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors rrnco"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "dar",
+      "reference_label": "Wang et al.,2024 Distance-aware Attention Reshaping preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Exact original2401.06979 preprint is the conference-independent prior version of formal expanded IEEE work; preserve actual old preprint title and authors, with no assertion that IEEE expansion was already cited.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Wang et al.,2024 Distance-aware Attention Reshaping preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Full bibliography title/authors dar"
+        }
+      ]
+    },
+    {
+      "citing": "uspr-learning-a-unified-solver-for-profiled-routing",
+      "cited": "neuro-cross-exchange",
+      "reference_label": "Kim/Park/Park,2022a preprint",
+      "description": "Explicit body citation and complete matching bibliography; preserve the actual source label/version rather than substituting a later formal publication year. Source uses this citation for the shared baseline; record the citation without endorsing that attribution as an accurate methodological origin.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Explicit in-text Kim/Park/Park,2022a preprint"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Full bibliography title/authors neuro-cross-exchange"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replace all pending fields after complete16page actualv2 scientific reading.",
+    "Preserve specialistconstructive: alpha/profiledistributionconditioning insidePVRP isnotcrossnativeproblemjointcheckpoint evidence.",
+    "Formal affiliation/version difference and v1/publication dates independent.",
+    "Report precise test/training/search budgets,residualHGS gaps,negativeORcell,syntheticPVRPLib and gap-pointvsrelativecost distinction.",
+    "Qualify incomplete printed MILP,capacityresetmismatch,PSRsign/nonfinite,alpha grid/count mismatch; do not substitute guessedimplementation.",
+    "Official linkedrepositorycurrentlyLICENSEonly; nofalsecode/checkpoint/reproductionclaim. OriginalFigure2and38supportedexplicitcitations."
+  ],
+  "reviewed_note_sha256": "d24be614036bd689b9a763e49626c30faa2b7c740feccbe614d1476dfef1a625"
+}

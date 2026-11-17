@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "paper_id": "marvin",
+  "note_path": "specialist/marvin.md",
+  "baseline_note_sha256": "4102e7f136c5b3173b6ce5f0742eb04360d1449459b0d64c6f0061b4e1fbe417",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v119/sykora20a/sykora20a.pdf",
+      "version": "Formal ICML2020 PMLR119 proceedings,11pages9300-9310,actualreadpublishercopy",
+      "retrieval_url": "http://proceedings.mlr.press/v119/sykora20a/sykora20a.pdf",
+      "local_path": "research/import-272/nco-4526077f63.pdf",
+      "sha256": "fdfe92b158696c89bfde260a17b2947138533e65265bc62140fbaedad7469876",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v119/sykora20a/sykora20a-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v119/sykora20a/sykora20a-supp.pdf",
+      "version": "Publisher-linked scientific supplementaryPDF,2pagesFigures6-10,fullytextuallyandvisuallyread",
+      "local_path": "research/full-text-review/marvin/supplement.pdf",
+      "sha256": "d8e13705dc8eab35f14f921132c4442f103e261c3626c35523d0a697cb4c4be3",
+      "pages": 2,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Fresh formal reading title/threeauthors, unknowncoverage/dynamictraffic multiagentroadmapping objective, distinction from staticCVRP and priorwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read formal mappingobjective totalfleettraversaltime, unknown repeatednodecoverage, sharedagentpolicy, roadsegmentnodes, denseallpairsshortestpath attention-LSTM module."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read complete graph/agent attention formulas, shortestpath route execution, ILprivilegedLKH3teacher versus RLreturnnormalization,18citybenchmark/randomrevisits/traffic/asynchrony,5000epochtraining."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all Table4-6 numeric rows, oracleinformationprivilege, training/inferencebudget, IL/RLrankreversals, large44.9%gap, differentdistribution/iteration/selfstartsampling tests."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read all scientific supplement figure6-10 captions, now visuallychecking all qualitative panels rather than treating caption-only extraction as sufficient."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 11,
+      "notes": "Read all ablations,1280trajectorysampling budget,2426node20agentqualitativeexample,quadraticmemorylimitation,conclusion and fullreferences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "marvin",
+      "category": "contribution",
+      "statement": "Shared-agent routing policy combines shortestpathaware dense graphreasoning and attention communication for unknown repeatedcoverage.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5
+          ],
+          "locator": "Equation2 Figure2 Sections3/4"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "category": "method",
+      "statement": "IL privilegedLKHteacher versus fleetREINFORCE separately; learnedattentionLSTMnotexactBellman, sharedagentweights notcross-taskgeneralist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Equations3-19"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Hoursversusmilliseconds, oracleheuristicprivilege,2.87%versus44.9%gaps, IL/RLrankreversal and1280toytrajectories qualified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables4-7 Figures3-5"
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "Specialist constructive coverage routing extends traversal through destination/shortestpath actions; no learnedincumbent edits or universalcross-taskcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            8
+          ],
+          "locator": "Objective/sharedpolicy, destinationexecution, separate toyTSP experiment"
+        }
+      ]
+    },
+    {
+      "id": "supplement",
+      "category": "experiment",
+      "statement": "All supplemental Figures6-10 qualitativevalue/coverage maps and RL/ILexample, notlargequantitativematchedbenchmark.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Figures6-10 qualitative panels/captions."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, publication, date",
+      "source_url": "https://proceedings.mlr.press/v119/sykora20a.html",
+      "locator": "Official PMLR119:9300-9310, ICML2020, threeauthors; actualHTMLmeta citation_publication_date=2020/11/21 andarticlepublishedtime confirmexistingdate, notconferencecalendarinference."
+    },
+    {
+      "field": "institutions",
+      "source_url": "https://www.mengyeren.com/research/2020/multi-agent-routing-value-iteration-network/",
+      "locator": "Authorproject explicitly lists UberAdvancedTechnologiesGroup andUniversityofToronto, supportingretainedtwoinstitutions."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v119/sykora20a.html",
+      "locator": "Manually inspectedRelatedMaterial: mainPDF/software/separate2page scientificsupplement. Main11+supp2allread inclallmapfigures. Official46memberrecursivetree noadditional scientificPDFZIP."
+    },
+    {
+      "field": "code_url, dataset availability and version",
+      "source_url": "https://github.com/uber/MARVIN",
+      "locator": "FullREADME currentstreetdatasetlicensingpending andtoycommands, download.sh onlyLKHbuild+emptydirs, trainerdefaults10000vs5000paper, sharedcommunicationcode inspected; no falselyclaimedfullrealroadreproduction."
+    },
+    {
+      "field": "problems, scope, paradigm",
+      "source_url": "https://proceedings.mlr.press/v119/sykora20a/sykora20a.pdf#page=3",
+      "locator": "Coverage sumsunknownvisitcounts overfleet withtotaltraversaltimeobjective, sharedagentpolicy; separateTSP25toytest added, noCVRPcapacitytask orcross-taskweightsharing claimed."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.mlr.press/v119/sykora20a/sykora20a.pdf#page=4",
+      "locator": "Original Figure2 Rect(54,55,545,292),5x, completearchitecture/caption; allmain/suppscientificpanels visuallychecked."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "marvin",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicit author-year introduction/related-work citation and matching actual formal bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "marvin",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil2017",
+      "description": "Explicit author-year introduction/related-work citation and matching actual formal bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "marvin",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicit author-year introduction/related-work citation and matching actual formal bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    },
+    {
+      "citing": "marvin",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicit author-year introduction/related-work citation and matching actual formal bibliography.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Introduction explicit author-year citation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography title/authors/year."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readformal11pages andseparate2pages scientificsupp includingallqualitativemaps; checkedpublishedlinkedattachmentinventory.",
+    "PreservedcorrectPMLRHTMLpublication2020-11-21ratherthanconfJulydates; authorprojectaffiliationschecked.",
+    "Expandedgenericnote toactualunknownrepeatcoverageobjective, denseattentionLSTM/shortestpath, pernodecommunication andseparateIL/RLlearning.",
+    "Qualifiedprivilegedheuristicoracle, hours/msunits, small2.87versuslarge44.9gap, ILwinninglargerow and1280sampletoybudget.",
+    "Documented O(n2)memory, communicationassumptions, qualitative2426nodeexample andFigure5legend20versus25textinconsistency.",
+    "Currentofficialrealisticdatasetlicensingpending/toyprotocol/downloadscript/default10000epochs separated fromreportedroadbenchmark5000epochs; originalFigure2 andfourcitationedges."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0ce73198337eea2862be597a357c396dd05b164f968b54b95a10baa10f22b309"
+}

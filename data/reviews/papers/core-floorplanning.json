@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "paper_id": "core-floorplanning",
+  "note_path": "specialist/core-floorplanning.md",
+  "baseline_note_sha256": "9526f48c53d4ef36d6efa45dc2dfd49ae796ddec29c17c4e26e13e92a818c7df",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf",
+      "version": "Formal NeurIPS2025 proceedings27pages complete main/references/AppendicesA–C/fullchecklist freshly read",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-ac87c19f1c.pdf",
+      "sha256": "06eb4b3702da14c745e9430b715c56a4ddc4e03fe51f0881ec9544736cae07fa",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh1–3all8authors/3fullaffils/introduction/BstarHPWL. NeuralPPOconstructsBstartreepartiallayouts;EAperturbscompleteclassical,archiveILguidesconstructor. Oldimprovementlikelyincorrect→constructiveawaitcomplete. BenchMCNC/GSRCfloorplanningnotgenericmacroplacement,HPWLproxy12.9avgclaimneedtable."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh4–6EA/RLbackground/AlgframeworkFig2/PolicyFig3/CDESfull. NeuralPPOemptyBstartreeconstructionexplicit→constructive,EAwholelayoutmutationclassical. CDESkmeanscoordinates/cosinetop2novelty/rankquality/rotationexchangeinsertion;no globalescapeproofdespitebroadtext. PPOgeneralconvergencebackgroundnotpaperproof."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh7–9fullMDP/PPO/ILcollab/benchTables1–2. Explicitfromscratchconstructionnmhorizon/randomroot+rotation masks,EAcompleteclassical. Reward−1e−4DeltaHPWL+DeltaU,discountmeansnottelescopeexactobjective. PPOmonotonicconvergenceclaimnotproved/clippednotTRPOguarantee. Fivebest—notmean—main;GoodFloor/CBLRLliteratureAU.90ASSUMED notmeasured. Table1n300 CORE469242vsbest476765=1.58notprose22.6,avg12.9needsAppendC/mathverify."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 15,
+      "notes": "Fresh10–15allremainingmain+61refspp11–13/Algo1/A1–3fullthrough15. MainBEST5,appCmeanlater. NoPPOprovedmonotonicglobalconv;trainsperinstanceEAarchiveILconstructor. Network2SAGE64+2Transformer2heads64,3autoregressiveheadsinsert/target/rotLR,critic separate. Event119653noPoster/Slidesexposed;repoonlyREADME/noPDFnotebook,wheelsoftwaredocsnoPDF."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Fresh16–18Tables5–8/AppendA4/B/Cthrough18. PPOgamma.99/GAE.95,30episodes/epoch10kexcept20kn200/300,100EA pop/C4/e2alpha.8. RewardsAppendAinstant−HPWL+Ucontradictmaindelta;needactualcode. Runtime11h→3.78n30/23.6→8.3n50implementedRLparallel;EAextra2.54/4.72unimplementedfutureESTIMATE. Mainbest5vsAppendCmean±std. Hyperparamsnotuniformbest."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Fresh19–21completeC/Tables9–18/fullchecklistfirst2. Table12means5only7cases(noami49) n200mean348416 belowbest348956 allowedbutmorebestlabelinconsistency;noall8seedstats. Table13n50CORE8.3h>Mask6.37 andEA3.54, contradictunqualifiedfasterMaskprose. Table17n300369.2k!=main469.242/HPWLonly461.219flag. EventSlidesLiveembedonlynoPDF/poster separate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Fresh22–24fullchecklist3–10. PaperexplicitNOformalproof,codeplannedatwritingnowreleased,dontrepeatNAcodeclaimascurrent. 5independentrunsstdAppendC limited7cases;no independentguarantee/significanceformaltesting. Fullresourcesclaimedbutonlyselectedtimings."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 27,
+      "notes": "Fresh25–27allremainingchecklist11–16. All27formal(main1–10,refs11–13,Algo/AppendA–C14–20,checklist21–27)freshreadcomplete. Existingpubdate2026-04-23DOI4662willcorrect. Needall6fig/18tablesvisual andexactprintedHPWLmath/releaseversionbeforefinal."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Compact floorplanning representation and complementary global evolutionary/neural construction search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/background"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Clustered diversity evolution, BstarPPOconstructor and population-injection/archive-imitation collaboration.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            14
+          ],
+          "locator": "Figs2–4/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Empty-tree sequential masked insertion policy and separatecritic; classical complete-layout mutation and archive-supervised construction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "MDP/architecture/protocol"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "EightMCNC/GSRCinstances/best5vs7casefive-runmeans;HPWL-onlyseparate;all18tables/runtime/negativeAUandtimecasespreserved.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "locator": "All6figures18tables"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Printedn300469242vs369.2kinconsistencychangesheadline12.9%/22.6%;assumedAU/rewardversion/resources/genericPPOguaranteeslimited.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            16,
+            17,
+            18,
+            20,
+            22
+          ],
+          "locator": "Tables1/12/13/17/AppendA/B/checklist"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialistconstructive corrected: neuralpolicy buildsfromempty,complete-layoutperturbationsclassical,per-circuitoptimizationnotsharedgeneralist.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            17
+          ],
+          "locator": "Explicit fromscratch MDP andpercasebudget"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity affiliations and publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/cc0f00fd7c873fe2b196529e19b1a6bf-Abstract-Conference.html",
+      "locator": "Eightauthorsformalfirstpage,threefullaffiliationsread;publisherdate2026-04-23/DOI4662explicit whileNeurIPS2025editionretained."
+    },
+    {
+      "field": "supplements full scientific inventory",
+      "source_url": "https://neurips.cc/virtual/2025/poster/119653",
+      "locator": "All27formal/main/61refs/Algo1/AppendA–C/checklistread;all6figures18tablesvisuallychecked11pages. EventvideoembedonlynosciencePDF/poster/slides;videonotreviewed/nocoverageclaimed. Untruncated60tree/61ZIP2049174B/READMEfullread/noPDFnotebook;bundledsoftwarewheelnoPDFnotebook. Inputsavailablebutnopretrainedweights."
+    },
+    {
+      "field": "classification actual neural responsibility",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf#page=6",
+      "locator": "ExplicitBstartreefromscratch,randomrootthenneuralinsert/target/rotateLR;EAfull-layoutvariationclassical. Correctimprovement→constructive,keepspecialist/per-circuittrained. 2SAGE/2Transformer/64formal,batch128discount.99/formalepochsrecorded."
+    },
+    {
+      "field": "reported metrics numeric reconciliation",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf#page=20",
+      "locator": "Tables1/2n300469242 vsTable17369.2k. Eightprintedrowminpercentmean10.295/n3001.578;hypothetical369242=>12.917/n30022.553 agreesprose,buttruevalueunresolved. Table12n200meanbelowmainbest/ami49omitted;five-runstdlimited7cases;Good/CBLAU.90assumed. boundary-checks.jsonexactprintedrecalc."
+    },
+    {
+      "field": "budgets runtime and limitations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf#page=17",
+      "locator": "Mainbest5;HPWLonlyseparatetable6;30RLepisodes10k/20kepochs;2080Ti/E52680v4. RuntimeEA1.65/3.54hvsCORE3.78/8.3h,Mask4.15/6.37h—COREn50slowerMask. ParallelEA2.54/4.72explicitunimplementedfuture notmeasured. Checklistnofomalproofs,backgroundPPOguaranteelimited."
+    },
+    {
+      "field": "current implementation version comparison",
+      "source_url": "https://github.com/yeshenpy/CORE",
+      "locator": "Workeremptytreeconstruction/rewardstoredconsecutivedifferencesfullreadsupportsmaindelta vsAppendAinstantreward. Currentgamma.999/launcherL1workers6–90/10kdefaultsnotformal. Populationglobalcosinenoveltybeforeclustering,strictParetoILguard/rawfeaturesSiLUactionheadqualified. Nohistoricaltrainingreplay."
+    },
+    {
+      "field": "original figure and citations",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/cc0f00fd7c873fe2b196529e19b1a6bf-Paper-Conference.pdf#page=5",
+      "locator": "OriginalFig2crop104,68,509,338fullcaptionviewed;fiveactualcataloguereferences4/5/8/9/10manuallymatched."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "core-floorplanning",
+      "cited": "chipformer",
+      "reference_label": "ChiPFormer: Transferable Chip Placement via Offline Decision Transformer",
+      "description": "Explicit full bibliography entry manually matched by title/authors; original formal target metadata retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References4/5/8/9/10 in the complete61-entry bibliography, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "core-floorplanning",
+      "cited": "deepplace-deeppr",
+      "reference_label": "On Joint Learning for Solving Placement and Routing in Chip Design",
+      "description": "Explicit full bibliography entry manually matched by title/authors; original formal target metadata retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References4/5/8/9/10 in the complete61-entry bibliography, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "core-floorplanning",
+      "cited": "efficientplace",
+      "reference_label": "Reinforcement Learning within Tree Search for Fast Macro Placement",
+      "description": "Explicit full bibliography entry manually matched by title/authors; original formal target metadata retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References4/5/8/9/10 in the complete61-entry bibliography, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "core-floorplanning",
+      "cited": "maskplace",
+      "reference_label": "MaskPlace: Fast Chip Placement via Reinforced Visual Representation Learning",
+      "description": "Explicit full bibliography entry manually matched by title/authors; original formal target metadata retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References4/5/8/9/10 in the complete61-entry bibliography, freshly read."
+        }
+      ]
+    },
+    {
+      "citing": "core-floorplanning",
+      "cited": "prnet-chip-design",
+      "reference_label": "The Policy-gradient Placement and Generative Routing Neural Networks for Chip Design",
+      "description": "Explicit full bibliography entry manually matched by title/authors; original formal target metadata retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "References4/5/8/9/10 in the complete61-entry bibliography, freshly read."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall27formalpages/61refs/Algo1/AppendA–C/checklist/sixfigures18tables.",
+    "Expandedaffiliations/correctedpublisherrecorddatewithNeurIPS2025yearretained.",
+    "Changedimprovement→constructivefromactualneuralempty-treeMDP;retainedspecialist.",
+    "Replacedunqualified12.9%claimwithprintedn300conflict/recomputationsandclearlyhypotheticalreconciliation.",
+    "SeparatedHPWL-area/HPWL-only/best5/7casefive-runmeanstats;flaggedassumedbaselineAUandruntimecounterexamples.",
+    "Reviewedreleaseversions/schedulerreward/architecture/EA-ILcontroller;distinguishedformaldefaultsandcurrentlauncherwithouttrainingreplay.",
+    "AddedoriginalFigure2andfiveexplicitcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "b00f6f98c32c9b021f61964bb96b3266754d0b08235cd65598ccdf61aff33fcb"
+}

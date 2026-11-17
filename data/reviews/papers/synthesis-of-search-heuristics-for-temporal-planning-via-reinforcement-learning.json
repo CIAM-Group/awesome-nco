@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "paper_id": "synthesis-of-search-heuristics-for-temporal-planning-via-reinforcement-learning",
+  "note_path": "specialist/synthesis-of-search-heuristics-for-temporal-planning-via-reinforcement-learning.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "baseline_note_sha256": "0627c8bc285483d1eafa44c506ec39dafdea62fce3dab02838c865389ad7094c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://andrea.micheli.website/papers/learning-heuristics-prl.pdf",
+      "retrieval_url": "https://andrea.micheli.website/papers/learning-heuristics-prl.pdf",
+      "version": "Author-hosted9pfullmanuscript correspondingAAAI2021; complete27refs,notbyteidentityclaim",
+      "local_path": "research/full-text-review/synthesis-of-search-heuristics-for-temporal-planning-via-reinforcement-learning/reading-candidate.pdf",
+      "sha256": "2fb8334d277df661c0355f8491cf5b72a0efb9955761eaa927f94d0232b6cd42",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Actualallpp1-4read including2FBKauthors/temporalANMLdefinitions/Algorithms1-2/STNrepresentation/boundedfiniteinstances/MDPterminalreward/Theorem3.1proofsketch/fivebranchNNarchitecture. All3contacts/Figs1-5/allalgorithmkeymath visuallychecked. Learnedheuristic notexactoptimalvalue theorem/admissibility guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 9,
+      "notes": "Actualallpp5-9read includingfullAlgorithm3/rewardshapingreplay/clippedpositivezeronegativeheuristic/all10foldtables/ablations/complete27refs. Domain-specificseparatemodels; MAJSP744@50k vs708@100k andhadd560;Kitting1015vs395butlongerplans. Kitting1092statedvs10x109evaluateddiscrepancy retained. Authorlinked1951membermaterialzip/fullREADMEread, noPDFTeXnotebookextraidentifiedscience,notexecuted; reviewer-onlylicenseandexecutablevslearnsource distinguished. OriginalFig2fullcaption viewed; no exactcurrentinternalreferences."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Learn temporalsearchheuristics for richconstraints fromsimulatedinstances notsuppliedplans.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "BoundedMDP/value-distanceidea/neuralheuristic/TAMER/2domainevaluation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Sections2-6"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Fiveinputbranches/100hidden/SoftSign, replayrewardshapingandpiecewiselogheuristic, notadmissibilityguarantee.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Theorem3.1/Algorithms2-3"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Perdomainboundedobjectnetworks guidefreshplansearch; nocrossdomaincheckpointorNNincumbentedit.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            7
+          ],
+          "locator": "Objective/architecture/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "MAJSPcoverage74450kvs708100k/hadd560 andKitting1015vs395,planlengthtradeoffs/1092vs1090discrepancy.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Figures3-5"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "Finiteknownbound/domainrestriction/learnedheuristicnooptimalitycertificate/no actionselfoverlap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            5,
+            6,
+            8
+          ],
+          "locator": "Assumptions/reward/conclusion"
+        }
+      ]
+    },
+    {
+      "id": "reproducibility",
+      "category": "reproducibility",
+      "statement": "Full9pauthorcopyandlinkedmaterialinventory/READMEchecked,noadditionalidentifiedscience/execution.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            7,
+            9
+          ],
+          "locator": "Byline/materialURL/fullrefs"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity publication",
+      "source_url": "https://doi.org/10.1609/aaai.v35i13.17413",
+      "locator": "Primarymetadata2authors/AAAI2021pp11895-11902/May18; author9pfullcopyidentitychecked notasserted8pformalbyteidentity."
+    },
+    {
+      "field": "supplements material inventory",
+      "source_url": "https://es-static.fbk.eu/people/amicheli/resources/prl20",
+      "locator": "LinkedPRL2020.zip1951entries/fullREADMEread/noPDFTeXipynb; executable/data/networks onlyidentified,reviewer-useconditionnotunrestrictedsourcerelease; noexecution."
+    },
+    {
+      "field": "classification figure citation scan",
+      "source_url": "https://andrea.micheli.website/papers/learning-heuristics-prl.pdf",
+      "locator": "All9pp/27refs/all3contacts/keymath/tables inspected; separateperdomainnetworks. OriginalFig2p4crop305,40,565,245fullcaptionactuallyviewed; no exactcurrentinternaltarget."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Read fullauthorcopy/scientificalgorithms/completebibliography.",
+    "Qualified bounded-domainclassification, idealvalue theorem vslearnedheuristic andcoverage/planlengthtradeoffs.",
+    "Retained nonmonotonicMAJSP andKitting1092vs1090 countdifference."
+  ],
+  "reviewed_note_sha256": "4dce02a681550e3f966843b8e8d8c972dcc982d71857fdac087924c34f10b8da"
+}

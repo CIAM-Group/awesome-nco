@@ -1,0 +1,263 @@
+{
+  "version": 1,
+  "paper_id": "soar-real-time-joint-optimization-of-order-allocation-and-robot-scheduling-in-robotic",
+  "note_path": "specialist/soar-real-time-joint-optimization-of-order-allocation-and-robot-scheduling-in-robotic.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "637229fdea701d4dd927d118e2130270abd77f9440867f1edc84f552cac72f32",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://arxiv.org/pdf/2605.03842v1",
+      "retrieval_url": "https://arxiv.org/pdf/2605.03842v1",
+      "version": "Identified arXiv2605.03842v1 submitted2026-05-05, complete13pagesmain/all37References/AppendicesA–Jactualread; formalKDD2026ADS DOI10.1145/3770855.3818484eligibility/online2026-08-08independentlychecked, formalPDF403notbytecompared.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-1a03843e49/arxiv.pdf",
+      "sha256": "3678b44223e4d41cbe0462143bc6f8b93fc2679c3a612abbcd4196928b1bceb7",
+      "pages": 13,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read allarxiv1–2bylineBeihang/Geekplus/abstract/fullintro/claimed7.5/15.4/sub100ms, allDefinitions2.1–2.7/DOARSmakespanobjectiveEq1; asynchronousorder/robotphase coupling andsoftallocationnotindependentnativeproblems."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read all3–4softallocationEqs2–6/topK/heat/softorders,threeevents/candidateactions/HGTstates/phaseedges,Eqs7–10decoderpriors/finalallocationstart. Eq9negativeLogworkloadfavourslowu contraryoneprosephrase, nohardclaimgeneralistfromjointphases."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read all5–6 fullallocationEqs11–16 plusgreedyremainder, rewardEq17–18scaledp-norm, time-awarePPOEqs19–21 andall6datasetTable1baselineentries. AlgorithmisjointcoupledDOARS; sixdatasets15/20/25robots,200/500/1000orders. Qualitydominatesmainreportedbutheuristicsfastercompute; PBRSsolefinitep surrogate/time-awaregamma subtle."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read all7–8 fullablationtable6datasets/heatmap K,p/sim-to-real198robots861shelves16workstations7dayfieldtest. Main qualitystrongbutcomputeheuristicsfaster; actualphysicalonlySOAR versusbaselinesdigitaltwin mirroredstream, Table3SOAR vsSOARReal separate, 3.85/55s/2.81 figuresmainlydigitaltwin; pruningcrucial100msdestinationlevelnotpathplanning. CompleteRelatedWorkallcitations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullconclusionexplicitnointegratedphysicalpath/collisioncontrol; all37refs inclduplicate12/13and19/20; AppendixA31daychrono21/5/5and100val/testinstances, wave/ParetosyntheticEqs22–23; AppendixBgreedyinventoryallocationAlgorithm1; AppendixCbaselinedetailsfirstpart. No citeedges inferredfromsharedHGT/PPOarchitecture."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read allAppendixCremaining/D/E/F/G/H/I includingentityrawfeatures24–29/HGT30–33, PPO4millionsteps8env128rollout4epoch4minibatchesclip.1entropy.01value.1grad.5KL.01,4layersD256heads2,K10K1K2=50,p8; OR-Toolsrollingpool10/60time,10sreal15ssynthetic andallCP34–38constraints; Tables5biasduplicatevalues differTable2 in3cells."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 13,
+      "notes": "Read completeAppendixJandFig6orderhistogram:91.2pct1–3itemsdoesnotaloneguaranteesingleshelfcompatibility; measured78.3pctsoftcomplete, remainingdefaultgreedyhasnonzero21.7pctrole. Full13pages/main/37refs/A–Jcomplete; importantplots/algebraforvisualnext."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Coupled dynamicorderallocation/robotdestinationchoice tradesstaticjointsolverlatencyagainstdecoupledquality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Introduction/Definition2.7/Eq1"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Softcandidateallocation,event-drivenheterogeneousgraphpolicy,phasedbiasandtime-awarePPOplus6simsettings/7daydeployment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "locator": "Contributions/Eqs2–21/Tables1–3"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "TopKheat/softsets thenphase-specificneuraldestinationselection, explicitgreedyinventoryremainderallocation, finitepnormsurrogate andtimeawareGAE.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Eqs2–21/Algorithm1/AppendicesB,E,F,G,J"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "31daychrono21/5/5realdata,100val/100test,6scales15–25robots200–1000orders;4MstepsPPO;qualitybestlisted6settingsnotfastestheuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            10,
+            11,
+            12
+          ],
+          "locator": "Table1–2/AppendicesA,G,H"
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "category": "experiment",
+      "statement": "7dayphysicalSOAR198robotsvsallbaselinesdigitaltwinmirroredstream;3.85/55s/2.81figurescorrespondsimSOARnotSOARReal.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Section7/Table3"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "category": "limitation",
+      "statement": "Highleveldestinationsonly, externalcollision-freeplanner/pruning/episodebreak assumptions; finitepnormsurrogatenotmakespanequivalence.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            8,
+            9,
+            12,
+            13
+          ],
+          "locator": "Reward/Sections7–9/AppendicesG,J"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "SinglecoupledDOARSproblemwiththreephasesnotmultiple nativeproblems; onlineconstructivepolicywithclassicalremainder.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "locator": "Definition2.7/Sections3–4"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "Entire13p scientificarxivmain/references/A–Jread, DOIformaleligibility/datecheckedseparately, fullrepo23filesincl6LFSpointers withcurrentcode/protocoldifferences.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "Byline/fullReferences/AppendicesA–J/officialcodereference"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, affiliations",
+      "source_url": "https://arxiv.org/abs/2605.03842",
+      "locator": "Scientificp1YibangTang/YifanYang/JingyuanWang/JunhuaChen/ ZhenZhao, Beihang+Geekplus. FormalCrossref/KDDprimaryconfirmfiveauthorsandaddBeihangMOEcenter/economicsdepartment, institutionssame."
+    },
+    {
+      "field": "venue, publication date",
+      "source_url": "https://crossmark.crossref.org/dialog?doi=10.1145%2F3770855.3818484",
+      "locator": "PrimaryCrossmarkHTTP200 PublishedOnline2026-08-08/Print2026-08-09, formalKDD2026ADS/8065–8076, publisherCrossrefagrees; officialKDDpapersinlineADSentrysaved. Actualonlineusednotconferenceeventdate."
+    },
+    {
+      "field": "arxiv_url, date, version",
+      "source_url": "https://arxiv.org/abs/2605.03842",
+      "locator": "Savedprimaryhistorysinglev1 Tue5May202615:09:32UTC; topdate2026-05-05. All13ppscientificmain/refs/A–Jread fromidentifiedv1, beforeNov16cutoff; formalbyteidentitynotasserted."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://arxiv.org/pdf/2605.03842v1",
+      "locator": "Definition2.7andpp3–5oneDOARSproblem: pickup/delivery/returnphases,notindependentnativeproblems; nojointcrossnativecheckpoint. Repo6separatecheckpointsreal/synx3size. Specialistconstructiveonlineassignments/destinations; greedyremainderclassical."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://github.com/200815147/SOAR/tree/7833238f55536c2f2ad17708ccd66078686c12f8",
+      "locator": "Manualpublisherarticle/suppl403challenge,primaryCrossmark200; completearxiv13p includes allA–J explicitlycalledscientificappendices, noexplicitmissingseparatecompanion. CompleteZIP23files: noextraPDF/video/nestedarchive; oneframeworkPNGactualviewed, allREADME/checkpointinventoryread; sixLFS pointers separatelysaved(notweights), dataCSV5rowsstructurallyread. No falsePDFpagecoverageforHTML/pointers."
+    },
+    {
+      "field": "code availability, version and scope",
+      "source_url": "https://github.com/200815147/SOAR/tree/7833238f55536c2f2ad17708ccd66078686c12f8",
+      "locator": "Primarycommit2026-10-29 complete1218260bytearchiveinventorySHA; coreHGTinit/decode,envsoftallocation/reward/prior/statepaths,Args/eval/GAEread. Defaults3layers4heads/p5softFalsevsprinted4/2/p8; rewardnormscaling/gamma/currentdefaultsqualified, notoldexperimentinvalidity. Fullwarehouseorders/digitaltwin/pathplannerabsent; LFSpointersnotdeserialized."
+    },
+    {
+      "field": "figure and empirical crosscheck",
+      "source_url": "https://arxiv.org/pdf/2605.03842v1",
+      "locator": "Allfigures/tablesandkeyformulasactualviewed in3renders onpp3/4/5/6/7/8/10/11/12/13, repoFig2originalPNGviewedandresized1600wide. Localchecksreplicate7.518/15.403fromroundedTable1; Table3simulationvsRealseparatepercentages, finitepsurrogateillustrationexplicitgenericvectornotclaimedfeasibleDOARScounterexample."
+    }
+  ],
+  "citations": [],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replacedpendingplaceholder withcomplete13p/A–J actualreading andprimaryformalmetadata.",
+    "Keptspecialistconstructive:jointphasesformoneDOARSnativeproblem.",
+    "SeparatedsimulatedbaselinefieldcomparisonfromphysicalSOAR andsingle-actionlatencyfromwholeinstancecomputation.",
+    "Keptreportedqualitygainsalongwithclassicalremainderroutingdependency/protocol/defaultcode/potential-surrogateboundaries.",
+    "AddedoriginalframeworkandfullrepoLFS/attachmentinventory;0confirmedinternalrefs ratherthanarchitecturesimilarityedges."
+  ],
+  "reviewed_note_sha256": "d7bf29d4c04b0a6d6a10c3c3cbd341f2ee07842e5bc259a80049f15ec68cfd91"
+}

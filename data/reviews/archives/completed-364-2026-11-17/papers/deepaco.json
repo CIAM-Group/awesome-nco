@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "paper_id": "deepaco",
+  "note_path": "specialist/deepaco.md",
+  "baseline_note_sha256": "b73df0a8d6984e660ced75e6ff6a290561b3fe02d41ab8a28724d37ef9d96449",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/deepaco/paper.pdf",
+      "sha256": "d7af0123bd71553352c3b9d32fb04266261491a7f606d2e3a58de39982833f30",
+      "pages": 23,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 7,
+      "notes": "Fresh title/fiveauthors/threeinstitutions, fullrelatedwork/ACOprobabilityandpheromone background, GNNheuristicparameterization, NLSAlgorithm1 interleavingobjective/heuristicguidedmoves, REINFORCEfixedtrainingpheromone, threeexplorationextensions, actualeighttasksandACOexperimentsetup."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 15,
+      "notes": "Fresh allTSP500/1000per-instancetable valuesandablationnegativecomparisons, TSPLIB49modelsselectedbysize,explorationvariants/pheromonemodelchanges,limits,andall95bibliographyentries."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 23,
+      "notes": "Fresh completeAppendicesA-D.9:12layerGNN/TransformerPHitems,NLSno-new-networkdetails,alltraining/table3-7andcrossscaleexperiments,allnineproblemdefinitions/inputs/generation,includingextraBPP andMKPactuallymultidimensional0-1constraints. Full23pagesread."
+    }
+  ],
+  "claims": [
+    {
+      "id": "heuristic",
+      "category": "contribution",
+      "statement": "Learned static heuristic matrix plugs into ACO and also guides incumbent NLS perturbation; separate task/scale models. ",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            16
+          ],
+          "locator": "Figure1 Sections4.1-4.2 AppendixA"
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "category": "method",
+      "statement": "Fixed-one training pheromones, REINFORCE raw+W refined costs, no differentiation through NLS; optional expert imitation not universally label-free.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            16
+          ],
+          "locator": "Sections4.3-4.4 AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "experiment",
+      "statement": "Eight main tasks plus appendix BPP; D8 multiple resource constraints on single binary subset is multidimensional KP.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            18,
+            22,
+            23
+          ],
+          "locator": "Section5.1 AppendixC.3 D8-D9"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "TSP500/1000 quality/runtime below DIFUSCO+MCTS, CVRP10iter lower costs at longer time than TAM-LKH3; perinstance and imported baseline caveats.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            18
+          ],
+          "locator": "Tables1-4"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "category": "experiment",
+      "statement": "49 TSPLIB instances select checkpoint by size, crossscale degrades vs size-matched; Table7 minute training applies noNLS experiment.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            18,
+            19
+          ],
+          "locator": "Section5.2 AppendixC.3-C.4 Tables6-7"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Task-specific checkpoints remain specialist; learned ant construction and neural-guided incumbent refinement support constructive-improvement.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            16,
+            19
+          ],
+          "locator": "Section4 Figure1 Algorithm1 AppendixA/B Table7"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Paper-Conference.pdf",
+      "locator": "Titlepage fiveauthors and Soochow/SMU/Tsinghua; formal NeurIPS2023."
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2309.14032",
+      "locator": "Manual arXiv history v1 25Sep2023 v2 4Nov2023; current abstract single neural architecture not sharedweights."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Supplemental-Conference.zip",
+      "locator": "Manual publisher page and complete18,751,312byteZIP185member inventory checked: code/data/READMEs only, noPDF or nestedZIP; relevantREADME documents read. Complete scientific AppendicesA-D.9 in23page mainPDF allread."
+    },
+    {
+      "field": "problems",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Paper-Conference.pdf#page=22",
+      "locator": "AppendixD.8 Eq11 is multidimensional0-1KP, notmultiplebins; AppendixD.9 andC.3 addBPP."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/henry-yeh/DeepACO",
+      "locator": "Official mainandarchivedREADMEs read, task-specific models andmodified HGS build documented."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/883105b282fe15275991b411e6b200c5-Paper-Conference.pdf#page=4",
+      "locator": "Complete Figure1 originalcrop PDFp4 Rect(115,70,498,230)5x; method equations/Algorithm1/tables andcurves visuallychecked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/883105b282fe15275991b411e6b200c5-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2023-12-15; cached evidence research/full-text-review/deepaco/page-1.html. Conference edition year 2023 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2309.14032",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2023-09-25; title on abstract page: DeepACO: Neural-enhanced Ant Systems for Combinatorial Optimization. This date is preprint history, not formal publication. Cached research/full-text-review/deepaco/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "deepaco",
+      "cited": "asp",
+      "reference_label": "83",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [83]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching bibliography entry [83]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "att-gcn",
+      "reference_label": "32",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [32]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [32]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "attention-model",
+      "reference_label": "54",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [54]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [54]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "dact",
+      "reference_label": "60",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [60]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [60]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "55",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [55]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [55]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "difusco",
+      "reference_label": "78",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [78]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching bibliography entry [78]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "dimes",
+      "reference_label": "66",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [66]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [66]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "efficient-active-search",
+      "reference_label": "40",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [40]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [40]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "47",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [47]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [47]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "graph-guided-local-search",
+      "reference_label": "42",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicit in-text reference [42]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [42]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "learn-lns-ip",
+      "reference_label": "86",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [86]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [86]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "50",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [50]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [50]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "51",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [51]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [51]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "87",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [87]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [87]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "learning-to-delegate",
+      "reference_label": "59",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [59]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [59]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "mapdp",
+      "reference_label": "95",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [95]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [95]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "89",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [89]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [89]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "6",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [6]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Matching bibliography entry [6]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "neurewriter",
+      "reference_label": "17",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [17]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry [17]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "neurolkh",
+      "reference_label": "90",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [90]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [90]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "pointer-networks",
+      "reference_label": "82",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [82]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Matching bibliography entry [82]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "pointerformer",
+      "reference_label": "46",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [46]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [46]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "pomo",
+      "reference_label": "56",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [56]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [56]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "rbg",
+      "reference_label": "94",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [94]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Matching bibliography entry [94]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "rl-vrp",
+      "reference_label": "64",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [64]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [64]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "routing-dro",
+      "reference_label": "45",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [45]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [45]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "20",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [20]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry [20]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "sym-nco",
+      "reference_label": "52",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [52]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [52]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "tam",
+      "reference_label": "41",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            18
+          ],
+          "locator": "Explicit in-text reference [41]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Matching bibliography entry [41]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "select-and-optimize",
+      "reference_label": "18",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [18]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Matching bibliography entry [18]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    },
+    {
+      "citing": "deepaco",
+      "cited": "h-tsp",
+      "reference_label": "65",
+      "description": "Explicit numbered in-text citation and matching bibliography; actual printed publication/preprint identity retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicit in-text reference [65]."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Matching bibliography entry [65]; attention-model is printed as Kool2018 arXiv, no future version substituted."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Added appendix-only BPP andPacking; corrected MKP formulation to multidimensional0-1knapsack.",
+    "Distinguished commonarchitecture from sharedweights and separateTransformerpheromonemodel.",
+    "Clarified learnedincumbentperturbation vs ACOpheromoneupdate, non-differentiableNLS andfixedtrainingpheromones.",
+    "Added complete training/hardware/runtime/testset/gap budgets; qualified CVRPgenerator, TSPLIBcheckpointselection and strongerDIFUSCO baseline.",
+    "Minute-levelTable7 training applies noNLS; optionalimitationusesexpertinformation.",
+    "Removed inferrednotificationacceptance, manuallyinspectedcompletepublisherZIP, restoredoriginalcompleteFigure1.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "bd467d9b1441a784bd00febb78d4d0a1c83a365361160c45c19fe799bbb76e66"
+}

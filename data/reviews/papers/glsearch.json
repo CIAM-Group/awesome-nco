@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "paper_id": "glsearch",
+  "note_path": "specialist/glsearch.md",
+  "baseline_note_sha256": "7074fb1f8f57e57c769c61b4a21f524b269280cc3d0423ad98812233e7020251",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "http://proceedings.mlr.press/v139/bai21e/bai21e.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "http://proceedings.mlr.press/v139/bai21e/bai21e.pdf",
+      "local_path": "research/import-272/nco-605aeaa805.pdf",
+      "sha256": "7a7cf8d2d941f79b56ba679e9cbad3914c44e9a3d5b30675bf99df4f226557c6",
+      "pages": 11,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "http://proceedings.mlr.press/v139/bai21e/bai21e-supp.pdf",
+      "retrieval_url": "http://proceedings.mlr.press/v139/bai21e/bai21e-supp.pdf",
+      "version": "publisher-linked supplementary PDF; identity/version unchecked",
+      "local_path": "research/full-text-review/glsearch/supplement.pdf",
+      "sha256": "b0675e7977ed05f7173a782815982ee256f57b0576e2e3a47967d2f7df526c35",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read connected induced labeled MCS scope, branch-and-bound feasibility/bidomain upperbound and backtracking; DQN selects feasible nodepairs rather than changes hardconstraints."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read promise-based backtracking, +1reward afterstate Q=1+gammaV, symmetric CNNinteraction/bidomain encodings and supervised-exhaustive pretraining +MCSP imitation +RL stages; nooptimality fromQprediction."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read Tables2-4 and million-node figures/budgets: normalized to bestfound notoptimum; 500/7500iterations vs50min; ablationfull losesROAD/COPR/CIRC; scaled16dimmodel retrained notsame64dimweights; futureothernativeproblems only."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 11,
+      "notes": "Read complete bibliography, exactcatalogueauthor/titleidentities includingCIE/S2V/Gasse/Bello; noedgefromgenericgraphmatchingnames."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read datasetconstruction/singlelargepair protocol, four120paircurricula, exact1250pretrain+2500MCSPimitation+6250RL, gamma1, replay1024/batch32/target100/symmetricalCNNinteraction."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read nonlinearbidomainreadout, searchsequencevstree/trainstages, node-labelterminalconditions, promisequeue3iterationstagnation, equivalentmappingvisitedset and actioncapNb1Nd20/SCAL3; exactcompletebackbone distinguishedfromcandidatecaps."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read cachedGAT/afterstatecomplexity, alteredbaselinearchitectures/losses and Pythonportcomparisons, finitebudgetselection+baselinecanwinlonger caveat, all8growthplots."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 10,
+      "last_page": 13,
+      "notes": "Read runtimeplots/Table3,pretrainandpromisenegative/positiveablations, knowncorelowerboundconstruction/Table6 showing188<222ROADss350<381DBZHss, extensionsproposalsnotexperiments andinterpretabilityhypotheses."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 14,
+      "last_page": 20,
+      "notes": "Read allfigurecaptions and renderedROADCA/ROADTXsnapshot, chemicalpairs, ROAD/DBEN/DBZH/DBPD correspondences; plotsareillustrativepartialsolutions notcertificates."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 21,
+      "last_page": 27,
+      "notes": "Read ENRO/COPR/CIRC/HPPIfigures and all supplementarybibliography; manuallyviewedallscientificplots14-25 andkeymain/iteration/timecharts."
+    }
+  ],
+  "claims": [
+    {
+      "id": "glsearch-contribution",
+      "category": "contribution",
+      "statement": "AfterstateDQN with graph/subgraph/bidomain embeddings, searchsupervisedpretraining+MCSPimitation+RL andpromisestagnationqueue forconnectedinducedMCS.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections2-3/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "glsearch-method",
+      "category": "method",
+      "statement": "Feasibilityfrombidomain/labelconstraints, admissiblesizebound; learningchangessearchorder notgivesexactcertificate; actioncaps20/3nodes specifiedinsupplement.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "B.2-B.3/C.1-C.7"
+        }
+      ]
+    },
+    {
+      "id": "glsearch-experiment",
+      "category": "experiment",
+      "statement": "Bestfoundnormalization,500/7500iterationvs50minbudgets,singlepairlargedatasets,knownlowerboundmissesandnegativeablations retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9
+          ],
+          "locator": "Tables2-4/Figure4/Section4"
+        }
+      ]
+    },
+    {
+      "id": "glsearch-limit",
+      "category": "limitation",
+      "statement": "NeuraliterationoverheadandportedPythonbaselineconditions;188<222ROADssand350<381DBZHss;othernativeproblemsonlyfutureextensions.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            8,
+            10,
+            11,
+            12,
+            13
+          ],
+          "locator": "D/E/F"
+        }
+      ]
+    },
+    {
+      "id": "glsearch-classification",
+      "category": "classification",
+      "statement": "Commonmodelacrossdomain-specificgraphdatasetsstillonlyMCS; othercombinatorialtasksproposednottested, scaledvariantdifferentdimensions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "locator": "Scope/experiments/conclusion"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v139/bai21e.html",
+      "locator": "Fourauthors/main11pages588-598 andsameidentity27pagesupplement; Bai/Xuequalcontribution andUCLAaffiliation."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.mlr.press/v139/bai21e.html",
+      "locator": "HTMLcitation_publication_date and mlresearch/v139 gh-pages _posts/2021-07-01-bai21e.md issued[2021,7,1]; notJuly18-24eventdates."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v139/bai21e/bai21e-supp.pdf",
+      "locator": "PublisherRelatedMaterial/rawrecordextras explicitlyoneSupplementaryPDF; actual27pagesallread/renderedkeyresultsandallqualitativepages14-25. AuthorZIPfullinventoryhasnoextrascientificPDF."
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/DerekQXu/GLSearch",
+      "locator": "CoauthorrepositoryREADMEexplicitlyICML2021implementation; mainZIPinventory plussearch/action-screening/state/config/READMEread; externalpreprocesseddataandcheckpointpathsrequired."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "glsearch",
+      "cited": "cie-h",
+      "reference_label": "Yu et al. (2020)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit in-text citation Yu and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Dai et al. (2017)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation Dai and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            10
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello et al. (2017)",
+      "description": "Explicit body author-year citation and exact title/author bibliography identity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Explicit in-text citation Bello and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "combinatorial-learning-of-graph-edit-distance-via-dynamic-embedding",
+      "reference_label": "Wang et al. 2020",
+      "description": "Supervised hard-constraint GED comparison; actual cited arxiv2011.15039 is same primary version chain as CVPR2021 representative, not future-publication citation.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Wang et al. 2020"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Wang et al. 2020"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "learning-combinatorial-embedding-networks-for-deep-graph-matching",
+      "reference_label": "Wang et al. 2019",
+      "description": "Soft matching/I-PCA limitations as MCS comparator; exact ICCV2019 PCA-GM entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Wang et al. 2019"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Wang et al. 2019"
+        }
+      ]
+    },
+    {
+      "citing": "glsearch",
+      "cited": "deep-learning-of-graph-matching",
+      "reference_label": "Zanfir and Sminchisescu 2018",
+      "description": "Learning graph similarity/matching background; exact CVPR2018 title/twoauthors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zanfir and Sminchisescu 2018"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zanfir and Sminchisescu 2018"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fullyread11main+27supplementpagesincludingallscientificvisuals/bibliographies; manualpublisherattachmentinventory.",
+    "AddedtrueconnectedinducedMCSscope,supervisedpretraining,actioncaps/scaledmodel, bestfoundnotoptimum metrics andknownlowerboundfailures.",
+    "Preservednegativeablations/neuraloverhead/Pythonbaselineconditions, verifiedofficialcodeand4explicitcataloguecitations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "1a5af74e73e44484fc45433e5ebcde7d8da8195e30733e14ad04f54c64ebd6a4"
+}

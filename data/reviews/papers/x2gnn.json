@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "paper_id": "x2gnn",
+  "note_path": "specialist/x2gnn.md",
+  "baseline_note_sha256": "d0eb5a1574f42480e2fb1531c840df61fe01a3de8cf7d51925bc5aff4a6ca2ab",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/e944bacecce6b06374ac39b260348db0-Paper-Conference.pdf",
+      "version": "CompleteformalICLR2025proceedingsPDF with integratedscientificAppendicesA-B,19pages,May1,2025",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/e944bacecce6b06374ac39b260348db0-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-a931314e53.pdf",
+      "sha256": "51697be08f4f3ecb86c26494b66c816aaf1b72724da90010697921839bba0223",
+      "pages": 19,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read full3authorsCornell/intro/related/prelim andK-coupledGNNconstruction. MaxClique solvedasMISoncomplement exactreduction, mustreadwhetherseparatecheckpoints/native sharing. Explicit3nativeunweightedgraph tasks/sizeOODclaim, comparisonsruntimebestreferencesnotautomaticallyoptimalcertificate. Trainingdistributiongeneralization notper-instanceCRAstyle."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read fullmultilayerK2/crossGIN/GAT/sharedconstructionrefinementweights,initial.5withp.95/dropoutprevioussoftnotglobalincumbent;minsumpositiveLoTable1contradmaxneedscode sign. Couplingdiversity/pairs, twostageconstruction+one-steptrain vsTstepsinfer,Cindependentcouples/keepbest. Datasets4000train500test128ER20regularn1e2..1e6/d3/5 allcostruntimebudgetrefscope. SeparateMC/MIScheckpointsrepoexplicit."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read completeallTables2-5andFig2text. CliqueRB250trained→RB1000 samecheckpoint; nativeMIS/MCut separate. Runtime meanperinstance vs priorfulltesttotals. Bestclique1.19%gap23.5s vsreference40.652/Gurobi287s,do notrepeat50/190speedtext withdifferentbudget. MISbest.04/.94/.72% vsKaMIS, largeERregularsize1e6~600s; nativecutBA1000best2989.3 vsGurobi2966.58 butBA250735.26<Gurobi735.32. Qualitybestknownnotuniversalcert. K2ablation/deterministic4.97 vs.43% etcallread."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read allsearchdynamicsFig3/conclusion/ack/fullbibliographypp11-12. C64MCvsC4MISbestonRB250metricnotuniversal; noformalconvergence/approx proof. ExactT2Tfulltitlep12manualedgebeyondcandidate; NairMIP2020possiblecatalogneedcheck. Complete refsremaining13pending."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read all remainingrefs13 andAppendixA/B1/B2start inclall37DIMACSrows. A1innerhiddenrecurrentnRvsoutersoftsolutionT distinct, notclaimnohiddenrecurrence. Hardware1A10080GB,CPU1coreheuristics4Gurobi/40GB, timesrerunbutoriginalqualityvalueswhenavailable. DIMACSappendixlabelsRB1000traininconsistentmainMCsmallsettings; FTcostnotseparatelygiven,17.41→6.68% vsKaMIS3.87 andFTcanworsen(keller5/6). Coding32cases20vs28best,weightedadaptationnext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 19,
+      "notes": "Completed all19formalpages/everyref/A-B/all12tables/3figs. Read Coding32rows/WMISweights1..5Table9(.8%4.92s vsGurobi.21s), MLPablation, SNAP14rows andall35Gsetrowsbestvirtual refs. Gset.12%/.11%(notprose.12both) vsBLS.01%, increasesbudgetcanworsenindividualcases(G15/G35/G5/G51/G54); no monotonicneuraltrajectoryguarantee. Weightedseparateadaptedarchitecture notsameunweightedcheckpoint. Needvisual+selectedcode finish."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Combines parallel candidate exploration and stochastic soft-output refinement without optimal labels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Sections1-4"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "K-coupled GIN/GAT multilayer graphs and objective/constraint/diversity losses with two-stage unsupervised training.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections4-5/Table1"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Separate native task models; within-task construction/refinement sharing and size/distribution transfer, weighted MIS separately adapted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            8,
+            14,
+            15,
+            16,
+            17
+          ],
+          "locator": "Native train settings/AppendixA and weighted extension; official checkpoint folders"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Previous soft outputs are perturbed; inner hidden recurrence distinct from outer recurrence; negative objective confirmed in inspected trainer despite Table1 positive sign.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            14
+          ],
+          "locator": "Section4/Table1/AppendixA; static MIS source"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "Exact main mean gaps/times and negative cases, DIMACS fine-tuning ambiguity/cost, coding subset, weighted objective, SNAP/Gset virtual references retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "All12tables/3figs complete reading and visual review"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "No solver guarantee or native cross-task checkpoint; release filename/budget mapping and reverse-cross-edge discrepancy qualify reproducibility, not historical benchmark validity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Full paper plus isolated original constructor N3/k4 recomputation"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "All19 formal pages, complete scientific appendices/refs,12 visuals, publisher/API attachment check and42file official release inventory;9 identity-resolved references.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Reading logs/current commit and source excerpts"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title,authors,institutions,date",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/e944bacecce6b06374ac39b260348db0-Abstract-Conference.html",
+      "locator": "FormalPDF1 CornellCS/threeauthors. Publisher date2025-05-01 and CarlaGomes spelling retained; PDF CarlaP.Gomes expansion."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/e944bacecce6b06374ac39b260348db0-Abstract-Conference.html",
+      "locator": "Publisher Paper/Bibtex only, no separate scientific supplement; integratedA-B all read. OpenReviewvaJ4FObpXN APIv1/v2notes403. Official42filetree noPDFZIP. No explicitly missing scientific document."
+    },
+    {
+      "field": "version,visuals",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/e944bacecce6b06374ac39b260348db0-Abstract-Conference.html",
+      "locator": "Completeformal19p SHA51697be08f4f3ecb86c26494b66c816aaf1b72724da90010697921839bba0223. Visual4/5/7/8/9/10/14/15/16/17/18/19 allkeyformulas/tables/figs checked."
+    },
+    {
+      "field": "code_url,scope",
+      "source_url": "https://github.com/utkuumur/X2GNN",
+      "locator": "Commitfeb6d8d1c45c586023f514c3bc157c37c5a7b132,42files/sixPTcheckpoints. Fullroot/dataREADME, MISutils97/data_utils217, selectedmodel1-141/train26-74+142-329/eval1-175 and3shellscripts read. SeparateMC/MIS/MaxCut folders; no crossnative sharedcheckpoint. AddedactualweightedMIS AppendixB2."
+    },
+    {
+      "field": "curator release checks",
+      "source_url": "https://github.com/utkuumur/X2GNN",
+      "locator": "OriginalconstructorisolatedN3/k4 executed withNumPy only: unexpected(5,6),missing(9,6) from reverseedgebase+2*i+1*N. eval k2 iscopies/Riterations; examplebudgetlabelmappingandcheckpointfilenames differ. No NNtrain/evalbenchmark execution; no historicalresultsinvalidityinference. NegativeMISloss sign confirmed."
+    },
+    {
+      "field": "citations",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/e944bacecce6b06374ac39b260348db0-Abstract-Conference.html",
+      "locator": "Fullrefs11-13/bodychecked9exactexistingIDs inclmanualT2Tbody3/ref12. DIMES tableonly withoutfullbibmatch excluded; currentrepofollowuprecommendations not historicalcitations."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "x2gnn",
+      "cited": "diffuco",
+      "reference_label": "Sanokowski et al.(2024)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit Sanokowski et al.(2024) bodyPDF2; fulltitle/authors refPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "difusco",
+      "reference_label": "Sun & Yang(2023)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit Sun & Yang(2023) bodyPDF2; fulltitle/authors refPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Karalias & Loukas(2020)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit Karalias & Loukas(2020) bodyPDF2; fulltitle/authors refPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "gflownet-combopt",
+      "reference_label": "Zhang et al.(2023)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit Zhang et al.(2023) bodyPDF2; fulltitle/authors refPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "hybrid-scattering-clique",
+      "reference_label": "Min et al.(2022)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit Min et al.(2022) bodyPDF2; fulltitle/authors refPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Ahn et al.(2020)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            13
+          ],
+          "locator": "Explicit Ahn et al.(2020) bodyPDF6; fulltitle/authors refPDF13."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "vag-co",
+      "reference_label": "Sanokowski et al.(2023)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Explicit Sanokowski et al.(2023) bodyPDF2; fulltitle/authors refPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "neurosat",
+      "reference_label": "Selsam et al.(2019)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Explicit Selsam et al.(2019) bodyPDF2; fulltitle/authors refPDF11."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "t2t",
+      "reference_label": "Li et al.(2023)",
+      "description": "Explicit body/comparator citation and full bibliographic identity checked, including preprint/year variants.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            12
+          ],
+          "locator": "Explicit Li et al.(2023) bodyPDF3; fulltitle/authors refPDF12."
+        }
+      ]
+    },
+    {
+      "citing": "x2gnn",
+      "cited": "one-model-any-csp-graph-neural-networks-as-fast-global-search-heuristics-for-constrain",
+      "reference_label": "Tönshoff et al., 2023",
+      "description": "MaxCut baseline discussion explicitly names ANYCSP; exact four-author IJCAI2023 DOI476 entry.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            13
+          ],
+          "locator": "Manually inspected literal body context and complete bibliography entry; title/byline/venue/version identity checked."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Replaced generic description with full methodology, numerical protocols and adverse transfer cases.",
+    "Added actual separately adapted weighted-MIS task; preserved specialist/native checkpoint boundary.",
+    "Qualified objective sign, budget mapping/current constructor/filename discrepancies without invalidating historical experiments.",
+    "Complete19page/allappendix reading and12visuals;9 exact body+bib relationships.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "4c9af2209328a0a8d23329870b2f3e336cdc0108b82026fa6a73f19ce351b7b5"
+}

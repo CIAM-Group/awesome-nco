@@ -1,0 +1,1231 @@
+{
+  "version": 1,
+  "paper_id": "sil",
+  "note_path": "specialist/sil.md",
+  "baseline_note_sha256": "61bd2ed4288c3c1c71a2fc6cb634d338d41d9d5a69897824e2db606bec994243",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/264f2e10479c9370972847e96107db7f-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/264f2e10479c9370972847e96107db7f-Paper-Conference.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/sil/paper.pdf",
+      "sha256": "62a6b71188730ca87e26615c92a2371befd857eb545fdc68ef83f191fcd4ef6a",
+      "pages": 27,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "precursor",
+      "url": "https://arxiv.org/pdf/2403.19561v3",
+      "retrieval_url": "https://arxiv.org/pdf/2403.19561v3",
+      "version": "arxiv2403.19561v3May2_2024precursormanuscriptSelfImprovedLearning6authors,identitytocatalogformalundertargetedmanualaudit.",
+      "local_path": "research/full-text-review/sil/precursor-arxiv-v3.pdf",
+      "sha256": "de3f12c50813e451a4f26c43571c1cefa0f4ab834b8c65632fa1e5c520d69ab7",
+      "pages": 16,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://iclr.cc/media/iclr-2025/Slides/29530.pdf",
+      "retrieval_url": "https://iclr.cc/media/iclr-2025/Slides/29530.pdf",
+      "version": "OfficialICLR2025scientificpresentation",
+      "local_path": "research/full-text-review/sil/official-slides.pdf",
+      "sha256": "feaf193e9dc84ba1afd4b5e4a3b8b0fbc28ea10be8e55d1181a45ce3f1224317",
+      "pages": 10,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "poster",
+      "url": "https://iclr.cc/media/PosterPDFs/ICLR%202025/29530.png?t=1743651501.6570306",
+      "retrieval_url": "https://iclr.cc/media/PosterPDFs/ICLR%202025/29530.png?t=1743651501.6570306",
+      "version": "Official ICLR 2025 poster PNG, losslessly embedded in one-page PDF for reading ledger; original PNG retained.",
+      "local_path": "research/full-text-review/sil/official-poster.pdf",
+      "sha256": "9ed01cbf6732334e30c5306b91e5e61b45c1c7564b91ccb512068bc6ee4c651b",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "FreshformalICLR202527pagestitleBoosting7authorsinclYaoxinWu4institutions,lightweightcrossattentionrepresentativeslinearNwhenfixedm,SelfImprovedTrainingSITreconstructpseudo-labelsnotoldshortSILtitleassumptions;largeup100k."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Readfullrelatedworkheatmaps/generalizationprelimsTSPCVRPactualtasks/cost,Figure1crossattentiontwofirstlastrepresentativebottleneckO(nm)permodulewithfixedmnotwholeautoregressivecompletionlinear."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Freshprecursorarxiv2403.19561v3May2_2024sixauthorsoldtitleSIL,16pages;actualabstract100k/self-improvement/linearatttentionandFigure2loopcompareSL/RL,notassumedsamecurrentformaluntilspecificalgorithm/tablescomparison."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "ReadformalarchitecturefirstlastrepresentativesfullremainingnodecrossattentionO(2n)eachmodule;ownparallelpartialreconstructionfixesendpointsM=floor(n/omega)nonoverlappingsegmentsacceptonlyshorter;SITupdatesincumbentpseudolabels."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "ReadfulloldSILloopFigure3partialreconstructionpseudolabelcrossentropyandlinearrepresentativeattention;oldM=floor(lmax/omega)differsformalM=floor(n/omega),mustnotclaimverbatimidenticalalgorithm."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "FulltrainingpartialpseudolabelCE,d128L6heads8FF512,1ktrainwarmupthenindependentlargescales;20k/200/100datasets20epoch100PRC,Table1allgreedyvsPRCbudgets,PRCrandominsertioninit,relativeLKH/HGSnotcertifiedopt,100kgreedy33minvsPRC1000170min,TSP100kgap2.45CVRP100knegative2.55HGSreference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "ReadfullTables2-5greedy8.244/15.677vsPRC2.556/9.574TSPLIB/CVRPLIB;incompletebaselinesaveragesnotcommonsubset;SITablationchangestraining100vslargeconfounded,greedyruntime~quadratic100k1983sdespiteper-layerlinear;maxsegment1000bestTSP10kbudgettradeoff."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "OldFigure4threepanelarchitectureappearsformalFig1continued,butoldwarmupRL20nodes15hvsformalRI1000changes;samefixed2firstlastrepresentativesd128L6heads8FF512,independenttask/sizecheckpoints;oldPRCrandominsertioninittrainingdays1-10notformalbudget."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "ReadalloldTables1-4andfigures5-6,oldownPRCresultsdifferformal(newTSP100kPRC1000231.52vsold232.66;CVRP463.95vs459.38),identicalmanybaselinesaloneinsufficientevidence;oldcurriculumSIL100kcurve/scalegeneralization,training1/10/100kcheckpointsdiffer."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Readfullallbibliographicreferences39includingactualversionsDARarxiv2024/Bello2016/EGCN2019/UDC2024/GumbeldoreTMLR2024/POMO/LEHD/INViT/ELG/SIGD,actualintextlocatorsrequirelatercandidatecheck."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "ReadAppendixAcomplexityexplicitpredictionO(n),sequentialsegmentO(lmax^2)butclaimsparallelbatchlatencyO(klmax²)omitsaggregateworkn/lmax,spaceO(n);Tables6-7round20budgets;B.1CVRPcustomerplusdepotbitrepresentationcapacitynormalizationandremainingcapacityfirstlastembeddings."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 17,
+      "notes": "ReadCVRP2actionsdirect/viadepot,capacitysafePRCexcludestailsubtourandinitialremainingcapacitymustaccountprefix;AppendixCactualexperimentsrepeatlastnode15times(despitemain2representativesnotation),pooling/learnablenodesNaNobservednotproofuniversal,Figure3repetitionperformanceTSP1k2iterations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 18,
+      "last_page": 19,
+      "notes": "ReadAlgorithms1-4randominsertiondistance-matrixpseudocode,selfimprovedroundneuralreconstructionthenCEpartialtrainingwithperstepAdam;separatescales,validationbestgreedycheckpointperiterationnotoneuniversalweight."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 20,
+      "last_page": 21,
+      "notes": "ReadTables8-11fullroundcountsTSP8/8/3/3/7CVRP8/8/4/4/7andbatches,initablationRIbest6/10notuniform;TAMcomparison1ktrainedcrossscales,citedTAMbudgets,mainscalesindependentnotgeneralist;small300/500/700PRCiterationsunspecifiedTable11TotalTimeunlikemainaveraged."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 23,
+      "notes": "ReadAppendixI-LTables12-16combinedBQchange/retrainedPOMO500LEHD1k/SITtransfer,controlledsameSITLEHDcomparisonTable16;Table15POMO5kgap87.72copiedobjectiveinconsistentmain72.1soavoid61.7percentclaim;NeuroLKHstrongTSPsmallnotuniformneuraldominance."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 24,
+      "last_page": 25,
+      "notes": "FullAppendixL-Ntables17-21NeuroLKHnearoptTSP1-10kbetterqualityslowerfails50-100k;Libuncommoncoverage;aug8adds~7.1xtimereported.73percentagepointgapimprovement;2.63MlargerLEHD1.43/POMO1.27andmatched-sizebaselinesstillothertrainingdifferences."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 26,
+      "last_page": 27,
+      "notes": "ReadAppendixO-Qalllastscience/Tables22-24beyond100kTSP100ktrainedzero-shot200k3.57%33m500k6.03%1.1hPRC100butreferencegeneration/samplesnotdetailed;manydayspseudo-labelbottleneck,code/datasetlicensesnotownlicenseinference."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Readcompleteoldbib2pagesincludingNLNSECAI2020/learningimprovement2019/SymNCOarxiv2022asoldermanuscriptreferences,formalrelationswilluseformalreferencesnotunionolderremoveditems."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "OldappendicesA-F.1fullRLwarmup20nodes100epoch50kbatch64time14.62/15.42hnotformalrandominsertionwarmup;localitydiagnosticLEHD1281kinstances,twosublayerresidualMHA/FFnonormbackboneLEHD,memoryattentiontable."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "FulloldTables7perinstance8TSPLIB8CVRPLIB,F.1MHAFFandGtrainingdetails1-10days,Himplementation;oldGprose100k50vsoldTable100inconsistency,notformalsettings;sameRAttention2nodeW1W2hierarchycompareformal."
+    },
+    {
+      "source_id": "precursor",
+      "first_page": 15,
+      "last_page": 16,
+      "notes": "ReadalloldAppendixG-H/Table8/CVRPtwotypeactionscomplete;uniqueCVRP10customerpermutation+bitvectorandmisalignmentexplanationwordforwordcarriedtoformalB.1p15,oldEq18-22matchesformalEq8-10algebra,architectureFigure4vsformalFigure1."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Readofficialslides1-3title7authors4affiliationsproblemTSPCVRPscaleintro."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Readslides4-6figurescomplexityobstacle/twostagecrossattentionandSITloopsameasformal;notenocomplexityproofbeyondPDF."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 7,
+      "last_page": 10,
+      "notes": "Allrastertableson7-9visuallyreadinrender:formalTable1TSPandCVRP/Libsamefigures,slide10summarysamecrossattentionSITfigures;noextraclaimsbeyondformal."
+    },
+    {
+      "source_id": "poster",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "OfficialposterPNGvisuallyreadallthreecolumnsfulltextandtables/diagrams;formal7authors/crossattentionSITandTables1/2/4samevalues,notadditionalexperiments;originalPNGretainedPDFsolelyledgerwrapper."
+    }
+  ],
+  "claims": [
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "CrossattentionrepresentativesandSITpseudo-labelalternationtrainlarge-scaleTSP/CVRPwithoutoptimaltraininglabels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Sections4-5."
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Fixedrepresentativecountlinearperpredictionnotwholeautoregressivetour;actualAppendixC15lasttokens;PRCfixesendpoints/retainsimprovementwithCVRPcapacitysafehead/tailrules.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "locator": "Equations2-6/AppendicesA-D."
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "category": "experiment",
+      "statement": "Main1281k/16largerinstancesseparatecheckpointsandPRC10-1000RIinitialization;heuristicreferencesnotcertifiedoptimal;NeuroLKHbetterTSP1-10kandpartialLibcoveragequalified.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            20,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "locator": "Tables1-2/8/16-24."
+        }
+      ]
+    },
+    {
+      "id": "taxonomy",
+      "category": "classification",
+      "statement": "SpecialistmixedownneuralwholeconstructionandincumbentPRCbranches,notoneforcedsequentialpipeline;separatetask/scaletraining.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            19,
+            20
+          ],
+          "locator": "GreedyvsPRC/Table8."
+        }
+      ]
+    },
+    {
+      "id": "precursor_identity",
+      "category": "method",
+      "statement": "Curatormanuscriptcontinuitymapsold6authorSelfImprovedLearningprecursortothe7authorformalBoostingrepresentativeentrywhilepreservingchangedwarmup/resultsandactualcited2024versions;noarxivretitlingasserted.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            15
+          ],
+          "locator": "FormalFigure1/2,Eqs2-4/7distinctivearchitectureandCVRPexample."
+        },
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            4,
+            5,
+            15,
+            16
+          ],
+          "locator": "OldFigure3/4,Eqs3-6/16-22sameuniquegeometry/algebra/CVRPexampleandparagraph;otherexperimentalsettingsdiffer."
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication, date",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/264f2e10479c9370972847e96107db7f-Abstract-Conference.html",
+      "locator": "FormalICLR202527pagePDF7authors4institutions;2025yearprecisionreplacesgenericnotificationday;firstdate2024-03-28fromactualprecursorarxivv1history,notformalrelease."
+    },
+    {
+      "field": "arxiv precursor identity",
+      "source_url": "https://arxiv.org/abs/2403.19561",
+      "locator": "Actuallyreadboth27+16pages;oldFig3p4/formalFig2p6sameuniquegraphgeometry/loop;oldEq3-6p5/formalEq2-4p5sameendpointprojectionand2stageattention;oldEq16p15/formalEq7p15same10customerrouteanddepotbitsplusdistinctivemisalignmentsentence. Curatorinferredcontinuitywithchangesnotpublisheridentitydeclaration;oldv3May2_2024stilloldtitle6authors,formal7."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://iclr.cc/virtual/2025/poster/29530",
+      "locator": "ManualpublishedcombinedPDFcontainsA-Qallread;officialvirtualHTMLactualslides10pagesandposterPNGbothreadandregistered;posterlosslessPDFwrapper1pageonlyledger. OpenReviewapi403honest. OfficialGitHub52entryuntruncatedtreenoextraPDFZIPTEXscience,noneexplicitlymissing."
+    },
+    {
+      "field": "code_url",
+      "source_url": "https://github.com/CIAM-Group/SIL",
+      "locator": "README/selectedTSPandCVRPmodelrepresentativeconstruction/trainingrepairfunctions/TestAlltestconfigmanualread;16tokens1first15lastseparateprojections,CEperstepAdam,RIorpreviousincumbentPRC,sizespecificcheckpoints;noexpensivereproduction."
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/264f2e10479c9370972847e96107db7f-Paper-Conference.pdf#page=6",
+      "locator": "OriginalcompleteFigure2Rect(105,75,510,235)5x;formalarchitecture/SIT/ablation/tablesandoldmatchingfiguresvisuallyread."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/264f2e10479c9370972847e96107db7f-Abstract-Conference.html",
+      "locator": "Identity-matched publisher citation_publication_date=2025-05-01; cached evidence research/full-text-review/sil/page-1.html. Conference edition year 2025 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "publication date prose consistency",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/264f2e10479c9370972847e96107db7f-Abstract-Conference.html",
+      "locator": "Parent-authorized final date-prose reconciliation: current publication.date=2025-05-01; primary cachedHTML research/full-text-review/sil/page-1.html; citation_title=['Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems']. Replaced older prose claiming onlyyearprecision/unsupportedexactdate with the actual publisher record; earlier coarse-date comments superseded, conference edition and acceptance uncertainty preserved. No scientific claims or source-reading coverage changed."
+    },
+    {
+      "field": "final citation coverage",
+      "source_url": "https://arxiv.org/abs/2403.19561",
+      "locator": "Final reread precursor pp3/6 plus completebibpp9-10 adds explicitNLNS2020/SymNCOarxiv2022/L2I2019asprinted. These3refs are specificto registeredprecursor, notretroactivelyassertedformal2025body. Full43+11sourcepagesalreadyread."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "sil",
+      "cited": "pointer-networks",
+      "reference_label": "Vinyals2015",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "Bello2016arxiv1611.09940",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "rl-vrp",
+      "reference_label": "Nazari2018",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "attention-model",
+      "reference_label": "Kool2019",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "learning-heuristic",
+      "reference_label": "Deudon2018",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "pomo",
+      "reference_label": "Kwon2020",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "efficient-active-search",
+      "reference_label": "Hottung2022",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "pointerformer",
+      "reference_label": "Jin2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "omni-vrp",
+      "reference_label": "Zhou2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "h-tsp",
+      "reference_label": "Pan2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "glop",
+      "reference_label": "Ye2024",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "elg",
+      "reference_label": "Gao2024",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "invit",
+      "reference_label": "Fang2024",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "learning-collaborative-policies",
+      "reference_label": "Kim2021",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "select-and-optimize",
+      "reference_label": "Cheng2023aolveasprinted",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "lehd",
+      "reference_label": "Luo2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "Xin2021a",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "step-wise-routing",
+      "reference_label": "Xin2020journalasprinted",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "simulation-guided-beam-search",
+      "reference_label": "Choo2022",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "meta-sage",
+      "reference_label": "Son2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "bq-nco",
+      "reference_label": "Drakulic2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "dar",
+      "reference_label": "Wang2024arxiv2401.06979",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "icam",
+      "reference_label": "Zhou2024arxiv2405.01906",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "learning-to-delegate",
+      "reference_label": "Li2021",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "rbg",
+      "reference_label": "Zong2022",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "tam",
+      "reference_label": "Hou2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "att-gcn",
+      "reference_label": "Fu2021",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "dimes",
+      "reference_label": "Qiu2022",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "t2t",
+      "reference_label": "Li2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "utsp",
+      "reference_label": "Min2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "difusco",
+      "reference_label": "Sun2023",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "Joshi2019arxiv1906.01227",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "gumbeldore",
+      "reference_label": "PirnayGrimm2024TMLR",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "Kool2022",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "neurolkh",
+      "reference_label": "Xin2021b",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            23
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "udc",
+      "reference_label": "Zheng2024",
+      "description": "Explicitformaltextcitationplusmatchingformalbibliography;actualcitedpreprinttitle/yearretained,notfuturepublication. Precursor-onlyremovedreferencesnotadded.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            26
+          ],
+          "locator": "Explicitformaltextauthor-yearcitation."
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Actualformalbibliographymatchingtitle/authors/version."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "Hottung & Tierney,2020; precursor version",
+      "description": "Explicit in-text and complete matching bibliography in registered 2024 six-author precursor; source-specific edge, not claimed to appear in formal27-page Boosting version. Two matching authors/full NLNS title/ECAI2020; independent extended2022journal not substituted.",
+      "evidence": [
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Actual in-text Hottung & Tierney,2020; precursor version"
+        },
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete matched bibliography; Two matching authors/full NLNS title/ECAI2020; independent extended2022journal not substituted."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "sym-nco",
+      "reference_label": "Kim et al.,2022; precursor arXiv2205.13209",
+      "description": "Explicit in-text and complete matching bibliography in registered 2024 six-author precursor; source-specific edge, not claimed to appear in formal27-page Boosting version. Three matching authors/full Sym-NCO title and explicit arXiv2205.13209; preprint and formal same identity.",
+      "evidence": [
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            3
+          ],
+          "locator": "Actual in-text Kim et al.,2022; precursor arXiv2205.13209"
+        },
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Complete matched bibliography; Three matching authors/full Sym-NCO title and explicit arXiv2205.13209; preprint and formal same identity."
+        }
+      ]
+    },
+    {
+      "citing": "sil",
+      "cited": "learning-to-improve",
+      "reference_label": "Lu et al.,2019 as printed in precursor",
+      "description": "Explicit in-text and complete matching bibliography in registered 2024 six-author precursor; source-specific edge, not claimed to appear in formal27-page Boosting version. Full A learning-based iterative method for solving vehicle routing problems title, HaoLu/XingwenZhang/ShuangYang; actual printed2019 label retained, represented by formally publishedICLR2020 stableID.",
+      "evidence": [
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Actual in-text Lu et al.,2019 as printed in precursor"
+        },
+        {
+          "source_id": "precursor",
+          "pdf_pages": [
+            10
+          ],
+          "locator": "Complete matched bibliography; Full A learning-based iterative method for solving vehicle routing problems title, HaoLu/XingwenZhang/ShuangYang; actual printed2019 label retained, represented by formally publishedICLR2020 stableID."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Freshall27formal+16precursor+10slides+1posterpages;allscientificA-Qreadandsuppinventorychecked.",
+    "Confirmedcuratormanuscriptcontinuityusingdistinctiveoriginalfiguregeometry,endpointattentionequationsandidentical10customerCVRPexample/paragraph;oldarxivtitle6authorskept,notarxivretitlingclaim.",
+    "Changedconstructivetoownconstruction+PRCimprovementmixed;separatetask/scalecheckpointsspecialist;PRCRIinitializationnotneuralgreedymandatorypipeline.",
+    "Correctedup100ktrain/testand200/500kzero-shotTSPscope;27pageformalsettingsdifferold20nodeRLwarmup/results.",
+    "Qualifiedlinearperpredictionvsquadraticwholeconstruction/aggregatePRCworkandactual16representativetokens,capacitysafeCVRPmerge.",
+    "Explicitmainbudget/data/rounds/gaps/times/referenceincumbents/negativegaps/notuniversalSOTA;NeuroLKHbetterTSPsmaller,LibpartialcoverageandTable15POMOgaptableinconsistency.",
+    "Correctedfourinstitutions/yearprecisionformalpublicationunsupportedgenericnotificationremoved/actualprecursorfirstdate;originalFig2cropand36explicitformalcitationedges.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision.",
+    "Final primary-date prose synchronization supersedes earlier coarse-date wording; actual publisher publication date and separate preprint/acceptance meanings preserved."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "c747b2b56b4f63f207d06a25ef85b3980bacbb0eb433750574c0b61fe28ee48f"
+}

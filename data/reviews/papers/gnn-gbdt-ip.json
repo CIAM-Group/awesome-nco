@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "paper_id": "gnn-gbdt-ip",
+  "note_path": "specialist/gnn-gbdt-ip.md",
+  "baseline_note_sha256": "56853efcf625f471db71c249fb32eae552555f62781e0dcc351da01ea866225c",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.mlr.press/v202/ye23e/ye23e.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.mlr.press/v202/ye23e/ye23e.pdf",
+      "local_path": "research/import-272/nco-c647dd409f.pdf",
+      "sha256": "31090d40c87641b667f4ca4bf7f41b3962bc703aa14768b4e414862b1e20a5ae",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read exactICML2023fiveauthorinstitutionmetadata, three-stage framework, scopeofintegerprograms, bipartitefeatures/randomidentifiers and explicitrelatedwork."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Read everyGBDTgradient/Taylor/leaflossformula, FENNEL partition and twoProxyAnchor metric losses, realmeaningofmulti-task, GBDTprediction/guidance; visuallycheckedformulas."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 6,
+      "last_page": 7,
+      "notes": "Read allinitial/neighborhood/crossoveralgorithms and predictionlossranking, freevariablefraction constraint, localrepair and solverdependency, notglobaloptimality guarantee."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 8,
+      "last_page": 10,
+      "notes": "Read all main result/time tables, negativecasesand erroneousup-arrows, convergencecurvesnotproof, fullbibliography scanned; manuallymatched generalLNS, GNNexpressivity and earlierCombOptNetalias beyondhelper."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 13,
+      "notes": "Read AppendixA–C fullTaylor derivation/FENNELpseudo/REPAIRbound calculations; perconstraint interval checks notjointintegerfeasibilityproof. Readhardware,budget,CA50initial30memoryworkaround."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 14,
+      "last_page": 15,
+      "notes": "Readall datasetdimensions/generators,8h approximate labels, incompletebaselineavailability, smallinstanceobjective/time tables andnegativeCA1; visuallycheckedallkeytables/figures."
+    }
+  ],
+  "claims": [
+    {
+      "id": "gg-contribution",
+      "category": "contribution",
+      "statement": "Two metric-learning objectives plus GBDT guide partitions, initial fixing, limited-free-variable search and crossover.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "locator": "Section3 and Algorithms1–3"
+        }
+      ]
+    },
+    {
+      "id": "gg-method",
+      "category": "method",
+      "statement": "REPAIR uses per-row bound checks, not joint integer-feasibility proof; exact subproblem solves do not establish original optimality and fixed-radius/freefraction is heuristic.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7,
+            12,
+            13
+          ],
+          "locator": "Algorithms1–5, AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "gg-results",
+      "category": "experiment",
+      "statement": "Main30% settings improve tablebaselines, but other fractions/smallCA have negatives; selected censored time-to-target supports limited99% claim and printedarrows/directions have errors.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            14,
+            15
+          ],
+          "locator": "Tables1–5,Figure6"
+        }
+      ]
+    },
+    {
+      "id": "gg-specialist",
+      "category": "classification",
+      "statement": "Multi-task denotes partition/solution-label losses, with no unchanged cross-native-task model transfer demonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            7,
+            14
+          ],
+          "locator": "Multi-taskdefinitionand experimentalprotocol"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.mlr.press/v202/ye23e.html",
+      "locator": "FormalICML2023/PMLR20239864–39878, fiveauthorPDF/affiliationsmatch"
+    },
+    {
+      "field": "publication",
+      "source_url": "https://raw.githubusercontent.com/mlresearch/v202/gh-pages/_posts/2023-07-03-ye23e.md",
+      "locator": "OfficialPMLRsource issued.date-parts2023,7,3; conferenceJuly23–29notpublicationdate"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.mlr.press/v202/ye23e.html",
+      "locator": "ManuallycheckedRelatedMaterial mainPDF/OpenReview, normalAPI403; integratedA–Eread, authorrepo only README+paper.pdf scientificdoc, exactSHA matchpublisher; noadditionalscientificattachmentidentified"
+    },
+    {
+      "field": "code",
+      "source_url": "https://github.com/thuiar/GNN-GBDT-Guided-Fast-Optimizing-Framework",
+      "locator": "Paperp7explicitURL, officialREADMErequiresimplementinterfaces; GBDTmethods and solver/initial/crossover methods confirmedNotImplementedError, task-namedcheckpointdefault"
+    },
+    {
+      "field": "citation_alias",
+      "source_url": "https://a-paulus.github.io/",
+      "locator": "AuthorpublicationentryCombOptNet ICML2021 explicitly OralatLMCANeurIPS2020workshop, matching fiveauthors/earlier FitTheRightNP-HardProblem title in bibliography"
+    },
+    {
+      "field": "citation_identity",
+      "source_url": "https://openreview.net/references/pdf?id=qGqxsmFp9-",
+      "locator": "comboptnet: Workshopp1 exact cited title and five authors; same learn-objective-and-constraint ILP layer and knapsack experiment. Earlier workshop version linked by author to formal CombOptNet; edge does not imply GNN&GBDT uses or cites ICML2021 version."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gnn-gbdt-ip",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Exact bibliography identity; CombOptNet is cited under workshop2020 precursor title, author publication page confirms same work presentation; GNNexpressivity arXiv2210.10759 exact.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            9
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-gbdt-ip",
+      "cited": "general-lns-ilp",
+      "reference_label": "Song et al. (2020a)",
+      "description": "Exact bibliography identity; CombOptNet is cited under workshop2020 precursor title, author publication page confirms same work presentation; GNNexpressivity arXiv2210.10759 exact.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10
+          ],
+          "locator": "Explicit in-text citation Song and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-gbdt-ip",
+      "cited": "gnn-milp-expressivity",
+      "reference_label": "Chen et al. (2022)",
+      "description": "Exact bibliography identity; CombOptNet is cited under workshop2020 precursor title, author publication page confirms same work presentation; GNNexpressivity arXiv2210.10759 exact.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            9
+          ],
+          "locator": "Explicit in-text citation Chen and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "gnn-gbdt-ip",
+      "cited": "comboptnet",
+      "reference_label": "Paulus et al. (2020)",
+      "description": "paper p10 Paulus,Rolinek,Musil,Amos,Martius2020 Fit the right NP-hard problem: End-to-end learning of integer programming constraints,LMCA@NeurIPS2020. Earlier workshop version linked by author to formal CombOptNet; edge does not imply GNN&GBDT uses or cites ICML2021 version.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            10
+          ],
+          "locator": "Explicit in-text citation Paulus and matching bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall15publisherpagesand integratedA–E; manualscientificsupplement/codeinventory.",
+    "Clarified multi-taskmeaning, approximate8hlabels, restrictedsolverfraction versus globalcost/guarantees and localrepair limits.",
+    "Preservednegativecases, censoredauthor-selectedtime-to-target metric, printedtableerrors and incompleteofficialcodeinterfaces; recoveredfourcitationsincludingtwoaliases."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "d48648a70f0ede4b29ee709a86a7c0929549f27cdbb61d148710fb47966aeceb"
+}

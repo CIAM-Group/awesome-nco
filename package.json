@@ -10,6 +10,9 @@
   "scripts": {
     "content": "node scripts/build-content.mjs",
     "indexes": "node scripts/generate-indexes.mjs",
+    "audit:sync": "node scripts/sync-audit-coverage.mjs",
+    "review:sync": "node scripts/sync-review.mjs",
+    "review:complete": "node scripts/sync-review.mjs --require-complete",
     "sync": "npm run content && npm run indexes",
     "validate": "node scripts/validate-content.mjs",
     "dev": "npm run content && vite",

@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "paper_id": "neurolkh",
+  "note_path": "specialist/neurolkh.md",
+  "baseline_note_sha256": "74fc89074d5ddb2ea05fe32b393f2b0b6cb9fcf8232942c7838a2d23397491b7",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Paper.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Paper.pdf",
+      "version": "publisher PDF",
+      "local_path": "research/full-text-review/neurolkh/paper.pdf",
+      "sha256": "29365ad7e1234698e7bcfef5505a9051807d1a1f824cfe4db044a9562de6d824",
+      "pages": 12,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "supplement",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Supplemental.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Supplemental.pdf",
+      "version": "publisher supplementary PDF",
+      "local_path": "research/full-text-review/neurolkh/supplement.pdf",
+      "sha256": "eb9ad838687c3d009409cd68c724bc601684da53642fe925a4e2d14c24f042b0",
+      "pages": 9,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh restart reread title/affiliations, full motivation and relatedwork, LKHcandidate and1tree/penalty formulas."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Fresh SGN architecture equations1-8, edge/node objectives, candidate ranking and experimental training settings."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh Tables1-2 and Figure2, timebudget units, permyriadgaps, offline node-decoder adaptation versusTSPLIBedge-only, and otherproblem trainingprotocols."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Fresh Table3 andfeasibilityrepair, externalbenchmarksummary, limitations, acknowledgments andall36references."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Fresh full appendixA-D prose: candidate quality and sparsegraph ablations, largebudget comparator accounting, significanceexceptions, benchmark-specific retraining, FigureS1."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 4,
+      "last_page": 5,
+      "notes": "Fresh all TableS2hard andTableS3easy TSPLIBrows including failures and CPUtimes."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 6,
+      "last_page": 6,
+      "notes": "Fresh completeTableS4 continuation, reread singly after a combinedoutputtruncation; all easy-instance rows covered."
+    },
+    {
+      "source_id": "supplement",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Fresh all CVRPLIB and Solomon tablesS5-S7, perinstance mean/best/success and timeallowance columns; negativecomparisonsretained."
+    }
+  ],
+  "claims": [
+    {
+      "id": "learned-guidance",
+      "category": "contribution",
+      "statement": "SGN predicts candidate scores and TSP node penalties while retaining LKH local-search trials.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            4,
+            5,
+            6
+          ],
+          "locator": "Sections 4.1-4.3 Algorithm 1"
+        }
+      ]
+    },
+    {
+      "id": "losses",
+      "category": "method",
+      "statement": "Optimal TSP edges supervise edge scores; minimum-1-tree degree deviations train node penalties without penalty labels.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5
+          ],
+          "locator": "Section 4.2 Equations 7-8"
+        }
+      ]
+    },
+    {
+      "id": "invariance",
+      "category": "method",
+      "statement": "Adding endpoint penalties shifts all complete TSP tours by the same constant, preserving tour ordering.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5
+          ],
+          "locator": "Section 3 and Transform Edge Distance"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "category": "experiment",
+      "statement": "One TSP network is trained with approximately 780000 instances of 101-500 nodes, 30 layers, 128 hidden features and 20 nearest outgoing edges.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6
+          ],
+          "locator": "Dataset distribution and Hyperparameters"
+        }
+      ]
+    },
+    {
+      "id": "gap-units",
+      "category": "experiment",
+      "statement": "Tables 1-2 use basis points; TSP100 shortest-time NeuroLKH gap is 0.111 basis points, not 0.111 percent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "locator": "Tables 1-2 headers and entries"
+        }
+      ]
+    },
+    {
+      "id": "large-size-tuning",
+      "category": "method",
+      "statement": "Large synthetic TSP sizes use target-size unsupervised node-decoder tuning; this is not zero-shot penalty transfer.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7
+          ],
+          "locator": "Generalization analysis on larger sizes"
+        }
+      ]
+    },
+    {
+      "id": "tsplib",
+      "category": "limitation",
+      "statement": "TSPLIB uses edge scores only, and uniform training fails on some special patterns; mixture training changes the model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9
+          ],
+          "locator": "Generalization to TSPLIB benchmark"
+        }
+      ]
+    },
+    {
+      "id": "vrp-extension",
+      "category": "method",
+      "statement": "Other routing tasks use scores only and LKH-generated labels, with additional task features.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9
+          ],
+          "locator": "Section 5.2"
+        }
+      ]
+    },
+    {
+      "id": "benchmark-retraining",
+      "category": "reproducibility",
+      "statement": "CVRPLIB and Solomon experiments use additional benchmark-matched training distributions.",
+      "evidence": [
+        {
+          "source_id": "supplement",
+          "pdf_pages": [
+            2,
+            3
+          ],
+          "locator": "Appendix D"
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "category": "reproducibility",
+      "statement": "The shortest-time PDP/CVRPTW300 tests repair a small fraction of infeasible outputs by moving visits to the end.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            9,
+            10
+          ],
+          "locator": "Section 5.2 text preceding and following Table 3"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "category": "classification",
+      "statement": "This is incumbent local-search guidance; separate task networks and benchmark models do not establish one generalist checkpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            9
+          ],
+          "locator": "Algorithm 1; task training specifications"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions, publication year",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Paper.pdf",
+      "locator": "Publisher PDF page 1; affiliations include SIMTech, not NUS"
+    },
+    {
+      "field": "date",
+      "source_url": "https://arxiv.org/abs/2110.07983",
+      "locator": "Submission history v1, 15 October 2021"
+    },
+    {
+      "field": "code_url, models and integration",
+      "source_url": "https://github.com/liangxinedu/NeuroLKH",
+      "locator": "Publisher page 6 footnote 1; author README and pretrained/task-script directory listings"
+    },
+    {
+      "field": "figure",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/3d863b367aa379f71c7afc0c9cdca41d-Paper.pdf",
+      "locator": "Publisher PDF page 3 Figure 1; complete pipeline crop"
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/3d863b367aa379f71c7afc0c9cdca41d-Abstract.html",
+      "locator": "Official landing manually inspected2026-11-16: one scientific SupplementalPDF linked; complete9-page appendixread; noZIPoradditional scientificattachment linked."
+    },
+    {
+      "field": "publication date final primary-record audit",
+      "source_url": "https://proceedings.neurips.cc/paper/2021/hash/3d863b367aa379f71c7afc0c9cdca41d-Abstract.html",
+      "locator": "Identity-matched publisher citation_publication_date=2021-12-06; cached evidence research/full-text-review/neurolkh/page-1.html. Conference edition year 2021 is retained; author-site conference dates/preprint dates are separate."
+    },
+    {
+      "field": "arXiv v1 date final primary-history audit",
+      "source_url": "https://arxiv.org/abs/2110.07983",
+      "locator": "Primary canonical arXiv identifier and complete v1 history independently checked: 2021-10-15; title on abstract page: NeuroLKH: Combining Deep Learning Model with Lin-Kernighan-Helsgaun Heuristic for Solving the Traveling Salesman Problem. This date is preprint history, not formal publication. Cached research/full-text-review/neurolkh/arxiv-date-audit.html."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "neurolkh",
+      "cited": "neural-combinatorial-optimization",
+      "reference_label": "[1] Bello et al., neural combinatorial optimization",
+      "description": "Cites the early recurrent RL construction approach; its bibliography year/track is not used as publication evidence for the target.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Main-text cited reference [1]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "neurewriter",
+      "reference_label": "[4] Chen and Tian, NeurIPS 2019",
+      "description": "Discusses learned region/rule selection for improving existing solutions.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Main-text cited reference [4]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "[6] Dai et al., NeurIPS 2017",
+      "description": "Cites structure2vec-based learned graph optimization among constructive methods.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            11
+          ],
+          "locator": "Main-text cited reference [6]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "att-gcn",
+      "reference_label": "[8] Fu et al., AAAI 2021",
+      "description": "Discusses and compares subgraph-based transfer of a small pretrained TSP model.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            6,
+            8,
+            11
+          ],
+          "locator": "Main-text cited reference [8]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "learning-to-improve",
+      "reference_label": "[9] Lu et al., ICLR 2020",
+      "description": "Cites learned iterative vehicle-routing improvement in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Main-text cited reference [9]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "latent-search-space-routing",
+      "reference_label": "[15] Hottung et al., ICLR 2021",
+      "description": "Discusses and compares a learned latent-space search approach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            11
+          ],
+          "locator": "Main-text cited reference [15]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "neural-large-neighborhood-search",
+      "reference_label": "[16] Hottung and Tierney, ECAI 2020",
+      "description": "Cites neural large-neighborhood routing improvement in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            11
+          ],
+          "locator": "Main-text cited reference [16]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "[18] Joshi et al., arXiv:1906.01227 (2019)",
+      "description": "Cites graph-convolutional tour-edge prediction and compares its greedy/beam-search outputs.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            12
+          ],
+          "locator": "Main-text cited reference [18]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "deep-policy-dynamic-programming",
+      "reference_label": "[20] Kool et al., arXiv:2102.11756 (2021)",
+      "description": "Discusses and compares policy-guided dynamic programming; the source cites the preprint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            12
+          ],
+          "locator": "Main-text cited reference [20]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "attention-model",
+      "reference_label": "[21] Kool et al., ICLR 2019",
+      "description": "Uses the Attention Model routing-distribution setup and compares the neural routing baseline.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            4,
+            6,
+            8,
+            9,
+            12
+          ],
+          "locator": "Main-text cited reference [21]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "pomo",
+      "reference_label": "[22] Kwon et al., NeurIPS 2020",
+      "description": "Cites POMO construction and compares its reported TSP result.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            8,
+            12
+          ],
+          "locator": "Main-text cited reference [22]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "rl-vrp",
+      "reference_label": "[26] Nazari et al., NeurIPS 2018",
+      "description": "Cites recurrent reinforcement-learning construction for vehicle routing.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            12
+          ],
+          "locator": "Main-text cited reference [26]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "pointer-networks",
+      "reference_label": "[32] Vinyals et al., NeurIPS 2015",
+      "description": "Cites supervised neural route construction as an early routing approach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            12
+          ],
+          "locator": "Main-text cited reference [32]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[33] Wu et al., TNNLS early-access citation (2021)",
+      "description": "Discusses learned improvement moves and compares their TSP performance; the bibliography cites its journal early-access year.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            8,
+            12
+          ],
+          "locator": "Main-text cited reference [33]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "step-wise-routing",
+      "reference_label": "[34] Xin et al., TII early-access citation (2020)",
+      "description": "Cites step-wise routing representations in the introduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Main-text cited reference [34]; corresponding bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "neurolkh",
+      "cited": "multi-decoder-attention-model",
+      "reference_label": "[35] Xin et al., AAAI 2021",
+      "description": "Cites multi-decoder attention construction in the introduction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            12
+          ],
+          "locator": "Main-text cited reference [35]; corresponding bibliography entry"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Fresh restart complete reread confirmed all21pages, detailed scientificnote, benchmarkadaptation distinctions and16explicitdirected citations.",
+    "Final timeline audit: distinguish exact arXiv v1 history from primary publisher electronic-record date; retain conference/volume edition year and source-supported precision."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_routing",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "ae213270cae9ecad3e658257869a602d1bc6cb76a2a06904b2764f98315b22b7"
+}

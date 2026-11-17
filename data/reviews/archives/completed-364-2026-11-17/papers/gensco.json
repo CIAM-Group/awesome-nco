@@ -1,0 +1,900 @@
+{
+  "version": 1,
+  "paper_id": "gensco",
+  "note_path": "specialist/gensco.md",
+  "baseline_note_sha256": "dbe80a05fe05d106fc75da85f28970482734aefdab2a9c3d7a6399cc9d0e6f2f",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8e9869fa827226ff68db9290659a20c-Paper-Conference.pdf",
+      "retrieval_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8e9869fa827226ff68db9290659a20c-Paper-Conference.pdf",
+      "version": "Formal NeurIPS2025 proceedings29pages allmain/references/checklist/AppendicesA–E freshly read",
+      "local_path": "research/full-text-review/gensco/paper.pdf",
+      "sha256": "5347c57a56bd075ba5346eab14b4ff4e238066c6a8dc1cfd8be61e97addf1f9a",
+      "pages": 29,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 4,
+      "notes": "Freshcomplete1–4Fig1/introduction/relatedwork/preliminaries;5authorsSJCSE+AI/ShanghaiInnovation,RunzhongnowMITfootnote. ActualTSP/MIS/MCl definitions,oldnoteonlyTSP needsfullAppendE. Flowmaps suboptimal→optimal,randomdisruptionthenenhance/feasibilitypostproc. No universalguaranteeofstableimprovementfromintroprose."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 8,
+      "notes": "Freshfull5–8/Eqs2–6/Algo1/Tables1–2. Properflowvelocitysubopt−opt,tdecreasing Euler;tasknodeTransformeradjacencybias/edgehhT stillquadraticattention. Foursteps8parallel,N/50 optional2opt,Concordetraining1.28M100/128K500/1000,test1280/128. ResultsTSP100rounded0notalloptimalcertificate;LKH100014096.001better. GenSCO100→1K5.40%worseT2T3.16,notuniversaltransfer. AlgorithmloopindexNτ τNτ+1undefinedbutEq5valid range;curatecode."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 12,
+      "notes": "Freshfull9–12 resultsMIS/MClandrefs1–38. MIS200–300RB/700–800ERp.15;3stepsnonparallelC500–16k,KaMISstronger44.87vs44.41notcertifiedoptimal. MClRB200–300/800–1200Gurobitime-limitedreference,negativegapnotbetterthanprovedoptimum;334xrelative38.4hvs6.9minprotocol. Traininglowerquality2optand1/75selflabel. BibliographyCosta2020notDeudon2018;[36],[38]duplicateGLHregardoneedge."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 16,
+      "notes": "Freshfull13–16complete91refs/checklistfirst3. [41]SILBoosting7authorsnotrenamecasual;[36]/[38]GLHduplicate. Ref[78]LinKernighan1973 actuallyLKnotclassic2optbenchmarkclaim. PublicationHTMLnowexplicit2026-04-23 vsoldarxivMay23/CFPacceptSept18mustcorrectonlyformaldate."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 17,
+      "last_page": 20,
+      "notes": "Freshallchecklist17–20questions3–12andguidelines. ExplicitNOerrorbars/statisticalsignificance,128/1280instanceaveragesnottrainingseeds. TheoryNA(notproveconvergence). SourcecodepromisefuturepublicationfootnoteactualcurrentJAXalreadyavailabledistinguish."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 21,
+      "last_page": 24,
+      "notes": "Fresh21–24checklistcomplete/A–C2. LimitLKHcatchup large,TSPLIBhard. Table6eightparallelruns vs1/2/4 actualtime scales;TSP500C401run.0282.408s vs8.01317.974,TSP1k.0837.609s vs.04747.468s. Table7 TSPLIB29rows50–200 C20016runs,failkroB150.34vsT2T0;meanrowfirstfourduplicateeil51 nottrust. SumGenSCO29gaps1.73/29=.059655vsprinted.061pendingexact."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 25,
+      "last_page": 29,
+      "notes": "Freshall25–29/C2–7/D1–4/EarchitecturesallTables8–13andFigures3–5. 500TSPLIB20casesd4933.872>worseFast1.43;means.355. Table10C40rowactuallymainC10numbers16.549.019/23.133.063;Table12headers100/500values16.55/23.13 imply500/1000. D1GTX4090typoRTX4090,intimealltestsGPUclaimnoCPUclassicalhardware. D2fiveinference seedsnottraining/errorbars;topk5000/20000;D3ConcordeTSPrefs/KaMISgraphrefs,trainRB90K/ER163840. E16enc6decTSP256h8;MISnoencdec12RB8ERh4;taskweightsseparateall29complete."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Single-generation denoising saturation motivates allocating inference compute to repeated solution-to-solution search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction andrelatedwork"
+        }
+      ]
+    },
+    {
+      "id": "contribution",
+      "category": "contribution",
+      "statement": "Rectifiedflow learning plus randomdisruption/shortenhancement/feasibledecoding andnodeTransformer supports iterative testtime search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "locator": "Equations2–6/Figure1/Algorithm1"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "SeparateTSP/MIS/MClmodels learn to improveexisting solutions; classical randominitialization, task-specificdecoding, optional2opt and bestseen retention.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            9,
+            10,
+            29
+          ],
+          "locator": "Actualmodelarchitectures andinference"
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "category": "experiment",
+      "statement": "TSP100/500/1000/TSPLIB, MISRB/ER andMClRB,exactcycle/parallel/augmentation budgets andstrongerLKH/KaMIS/transferexceptions retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            10,
+            23,
+            24,
+            25,
+            26,
+            28,
+            29
+          ],
+          "locator": "All13tables/fivefigures/fullAppendices"
+        }
+      ]
+    },
+    {
+      "id": "limitation",
+      "category": "limitation",
+      "statement": "LargescaleLKHcatchup/TSPLIBhardcases,source-labelinconsistencies andnocertificationfromroundedzero/negativeGurobigaps;fiveinferenceseedsnottheoreticalortrainingrobustness.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            8,
+            9,
+            10,
+            18,
+            23,
+            24,
+            25,
+            26,
+            28
+          ],
+          "locator": "Limits/checklist/actualnegativecases"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "Specialist improvement: separate taskmodels and learnedsolutionenhancement after classical initialsolution,notonecrossproblemcheckpoint.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            9,
+            10,
+            29
+          ],
+          "locator": "Actualinitialization andtaskarchitectures"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity and publication",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/b8e9869fa827226ff68db9290659a20c-Abstract-Conference.html",
+      "locator": "FiveformalYangLi/LvdaChen equalcontrib/HaonanWang/RunzhongWang/JunchiYan;SJCSE+AI/ShanghaiInnovation andcurrentMITfootnote. Explicitpublisher2026-04-23replacespreprintMay23 andgenericCFPnotificationremoved;venue2025retained."
+    },
+    {
+      "field": "supplements and scientific inventory",
+      "source_url": "https://neurips.cc/virtual/2025/poster/119551",
+      "locator": "All29pagesmain/refs91/checklist/Algo1/AppendicesA–Eread;fivefigures13tablesvisualchecked. Officialeventnoposter/slides,SlidesLiveboilerplatenoembed.108treeuntruncated/109ZIP1.52MB/twoREADMEfullread/noextraPDFnotebookarchive. OpenReviewAPI403notclaimedread."
+    },
+    {
+      "field": "actual tasks and paradigm",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8e9869fa827226ff68db9290659a20c-Paper-Conference.pdf#page=7",
+      "locator": "PreviouslyTSPonlyomittedactualMIS/MClmainTables4/5. Nativearchitecturesweightsseparate,specialist. ClassicrandominitializationfollowedNNsolutionenhancement,changedmixed→improvement;greedyrepairwithinoperatornotseparatelearnedinitialconstructor."
+    },
+    {
+      "field": "results and statistics boundaries",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8e9869fa827226ff68db9290659a20c-Paper-Conference.pdf#page=8",
+      "locator": "TSP100rounded0in6s141xspecificvs14.1m;1kLKH128.0153.1m better/fasterthanC160.0363.9m;100→1k5.40worseT2T3.16;MISKaMISstronger,MClnegativegaptime-limitedGurobi. Fiveinferenceseeds/noerrorbars. Table7fourduplicatemeans/Table10cyclelabels/Table12scaleheaderinconsistent."
+    },
+    {
+      "field": "current release/formal differences",
+      "source_url": "https://github.com/Thinklab-SJTU/GenSCO",
+      "locator": "TSPtrainerlogsoftmaxCEvsEq4MSE;randpermnoise+disruptedtarget/Muon/LKHnamedtrainpath. TSPDPM++2MvswrittenEuler;MISEulerascendingtargetcurrent/(1−t). TSP500topk5000vs20000;MISdecode_intermediateandbatch-indexseedratherthanCLIseed. RawEuclideanTSPLIBcomparisonqualified. NoNNtraining/benchmarkreplay."
+    },
+    {
+      "field": "original figure and full citation identities",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/b8e9869fa827226ff68db9290659a20c-Paper-Conference.pdf#page=2",
+      "locator": "Figure1crop105,70,508,352fullcaptionvisualchecked;43exacttitlecandidates+manual6author2305.17010GFlowNetfor44trueedges. SIL7authorformalBoostingentryexplicit,notincorrectrenamematch;Costa2020noDeudonedge."
+    },
+    {
+      "field": "citation_identity:gflownet-combopt",
+      "source_url": "https://arxiv.org/abs/2305.17010",
+      "locator": "Source p12 explicitly prints arXiv2305.17010 with the older Optimization title and historical six-author list including Nikolay Malkin. The target reviewed manuscript and primary arXiv identity match; current HTML author/title changes are preserved as version differences, not an assertion that every author name is unchanged."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "gensco",
+      "cited": "att-gcn",
+      "reference_label": "Generalize a Small Pre-trained Model to Arbitrarily Large TSP Instances",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "attention-model",
+      "reference_label": "Attention, Learn to Solve Routing Problems!",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "bq-nco",
+      "reference_label": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "coexpander",
+      "reference_label": "COExpander: Adaptive Solution Expansion for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "compass",
+      "reference_label": "Combinatorial Optimization with Policy Adaptation using Latent Space Search",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "cryptoanfnet",
+      "reference_label": "Learning Plaintext-Ciphertext Cryptographic Problems via ANF-based SAT Instance Representation",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "diffuco",
+      "reference_label": "A Diffusion Model Framework for Unsupervised Neural Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "difusco",
+      "reference_label": "DIFUSCO: Graph-based Diffusion Solvers for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "dimes",
+      "reference_label": "DIMES: A Differentiable Meta Solver for Combinatorial Optimization Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "efficient-active-search",
+      "reference_label": "Efficient Active Search for Combinatorial Optimization Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "efficient-graph-convnet-tsp",
+      "reference_label": "An Efficient Graph Convolutional Network Technique for the Travelling Salesman Problem",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "erdos-goes-neural",
+      "reference_label": "Erdos Goes Neural: an Unsupervised Learning Framework for Combinatorial Optimization on Graphs",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "fast-t2t",
+      "reference_label": "Fast T2T: Optimization Consistency Speeds Up Diffusion-Based Training-to-Testing Solving for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "fld-co",
+      "reference_label": "Fractional Langevin Dynamics for Combinatorial Optimization via Polynomial-Time Escape",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "glop",
+      "reference_label": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "graph-guided-local-search",
+      "reference_label": "Graph Neural Network Guided Local Search for the Traveling Salesperson Problem",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11,
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "latent-search-space-routing",
+      "reference_label": "Learning a Latent Search Space for Routing Problems Using Variational Autoencoders",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Learning Combinatorial Optimization Algorithms over Graphs",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "Learning Improvement Heuristics for Solving Routing Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "learning-to-delegate",
+      "reference_label": "Learning to Delegate for Large-Scale Vehicle Routing",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "learning-what-to-defer",
+      "reference_label": "Learning What to Defer for Maximum Independent Sets",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "lehd",
+      "reference_label": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "meta-egn",
+      "reference_label": "Unsupervised Learning for Combinatorial Optimization Needs Meta Learning",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "neuopt",
+      "reference_label": "Learning to Search Feasible and Infeasible Regions of Routing Problems with Flexible Neural k-Opt",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "neurewriter",
+      "reference_label": "Learning to Perform Local Rewriting for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "pointer-networks",
+      "reference_label": "Pointer Networks",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "pomo",
+      "reference_label": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "principled-co-relaxation",
+      "reference_label": "Unsupervised Learning for Combinatorial Optimization with Principled Objective Relaxation",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "prnet-chip-design",
+      "reference_label": "The Policy-gradient Placement and Generative Routing Neural Networks for Chip Design",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "rbg",
+      "reference_label": "RBG: Hierarchically Solving Large-Scale Routing Problems in Logistic Systems via Reinforcement Learning",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "sil",
+      "reference_label": "Boosting Neural Combinatorial Optimization for Large-Scale Vehicle Routing Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "sym-nco",
+      "reference_label": "Sym-NCO: Leveraging Symmetricity for Neural Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "t2t",
+      "reference_label": "T2T: From Distribution Learning in Training to Gradient Search in Testing for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "tam",
+      "reference_label": "Generalize Learned Heuristics to Solve Large-scale Vehicle Routing Problems in Real-time",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "udc",
+      "reference_label": "UDC: A Unified Neural Divide-and-Conquer Framework for Large-Scale Combinatorial Optimization Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "utsp",
+      "reference_label": "Unsupervised Learning for Solving the Travelling Salesman Problem",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            11
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "gcn-guided-tree-search",
+      "reference_label": "Combinatorial Optimization with Graph Convolutional Networks and Guided Tree Search",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "unico",
+      "reference_label": "UniCO: On Unified Combinatorial Optimization via Problem Reduction to Matrix-Encoded General TSP",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "adversarial-nco-generalization",
+      "reference_label": "Generalization of Neural Combinatorial Solvers Through the Lens of Adversarial Robustness",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "mis-tree-search-audit",
+      "reference_label": "What’s Wrong with Deep Learning in Tree Search for Combinatorial Optimization",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            15
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "ml4co-bench-101",
+      "reference_label": "ML4CO-Bench-101: Benchmark Machine Learning for Classic Combinatorial Problems on Graphs",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "ml4tspbench",
+      "reference_label": "Unify ML4TSP: Drawing Methodological Principles for TSP and Beyond from Streamlined Design Space of Learning and Search",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            13
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "softdist",
+      "reference_label": "Position: Rethinking Post-Hoc Search-Based Neural Approaches for Solving Large-Scale Traveling Salesman Problems",
+      "description": "Full bibliography entry manually matched by title/authors; duplicate references produce one target edge and source-year differences do not overwrite formal metadata.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Complete References pp11–15, freshly read and manually identified."
+        }
+      ]
+    },
+    {
+      "citing": "gensco",
+      "cited": "gflownet-combopt",
+      "reference_label": "[23] Let the Flows Tell, arXiv:2305.17010",
+      "description": "Exact arXiv identifier and title lineage identify the catalogued paper despite optimization/problems wording and author-name metadata variation; current formal target metadata is retained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12
+          ],
+          "locator": "Reference23: exact arXiv2305.17010 and manually checked title/author lineage; current target formal author metadata retained."
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall29formalpages/fullA–E/checklist/91refs/fivefigures13tables.",
+    "Correctedpublicationdateusingexplicitpublishermetadataandremovedgenericacceptancedate.",
+    "AddedmissingMIS/maximumcliqueandaffiliations;specialistretainedandparadigmchangedtoimprovement.",
+    "Documentedexactinferencebudgets andclassical/transfernegativecases,roundedzeroandtime-limitedreferencelimits.",
+    "RecordedprintedtableinconsistenciesandcurrentJAXloss/integrator/seed/defaultdifferenceswithoutrefutinghistoricalresults.",
+    "AddedoriginalFigure1and44explicitmanuallymatchedcitations."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "root",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "0d2920c4a0a797a17d4941f1154648bffc88f7b3a584d5f98d849f0043ac44f7"
+}

@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "paper_id": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+  "note_path": "generalist/unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra.md",
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_studies",
+  "baseline_note_sha256": "f0b6438f79821c7b1cdca631a30cf5451b6df7a5cca7d135d5fc8175cd10f163",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://dspace.mit.edu/bitstreams/b845cf5d-15fc-49be-8b92-19916ad11248/download",
+      "retrieval_url": "https://dspace.mit.edu/server/api/core/bitstreams/b845cf5d-15fc-49be-8b92-19916ad11248/content",
+      "version": "MITfinalpublishedWWW2025copy,1repositorycover+14scientificpagesallread incl36refs/AppendA–B. Deposit14pPDFtextand72dpirendersidenticaloffset, noextrascience;formal2025-04-22independentlychecked.",
+      "local_path": "research/conference-163-2026-11-17/studies/nco-b00b82bddb/formal-api.pdf",
+      "sha256": "4c916966597ed2755864407e3fdd4d9729cde7ef05a37d0ed408358f3e71d4ba",
+      "pages": 15,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 2,
+      "notes": "Read MIT finalpublishedversioncover andfullformalbyline/abstract/openingintroduction. FourauthorsSJTU/MIT,DOI/14scientificpagespluscover. Native PMP andFRP identified; sharedcheckpoint evidence pendingfullread. P2000xspeedupclaim totraceprotocol."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 3,
+      "last_page": 4,
+      "notes": "Read fullintroduction/contributions, allrelatedwork2.1/2.2 andPMP/FRPdefinitionsEqs1–5. FRP atmostkdistinctoriginalfacilities removalwithinsertoutsideF0 vsunconstrainedPMPsameweightednearestshortestpathcost, algorithm1moduleexplicit. SharedNNacrossmodespending4.5/code, noarchitecture-onlyinference."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 5,
+      "last_page": 6,
+      "notes": "Read completeAlgorithms1/2, rewardEq6, graphVoronoi/currentfacilityfeatures and conditionalremoval/insertion attentionEq7–10,4.5sameSwapRelocateagent inPMPwrapper. Exact atmostkdistinctFRP feasibility vs unrestrictedmoveaction toqualifyAppendC/codeifnecessary. SyntheticGabrielconnectedshortestpathgraphgeneration/threebaselineopening read."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 8,
+      "notes": "Read allTables1/2 andFigs3–5/completeFRP+PMPprotocol/gapdefinitions. Tenrandomgraphs eachn100/200/500/1000,facility5–40,budgetfloorp/2,20FRPtrials;PMP T5K20Sp; SA1000. Table1 n1000 G128.20/PPO.16=801.25, printed>2000notmatchedbyaverageratio; PMP126.40/1.53=82.6. PPOqualitygapsnonzero; Gurobiexactfasteron100/200PMP. SpoNetunweighted100/p15separatetrainnotallcheckpointsame."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 9,
+      "last_page": 10,
+      "notes": "Read fullcomplexityexperiments/unweightedSpoNetretraining andShanghai5kmgridperturbedpopulation1000training, conclusion/authorslimitations, complete36refs andAppendA.1hardwareXeon6226R64coreRTX3090/CUDA12.1/GNN3x128MLP3x128Adam.005decay.995. Shanghaiandunweightedcomparison explicitlyseparatelyretraineddomains; avoidsingleweightsallgraphsclaim. Main FRP/PMPsameframeworkmodelroute remains pendingfullA."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 11,
+      "last_page": 12,
+      "notes": "Read fullAppendA2/3/Table3 PPOparameters300epochs gamma.9+GAE.95batch64steps1024optim4 versuscurrentconfiggamma.99; adaptedBestResponseobjective/budget randomselectedfacilities. AppendixBgrid27combosTable4 andallTables5/6/7FRP(n100/200/500,8pvalues), allmean/stdtime/quality/gapentries read. Table5/6repeatGurobiQ andsomeheuristicQexactly acrosssizes, mainaggregationneedsqualifiednotrecomputedexperiments. B2/B3bothdescribe100onlytrainedmodel."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 14,
+      "notes": "Read everyTable8FRP1000/Table9PMP100/Table10PMP200/Table11PMP500 mean/std/gap/time acrossall8facilitynumbers. FRPn1000p5supports>2000x111.32/.03butp40only133.45/.28; featureablationsPMPexplicit. Maintainseparatecase-specificspeedupsandnonzeroqualitygap, noaggregate2000claim."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 15,
+      "last_page": 15,
+      "notes": "Read entirefinalTable12PMPn1000 all7methods/8facilitycounts/meanstd gaps andtimes, endsformalarticle1195. LargePPO2.59–14.24gapdependingp; greedy.04–.19qualitybetterattimecost. Fullsourcecover+14scienceallpagesactuallycovered, nodefaulttablesomitted."
+    }
+  ],
+  "claims": [
+    {
+      "id": "motivation",
+      "category": "motivation",
+      "statement": "Graphshortestpathfacilityoptimizationbenefitsfromrevisablecompletefacilitysetsratherthanmyopicconstruction.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            2,
+            3,
+            4
+          ],
+          "locator": "Introduction/RelatedWork/Formulation"
+        }
+      ]
+    },
+    {
+      "id": "contributions",
+      "category": "contribution",
+      "statement": "SharedswapagentforFRP/PMP,Voronoi-awarefeaturesandconditionalpairselection; domainspecificadditionalmodelsseparate.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "locator": "Contributions/Algorithms1–2/4.5/5.3/5.5"
+        }
+      ]
+    },
+    {
+      "id": "method",
+      "category": "method",
+      "statement": "Demandweightednearestfacilityobjective, cardinalitymasks andPPOincrementalreward; p-medianouterrestartreusessameagent.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6
+          ],
+          "locator": "Eqs1–10/Algorithms1–2"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "category": "experiment",
+      "statement": "1000train100nodes;10testgraphs4sizes8facilitycounts,20FRPtrialsPMP5x20xpswaps; case-specific>2000x doesnotdescribeallaverages/equalquality.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "Mainsetup/Tables1–12/AppendixA/B"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "category": "limitation",
+      "statement": "Gurobi/greedybetterqualityandGurobifastersmallPMP; discrepancyFRPgapdefinition/repeatedTable5/6GurobiQandaggregatequalificationsretained.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            12,
+            13
+          ],
+          "locator": "Tables1/2/5/6/8,conclusion"
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "category": "classification",
+      "statement": "GeneralistimprovementqualifiedsameneuralswapagentbudgetedFRP+PMP, separateunweighted/Shanghairetraining notonesharedweightsallsettings.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "locator": "Algorithm1/2/4.5/B2/B3 andsharedmodel-loadercode"
+        }
+      ]
+    },
+    {
+      "id": "repro",
+      "category": "reproducibility",
+      "statement": "CompleteMITfinalpublished15pagesincludingcover/14scienceallread, originaldepositsame14renderedpages andarchiveshaveonlycode/nopdfextra.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "locator": "MITcover/byline/completeReferences/allAppendA/B"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "title, authors, institutions",
+      "source_url": "https://dspace.mit.edu/bitstreams/b845cf5d-15fc-49be-8b92-19916ad11248/download",
+      "locator": "Formalp1182/PDF2 named4authorbyline SJTU/MIT andformalDOI; MITfinalpublishedversionmetadata andCrossrefagree."
+    },
+    {
+      "field": "venue, date, publication date",
+      "source_url": "https://dspace.mit.edu/entities/publication/444c3fe5-133c-491a-8aad-171101c16f31",
+      "locator": "MITdateissued2025-04-22, Crossrefonline/print2025-04-22,formalWWW2025pp1182–1195. Notconferenceinterval. Earlierarxiv2312.15658hasdifferenttitle/3authors; notsilentlyattachedassameformalversion/date."
+    },
+    {
+      "field": "scope, paradigm",
+      "source_url": "https://dspace.mit.edu/bitstreams/b845cf5d-15fc-49be-8b92-19916ad11248/download#page=6",
+      "locator": "PDF5/6Alg1/2and4.5sameagent/SwapRelocatesubroutine; singletrainingroute5.1vs5.2 reuse+B2/B3. Officialmethods/ppo_swap.py15–23sharedloader177/200dualentrypoints; noactualweightsavailable,configsplaceholder. Rootauthorizedgeneralist/improvementlimitedFRP/PMP; extraunweighted/Shanghai training explicitlyexcludedfromonesharedcheckpointclaim."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://dspace.mit.edu/bitstreams/e9261c5d-3bea-455a-a99e-b0a22878e537/download",
+      "locator": "OriginaldepositZIP2membersmets.xml+formal14pPDF. All14textpages+72dpipixelssamecoveroffsetwithregisteredMIT15pPDF,comparisoncached; notduplicatedsciencecounts. NamedAppendA/Ballread. OfficialGitHub27members24files+nosciencePDF/video/archive;linkedZenodo14847752→14847753v1.0ZIP25membersnoscienceattachments. ACMsupp/ORAPI403cached, noexplicitmissinguniqueprooforresults."
+    },
+    {
+      "field": "code, version, availability",
+      "source_url": "https://github.com/AryaGuo/PPO-swap/tree/4c0558b41f98a48a7a1bd6697308eafceb566b88",
+      "locator": "PrimarycommittedDate2025-02-11T13:22:44+08:00 cachedcommitHTML, completeZIP/inventory/hash. README/environment/configs/sharedPPOloader+solvepathsread, noNNweights/checkpoints/datasetsinGitHubarchive; bothconfigsckpttodo_version, gammaconfig.99vsTable3.9. NoNN/Gurobihistoricalreproduction."
+    },
+    {
+      "field": "visual and numeric checks",
+      "source_url": "https://dspace.mit.edu/bitstreams/b845cf5d-15fc-49be-8b92-19916ad11248/download#page=13",
+      "locator": "Actualview PDF3/5/7/8/9/11/12/13/14/15 coversall7figures/all12tables; originalFig2crop55,80,565,325fullcleanview. Curatorroundedtimeratios128.20/.16=801.25,126.40/1.53=82.61,111.32/.03=3710.67 case-specific; Table5Gtimesroundedmean.345notmain.15. Preserveprintedresults/noinventedcorrectedexperiments."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+      "cited": "neurewriter",
+      "reference_label": "[5]",
+      "description": "Discusses region/rule local rewriting as a prior neural improvement approach.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "RelatedWork2.2PDF4; fullChen/TianNeurIPS2019referencePDF10"
+        }
+      ]
+    },
+    {
+      "citing": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+      "cited": "learning-to-improve",
+      "reference_label": "[20]",
+      "description": "Related iterative VRP improvement and perturbation mechanisms, not a checkpoint used by PPO-swap.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "RelatedWork2.2PDF4; completeLu/Zhang/YangICLRentry[20]PDF10"
+        }
+      ]
+    },
+    {
+      "citing": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+      "cited": "learning-improvement-heuristics",
+      "reference_label": "[34]",
+      "description": "Cites attention-compatibility routing improvement in related work.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "RelatedWork2.2PDF4; exactWuetalTNNLSbibliography[34]PDF10"
+        }
+      ]
+    },
+    {
+      "citing": "unified-and-generalizable-reinforcement-learning-for-facility-location-problems-on-gra",
+      "cited": "l2s-jssp",
+      "reference_label": "[35]",
+      "description": "Cites RL-guided job-shop improvement as related neural local search.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            10
+          ],
+          "locator": "RelatedWork2.2PDF4; completeZhangetalICLR2024reference[35]PDF10"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "supplements_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "ReplacedpendingwithcompleteMITfinalarticleallrefs/A–B andscientificdeposit/archiveinventories.",
+    "Migratedspecialist→generalist/improvementbyactualsameagentFRP/PMPwrapperevidence, qualifiedseparatetrainingdomains/absenthistoricalweights.",
+    "Replacedunqualified2000xheadlinewithreportedcase-specificratios/nonzeroqualitygaps/smallGurobiwinsandprintedmetrics/tableissues.",
+    "AddedcompleteoriginalFig2andfiveactualbody+bibmatchedcitations; noearlypreprintformalversionconflation.",
+    "User-authorized deferral: supported citation evidence preserved in conference163 deferral record; target omitted from active internal graph."
+  ],
+  "reviewed_note_sha256": "53dc3d0f1a2e7fc51c32d0f0a030b5696eefe75fd2b8e78165e3a04cb5fd3c21"
+}

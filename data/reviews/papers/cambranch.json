@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "paper_id": "cambranch",
+  "note_path": "specialist/cambranch.md",
+  "baseline_note_sha256": "9de2dfd83e361c5d55acbf48fe6230dcae2d5b018c23137932b1f53f50391bf4",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "paper",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/7b39f4512a2e3899edcc59c7501f3cd4-Paper-Conference.pdf",
+      "version": "publisher proceedings PDF",
+      "retrieval_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/7b39f4512a2e3899edcc59c7501f3cd4-Paper-Conference.pdf",
+      "local_path": "research/import-272/nco-bf5aed1d3d.pdf",
+      "sha256": "4950074cf49749687ca27fdf8b36b7f7a7071452463509cc1a6e92d7ef42a2c8",
+      "pages": 24,
+      "identity_checked": true,
+      "version_checked": true
+    },
+    {
+      "id": "slides",
+      "url": "https://iclr.cc/media/iclr-2024/Slides/18917.pdf",
+      "retrieval_url": "https://iclr.cc/media/iclr-2024/Slides/18917.pdf",
+      "version": "ICLR2024 official presentation slides",
+      "local_path": "research/full-text-review/cambranch/slides.pdf",
+      "sha256": "2200852be56021b46ea0c7891580bcda143980184d0e81ba26ea8119895c06db",
+      "pages": 1,
+      "identity_checked": true,
+      "version_checked": true
+    }
+  ],
+  "reading_log": [
+    {
+      "source_id": "paper",
+      "first_page": 1,
+      "last_page": 3,
+      "notes": "Read formalidentity/affiliations/equalcontributors, SBsamplingcosts andbipartitevariable/constraint/featuresbackbone, augmentationpremise pendingtheoremassumptions."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 4,
+      "last_page": 6,
+      "notes": "Read integerpreservingshifts/objectiveconstant andSBtranslationproof, dual/reducedcostfeatureclaims, graphInfoNCE andper-taskmodels/backendSCIP6.0.1; theoremneedsmatchedLPoptima/tiesnotarbitrarysolverpath."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 7,
+      "last_page": 9,
+      "notes": "Read allmainresults/metrics20instancesx5seeds,10percentimitationgapvsfullGCNN, completeTable2negativeSetCovering andCAnondecrease; dataefficiency8.76vs84.79h, CL/fullCAablations."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 10,
+      "last_page": 12,
+      "notes": "Read completebibliographyA-KincludingexactGasse/Gupta/S2Vandnonnnbranchingbackground; noauthorcodelinkyety."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 13,
+      "last_page": 15,
+      "notes": "Read remainingfullreferencesK-Z includingtreeMDP/NairpreprintandappendixcontentsA-G; noexternalcodelinkinthebibliography."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 16,
+      "last_page": 18,
+      "notes": "Read fullBproofs: exacttranslationofprimaloptimalset/dualsameobjective/reducedcostwithsamebasis; solverchosenoptima/basisnotarbitrary; appendixTables4-5binarytointegerchangeandincvalindexsuspectedtypo."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 19,
+      "last_page": 21,
+      "notes": "Read fullthreepartloss sup/InfoNCE/squaredconsistency, allbackend/hardware/trainparameters, SGM1time/100nodes andtables6-10negativecases plustrainingoverhead/instancecountdiscussion."
+    },
+    {
+      "source_id": "slides",
+      "first_page": 1,
+      "last_page": 1,
+      "notes": "Read completeofficialonepagepresentationslides, augmentation/loss/results/costdiagram; visualchecknext."
+    },
+    {
+      "source_id": "paper",
+      "first_page": 22,
+      "last_page": 24,
+      "notes": "Read alltrainingoverhead.09666vs.09216s/Table12nonmonotoneinstancecounts, imitationaccuracy-not-runtime discussion, completeFrelatedwork/Gfourformulations, facilityindexerrorsnotusedasempiricalcounterclaims."
+    }
+  ],
+  "claims": [
+    {
+      "id": "cam-contribution",
+      "category": "contribution",
+      "statement": "Integer-preservingshiftaugmentation suppliesmappedSBlabels andGCNNthreepartsupervised/contrastive/consistencyobjective.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            6,
+            18,
+            19
+          ],
+          "locator": "Section3/AppendixC"
+        }
+      ]
+    },
+    {
+      "id": "cam-method",
+      "category": "method",
+      "statement": "Primal/dualsettranslationwithconstantandbounds, exactSBcandidateboundmatching requirescorrespondingLPstates/ties; reducedcostproofsamebasis.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            4,
+            5,
+            16,
+            17
+          ],
+          "locator": "Theorem3.1/Lemma3.1/AppendixB"
+        }
+      ]
+    },
+    {
+      "id": "cam-experiment",
+      "category": "experiment",
+      "statement": "DataefficienthardCFL/MISgainsbutallSCtimeslosefullGCNN, sample-ratio/CLablationnegativecases andcollectionversustrainingcostdistinguished.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            7,
+            8,
+            9,
+            20,
+            21,
+            22
+          ],
+          "locator": "Tables2-3/6-12"
+        }
+      ]
+    },
+    {
+      "id": "cam-limitation",
+      "category": "limitation",
+      "statement": "RenderedTable5inc_valreferencescolumn11instead12, featuretranslationandfacilityindicesneedcare, notassumedempiricalfailure.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            5,
+            6,
+            18,
+            24
+          ],
+          "locator": "Section3.2/Table5/AppendixG"
+        }
+      ]
+    },
+    {
+      "id": "cam-classification",
+      "category": "classification",
+      "statement": "Fourbenchmarksareexplicitseparatelytrained/testedmodels; nativecrossproblemsharedweightsnotdemonstrated.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "locator": "Section4.1Benchmarks/training"
+        }
+      ]
+    }
+  ],
+  "metadata_evidence": [
+    {
+      "field": "identity",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/7b39f4512a2e3899edcc59c7501f3cd4-Abstract-Conference.html",
+      "locator": "PublisherHTMLcurrentauthors/title andPDFp1equalLin/Xu, UIUC/Tsinghuaaffiliations."
+    },
+    {
+      "field": "publication",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/7b39f4512a2e3899edcc59c7501f3cd4-Abstract-Conference.html",
+      "locator": "Officialcitation_publication_date2024-05-31."
+    },
+    {
+      "field": "supplements",
+      "source_url": "https://iclr.cc/virtual/2024/poster/18917",
+      "locator": "ManualpublisheronlyPaperlink;officialconferenceSlides18917.pdf1pageadded/read/rendered, separatePosterPNGinspectedduplicatesposter;24pageintegratedA-Gallread. Ordinaryapi2.openreview.net/notes?id=K6kt50zAiG403recorded, nochallengebypass; authorentrynoextrasupp/code."
+    },
+    {
+      "field": "code",
+      "source_url": "https://linjc16.github.io/publications/",
+      "locator": "ManuallycheckedCAMBranchentryPaper-onlylink, paper/conference/publishernotverifiedauthorcode; noguessedthirdpartyrepository."
+    }
+  ],
+  "citations": [
+    {
+      "citing": "cambranch",
+      "cited": "gcnn-branching",
+      "reference_label": "Gasse et al. (2019)",
+      "description": "Explicitbodyauthor-yearcitationandmatchingbibliographytitle/authoridentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            11,
+            19,
+            23
+          ],
+          "locator": "Explicit in-text citation Gasse and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cambranch",
+      "cited": "hybrid-branching",
+      "reference_label": "Gupta et al. (2020)",
+      "description": "Explicitbodyauthor-yearcitationandmatchingbibliographytitle/authoridentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            23
+          ],
+          "locator": "Explicit in-text citation Gupta and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cambranch",
+      "cited": "learning-co-over-graphs",
+      "reference_label": "Khalil et al. (2017)",
+      "description": "Explicitbodyauthor-yearcitationandmatchingbibliographytitle/authoridentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            12,
+            23
+          ],
+          "locator": "Explicit in-text citation Khalil and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cambranch",
+      "cited": "tree-mdp-branching",
+      "reference_label": "Scavuzzo et al. (2022)",
+      "description": "Explicitbodyauthor-yearcitationandmatchingbibliographytitle/authoridentity.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14,
+            22
+          ],
+          "locator": "Explicit in-text citation Scavuzzo and matching bibliography entry"
+        }
+      ]
+    },
+    {
+      "citing": "cambranch",
+      "cited": "parameterizing-branch-and-bound-search-trees-to-learn-branching-policies",
+      "reference_label": "Zarpellon et al. 2021",
+      "description": "Introduction learned MILP branching background explicitly cites exact four-author AAAI2021 pages3931?3939 and DOI10.1609/aaai.v35i5.16512.",
+      "evidence": [
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            1
+          ],
+          "locator": "Actually read complete body citation paragraphs: Zarpellon et al. 2021"
+        },
+        {
+          "source_id": "paper",
+          "pdf_pages": [
+            14
+          ],
+          "locator": "Actually read complete bibliography entry; title/authors/venue or identified preprint version match target: Zarpellon et al. 2021"
+        }
+      ]
+    }
+  ],
+  "citation_scan_complete": true,
+  "figures_checked": true,
+  "note_crosscheck_complete": true,
+  "issues": [],
+  "corrections": [
+    "Readall24main/appendixpagesandregisteredofficial1pageslides, separatelyinspectedconferenceposter andattachmententries.",
+    "Qualifiedexacttranslationtheoryagainstsolverdegeneracy/ties, captured3partloss/per-taskmodels andnegativebenchmark/sample-ratiocases.",
+    "Recordedrenderedfeatureindexdiscrepancy/codeavailabilitylimits and4explicitcataloguerelations.",
+    "Conference163 citation expansion: manually rechecked actual body contexts and complete bibliography identities for newly available catalogue targets; evidence retained per edge."
+  ],
+  "round_id": "restart-2026-11-16",
+  "reviewer": "full_review_graphs",
+  "supplements_checked": true,
+  "reviewed_note_sha256": "3fed1400634ffe331f47282b5f8442a8d6bbd8fab8bfe542af82f879391806af"
+}
