@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { indexMarkers, renderNavigationBadges, renderPaperIndex, replaceGeneratedIndex } from '../scripts/index-lib.mjs'
+import { indexMarkers, renderNavigationBadges, renderPaperIndex, renderReviewSummary, replaceGeneratedIndex } from '../scripts/index-lib.mjs'
 
 const paper = {
   id: 'example',
@@ -99,15 +99,37 @@ describe('README index generation', () => {
       paper,
       { ...paper, id: 'generalist-one', scope: 'generalist' },
       { ...paper, id: 'generalist-two', scope: 'generalist' },
+      { ...paper, id: 'reference-one', inclusion: 'reference' },
+      { ...paper, id: 'study-one', scope: 'study' },
     ])
-    expect(rendered.match(/img\.shields\.io/g)).toHaveLength(5)
+    expect(rendered.match(/img\.shields\.io/g)).toHaveLength(4)
     expect(rendered).toContain('https://ciam-group.github.io/awesome-nco/')
     expect(rendered).toMatch(/Generalist-2-/)
     expect(rendered).toMatch(/Specialist-1-/)
+    expect(rendered).toMatch(/Studies-1-/)
+    expect(rendered).not.toContain('References-')
+    expect(rendered).not.toContain('#reference-collection')
     expect(rendered).toContain('#generalist-solvers')
     expect(rendered).toContain('#specialist-solvers')
     expect(renderNavigationBadges([])).toMatch(/Generalist-0-/)
     expect(renderNavigationBadges([])).toMatch(/Specialist-0-/)
+  })
+
+  it('keeps generated review progress hidden while updating its counts', () => {
+    const rendered = renderReviewSummary([
+      { ...paper, review_status: 'verified' },
+      { ...paper, id: 'pending', review_status: 'pending' },
+    ], { completed_papers: 140, deferred_papers: 23 })
+    expect(rendered.startsWith('<!--\n')).toBe(true)
+    expect(rendered.endsWith('\n-->')).toBe(true)
+    expect(rendered).toContain('Full-text review: 1 / 2 papers complete.')
+    expect(rendered).toContain('140 reviewed notes')
+    expect(rendered).toContain('23 deferred candidates')
+    expect(renderReviewSummary([])).toContain('0 / 0 papers complete.')
+    expect(renderReviewSummary([])).not.toContain('Conference batch:')
+    const readme = `${indexMarkers.review.start}\nOld progress\n${indexMarkers.review.end}`
+    const updated = replaceGeneratedIndex(readme, rendered, 'review')
+    expect(replaceGeneratedIndex(updated, rendered, 'review')).toBe(updated)
   })
 
   it('only replaces the selected generated section and is idempotent', () => {
