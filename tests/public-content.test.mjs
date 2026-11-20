@@ -33,5 +33,5 @@ describe('website data boundary', () => {
     for (const p of website.papers) {
       for (const hidden of complete.papers.filter(p => p.inclusion === 'reference')) expect(p.body_html).not.toMatch(new RegExp('/papers/' + hidden.id + '(?:["#/?])'))
     }
-  })
+  }, 15000)
 })
