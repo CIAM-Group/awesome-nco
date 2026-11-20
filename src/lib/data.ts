@@ -37,7 +37,7 @@ export const paradigmLabels: Record<Paradigm, string> = {
 }
 
 export const relationKindLabels: Record<RelationKind, string> = {
-  citation: 'Explicit citation',
+  citation: 'Citation',
 }
 
 export function scopePath(scope: Scope) { return scope === 'study' ? '/studies' : `/${scope}` }

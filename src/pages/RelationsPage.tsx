@@ -19,25 +19,23 @@ const indexedRelations = relations.map(relation => ({
 export function RelationsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get('q') ?? ''
-  const requestedKind = searchParams.get('kind') ?? 'all'
-  const kind = Object.keys(relationKindLabels).includes(requestedKind) ? requestedKind : 'all'
   const families = useMemo(() => uniqueValues(papers.flatMap(paper => paper.problem_families)), [])
   const requestedFamily = searchParams.get('family') ?? 'all'
   const family = families.includes(requestedFamily) ? requestedFamily : 'all'
   const requestedScope = searchParams.get('scope') ?? 'all'
   const scope = ['specialist', 'generalist', 'study'].includes(requestedScope) ? requestedScope : 'all'
 
-  const filtered = useMemo(() => indexedRelations.filter(({ relation, endpoints, searchable }) =>
+  const filtered = useMemo(() => indexedRelations.filter(({ endpoints, searchable }) =>
     (!query.trim() || searchable.includes(query.trim().toLowerCase()))
-    && (kind === 'all' || relation.kind === kind)
     && (family === 'all' || endpoints.some(paper => paper.problem_families.includes(family)))
     && (scope === 'all' || endpoints.some(paper => paper.scope === scope)),
-  ).map(item => item.relation), [query, kind, family, scope])
+  ).map(item => item.relation), [query, family, scope])
   const page = usePagination(filtered, 'citation-register')
 
   function updateFilter(key: string, value: string) {
     const next = clearPages(new URLSearchParams(searchParams))
     next.delete('inclusion')
+    next.delete('kind')
     const param = key === 'query' ? 'q' : key
     if (!value || value === 'all') next.delete(param)
     else next.set(param, value)
@@ -58,7 +56,6 @@ export function RelationsPage() {
           searchPlaceholder="Paper title, method, or citation description"
           selects={[
             { key: 'scope', label: 'Connected collection', value: scope, options: [{ value: 'all', label: 'All collections' }, { value: 'specialist', label: 'Specialist' }, { value: 'generalist', label: 'Generalist' }, { value: 'study', label: 'Research Studies' }] },
-            { key: 'kind', label: 'Relation', value: kind, options: [{ value: 'all', label: 'All relation kinds' }, ...Object.entries(relationKindLabels).map(([value, label]) => ({ value, label }))] },
             { key: 'family', label: 'Problem family', value: family, options: [{ value: 'all', label: 'All problem families' }, ...families.map(value => ({ value, label: value }))] },
           ]}
           resultCount={filtered.length}
