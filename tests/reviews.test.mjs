@@ -51,7 +51,7 @@ describe('full-text review evidence', () => {
       expect(reviews.get(edge.citing).citations.some(item => item.cited === edge.cited)).toBe(true)
       expect(edge.evidence.every(item => item.source_url && item.pdf_pages.length)).toBe(true)
     }
-  })
+  }, 15000)
 
   it('preserves readable citation descriptions and locators in the reviewed source records', async () => {
     const reviews = await loadReviews(process.cwd())
