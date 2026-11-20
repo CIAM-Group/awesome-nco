@@ -47,6 +47,14 @@ async function checkReferences(page, paper, pageNumber = 1) {
   await links(page, '.related-paper-card h3 a', expected.map(edge => link(edge.cited)))
   if (!expected.length) assert((await page.locator('#paper-references').innerText()).includes('No references to papers in this collection.'), 'Missing empty reference state')
 }
+async function checkReferencePosition(page, label) {
+  try {
+    await page.waitForFunction(() => Math.abs(document.getElementById('paper-references').getBoundingClientRect().top) < 200, undefined, { timeout: 5000 })
+  } catch (error) {
+    const position = await page.locator('#paper-references').evaluate(element => ({ top: element.getBoundingClientRect().top, scrollY, viewport: innerHeight, page: new URL(location.href).searchParams.get('page') }))
+    throw new Error(`${label}: reference pagination jumped to the wrong position: ${JSON.stringify(position)}`, { cause: error })
+  }
+}
 
 let browser
 try {
@@ -196,8 +204,27 @@ try {
     await checkReferences(page, longest)
     await page.getByRole('navigation', { name: 'References pagination', exact: true }).getByRole('button', { name: 'Next', exact: true }).click()
     await checkReferences(page, longest, 2)
-    assert(await page.locator('#paper-references').evaluate(element => Math.abs(element.getBoundingClientRect().top) < 200), 'Reference pagination jumped to the wrong position')
+    await checkReferencePosition(page, viewport.name)
     await page.screenshot({ path: path.join(artifacts, 'references-detail-' + viewport.name + '.png'), fullPage: false })
+
+    if (viewport.name === 'mobile') {
+      const session = await context.newCDPSession(page)
+      try {
+        await session.send('Emulation.setCPUThrottlingRate', { rate: 4 })
+        const referenceNav = page.getByRole('navigation', { name: 'References pagination', exact: true })
+        for (let attempt = 0; attempt < 3; attempt++) {
+          await referenceNav.getByRole('button', { name: 'Previous', exact: true }).click()
+          await checkReferences(page, longest)
+          await checkReferencePosition(page, 'Throttled mobile previous')
+          await referenceNav.getByRole('button', { name: 'Next', exact: true }).click()
+          await checkReferences(page, longest, 2)
+          await checkReferencePosition(page, 'Throttled mobile next')
+        }
+      } finally {
+        await session.send('Emulation.setCPUThrottlingRate', { rate: 1 })
+        await session.detach()
+      }
+    }
 
     for (const [index, paper] of papers.entries()) {
       await page.goto(site + '/papers/' + paper.id, { waitUntil: 'domcontentloaded' })
