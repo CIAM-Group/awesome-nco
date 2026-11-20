@@ -52,4 +52,17 @@ describe('full-text review evidence', () => {
       expect(edge.evidence.every(item => item.source_url && item.pdf_pages.length)).toBe(true)
     }
   })
+
+  it('preserves readable citation descriptions and locators in the reviewed source records', async () => {
+    const reviews = await loadReviews(process.cwd())
+    const review = reviews.get('a-neural-column-generation-approach-to-the-vehicle-routing-problem-with-two-dimensiona')
+    const citation = review.citations.find(item => item.cited === 'attention-model')
+    expect(citation.description).toBe('Explicit body citation with matching full title/byline bibliography; printed AM year 2018 qualified against unique formal representative.')
+    expect(citation.evidence).toEqual([{ source_id: 'paper', pdf_pages: [5, 8], locator: 'Body p5; References p8 Kool et al. (2018)' }])
+    expect(citation.reference_label).toBe('Kool et al. (2018)')
+
+    const alreadyReadable = reviews.get('a-unified-knowledge-embedded-reinforcement-learning-based-framework-for-generalized-ca').citations.find(item => item.cited === 'attention-model')
+    expect(alreadyReadable.description).toBe('Explicit body citation and matching full bibliography identity; preserve printed citation year and author list rather than silently changing source metadata.')
+    expect(alreadyReadable.evidence[0]).toEqual({ source_id: 'paper', pdf_pages: [2], locator: 'Explicit in-text Kool et al.,2018 as printed' })
+  })
 })

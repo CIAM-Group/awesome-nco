@@ -16,7 +16,8 @@ export function clearPages(params: URLSearchParams) {
 }
 
 export function scrollToListing(id: string) {
-  requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'instant' }))
+  const frame = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'instant' }))
+  return () => cancelAnimationFrame(frame)
 }
 
 export function timelineSelection(years: number[], params: URLSearchParams) {
